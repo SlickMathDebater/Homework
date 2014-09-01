@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.9.27)  1 SEP 2014 13:11
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.9.27)  1 SEP 2014 16:45
 entering extended mode
 **MA503BridgeAlgebraHwk1.tex
 (C:\Users\Lonelight\Desktop\Homework\MA503\MA503BridgeAlgebraHwk1.tex
@@ -13,9 +13,13 @@ german-x-2012-05-30, nynorsk, oriya, panjabi, pinyin, polish, portuguese, roman
 ian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swissgerm
 an, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, usengl
 ishmax, welsh, loaded.
-(E:\PortablePrograms\texmakerwin32usb\MiKTeX\tex\latex\base\article.cls
+
+(C:\Users\Lonelight\Desktop\PortablePrograms\texmakerwin32usb\MiKTeX\tex\latex\
+base\article.cls
 Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
-(E:\PortablePrograms\texmakerwin32usb\MiKTeX\tex\latex\base\size12.clo
+
+(C:\Users\Lonelight\Desktop\PortablePrograms\texmakerwin32usb\MiKTeX\tex\latex\
+base\size12.clo
 File: size12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
@@ -30,7 +34,8 @@ File: size12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-(E:\PortablePrograms\texmakerwin32usb\MiKTeX\tex\latex\fancyhdr\fancyhdr.sty
+(C:\Users\Lonelight\Desktop\PortablePrograms\texmakerwin32usb\MiKTeX\tex\latex\
+fancyhdr\fancyhdr.sty
 \fancy@headwidth=\skip43
 \f@ncyO@elh=\skip44
 \f@ncyO@erh=\skip45
@@ -41,10 +46,12 @@ File: size12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 \f@ncyO@olf=\skip50
 \f@ncyO@orf=\skip51
 )
-(E:\PortablePrograms\texmakerwin32usb\MiKTeX\tex\latex\amsfonts\amssymb.sty
+(C:\Users\Lonelight\Desktop\PortablePrograms\texmakerwin32usb\MiKTeX\tex\latex\
+amsfonts\amssymb.sty
 Package: amssymb 2009/06/22 v3.00
 
-(E:\PortablePrograms\texmakerwin32usb\MiKTeX\tex\latex\amsfonts\amsfonts.sty
+(C:\Users\Lonelight\Desktop\PortablePrograms\texmakerwin32usb\MiKTeX\tex\latex\
+amsfonts\amsfonts.sty
 Package: amsfonts 2009/06/22 v3.00 Basic AMSFonts support
 \@emptytoks=\toks14
 \symAMSa=\mathgroup4
@@ -52,14 +59,17 @@ Package: amsfonts 2009/06/22 v3.00 Basic AMSFonts support
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 96.
 ))
-(E:\PortablePrograms\texmakerwin32usb\MiKTeX\tex\latex\mh\mathtools.sty
+(C:\Users\Lonelight\Desktop\PortablePrograms\texmakerwin32usb\MiKTeX\tex\latex\
+mh\mathtools.sty
 Package: mathtools 2013/02/12 v1.13 mathematical typesetting tools
 
-(E:\PortablePrograms\texmakerwin32usb\MiKTeX\tex\latex\graphics\keyval.sty
+(C:\Users\Lonelight\Desktop\PortablePrograms\texmakerwin32usb\MiKTeX\tex\latex\
+graphics\keyval.sty
 Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \KV@toks@=\toks15
 )
-(E:\PortablePrograms\texmakerwin32usb\MiKTeX\tex\latex\tools\calc.sty
+(C:\Users\Lonelight\Desktop\PortablePrograms\texmakerwin32usb\MiKTeX\tex\latex\
+tools\calc.sty
 Package: calc 2007/08/22 v4.3 Infix arithmetic (KKT,FJ)
 \calc@Acount=\count87
 \calc@Bcount=\count88
@@ -72,27 +82,34 @@ LaTeX Info: Redefining \addtolength on input line 77.
 \calc@Ccount=\count89
 \calc@Cskip=\skip54
 )
-(E:\PortablePrograms\texmakerwin32usb\MiKTeX\tex\latex\mh\mhsetup.sty
+(C:\Users\Lonelight\Desktop\PortablePrograms\texmakerwin32usb\MiKTeX\tex\latex\
+mh\mhsetup.sty
 Package: mhsetup 2010/01/21 v1.2a programming setup (MH)
 )
-(E:\PortablePrograms\texmakerwin32usb\MiKTeX\tex\latex\ams\math\amsmath.sty
+(C:\Users\Lonelight\Desktop\PortablePrograms\texmakerwin32usb\MiKTeX\tex\latex\
+ams\math\amsmath.sty
 Package: amsmath 2000/07/18 v2.13 AMS math features
 \@mathmargin=\skip55
 
 For additional information on amsmath, use the `?' option.
-(E:\PortablePrograms\texmakerwin32usb\MiKTeX\tex\latex\ams\math\amstext.sty
+
+(C:\Users\Lonelight\Desktop\PortablePrograms\texmakerwin32usb\MiKTeX\tex\latex\
+ams\math\amstext.sty
 Package: amstext 2000/06/29 v2.01
 
-(E:\PortablePrograms\texmakerwin32usb\MiKTeX\tex\latex\ams\math\amsgen.sty
+(C:\Users\Lonelight\Desktop\PortablePrograms\texmakerwin32usb\MiKTeX\tex\latex\
+ams\math\amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0
 \@emptytoks=\toks16
 \ex@=\dimen105
 ))
-(E:\PortablePrograms\texmakerwin32usb\MiKTeX\tex\latex\ams\math\amsbsy.sty
+(C:\Users\Lonelight\Desktop\PortablePrograms\texmakerwin32usb\MiKTeX\tex\latex\
+ams\math\amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d
 \pmbraise@=\dimen106
 )
-(E:\PortablePrograms\texmakerwin32usb\MiKTeX\tex\latex\ams\math\amsopn.sty
+(C:\Users\Lonelight\Desktop\PortablePrograms\texmakerwin32usb\MiKTeX\tex\latex\
+ams\math\amsopn.sty
 Package: amsopn 1999/12/14 v2.01 operator names
 )
 \inf@bad=\count90
@@ -145,52 +162,64 @@ LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
 \l_MT_above_shortintertext_sep=\dimen119
 \l_MT_below_shortintertext_sep=\dimen120
 )
-(E:\PortablePrograms\texmakerwin32usb\MiKTeX\tex\latex\carlisle\slashed.sty
+(C:\Users\Lonelight\Desktop\PortablePrograms\texmakerwin32usb\MiKTeX\tex\latex\
+carlisle\slashed.sty
 Package: slashed 1997/01/16 v0.01 Feynman Slashed Character Notation (DPC)
 )
-(E:\PortablePrograms\texmakerwin32usb\MiKTeX\tex\latex\amsfonts\euscript.sty
+(C:\Users\Lonelight\Desktop\PortablePrograms\texmakerwin32usb\MiKTeX\tex\latex\
+amsfonts\euscript.sty
 Package: euscript 2009/06/22 v3.00 Euler Script fonts
 LaTeX Font Info:    Overwriting math alphabet `\EuScript' in version `bold'
 (Font)                  U/eus/m/n --> U/eus/b/n on input line 33.
 )
 (C:\Users\Lonelight\Desktop\Homework\MA503\MA503BridgeAlgebraHwk1.aux)
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 129.
-LaTeX Font Info:    ... okay on input line 129.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 129.
-LaTeX Font Info:    ... okay on input line 129.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 129.
-LaTeX Font Info:    ... okay on input line 129.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 129.
-LaTeX Font Info:    ... okay on input line 129.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 129.
-LaTeX Font Info:    ... okay on input line 129.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 129.
-LaTeX Font Info:    ... okay on input line 129.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 130.
+LaTeX Font Info:    ... okay on input line 130.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 130.
+LaTeX Font Info:    ... okay on input line 130.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 130.
+LaTeX Font Info:    ... okay on input line 130.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 130.
+LaTeX Font Info:    ... okay on input line 130.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 130.
+LaTeX Font Info:    ... okay on input line 130.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 130.
+LaTeX Font Info:    ... okay on input line 130.
 
-(E:\PortablePrograms\texmakerwin32usb\MiKTeX\tex\latex\graphics\graphicx.sty
+(C:\Users\Lonelight\Desktop\PortablePrograms\texmakerwin32usb\MiKTeX\tex\latex\
+graphics\graphicx.sty
 Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
-(E:\PortablePrograms\texmakerwin32usb\MiKTeX\tex\latex\graphics\graphics.sty
+(C:\Users\Lonelight\Desktop\PortablePrograms\texmakerwin32usb\MiKTeX\tex\latex\
+graphics\graphics.sty
 Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
 
-(E:\PortablePrograms\texmakerwin32usb\MiKTeX\tex\latex\graphics\trig.sty
+(C:\Users\Lonelight\Desktop\PortablePrograms\texmakerwin32usb\MiKTeX\tex\latex\
+graphics\trig.sty
 Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 )
-(E:\PortablePrograms\texmakerwin32usb\MiKTeX\tex\latex\00miktex\graphics.cfg
+(C:\Users\Lonelight\Desktop\PortablePrograms\texmakerwin32usb\MiKTeX\tex\latex\
+00miktex\graphics.cfg
 File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
 )
 Package graphics Info: Driver file: pdftex.def on input line 91.
 
-(E:\PortablePrograms\texmakerwin32usb\MiKTeX\tex\latex\pdftex-def\pdftex.def
+(C:\Users\Lonelight\Desktop\PortablePrograms\texmakerwin32usb\MiKTeX\tex\latex\
+pdftex-def\pdftex.def
 File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
 
-(E:\PortablePrograms\texmakerwin32usb\MiKTeX\tex\generic\oberdiek\infwarerr.sty
+(C:\Users\Lonelight\Desktop\PortablePrograms\texmakerwin32usb\MiKTeX\tex\generi
+c\oberdiek\infwarerr.sty
 Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
-) (E:\PortablePrograms\texmakerwin32usb\MiKTeX\tex\generic\oberdiek\ltxcmds.sty
+)
+(C:\Users\Lonelight\Desktop\PortablePrograms\texmakerwin32usb\MiKTeX\tex\generi
+c\oberdiek\ltxcmds.sty
 Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 )
 \Gread@gobject=\count103
- (E:\PortablePrograms\texmakerwin32usb\MiKTeX\tex\context\base\supp-pdf.mkii
+
+(C:\Users\Lonelight\Desktop\PortablePrograms\texmakerwin32usb\MiKTeX\tex\contex
+t\base\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count104
 \scratchdimen=\dimen121
@@ -207,13 +236,16 @@ Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 \Gin@req@height=\dimen123
 \Gin@req@width=\dimen124
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 139.
- (E:\PortablePrograms\texmakerwin32usb\MiKTeX\tex\latex\amsfonts\umsa.fd
+LaTeX Font Info:    Try loading font information for U+msa on input line 138.
+
+(C:\Users\Lonelight\Desktop\PortablePrograms\texmakerwin32usb\MiKTeX\tex\latex\
+amsfonts\umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 139.
+LaTeX Font Info:    Try loading font information for U+msb on input line 138.
 
-(E:\PortablePrograms\texmakerwin32usb\MiKTeX\tex\latex\amsfonts\umsb.fd
+(C:\Users\Lonelight\Desktop\PortablePrograms\texmakerwin32usb\MiKTeX\tex\latex\
+amsfonts\umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 )
 
@@ -222,7 +254,8 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[1{E:/PortablePrograms/texmakerwin32usb/MiKTeX/pdftex/config/pdftex.map}
+[1{C:/Users/Lonelight/Desktop/PortablePrograms/texmakerwin32usb/MiKTeX/pdftex/c
+onfig/pdftex.map}
 
 ]
 
@@ -238,29 +271,39 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[3] (C:\Users\Lonelight\Desktop\Homework\MA503\MA503BridgeAlgebraHwk1.aux) ) 
+[3]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[4] (C:\Users\Lonelight\Desktop\Homework\MA503\MA503BridgeAlgebraHwk1.aux) ) 
 Here is how much of TeX's memory you used:
- 2801 strings out of 493921
- 37304 string characters out of 3140860
- 99978 words of memory out of 3000000
- 6082 multiletter control sequences out of 15000+200000
+ 2804 strings out of 493921
+ 38969 string characters out of 3140860
+ 100987 words of memory out of 3000000
+ 6083 multiletter control sequences out of 15000+200000
  8592 words of font info for 33 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 33i,13n,43p,275b,206s stack positions out of 5000i,500n,10000p,200000b,50000s
-<E:
-/PortablePrograms/texmakerwin32usb/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12
-.pfb><E:/PortablePrograms/texmakerwin32usb/MiKTeX/fonts/type1/public/amsfonts/c
-m/cmex10.pfb><E:/PortablePrograms/texmakerwin32usb/MiKTeX/fonts/type1/public/am
-sfonts/cm/cmmi12.pfb><E:/PortablePrograms/texmakerwin32usb/MiKTeX/fonts/type1/p
-ublic/amsfonts/cm/cmmi8.pfb><E:/PortablePrograms/texmakerwin32usb/MiKTeX/fonts/
-type1/public/amsfonts/cm/cmr12.pfb><E:/PortablePrograms/texmakerwin32usb/MiKTeX
-/fonts/type1/public/amsfonts/cm/cmr8.pfb><E:/PortablePrograms/texmakerwin32usb/
-MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><E:/PortablePrograms/texmakerw
-in32usb/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><E:/PortablePrograms/te
-xmakerwin32usb/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on MA503BridgeAlgebraHwk1.pdf (3 pages, 88916 bytes).
+ 33i,13n,43p,496b,206s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:
+/Users/Lonelight/Desktop/PortablePrograms/texmakerwin32usb/MiKTeX/fonts/type1/p
+ublic/amsfonts/cm/cmbx12.pfb><C:/Users/Lonelight/Desktop/PortablePrograms/texma
+kerwin32usb/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Loneligh
+t/Desktop/PortablePrograms/texmakerwin32usb/MiKTeX/fonts/type1/public/amsfonts/
+cm/cmmi12.pfb><C:/Users/Lonelight/Desktop/PortablePrograms/texmakerwin32usb/MiK
+TeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Lonelight/Desktop/Portab
+lePrograms/texmakerwin32usb/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:
+/Users/Lonelight/Desktop/PortablePrograms/texmakerwin32usb/MiKTeX/fonts/type1/p
+ublic/amsfonts/cm/cmr8.pfb><C:/Users/Lonelight/Desktop/PortablePrograms/texmake
+rwin32usb/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Lonelight/
+Desktop/PortablePrograms/texmakerwin32usb/MiKTeX/fonts/type1/public/amsfonts/cm
+/cmsy8.pfb><C:/Users/Lonelight/Desktop/PortablePrograms/texmakerwin32usb/MiKTeX
+/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on MA503BridgeAlgebraHwk1.pdf (4 pages, 101407 bytes).
 PDF statistics:
- 48 PDF objects out of 1000 (max. 8388607)
+ 51 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
