@@ -16,6 +16,8 @@
 
 \newcommand{\absval}[1]{\lvert #1 \rvert}
 \newcommand{\norm}[1]{\|#1\|}
+\newcommand{\anbrack}[1]{\left\langle #1 \right\rangle}
+
 
 
 \newcommand{\al}{\alpha} %Steal ALL of Dr. Kable's Aliases! MWAHAHAHAHA!
@@ -130,6 +132,14 @@
 
 {\bf Problem 1:}
 
+Let $f: X \to Y$ be a function such that there is a function $g: Y \to X$ such that $f \circ g$ is the identity on $Y$.
+
+Then for all $y \in Y$, $f(g(y)) = y$.
+
+So for all $y \in Y$, there is an $x \in X$ such that $f(x) = y$ ($x = f(y)$).
+
+So $f$ is onto if there is a function $g: Y \to X$ such that $f \circ g$ is the identity on $Y$.
+
 \shunt
 
 {\bf Problem 2:}
@@ -142,17 +152,121 @@
 
 {\bf Problem 4:}
 
+Let $\anbrack{x_n}$ be a sequence of real numbers.
+
+If $\lim\limits_{n \to \infty} x_n$ exists, then $\anbrack{x_n}$ is Cauchy.
+
+\tab Let $\ep >0$. Then there is an $N \in \N$ such that for all $n \geq N$, $\absval{x_n - L} < \frac{\ep}{2}$, where $L = \lim\limits_{n \to \infty} x_n$.
+
+\tab Now, if $n,m \geq N$, then $\absval{x_n - L} < \frac{\ep}{2}$ and $\absval{x_m - L} < \frac{\ep}{2}$.
+
+\tab By the triangle inequality,
+\begin{align*}
+\absval{x_n - x_m} &\leq \absval{x_n - L} + \absval{x_m -L} \\
+&< \frac{\ep}{2} + \frac{\ep}{2} \\
+&= \ep.
+\end{align*}
+
+\tab So for all $\ep >0$ there is an $N \in \N$ such that $n,m \geq N$ implies that $\absval{x_n - x_m} < \ep$. That is, $\anbrack{x_n}$ is Cauchy.
+
+Next, if $\anbrack{x_n}$ is Cauchy, then $\lim\limits_{n \to \infty} x_n$ exists.
+
+\tab Let $\ep >0$. Then there is an $N \in \N$ such that for all $n,m \geq N$, $\absval{x_n - x_m} < \frac{\ep}{2}$.
+
+\tab This means that for all $n \geq N$, $x_n$ is within the closed interval $[x_N - \frac{\ep}{2}, x_N +\frac{\ep}{2}]$.
+
+\tab So $\anbrack{x_n}$ has a converging subsequence. Say that the converging subsequence converges to $L$.
+
+\tab Now, $L \in [x_N - \frac{\ep}{2}, x_N +\frac{\ep}{2}]$. (Closed interval is closed.)
+
+\tab This means that for all $n \geq N$, $\absval{x_n - L} < \ep$ (both $x_n$ and $L$ are in a closed ball of radius $\ep$.)
+
+\tab So for all $\ep >0$ there is an $N \in \N$ such that for all $n \geq N$, $\absval{x_n - L} < \ep$ for some $L \in \R$. That is, $\anbrack{x_n}$ converges to $L$; $\lim\limits_{n \to \infty} x_n$ exists.
+
+Therefore $\lim\limits_{n \to \infty} x_n$ exists if and only if $\anbrack{x_n}$ is Cauchy.
+
 \shunt
 
 {\bf Problem 5:}
+
+Let $\anbrack{x_n}$ be a sequence of real numbers, with $\liminf(x_n)$ and $\limsup(x_n)$ both existing.
+
+Then $\liminf(x_n)$ is the infimum of the set of blah.
+
+Also, $\limsup(x_n)$ is the supremum of the set of blah.
+
+Because $inf(A) \leq sup(A)$ for all nonempty $A \subset \R$, this means that $\liminf(x_n) \leq \limsup(x_n)$.
+
+Moving on, let $\lim\limits_{n \to \infty} x_n = L$.
+
+\tab %Then both limsup and liminf = L. This is because all subsequences of x_n converge to L.
+
+Next, let $\liminf(x_n) = \limsup(x_n) = L$.
+
+\tab %Then lim = L. This one might require an ep-de proof.
 
 \shunt
 
 {\bf Problem 6:}
 
+It is a well-known fact that if there is an injection, $f: X \to Y$ and an injection $g: Y \to X$, then there is a bijection $h: X \to Y$. We exploit this fact.
+
+Denote the Cantor set by $C$. A quick note: $C$ is closed, as it is the complement of an open set. (It is usually defined as the complement of an infinite union of open intervals. This union of open intervals is open...and thus, its complement is closed.)
+
+There is an injection $f: C \to [0,1]$ given by $f(x) = x$.
+
+Next, there is an injection $g: [0,1] \to C$ given as follows:
+
+\tab Let $x \in [0,1]$. We know that $x$ has a binary expansion, $0.a_1a_2 \ldots$. (Even in the case of $x=1$, this expansion can be $0.11111\ldots$.)
+
+\tab Note that this binary expansion need not be unique. We just choose one (which we can do, by the Axiom of Choice).
+
+\tab We next define a sequence of nested closed subsets of $C$ as follows:
+
+\tab \tab %Do it. Also call them C_i(x).
+
+\tab This is a sequence of nested, closed subsets of $C$ whose diameter approaches $0$. There is a unique point,$y$, in the intersection of these closed subsets.
+
+\tab We define $g(x) = y$.
+
+\tab Now, if $a, b \in [0,1]$ and $a \neq b$, then $g(a) \neq g(b)$:
+
+\tab \tab Because $a \neq b$, $a$ and $b$ have two different binary expansions, $0.a_1a_2 \ldots $ and $0.b_1b_2 \ldots$.
+
+\tab \tab So there is an index, $i$, with $a_i \neq b_i$.
+
+\tab \tab This means that $g(a)$ and $g(b)$ are contained in disjoint closed intervals, $C_i(a)$ and $C_i(b)$. So $g(a) \neq g(b)$.
+
+We have an injection $f: C \to [0,1]$ and an injection $g: [0,1] \to C$, so there is a bijection $h: C \to [0,1]$.
+
 \shunt
 
 {\bf Problem 7:}
 
+First, note that for any subset, $A$, of $\R$, the set of accumulation points, $A'$, is a subset of the closure of $A$. That is $A' \subset \overline{A}$.
+
+The Cantor Set is closed. So, $C' \subset C$.
+
+Now, let $x \in C$.
+
+\tab Then $x \in [0,1/3]$ or $x \in [2/3, 1]$. Define $C_1$ to be the interval that $x$ is in.
+
+\tab Similarly, $x$ is in either the lower third or the upper third of $C_1$. Define $C_2$ to be the third of $C_1$ that $x$ is in.
+
+\tab For each $n \in \N$, define $C_n$ to be the third of $C_{n-1}$ that $x$ is in.
+
+\tab Now, for each $n \in \N$, pick an $x_n \in C_n$ such that $x_n \neq x$.
+
+\tab Note that the $C_n$s are nested, closed subsets of $\R$ whose diameter approaches $0$. This means that their intersection has a unique point. Because $x \in C_n$ for all $n \in \N$, this means that $x$ is that unique point.
+
+\tab Moreover, it is clear that $\anbrack{x_n} \to x$. (Should I break out my epsilons, or is it OK to just state this?)
+
+\tab So there's a sequence $\anbrack{x_n}$ in $C$ such that $\lim\limits{n \to \infty} x_n \to x$ and $x_n \neq x$. So $x \in C'$.
+
+So $C \subset C'$.
+
+So $C = C'$. That is, the set of accumulation points of the Cantor Set is the Cantor Set itself.
+
 \shunt
+
 \end{document}
