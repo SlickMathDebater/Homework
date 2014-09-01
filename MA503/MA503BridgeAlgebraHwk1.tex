@@ -1,0 +1,235 @@
+
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{fancyhdr}
+\usepackage{amssymb}
+%\usepackage{mathpazo}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{slashed}
+\usepackage[mathscr]{euscript}
+
+\newcommand{\tab}{\hspace{4mm}} %Spacing aliases
+\newcommand{\shunt}{\vspace{20mm}}
+
+\newcommand{\sd}{\partial} %Squiggle d
+
+\newcommand{\absval}[1]{\lvert #1 \rvert}
+\newcommand{\norm}[1]{\|#1\|}
+
+
+\newcommand{\al}{\alpha} %Steal ALL of Dr. Kable's Aliases! MWAHAHAHAHA!
+\newcommand{\be}{\beta}
+\newcommand{\ga}{\gamma}
+\newcommand{\Ga}{\Gamma}
+\newcommand{\de}{\delta}
+\newcommand{\De}{\Delta}
+\newcommand{\ep}{\epsilon}
+\newcommand{\vep}{\varepsilon}
+\newcommand{\ze}{\zeta}
+\newcommand{\et}{\eta}
+\newcommand{\tha}{\theta}
+\newcommand{\vtha}{\vartheta}
+\newcommand{\Tha}{\Theta}
+\newcommand{\io}{\iota}
+\newcommand{\ka}{\kappa}
+\newcommand{\la}{\lambda}
+\newcommand{\La}{\Lambda}
+\newcommand{\rh}{\rho}
+\newcommand{\si}{\sigma}
+\newcommand{\Si}{\Sigma}
+\newcommand{\ta}{\tau}
+\newcommand{\ups}{\upsilon}
+\newcommand{\Ups}{\Upsilon}
+\newcommand{\ph}{\phi}
+\newcommand{\Ph}{\Phi}
+\newcommand{\vph}{\varphi}
+\newcommand{\vpi}{\varpi}
+\newcommand{\ch}{\chi}
+\newcommand{\ps}{\psi}
+\newcommand{\Ps}{\Psi}
+\newcommand{\om}{\omega}
+\newcommand{\Om}{\Omega}
+
+\newcommand{\bbA}{\mathbb{A}}
+\newcommand{\A}{\mathbb{A}}
+\newcommand{\bbB}{\mathbb{B}}
+\newcommand{\bbC}{\mathbb{C}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\bbD}{\mathbb{D}}
+\newcommand{\bbE}{\mathbb{E}}
+\newcommand{\bbF}{\mathbb{F}}
+\newcommand{\bbG}{\mathbb{G}}
+\newcommand{\G}{\mathbb{G}}
+\newcommand{\bbH}{\mathbb{H}}
+\newcommand{\HH}{\mathbb{H}}
+\newcommand{\bbI}{\mathbb{I}}
+\newcommand{\I}{\mathbb{I}}
+\newcommand{\bbJ}{\mathbb{J}}
+\newcommand{\bbK}{\mathbb{K}}
+\newcommand{\bbL}{\mathbb{L}}
+\newcommand{\bbM}{\mathbb{M}}
+\newcommand{\bbN}{\mathbb{N}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\bbO}{\mathbb{O}}
+\newcommand{\bbP}{\mathbb{P}}
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\bbQ}{\mathbb{Q}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\bbR}{\mathbb{R}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\bbS}{\mathbb{S}}
+\newcommand{\bbT}{\mathbb{T}}
+\newcommand{\bbU}{\mathbb{U}}
+\newcommand{\bbV}{\mathbb{V}}
+\newcommand{\bbW}{\mathbb{W}}
+\newcommand{\bbX}{\mathbb{X}}
+\newcommand{\bbY}{\mathbb{Y}}
+\newcommand{\bbZ}{\mathbb{Z}}
+\newcommand{\Z}{\mathbb{Z}}
+
+\newcommand{\scrA}{\mathcal{A}}
+\newcommand{\scrB}{\mathcal{B}}
+\newcommand{\scrC}{\mathcal{C}}
+\newcommand{\scrD}{\mathcal{D}}
+\newcommand{\scrE}{\mathcal{E}}
+\newcommand{\scrF}{\mathcal{F}}
+\newcommand{\scrG}{\mathcal{G}}
+\newcommand{\scrH}{\mathcal{H}}
+\newcommand{\scrI}{\mathcal{I}}
+\newcommand{\scrJ}{\mathcal{J}}
+\newcommand{\scrK}{\mathcal{K}}
+\newcommand{\scrL}{\mathcal{L}}
+\newcommand{\scrM}{\mathcal{M}}
+\newcommand{\scrN}{\mathcal{N}}
+\newcommand{\scrO}{\mathcal{O}}
+\newcommand{\scrP}{\mathcal{P}}
+\newcommand{\scrQ}{\mathcal{Q}}
+\newcommand{\scrR}{\mathcal{R}}
+\newcommand{\scrS}{\mathcal{S}}
+\newcommand{\scrT}{\mathcal{T}}
+\newcommand{\scrU}{\mathcal{U}}
+\newcommand{\scrV}{\mathcal{V}}
+\newcommand{\scrW}{\mathcal{W}}
+\newcommand{\scrX}{\mathcal{X}}
+\newcommand{\scrY}{\mathcal{Y}}
+\newcommand{\scrZ}{\mathcal{Z}}
+
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+\newcommand{\colorcomment}[2]{\textcolor{#1}{#2}} %First of these leaves in comments. Second one kills them.
+%\newcommand{\colorcomment}[2]{}
+
+
+\pagestyle{fancy}
+\lhead{Max Jeter}
+\rhead{MA503, Assignment 1, Page \thepage}
+
+\begin{document}
+
+{\bf Problem 1:}
+
+%Show: O(S_n) = n!
+
+\shunt
+
+{\bf Problem 2:}
+
+Let $G$ be a group and $H \subset G$ be nonempty and finite.
+
+If $H < G$, then if $a \in H$ and $b \in H$, then $ab \in H$. Else, $H$ does not inherit the group operation of $G$.
+
+Next, assume that $a,b \in H$ implies that $ab \in H$.
+
+\tab Then $H$ inherits the group operation of $G$.
+
+\tab Because the group operation of $G$ was associative, the inherited group operation on $H$ is also associative.
+
+\tab Further, $e \in H$:
+
+\tab \tab %Prove that
+
+\tab Next, for all $a \in H$, $a^{-1} \in H$:
+
+\tab \tab %Proof
+
+\tab Thus, $H$ is a group under the inherited group operation of $G$: $H<G$.
+
+So $H<G$ if and only if for all $a, b \in H$, $ab \in H$.
+
+\shunt
+
+{\bf Problem 3:}
+
+Let $G$ be a group such that for all $a,b \in G$ and for three given consectuve integers $i$, $(ab)^i = a^ib^i$.
+
+Then there is an $n \in \Z$ such that for all $a, b \in G$:
+
+\begin{align*}
+&(ab)^n = a^nb^n \\
+&(ab)^{n-1} = a^{n-1}b^{n-1} = a^{-1}(ab)^n b^{-1} \\
+&(ab)^{n+1} = a^{n+1}b^{n+1} = a(ab)^nb \\
+\end{align*}
+
+Now, for all $a, b \in G$,
+
+\begin{align*}
+ab &= (ab)^n {((ab)^{n-1})}^{-1} \\
+&=a^nb^n b ((ab)^{n})^{-1}a \\
+&=a^nb^n b ((ab)^{n})^{-1}a \\
+&=a^{-1}a^{n+1}b^{n+1}((ab)^{n})^{-1}a \\
+&=a^{-1}(ab)^{n+1}(ab)^{-n}a \\
+&=a^{-1}(ab)a \\
+&=a^{-1}aba \\
+&=ba
+\end{align*}
+
+To summarize, for all $a, b \in G$, $ab= ba$. That is, $G$ is abelian.
+
+\shunt
+
+{\bf Problem 4:}
+
+Let $G = \left\langle\left[\begin{smallmatrix}0&1\\ -1&0 \end{smallmatrix}\right],\left[\begin{smallmatrix}0&1\\ 1&0 \end{smallmatrix}\right] \right\rangle < GL_2(\R)$.
+
+$G$ has $8$ elements; they are:
+\begin{align*}
+&\left[\begin{smallmatrix}0&1\\ -1&0 \end{smallmatrix}\right],
+\left[\begin{smallmatrix}-1&0\\ 0&-1 \end{smallmatrix}\right],
+\left[\begin{smallmatrix}0&-1\\ 1&0 \end{smallmatrix}\right],
+\left[\begin{smallmatrix}1&0\\ 0&1 \end{smallmatrix}\right],\\
+&\left[\begin{smallmatrix}0&1\\ 1&0 \end{smallmatrix}\right],
+\left[\begin{smallmatrix}-1&0\\ 0&1 \end{smallmatrix}\right],
+\left[\begin{smallmatrix}0&-1\\ -1&0 \end{smallmatrix}\right],
+\left[\begin{smallmatrix}1&0\\ 0&-1 \end{smallmatrix}\right].
+\end{align*}
+
+Now, consider $D_4 = \left\langle r, s \right\rangle$, where $r$ is a rotation by $90$ degrees and $s$ is a reflection.
+
+Let $\phi : G \to D_4$ be given as follows:
+
+\begin{align*}
+&\phi(\left[\begin{smallmatrix}0&1\\ -1&0 \end{smallmatrix}\right]) = r,\\
+&\phi(\left[\begin{smallmatrix}-1&0\\ 0&-1 \end{smallmatrix}\right]) = r^2,\\
+&\phi(\left[\begin{smallmatrix}0&-1\\ 1&0 \end{smallmatrix}\right]) = r^3,\\
+&\phi(\left[\begin{smallmatrix}1&0\\ 0&1 \end{smallmatrix}\right]) = e,\\
+&\phi(\left[\begin{smallmatrix}0&1\\ 1&0 \end{smallmatrix}\right]) = s,\\
+&\phi(\left[\begin{smallmatrix}-1&0\\ 0&1 \end{smallmatrix}\right]) = sr,\\
+&\phi(\left[\begin{smallmatrix}0&-1\\ -1&0 \end{smallmatrix}\right]) = sr^2,\\
+&\phi(\left[\begin{smallmatrix}1&0\\ 0&-1 \end{smallmatrix}\right]) = sr^3.
+\end{align*}
+
+Then it is readily checked (where ``readily'' means in a series of not more than $64$ matrix multiplications) that $\phi$ is a homomorphism. It is clear that $\phi$ is both one-to-one and onto, so that $\phi$ is a bijection. That is, $\phi$ is an isomorphism.
+
+\shunt
+
+{\bf Problem 5:}
+
+\shunt
+
+{\bf Problem 6:}
+
+\shunt
+
+\end{document}
