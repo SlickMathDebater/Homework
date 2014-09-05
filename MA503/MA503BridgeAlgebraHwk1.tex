@@ -131,8 +131,6 @@
 
 {\bf Problem 1:}
 
-%Show: O(S_n) = n!
-
 We proceed by induction. 
 
 First, note that $O(S_1) = 1$ (there is only one map on a set with one element, and it is bijective.)
@@ -141,18 +139,17 @@ Next, assume that for all $n \leq N$, $O(S_n) = n!$.
 
 \tab Consider the set $\{1, 2 \ldots N+1\}$. There are $N+1$ ways to omit a single point, $S$, from this set; there are $N!$ bijective functions from the set ${1, 2 \ldots N}$ to the set $\{1, 2 \ldots N+1\} \setminus \{S\}$. For each such function,$f$ there is a unique bijective function, $\phi_f$ from $\{1, 2 \ldots N+1\}$ to $\{1, 2 \ldots N+1\}$ such that $\phi_f(n) = f(n)$ if $n \leq N$; it is given by $\phi_f(n) = f(n)$ if $n \leq N$ and $\phi_f(N+1) = S$.
 
-\tab So there are $N!(N+1)$ bijective functions from $\{1, 2 \ldots N+1\}$ to $\{1, 2 \ldots N+1\}$.
-
-\tab That is, $O(S_{N+1}) = (N+1)!$.
+\tab So there are $N!(N+1)$ bijective functions from $\{1, 2 \ldots N+1\}$ to $\{1, 2 \ldots N+1\}$. That is, $O(S_{N+1}) = (N+1)!$.
 
 Thus, for all $n \in \N$, $O(S_n) = n!$.
+
 \shunt
 
 {\bf Problem 2:}
 
 Let $G$ be a group and $H \subset G$ be nonempty and finite.
 
-If $H < G$, then if $a \in H$ and $b \in H$, then $ab \in H$. Else, $H$ does not inherit the group operation of $G$.
+If $H < G$, then if $a \in H$ and $b \in H$, then $ab \in H$. Else, $H$ does not inherit the group operation of $G$. That is, the group operation on $G$ is not an operation on $H$.
 
 Next, assume that $a,b \in H$ implies that $ab \in H$.
 
