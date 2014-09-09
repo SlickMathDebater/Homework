@@ -137,11 +137,19 @@ Let $G$ be a group, with $H<G$ and $K <G$.
 
 Let $HK < G$.
 
-\tab
+\tab Then for all $x,y \in HK$, $xy^{-1} \in HK$.
+
+\tab Let $h \in H$ and $k \in K$. Then $e,h,k,h^{-1},k^{-1} \in HK$. This means that $h^{-1}k^{-1} \in HK$. So $ekh = kh \in HK$. That is, if $h \in H$ and $k \in K$, $kh \in HK$. That is, any element of $KH$ is contained in $HK$. Similarly, any element of $HK$ is contained in $KH$
+
+\tab So $HK = KH$ if $HK$ is a subgroup.
 
 Now, let $HK=KH$.
 
-\tab 
+\tab Then let $x,y \in HK$. There are $h_1,h_2 \in H$, $k_1,k_2 \in K$ such that $h_1k_1 = x$ and $h_2k_2 = y$.
+
+\tab Now, $HK=KH$. So $xy^{-1} = h_1k_1k_2^{-1}h_2^{-1} \in HKKH=HKH=HHK=HK$
+
+\tab So if $x,y \in HK$, then $xy^{-1} \in HK$. This means that $HK$ satisfies the subgroup criterion; $HK$ is a subgroup.
 
 Thus, $HK < G$ if and only if $KH=HK$.
 
@@ -181,15 +189,30 @@ We show that $\phi$ is an isomorphism:
 
 First, $\phi$ is a homomorphism:
 
-\tab %Proof
+\tab Let $(a,b), (c,d) \in H \times K$.
+
+\tab Then 
+
+\begin{align*}
+\phi((a,b)(c,d)) &= \phi((ac,bd)) \\
+&= acbd \\
+&= abcd \\
+&= \phi((a,b))\phi((c,d))
+\end{align*}
+
+\tab (The third line follows from part a)
+
+\tab To summarize the above, $\phi((a,b)(c,d)) = \phi((a,b))\phi((c,d))$ for all $(a,b), (c,d) \in H \times K$. That is, $\phi$ is a homomorphism.
 
 Next, $\phi$ is one-to-one:
 
-\tab %Proof
+\tab Let $(a,b) \in \ker(\phi)$. Then $ab = e$. In other words, $a = b^{-1}$. This implies that $a \in K$, which would mean that $a = e$. This means that $b = e$.
+
+\tab So $\ker(\phi) = \{e\}$. This means that $\phi$ is one-to-one. (If we don't know this implication yet...If $\phi$ is not one-to-one, then there are two distinct elements ($x,y$) that map to the same thing ($z$) so you can show that there is an element ($xy^{-1}$) that maps to $e$...So the kernel would have more than one thing in it. Take the contrapositive, and you get this result.)
 
 Last $\phi$ is onto:
 
-\tab %Proof
+\tab Let $x \in HK$. Then $x = hk$ for some $h \in H$, $k \in K$. So $x = \phi((h,k))$ for some $h \in H$, $k \in K$.
 
 Thus, there is an isomorphism from $H \times K$ to $HK$. That is, $H \times K \cong HK$.
 
