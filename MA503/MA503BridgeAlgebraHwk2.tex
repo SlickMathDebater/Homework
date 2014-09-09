@@ -1,0 +1,263 @@
+
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{fancyhdr}
+\usepackage{amssymb}
+%\usepackage{mathpazo}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{slashed}
+\usepackage[mathscr]{euscript}
+
+\newcommand{\tab}{\hspace{4mm}} %Spacing aliases
+\newcommand{\shunt}{\vspace{20mm}}
+
+\newcommand{\sd}{\partial} %Squiggle d
+
+\newcommand{\absval}[1]{\lvert #1 \rvert}
+\newcommand{\anbrack}[1]{\left\langle #1 \right\rangle}
+\newcommand{\norm}[1]{\|#1\|}
+
+
+\newcommand{\al}{\alpha} %Steal ALL of Dr. Kable's Aliases! MWAHAHAHAHA!
+\newcommand{\be}{\beta}
+\newcommand{\ga}{\gamma}
+\newcommand{\Ga}{\Gamma}
+\newcommand{\de}{\delta}
+\newcommand{\De}{\Delta}
+\newcommand{\ep}{\epsilon}
+\newcommand{\vep}{\varepsilon}
+\newcommand{\ze}{\zeta}
+\newcommand{\et}{\eta}
+\newcommand{\tha}{\theta}
+\newcommand{\vtha}{\vartheta}
+\newcommand{\Tha}{\Theta}
+\newcommand{\io}{\iota}
+\newcommand{\ka}{\kappa}
+\newcommand{\la}{\lambda}
+\newcommand{\La}{\Lambda}
+\newcommand{\rh}{\rho}
+\newcommand{\si}{\sigma}
+\newcommand{\Si}{\Sigma}
+\newcommand{\ta}{\tau}
+\newcommand{\ups}{\upsilon}
+\newcommand{\Ups}{\Upsilon}
+\newcommand{\ph}{\phi}
+\newcommand{\Ph}{\Phi}
+\newcommand{\vph}{\varphi}
+\newcommand{\vpi}{\varpi}
+\newcommand{\ch}{\chi}
+\newcommand{\ps}{\psi}
+\newcommand{\Ps}{\Psi}
+\newcommand{\om}{\omega}
+\newcommand{\Om}{\Omega}
+
+\newcommand{\bbA}{\mathbb{A}}
+\newcommand{\A}{\mathbb{A}}
+\newcommand{\bbB}{\mathbb{B}}
+\newcommand{\bbC}{\mathbb{C}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\bbD}{\mathbb{D}}
+\newcommand{\bbE}{\mathbb{E}}
+\newcommand{\bbF}{\mathbb{F}}
+\newcommand{\bbG}{\mathbb{G}}
+\newcommand{\G}{\mathbb{G}}
+\newcommand{\bbH}{\mathbb{H}}
+\newcommand{\HH}{\mathbb{H}}
+\newcommand{\bbI}{\mathbb{I}}
+\newcommand{\I}{\mathbb{I}}
+\newcommand{\bbJ}{\mathbb{J}}
+\newcommand{\bbK}{\mathbb{K}}
+\newcommand{\bbL}{\mathbb{L}}
+\newcommand{\bbM}{\mathbb{M}}
+\newcommand{\bbN}{\mathbb{N}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\bbO}{\mathbb{O}}
+\newcommand{\bbP}{\mathbb{P}}
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\bbQ}{\mathbb{Q}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\bbR}{\mathbb{R}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\bbS}{\mathbb{S}}
+\newcommand{\bbT}{\mathbb{T}}
+\newcommand{\bbU}{\mathbb{U}}
+\newcommand{\bbV}{\mathbb{V}}
+\newcommand{\bbW}{\mathbb{W}}
+\newcommand{\bbX}{\mathbb{X}}
+\newcommand{\bbY}{\mathbb{Y}}
+\newcommand{\bbZ}{\mathbb{Z}}
+\newcommand{\Z}{\mathbb{Z}}
+
+\newcommand{\scrA}{\mathcal{A}}
+\newcommand{\scrB}{\mathcal{B}}
+\newcommand{\scrC}{\mathcal{C}}
+\newcommand{\scrD}{\mathcal{D}}
+\newcommand{\scrE}{\mathcal{E}}
+\newcommand{\scrF}{\mathcal{F}}
+\newcommand{\scrG}{\mathcal{G}}
+\newcommand{\scrH}{\mathcal{H}}
+\newcommand{\scrI}{\mathcal{I}}
+\newcommand{\scrJ}{\mathcal{J}}
+\newcommand{\scrK}{\mathcal{K}}
+\newcommand{\scrL}{\mathcal{L}}
+\newcommand{\scrM}{\mathcal{M}}
+\newcommand{\scrN}{\mathcal{N}}
+\newcommand{\scrO}{\mathcal{O}}
+\newcommand{\scrP}{\mathcal{P}}
+\newcommand{\scrQ}{\mathcal{Q}}
+\newcommand{\scrR}{\mathcal{R}}
+\newcommand{\scrS}{\mathcal{S}}
+\newcommand{\scrT}{\mathcal{T}}
+\newcommand{\scrU}{\mathcal{U}}
+\newcommand{\scrV}{\mathcal{V}}
+\newcommand{\scrW}{\mathcal{W}}
+\newcommand{\scrX}{\mathcal{X}}
+\newcommand{\scrY}{\mathcal{Y}}
+\newcommand{\scrZ}{\mathcal{Z}}
+
+\newcommand{\subgp}{\mathrel{\unlhd}}
+
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+\newcommand{\colorcomment}[2]{\textcolor{#1}{#2}} %First of these leaves in comments. Second one kills them.
+%\newcommand{\colorcomment}[2]{}
+
+
+\pagestyle{fancy}
+\lhead{Max Jeter}
+\rhead{MA503, Assignment 2, Page \thepage}
+
+\begin{document}
+
+{\bf Problem 1:}
+
+Let $G$ be a group, with $H<G$ and $K <G$.
+
+Let $HK < G$.
+
+\tab
+
+Now, let $HK=KH$.
+
+\tab 
+
+Thus, $HK < G$ if and only if $KH=HK$.
+
+\shunt
+
+{\bf Problem 2:}
+
+Let $G$ be a group and $H \subgp G$ and $K \subgp G$, such that $H \cup K = \{e\}$.
+
+Part a:
+
+Let $h \in H$, $k \in K$.
+
+Because $K$ is normal, $hkh^{-1} \in K$.
+
+Thus, $hkh^{-1}k^{-1} \in K$.
+
+But because $H$ is normal, $kh^{-1}k^{-1} \in H$.
+
+So $hkh^{-1}k^{-1} \in H$.
+
+So $hkh^{-1}k^{-1} \in H \cup K$, which means that $hkh^{-1}k^{-1} = e$.
+
+So $hkh^{-1} = k$, which means that $hk = kh$.
+
+So $hk = kh$ for all $h \in H$, $k \in K$.
+
+\shunt
+
+Part b:
+
+From the above, it is clear that $HK = KH$. From this fact and problem 1, it follows that $HK$ is a subgroup of $G$.
+
+Now, let $\phi : H \times K \to HK$ be given by $\phi((h,k)) = hk$.
+
+We show that $\phi$ is an isomorphism:
+
+First, $\phi$ is a homomorphism:
+
+\tab %Proof
+
+Next, $\phi$ is one-to-one:
+
+\tab %Proof
+
+Last $\phi$ is onto:
+
+\tab %Proof
+
+Thus, there is an isomorphism from $H \times K$ to $HK$. That is, $H \times K \cong HK$.
+
+\shunt
+
+{\bf Problem 3:}
+
+First, $Q_8$ is non-Abelian: 
+\begin{align*}
+\left[\begin{smallmatrix}0&1\\ -1&0 \end{smallmatrix}\right] \left[\begin{smallmatrix}0&i\\ i&0 \end{smallmatrix}\right] &= \left[\begin{smallmatrix}i&0\\ 0&-i \end{smallmatrix}\right] \\
+\left[\begin{smallmatrix}0&i\\ i&0 \end{smallmatrix}\right] \left[\begin{smallmatrix}0&1\\ -1&0 \end{smallmatrix}\right] &= \left[\begin{smallmatrix}-i&0\\ 0&i \end{smallmatrix}\right]
+\end{align*}
+
+
+However, all of $Q_8$'s subgroups are normal.
+
+Because $8 = 2*2*2$, any subgroup of $Q_8$ has order $1$,$2$,$4$, or $8$.
+
+Any subgroup of order $1$,$4$, or $8$ is trivially normal, from the discussion in class. It only remains to show that the subgroups of order $2$ are normal.
+
+Now, there is only one subgroup of order $2$ in $Q_8$; it is $\{I, -I\}$. This is clear because there is only one element of order $2$ in $Q_8$, and any subgroup of order $2$ has to have exactly one element of order $2$ (which is trivial from Cayley's theorem... elements of a group must have order dividing the group, and there can only be one element of order $1$ ($e$). So there has to be an element of an order other than $1$...there must be an element of order $2$. But $e$ has to be in the subgroup, so there's an element of order $1$. And because there's only two elements, one of them is $e$ and the other is the element of order $2$).
+
+Now, $\{I, -I\}$ is normal:
+
+Let $A \in Q_8$.
+
+Recall that $I$ and $-I$ commute with every matrix.
+
+$AIA^{-1} = IAA^{-1} = II=I$.
+
+$A(-I)A^{-1} = (-I)AA^{-1} = (-I)I=-I$.
+
+So for all $A \in Q_8$ and $B \in \{I, -I\}$, $ABA^{-1} \in \{I, -I\}$. That is, $\{I, -I\}$ is normal.
+
+So all of $Q_8$'s subgroups of order $1$, $2$, $4$, and $8$ are normal. That is, all of $Q_8$'s subgroups are normal even though $Q_8$ isn't abelian.
+
+\shunt
+
+{\bf Problem 4:}
+
+Consider $\anbrack{s} < \anbrack{s,r^2} < D_4$.
+
+Now, $\anbrack{s,r^2} = \{e,s,r^2,sr^2\}$ has order $4$; it is normal in $D_4$.
+
+Also, $\anbrack{s}$ has order $2$; it is normal in $\anbrack{blah}$.
+
+However, $\anbrack{s}$ is not normal in $D_4$: $rsr^{-1} = sr^3r^{-1}=sr^2$, and $sr^2 \notin \anbrack{s}$.
+
+So $\anbrack{s} \subgp \anbrack{s,r^2} \subgp D_4$, but $\anbrack{s}$ isn't a normal subgroup of $D_4$.
+
+\shunt
+
+{\bf Problem 5:}
+
+Part a:
+
+\shunt
+
+Part b (i):
+
+\shunt
+
+Part b (ii):
+
+\shunt
+
+{\bf Problem 6:}
+
+\shunt
+
+\end{document}
