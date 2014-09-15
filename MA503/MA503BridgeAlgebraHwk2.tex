@@ -342,15 +342,26 @@ Last, $H = \anbrack{1/p^n}$:
 
 \tab Let $x \in H$.
 
-\tab Then $x = a/p^i$ for some $a \in \Z$, $i \in \N$ between $0$ and $n$.
+\tab Then $x = a/p^i$ for some $a \in \Z$, $i \in \N$.
 
-\tab Now, there is a $j \in \N$ such that $i+j = n$ (this is true because $i$ is a natural number not grater than $n$).
+\tab If $x = 0$, then $x \in \anbrack{1/p^n}$.
 
-\tab We know that $x=ap^j/p^{i+j} = ap^j/p^n$. 
+\tab Else, we can reduce the above fraction so that $a$ and $p$ are relatively prime (if we don't have it fully reduced, we can just reduce the fraction until it is in that form or until we wind up with an integer...in which case, $x=0$).
 
-\tab That is, $x= m \times 1/p^n$ for some $m \in \Z$. (We can do this because $j$ was non-negative, and so $p^j \in \N$.)
+\tab Now, we know (from number theory) that there are $r,s \in \Z$ such that $ra+sp^i = 1$.
 
-\tab So $x \in \anbrack{1/p^n}$.
+\tab Consider $rx$;
+
+\begin{align*}
+rx &= ra/p^i\\
+&= ra/p^i + sp^i/p^i\\
+&= (ra+sp^i)/p^i\\
+&= 1/p^i
+\end{align*}
+
+\tab This means that if $x \in H$ is such that $x=a/p^i$, then $1/p^i \in H$. Because we know that there is a largest $n$ such that $1/p^n \in H$, this means that $i \leq n$.
+
+\tab So if $x \in H$, then if we take $x=a/p^i$, we have that $x=ap^j/p^n$ for some $j \geq 0$. That means that $x \in \anbrack{1/p^n}$;
 
 \tab So we have that $H \subset \anbrack{1/p^n}$. But because $1/p^n \in H$ and $H$ is a subgroup, this means that $H \supset \anbrack{1/p^n}$. So we have that $H = \anbrack{1/p^n}$.
 
