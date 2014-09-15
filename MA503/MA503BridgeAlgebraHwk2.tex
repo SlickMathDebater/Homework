@@ -139,7 +139,9 @@ Let $HK < G$.
 
 \tab Then for all $x,y \in HK$, $xy^{-1} \in HK$.
 
-\tab Let $h \in H$ and $k \in K$. Then $e,h,k,h^{-1},k^{-1} \in HK$. This means that $h^{-1}k^{-1} \in HK$. So $ekh = kh \in HK$. That is, if $h \in H$ and $k \in K$, $kh \in HK$. That is, any element of $KH$ is contained in $HK$. Similarly, any element of $HK$ is contained in $KH$
+\tab Let $h \in H$ and $k \in K$. Then $h^{-1} \in H$ and $k^{-1} \in K$. Also, $e \in H$ and $e \in K$. Then $h^{-1}e=h^{-1},ek^{-1}=k^{-1},ee=e \in HK$. Because $HK$ is a subgroup, this means that $h^{-1}k^{-1} \in HK$. So, by the subgroup criterion, $e(h^{-1}k^{-1})^{-1}=ekh = kh \in HK$.
+
+\tab To summarize, if $h \in H$ and $k \in K$, $kh \in HK$. That is, any element of $KH$ is contained in $HK$. Similarly, any element of $HK$ is contained in $KH$
 
 \tab So $HK = KH$ if $HK$ is a subgroup.
 
@@ -181,7 +183,9 @@ So $hk = kh$ for all $h \in H$, $k \in K$.
 
 Part b:
 
-From the above, it is clear that $HK = KH$. From this fact and problem 1, it follows that $HK$ is a subgroup of $G$.
+From the above, it is clear that $HK = KH$.(If this is not clear: let $x \in HK$. Then $x = hk$ for some $h \in H$, $k \in K$. But this means that $x = kh$. So $x =kh$ for some $k \in K$, $h \in H$; that is, $x \in KH$. Similarly, if $x \in KH$, then $x \in HK$.)
+
+Moving on, from this fact and problem 1, it follows that $HK$ is a subgroup of $G$.
 
 Now, let $\phi : H \times K \to HK$ be given by $\phi((h,k)) = hk$.
 
@@ -196,11 +200,9 @@ First, $\phi$ is a homomorphism:
 \begin{align*}
 \phi((a,b)(c,d)) &= \phi((ac,bd)) \\
 &= acbd \\
-&= abcd \\
+&= abcd \tab \text{ (this follows from part a) }\\
 &= \phi((a,b))\phi((c,d))
 \end{align*}
-
-\tab (The third line follows from part a)
 
 \tab To summarize the above, $\phi((a,b)(c,d)) = \phi((a,b))\phi((c,d))$ for all $(a,b), (c,d) \in H \times K$. That is, $\phi$ is a homomorphism.
 
@@ -208,7 +210,9 @@ Next, $\phi$ is one-to-one:
 
 \tab Let $(a,b) \in \ker(\phi)$. Then $ab = e$. In other words, $a = b^{-1}$. This implies that $a \in K$, which would mean that $a = e$. This means that $b = e$.
 
-\tab So $\ker(\phi) = \{e\}$. This means that $\phi$ is one-to-one. (If we don't know this implication yet...If $\phi$ is not one-to-one, then there are two distinct elements ($x,y$) that map to the same thing ($z$) so you can show that there is an element ($xy^{-1}$) that maps to $e$...So the kernel would have more than one thing in it. Take the contrapositive, and you get this result.)
+\tab So $\ker(\phi) = \{e\}$. This means that $\phi$ is one-to-one.
+
+\tab \tab (If a homomorphism, $\phi$, is not one-to-one, then there are two distinct elements ($x,y$) that $\phi$ maps to the same thing ($z$) so there is an element ($xy^{-1}$) that $\phi$ maps to $e$...So the kernel would have more than one thing in it. Take the contrapositive, and you get the above line. (I can't recall if we've done this in class yet...))
 
 Last $\phi$ is onto:
 
@@ -220,18 +224,17 @@ Thus, there is an isomorphism from $H \times K$ to $HK$. That is, $H \times K \c
 
 {\bf Problem 3:}
 
-First, $Q_8$ is non-Abelian: 
+First, $Q_8$ is non-Abelian. Here is a display of this fact: 
 \begin{align*}
 \left[\begin{smallmatrix}0&1\\ -1&0 \end{smallmatrix}\right] \left[\begin{smallmatrix}0&i\\ i&0 \end{smallmatrix}\right] &= \left[\begin{smallmatrix}i&0\\ 0&-i \end{smallmatrix}\right] \\
 \left[\begin{smallmatrix}0&i\\ i&0 \end{smallmatrix}\right] \left[\begin{smallmatrix}0&1\\ -1&0 \end{smallmatrix}\right] &= \left[\begin{smallmatrix}-i&0\\ 0&i \end{smallmatrix}\right]
 \end{align*}
 
-
 However, all of $Q_8$'s subgroups are normal.
 
-Because $8 = 2*2*2$, any subgroup of $Q_8$ has order $1$,$2$,$4$, or $8$.
+Because $8 = 2 \times 2 \times 2$, any subgroup of $Q_8$ has order $1$,$2$,$4$, or $8$.
 
-Any subgroup of order $1$,$4$, or $8$ is trivially normal, from the discussion in class. It only remains to show that the subgroups of order $2$ are normal.
+Any subgroup of order $1$,$4$, or $8$ is trivially normal, from the discussion in class. (For order $1$, the subgroup is necessarily just $\{e\}$. For order $8$, the subgroup is necessarily just $Q_8$. For order $4$, we apply the fact that subgroups of order ``half the order of the original group'' are normal.) It only remains to show that the subgroups of order $2$ are normal.
 
 Now, there is only one subgroup of order $2$ in $Q_8$; it is $\{I, -I\}$. This is clear because there is only one element of order $2$ in $Q_8$, and any subgroup of order $2$ has to have exactly one element of order $2$ (which is trivial from Cayley's theorem... elements of a group must have order dividing the group, and there can only be one element of order $1$ ($e$). So there has to be an element of an order other than $1$...there must be an element of order $2$. But $e$ has to be in the subgroup, so there's an element of order $1$. And because there's only two elements, one of them is $e$ and the other is the element of order $2$).
 
@@ -241,9 +244,9 @@ Let $A \in Q_8$.
 
 Recall that $I$ and $-I$ commute with every matrix.
 
-$AIA^{-1} = IAA^{-1} = II=I$.
+This means that $AIA^{-1} = IAA^{-1} = II=I$.
 
-$A(-I)A^{-1} = (-I)AA^{-1} = (-I)I=-I$.
+And also that $A(-I)A^{-1} = (-I)AA^{-1} = (-I)I=-I$.
 
 So for all $A \in Q_8$ and $B \in \{I, -I\}$, $ABA^{-1} \in \{I, -I\}$. That is, $\{I, -I\}$ is normal.
 
@@ -257,7 +260,7 @@ Consider $\anbrack{s} < \anbrack{s,r^2} < D_4$.
 
 Now, $\anbrack{s,r^2} = \{e,s,r^2,sr^2\}$ has order $4$; it is normal in $D_4$.
 
-Also, $\anbrack{s}$ has order $2$; it is normal in $\anbrack{blah}$.
+Also, $\anbrack{s}$ has order $2$; it is normal in $\anbrack{s,r^2}$.
 
 However, $\anbrack{s}$ is not normal in $D_4$: $rsr^{-1} = sr^3r^{-1}=sr^2$, and $sr^2 \notin \anbrack{s}$.
 
@@ -267,20 +270,160 @@ So $\anbrack{s} \subgp \anbrack{s,r^2} \subgp D_4$, but $\anbrack{s}$ isn't a no
 
 {\bf Problem 5:}
 
+Note: I will suppress the overline notation in this problem. That is, for this problem consider $\overline{a/p^i}$ and $a/p^i$ to be the same thing. Moreover, I am using $+$ as the operation, because this makes the problem more natural.
+
 Part a:
 
+First, $\Z_{p^\infty}$ is infinite: 
+
+\tab For each $x \in \N$, $1/p^x \in \Z_{p^\infty}$.
+
+\tab That is, there is an injection of $\N$ into $\Z_{p^\infty}$. So there's an injection of some infinite set into $\Z_{p^\infty}$...that means that $\Z_{p^\infty}$ is infinite.
+
+Second, $\Z_{p^\infty}$ is a subgroup of $\Q/\Z$:
+
+\tab First, we point out that $\Q/\Z$ is a group; $\Q$ is a group, and $\Z$ is an abelian subgroup of $\Q$. This means that $\Z$ is normal in $\Q$.
+
+\tab Now, we apply the subgroup criterion to show that $\Z_{p^\infty}$ is a subgroup of $\Q/\Z$; let $x, y \in \Z_{p^\infty}$. 
+
+\tab Then $x = a/p^i$ for some $a \in \Z$, $i \geq 0$.
+
+\tab Also, $y = b/p^j$ for some $b \in \Z$, $j \geq 0$.
+
+\tab So $x+y^{-1} = a/p^i - b/p^j = \frac{ap^j - bp^i}{p^{i+j}}$. That is, $x+y^{-1} = c/p^k$ for some $c \in \Z$, $k \geq 0$. So $x+y^{-1} \in \Z_{p^\infty}$.
+
+\tab So applying the subgroup criterion, $\Z_{p^\infty}$ is a subgroup of $\Q/\Z$. 
+
+Last, $\Z_{p^\infty}$ is abelian:
+
+\tab Let $x, y \in \Z_{p^\infty}$.
+
+\tab Then $x = a/p^i$ for some $a \in \Z$, $i \geq 0$.
+
+\tab Also, $y = b/p^j$ for some $b \in \Z$, $j \geq 0$.
+
+\tab This means that 
+
+\begin{align*}
+x+y &= a/p^i + b/p^j \\
+&= \frac{ap^j + bp^i}{p^{i+j}}\\
+&= \frac{ bp^i+ ap^j}{p^{i+j}}\\
+&= b/p^j+ a/p^i\\
+&= y+x
+\end{align*}
+
+\tab So for all $x, y \in \Z_{p^\infty}$, $x+y=y+x$.
+
+So $\Z_{p^\infty}$ is an infinite abelian subgroup of $\Q/\Z$. That means that $\Z_{p^\infty}$ is an infinite abelian group.
+
 \shunt
 
-Part b (i):
+Part b:
+
+Let $H < \Z_{p^\infty}$ with $H \neq \Z_{p^\infty}$.
+
+Part (i):
+
+First, there is an element $1/p^n \in H$, for some $n \in \N$; the identity is of the form $1/p^0$.
+
+Next, there is a largest $n \in \N$ such that $1/p^n \in H$:
+
+\tab Assume not.
+
+\tab Now, if $1/p^N \in H$, then $1/p^n \in H$ for all $n < N$; because $H$ is a subgroup, $1/p^N \in H$ implies that $1/p^{N-1} = p/p^N \in H$. Similarly, $1/p^{N-2}$,$1/p^{N-3}$...and $1/p^{N-N}$ are all in $H$.
+
+\tab But there is no largest $n \in \N$ such that $1/p^n \in H$. So by the above line, for every $n \in \N$, $1/p^n \in H$ (because we can just pick a sufficiently large $n \in \N$ and apply the above line to it...).
+
+\tab But we know that $H$ is a subgroup; this means that $a/p^n \in H$ for all $a in \Z$, $n \in \N$ (either add $1/p^n$ $a$ times if $a \geq 0$, or add $-1/p^n$ $-a$ times if $a < 0$). In other words, $a/p^i \in H$ for all $a \in \Z$ and $i \geq 0$.
+
+\tab And the above line means that $H = \Z_{p^\infty}$, which we assumed to not be the case.
+
+Last, $H = \anbrack{1/p^n}$:
+
+\tab Let $x \in H$.
+
+\tab Then $x = a/p^i$ for some $a \in \Z$, $i \in \N$ between $0$ and $n$.
+
+\tab Now, there is a $j \in \N$ such that $i+j = n$ (this is true because $i$ is a natural number not grater than $n$).
+
+\tab We know that $x=ap^j/p^{i+j} = ap^j/p^n$. 
+
+\tab That is, $x= m \times 1/p^n$ for some $m \in \Z$. (We can do this because $j$ was non-negative, and so $p^j \in \N$.)
+
+\tab So $x \in \anbrack{1/p^n}$.
+
+\tab So we have that $H \subset \anbrack{1/p^n}$. But because $1/p^n \in H$ and $H$ is a subgroup, this means that $H \supset \anbrack{1/p^n}$. So we have that $H = \anbrack{1/p^n}$.
+
+So, $H = \anbrack{1/p^n}$ for some $n \geq 0$.
+
+Moving on, $\anbrack{1/p^n} \cong \Z_{p^n}$ (Here, I guess that $\Z_{p^n} = \{a/p^n: a \in \Z\}$.):
+
+\tab Consider the map $\phi: \anbrack{1/p^n} \to \Z_{p^n}$ given by $a/p^n \mapsto a/p^n$. (Note that this is just the identity map.)
+
+First, $\phi$ is a homomorphism:
+
+\tab Let $x,y \in \anbrack{1/p^n}$. Then
+
+\begin{align*}
+\phi(x+y) &= x+y\\
+&=\phi(x)+\phi(y)
+\end{align*}
+
+Next, $\phi$ is one-to-one:
+
+\tab Let $x,y \in \anbrack{1/p^n}$ be such that $\phi(x)=\phi(y)$.
+
+\tab Then
+
+\begin{align*}
+\phi(x) &=\phi(y)\\
+x&=y
+\end{align*}
+
+Last, $\phi$ is onto:
+
+\tab Let $x \in \Z_{p^n}$. Then $\phi(x) = x$. So there is a $y \in \anbrack{1/p^n}$ such that $\phi(y) = y$.
+
+So $\phi$ is a bijective homomorphism; it is an isomorphism. That means that $\anbrack{1/p^n} \cong \Z_{p^n}$.
+
+To summarize the above, we have shown that $H = \anbrack{1/p^n} \cong \Z_{p^n}$
 
 \shunt
 
-Part b (ii):
+Part (ii):
 
-\shunt
+First, we point out that $H$ is normal, because this is an abelian group. That means that $\Z_{p^\infty}/H$ is defined.
 
-{\bf Problem 6:}
+Moving on, we exhibit an isomorphism from $\Z_{p^\infty}$ to $\Z_{p^\infty}/H$.
 
-\shunt
+Consider $\phi: \Z_{p^\infty} \to \Z_{p^\infty}/H $ given by $x \mapsto \overline{x/p^n}$.
+
+Now, $\phi$ is a homomorphism:
+
+\tab Let $x,y \in \Z_{p^\infty}$. Then:
+
+\begin{align*}
+\phi(x+y) &= (x+y)/p^n\\
+&= x/p^n + y/p^n\\
+&= \phi(x)+\phi(y)
+\end{align*}
+
+\tab So $\phi(x+y) = \phi(x) + \phi(y)$; $\phi$ is a homomorphism.
+
+Also, $\phi$ is one-to-one:
+
+\tab Let $x \in \ker(\phi)$. Then $x/p^n \in H$. So $x/p^n = a/p^n$ for some $a \in \Z$. This means that $x \in \Z$, and we are working in $\Q/\Z$; this means that $x = 0$.
+
+\tab We already know that $\ker(\phi)=\{0\}$ implies that $\phi$ is one-to-one if $\phi$ is a homomorphism. So because $\phi$ is a homomorphism with $\ker (\phi)=\{0\}$, $\phi$ is one-to-one.
+
+Last $\phi$ is onto:
+
+\tab Let $y \in \Z_{p^\infty}/H$. Then there is an $x \in \Z_{p^\infty}$ such that $\overline{x} = y$. Now, $\phi(xp^n) = \overline{x} = y$. So there is an $x \in \Z_{p^\infty}$ such that $\phi(x)=y$.
+
+\tab So for all $y \in \Z_{p^\infty}/H$, there is an $x \in \Z_{p^\infty}$ such that $\phi(x)=y$.
+
+\tab So $\phi$ is onto.
+
+Thus, $\phi$ is a bijective homomorphism; it is an isomorphism. That means that $\Z_{p^\infty} \cong \Z_{p^\infty}/H$.
 
 \end{document}
