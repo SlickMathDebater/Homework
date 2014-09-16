@@ -1,0 +1,261 @@
+
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{fancyhdr}
+\usepackage{amssymb}
+%\usepackage{mathpazo}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{slashed}
+\usepackage[mathscr]{euscript}
+
+\newcommand{\tab}{\hspace{4mm}} %Spacing aliases
+\newcommand{\shunt}{\vspace{20mm}}
+
+\newcommand{\sd}{\partial} %Squiggle d
+
+\newcommand{\absval}[1]{\lvert #1 \rvert}
+\newcommand{\norm}[1]{\|#1\|}
+\newcommand{\anbrack}[1]{\left\langle #1 \right\rangle}
+
+
+
+\newcommand{\al}{\alpha} %Steal ALL of Dr. Kable's Aliases! MWAHAHAHAHA!
+\newcommand{\be}{\beta}
+\newcommand{\ga}{\gamma}
+\newcommand{\Ga}{\Gamma}
+\newcommand{\de}{\delta}
+\newcommand{\De}{\Delta}
+\newcommand{\ep}{\epsilon}
+\newcommand{\vep}{\varepsilon}
+\newcommand{\ze}{\zeta}
+\newcommand{\et}{\eta}
+\newcommand{\tha}{\theta}
+\newcommand{\vtha}{\vartheta}
+\newcommand{\Tha}{\Theta}
+\newcommand{\io}{\iota}
+\newcommand{\ka}{\kappa}
+\newcommand{\la}{\lambda}
+\newcommand{\La}{\Lambda}
+\newcommand{\rh}{\rho}
+\newcommand{\si}{\sigma}
+\newcommand{\Si}{\Sigma}
+\newcommand{\ta}{\tau}
+\newcommand{\ups}{\upsilon}
+\newcommand{\Ups}{\Upsilon}
+\newcommand{\ph}{\phi}
+\newcommand{\Ph}{\Phi}
+\newcommand{\vph}{\varphi}
+\newcommand{\vpi}{\varpi}
+\newcommand{\ch}{\chi}
+\newcommand{\ps}{\psi}
+\newcommand{\Ps}{\Psi}
+\newcommand{\om}{\omega}
+\newcommand{\Om}{\Omega}
+
+\newcommand{\bbA}{\mathbb{A}}
+\newcommand{\A}{\mathbb{A}}
+\newcommand{\bbB}{\mathbb{B}}
+\newcommand{\bbC}{\mathbb{C}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\bbD}{\mathbb{D}}
+\newcommand{\bbE}{\mathbb{E}}
+\newcommand{\bbF}{\mathbb{F}}
+\newcommand{\bbG}{\mathbb{G}}
+\newcommand{\G}{\mathbb{G}}
+\newcommand{\bbH}{\mathbb{H}}
+\newcommand{\HH}{\mathbb{H}}
+\newcommand{\bbI}{\mathbb{I}}
+\newcommand{\I}{\mathbb{I}}
+\newcommand{\bbJ}{\mathbb{J}}
+\newcommand{\bbK}{\mathbb{K}}
+\newcommand{\bbL}{\mathbb{L}}
+\newcommand{\bbM}{\mathbb{M}}
+\newcommand{\bbN}{\mathbb{N}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\bbO}{\mathbb{O}}
+\newcommand{\bbP}{\mathbb{P}}
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\bbQ}{\mathbb{Q}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\bbR}{\mathbb{R}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\bbS}{\mathbb{S}}
+\newcommand{\bbT}{\mathbb{T}}
+\newcommand{\bbU}{\mathbb{U}}
+\newcommand{\bbV}{\mathbb{V}}
+\newcommand{\bbW}{\mathbb{W}}
+\newcommand{\bbX}{\mathbb{X}}
+\newcommand{\bbY}{\mathbb{Y}}
+\newcommand{\bbZ}{\mathbb{Z}}
+\newcommand{\Z}{\mathbb{Z}}
+
+\newcommand{\scrA}{\mathcal{A}}
+\newcommand{\scrB}{\mathcal{B}}
+\newcommand{\scrC}{\mathcal{C}}
+\newcommand{\scrD}{\mathcal{D}}
+\newcommand{\scrE}{\mathcal{E}}
+\newcommand{\scrF}{\mathcal{F}}
+\newcommand{\scrG}{\mathcal{G}}
+\newcommand{\scrH}{\mathcal{H}}
+\newcommand{\scrI}{\mathcal{I}}
+\newcommand{\scrJ}{\mathcal{J}}
+\newcommand{\scrK}{\mathcal{K}}
+\newcommand{\scrL}{\mathcal{L}}
+\newcommand{\scrM}{\mathcal{M}}
+\newcommand{\scrN}{\mathcal{N}}
+\newcommand{\scrO}{\mathcal{O}}
+\newcommand{\scrP}{\mathcal{P}}
+\newcommand{\scrQ}{\mathcal{Q}}
+\newcommand{\scrR}{\mathcal{R}}
+\newcommand{\scrS}{\mathcal{S}}
+\newcommand{\scrT}{\mathcal{T}}
+\newcommand{\scrU}{\mathcal{U}}
+\newcommand{\scrV}{\mathcal{V}}
+\newcommand{\scrW}{\mathcal{W}}
+\newcommand{\scrX}{\mathcal{X}}
+\newcommand{\scrY}{\mathcal{Y}}
+\newcommand{\scrZ}{\mathcal{Z}}
+
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+\newcommand{\colorcomment}[2]{\textcolor{#1}{#2}} %First of these leaves in comments. Second one kills them.
+%\newcommand{\colorcomment}[2]{}
+
+
+\pagestyle{fancy}
+\lhead{Max Jeter}
+\rhead{MA544, Assignment 2, Page \thepage}
+
+Note to professor: I routinely use the notation $X_{d,r}(p)$ for the $r$-ball around the point $p$ in the metric space $(X,d)$. If the metric is understood, I will suppress the distance function to shorten this to $X_r(p)$.
+
+I know that the suggested notation for the ball was discussed once, but I prefer this notation.
+
+\begin{document}
+
+{\bf Problem 1:}
+
+Let $E'$ be the set of limit points of a set $E$.
+
+First, $E'$ is closed.
+
+\tab %Proof
+
+Next, $E$ and $\overline{E}$ have the same limit points.
+
+\tab %Proof
+
+Now, $E$ and $E'$ do not always have the same limit points: consider $E = \{1/n: n \in \N}$. Then $E' = \{0\}$, but $E'' = \emptyset$.
+
+\shunt
+
+{\bf Problem 2:}
+
+%Rearrange when you have it figured out.
+
+The following are metrics on $\R$:
+
+$d_2(x,y) = \sqrt{\absval{x-y}}$
+
+$d_3(x,y) = \absval{x^2-y^2}$
+
+$d_5(x,y) = \absval{x-y}/(1+\absval{x-y})$
+
+The following are not metrics on $\R$:
+
+$d_1(x,y) = (x-y)^2$ %This probably fails the triangle inequality
+
+$d_4(x,y) = \absval{x -2y}$ %This fails symmetry
+
+\shunt
+
+{\bf Problem 3:}
+
+Interiors of connected sets are not always connected.
+
+Closures of connected sets are always connected. 
+
+For the first; consider the union of the pair of closed balls in $\R^2$, $\overline{\R^2_1((0,0))} \cup \overline{\R^2_1((0,2))$. This is a connected set (if this is not clear, recall that path connectivity implies connectivity, and we can draw a path from any point to $(0,1)$ (which will imply path connectivity)).
+
+However, the interior of that union is $\R^2_1((0,0)) \cup \R^2_1((0,2))$, which is not connected (It's clear that this is the interior, and pulling out your epsilons and deltas will get it done. If it's not clear that this isn't connected, look at it again.)
+
+Moving on, closures of connected sets are always connected. (I must admit: I have done this problem twice before.)
+
+\tab It is equivalent to show that if the closure of a set, $E$, is disconnected, then $E$ is also disconnected.
+
+\tab Let $X$ be a metric space, and $E \subset X$ with $\overline{E}$ disconnected.
+
+\tab  Then there are $U,V$ both nonempty and open such that $U \cup V = \overline{E}$.
+
+\tab Now, consider $U \cap E$ and $V \cap E$. Both are open in $E$. Moreover, neither is empty:
+
+\tab \tab We know that $U$ contains a point, $x$, in $\overline{E}$.
+
+\tab \tab But $U$ is open; for some $r >0$, $X_r(x) \subset U \cap \overline{E}$.
+
+\tab \tab We know that $x$ is either a limit point of $E$ or is in $E$. In the latter case, this means that $U \cap E$ is nonempty. In the former case, there is a point $x' \in X_r(x)$ with $x' \in E$, otherwise $x$ is not a limit point of $E$. 
+
+\tab \tab So $U \cap E$ is nonempty. Similarly, $V \cap E$ is nonempty.
+
+\tab \tab So $U$ and $V$ disconnect $E$; if $\overline{E}$ is disconnected, then so is $E$. By contrapositive, we have our result.
+
+To summarize: closures of connected sets are always connected, interiors of connected sets aren't always connected.
+
+\shunt
+
+{\bf Problem 4:}
+
+Let $X$ be a separable metric space.
+
+Then $X$ has a countable dense subset; call it $C$.
+
+Now, consider the collection $\scrC = \{X_q(c): c \in C, q \in \Q\}$.
+
+First, note that $\scrC$ is countable; %Short explanation
+
+Now, we show that any open set is a union of elements of $\scrC$:
+
+%Do it.
+
+\tab 
+
+\shunt
+
+{\bf Problem 5:}
+
+Let $X$ be a compact metric space.
+
+%Prove that $X$ has a countable base
+
+Now, $X$ has a countable base. Pick a single point from each element of this base, and call the set of such points $D$. Note that $D$ is countable. Also, because every open set can be written as a union of elements in the base, this means that $D$ intersects every nonempty open set. So, $D$ is dense. So $X$ has a countable dense subset, $X$ is separable. 
+
+\shunt
+
+{\bf Problem 6:}
+
+Let $f, g: X \to Y$ be continuous maps between metric spaces. Let $E$ be dense in $X$.
+
+Then $f(E)$ is dense in $f(X)$:
+
+\tab %Proof
+
+Now, let $f(x)=g(x)$ for all $x \in E$. Then $f(x)=g(x)$ for all $x \in X$.
+
+\tab Let $x \in X$. Then because $E$ is dense in $X$, we know that there is a sequence of points in $E$ that converges to $x$. Call this sequence $\anbrack{x_n}$. Now, $f(x_n) = g(x_n)$ for all $x \in X$. So because $f$ is continuous, $f(x_n) \to f(x)$ and $g(x_n) \to g(x)$. But $f(x_n)$ and $g(x_n)$ are the same sequence; they converge to the same thing. So $f(x) = g(x)$.
+
+\shunt
+
+{\bf Problem 7:}
+
+Let $f: E \to \R$ be uniformly continuous, with $E \subset \R$ bounded.
+
+\shunt
+
+{\bf Problem 8:}
+
+
+
+\shunt
+
+\end{document}
