@@ -128,11 +128,11 @@
 \lhead{Max Jeter}
 \rhead{MA544, Assignment 2, Page \thepage}
 
+\begin{document}
+
 Note to professor: I routinely use the notation $X_{d,r}(p)$ for the $r$-ball around the point $p$ in the metric space $(X,d)$. If the metric is understood, I will suppress the distance function to shorten this to $X_r(p)$.
 
 I know that the suggested notation for the ball was discussed once, but I prefer this notation.
-
-\begin{document}
 
 {\bf Problem 1:}
 
@@ -140,33 +140,71 @@ Let $E'$ be the set of limit points of a set $E$.
 
 First, $E'$ is closed.
 
-\tab %Proof
+\tab Let $\anbrack{x_n}$ be a converging sequence of points in $E'$; say $x_n \to x$. For all $\ep >0$ there is an $n \in \N$ such that $d(x,x_n) < \ep$.
+
+\tab Also, for all $x_n \in E'$, there is a sequence of points of $E$ converging to $x_n$; call this sequence $\anbrack{x_{n,j}}$. 
+
+\tab %The point is to build a sequence of x_n,js that goes to x.
 
 Next, $E$ and $\overline{E}$ have the same limit points.
 
-\tab %Proof
+\tab First, because $E \subset \overline{E}$, $E' \subset \overline{E}'$. (If this is not clear...pick a limit point of $E$, it has a sequence of distinct points in $E$ converging to it, that sequence of distinct points is also in $\overline{E}$.)
 
-Now, $E$ and $E'$ do not always have the same limit points: consider $E = \{1/n: n \in \N}$. Then $E' = \{0\}$, but $E'' = \emptyset$.
+\tab Next, recall that $\overline{E} = E \cup E'$. So $\overline{E}' = (E \cup E')'$. Now; if there is a sequence of points in $(E \cup E')$ converging to a point, $x$, then either there are infinitely many points in that sequence in $E$ or in $E'$. In the first case, we have $x \in E'$. In the second case, we have $x \in E''$. However, $E'$ is closed, as above. So $E'' \subset E'$, so $x \in E'$ in either case. That is, if $x \in \overline{E}'$, then $x \in E'$.
+
+Thus, $E' = \overline{E}'$; in other words, $E$ and $\overline{E}$ have the same limit points.
+
+Now, $E$ and $E'$ do not always have the same limit points: consider $E = \{1/n: n \in \N\}$. Then $E' = \{0\}$, but $E'' = \emptyset$.
 
 \shunt
 
 {\bf Problem 2:}
 
-%Rearrange when you have it figured out.
-
 The following are metrics on $\R$:
 
-$d_2(x,y) = \sqrt{\absval{x-y}}$
+The function $d_2(x,y) = \sqrt{\absval{x-y}}$ is a metric:
 
-$d_3(x,y) = \absval{x^2-y^2}$
+\tab First, $d_2(x,y)$ is well-defined: $\absval{x-y} \geq 0$ for all $x, y \in \R$ and so $\sqrt{\absval{x-y}}$ is defined for all $x,y \in \R$.
 
-$d_5(x,y) = \absval{x-y}/(1+\absval{x-y})$
+\tab Next, $d_2$ is positive-definite; the square root function is always positive.
+
+\tab Next, $d_2(x,y) = 0$ if and only if $x=y$: 
+
+\tab \tab Let $x=y$. Then $d_2(x,y) = \sqrt{\absval{x-y}}=\sqrt{\absval{0}}=\sqrt{0}=0$.
+
+\tab \tab Next, let $d_2(x,y) = 0$. Then $\sqrt{\absval{x-y}}=0$. Then $\absval{x-y}=0$. So $x=y$.
+
+\tab Also, $d_2$ is symmetric.
+
+\tab \tab Let $x,y \in \R$. Then $d_2(x,y) = \sqrt{\absval{x-y}} = \sqrt{\absval{y-x}}=d_2(y,x)$.
+
+\tab Last, $d_2$ satisfies the triangle inequality:
+
+\tab \tab Let $x,y,z \in \R$. Then %something...the key point is, somehow, the concavity of sqrt.
+
+The function $d_5(x,y) = \absval{x-y}/(1+\absval{x-y})$ is a metric:
+
+\tab First, $d_5(x,y)$ is well-defined: $\absval{x-y} +1 > 0$ for all $x,y \in \R$, so the above ratio is defined for all $x,y \in \R$.
+
+\tab Next, $d_5$ is positive-definite; $\absval{x-y} \geq 0$ and $\absval{x-y} +1 > 0$ for all $x,y \in \R$. So the above ratio is non-negative for all $x,y \in \R$.
+
+\tab Next, $d_5(x,y) = 0$ if and only if $x=y$: $\absval{x-y}/(1+\absval{x-y}) = 0$ if and only if $\absval{x-y} = 0$, and $\absval{x-y}=0$ if and only if $x=y$. So $d_5(x,y) = 0$ if and only if $x=y$.
+
+\tab Also, $d_5$ is symmetric.
+
+\tab \tab Let $x,y \in \R$. Then $d_5(x,y)= \absval{x-y}/(1+\absval{x-y}) = \absval{y-x}/(1+\absval{y-x})=d_5(y,x)$
+
+\tab Last, $d_5$ satisfies the triangle inequality:
+
+\tab \tab Let $x,y,z \in \R$. %Proof
 
 The following are not metrics on $\R$:
 
-$d_1(x,y) = (x-y)^2$ %This probably fails the triangle inequality
+The function $d_1(x,y) = (x-y)^2$ is not a metric on $\R$: consider $0,1,2$; $d_1(0,2) = 4$, $d_1(0,1) = 1$, and $d_1(1,2) = 1$. But $4 > 1+1$, so $d_1$ fails the triangle ineqality and is therefore not a metric.
 
-$d_4(x,y) = \absval{x -2y}$ %This fails symmetry
+The function $d_3(x,y) = \absval{x^2-y^2}$ is not a metric on $\R$: consider $0,1,2$; $d_3(0,2) = 4$, $d_3(0,1) = 1$, and $d_3(1,2) = 1$. But $4 > 1+1$, so $d_3$ fails the triangle ineqality and is therefore not a metric. 
+
+The function $d_4(x,y) = \absval{x -2y}$ is not a metric on $\R$: $d_4(0,1) = 2$, but $d_4(1,0) = 1$. So $d_4$ is not a metric, as it fails symmetry.
 
 \shunt
 
@@ -176,7 +214,7 @@ Interiors of connected sets are not always connected.
 
 Closures of connected sets are always connected. 
 
-For the first; consider the union of the pair of closed balls in $\R^2$, $\overline{\R^2_1((0,0))} \cup \overline{\R^2_1((0,2))$. This is a connected set (if this is not clear, recall that path connectivity implies connectivity, and we can draw a path from any point to $(0,1)$ (which will imply path connectivity)).
+For the first; consider the union of the pair of closed balls in $\R^2$, $\overline{\R^2_1((0,0))} \cup \overline{\R^2_1((0,2))}$. This is a connected set (if this is not clear, recall that path connectivity implies connectivity, and we can draw a path from any point to $(0,1)$ (which will imply path connectivity)).
 
 However, the interior of that union is $\R^2_1((0,0)) \cup \R^2_1((0,2))$, which is not connected (It's clear that this is the interior, and pulling out your epsilons and deltas will get it done. If it's not clear that this isn't connected, look at it again.)
 
@@ -212,13 +250,21 @@ Then $X$ has a countable dense subset; call it $C$.
 
 Now, consider the collection $\scrC = \{X_q(c): c \in C, q \in \Q\}$.
 
-First, note that $\scrC$ is countable; %Short explanation
+First, note that $\scrC$ is countable; it injects naturally into the set $\Q \times C$, which is a product of countable sets (which is therefore countable). So because $\scrC$ injects into a countable set, it is countable.
 
 Now, we show that any open set is a union of elements of $\scrC$:
 
-%Do it.
+\tab Let $U$ be an open set. Either $U$ is open (in which case $U$ is the empty union of elements in $\scrC$), or $U$ has at least one point.
 
-\tab 
+\tab Let $x \in U$. Then there is some $r_x>0$ such that $X_{r_x}(x) \subset U$. Without loss of generality, we can pick $r_x$ to be rational (if our original $r_x$ was irrational, then we know that there is an $r_x'$ between $r_x/2$ and $r_x$ with $r_x'$ rational). Consider $X_{r_x/2}(x)$; because $C$ is dense, $C \cap X_{r_x/2}(x) \neq \emptyset$. Let $q_x \in C \cap X_{r_x/2}(x)$; then $x \in X_{r_x/2}(q_x)$. Also, $X_{r_x/2}(q_x) \subset X_{r_x}(x)$ (if this is not clear, the key idea of the proof is the triangle inequality).
+
+\tab The upshot is that $X_{r_x/2}(q_x)$ contains $x$ and $X_{r_x/2} \subset X_{r_x}(x) \subset U$.
+
+\tab Now, take the collection $\{X_{r_x/2}(q_x): x \in U\}$. The union is somewhat clearly $U$. 
+
+\tab But also, because each $r_x$ was rational, this is a collection of sets in $\scrC$. So $U$ is a union of elements from $\scrC$.
+
+So, we can construct a countable base from a countable dense subset. That is, every separable metric space has a countable base.
 
 \shunt
 
@@ -226,7 +272,7 @@ Now, we show that any open set is a union of elements of $\scrC$:
 
 Let $X$ be a compact metric space.
 
-%Prove that $X$ has a countable base
+%Proof
 
 Now, $X$ has a countable base. Pick a single point from each element of this base, and call the set of such points $D$. Note that $D$ is countable. Also, because every open set can be written as a union of elements in the base, this means that $D$ intersects every nonempty open set. So, $D$ is dense. So $X$ has a countable dense subset, $X$ is separable. 
 
@@ -238,7 +284,9 @@ Let $f, g: X \to Y$ be continuous maps between metric spaces. Let $E$ be dense i
 
 Then $f(E)$ is dense in $f(X)$:
 
-\tab %Proof
+\tab Let $y \in f(X)$. Then there is a point $x \in X$ such that $f(x) = y$. Now, $E$ is dense in $X$; there is a sequence of points $\anbrack{x_n}$ such that $x_n \to x$ and for all $n \in \N$, $x_n \in E$. Now, $f$ is continuous; this means that $f(x_n) \to f(x)=y$. Now, $f(x_n)$ is a sequence of points in $f(E)$.
+
+\tab So for any $y \in f(X)$ there is a sequence of points in $f(E)$ that converges to $y$; $f(E)$ is dense in $f(X)$.
 
 Now, let $f(x)=g(x)$ for all $x \in E$. Then $f(x)=g(x)$ for all $x \in X$.
 
@@ -250,11 +298,58 @@ Now, let $f(x)=g(x)$ for all $x \in E$. Then $f(x)=g(x)$ for all $x \in X$.
 
 Let $f: E \to \R$ be uniformly continuous, with $E \subset \R$ bounded.
 
+Now, because $E$ is bounded, it is contained in some interval, $[a,b]$.
+
+Now, because $f$ is uniformly continuous, there is a $\de >0$ such that for all $x,y \in E$, $|x-y| < \de$ implies that $\absval{f(x)-f(y)} < 1$.
+
+Now, for each $n \in \N$, define $x_n$ by $x_n = a+ (n-1)\de/2$ if $a+n\de \leq b$, else $x_n = b$. There is a first $N \in \N$ such that $x_N = b$. We now consider the set $\{x_n: n \in \N$ and $n \leq N\}$.
+
+We now consider the set of balls $\R_{\de/2}(x_n)$. Either $E \cap \R_{\de/2}(x_n)$ is empty or not. If not, pick a point in it; call it $y_n$.
+
+Now, the set of balls $\R_{\de}(y_n)$ covers $E$; this is clear from the triangle inequality. (If this is not clear; let $x \in E$. Then $x$ is within $\de/2$ of some $x_n$. Either $x_n$ is within $\de/2$ of some $y_n \in \E$ or $E \cap \R_{\de/2}(x_n)$ is empty. In the former case, apply the triangle inequality to get that $x$ is within $\de/2$ of some $y_n \in E$. In the latter case, infer that $x$ was not...) %Finish this up.
+
+So for all $x \in E$, there is a $y_n \in E$ such that $|x-y_n| < \de$; so $\absval{f(x)-f(y_n)} < 1$ for all $x \in E$.
+
+But the set of all defined $y_n$s is finite; this means that it has a maximum, $M$, and a minimum, $m$. So by using this together with the above line, we have that for all $x \in E$, $f(x) < M+1$ and $f(x) > m-1$. So, we can construct bounds for $f$; $f$ is bounded on $E$ if $f$ is uniformly continuous.
 \shunt
 
 {\bf Problem 8:}
 
+We proceed by applying the following lemma: ``Let $X, Y$ be metric spaces, with $Y$ compact; $f: X \to Y$ is continuous if and only if the graph of $f$ is closed.'' (Note: I'm pretty sure the condition can be weakened to local compactness for $Y$. I don't know how much further that condition can be weakened, though.)
 
+So, let $f: X \to Y$ and denote $G$ as the graph of $f$.
+
+First, let $f: X \to Y$ be continuous.
+
+\tab Let $\anbrack{p_n}$ be a converging sequence of points in $G$.
+
+\tab For each $p_n$, there is an $x_n$ such that $p_n = (x_n, f(x_n))$. Now, because $\anbrack{p_n}$ converges, we know that $x_n \to x$ for some $x \in \R$. Because $f$ is continuous, we know that $f(x_n) \to f(x)$. So $p_n \to (x,f(x))$ for some $x \in X$.
+
+\tab So each converging sequence of $G$ converges to a point in $G$; $G$ is closed.
+
+Now, let the graph of $f$ be closed.
+
+\tab Let $\anbrack{x_n}$ be a sequence in $X$ converging to a point, say $x$.
+
+\tab Consider the sequence $\anbrack{(x_n,f(x_n))}$. Take a subsequence of $\anbrack{x_n}$, $\anbrack{x_{n_j}}$, such that $f(x_{n_j})$ converges. Then the sequence $\anbrack{(x_{n_j},f(x_{n_j}))}$ converges to a point in $G$. That is, $\anbrack{(x_{n_j},f(x_{n_j}))} \to (y, f(y))$ for some $y \in X$. Now, we know that $x_{n_j} \to x$. This means that $\anbrack{(x_{n_j},f(x_{n_j}))} \to (x, f(x))$; so $f(x_{n_j}) \to f(x)$.
+
+\tab So if $f(x_n)$ converges, then it converges to $f(x)$. We proceed by showing that $f(x_n)$ converges.
+
+\tab \tab Assume not. Then there is some $\ep >0$ such that for any $N$, there is some $n >N$ such that $d(f(x),f(x_n)) \geq \ep$.
+
+\tab \tab For each $n \in \N$, pick $j >n$ such that $f(x_j) \geq \ep$. This sequence of points has a converging sequence, $f(x_{j_k})$ (say that it converges to $z$). This converging subsequence does not converge to $f(x)$, as each $f(x_{j_k})$ is at least $\ep$ away from $f(x)$.
+
+\tab \tab Now, we know that $x_{j_k} \to x$. So the sequence $\anbrack{(x_{j_k},f(x_{j_k})}$ is a sequence of $G$. It also converges, to $(x,z)$. But $z \neq f(x)$; $\anbrack{(x_{j_k},f(x_{j_k})}$ is a converging sequence of $G$ that fails to converge to a point in $G$. So $G$ is not closed, contrary to our assumption.
+
+\tab So $f(x_n)$ converges to $f(x)$.
+
+\tab To summarize; if we have a sequence, $\anbrack{x_n}$, converging to $x$, then $f(x_n) \to f(x)$. That is, $f$ is continuous.
+
+So $f: X \to Y$, where $Y$ is compact, is continuous if and only if the graph of $f$ is closed.
+
+If $E$ is compact, then a subset of $E$ is closed if and only if it is compact. (Compact sets are always closed, and in compact spaces closed sets are compact).
+
+So if $f: E \to E$, where $E$ is compact, then $f$ is continuous if and only if the graph of $f$ is compact.
 
 \shunt
 
