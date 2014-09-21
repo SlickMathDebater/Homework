@@ -140,11 +140,17 @@ Let $E'$ be the set of limit points of a set $E$.
 
 First, $E'$ is closed.
 
-\tab Let $\anbrack{x_n}$ be a converging sequence of points in $E'$; say $x_n \to x$. For all $\ep >0$ there is an $n \in \N$ such that $d(x,x_n) < \ep$.
+\tab Let $\anbrack{x_n}$ be a converging sequence of points in $E'$; say $x_n \to x$.
 
-\tab Also, for all $x_n \in E'$, there is a sequence of points of $E$ converging to $x_n$; call this sequence $\anbrack{x_{n,j}}$. 
+\tab Because each $x_n \in E'$, we know that for all $x_n$, there is a sequence of points of $E$ converging to $x_n$; call this sequence $\anbrack{x_{n,j}}$. 
 
-\tab %The point is to build a sequence of x_n,js that goes to x.
+\tab Now, let $m \in \N$. There is an $N$ such that $\absval{x_N - x} < 1/2m$. Also, there is a $J$ such that $\absval{x_{N,J} - x_N} < 1/2m$.
+
+\tab So we define $x_m = x_{N,J}$ for each $m \in \N$. It is clear (use the triangle inequality on the above line) that $\absval{x_m-x} < 1/m$ for each $m \in \N$. It is also clear that $x_m \in E$ for all $m \in \N$. It is also clear that $x_m \to x$.
+
+\tab So we have a sequence of points in $E$, $\anbrack{x_m}$, converging to $x$. This means that $x \in E'$.
+
+\tab So if $\anbrack{x_n}$ is a converging sequence of points in $E'$, then it converges to a point in $E'$. That is, $E'$ is closed.
 
 Next, $E$ and $\overline{E}$ have the same limit points.
 
@@ -180,7 +186,19 @@ The function $d_2(x,y) = \sqrt{\absval{x-y}}$ is a metric:
 
 \tab Last, $d_2$ satisfies the triangle inequality:
 
-\tab \tab Let $x,y,z \in \R$. Then %something...the key point is, somehow, the concavity of sqrt.
+\tab \tab Let $x,y,z \in \R$.
+
+\tab \tab Then we have:
+
+\begin{align*}
+(d_2(x,y) +d_2(y,z))^2 &= (\sqrt{\absval{x-y}} + \sqrt{\absval{y-z}})^2 \\
+&= \absval{x-y} + 2 \sqrt{\absval{x-y}\absval{y-z}} + \absval{y-z}\\
+&\geq \absval{x-y} + \absval{y-z}\\
+&\geq \absval{x-z}\\
+&=d_2(x,z)^2
+\end{align*} 
+
+\tab \tab By taking square roots of both sides of that, we have our result.
 
 The function $d_5(x,y) = \absval{x-y}/(1+\absval{x-y})$ is a metric:
 
@@ -196,7 +214,18 @@ The function $d_5(x,y) = \absval{x-y}/(1+\absval{x-y})$ is a metric:
 
 \tab Last, $d_5$ satisfies the triangle inequality:
 
-\tab \tab Let $x,y,z \in \R$. %Proof
+\tab \tab Let $x,y,z \in \R$.
+
+\tab \tab Then we have:
+
+\begin{align*}
+d_5(x,y) +d_5(y,z) &= \absval{x-y}/(1+\absval{x-y}) + \absval{y-z}/(1+\absval{y-z}) \\
+&= \frac{\absval{x-y}+2\absval{x-y}\absval{y-z} + \absval{y-z}}{1+\absval{x-y}+\absval{y-z}+\absval{x-y}\absval{y-z}}\\
+&\geq \frac{\absval{x-y}+\absval{x-y}\absval{y-z} + \absval{y-z}}{1+\absval{x-y}+\absval{y-z}+\absval{x-y}\absval{y-z}}\\
+&\geq \frac{\absval{x-y} + \absval{y-z}}{1+\absval{x-y}+\absval{y-z}} \text{ (Because it is known that x/(1+x) is increasing.)}\\
+&\geq \frac{\absval{x-z} +}{1+\absval{x-z}} \text{ (Use the triangle inequality and the above trick.)} \\
+&=d_5(x,z)
+\end{align*}
 
 The following are not metrics on $\R$:
 
@@ -256,13 +285,15 @@ Now, we show that any open set is a union of elements of $\scrC$:
 
 \tab Let $U$ be an open set. Either $U$ is open (in which case $U$ is the empty union of elements in $\scrC$), or $U$ has at least one point.
 
-\tab Let $x \in U$. Then there is some $r_x>0$ such that $X_{r_x}(x) \subset U$. Without loss of generality, we can pick $r_x$ to be rational (if our original $r_x$ was irrational, then we know that there is an $r_x'$ between $r_x/2$ and $r_x$ with $r_x'$ rational). Consider $X_{r_x/2}(x)$; because $C$ is dense, $C \cap X_{r_x/2}(x) \neq \emptyset$. Let $q_x \in C \cap X_{r_x/2}(x)$; then $x \in X_{r_x/2}(q_x)$. Also, $X_{r_x/2}(q_x) \subset X_{r_x}(x)$ (if this is not clear, the key idea of the proof is the triangle inequality).
+\tab Let $x \in U$. Then there is some $r_x>0$ such that $X_{r_x}(x) \subset U$. Without loss of generality, we can pick $r_x$ to be rational (if our original $r_x$ was irrational, then we know that there is an $r_x'$ between $r_x/2$ and $r_x$ with $r_x'$ rational. We know that $X_{r_x'}(x) \subset X_{r_x}(x) \subset U$). Consider $X_{r_x/2}(x)$; because $C$ is dense, $C \cap X_{r_x/2}(x) \neq \emptyset$. Let $q_x \in C \cap X_{r_x/2}(x)$; then $x \in X_{r_x/2}(q_x)$. Also, $X_{r_x/2}(q_x) \subset X_{r_x}(x)$ (if this is not clear, the key idea of the proof is the triangle inequality).
 
-\tab The upshot is that $X_{r_x/2}(q_x)$ contains $x$ and $X_{r_x/2} \subset X_{r_x}(x) \subset U$.
+\tab The upshot is that $X_{r_x/2}(q_x)$ contains $x$ and $X_{r_x/2}(q_x) \subset X_{r_x}(x) \subset U$.
 
 \tab Now, take the collection $\{X_{r_x/2}(q_x): x \in U\}$. The union is somewhat clearly $U$. 
 
 \tab But also, because each $r_x$ was rational, this is a collection of sets in $\scrC$. So $U$ is a union of elements from $\scrC$.
+
+\tab Thus, we can write any open set, $U$, as a collection of sets in $\scrC$; $\scrC$ is a base of $X$.
 
 So, we can construct a countable base from a countable dense subset. That is, every separable metric space has a countable base.
 
@@ -272,9 +303,27 @@ So, we can construct a countable base from a countable dense subset. That is, ev
 
 Let $X$ be a compact metric space.
 
-%Proof
+For each rational number, $q$, consider the open cover $\scrC_q = \{X_q(x): x \in X\}$. This open cover has a finite subcover; call it $\scrF_q$.
+
+Now, consider the collection of open sets $\scrC' = \bigcup\limits_{q \in \Q} \scrF_q$. This collection is countable. (If not clear: each $q \in \Q$ is contributes a countable number of open sets...so this set injects naturally into $\Q \times \N$, so it is countable.)
+
+Moving on, we show that $\scrC'$ is a base;
+
+\tab Let $U \subset X$ be open. If $U = \emptyset$, then $U$ is the empty union of sets in $\scrC'$.
+
+\tab Else, let $x \in U$. For some $r_x>0$, $X_{r_x}(x) \subset U$. Without loss of generality, we can pick $r_x \in \Q$ (I make this argument above.) Now, we know that $x \in X_{r_x/2}(p)$ for some $p_x \in X$ with $X_{r_x/2}(p_x) \in \scrC'$ (for each $q \in \Q$, there is a finite subcover consisting of balls of radius $q$ contained in $\scrC'$). Also, we know that $X_{r_x/2}(p_x) \subset X_{r_x}(x)$ by the triangle inequality.
+
+\tab The upshot is that $X_{r_x/2}(p_x)$ contains $x$ and $X_{r_x/2}(p_x) \subset X_{r_x}(x) \subset U$.
+
+\tab Now, take the collection $\{X_{r_x/2}(p_x): x \in U\}$. The union is somewhat clearly $U$. 
+
+\tab But this was also a union of sets in $\scrC'$. So $U$ is a union of elements of $\scrC'$.
+
+\tab Thus, we can write any open set, $U$, as a collection of sets in $\scrC'$; $\scrC'$ is a base of $X$.
 
 Now, $X$ has a countable base. Pick a single point from each element of this base, and call the set of such points $D$. Note that $D$ is countable. Also, because every open set can be written as a union of elements in the base, this means that $D$ intersects every nonempty open set. So, $D$ is dense. So $X$ has a countable dense subset, $X$ is separable. 
+
+To summarize: any compact metric space has a countable base, and is therefore separable.
 
 \shunt
 
@@ -304,9 +353,9 @@ Now, because $f$ is uniformly continuous, there is a $\de >0$ such that for all 
 
 Now, for each $n \in \N$, define $x_n$ by $x_n = a+ (n-1)\de/2$ if $a+n\de \leq b$, else $x_n = b$. There is a first $N \in \N$ such that $x_N = b$. We now consider the set $\{x_n: n \in \N$ and $n \leq N\}$.
 
-We now consider the set of balls $\R_{\de/2}(x_n)$. Either $E \cap \R_{\de/2}(x_n)$ is empty or not. If not, pick a point in it; call it $y_n$.
+We now consider the set of balls $\R_{\de/2}(x_n)$. Either $E \cap \R_{\de /2}(x_n)$ is empty or not. If not, pick a point in it; call it $y_n$.
 
-Now, the set of balls $\R_{\de}(y_n)$ covers $E$; this is clear from the triangle inequality. (If this is not clear; let $x \in E$. Then $x$ is within $\de/2$ of some $x_n$. Either $x_n$ is within $\de/2$ of some $y_n \in \E$ or $E \cap \R_{\de/2}(x_n)$ is empty. In the former case, apply the triangle inequality to get that $x$ is within $\de/2$ of some $y_n \in E$. In the latter case, infer that $x$ was not...) %Finish this up.
+Now, the set of balls $\R_{\de}(y_n)$ covers $E$; this is clear from the triangle inequality. (If this is not clear; let $x \in E$. Then $x$ is within $\de /2$ of some $x_n$. Either $x_n$ is within $\de /2$ of some $y_n \in E$ or $E \cap \R_{\de /2}(x_n)$ is empty. In the former case, apply the triangle inequality to get that $x$ is within $\de $ of some $y_n \in E$. In the latter case, infer that $x \notin E$.)
 
 So for all $x \in E$, there is a $y_n \in E$ such that $|x-y_n| < \de$; so $\absval{f(x)-f(y_n)} < 1$ for all $x \in E$.
 

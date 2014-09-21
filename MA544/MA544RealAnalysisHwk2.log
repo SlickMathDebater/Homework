@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.9.27)  16 SEP 2014 20:42
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.9.27)  21 SEP 2014 15:10
 entering extended mode
 **MA544RealAnalysisHwk2.tex
 (C:\Users\Lonelight\Desktop\Homework\MA544\MA544RealAnalysisHwk2.tex
@@ -258,9 +258,8 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 onfig/pdftex.map}
 
 ]
-Overfull \hbox (1.75388pt too wide) in paragraph at lines 217--218
-[]\OT1/cmr/m/n/12 For the first; con-sider the union of the pair of closed ball
-s in $\U/msb/m/n/12 R[]$\OT1/cmr/m/n/12 , $[] \OMS/cmsy/m/n/12 [$
+Overfull \hbox (77.48746pt too wide) in paragraph at lines 228--228
+[] 
  []
 
 
@@ -270,6 +269,11 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [2]
+Overfull \hbox (1.75388pt too wide) in paragraph at lines 246--247
+[]\OT1/cmr/m/n/12 For the first; con-sider the union of the pair of closed ball
+s in $\U/msb/m/n/12 R[]$\OT1/cmr/m/n/12 , $[] \OMS/cmsy/m/n/12 [$
+ []
+
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
@@ -297,15 +301,29 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[6] (C:\Users\Lonelight\Desktop\Homework\MA544\MA544RealAnalysisHwk2.aux) ) 
+[6]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[7]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[8] (C:\Users\Lonelight\Desktop\Homework\MA544\MA544RealAnalysisHwk2.aux) ) 
 Here is how much of TeX's memory you used:
  2804 strings out of 493921
  38959 string characters out of 3140860
- 94987 words of memory out of 3000000
+ 98987 words of memory out of 3000000
  6083 multiletter control sequences out of 15000+200000
  8592 words of font info for 33 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 33i,11n,43p,564b,196s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 33i,11n,43p,621b,206s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/
 Users/Lonelight/Desktop/PortablePrograms/texmakerwin32usb/MiKTeX/fonts/type1/pu
 blic/amsfonts/cm/cmbx12.pfb><C:/Users/Lonelight/Desktop/PortablePrograms/texmak
@@ -319,11 +337,13 @@ blic/amsfonts/cm/cmr12.pfb><C:/Users/Lonelight/Desktop/PortablePrograms/texmake
 rwin32usb/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Lonelight/De
 sktop/PortablePrograms/texmakerwin32usb/MiKTeX/fonts/type1/public/amsfonts/cm/c
 msy10.pfb><C:/Users/Lonelight/Desktop/PortablePrograms/texmakerwin32usb/MiKTeX/
-fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Lonelight/Desktop/PortablePr
-ograms/texmakerwin32usb/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on MA544RealAnalysisHwk2.pdf (6 pages, 120918 bytes).
+fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/Lonelight/Desktop/PortablePr
+ograms/texmakerwin32usb/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Use
+rs/Lonelight/Desktop/PortablePrograms/texmakerwin32usb/MiKTeX/fonts/type1/publi
+c/amsfonts/symbols/msbm10.pfb>
+Output written on MA544RealAnalysisHwk2.pdf (8 pages, 138432 bytes).
 PDF statistics:
- 61 PDF objects out of 1000 (max. 8388607)
+ 73 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
