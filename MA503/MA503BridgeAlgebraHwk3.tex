@@ -133,11 +133,35 @@
 
 {\bf Problem 1:}
 
-Let $G$ be a finite abelian group, with $n \in \N$ and $n \div \absval{G}$.
+Let $G$ be a finite abelian group, with $n \in \N$ and $n \mid \absval{G}$.
 
 We know that for each $n \in \N$, $n$ has a unique prime factorization; that is, $n=p_1^{a_1}p_2^{a_2}p_3{a_3}\ldots p_k^{a_k}$ for some $p_1, p_2 \ldots p_k$ each prime, and $a_1, a_2 \ldots a_k$ each positive and nonzero.
 
-%I think the trick is modding out the group by the "bad ones" and building back up from the "good ones".
+Proceed as follows:
+
+\tab For each $p_i$, there is an element with order $p_i$ in $G$:
+
+\tab \tab %Prove it.
+
+\tab Thus, there is a subgroup, $H_1$, with order $p_1$ in $G$. This subgroup is normal, because $G$ is abelian. 
+
+\tab Consider the new group $G_1=G/H_1$, along with $n_1 = n/p_1$. Note that $\absval{G_1} = \absval{G}/p_1$; this follows from the theorem that says $\absval{G/H} = \absval{G}/\absval{H}$ if $H$ is normal.
+
+\tab We know that $G_1$ is abelian:
+
+\tab \tab %Proof
+
+\tab So by similar logic as above, if $a_1 > 1$, then there is a subgroup of order $p_1$ in $G$. Otherwise, we know that there is a subgroup of order $p_2$ in $G$.
+
+\tab Either way, there is a subgroup, $H_2'$, with order $p_1$ (or $p_2$) in $G_1$, which is normal. %You also have to make H_2 a subgroup of G!
+
+\tab Consider the group $G_2=G_1/H_2$. Note that $G_2 \cong G/H_2$, by the third isomorphism theorem. Moreover, $\absval{G_2} = \absval{G}/p_1^2$ (or $\absval{G_2} = \absval{G}/p_1p_2$).
+
+\tab We can proceed in the above manner for $a_i$ times for each $p_i$. We end up with a group, $G_{a_1+a_2 \ldots + a_k}$.
+
+Consider $G_{a_1+a_2 \ldots +a_k}$; it has order $\absval{G}/n$. It is isomorphic to $G/H_{a_1+a_2 \ldots +a_k}$ for some $H \subgp G$. This means that $\absval{H} = n$ (because $\absval{G/H} = \absval{G}/\absval{H}$...thus, $\absval{H} = \absval{G}/\absval{G/H}$, or in this case, $\absval{H} = \absval{G}/(\absval{G}/n) = n$.)
+
+So $G$ has a normal subgroup of order $n$ if $G$ is a finite abelian group with $n \mid \absval{G}$.
 
 \shunt
 
@@ -145,7 +169,7 @@ We know that for each $n \in \N$, $n$ has a unique prime factorization; that is,
 
 Let $H < G$ with $[G:H]$ finite.
 
-%I...am not quite sure what to do here. It seems that the center of H may work...but I'm not quite convinced of that.
+%Try the center or normalizer of H: there's an associated action that makes the stabilizer of...something...equal to that. Moreover, the orbit of that...something...should have finite cardinality. If so, then it has a finite index in H. 
 
 \shunt
 
@@ -153,11 +177,23 @@ Let $H < G$ with $[G:H]$ finite.
 
 Let $G$ be a group acting transitively on a finite set, $S$, with $\absval{S} > 1$.
 
-Now, the action has only one orbit; for all $x \in S$, $\overline{x} = S$.
+Now, the action has only one orbit; for all $x \in S$, $\overline{x} = S$. In other words, for every $x, y \in S$ there is a $g \in G$ such that $g.x = y$.
 
 Assume that for all $g \in G$, there is an $x \in S$ such that $g.x=x$.
 
-%Can we break it?
+\tab Pick a non-identity element, $g \in G$ (Note: we can do this because we know that $G \neq \{e\}$. %Proof)
+
+\tab There is an element $x \in S$ such that $g.x=x$.
+
+\tab Also, there is an element in $S$, $y$, distinct from $y$.
+
+\tab So, there is an $h \in G$ such that $h.x = y$ (Moreover, $h \neq e$, else $x=y$).
+
+\tab Now, consider the set $\{g^nh.x: n \in \N\}$.
+
+\tab If this set is finite, then %Something bad happens with the fact that x is a fixed point of g.
+
+\tab If this set is infinite, then $S$ was not finite.
 
 \shunt
 
@@ -165,7 +201,9 @@ Assume that for all $g \in G$, there is an $x \in S$ such that $g.x=x$.
 
 Let $G$ be a group such that $G/Z(G)$ is cyclic.
 
-%Proof; try to show that G/Z(G) has only one element.
+Then $G/Z(G) = \anbrack{\overline{a}}$ for some $a \in G$.
+
+%Should be possible to prove that $a = e$...
 
 Note that this fails if $G/Z(G)$ is only abelian:
 
@@ -183,9 +221,23 @@ Note that this fails if $G/Z(G)$ is only abelian:
 
 {\bf Problem 5:}
 
+Let $p$ be prime, and let $G$ be a group of order $p^2$.
+
+We know that $G$ has an element of order $p$; any element has order $1$, $p$, or $p^2$. There are at least two elements in $G$ (because $1$ is not prime...). Pick an element other than $e$: call it $a$. We know that $a$ has order $p$ or $p^2$. If it has order $p^2$, then consider $a^p$. We know that $(a^p)^p = a^{p^2}$. So $a^p$ is an element of order $p$.
+
+The upshot is that there is an element, $x$, of order $p$ in $G$. So there is a subgroup, $H=\anbrack{x}$, of order $p$ in $G$. Moreover, $H$ is cyclic (I think we proved this in class...any group of order $p$ is cyclic. If we haven't proved it, then %proof). 
+
+Also, $H$ is normal in $G$: %I think you have to slug this one out...
+
+Now, consider $G/H$; this is a group of order $p$, it is cyclic.
+
+%I think that's the upshot. I'm not entirely sure, though.
+
 \shunt
 
 {\bf Problem 6:}
+
+Let $p$ be prime, and let $G$ be a group of order $p^n$ for some $n \in \N$. Let $H \subgp G$ with $H \neq \{e\}$.
 
 \shunt
 
