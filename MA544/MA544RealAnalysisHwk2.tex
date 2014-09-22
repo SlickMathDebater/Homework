@@ -130,9 +130,7 @@
 
 \begin{document}
 
-Note to professor: I routinely use the notation $X_{d,r}(p)$ for the $r$-ball around the point $p$ in the metric space $(X,d)$. If the metric is understood, I will suppress the distance function to shorten this to $X_r(p)$.
-
-I know that the suggested notation for the ball was discussed once, but I prefer this notation.
+Note to professor: I routinely use the notation $X_{d,r}(p)$ for the $r$-ball around the point $p$ in the metric space $(X,d)$. If the metric is understood, I will shorten this to $X_r(p)$.
 
 {\bf Problem 1:}
 
@@ -154,9 +152,9 @@ First, $E'$ is closed.
 
 Next, $E$ and $\overline{E}$ have the same limit points.
 
-\tab First, because $E \subset \overline{E}$, $E' \subset \overline{E}'$. (If this is not clear...pick a limit point of $E$, it has a sequence of distinct points in $E$ converging to it, that sequence of distinct points is also in $\overline{E}$.)
+\tab First, because $E \subset \overline{E}$, $E' \subset (\overline{E})'$. (If this is not clear...pick a limit point of $E$, it has a sequence of distinct points in $E$ converging to it, that sequence of distinct points is also in $\overline{E}$.)
 
-\tab Next, recall that $\overline{E} = E \cup E'$. So $\overline{E}' = (E \cup E')'$. Now; if there is a sequence of points in $(E \cup E')$ converging to a point, $x$, then either there are infinitely many points in that sequence in $E$ or in $E'$. In the first case, we have $x \in E'$. In the second case, we have $x \in E''$. However, $E'$ is closed, as above. So $E'' \subset E'$, so $x \in E'$ in either case. That is, if $x \in \overline{E}'$, then $x \in E'$.
+\tab Next, recall that $\overline{E} = E \cup E'$. So $(\overline{E})' = (E \cup E')'$. Now; if there is a sequence of points in $(E \cup E')$ converging to a point, $x$, then either there are infinitely many points in that sequence in $E$ or in $E'$. In the first case, we have $x \in E'$. In the second case, we have $x \in E''$. However, $E'$ is closed, as above. So $E'' \subset E'$, so $x \in E'$ in either case. That is, if $x \in (\overline{E})'$, then $x \in E'$.
 
 Thus, $E' = \overline{E}'$; in other words, $E$ and $\overline{E}$ have the same limit points.
 
@@ -223,7 +221,7 @@ d_5(x,y) +d_5(y,z) &= \absval{x-y}/(1+\absval{x-y}) + \absval{y-z}/(1+\absval{y-
 &= \frac{\absval{x-y}+2\absval{x-y}\absval{y-z} + \absval{y-z}}{1+\absval{x-y}+\absval{y-z}+\absval{x-y}\absval{y-z}}\\
 &\geq \frac{\absval{x-y}+\absval{x-y}\absval{y-z} + \absval{y-z}}{1+\absval{x-y}+\absval{y-z}+\absval{x-y}\absval{y-z}}\\
 &\geq \frac{\absval{x-y} + \absval{y-z}}{1+\absval{x-y}+\absval{y-z}} \text{ (Because it is known that x/(1+x) is increasing.)}\\
-&\geq \frac{\absval{x-z} +}{1+\absval{x-z}} \text{ (Use the triangle inequality and the above trick.)} \\
+&\geq \frac{\absval{x-z}}{1+\absval{x-z}} \text{ (Use the triangle inequality and the above trick.)} \\
 &=d_5(x,z)
 \end{align*}
 
@@ -247,7 +245,7 @@ For the first; consider the union of the pair of closed balls in $\R^2$, $\overl
 
 However, the interior of that union is $\R^2_1((0,0)) \cup \R^2_1((0,2))$, which is not connected (It's clear that this is the interior, and pulling out your epsilons and deltas will get it done. If it's not clear that this isn't connected, look at it again.)
 
-Moving on, closures of connected sets are always connected. (I must admit: I have done this problem twice before.)
+Moving on, closures of connected sets are always connected:
 
 \tab It is equivalent to show that if the closure of a set, $E$, is disconnected, then $E$ is also disconnected.
 
@@ -289,7 +287,7 @@ Now, we show that any open set is a union of elements of $\scrC$:
 
 \tab The upshot is that $X_{r_x/2}(q_x)$ contains $x$ and $X_{r_x/2}(q_x) \subset X_{r_x}(x) \subset U$.
 
-\tab Now, take the collection $\{X_{r_x/2}(q_x): x \in U\}$. The union is somewhat clearly $U$. 
+\tab Now, take the collection $\{X_{r_x/2}(q_x): x \in U\}$. The union of the sets in this collection is $U$; each point in $U$ is in one of these, and each of those balls is a subset of $U$. 
 
 \tab But also, because each $r_x$ was rational, this is a collection of sets in $\scrC$. So $U$ is a union of elements from $\scrC$.
 
@@ -315,7 +313,7 @@ Moving on, we show that $\scrC'$ is a base;
 
 \tab The upshot is that $X_{r_x/2}(p_x)$ contains $x$ and $X_{r_x/2}(p_x) \subset X_{r_x}(x) \subset U$.
 
-\tab Now, take the collection $\{X_{r_x/2}(p_x): x \in U\}$. The union is somewhat clearly $U$. 
+\tab Now, take the collection $\{X_{r_x/2}(p_x): x \in U\}$. The union of the sets in this collection is $U$; each point in $U$ is in one of these, and each of those balls is a subset of $U$.  
 
 \tab But this was also a union of sets in $\scrC'$. So $U$ is a union of elements of $\scrC'$.
 
@@ -396,10 +394,6 @@ Now, let the graph of $f$ be closed.
 
 So $f: X \to Y$, where $Y$ is compact, is continuous if and only if the graph of $f$ is closed.
 
-If $E$ is compact, then a subset of $E$ is closed if and only if it is compact. (Compact sets are always closed, and in compact spaces closed sets are compact).
-
-So if $f: E \to E$, where $E$ is compact, then $f$ is continuous if and only if the graph of $f$ is compact.
-
-\shunt
+If $E$ is compact, then a subset of $E$ is closed if and only if it is compact. (Compact sets are always closed, and in compact spaces closed sets are compact). So from this and the above, if $f: E \to E$, where $E$ is compact, then $f$ is continuous if and only if the graph of $f$ is compact.
 
 \end{document}
