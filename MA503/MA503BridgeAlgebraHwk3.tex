@@ -131,6 +131,8 @@
 
 \begin{document}
 
+Note: I am accustomed to writing ``The element $g \in G$ acting on the element $x \in S$'' as $g.x$ instead of $gx$. I use the stated notation, as I feel it is clearer.
+
 {\bf Problem 1:}
 
 Let $G$ be a finite abelian group, with $n \in \N$ and $n \mid \absval{G}$.
@@ -169,8 +171,6 @@ So $G$ has a normal subgroup of order $n$ if $G$ is a finite abelian group with 
 
 Let $H < G$ with $[G:H]$ finite.
 
-%Try the center or normalizer of H: there's an associated action that makes the stabilizer of...something...equal to that. Moreover, the orbit of that...something...should have finite cardinality. If so, then it has a finite index in H. 
-
 \shunt
 
 {\bf Problem 3:}
@@ -179,21 +179,81 @@ Let $G$ be a group acting transitively on a finite set, $S$, with $\absval{S} > 
 
 Now, the action has only one orbit; for all $x \in S$, $\overline{x} = S$. In other words, for every $x, y \in S$ there is a $g \in G$ such that $g.x = y$.
 
-Assume that for all $g \in G$, there is an $x \in S$ such that $g.x=x$.
+Before proceeding, I wish to point out that I use the following freely:
 
-\tab Pick a non-identity element, $g \in G$ (Note: we can do this because we know that $G \neq \{e\}$. %Proof)
+\tab If $g.x = x$, then $g^{-1}.x=x$: This is clear by applying $g^{-1}$ to both sides of the equation.
 
-\tab There is an element $x \in S$ such that $g.x=x$.
+\tab If $g.x=y$, then $g^{-1}.y=x$: This is clear by applying $g^{-1}$ to both sides of the equation.
 
-\tab Also, there is an element in $S$, $y$, distinct from $y$.
+Assume that for all $g \in G$, there is an $x \in S$ such that $g.x=x$. We proceed by constructing an infinite set of points in $S$, by induction.
 
-\tab So, there is an $h \in G$ such that $h.x = y$ (Moreover, $h \neq e$, else $x=y$).
+\tab Because $\absval{S} >1$, there are at least two distinct points of $S$: call them $x_0$ and $x_1$.
 
-\tab Now, consider the set $\{g^nh.x: n \in \N\}$.
+\tab There is an element, $g_2$, such that $g_2.x_0=x_1$, by transitivity of the action.
 
-\tab If this set is finite, then %Something bad happens with the fact that x is a fixed point of g.
+\tab There is an $x_2$ such that $g_2.x_2 = x_2$, by the assumption we made earlier.
 
-\tab If this set is infinite, then $S$ was not finite.
+\tab Now, $x_2 \neq x_0$, else:
+
+\begin{align*}
+g_2.x_0 &= g_2.x_2\\
+x_1&= x_2=x_0
+\end{align*}
+
+\tab which is a contradiction.
+
+\tab Also, $x_2 \neq x_1$, else:
+
+\begin{align*}
+g_2^{-1}.x_1 &= g_2^{-1}.x_2\\
+x_0&= x_2=x_1
+\end{align*} 
+
+\tab which is also a contradiction.
+
+\tab So $x_2$ is distinct from $x_0$ and $x_1$.
+
+\tab Now, assume that we have the following: we have defined $x_n$ for each $n \in \N$ such that $n < N$, and $g_n$ for each $n \in \N$ such that $n < N-1$ and $n \geq 2$, with the following properties: $g_n.x_n = x_n$ and $g_n.x_0 = x_{n-1}$.
+
+\tab Then there is a $g_N$ such that $g_N.x_0 = x_{N-1}$, because the action is transitive.
+
+\tab Also, there is an $x_N$ such that $g_N.x_N = x_N$, by the assumption we made earlier.
+
+\tab Now, $x_N \neq x_0$, else:
+
+\begin{align*}
+g_N.x_0 &= g_N.x_N\\
+x_{N-1}&= x_N=x_0
+\end{align*}
+
+\tab which is a contradiction.
+
+\tab Also, $x_N \neq x_{N-1}$, else:
+
+\begin{align*}
+g_N^{-1}.x_{N-1} &= g_N^{-1}.x_N\\
+x_0&= x_N=x_{N-1}
+\end{align*} 
+
+\tab which is also a contradiction.
+
+\tab Further, $x_N \neq x_{i}$ for any $i$ between $0$ and $N-1$ (exclusive), else:
+
+\begin{align*}
+g_Ng_i^{-1}.x_i &= g_N.x_i\\
+g_nx_0 &= g_N.x_N\\
+x_{N-1} = x_N
+\end{align*} 
+
+\tab which is also a contradiction.
+
+\tab So $x_N$ is distinct from each $x_i$ with $i < N$.
+
+\tab So we have two distinct points, and if we have $n$ distinct points in $S$, we can make $n+1$ distinct points in $S$; we can make infinitely many distinct points, thus $S$ is infinite.
+
+So, if for all $g \in G$, $g$ has a fixed point, then $S$ is infinite.
+
+Or, in other words, because $S$ is finite, there is a $g \in G$ that has no fixed point.
 
 \shunt
 
