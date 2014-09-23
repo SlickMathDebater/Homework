@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.9.27)  21 SEP 2014 21:47
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.9.27)  22 SEP 2014 22:56
 entering extended mode
 **MA503BridgeAlgebraHwk3.tex
 (C:\Users\Lonelight\Desktop\Homework\MA503\MA503BridgeAlgebraHwk3.tex
@@ -278,15 +278,22 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[4] (C:\Users\Lonelight\Desktop\Homework\MA503\MA503BridgeAlgebraHwk3.aux) ) 
+[4]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[5] (C:\Users\Lonelight\Desktop\Homework\MA503\MA503BridgeAlgebraHwk3.aux) ) 
 Here is how much of TeX's memory you used:
- 2805 strings out of 493921
- 38974 string characters out of 3140860
- 94993 words of memory out of 3000000
- 6084 multiletter control sequences out of 15000+200000
+ 2806 strings out of 493921
+ 38983 string characters out of 3140860
+ 97993 words of memory out of 3000000
+ 6085 multiletter control sequences out of 15000+200000
  8592 words of font info for 33 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 33i,11n,43p,388b,196s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 33i,13n,43p,388b,206s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:
 /Users/Lonelight/Desktop/PortablePrograms/texmakerwin32usb/MiKTeX/fonts/type1/p
 ublic/amsfonts/cm/cmbx12.pfb><C:/Users/Lonelight/Desktop/PortablePrograms/texma
@@ -304,9 +311,9 @@ onts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Lonelight/Desktop/PortablePro
 grams/texmakerwin32usb/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C
 :/Users/Lonelight/Desktop/PortablePrograms/texmakerwin32usb/MiKTeX/fonts/type1/
 public/amsfonts/symbols/msbm10.pfb>
-Output written on MA503BridgeAlgebraHwk3.pdf (4 pages, 114333 bytes).
+Output written on MA503BridgeAlgebraHwk3.pdf (5 pages, 120749 bytes).
 PDF statistics:
- 59 PDF objects out of 1000 (max. 8388607)
+ 62 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

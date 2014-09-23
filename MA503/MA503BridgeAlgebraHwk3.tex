@@ -143,7 +143,9 @@ Proceed as follows:
 
 \tab For each $p_i$, there is an element with order $p_i$ in $G$:
 
-\tab \tab %Prove it.
+\tab \tab Either $\absval{G} =1$ or we can pick an element in $G$ other than the identity. In the former case, this is trivial.
+
+\tab \tab In the later case, pick an element $g$ other than the identity. It has some order, $m>1$. Either $p_i \mid m$ or not. If so, then take $g^{m/p_i}$; this element clearly has order $p_i$. If not, then %Mod out, rewrite this to act like an inductive proof.
 
 \tab Thus, there is a subgroup, $H_1$, with order $p_1$ in $G$. This subgroup is normal, because $G$ is abelian. 
 
@@ -261,27 +263,70 @@ Or, in other words, because $S$ is finite, there is a $g \in G$ that has no fixe
 
 Let $G$ be a group such that $G/Z(G)$ is cyclic.
 
-Then by the correspondance theorem, the only groups containing $Z(G)$ are $Z(G)$ and $G$; %Explain.
+Then there is an $a \in G$ such that for all $\overline{x} \in G/Z(G)$, $\overline{x} = \overline{a}^n$ for some $n \in \N$.
 
-However, we know that for any subset $T$ of $G$, $Z(G) < C(T)$, where $C(T)$ is the centralizer of $T$.
+So for all $y \in G$, there is an $n \in \N$ and $b \in Z(G)$ such that $y = a^nb$; the left cosets of $Z(G)$ partition $G$, and the set of these cosets is $\{a^nZ(G): n \in \N\}$. So for all $y \in G$, $y \in a^nZ(G)$ for some $n \in \N$. 
 
-Moreover, $C(T) < G$ for all $T$.
+So for all $y, z \in G$, we have $y = a^nb$ and $z=a^mc$ for some $n,m \in \N$ and $b,c \in Z(G)$.
 
-So, let $x \notin Z(G)$. Then the set of elements that commute with $x$ is $G$; %consider C(\{x\} \cup Z(G))
+Now we have:
 
-Also, if $x \in Z(G)$, then the set of elements that commute with $x$ is $G$.
-
-So for all $x \in G$, the set of elements that commute with $x$ is $G$. That is, $G$ is abelian.
+\begin{align*}
+yz &= a^nba^mc\\
+&=a^na^mbc\\
+&=a^ma^nbc\\
+&=a^ma^ncb\\
+&=a^mca^nb\\
+&=zy
+\end{align*}
 
 Note that this fails if $G/Z(G)$ is only abelian:
 
-\tab Consider $D_8=\anbrack{r,s}$. We note that the center of $D_8$ is $\{e,r^2\}$;
+\tab Consider $D_8=\anbrack{r,s}$. We note that the center of $D_8$ is $\{e,r^2\}$.
 
-\tab \tab %Piece by piece proof.
+\tab (We freely use the identity $sr = r^3s$ in the following).
+
+\tab \tab We know that $e$ commutes with every element, trivially.
+
+\tab \tab Now, $r^2$ commutes with $e$, $r$,$r^2$, and $r^3$ trivially; %reasoning.
+
+\tab \tab Also, $r^2$ commutes with $s$, $sr$, $sr^2$, and $sr^3$:
+
+\begin{align*}
+r^2s &= rsr^3 = sr^3r^3 = sr^2\\
+r^2sr &= r^2r^3s = rs = sr^3 = srr^2 \\ 
+r^2sr^2 &= r^2sr^2\\
+r^2sr^3 &= r^2rs = sr = sr^5=sr^3r^2
+\end{align*}
+
+\tab \tab However, $r$ and $s$ do not commute with each other, and $r^3$ and $s$ do not commute with each other:
+
+\begin{align*}
+rs &= sr^3\\
+\end{align*}
+
+\tab \tab Also, $sr$, $sr^2$, and $sr^3$ do not commute with $r$:
+
+\begin{align*}
+rsr &= sr^3r = s \neq sr^2\\
+rsr^2 &= sr^3r^2 = sr \neq sr^3 \\
+rsr^3 &= sr^3r^3 = sr^2 \neq sr^3r = s
+\end{align*}
+
+\tab \tab So every element other than $e$ and $r^2$ fails to commute with something.
+So 
 
 \tab Also, $D_8/\anbrack{r^2}$ is abelian:
 
-\tab \tab %Piece by piece proof.
+\tab \tab Observe that this group must have order $4$, and that $\{\overline{e},\overline{r}, \overline{s}, \overline{sr}\}$ are all distinct elements of this group (and thus this represents all elements in the quotient group).
+
+\tab \tab Clearly, $\overline{e}$ commutes with everything. We proceed by exhaustion:
+
+\begin{align*}
+\overline{r}\overline{s} &= \overline{sr} = \overline{r^3s} = \overline{rs} = \overline{r}\overline{s}\\
+\overline{r}\overline{sr} &= \overline{rsr} = \overline{sr^3r} = \overline{s} = \overline{sr^2} = \overline{sr}\overline{r}\\
+\overline{s}\overline{sr} &= \overline{s^2r} = \overline{r} = \overline{rss} = \overline{sr^3s} = \overline{srs} = \overline{sr}\overline{s}\\
+\end{align*}
 
 \tab But we know from an earlier homework that $D_8$ is not abelian. So in general, $G/Z(G)$ being abelian does not imply that $G$ is abelian.
 
@@ -291,21 +336,23 @@ Note that this fails if $G/Z(G)$ is only abelian:
 
 Let $p$ be prime, and let $G$ be a group of order $p^2$. We know that $Z(G)$ is a subgroup of $G$; so $Z(G)$ has order $1$, $p$, or $p^2$.
 
-If $Z(G)$ has order $1$, then:
-
-\tab First, every element other than the identity has order $p$; else, there is an element of order $p^2$, which implies that $G$ is cyclic (and thus abelian, and thus $Z(G)$ has order $p^2$, against our assumption.)
-
-\tab %Ideas: conjugation is always an isomorphism/Orbit decomposition formula breaks down badly/
+We know that $Z(G)$ does not have order $1$, from the discussion in class.
 
 If $Z(G)$ has order $p$, then $G/Z(G)$ is cyclic (as it is a group of order $p^2/p = p$); we know that $G$ is abelian, from problem 4. 
 
 If $Z(G)$ has order $p^2$, then the center is the entire group; that is, $G$ is abelian.
+
+So in all cases, $G$ is abelian.
 
 \shunt
 
 {\bf Problem 6:}
 
 Let $p$ be prime, and let $G$ be a group of order $p^n$ for some $n \in \N$. Let $H \subgp G$ with $H \neq \{e\}$.
+
+Consider $G/H$. If $G/H \cong \{e\}$, then $H = G$. (Because then $\absval{G}/\absval{H} = \absval{G/H}=1$, so $\absval{H} = \absval{G}$; that is, $H$ contains every element of $G$, so $H = G$.) Now, if $H=G$, then $H \cap Z(G) = G \cap Z(G) =  Z(G)$. Because $Z(G)$ is non-trivial (by the discussion in class), this means that $H \cap Z(G)$ is non-trivial. 
+
+Now, if $G/H \slashed{\cong} \{e\}$, then $G/H$ has order $p^k$ for some $k > 1$. Now, we know that $Z(G/H)$ is non-trivial, from the discussion in class. 
 
 \shunt
 
