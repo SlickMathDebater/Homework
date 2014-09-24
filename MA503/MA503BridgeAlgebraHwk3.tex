@@ -366,7 +366,11 @@ Now, $G$ acts on $H$ by conjugation. By the class equation,
 &=\absval{H \cap Z(G)} + \sum\absval{[G:G_{x_i}]} \text{ Because the order of the orbit is the index of the stabilizer}
 \end{align*}
 
-We know that $p \mid \absval{H}$, because $H$ is a nontrivial subgroup of a $p$-group. Also, $p \mid [G:G_{x_i}]$ because each $G_{x_i}$ is a subgroup of $G$, and none are trivial (because none of those orbits contain only one element; if there was an orbit with only one element, then it would be in the set $\{h \in H: \forall g \in G, ghg^{-1} = h\}$).
+We know that $p \mid \absval{H}$, because $H$ is a nontrivial subgroup of a $p$-group. Also, $p \mid [G:G_{x_i}]$ because each $G_{x_i}$ is a subgroup of $G$, and none are trivial (because none of those orbits contain only one element; if there was an element whose orbit had only one element, then it would be in the set $\{h \in H: \forall g \in G, ghg^{-1} = h\}$).
+
+So we know that $p \mid \absval{H \cap Z(G)} + \sum\absval{[G:G_{x_i}]}$. So because $p \mid \sum\absval{[G:G_{x_i}]}$, we know that $p \mid \absval{H \cap Z(G)}$.
+
+So because $p \mid \absval{H \cap Z(G)}$, we know that $\absval{H \cap Z(G)} \neq 1$; that is $H \cap Z(G)$ is not the trivial subgroup.
 
 \shunt
 
