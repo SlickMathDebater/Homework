@@ -143,9 +143,18 @@ Proceed as follows:
 
 \tab For each $p_i$, there is an element with order $p_i$ in $G$:
 
-\tab \tab Either $\absval{G} =1$ or we can pick an element in $G$ other than the identity. In the former case, this is trivial.
+\tab \tab We proceed by induction. If $\absval{G} =1$, then $\absval{G}$ has no prime divisors, so there is vacuously an element of order $p$ in $G$ if $p \mid \absval{G}$.
 
-\tab \tab In the later case, pick an element $g$ other than the identity. It has some order, $m>1$. Either $p_i \mid m$ or not. If so, then take $g^{m/p_i}$; this element clearly has order $p_i$. If not, then %Mod out, rewrite this to act like an inductive proof.
+\tab \tab Now, assume that there is an element of order $p$ (with $p$ prime) in $G$ if $p \mid \absval{G}$ for all $G$ with order less than $N$. Let $G$ be a group of order $N$, and let $p \mid N$ be a prime number. Pick an element of $G$, call it $g$, other than the identity. It has some order, $m>1$. Either $p \mid m$ or not. If so, then take $g^{m/p}$; this element clearly has order $p$. If not, then consider $G/\anbrack{a}$ (this is well defined; $G$ is abelian, so $\anbrack{a}$ is normal, because all subgroups are normal in abelian groups). We know that $p \mid \absval{G /\anbrack{a}}$; $p \mid \absval{G} = \absval{G/\anbrack{a}}\absval{a}$, so because $p$ is prime, we know that $p \mid \absval{G/\anbrack{a}}$. So there's an element, $b$, of order $p$ in $G/\anbrack{a}$. So there is an element with $\overline{c} = b$. Now, $c^p \in \anbrack{a}$;
+
+\begin{align*}
+Proof &= Goes\\
+&=Here
+\end{align*}
+
+\tab \tab So, $c^p = a^l$ for some $l \in \N$. We know that $a^l$ has a finite order, $\absval{a^l}$. So clearly $c^\absval{a^l}$ has order $p$.
+
+\tab \tab So in either case, there is an element of order $p$ in $G$ if $p$ is prime and $p \mid \absval{G}$.
 
 \tab Thus, there is a subgroup, $H_1$, with order $p_1$ in $G$. This subgroup is normal, because $G$ is abelian. 
 
@@ -350,9 +359,14 @@ So in all cases, $G$ is abelian.
 
 Let $p$ be prime, and let $G$ be a group of order $p^n$ for some $n \in \N$. Let $H \subgp G$ with $H \neq \{e\}$.
 
-Consider $G/H$. If $G/H \cong \{e\}$, then $H = G$. (Because then $\absval{G}/\absval{H} = \absval{G/H}=1$, so $\absval{H} = \absval{G}$; that is, $H$ contains every element of $G$, so $H = G$.) Now, if $H=G$, then $H \cap Z(G) = G \cap Z(G) =  Z(G)$. Because $Z(G)$ is non-trivial (by the discussion in class), this means that $H \cap Z(G)$ is non-trivial. 
+Now, $G$ acts on $H$ by conjugation. By the class equation,
 
-Now, if $G/H \slashed{\cong} \{e\}$, then $G/H$ has order $p^k$ for some $k > 1$. Now, we know that $Z(G/H)$ is non-trivial, from the discussion in class. 
+\begin{align*}
+\absval{H} &= \absval{\{h \in H: \forall g \in G, ghg^{-1} = h\}} + \sum\absval{\overline{x_i}} \\
+&=\absval{H \cap Z(G)} + \sum\absval{[G:G_{x_i}]} \text{ Because the order of the orbit is the index of the stabilizer}
+\end{align*}
+
+We know that $p \mid \absval{H}$, because $H$ is a nontrivial subgroup of a $p$-group. Also, $p \mid [G:G_{x_i}]$ because each $G_{x_i}$ is a subgroup of $G$, and none are trivial (because none of those orbits contain only one element; if there was an orbit with only one element, then it would be in the set $\{h \in H: \forall g \in G, ghg^{-1} = h\}$).
 
 \shunt
 
