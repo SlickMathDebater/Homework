@@ -148,8 +148,10 @@ Proceed as follows:
 \tab \tab Now, assume that there is an element of order $p$ (with $p$ prime) in $G$ if $p \mid \absval{G}$ for all $G$ with order less than $N$. Let $G$ be a group of order $N$, and let $p \mid N$ be a prime number. Pick an element of $G$, call it $g$, other than the identity. It has some order, $m>1$. Either $p \mid m$ or not. If so, then take $g^{m/p}$; this element clearly has order $p$. If not, then consider $G/\anbrack{a}$ (this is well defined; $G$ is abelian, so $\anbrack{a}$ is normal, because all subgroups are normal in abelian groups). We know that $p \mid \absval{G /\anbrack{a}}$; $p \mid \absval{G} = \absval{G/\anbrack{a}}\absval{a}$, so because $p$ is prime, we know that $p \mid \absval{G/\anbrack{a}}$. So there's an element, $b$, of order $p$ in $G/\anbrack{a}$. So there is an element with $\overline{c} = b$. Now, $c^p \in \anbrack{a}$;
 
 \begin{align*}
-Proof &= Goes\\
-&=Here
+c &= ba^x \text{ for some $x \in \Z$ , because $\overline{c} = b$}\\
+c^p &= b^pa^{px} \\
+c^p &= a^y  \text{ for some $y \in \Z$ , because $\overline{b}^p = e$}\\
+c^p &\in \anbrack{a}
 \end{align*}
 
 \tab \tab So, $c^p = a^l$ for some $l \in \N$. We know that $a^l$ has a finite order, $\absval{a^l}$. So clearly $c^\absval{a^l}$ has order $p$.
@@ -160,19 +162,17 @@ Proof &= Goes\\
 
 \tab Consider the new group $G_1=G/H_1$, along with $n_1 = n/p_1$. Note that $\absval{G_1} = \absval{G}/p_1$; this follows from the theorem that says $\absval{G/H} = \absval{G}/\absval{H}$ if $H$ is normal.
 
-\tab We know that $G_1$ is abelian:
-
-\tab \tab %Proof
+\tab We know that $G_1$ is abelian, by a theorem we probably discussed in class.
 
 \tab So by similar logic as above, if $a_1 > 1$, then there is a subgroup of order $p_1$ in $G$. Otherwise, we know that there is a subgroup of order $p_2$ in $G$.
 
-\tab Either way, there is a subgroup, $H_2'$, with order $p_1$ (or $p_2$) in $G_1$, which is normal. %You also have to make H_2 a subgroup of G!
+\tab Either way, there is a subgroup, $H_2' < G_1$, with order $p_1$ (or $p_2$) in $G_1$. This subgroup is normal in $G_1$, because $G_1$ is abelian. Now, there's a subgroup of $G$ containing $H_1$ that corresponds to $H_2'$: call this subgroup $H_2$. We know that $H_2$ is normal, because $G$ is abelian.
 
-\tab Consider the group $G_2=G_1/H_2$. Note that $G_2 \cong G/H_2$, by the third isomorphism theorem. Moreover, $\absval{G_2} = \absval{G}/p_1^2$ (or $\absval{G_2} = \absval{G}/p_1p_2$).
+\tab Consider the group $G_2=G_1/H_2'$. Note that $G_2 \cong G/H_2$, by the third isomorphism theorem. Moreover, $\absval{G_2} = \absval{G}/p_1^2$ (or $\absval{G_2} = \absval{G}/p_1p_2$).
 
-\tab We can proceed in the above manner for $a_i$ times for each $p_i$. We end up with a group, $G_{a_1+a_2 \ldots + a_k}$.
+\tab We can proceed in the above manner $a_i$ times for each $p_i$. Proceed until each prime factor is exhausted.
 
-Consider $G_{a_1+a_2 \ldots +a_k}$; it has order $\absval{G}/n$. It is isomorphic to $G/H_{a_1+a_2 \ldots +a_k}$ for some $H \subgp G$. This means that $\absval{H} = n$ (because $\absval{G/H} = \absval{G}/\absval{H}$...thus, $\absval{H} = \absval{G}/\absval{G/H}$, or in this case, $\absval{H} = \absval{G}/(\absval{G}/n) = n$.)
+Consider $G_{a_1+a_2 \ldots +a_k}$; it has order $\absval{G}/n$, by the construction above, and is isomorphic to $G/H_{a_1+a_2 \ldots +a_k}$ for some $H \subgp G$. This means that $\absval{H} = n$ (because $\absval{G/H} = \absval{G}/\absval{H}$...thus, $\absval{H} = \absval{G}/\absval{G/H}$, or in this case, $\absval{H} = \absval{G}/(\absval{G}/n) = n$.)
 
 So $G$ has a normal subgroup of order $n$ if $G$ is a finite abelian group with $n \mid \absval{G}$.
 
