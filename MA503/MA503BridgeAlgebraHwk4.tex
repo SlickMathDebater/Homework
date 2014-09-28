@@ -1,0 +1,255 @@
+
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{fancyhdr}
+\usepackage{amssymb}
+%\usepackage{mathpazo}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{slashed}
+\usepackage[mathscr]{euscript}
+
+\newcommand{\tab}{\hspace{4mm}} %Spacing aliases
+\newcommand{\shunt}{\vspace{20mm}}
+
+\newcommand{\sd}{\partial} %Squiggle d
+
+\newcommand{\absval}[1]{\lvert #1 \rvert}
+\newcommand{\anbrack}[1]{\left\langle #1 \right\rangle}
+\newcommand{\norm}[1]{\|#1\|}
+
+
+\newcommand{\al}{\alpha} %Steal ALL of Dr. Kable's Aliases! MWAHAHAHAHA!
+\newcommand{\be}{\beta}
+\newcommand{\ga}{\gamma}
+\newcommand{\Ga}{\Gamma}
+\newcommand{\de}{\delta}
+\newcommand{\De}{\Delta}
+\newcommand{\ep}{\epsilon}
+\newcommand{\vep}{\varepsilon}
+\newcommand{\ze}{\zeta}
+\newcommand{\et}{\eta}
+\newcommand{\tha}{\theta}
+\newcommand{\vtha}{\vartheta}
+\newcommand{\Tha}{\Theta}
+\newcommand{\io}{\iota}
+\newcommand{\ka}{\kappa}
+\newcommand{\la}{\lambda}
+\newcommand{\La}{\Lambda}
+\newcommand{\rh}{\rho}
+\newcommand{\si}{\sigma}
+\newcommand{\Si}{\Sigma}
+\newcommand{\ta}{\tau}
+\newcommand{\ups}{\upsilon}
+\newcommand{\Ups}{\Upsilon}
+\newcommand{\ph}{\phi}
+\newcommand{\Ph}{\Phi}
+\newcommand{\vph}{\varphi}
+\newcommand{\vpi}{\varpi}
+\newcommand{\ch}{\chi}
+\newcommand{\ps}{\psi}
+\newcommand{\Ps}{\Psi}
+\newcommand{\om}{\omega}
+\newcommand{\Om}{\Omega}
+
+\newcommand{\bbA}{\mathbb{A}}
+\newcommand{\A}{\mathbb{A}}
+\newcommand{\bbB}{\mathbb{B}}
+\newcommand{\bbC}{\mathbb{C}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\bbD}{\mathbb{D}}
+\newcommand{\bbE}{\mathbb{E}}
+\newcommand{\bbF}{\mathbb{F}}
+\newcommand{\bbG}{\mathbb{G}}
+\newcommand{\G}{\mathbb{G}}
+\newcommand{\bbH}{\mathbb{H}}
+\newcommand{\HH}{\mathbb{H}}
+\newcommand{\bbI}{\mathbb{I}}
+\newcommand{\I}{\mathbb{I}}
+\newcommand{\bbJ}{\mathbb{J}}
+\newcommand{\bbK}{\mathbb{K}}
+\newcommand{\bbL}{\mathbb{L}}
+\newcommand{\bbM}{\mathbb{M}}
+\newcommand{\bbN}{\mathbb{N}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\bbO}{\mathbb{O}}
+\newcommand{\bbP}{\mathbb{P}}
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\bbQ}{\mathbb{Q}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\bbR}{\mathbb{R}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\bbS}{\mathbb{S}}
+\newcommand{\bbT}{\mathbb{T}}
+\newcommand{\bbU}{\mathbb{U}}
+\newcommand{\bbV}{\mathbb{V}}
+\newcommand{\bbW}{\mathbb{W}}
+\newcommand{\bbX}{\mathbb{X}}
+\newcommand{\bbY}{\mathbb{Y}}
+\newcommand{\bbZ}{\mathbb{Z}}
+\newcommand{\Z}{\mathbb{Z}}
+
+\newcommand{\scrA}{\mathcal{A}}
+\newcommand{\scrB}{\mathcal{B}}
+\newcommand{\scrC}{\mathcal{C}}
+\newcommand{\scrD}{\mathcal{D}}
+\newcommand{\scrE}{\mathcal{E}}
+\newcommand{\scrF}{\mathcal{F}}
+\newcommand{\scrG}{\mathcal{G}}
+\newcommand{\scrH}{\mathcal{H}}
+\newcommand{\scrI}{\mathcal{I}}
+\newcommand{\scrJ}{\mathcal{J}}
+\newcommand{\scrK}{\mathcal{K}}
+\newcommand{\scrL}{\mathcal{L}}
+\newcommand{\scrM}{\mathcal{M}}
+\newcommand{\scrN}{\mathcal{N}}
+\newcommand{\scrO}{\mathcal{O}}
+\newcommand{\scrP}{\mathcal{P}}
+\newcommand{\scrQ}{\mathcal{Q}}
+\newcommand{\scrR}{\mathcal{R}}
+\newcommand{\scrS}{\mathcal{S}}
+\newcommand{\scrT}{\mathcal{T}}
+\newcommand{\scrU}{\mathcal{U}}
+\newcommand{\scrV}{\mathcal{V}}
+\newcommand{\scrW}{\mathcal{W}}
+\newcommand{\scrX}{\mathcal{X}}
+\newcommand{\scrY}{\mathcal{Y}}
+\newcommand{\scrZ}{\mathcal{Z}}
+
+\newcommand{\subgp}{\mathrel{\unlhd}}
+
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+\newcommand{\colorcomment}[2]{\textcolor{#1}{#2}} %First of these leaves in comments. Second one kills them.
+%\newcommand{\colorcomment}[2]{}
+
+
+\pagestyle{fancy}
+\lhead{Max Jeter}
+\rhead{MA503, Assignment 4, Page \thepage}
+
+\begin{document}
+
+{\bf Problem 1:}
+
+Let $G$ be a group, and let $a, b \in G$ with $\absval{a} = m$, $\absval{b} = n$.
+
+Part a:
+
+First, if $m \mid k$, then $m = lk$ for some $l \in \Z$. So $a^k = a^{lm} = (a^{m})^l = e^l = e$.
+
+Next, if $m \slashed{\mid} k$, then $k = lm + j$ for some $l \in \Z$, $j \in \N$ with $0 < j < m$. So $a^k = a^{lm+j} = a^{lm}a^j=a^j \neq e$. ($a^j \neq e$ for any $j$ between $0$ and $m$ (exclusive), because otherwise the order of $a$ would be less than $m$, which is against our assumptions.)
+
+So $m \mid k$ if and only if $a^k = e$.
+
+\shunt
+
+Part b: %Warning to self: intuition says that something's missing here.
+
+Let $ab=ba$, and $\anbrack{a} \cap \anbrack{b} = \{e\}$.
+
+First, $\absval{ab} \leq \text{lcm}(m,n)$:
+
+\tab Then $(ab)^{\text{lcm}(m,n)} = a^{\text{lcm}(m,n)}b^{\text{lcm}(m,n)} = ee=e$.
+
+\tab So ${\text{lcm}(m,n)}$ is a positive number with the property $(ab)^{\text{lcm}(m,n)} =e$; $\text{lcm}(m,n)$ is greater than or equal to the order of $ab$. (So $\absval{ab} \leq \text{lcm}(m,n)$).
+
+Next, $\absval{ab} \geq \text{lcm}(m,n)$:
+
+\tab Let $(ab)^r = e$, with $r \in \N$ and $r \geq 1$.
+
+\tab Then $(ab)^r = a^rb^r = e$. To rewrite this, we know that $a^r = b^{-r}$. Now, because $\anbrack{a} \cap \anbrack{b} = \{e\}$, we know that $a^s = b^t$ for any $s, t \in \Z$ implies that $a^s = b^t = e$. By the earlier problem, this means that $m \mid r$ and $n \mid -r$ (or equivalently, $n \mid r$).
+
+\tab So by theorems of number theory, this means that $\text{lcm}(m,n) \mid r$. So $r \geq \text{lcm}(m,n)$ if $(ab)^r = e$ and $r \geq 1$.
+
+So by the squeeze theorem, $\absval{ab} = \text{lcm}(m,n)$.
+
+\shunt
+
+{\bf Problem 2:}
+
+Consider $\de = (1 \; 2 \ldots n)$.
+
+From theorem 4.9a, we know that the number of conjugacy classes of $\de$ is equal to $[G:C(x)]$.
+
+From theorem 5.6, we know that every $n$-cycle is conjugate to $\de$. There are $(n-1)!$ $n$-cycles in $S_n$:
+
+\tab We know that there are $n!$ elements of $S_n$. Pick an element of $S_n$...call it $\sigma$. Now, write the cycle $(\sigma(1) \; \sigma(2) \; \sigma(3) \; \ldots \sigma(n))$. This cycle is equivalent to $n$ other cycles, each given by
+
+\begin{align*}
+&(\sigma(2) \; \sigma(3) \; \sigma(4) \; \ldots \sigma(n) \; \sigma(1))\\
+&(\sigma(3) \; \sigma(4) \; \sigma(5) \; \ldots \sigma(n) \; \sigma(1) \; \sigma(2))\\
+&\ldots \\
+&(\sigma(n) \; \sigma(1) \; \sigma(2) \; \ldots \sigma(n-1)).
+\end{align*}
+
+\tab So there are $n!/n = (n-1)!$ different $n$-cycles in $S_n$
+
+So $[G:C(x)] = (n-1)!$. So $\absval{C(x)} = n$.
+
+Now, there are $n$ elements of the form $\de^i$; we know from class that an $n$-cycle has order $n$, so $\absval{\{\de^i: i \in \Z\}}=\absval{\anbrack{\de}} = n$.
+
+Each element of the form $\de^i$ commutes with $\de$ trivially.
+
+So the only elements that commute with $\de$ are the elements of the form $\de^i$; there are $n$ of them, and there can only be $n$ different elements that commute with $\de$.
+
+\shunt
+
+{\bf Problem 3:}
+
+The following proof is constructive; it mimicks a selection sort.
+
+Let $\sigma \in S_n$. Then for each $m \in \{1,2, \ldots ,n\}$:
+
+\tab %Do the selection sort.
+
+Thus, we have represented $\sigma$ as a product of $(1 \; 2) $, $(1 \; 2 \; 3 \ldots n)$, and their inverses; $\sigma \in \anbrack{(1 \; 2) , (1 \; 2 \; 3 \ldots n)}$ for all $\sigma \in S_n$, that is $S_n \subset \anbrack{(1 \; 2) , (1 \; 2 \; 3 \ldots n)}$, which implies that $S_n = \anbrack{(1 \; 2) , (1 \; 2 \; 3 \ldots n)}$ (because subgroups generated by elements are still subgroups.)
+
+\shunt
+
+{\bf Problem 4:}
+
+Let $p$ be a prime number and let $H<S_p$ contain a transposition and act transitively on $\{1,\ldots,p\}$.
+
+From the earlier homework, $H$ has an element with no fixed point (it acts transitively on a finite set).
+
+However, any element that acts on $\{1, \ldots, p\}$ with no fixed point must be a $p$-cycle:
+
+\tab %Proof: ask someone for halp.
+
+This means that $H$ contains a transposition and a $p$-cycle; by a quick adaptation of the above problem, this means that $H = S_p$.
+
+\shunt
+
+{\bf Problem 5:}
+
+This is given as an exercise in Hungerford: out of a sense of honesty, I must admit that I ran across this in the book, instead of coming up with it independently.
+
+Consider $ H =\{(1), (1 \; 2)(3 \; 4), (1 \; 3) (2 \; 4), (1 \; 4) (2 \; 3)\}$.
+
+First, $H \leq G$;
+
+\tab %Proof
+
+Next, $H \subgp G$;
+
+\tab %Proof
+
+\shunt
+
+{\bf Problem 6:}
+
+This is basically given in Hungerford: out of a sense of honesty, I must admit that I ran across this in the book, instead of coming up with it independently.
+
+\shunt
+
+{\bf Problem 7:}
+
+Define $\phi: \text{Aut}(A_4) \to S_4$ by:
+
+%Describe \phi, prove it's an isomorphism. 
+
+\shunt
+
+\end{document}
