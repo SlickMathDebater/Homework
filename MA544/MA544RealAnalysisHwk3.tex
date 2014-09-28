@@ -130,16 +130,69 @@
 
 \begin{document}
 
+I don't know if we covered the $\rh$ metric ($\rh(f,g) = \sup(\absval{f(x)-g(x)}: x \in X)$, where $X$ is the domain of $f$ and $g$), but I'm using it because it's nice and I like it.
+
 {\bf Problem 1:}
+
+Consider the sequence of functions $f_n:(-\pi/2,\pi/2) \to \R $ given by $ f_n(x) =\sec(x) + 1/n$.
+
+It is rather clear that this sequence of functions converges uniformly (to $\sec(x)$).
+
+However, the sequence of functions $\anbrack{f_n^2}$ fails to converve uniformly:
+
+\tab For each $n \in \N$, $f_n^2(x) = \sec(x)^2 + 2\sec(x)/n + 1/n^2$. It is rather clear that $\anbrack{f_n^2}$ converges pointwise to $\sec(x)^2$. However, $\anbrack{f_n^2}$ does not converge uniformly:
+
+\tab \tab %For every \ep >0 there is an x with |sec(x)^2 - f_n(x)^2| \geq \ep. So we can't have uniform convergence.
+
+So $\anbrack{f_n}$ converges uniformly on $(-\pi/2, \pi/2)$, but $\anbrack{f_n^2}$ doesn't. This satisfies the problem.
 
 \shunt
 
 {\bf Problem 2:}
 
+Note: After finishing this problem, I noticed that this follows immediately from a fragment of the proof of Arzela-Ascoli. I prefer this proof, as it is smoother, but it is important to note that such a thing is possible.
+
+Let $\anbrack{f_n}$ be an equicontinuous sequence of functions on a compact set, $K$, with $\anbrack{f_n}$ converging pointwise to some function, say $f$.
+
+By the Arzela-Ascoli theorem, we know that $\anbrack{f_n}$ has some subsequence that uniformly converges to some function. We know that this function must be $f$: if a subsequence of functions converges uniformly to $f$, it converges pointwise to $f$. If a sequence of functions converges pointwise to a function, $f$, then all of its subsequences converge to $f$. So if a sequence of functions converges pointwise to $f$, then any subsequence of functions that converges uniformly to a function must converge uniformly to $f$.
+
+Now, consider such a converging subsequence, $\anbrack{f_{n_j}}$.
+
+\tab Let $\ep >0$. There is a $J \in \N$ such that for all $j \geq J$, $\rh(f_{n_j}, f) < \ep/3$.
+
+\tab In addition, by equicontinuity, there is a $\de >0$ such that for all $n \in \N$, $x,y \in K$, $d(x,y) < \de$ implies that $d(f_n(x),f_n(y)) < \ep/3$.
+
+\tab We know that compact sets are totally bounded. (If this is not clear, consider a career in pastry making.)
+
+\tab So, let $F$ be a finite collection of points of $K$ such that for all $x \in K$, $d(x,y) < \de$ for some $y \in F$.
+
+\tab Now, for each $y \in F$, there is an $N_y \in \N$ such that for all $n \geq N_y$, $d(f_n(y),f(y)) < \ep/3$. 
+
+\tab Define $N = \max(N_y,n_J)$. 
+
+\tab Now, for all $n \geq N$, and for all $x \in K$, we have:
+
+\begin{align*}
+The proof
+\end{align*}
+
+So for all $\ep >0$ there is an $N \in \N$ such that for all $n \geq N$, for all $x \in K$, $d(f_n(x),f(x)) < \ep$. That is, $f_n$ converges uniformly to $f$.
+
+To summarize, if $\anbrack{f_n}$ is an equicontinuous sequence of functions on a compact set, $K$, with $\anbrack{f_n}$ converging pointwise, then $\anbrack{f_n}$ converges uniformly.
+
 \shunt
 
 {\bf Problem 3:}
 
+Let $\anbrack{f_n}$ be a uniformly bounded sequence of functions that are Riemann-integrable on $[a,b]$. Set
+
+\begin{displaymath}
+F_n(x) = \int\limits_a^x f_n(t)dt
+\end{displaymath}
+
+Now, the set of $F_n$s are equicontinuous: %Prove it. It comes from uniform boundedness.
+
+In addition, the $F_n$s are defined on $[a,b]$, which is a compact space. By Arzela-Ascoli, there is a subsequence $\anbrack{F_{n_j}}$ that converges uniformly on $[a,b]$.
 \shunt
 
 {\bf Problem 4:}
