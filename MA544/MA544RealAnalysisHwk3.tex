@@ -7,6 +7,7 @@
 \usepackage{mathtools}
 \usepackage{amsmath}
 \usepackage{slashed}
+\usepackage{cancel}
 \usepackage[mathscr]{euscript}
 
 \newcommand{\tab}{\hspace{4mm}} %Spacing aliases
@@ -170,7 +171,7 @@ Now, consider such a converging subsequence, $\anbrack{f_{n_j}}$.
 
 \tab Define $N = \max(N_y,n_J)$. 
 
-\tab Now, for all $n \geq N$, and for all $x \in K$, we have:
+\tab Now, for all $n \geq N$, and for all $x \in K$, we have: %Do the proof
 
 \begin{align*}
 The proof
@@ -197,13 +198,42 @@ In addition, the $F_n$s are defined on $[a,b]$, which is a compact space. By Arz
 
 {\bf Problem 4:}
 
+Let $\anbrack{f_n}$ be a sequence of increasing functions on $\R$ with $0 \leq f_n(x) \leq 1$. 
+
 \shunt
 
 {\bf Problem 5:}
 
+Let $\al$ be increasing on $[a,b]$, $g$ continous, and $g(x) = G'(x)$ for all $x \in [a,b]$.
+
+Then note that both $\int\limits_a^b \al(x)g(x)dx$ and $\int\limits_a^b Gd\al$ exist, because both $\al$ and $g$ are Riemann integrable.
+
+%Want some version of \al(t)G(t) - \al(a)G(a) = \int\limits_a^t (\al(x)g(x) + G(x)d\al), which should come from some version of the FTC and product rule.
+
 \shunt
 
 {\bf Problem 6:}
+
+Let $\al$ be an increasing function on $[a,b]$, and for $u \in \scrR (\al)$, define
+
+\begin{align*}
+\norm{u}_2 = \left(\int\limits_a^b \absval{u}^2 d\al \right)^{1/2}.
+\end{align*}
+
+Let $f,g,h \in \scrR(\al)$.
+
+Then we have the following:
+
+\begin{align*}
+\norm{f-h}_2 &= \left(\int\limits_a^b \absval{f-h}^2 d\al \right)^{1/2}\\
+&= \left(\int\limits_a^b \absval{f-g+g-h}^2 d\al \right)^{1/2}\\
+&\leq \left(\int\limits_a^b (\absval{f-g} + \absval{g-h})^2 d\al \right)^{1/2}\\
+&= \left(\int\limits_a^b \absval{f-g}^2 + 2\absval{f-g}\absval{g-h} + \absval{g-h}^2 d\al \right)^{1/2}\\
+&\leq \left(\int\limits_a^b \absval{f-g}^2 + \absval{g-h}^2 d\al \right)^{1/2}\\
+&= \norm{f-g}_2 + \norm{g-h}_2
+\end{align*}
+
+Thus, we have the triangle inequality for this $\cancel{\text{norm}}$ strange function I have never seen before.
 
 \shunt
 
