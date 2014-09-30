@@ -198,11 +198,13 @@ So the only elements that commute with $\de$ are the elements of the form $\de^i
 
 {\bf Problem 3:}
 
-The following proof is constructive; it mimicks a selection sort. I attempt to illustrate the proof using crayon.
+The following proof is constructive; it mimicks a selection sort. I attempt to illustrate the proof using crayon, as the proof is nigh-illegible otherwise.
 
 Define $s = (1 \; 2)$ and $r = (1 \; 2 \; 3 \ldots \; n)$. (``swap'' and ``rotation'').
 
 \shunt %Show what s and r do. 
+
+\shunt
 
 Let $\sigma \in S_n$. Then for each $m \in \{1,2, \ldots ,n\}$:
 
@@ -210,19 +212,27 @@ Let $\sigma \in S_n$. Then for each $m \in \{1,2, \ldots ,n\}$:
 
 \shunt %Show what that rotation does.
 
-\tab Define $\al_1 = r^{-\sigma(1) -1}$. From the above diagram, it is clear that $\al_1(1) = \sigma(1)$. Now, determine $\al_1(\sigma(2))$. Define $\be_2 = r^{-(\al_1(\sigma(2))-1)}$.
+\shunt
+
+\tab Define $\al_1 = r^{-\sigma(1) -1}$. From the above diagram, it is clear that $\al_1(1) = \sigma(1)$. Now, determine $\al_1(\sigma(2))$. Define $\be_2 = r^{-(\al_1(\sigma(2))-1)}$. (Look at the picture)
 
 \shunt %Show what beta does.
 
-\tab Define $\ga_2 = (rs)^{something}$.
+\shunt
+
+\tab Define $\ga_2 = (rs)^{\be_2\al_1\sigma(2)-\be_2\al_1\sigma(1)) -1}$. (Seriously, just look at the pictures)
 
 \shunt %Show what gamma does.
 
-\tab Now, $\al_2(1) = \sigma(1)$ and $\al_2(2) = \sigma(2)$.
+\shunt
 
-\tab We proceed by induction:
+\tab Now define $\al_2 = \ga_2\be_2\al_1$ Now, $\al_2(1) = \sigma(1)$ and $\al_2(2) = \sigma(2)$, as is clear from the illustrations.
 
-\tab %ctrl c ctrl v
+\tab We iterate to completion: for each $n \in \N$ we can define $\al_n = \ga_n\be_n\al_{n-1}$ recursively, where $\be_n = r^{-(\al_{n-1}(\sigma(n))-(n-1))}$ and $\ga_n = (rs)^{\be_n\al_{n-1}\sigma(n)-\be_n\al_{n-1}\sigma(n-1)) -(n-1)}$. From the below illustrations, it should be clear that for each $n$, $\al_n(x) = \sigma(x)$ for all $x \leq n$.
+
+\shunt %Show the iterations.
+
+\shunt
 
 \tab So we have constructed $\al_n = \sigma$, with $\al_n$ a product of $r$, $s$, and their inverses. Thus, $\sigma \in \anbrack{(1 \; 2) , (1 \; 2 \; 3 \ldots n)}$ for all $\sigma \in S_n$
 
