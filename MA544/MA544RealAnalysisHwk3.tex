@@ -15,7 +15,7 @@
 
 \newcommand{\sd}{\partial} %Squiggle d
 
-\newcommand{\absval}[1]{\lvert #1 \rvert}
+\newcommand{\absval}[1]{\left\lvert #1 \right\rvert}
 \newcommand{\norm}[1]{\|#1\|}
 \newcommand{\anbrack}[1]{\left\langle #1 \right\rangle}
 
@@ -221,6 +221,26 @@ In addition, the $F_n$s are defined on $[a,b]$, which is a compact space. By Arz
 
 Let $\anbrack{f_n}$ be a sequence of increasing functions on $\R$ with $0 \leq f_n(x) \leq 1$. 
 
+Some subsequence, $\anbrack{f_{n_k}}$, converges at all rational points, to some function $f$ on the rationals.
+
+\tab %Proof
+
+Now, define $f(x) = \sup(f(r): r \leq x)$.
+
+Then $f_{n_k}(x) \to f(x)$ at all points of continuity, $x$.
+
+\tab %Proof...is obvious.
+
+Now, there are countably many points of discontinuity of $f$;
+
+\tab %Proof is not so obvious to me right now.
+
+Thus, there is a subsequence of $\anbrack{f_{n_k}}$ that converges to $f$ at every point of discontinuity of $f$. 
+
+So, this subsequence converges pointwise to $f$ at every point of $\R$, satisfying the problem. 
+
+
+
 \shunt
 
 {\bf Problem 5:}
@@ -229,9 +249,16 @@ Let $\al$ be increasing on $[a,b]$, $g$ continous, and $g(x) = G'(x)$ for all $x
 
 Then note that both $\int\limits_a^b \al(x)g(x)dx$ and $\int\limits_a^b Gd\al$ exist; the first because reasons, and the second because $G$ is differentiable, thus continuous, thus $G \in \scrR(\al)$.
 
-We proceed by hashing through definitions, as I apparently hate myself and am uncreative tonight.
+Let $\ep >0$. There is a $\de >0$ such that if the mesh of a partition, $P$ of $[a,b]$, is less than $\de$, then for any set of tags of that partition, $T$,
 
-%Want some version of \al(t)G(t) - \al(a)G(a) = \int\limits_a^t (\al(x)g(x) + G(x)d\al), which should come from some version of the FTC and product rule.
+\begin{align*}
+\absval{\sum\limits_{i=1}^n g(t_i)\al(t_i) \Delta x_i - \int\limits_a^b \al(x)g(x)dx} &< \ep/2 \\
+\absval{\sum\limits_{i=1}^n G(t_i)\Delta \al_i - \int\limits_a^b G(x)d\al} &< \ep/2
+\end{align*}
+
+Now, pick a set of tags, $t_i \in [x_{i-1},x_i]$ such that $G(x_i) - G(x_{i-1}) = g(t_i)\De x_i$. We can do this, because of the mean value theorem.
+
+Then we have the following:
 
 \shunt
 
