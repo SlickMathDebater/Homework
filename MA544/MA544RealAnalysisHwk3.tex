@@ -223,13 +223,15 @@ Let $\anbrack{f_n}$ be a sequence of increasing functions on $\R$ with $0 \leq f
 
 Some subsequence, $\anbrack{f_{n_k}}$, converges at all rational points, to some function $f$ on the rationals.
 
-\tab %Enumerate the rationals, build $f_1$ as the first element that works for the first one, $f_2$ as the second element that works for the first and second, $f_3$ as the third element that works for the first, second, and third, and so on.
+\tab Enumerate the rationals.
+
+%Enumerate the rationals, build $f_1$ as the first element that works for the first one, $f_2$ as the second element that works for the first and second, $f_3$ as the third element that works for the first, second, and third, and so on.
 
 Now, define $f(x) = \sup(f(r): r \leq x)$.
 
-Then $f_{n_k}(x) \to f(x)$ at all points of continuity, $x$.
+Then $f_{n_k}(x) \to f(x)$ at all points of continuity, $x$;
 
-\tab %Proof...is obvious.
+\tab %Proof
 
 Now, there are countably many points of discontinuity of $f$; $f$ is a limit of increasing functions, it must also be increasing, and thus $f$ has countably many points of discontinuity.
 
@@ -289,21 +291,22 @@ Let $\al$ be an increasing function on $[a,b]$, and for $u \in \scrR (\al)$, def
 \norm{u}_2 = \left(\int\limits_a^b \absval{u}^2 d\al \right)^{1/2}.
 \end{align*}
 
+First, we show that $\int\limits_a^b \absval{fg} \leq \int\limits_a^b \absval{f} \int\limits_a^b \absval{g}$.
+
+\tab %Pull it from Rudin, 1.35
+
 Let $f,g,h \in \scrR(\al)$.
 
 Then we have the following:
 
 \begin{align*}
-\norm{f-h}_2 &= \left(\int\limits_a^b \absval{f-h}^2 d\al \right)^{1/2}\\
-&= \left(\int\limits_a^b \absval{f-g+g-h}^2 d\al \right)^{1/2}\\
-&\leq \left(\int\limits_a^b (\absval{f-g} + \absval{g-h})^2 d\al \right)^{1/2}\\
-&= \left(\int\limits_a^b \absval{f-g}^2 + 2\absval{f-g}\absval{g-h} + \absval{g-h}^2 d\al \right)^{1/2}\\
-&\leq \left(\int\limits_a^b \absval{f-g}^2 + \absval{g-h}^2 d\al \right)^{1/2}\\
-&\leq \left(\int\limits_a^b \absval{f-g}^2 d\al \right)^{1/2} + \left(\int\limits_a^b\absval{g-h}^2 d\al \right)^{1/2} \text{ (Known fact about sqrt)}\\
-&= \norm{f-g}_2 + \norm{g-h}_2
+\int\limits_a^b \absval{f-h}^2 d\al &= \int\limits_a^b \absval{f-g+g-h}^2 d\al \\
+&= \int\limits_a^b \absval{f-g+g-h}\absval{f-g+g-h} d\al \\
+&\leq \int\limits_a^b \absval{f-g}^2 +2\absval{f-g}\absval{g-h} + \absval{g-h}^2 d\al \\
+&= \left(\int\limits_a^b \absval{f-g} d\al + \int\limits_a^b \absval{g-h} d\al\right)^2
 \end{align*}
 
-Thus, we have the triangle inequality for this $\cancel{\text{norm}}$ strange function I have never seen before.
+Taking square roots of both sides yields the triangle inequality for this $\cancel{\text{norm}}$ strange function I have never seen before.
 
 \shunt
 
