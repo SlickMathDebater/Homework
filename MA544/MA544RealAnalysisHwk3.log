@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.9.27)  30 SEP 2014 23:18
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.9.27)  1 OCT 2014 12:43
 entering extended mode
 **MA544RealAnalysisHwk3.tex
 (C:\Users\Lonelight\Desktop\Homework\MA544\MA544RealAnalysisHwk3.tex
@@ -291,7 +291,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [3]
-Overfull \hbox (6.78662pt too wide) in paragraph at lines 250--251
+Overfull \hbox (6.78662pt too wide) in paragraph at lines 248--249
 \OT1/cmr/m/n/12 there is a sub-se-quence of $[]$ $[]$, call it $[]$ $[]$, such 
 that $\OML/cmm/m/it/12 f[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 r[]\OT1/cmr/m/n/12 
 ) \OMS/cmsy/m/n/12 !$
@@ -304,7 +304,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [4]
-Overfull \hbox (86.11055pt too wide) in paragraph at lines 294--294
+Overfull \hbox (86.11055pt too wide) in paragraph at lines 296--296
 [] 
  []
 
@@ -328,7 +328,14 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[7] (C:\Users\Lonelight\Desktop\Homework\MA544\MA544RealAnalysisHwk3.aux) ) 
+[7]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[8] (C:\Users\Lonelight\Desktop\Homework\MA544\MA544RealAnalysisHwk3.aux) ) 
 Here is how much of TeX's memory you used:
  2833 strings out of 493921
  39497 string characters out of 3140860
@@ -336,7 +343,7 @@ Here is how much of TeX's memory you used:
  6108 multiletter control sequences out of 15000+200000
  8592 words of font info for 33 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 33i,12n,43p,556b,206s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 33i,12n,43p,596b,206s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/
 Users/Lonelight/Desktop/PortablePrograms/texmakerwin32usb/MiKTeX/fonts/type1/pu
 blic/amsfonts/cm/cmbx12.pfb><C:/Users/Lonelight/Desktop/PortablePrograms/texmak
@@ -355,9 +362,9 @@ grams/texmakerwin32usb/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/User
 s/Lonelight/Desktop/PortablePrograms/texmakerwin32usb/MiKTeX/fonts/type1/public
 /amsfonts/latxfont/line10.pfb><C:/Users/Lonelight/Desktop/PortablePrograms/texm
 akerwin32usb/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on MA544RealAnalysisHwk3.pdf (7 pages, 137804 bytes).
+Output written on MA544RealAnalysisHwk3.pdf (8 pages, 140494 bytes).
 PDF statistics:
- 74 PDF objects out of 1000 (max. 8388607)
+ 77 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

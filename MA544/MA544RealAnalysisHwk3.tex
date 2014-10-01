@@ -241,15 +241,17 @@ Then $f_{n_k}(x) \to f(x)$ at all points of continuity, $x$;
 
 \tab Consider a sequence of rationals, $\anbrack{q_n}$, converging to $x$. We know that $f(q_n) \to f(x)$, by continuity. Moreover, $f_{n_k}(q_n) \to f(q_n)$ at each rational point. Now, there are only finitely many of the $f_{n_k}$s that are discontinuous at $x$, otherwise $f$ would be discontinuous at $x$. Thus, we can pick $n_k$ large enough that $f_{n_k}(q_n) \to f_{n_k}(x)$, for all $n_k > n_K$. From the above, the triangle inequality yields the result.
 
-\tab (I should probably formalize that. Eh, I'll do it tomorrow...)
-
 Now, there are countably many points of discontinuity of $f$; $f$ is an increasing function by the definition, and thus $f$ has countably many points of discontinuity.
 
 Thus, there is a subsequence of $\anbrack{f_{n_k}}$ that converges to $f$ at every point of discontinuity of $f$;
 
 \tab Enumerate the $\cancel{rationals}$ discontinuity set, by $\{r_i\}_{i=1}^\infty$. By Heine-Borel, there is a subsequence of $\cancel{\anbrack{f_n}}$ $\anbrack{f_{n_k}}$, call it $\cancel{\anbrack{f_{n_{r_1}}}}$ $\anbrack{f_{n_{k_{r_1}}}}$, such that $f_{n_{k_{r_1}}}(r_1) \to s_1$ for some $s_1 \in [0,1]$. (That's enough of that joke, I guess.)
 
-\tab Further, $s_1 = f(r_1)$; %I have no idea why this is true, but this is actually the crux of the definition.
+\tab Further, $s_1 = f(r_1)$;
+
+\tab \tab Any discontinuity of $f$ must occur at a rational point; let $x$ be irrational, and let $x_n \to x$. Then $f(x_n) = \sup(f(q): q \in \Q)$. This means that for each $n \in \N$, there is a sequence of rationals, $\anbrack{q_n}$, below $x_n$ with the property $q_n \to x_n$. We can build a sequence out of these, $\anbrack{q_{n_m}}$, and it is clear that it converges to $x$ and it is also clear that $f(q_{n_m}) \to f(x)$ and also that this implies that $f$ is continuous at $x$. (I'm tired of this problem, and this was the last line I wrote of it.)
+
+\tab \tab So, since the discontinuity occurs at a rational point, we know that $f_{n_k}$ converges to $f$ at that point, as this is how we constructed $f_{n_k}$.
 
 \tab Pick $f_{n_{k_1}}$ to be the first function in this subsequence.
 
@@ -313,21 +315,25 @@ Let $\al$ be an increasing function on $[a,b]$, and for $u \in \scrR (\al)$, def
 \norm{u}_2 = \left(\int\limits_a^b \absval{u}^2 d\al \right)^{1/2}.
 \end{align*}
 
-First, we show that $\left(\int\limits_a^b \absval{fg} \right)^2 \leq \int\limits_a^b \absval{f}^2 \int\limits_a^b \absval{g}^2$.
+First, we prove the Schwarz inequality:  $\left(\int\limits_a^b \absval{fg} \right)^2 \leq \int\limits_a^b \absval{f}^2 \int\limits_a^b \absval{g}^2$.
 
-\tab Put $A = \int\limits_a^b \absval{f}^2$, $B = \int\limits_a^b \absval{g}^2$, $C = \left(\int\limits_a^b \absval{fg} \right)^2$. 
+\tab Put $A = \int\limits_a^b \absval{f}^2$, $B = \int\limits_a^b \absval{g}^2$, $C = \left(\int\limits_a^b \absval{fg} \right)$. 
 
-\tab If $A$ or $B$ is $0$, then $f$ (or $g$) is $0$ almost everywhere. Hence, the result is reduced to $0=0$.
+\tab If $A$ or $B$ is $0$, then $f$ (or $g$) is $0$ almost everywhere. Hence, the Schwarz inequality is reduced to $0=0$.
 
 \tab So, let $A, B >0$. Then:
 
 \begin{align*}
-Ugly proof from Rudin.
+\int\limits_a^b \absval{Bf-Cg}^2 d\al &= \int\limits_a^b \absval{(Bf-Cg)}\absval{(Bf-Cg)} d\al \\
+&= \int\limits_a^b B^2\absval{f^2}-2BC\absval{fg} +C^2\absval{g^2} d\al \\
+&= B^2 \int\limits_a^b \absval{f^2} d\al -2BC \int\limits_a^b \absval{fg} d\al + C^2 \int\limits \absval{g^2} d\al \\
+&= B^2A-BC^2 \\
+&= B(AB-C^2)
 \end{align*}
 
-\tab As the left hand side is positive, $B(AB-C^2) \geq 0$. As $B >0$, we have $AB - C^2 \geq 0$, or $C^2 \leq AB$, which is the desired result.
+\tab As the left hand side is positive, $B(AB-C^2) \geq 0$. As $B >0$, we have $AB - C^2 \geq 0$, or $C^2 \leq AB$, which is the Schwarz inequality.
 
-Let $f,g,h \in \scrR(\al)$.
+Now, let $f,g,h \in \scrR(\al)$.
 
 Then we have the following:
 
