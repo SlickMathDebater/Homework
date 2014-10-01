@@ -221,21 +221,43 @@ In addition, the $F_n$s are defined on $[a,b]$, which is a compact space. By Arz
 
 Let $\anbrack{f_n}$ be a sequence of increasing functions on $\R$ with $0 \leq f_n(x) \leq 1$. 
 
-Some subsequence, $\anbrack{f_{n_k}}$, converges at all rational points, to some function $f$ on the rationals.
+Some subsequence, $\anbrack{f_{n_k}}$, converges at all rational points, to some function $f$ on the rationals:
 
-\tab Enumerate the rationals.
+\tab Enumerate the rationals, by $\Q = \{r_i\}_{i=1}^\infty$. By Heine-Borel, there is a subsequence of $\anbrack{f_n}$, call it $\anbrack{f_{n_{r_1}}}$, such that $f_{n_{r_1}}(r_1) \to s_1$ for some $s_1 \in [0,1]$.
 
-%Enumerate the rationals, build $f_1$ as the first element that works for the first one, $f_2$ as the second element that works for the first and second, $f_3$ as the third element that works for the first, second, and third, and so on.
+\tab Pick $f_{n_1}$ to be the first function in this subsequence.
+
+\tab Next, there is a subsequence of $\anbrack{f_{n_{r_1}}}$, call it $\anbrack{f_{n_{r_2}}}$, such that $f_{n_{r_2}}(r_2) \to s_2$ for some $s_2 \in [0,1]$. Moreover, $f_{n_{r_2}}(r_1) \to s_1$, as $\anbrack{f_{n_{r_2}}}$ is a subsequence of $\anbrack{f_{n_{r_1}}}$.
+
+\tab Pick $f_{n_2}$ to be the second function in this subsequence.
+
+\tab We carry out the above process recursively, and produce a subsequence of $\anbrack{f_n}$, called $\anbrack{f_{n_k}}$, that rather clearly converges at all rational points. 
+
+\tab Define $f: \Q \to [0,1]$ by $f(r_n) = s_n$ for each $n \in \N$. Then $\anbrack{f_{n_k}}$ converges pointwise to $f$ on $\Q$, as desired.
 
 Now, define $f(x) = \sup(f(r): r \leq x)$.
 
 Then $f_{n_k}(x) \to f(x)$ at all points of continuity, $x$;
 
-\tab %Proof
+\tab Consider a sequence of rationals, $\anbrack{q_n}$, converging to $x$. We know that $f(q_n) \to f(x)$, by continuity. Moreover, $f_{n_k}(q_n) \to f(q_n)$ at each rational point. Now, there are only finitely many of the $f_{n_k}$s that are discontinuous at $x$, otherwise $f$ would be discontinuous at $x$. Thus, we can pick $n_k$ large enough that $f_{n_k}(q_n) \to f_{n_k}(x)$, for all $n_k > n_K$. From the above, the triangle inequality yields the result.
 
-Now, there are countably many points of discontinuity of $f$; $f$ is a limit of increasing functions, it must also be increasing, and thus $f$ has countably many points of discontinuity.
+\tab (I should probably formalize that. Eh, I'll do it tomorrow...)
 
-Thus, there is a subsequence of $\anbrack{f_{n_k}}$ that converges to $f$ at every point of discontinuity of $f$; %Use the same argument as earlier.
+Now, there are countably many points of discontinuity of $f$; $f$ is an increasing function by the definition, and thus $f$ has countably many points of discontinuity.
+
+Thus, there is a subsequence of $\anbrack{f_{n_k}}$ that converges to $f$ at every point of discontinuity of $f$;
+
+\tab Enumerate the $\cancel{rationals}$ discontinuity set, by $\{r_i\}_{i=1}^\infty$. By Heine-Borel, there is a subsequence of $\cancel{\anbrack{f_n}}$ $\anbrack{f_{n_k}}$, call it $\cancel{\anbrack{f_{n_{r_1}}}}$ $\anbrack{f_{n_{k_{r_1}}}}$, such that $f_{n_{k_{r_1}}}(r_1) \to s_1$ for some $s_1 \in [0,1]$. (That's enough of that joke, I guess.)
+
+\tab Further, $s_1 = f(r_1)$; %I have no idea why this is true, but this is actually the crux of the definition.
+
+\tab Pick $f_{n_{k_1}}$ to be the first function in this subsequence.
+
+\tab Next, there is a subsequence of $\anbrack{f_{n_{k_{r_1}}}}$, call it $\anbrack{f_{n_{k_{r_2}}}}$, such that $f_{n_{k_{r_2}}}(r_2) \to s_2$ for some $s_2 \in [0,1]$. Moreover, $f_{n_{k_{r_2}}}(r_1) \to s_1$, as $\anbrack{f_{n_{k_{r_2}}}}$ is a subsequence of $\anbrack{f_{n_{k_{r_1}}}}$. And also, similar to the argument above, $s_2 = f(r_2)$.
+
+\tab Pick $f_{n_2}$ to be the second function in this subsequence.
+
+\tab We carry out the above process recursively, and produce a subsequence of $\anbrack{f_{n_k}}$, called $\anbrack{f_{n_{k_l}}}$, that rather clearly converges to $f$ at all of $f$'s points of discontinuity.
 
 So, this subsequence converges pointwise to $f$ at every point of $\R$, satisfying the problem. 
 
@@ -291,9 +313,19 @@ Let $\al$ be an increasing function on $[a,b]$, and for $u \in \scrR (\al)$, def
 \norm{u}_2 = \left(\int\limits_a^b \absval{u}^2 d\al \right)^{1/2}.
 \end{align*}
 
-First, we show that $\int\limits_a^b \absval{fg} \leq \int\limits_a^b \absval{f} \int\limits_a^b \absval{g}$.
+First, we show that $\left(\int\limits_a^b \absval{fg} \right)^2 \leq \int\limits_a^b \absval{f}^2 \int\limits_a^b \absval{g}^2$.
 
-\tab %Pull it from Rudin, 1.35
+\tab Put $A = \int\limits_a^b \absval{f}^2$, $B = \int\limits_a^b \absval{g}^2$, $C = \left(\int\limits_a^b \absval{fg} \right)^2$. 
+
+\tab If $A$ or $B$ is $0$, then $f$ (or $g$) is $0$ almost everywhere. Hence, the result is reduced to $0=0$.
+
+\tab So, let $A, B >0$. Then:
+
+\begin{align*}
+Ugly proof from Rudin.
+\end{align*}
+
+\tab As the left hand side is positive, $B(AB-C^2) \geq 0$. As $B >0$, we have $AB - C^2 \geq 0$, or $C^2 \leq AB$, which is the desired result.
 
 Let $f,g,h \in \scrR(\al)$.
 
