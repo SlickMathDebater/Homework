@@ -145,7 +145,7 @@ So $m \mid k$ if and only if $a^k = e$.
 
 \shunt
 
-Part b: %Warning to self: intuition says that something's missing here.
+Part b:
 
 Let $ab=ba$, and $\anbrack{a} \cap \anbrack{b} = \{e\}$.
 
@@ -157,11 +157,11 @@ First, $\absval{ab} \leq \text{lcm}(m,n)$:
 
 Next, $\absval{ab} \geq \text{lcm}(m,n)$:
 
-\tab Let $(ab)^r = e$, with $r \in \N$ and $r \geq 1$.
+\tab Let $r \in \N$ be such that $(ab)^r = e$.
 
 \tab Then $(ab)^r = a^rb^r = e$. To rewrite this, we know that $a^r = b^{-r}$. Now, because $\anbrack{a} \cap \anbrack{b} = \{e\}$, we know that $a^s = b^t$ for any $s, t \in \Z$ implies that $a^s = b^t = e$. By the earlier problem, this means that $m \mid r$ and $n \mid -r$ (or equivalently, $n \mid r$).
 
-\tab So by theorems of number theory, this means that $\text{lcm}(m,n) \mid r$. So $r \geq \text{lcm}(m,n)$ if $(ab)^r = e$ and $r \geq 1$.
+\tab So by elementary number theory, this means that $\text{lcm}(m,n) \mid r$. So $r \geq \text{lcm}(m,n)$ if $(ab)^r = e$ and $r \geq 1$.
 
 So by the squeeze theorem, $\absval{ab} = \text{lcm}(m,n)$.
 
@@ -246,13 +246,11 @@ Let $p$ be a prime number and let $H<S_p$ contain a transposition and act transi
 
 From the earlier homework, $H$ has an element with no fixed point (it acts transitively on a finite set).
 
-However, any element that acts on $\{1, \ldots, p\}$ with no fixed point must be a $p$-cycle:
+This means that $H$ contains a $p$-cycle:
 
-\tab %Proof: Use the group action to homomorph H into S_p. let h be such an element. h has order p. so h must be a p-cycle, because p is prime.
+\tab %Prove it: Try exploiting transitivity and a non-fixed point's cycle decomposition. Primality comes in at the end...to move the p-cycle back to a p-cycle of the big group.
 
-This means that $H$ contains a transposition and a $p$-cycle; by a quick adaptation of the above problem below, this means that $H = S_p$.
-
-The adaptation is this: %ctrl c ctrl v
+This means that $H$ contains a transposition and a $p$-cycle; by a quick adaptation of the above problem (it is a bit more than a simple relabeling, but it is still clear what to do), this means that $H = S_p$.
 
 \shunt
 
@@ -297,17 +295,64 @@ Thus, $H \subgp S_4$. (And so, $H \subgp A_4$).
 
 {\bf Problem 6:}
 
+Note: I adapt the proof in Hungerford to fit my needs for this problem.
+
 We know from class that for $n \geq 5$, $A_n$ is simple.
 
-Let $H \subgp S_n$, with $n \geq 5$.
+Let $N \subgp S_n$, with $n \geq 5$, with $N$ nontrivial.
+
+Then either $N$ contains a $3$-cycle, $N$ contains an element $\sigma$ with its cycle decomposition having a cycle of length $r \geq 4$, $N$ contains an element $\sigma$ with its cycle decomposition having at least two cycles of length $3$, $N$ contains an element $\sigma$ that is a product of one $3$-cycle and some $2$-cycles, or every element of $N$ is a product of disjoint $2$-cycles.
+
+\tab Case 1: If $N$ contains a $3$-cycle, then $N$ contains $A_n$; this implies that either $N=A_n$ or $N = S_n$.
+
+\tab Case 2: If $N$ contains an element $\sigma$ with its cycle decomposition having a cycle of length $r \geq 4$, then $\sigma = (a_1a_2\ldots a_r)\tau$ for some $\tau$ disjoint from the first cycle. Let $\de = (a_1a_2a_3)$. Then $\sigma^{-1}(\de \sigma \de^{-1}) \in N$ by normality. But
+
+\begin{displaymath}
+\sigma^{-1}(\de \sigma \de^{-1}) = \tau^{-1}(a_1a_ra_{r-1} \ldots a_2)(a_1a_2a_3)(a_1a_2a_3 \ldots a_r)\tau (a_1a_3a_2) = (a_1a_3a_r) \in N.
+\end{displaymath}
+
+
+\tab So $N$ has a $3$-cycle, and we regress to the first case.
+
+\tab Case 3: If $N$ contains an element $\sigma$ with its cycle decomposition having at least two cycles of length $3$, then $\sigma = (a_1a_2a_3)(a_4a_5a_6)\tau$ with $\tau$ disjoint from the first two cycles. Let $\de = (a_1a_2a_4)$. Then, as above, 
+
+\begin{displaymath}
+\sigma^{-1}(\de \sigma \de^{-1}) = \tau^{-1}(a_4a_6a_5)(a_1a_3a_2)(a_1a_2a_4)(a_1a_2a_3)(a_4a_5a_6)\tau (a_1a_4a_2) = (a_1a_4a_2a_6a_3) \in N.
+\end{displaymath}
+
+\tab And so we regress to the second case.
+
+\tab Case 4: If $N$ contains an element $\sigma$ that is a product of one $3$-cycle and some $2$-cycles, then $\sigma = (a_1a_2a_3)\tau$ where $\tau$ is disjoint from the first cycle and is a product of disjoint $2$-cycles. Then $\sigma ^2 \in N$ and so,
+
+\begin{displaymath}
+\si^2 =  (a_1a_2a_3)\tau(a_1a_2a_3)\tau = (a_1a_3a_2)\tau^2 = (a_1a_3a_2)
+\end{displaymath}
+
+\tab So we regress to the first case.
+
+\tab Case 5: If every element of $N$ is a product of disjoint $2$-cycles, then consider any $\si \in N$. If some $\si$ is a $2$-cycle, then $N = S_n$, by normality of $N$ and the fact that the $2$-cycles generate $S_n$. If not, then let $\si = (a_1a_2)(a_3a_4)\tau$ where $\tau$ is disjoint from the first two cycles. Then let $\de = (a_1a_2a_3)$. Then as above:
+
+\begin{displaymath}
+\sigma^{-1}(\de \sigma \de^{-1}) = \tau^{-1}(a_3a_4)(a_1a_2)(a_1a_2a_3)(a_1a_2)(a_3a_4)\tau(a_1a_3a_2)=(a_1a_3)(a_2a_4) \in \N
+\end{displaymath}
+
+\tab Define the above permutation to be $\ga$. There's an element, $a_5$, distinct from each of $a_1 \ldots a_4$. Consider $\la = (a_1a_3a_5)$. Now, we know that 
+
+\begin{displaymath}
+\ga^{-1}(\la \ga \la^{-1}) = (a_1a_3)(a_2a_4)(a_1a_3a_5)(a_1a_3)(a_2a_4)(a_1a_5a_3) = (a_1a_3a_5) \in \N
+\end{displaymath}
+
+\tab So we regress to the first case.
+
+That is, in all cases, we have that a nontrivial subgroup of $S_n$ is either $A_n$ or $S_n$. This satisfies the problem.
 
 \shunt
 
 {\bf Problem 7:}
 
-Define $\phi: \text{Aut}(A_4) \to S_4$ by:
+Define $\phi: \text{Aut}(A_4) \to S_4$ as follows:
 
-%Describe \phi, prove it's an isomorphism. 
+Define $a = ($
 
 \shunt
 
