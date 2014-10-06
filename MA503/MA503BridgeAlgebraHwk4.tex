@@ -248,9 +248,11 @@ From the earlier homework, $H$ has an element with no fixed point (it acts trans
 
 This means that $H$ contains a $p$-cycle:
 
-\tab %Prove it: Try exploiting transitivity and a non-fixed point's cycle decomposition. Primality comes in at the end...to move the p-cycle back to a p-cycle of the big group.
+\tab By the class equation and transitivity, $p = \sum[H:H_{x_i}]$. Now, this means that there is one stabilizer of any given $x_i$; if $[H:H_{x_i}] = 1$ for any given element, it is that for all elements (because $p$ is prime). This would mean that for all $x_i$, $H = H_{x_i}$; that is, the entire group stablizes every element, which contradicts transitivity.
 
-This means that $H$ contains a transposition and a $p$-cycle; by a quick adaptation of the above problem (it is a bit more than a simple relabeling, but it is still clear what to do), this means that $H = S_p$.
+\tab Moreover, this means that $[H:H_{x_i}] = p$, which implies that $\absval{H} = p \absval{H_{x_i}}$. So $p \mid \absval{H}$. Thus, $H$ has a subgroup of order $p$. So $H$ has an element of order $p$, by Cauchy's Theorem. We know that an element of $S_p$ of order $p$ is a $p$-cycle. So $H$ has a $p$-cycle.
+
+This means that $H$ contains a transposition and a $p$-cycle; by a quick adaptation of the above problem (it is a bit more than a simple relabeling...but the proof can somewhat clearly be reworked to get the desired result), this means that $H = S_p$.
 
 \shunt
 
@@ -375,13 +377,24 @@ Define $\phi: \text{Aut}(A_4) \to S_4$ as follows:
 
 \begin{align*}
 \phi(\psi\chi)(n) &= F(\psi\chi(F^{-1}(n))\\
-&= something\\
+&= F(\psi(\chi(F^{-1}(n)))\\
+&= F(\psi(F^{-1}(F(\chi(F^{-1}(n)))))\\
 &= \phi(\psi)\phi(\chi)(n)
 \end{align*}
 
 \tab Last, $\phi$ is bijective:
 
-\tab \tab %Proof
+\tab \tab First, $\phi$ is injective:
+
+\tab \tab \tab Let $\psi, \chi \in \text{Aut}(A_4)$, with $\phi(\psi) = \phi(\chi)$.
+
+\tab \tab \tab Then $\psi(l) = \chi(l)$, for all $l \in \{a,b,c,d\}$.
+
+\tab \tab \tab So $\psi = \chi$ on the generators of $A_4$. Thus, $\psi=\chi$ on $A_4$. This shows that $\phi$ is injective.
+
+\tab \tab Next, $\phi$ is surjective:
+
+\tab \tab \tab Consider $\si \in S_4$. 
 
 \shunt
 
