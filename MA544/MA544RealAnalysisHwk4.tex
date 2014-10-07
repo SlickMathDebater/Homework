@@ -1,0 +1,272 @@
+
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{fancyhdr}
+\usepackage{amssymb}
+%\usepackage{mathpazo}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{slashed}
+\usepackage{cancel}
+\usepackage[mathscr]{euscript}
+
+\newcommand{\tab}{\hspace{4mm}} %Spacing aliases
+\newcommand{\shunt}{\vspace{20mm}}
+
+\newcommand{\sd}{\partial} %Squiggle d
+
+\newcommand{\absval}[1]{\left\lvert #1 \right\rvert}
+\newcommand{\norm}[1]{\|#1\|}
+\newcommand{\anbrack}[1]{\left\langle #1 \right\rangle}
+
+
+
+\newcommand{\al}{\alpha} %Steal ALL of Dr. Kable's Aliases! MWAHAHAHAHA!
+\newcommand{\be}{\beta}
+\newcommand{\ga}{\gamma}
+\newcommand{\Ga}{\Gamma}
+\newcommand{\de}{\delta}
+\newcommand{\De}{\Delta}
+\newcommand{\ep}{\epsilon}
+\newcommand{\vep}{\varepsilon}
+\newcommand{\ze}{\zeta}
+\newcommand{\et}{\eta}
+\newcommand{\tha}{\theta}
+\newcommand{\vtha}{\vartheta}
+\newcommand{\Tha}{\Theta}
+\newcommand{\io}{\iota}
+\newcommand{\ka}{\kappa}
+\newcommand{\la}{\lambda}
+\newcommand{\La}{\Lambda}
+\newcommand{\rh}{\rho}
+\newcommand{\si}{\sigma}
+\newcommand{\Si}{\Sigma}
+\newcommand{\ta}{\tau}
+\newcommand{\ups}{\upsilon}
+\newcommand{\Ups}{\Upsilon}
+\newcommand{\ph}{\phi}
+\newcommand{\Ph}{\Phi}
+\newcommand{\vph}{\varphi}
+\newcommand{\vpi}{\varpi}
+\newcommand{\ch}{\chi}
+\newcommand{\ps}{\psi}
+\newcommand{\Ps}{\Psi}
+\newcommand{\om}{\omega}
+\newcommand{\Om}{\Omega}
+
+\newcommand{\bbA}{\mathbb{A}}
+\newcommand{\A}{\mathbb{A}}
+\newcommand{\bbB}{\mathbb{B}}
+\newcommand{\bbC}{\mathbb{C}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\bbD}{\mathbb{D}}
+\newcommand{\bbE}{\mathbb{E}}
+\newcommand{\bbF}{\mathbb{F}}
+\newcommand{\bbG}{\mathbb{G}}
+\newcommand{\G}{\mathbb{G}}
+\newcommand{\bbH}{\mathbb{H}}
+\newcommand{\HH}{\mathbb{H}}
+\newcommand{\bbI}{\mathbb{I}}
+\newcommand{\I}{\mathbb{I}}
+\newcommand{\bbJ}{\mathbb{J}}
+\newcommand{\bbK}{\mathbb{K}}
+\newcommand{\bbL}{\mathbb{L}}
+\newcommand{\bbM}{\mathbb{M}}
+\newcommand{\bbN}{\mathbb{N}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\bbO}{\mathbb{O}}
+\newcommand{\bbP}{\mathbb{P}}
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\bbQ}{\mathbb{Q}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\bbR}{\mathbb{R}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\bbS}{\mathbb{S}}
+\newcommand{\bbT}{\mathbb{T}}
+\newcommand{\bbU}{\mathbb{U}}
+\newcommand{\bbV}{\mathbb{V}}
+\newcommand{\bbW}{\mathbb{W}}
+\newcommand{\bbX}{\mathbb{X}}
+\newcommand{\bbY}{\mathbb{Y}}
+\newcommand{\bbZ}{\mathbb{Z}}
+\newcommand{\Z}{\mathbb{Z}}
+
+\newcommand{\scrA}{\mathcal{A}}
+\newcommand{\scrB}{\mathcal{B}}
+\newcommand{\scrC}{\mathcal{C}}
+\newcommand{\scrD}{\mathcal{D}}
+\newcommand{\scrE}{\mathcal{E}}
+\newcommand{\scrF}{\mathcal{F}}
+\newcommand{\scrG}{\mathcal{G}}
+\newcommand{\scrH}{\mathcal{H}}
+\newcommand{\scrI}{\mathcal{I}}
+\newcommand{\scrJ}{\mathcal{J}}
+\newcommand{\scrK}{\mathcal{K}}
+\newcommand{\scrL}{\mathcal{L}}
+\newcommand{\scrM}{\mathcal{M}}
+\newcommand{\scrN}{\mathcal{N}}
+\newcommand{\scrO}{\mathcal{O}}
+\newcommand{\scrP}{\mathcal{P}}
+\newcommand{\scrQ}{\mathcal{Q}}
+\newcommand{\scrR}{\mathcal{R}}
+\newcommand{\scrS}{\mathcal{S}}
+\newcommand{\scrT}{\mathcal{T}}
+\newcommand{\scrU}{\mathcal{U}}
+\newcommand{\scrV}{\mathcal{V}}
+\newcommand{\scrW}{\mathcal{W}}
+\newcommand{\scrX}{\mathcal{X}}
+\newcommand{\scrY}{\mathcal{Y}}
+\newcommand{\scrZ}{\mathcal{Z}}
+
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+\newcommand{\colorcomment}[2]{\textcolor{#1}{#2}} %First of these leaves in comments. Second one kills them.
+%\newcommand{\colorcomment}[2]{}
+
+
+\pagestyle{fancy}
+\lhead{Max Jeter}
+\rhead{MA544, Assignment 4, Page \thepage}
+
+\begin{document}
+
+Note: for all of the following, $l(I)$ is the length of the interval, $I$.
+
+{\bf Problem 1:} %Incomplete: fill in the functions and draw the pictures.
+
+Let $f$ be a measurable function defined on $[a,b]$ and assume that $f$ takes infinite values only on a set of measure zero. 
+
+Let $\ep >0$. There is a finite covering of open intervals, $U$ with the sum of the lengths of those intervals less than $\ep/2$ that covers the set of points that $f$ takes infinite values on (this follows from problem 6...you should probably grade that one first, if you're overly concerned about that sort of thing.)
+
+So, we know that $[a,b] \setminus U$ is a union of disjoint closed intervals (these intervals may actually be singletons, but that's OK.) So, represent $[a,b] \setminus U$ by $[x_1,x_2] \cup [x_3,x_4] \ldots \cup [x_{n-1},x_n]$, and call this set $F$.
+
+We define $h_n: F \to \R$ by
+
+\begin{displaymath}
+something
+\end{displaymath}
+
+Here is a picture. It is clear that each $h_n$ is a step function.
+
+\shunt %Break it up into regions of l(chunk)/n, then sample the midpoint.
+
+We define $g_n: F \to \R$ by
+
+\begin{displaymath}
+something
+\end{displaymath}
+
+Here is a picture. It is clear that each $g_n$ is continous.
+
+\shunt %Break it up into regions of l(chunk)/n, then sample endpoints and make a line graph.
+
+It is clear from the pictures that both $\anbrack{h_n}$ and $\anbrack{g_n}$ converge to $f$ pointwise. So there is a set $A$, of measure $\ep/2$ such that $\anbrack{h_n}$ and $\anbrack{g_n}$ converge uniformly to $f$ on $F \setminus A$. (If it's not clear that you can get one that works for both, take $\ep/4$ for both $h_n$ and $g_n$ in the theorem and then union the sets you get.)
+
+So, $\anbrack{h_n}$ and $\anbrack{g_n}$ converge to $f$ uniformly on $[a,b]$ except on $[a,b] \setminus F$ and $F \setminus A$, which both have measure less than $\ep/2$.
+
+So, $\anbrack{h_n}$ and $\anbrack{g_n}$ converge to $f$ uniformly on $[a,b]$ except on a set of measure less than $\ep$. This satisfies the problem.
+
+\shunt
+
+{\bf Problem 2:}
+
+Let $E_1, E_2$ be measurable. (In the below, I use the fact that certain sets are disjoint freely. It's important to point out that this fact is important.)
+
+Then: 
+
+\begin{align*}
+m(E_1 \cup E_2) + m(E_1 \cap E_2) &= m((E_1 \triangle E_2) \cup (E_1 \cap E_2)) + m(E_1 \cap E_2)\\
+&= m((E_1 \triangle E_2)) + 2m((E_1 \cap E_2)) \\
+&= m((E_1 \setminus E_2) \cup (E_2 \setminus E_1)) + 2m((E_1 \cap E_2)) \\
+&= m(E_1 \setminus E_2) + m((E_1 \cap E_2)) + m(E_2 \setminus E_1) + m((E_1 \cap E_2)) \\
+&= m((E_1 \setminus E_2) \cup (E_1 \cap E_2)) + m((E_2 \setminus E_1) \cup (E_1 \cap E_2)) \text{ This is where I use the measurability.}\\
+&= m(E_1) + m(E_2)
+\end{align*} 
+
+So we have our result.
+
+\shunt
+
+{\bf Problem 3:}
+
+Let $f_n \to f$ almost everywhere on a set of finite measure, with each $f_n$ measurable. 
+
+Then $f_n \to f$ except on a set of measure zero.
+
+Let $\ep >0$. There is a covering of open intervals, $U$ with the sum of the lengths of those intervals less than $\ep/2$ that covers the set of points that $f_n$ does not converge to $f$ on.
+
+Now, consider $F = E \setminus U$. Then $f_n \to f$ everywhere on $F$.
+
+There is a set, $A \subset F$ with $m(A) < \ep/2$ and $f_n \to f$ uniformly on $F \setminus A$.
+
+So, $\anbrack{f_n}$ converges to $f$ uniformly on $[a,b]$ except on $[a,b] \setminus F$ and $F \setminus A$, which both have measure less than $\ep/2$.
+
+So, $\anbrack{f_n}$ converges to $f$ uniformly on $[a,b]$ except on a set of measure less than $\ep$. This satisfies the problem.
+
+\shunt
+
+{\bf Problem 4:}
+
+\shunt
+
+{\bf Problem 5:}
+
+%Break out your epsilons and deltas.
+
+\shunt
+
+{\bf Problem 6:} %This is a horrifyingly lengthy 8 module proof.
+
+Fun fact: I'm sure this was proved in class, but I wrote in my notes: ``Proof: is dull.'' You caught me slacking...
+
+We wish to show that, given $E \subset \R$, the following are equivalent:
+
+\begin{enumerate}
+\item $E$ is measurable.
+\item $\forall \ep >0 \exists U: U \supset E, m^*(U \setminus E) < \ep$, and $U$ is open.
+\item $\forall \ep >0 \exists U: F \subset E, m^*(E \setminus F) < \ep$, and $F$ is closed.
+\item $\exists G \in G_\de : E \subset G, m^*(G \setminus E) = 0$.
+\item $\exists F \in F_\si : E \supset F, m^*(E \setminus F) = 0$.
+\end{enumerate}
+
+And, moreover, that if $m(E)$ is finite, the above are equivalent to
+
+\begin{enumerate}
+\setcounter{enumi}{5}
+\item $\forall \ep >0$ there is a finite union, $U$, of open intervals such that $m^*(E \triangle U) < \ep$.
+\end{enumerate}
+
+First, consider the case where $m^*(E) < \infty$.
+
+In this case, $1$ implies $2$;
+
+\tab Let $E$ be measurable, and let $\ep >0$. Then $m(E) = \inf\limits_{\{I_n\}}(\Sigma l(I_n))$ where $\{I_n\}$ covers $E$.
+
+\tab So, it is possible to pick a union of intervals, $U$ such that $\absval{m^*(U) - m^*(E)} < \ep$ and $U \supset E$. Arbitrary unions of intervals are open, so $U$ is open. Now, because $E$ is measurable, we know that $m^*(U) = m^*(U \cap E) + m^*(U \setminus E)$. In other words, $m^*(U) - m^*(U \cap E) = m^*(U \setminus E)$. But because $U \supset E$, this is just $m^*(U) - m^*(E) = m^*(U \setminus E)$.  The left hand side is bounded by $\ep$, and so we win.
+
+Next, in this case $2$ is equivalent to $6$:
+
+\tab %Proof
+
+Moving on, for any set $E$, we have $1$ implies $2$ implies $4$ implies $1$:
+
+\tab %Proof is long.
+
+Last, we have $1$ implies $3$ implies $5$ implies $1$.
+
+\tab %Proof is long.
+
+This yields the desired result.
+
+
+\shunt
+
+{\bf Bonus:}
+
+When I was in second grade, my teacher took 20 minutes out of 100 of our class days to read us a version of ``The Pilgrim's Progress'' aimed at children. A pair of children were born in a miserable town, and then they left for a much better place. One of them was very devoted and faithful. The other was sort of mediocre in his devotion and faith. Soon after leaving, they meet a kid who is supposed to be awful and faithless; he joins them on their journey. They're put in a series of trials that tests their faith in some voice they all hear: the faithful kid succeeds at all of them, the mediocre kid succeeds sometimes, and the faithless kid fails all of them. They quest along the way until they reach a heavily gated town; the voice lets the devoted kid in, tells the mediocre one to go back to the bad town and return, and it tells the rotten kid that he needs to just wallow in the terrible town, because he sucks too bad.
+
+That's sort of awful; they throw out two children into the wilderness, one of whom they believe is probably a reasonably good kid. The Incredible Hulk wouldn't have put up with that. That sort of thing would have made the Hulk incredibly angry, and he would have smashed that town to smithereens. I don't know if that makes him my favorite superhero, but it does make him better than the voice that tells kids to climb a mountain in the rain, otherwise they'll have to live in a miserable shack where they're abused by their drug-addled parents.
+\shunt
+
+\end{document}
