@@ -137,35 +137,59 @@ Note: for all of the following, $l(I)$ is the length of the interval, $I$.
 
 Let $f$ be a measurable function defined on $[a,b]$ and assume that $f$ takes infinite values only on a set of measure zero. 
 
-Let $\ep >0$. There is a covering of open intervals, $U$ with the sum of the lengths of those intervals less than $\ep/2$ that covers the set of points that $f$ takes infinite values on.
+Let $\ep >0$. There is an $M >0$ and a set, $A$, of measure less than $\ep/3$ such that $\absval{f} < M$ everywhere except $M$. Otherwise, for all $M >0$ and all $A \subset [a,b]$ with measure less than $\ep/3$, $\absval{f} \geq M$. That means that $f$ takes infinite values everywhere on $[a,b]$, which is a blatant contradiction.
 
-We know that the set $\{x: \al \leq f(x) \leq \be\}$ is measurable for all $\al, \be \in \R$. %Sample the reals, set h_n = samples on those measurable sets.
+So, pick such an $M$ and such an $A$. Define $F = [a,b] \setminus A$. 
 
-We define $h_n: F \to \R$ by
-
-\begin{displaymath}
-Fix it, it's wrong.
-\end{displaymath} 
-
-Here is a picture. It is clear that each $h_n$ is a step function.
-
-\shunt 
-
-We define $g_n: F \to \R$ by
+Now, we know that $f$ is measurable; for each $\al, \be \in \R$, $\{x: \al \leq f(x) \leq \be\}$ is measurable. We can consider the partition of $[-M,M]$ given by $[-M, -M + \ep)$, $[-M+\ep, -M+2\ep)$, $\ldots$ $[-M + n\ep, M]$. For each interval, $I$, in that partition, the set $\{x: f(x) \in I\}$ and define the simple function $\psi: [a,b] \to \R$ by
 
 \begin{displaymath}
-Fix it, it's wrong.
+   \psi(x) = \left\{
+     \begin{array}{lr}
+       -M+i\ep & : f(x) \in [-M+i\ep, -M+(i+1)\ep) \text{ and } x \in F\\
+       0 & : x \notin F
+     \end{array}
+   \right.
 \end{displaymath} 
 
-Here is a picture. It is clear that each $g_n$ is continous.
+(I notice that there's a tiny little hitch on the last interval, and it doesn't impact the proof at all.) It is clear that $\psi$ is measurable, only takes finitely many values and has the properties $\psi(x) \in [-M,M]$ for all $x \in F$ and $\absval{f(x) - \psi(x)} < \ep$ if $x \in F$. 
 
-\shunt
+Now, we can represent $\psi$ as the sum $\sum\limits_{i=0}^n (-M+i\ep)(m(F_i))$, where $F_i = \{x: x \in [-M,-M+i\ep)\}$. Now, for each $F_i$ there is a closed set, $F_i'$, of $F_i$ with $F_i \setminus F_i'$ having measure less than $\ep/(6(n+1))$. Moreover, there is a finite collection of intervals, $\anbrack{F_{i_m}}$, such that $F_i' \setminus \bigcup F_{i_m}$ has measure less than $\ep/(6(n+1))$.
 
-It is clear from the pictures that both $\anbrack{h_n}$ and $\anbrack{g_n}$ converge to $f$ pointwise. So there is a set $A$, of measure $\ep/2$ such that $\anbrack{h_n}$ and $\anbrack{g_n}$ converge uniformly to $f$ on $F \setminus A$. (If it's not clear that you can get one that works for both, take $\ep/4$ for both $h_n$ and $g_n$ in the theorem and then union the sets you get.)
+This means that $F_i \setminus \bigcup F_{i_m}$ has measure less than $\ep/(3(n+1))$. There are $n+1$ such intervals, so we can deduce that $\bigcup F_i \setminus \bigcup \bigcup F_{i_m}$ has measure less than $\ep/3$.
 
-So, $\anbrack{h_n}$ and $\anbrack{g_n}$ converge to $f$ uniformly on $[a,b]$ except on $[a,b] \setminus F$ and $F \setminus A$, which both have measure less than $\ep/2$.
+Now, define $h: [a,b] \to \R$ by
 
-So, $\anbrack{h_n}$ and $\anbrack{g_n}$ converge to $f$ uniformly on $[a,b]$ except on a set of measure less than $\ep$. This satisfies the problem.
+\begin{displaymath}
+   h(x) = \left\{
+     \begin{array}{lr}
+       -M+i\ep & : x \in F_{i_m} \text { for some $i, m$ ``that work''}\\
+       0 & : \text{ else.}
+     \end{array}
+   \right.
+\end{displaymath}
+
+It is clear that $h$ is a step function (there were only finitely many values of $i$ and $n$ that worked), and that $h = \psi$ on each $F_{i_m}$. That is, $h = \psi$ except on a set of measure less than $\ep/3$.
+
+By extension, we have $\absval{f-h} < \ep$ except on a set of measure less than $2\ep/3$, which satisfies that part of the problem.
+
+Now, consider $F_{i_m}' = \{x \in F_{i_m} : x \in [c+\ep/3(k+1),d-\ep/3(k+1)]\}$ where $F_{i_m} = [c,d]$ for some $c,d \in \R$ and $k$ is the number of $F_{i_m}$s. (We are shaving off the ends).
+
+Now, we can define $g: [a,b] \to \R$ by
+
+\begin{displaymath}
+   g(x) = \left\{
+     \begin{array}{lr}
+       -M+i\ep & : x \in F_{i_n}' \text { for some $i, n$ ``that work''}\\
+       \text{(insert complex equation of a line here)} & : x \in F_{i_n} \setminus F_{i_n}' \text { for some $i, n$ ``that work''}\\
+       0 & : \text{ else.}
+     \end{array}
+   \right.
+\end{displaymath}
+
+\shunt %Just have a picture
+
+It is clear from the picture (I don't want to write the equation for that line, and you don't want to see it) that $g$ is continuous, and that $g = h$ except on a set of measure $\ep/3$. By extension, we have $\absval{f-g} < \ep$ except on a set of measure less than $\ep$, which satisfies the other part of the problem.
 
 \shunt
 
@@ -236,7 +260,7 @@ Note: I saw the hint in Royden, but I felt like it was more interesting to give 
 
 \shunt
 
-{\bf Problem 5:} %You fucked it all the way up. Fix it.
+{\bf Problem 5:}
 
 Let $f$ be a non-negative integrable function. Consider $F(x) = \int\limits_{(-\infty,x]} f$.
 
