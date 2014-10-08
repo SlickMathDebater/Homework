@@ -133,33 +133,33 @@
 
 Note: for all of the following, $l(I)$ is the length of the interval, $I$.
 
-{\bf Problem 1:} %Incomplete: fill in the functions and draw the pictures.
+{\bf Problem 1:} %Incomplete: find the correct functions.
 
 Let $f$ be a measurable function defined on $[a,b]$ and assume that $f$ takes infinite values only on a set of measure zero. 
 
-Let $\ep >0$. There is a finite covering of open intervals, $U$ with the sum of the lengths of those intervals less than $\ep/2$ that covers the set of points that $f$ takes infinite values on (this follows from problem 6...you should probably grade that one first, if you're overly concerned about that sort of thing.)
+Let $\ep >0$. There is a covering of open intervals, $U$ with the sum of the lengths of those intervals less than $\ep/2$ that covers the set of points that $f$ takes infinite values on.
 
-So, we know that $[a,b] \setminus U$ is a union of disjoint closed intervals (these intervals may actually be singletons, but that's OK.) So, represent $[a,b] \setminus U$ by $[x_1,x_2] \cup [x_3,x_4] \ldots \cup [x_{n-1},x_n]$, and call this set $F$.
+We know that the set $\{x: \al \leq f(x) \leq \be\}$ is measurable for all $\al, \be \in \R$. %Sample the reals, set h_n = samples on those measurable sets.
 
 We define $h_n: F \to \R$ by
 
 \begin{displaymath}
-something
-\end{displaymath}
+Fix it, it's wrong.
+\end{displaymath} 
 
 Here is a picture. It is clear that each $h_n$ is a step function.
 
-\shunt %Break it up into regions of l(chunk)/n, then sample the midpoint.
+\shunt 
 
 We define $g_n: F \to \R$ by
 
 \begin{displaymath}
-something
-\end{displaymath}
+Fix it, it's wrong.
+\end{displaymath} 
 
 Here is a picture. It is clear that each $g_n$ is continous.
 
-\shunt %Break it up into regions of l(chunk)/n, then sample endpoints and make a line graph.
+\shunt
 
 It is clear from the pictures that both $\anbrack{h_n}$ and $\anbrack{g_n}$ converge to $f$ pointwise. So there is a set $A$, of measure $\ep/2$ such that $\anbrack{h_n}$ and $\anbrack{g_n}$ converge uniformly to $f$ on $F \setminus A$. (If it's not clear that you can get one that works for both, take $\ep/4$ for both $h_n$ and $g_n$ in the theorem and then union the sets you get.)
 
@@ -208,11 +208,72 @@ So, $\anbrack{f_n}$ converges to $f$ uniformly on $[a,b]$ except on a set of mea
 
 {\bf Problem 4:}
 
+Consider the ``Growing steeple'':
+
+Define $f_n: [0,1] \to \R$ by:
+
+ \begin{displaymath}
+   f_n(x) = \left\{
+     \begin{array}{lr}
+       nx & : x \in [0,1/(2n)]\\
+       n - nx & : x \in [1/(2n),1/n]\\
+       0 & : else
+     \end{array}
+   \right.
+\end{displaymath} 
+
+Here is a picture.
+
 \shunt
 
-{\bf Problem 5:}
+\shunt %Picture
 
-%Break out your epsilons and deltas.
+Each $f_n$ is non-negative, measurable, and $f_n \to 0$ everywhere.
+
+But $\int\limits_0^1 0 = 0$ and $\int\limits_0^1 f_n = 1$. So $\liminf\int\limits_0^1 f_n = 1$. That is, we have $\int\limits_0^1 f < \liminf\int\limits_0^1 f_n$, which is strict inequality in Fatou's Lemma.
+
+Note: I saw the hint in Royden, but I felt like it was more interesting to give an example on a set of finite measure.
+
+\shunt
+
+{\bf Problem 5:} %You fucked it all the way up. Fix it.
+
+Let $f$ be a non-negative integrable function. Consider $F(x) = \int\limits_{(-\infty,x]} f$.
+
+Let $\ep >0$, and $p \in \R$. There is a bounded, non-negative function, $h$, vanishing outside of $E = [p-1,p+1]$, such that $h < f$ and $\int\limits_E f < \int\limits_E h+ \ep/2$, by (the proof of) Fatou's lemma. Let $M$ bound $h$.
+
+Now, choose $\de = \min(1,\ep/2M)$, and let $x \in [p-\de,p+\de]$.
+
+We know that if $x \geq p$, then:
+
+\begin{align*}
+\int\limits_{p-1}^{p+1} f &< \int\limits_{p-1}^{p+1} h + \ep/2\\
+\int\limits_{p-1}^{p} f + \int\limits_{p}^{x} f + \int\limits_{x}^{p+1} f &< \int\limits_{p-1}^{p} h + \int\limits_{p}^{x} h + \int\limits_{x}^{p+1} h  + \ep/2\\
+\int\limits_{p-1}^{p} f-h + \int\limits_{p}^{x} f-h + \int\limits_{x}^{p+1} f-h &< \ep/2
+\end{align*}
+
+So $\int\limits_p^x f-h < \ep/2$, because both of the other terms are positive. By splitting the integral and taking absolute values, we have $\absval{\int\limits_p^x f}<\absval{\int\limits_p^x h} + \ep/2$. By flipping the inequality of our assumption, we get that $\int\limits_x^p f-h < \ep/2$ if $x \leq p$, so by repeaitng the argument we have the result $\absval{\int\limits_p^x f}<\absval{\int\limits_p^x h} + \ep/2$ in any case.
+
+Now, define $H(x) = \int\limits_{(-\infty,x]} h$. We also have that
+
+\begin{align*}
+\absval{H(x)-H(p)} &= \absval{\int\limits_{(-\infty,x]} h - \int\limits_{(-\infty,p]} h} \\
+&=\absval{\int\limits_p^x h} \\
+&< M \de \\
+&< \ep/2
+\end{align*}
+
+So, we have
+
+\begin{align*}
+\absval{F(x)-F(p)} &= \absval{\int\limits_{(-\infty,x]} f - \int\limits_{(-\infty,p]} f} \\
+&=\absval{\int\limits_p^x f} \\
+&<\absval{\int\limits_p^x h} + \ep/2 \\
+&=\absval{H(x)-H(p)} + \ep/2\\
+&< \ep
+\end{align*}
+
+So for all $\ep>0$, $p \in \R$, there is a $\de >0$ such that $x \in [p-\de, p+\de]$ implies that $\absval{F(x)-F(p)} < \ep$; $F$ is continuous.
 
 \shunt
 
@@ -264,9 +325,9 @@ This yields the desired result.
 
 {\bf Bonus:}
 
-When I was in second grade, my teacher took 20 minutes out of 100 of our class days to read us a version of ``The Pilgrim's Progress'' aimed at children. A pair of children were born in a miserable town, and then they left for a much better place. One of them was very devoted and faithful. The other was sort of mediocre in his devotion and faith. Soon after leaving, they meet a kid who is supposed to be awful and faithless; he joins them on their journey. They're put in a series of trials that tests their faith in some voice they all hear: the faithful kid succeeds at all of them, the mediocre kid succeeds sometimes, and the faithless kid fails all of them. They quest along the way until they reach a heavily gated town; the voice lets the devoted kid in, tells the mediocre one to go back to the bad town and return, and it tells the rotten kid that he needs to just wallow in the terrible town, because he sucks too bad.
+When I was in second grade, my teacher would take 20 minutes of each day to read us a version of ``The Pilgrim's Progress'' aimed at children. A pair of children were born in a miserable town, and then they left for a much better place, far away, and they have to brave the wilderness and elements to get there. One of them was very devoted and faithful. The other was sort of mediocre in his devotion and faith. Soon after leaving, they meet a kid who is faithless; he joins them on their journey. They're put in a series of trials that tests their faith in some voice they all hear: the faithful kid succeeds at all of them, the mediocre kid succeeds sometimes, and the faithless kid fails all of them. They quest along the way until they reach a heavily gated town; the voice lets the devoted kid in, tells the mediocre one to go through the trials again, and it tells the rotten kid that he needs to just wallow in the terrible town.
 
-That's sort of awful; they throw out two children into the wilderness, one of whom they believe is probably a reasonably good kid. The Incredible Hulk wouldn't have put up with that. That sort of thing would have made the Hulk incredibly angry, and he would have smashed that town to smithereens. I don't know if that makes him my favorite superhero, but it does make him better than the voice that tells kids to climb a mountain in the rain, otherwise they'll have to live in a miserable shack where they're abused by their drug-addled parents.
+That's sort of awful; they throw out two children into the wilderness, one of whom they believe is probably a reasonably good kid. The Incredible Hulk wouldn't have put up with that. That sort of thing would have made the Hulk incredibly angry, and he would have smashed that town to smithereens, beating up whoever was behind that voice. I don't know if that makes him my favorite superhero, but it does make him better than the voice that tells kids to endure all sorts of horrifying trials, otherwise they'll have to live in a miserable shack where they're abused by their drug-addled parents.
 \shunt
 
 \end{document}
