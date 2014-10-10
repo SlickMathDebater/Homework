@@ -305,7 +305,7 @@ So for all $\ep>0$, $p \in \R$, there is a $\de >0$ such that $x \in [p-\de, p+\
 
 Note: it seems that what you mean by ``Royden's Proposition 15'' may be ambiguous. I take this to mean the one that isn't proven in the book (the one in chapter 3). For the content covered, this could also mean one in chapter 4, but that is flat out given in the book, which would be too easy.
 
-Note: This proof is incomplete; I ran out of time working on it. So, there's a lot of holes. However, it should be clear what my plan was, and how much of it I successfully executed (as of the time of this writing, about half.)
+Note: This proof is incomplete; I ran out of time working on it. So, there's a lot of holes. However, it should be clear what my plan was, and how much of it I successfully executed (as of the time of this writing, about three quarters.)
 
 We wish to show that, given $E \subset \R$, the following are equivalent:
 
@@ -344,17 +344,17 @@ Moving on, for any set $E$, we have $1$ implies $2$ implies $4$ implies $1$:
 
 \tab It is clear that $1$ implies $2$ from the above; let $\ep >0$, and $1$ hold. From the above, this means that $2$ holds for each $E_n = [n,n+1] \cap E$ with $n \in \Z$. Apply $2$ to each of those sets; retrieve a collection of open sets, $U_n$, with $U_n \supset E_n$ and $m^*(U_n \setminus E_n) < \ep/(2^{n+1})$. It is clear that $U = \bigcup U_n$ contains $E$, and has $m^*(U \setminus E) \leq \ep$ (apply geometric series and subadditivity).
 
-\tab It is also clear that $2$ implies $4$; we know that the standard topology on $\R$ has a countable basis, then we take an intersection of sets we get from $2$ with $\ep = 1/n$ for each $n \in \N$. (I'm obviously out of time.)
+\tab It is also clear that $2$ implies $4$; for each $n \in \N$, take $U_n$ open such that $U \supset E$ and $m^*(U \setminus E) < 1/n$. We know that the standard topology on $\R$ has a countable basis; we can write each $U_n$ as a countable intersection of open intervals. So $\bigcap U_n$ is a countable intersection of countable intersections of open intervals; $\bigcap U_n$ is a countable intersection of open intervals. Also, for all $n \in \N$, $m^*(U_n \setminus E) < 1/n$; this satisfies the problem.
 
-\tab Now, $4$ implies $1$: 
+\tab Now, $4$ implies $1$: Find a $G \in G_\de$ such that $E \subset G$ and $m^*(G \setminus E) = 0$. This means that $G \setminus E$ is measurable. Also, $G$ is measurable, as $G \in G_\de$. So $G \setminus (G \setminus E) = E$ is measurable, as desired.
 
 Last, we have $1$ implies $3$ implies $5$ implies $1$.
 
 \tab First, $1$ implies $3$:
 
-\tab It is clear that $3$ implies $5$; we know that the standard topology on $\R$ has a countable basis, then we take an union of sets we get from $2$ with $\ep = 1/n$ for each $n \in \N$. (I'm obviously out of time.)
+\tab It is clear that $3$ implies $5$; for each $n \in \N$, take $F_n$ closed such that $F \subset E$ and $m^*(E \setminus F) < 1/n$. We know that the standard topology on $\R$ has a countable basis; we can write each $F_n$ as a countable union of closed intervals. So $\bigcap F_n$ is a countable union of countable unions of closed intervals; $\bigcup F_n$ is a countable intersection of open intervals. Also, for all $n \in \N$, $m^*(E \setminus F_n) < 1/n$; this satisfies the problem.
 
-\tab Finally, $5$ implies $1$: 
+\tab Finally, $5$ implies $1$: Find an $F \in F_\si$ such that $E \supset F$ and $m^*(E \setminus F) = 0$. This means that $E \setminus F$ is measurable. Also, $F$ is measurable, as $F \in F_\si$. So $E = F \cup (E \setminus F)$ is measurable, as desired.
 
 This yields the desired result.
 
