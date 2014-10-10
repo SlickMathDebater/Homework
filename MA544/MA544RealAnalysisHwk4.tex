@@ -301,9 +301,11 @@ So for all $\ep>0$, $p \in \R$, there is a $\de >0$ such that $x \in [p-\de, p+\
 
 \shunt
 
-{\bf Problem 6:} %This is a horrifyingly lengthy 8 module proof.
+{\bf Problem 6:}
 
-Fun fact: I'm sure this was proved in class, but I wrote in my notes: ``Proof: is dull.'' You caught me slacking...
+Note: it seems that what you mean by ``Royden's Proposition 15'' may be ambiguous. I take this to mean the one that isn't proven in the book (the one in chapter 3). For the content covered, this could also mean one in chapter 4, but that is flat out given in the book, which would be too easy.
+
+Note: This proof is incomplete; I ran out of time working on it. So, there's a lot of holes. However, it should be clear what my plan was, and how much of it I successfully executed (as of the time of this writing, about half.)
 
 We wish to show that, given $E \subset \R$, the following are equivalent:
 
@@ -326,21 +328,33 @@ First, consider the case where $m^*(E) < \infty$.
 
 In this case, $1$ implies $2$;
 
-\tab Let $E$ be measurable, and let $\ep >0$. Then $m(E) = \inf\limits_{\{I_n\}}(\Sigma l(I_n))$ where $\{I_n\}$ covers $E$.
+\tab Let $E$ be measurable, and let $\ep >0$. Then $m(E) = \inf\limits_{\{I_n\}}(\sum l(I_n))$ where $\{I_n\}$ covers $E$.
 
 \tab So, it is possible to pick a union of intervals, $U$ such that $\absval{m^*(U) - m^*(E)} < \ep$ and $U \supset E$. Arbitrary unions of intervals are open, so $U$ is open. Now, because $E$ is measurable, we know that $m^*(U) = m^*(U \cap E) + m^*(U \setminus E)$. In other words, $m^*(U) - m^*(U \cap E) = m^*(U \setminus E)$. But because $U \supset E$, this is just $m^*(U) - m^*(E) = m^*(U \setminus E)$.  The left hand side is bounded by $\ep$, and so we win.
 
-Next, in this case $2$ is equivalent to $6$:
+Next, in this case $2$ is equivalent to $6$: %Use the fucking definition of outer measure, you prick.
 
-\tab %Proof
+\tab First, $6$ implies $2$: Let $\ep>0$, and $6$ hold. Then there is a finite union, $U$, of open intervals with $m^*(E \triangle U) < \ep/2$, which means that there is a collection of intervals, $\anbrack{I_n}$, with $\bigcup I_n \supset E \triangle U$ and $\sum l(I_n) < \ep/2$. It is clear that $V = U \cup \bigcup{I_n}$ is open, and contains $E$. Moreover, $m^*(V \setminus E) < \ep$, because of subadditivity of outer measure.
+
+\tab Next, $2$ implies $6$: Let $\ep>0$, and $2$ hold. If $m^*(E)$ is finite, then $E$ is bounded. That means...%something
+
+\tab By $2$, there's an open set, $U$, such that $U \supset E$ and $m^*(U \setminus E) < \ep/2$. Now, this means that there is a collection of intervals, $\anbrack{I_n}$, with $\bigcup I_n \supset U \setminus E$ and $\sum l(I_n) < \ep/4$.
 
 Moving on, for any set $E$, we have $1$ implies $2$ implies $4$ implies $1$:
 
-\tab %Proof is long.
+\tab It is clear that $1$ implies $2$ from the above; let $\ep >0$, and $1$ hold. From the above, this means that $2$ holds for each $E_n = [n,n+1] \cap E$ with $n \in \Z$. Apply $2$ to each of those sets; retrieve a collection of open sets, $U_n$, with $U_n \supset E_n$ and $m^*(U_n \setminus E_n) < \ep/(2^{n+1})$. It is clear that $U = \bigcup U_n$ contains $E$, and has $m^*(U \setminus E) \leq \ep$ (apply geometric series and subadditivity).
+
+\tab It is also clear that $2$ implies $4$; we know that the standard topology on $\R$ has a countable basis, then we take an intersection of sets we get from $2$ with $\ep = 1/n$ for each $n \in \N$. (I'm obviously out of time.)
+
+\tab Now, $4$ implies $1$: 
 
 Last, we have $1$ implies $3$ implies $5$ implies $1$.
 
-\tab %Proof is long.
+\tab First, $1$ implies $3$:
+
+\tab It is clear that $3$ implies $5$; we know that the standard topology on $\R$ has a countable basis, then we take an union of sets we get from $2$ with $\ep = 1/n$ for each $n \in \N$. (I'm obviously out of time.)
+
+\tab Finally, $5$ implies $1$: 
 
 This yields the desired result.
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.9.27)  8 OCT 2014 19:07
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.9.27)  9 OCT 2014 21:27
 entering extended mode
 **MA544RealAnalysisHwk4.tex
 (C:\Users\Lonelight\Desktop\Homework\MA544\MA544RealAnalysisHwk4.tex
@@ -267,7 +267,7 @@ Overfull \hbox (87.32951pt too wide) detected at line 188
  []
 
 
-Overfull \hbox (229.7523pt too wide) in paragraph at lines 207--207
+Overfull \hbox (229.7523pt too wide) in paragraph at lines 209--209
 [] 
  []
 
@@ -292,19 +292,6 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [4]
-Overfull \hbox (1.95932pt too wide) in paragraph at lines 320--321
-[]$\OMS/cmsy/m/n/12 8\OML/cmm/m/it/12  > \OT1/cmr/m/n/12 0$ there is a fi-nite
- union, $\OML/cmm/m/it/12 U$\OT1/cmr/m/n/12 , of open in-ter-vals such that $\O
-ML/cmm/m/it/12 m[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 E\OMS/cmsy/m/n/12 4\OML/cmm
-/m/it/12 U\OT1/cmr/m/n/12 ) \OML/cmm/m/it/12 <$
- []
-
-
-Overfull \hbox (21.08765pt too wide) in paragraph at lines 329--330
-[] \OT1/cmr/m/n/12 So, it is pos-si-ble to pick a union of in-ter-vals, $\OML/c
-mm/m/it/12 U$ \OT1/cmr/m/n/12 such that $[] \OML/cmm/m/it/12 <$
- []
-
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
@@ -312,6 +299,19 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [5]
+Overfull \hbox (1.95932pt too wide) in paragraph at lines 324--325
+[]$\OMS/cmsy/m/n/12 8\OML/cmm/m/it/12  > \OT1/cmr/m/n/12 0$ there is a fi-nite
+ union, $\OML/cmm/m/it/12 U$\OT1/cmr/m/n/12 , of open in-ter-vals such that $\O
+ML/cmm/m/it/12 m[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 E\OMS/cmsy/m/n/12 4\OML/cmm
+/m/it/12 U\OT1/cmr/m/n/12 ) \OML/cmm/m/it/12 <$
+ []
+
+
+Overfull \hbox (21.08765pt too wide) in paragraph at lines 333--334
+[] \OT1/cmr/m/n/12 So, it is pos-si-ble to pick a union of in-ter-vals, $\OML/c
+mm/m/it/12 U$ \OT1/cmr/m/n/12 such that $[] \OML/cmm/m/it/12 <$
+ []
+
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
@@ -329,11 +329,11 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 Here is how much of TeX's memory you used:
  2838 strings out of 493921
  39543 string characters out of 3140860
- 97813 words of memory out of 3000000
+ 96813 words of memory out of 3000000
  6111 multiletter control sequences out of 15000+200000
  9237 words of font info for 36 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 33i,13n,43p,966b,210s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 33i,13n,43p,966b,261s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/
 Users/Lonelight/Desktop/PortablePrograms/texmakerwin32usb/MiKTeX/fonts/type1/pu
 blic/amsfonts/cm/cmbx12.pfb><C:/Users/Lonelight/Desktop/PortablePrograms/texmak
@@ -349,7 +349,7 @@ sktop/PortablePrograms/texmakerwin32usb/MiKTeX/fonts/type1/public/amsfonts/cm/c
 msy10.pfb><C:/Users/Lonelight/Desktop/PortablePrograms/texmakerwin32usb/MiKTeX/
 fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Lonelight/Desktop/PortablePr
 ograms/texmakerwin32usb/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on MA544RealAnalysisHwk4.pdf (7 pages, 124964 bytes).
+Output written on MA544RealAnalysisHwk4.pdf (7 pages, 128720 bytes).
 PDF statistics:
  66 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
