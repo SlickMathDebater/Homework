@@ -305,7 +305,7 @@ So for all $\ep>0$, $p \in \R$, there is a $\de >0$ such that $x \in [p-\de, p+\
 
 Note: it seems that what you mean by ``Royden's Proposition 15'' may be ambiguous. I take this to mean the one that isn't proven in the book (the one in chapter 3). For the content covered, this could also mean one in chapter 4, but that is flat out given in the book, which would be too easy.
 
-Note: This proof is incomplete; I ran out of time working on it. So, there's a lot of holes. However, it should be clear what my plan was, and how much of it I successfully executed (as of the time of this writing, about three quarters.)
+Note: This proof is incomplete; I ran out of time working on it. I couldn't get that $2$ implied $6$. But another night would've got it for me.
 
 We wish to show that, given $E \subset \R$, the following are equivalent:
 
@@ -332,11 +332,11 @@ In this case, $1$ implies $2$;
 
 \tab So, it is possible to pick a union of intervals, $U$ such that $\absval{m^*(U) - m^*(E)} < \ep$ and $U \supset E$. Arbitrary unions of intervals are open, so $U$ is open. Now, because $E$ is measurable, we know that $m^*(U) = m^*(U \cap E) + m^*(U \setminus E)$. In other words, $m^*(U) - m^*(U \cap E) = m^*(U \setminus E)$. But because $U \supset E$, this is just $m^*(U) - m^*(E) = m^*(U \setminus E)$.  The left hand side is bounded by $\ep$, and so we win.
 
-Next, in this case $2$ is equivalent to $6$: %Use the fucking definition of outer measure, you prick.
+Next, in this case $2$ is equivalent to $6$:
 
 \tab First, $6$ implies $2$: Let $\ep>0$, and $6$ hold. Then there is a finite union, $U$, of open intervals with $m^*(E \triangle U) < \ep/2$, which means that there is a collection of intervals, $\anbrack{I_n}$, with $\bigcup I_n \supset E \triangle U$ and $\sum l(I_n) < \ep/2$. It is clear that $V = U \cup \bigcup{I_n}$ is open, and contains $E$. Moreover, $m^*(V \setminus E) < \ep$, because of subadditivity of outer measure.
 
-\tab Next, $2$ implies $6$: Let $\ep>0$, and $2$ hold. If $m^*(E)$ is finite, then $E$ is bounded. That means...%something
+\tab Next, $2$ implies $6$: Let $\ep>0$, and $2$ hold. %Something
 
 \tab By $2$, there's an open set, $U$, such that $U \supset E$ and $m^*(U \setminus E) < \ep/2$. Now, this means that there is a collection of intervals, $\anbrack{I_n}$, with $\bigcup I_n \supset U \setminus E$ and $\sum l(I_n) < \ep/4$.
 
@@ -344,28 +344,29 @@ Moving on, for any set $E$, we have $1$ implies $2$ implies $4$ implies $1$:
 
 \tab It is clear that $1$ implies $2$ from the above; let $\ep >0$, and $1$ hold. From the above, this means that $2$ holds for each $E_n = [n,n+1] \cap E$ with $n \in \Z$. Apply $2$ to each of those sets; retrieve a collection of open sets, $U_n$, with $U_n \supset E_n$ and $m^*(U_n \setminus E_n) < \ep/(2^{n+1})$. It is clear that $U = \bigcup U_n$ contains $E$, and has $m^*(U \setminus E) \leq \ep$ (apply geometric series and subadditivity).
 
-\tab It is also clear that $2$ implies $4$; for each $n \in \N$, take $U_n$ open such that $U \supset E$ and $m^*(U \setminus E) < 1/n$. We know that the standard topology on $\R$ has a countable basis; we can write each $U_n$ as a countable intersection of open intervals. So $\bigcap U_n$ is a countable intersection of countable intersections of open intervals; $\bigcap U_n$ is a countable intersection of open intervals. Also, for all $n \in \N$, $m^*(U_n \setminus E) < 1/n$; this satisfies the problem.
+\tab It is also clear that $2$ implies $4$; for each $n \in \N$, take $U_n$ open such that $U \supset E$ and $m^*(U \setminus E) < 1/n$. We know that the standard topology on $\R$ has a countable basis; we can write each $U_n$ as a countable intersection of open intervals. So $\bigcap U_n$ is a countable intersection of countable intersections of open intervals; $\bigcap U_n$ is a countable intersection of open intervals. Also, for all $n \in \N$, $m^*(U_n \setminus E) < 1/n$; this satisfies this part of the problem.
 
 \tab Now, $4$ implies $1$: Find a $G \in G_\de$ such that $E \subset G$ and $m^*(G \setminus E) = 0$. This means that $G \setminus E$ is measurable. Also, $G$ is measurable, as $G \in G_\de$. So $G \setminus (G \setminus E) = E$ is measurable, as desired.
 
 Last, we have $1$ implies $3$ implies $5$ implies $1$.
 
-\tab First, $1$ implies $3$:
+\tab First, $1$ implies $3$: Let $\ep> 0$. If $E$ is measurable, then $E^c$ is measurable. Thus, there is an open set, $U$, such that $U \supset E^c$ and $m^*(U \setminus E^c) < \ep$. However, because $U \supset E$, it is clear that $U \setminus E^c = E \cap U$. So, $m^*(E \cap U) < \ep$. Also, $E \cap U = E \setminus U^c$, so $m^*(E \setminus U^c) < \ep$. Because $U^c$ is closed and $U^c \subset E$ (as $U \supset E^c$), this satisfies this part of the problem.
 
-\tab It is clear that $3$ implies $5$; for each $n \in \N$, take $F_n$ closed such that $F \subset E$ and $m^*(E \setminus F) < 1/n$. We know that the standard topology on $\R$ has a countable basis; we can write each $F_n$ as a countable union of closed intervals. So $\bigcap F_n$ is a countable union of countable unions of closed intervals; $\bigcup F_n$ is a countable intersection of open intervals. Also, for all $n \in \N$, $m^*(E \setminus F_n) < 1/n$; this satisfies the problem.
+\tab It is clear that $3$ implies $5$; for each $n \in \N$, take $F_n$ closed such that $F \subset E$ and $m^*(E \setminus F) < 1/n$. We know that the standard topology on $\R$ has a countable basis; we can write each $F_n$ as a countable union of closed intervals. So $\bigcap F_n$ is a countable union of countable unions of closed intervals; $\bigcup F_n$ is a countable intersection of open intervals. Also, for all $n \in \N$, $m^*(E \setminus F_n) < 1/n$; this satisfies this part of the problem.
 
 \tab Finally, $5$ implies $1$: Find an $F \in F_\si$ such that $E \supset F$ and $m^*(E \setminus F) = 0$. This means that $E \setminus F$ is measurable. Also, $F$ is measurable, as $F \in F_\si$. So $E = F \cup (E \setminus F)$ is measurable, as desired.
 
-This yields the desired result.
-
+This overly lengthy series of implications yields the desired result.
 
 \shunt
 
 {\bf Bonus:}
 
-When I was in second grade, my teacher would take 20 minutes of each day to read us a version of ``The Pilgrim's Progress'' aimed at children. A pair of children were born in a miserable town, and then they left for a much better place, far away, and they have to brave the wilderness and elements to get there. One of them was very devoted and faithful. The other was sort of mediocre in his devotion and faith. Soon after leaving, they meet a kid who is faithless; he joins them on their journey. They're put in a series of trials that tests their faith in some voice they all hear: the faithful kid succeeds at all of them, the mediocre kid succeeds sometimes, and the faithless kid fails all of them. They quest along the way until they reach a heavily gated town; the voice lets the devoted kid in, tells the mediocre one to go through the trials again, and it tells the rotten kid that he needs to just wallow in the terrible town.
+When I was in second grade, my teacher would take 20 minutes of each day to read us a version of ``The Pilgrim's Progress'' aimed at children. A pair of children were born in a miserable town, and then they left for a much better place, far away, and they have to brave the wilderness and elements to get there. One of them was very devoted and faithful. The other was sort of mediocre in his devotion and faith. Soon after leaving, they meet a kid who is faithless; he joins them on their journey, on a whim. They're put through a series of trials that tests their faith in some voice they all hear: the faithful kid succeeds at all of them, the mediocre kid succeeds sometimes, and the faithless kid fails all of them. They quest along the way until they reach a heavily gated town; the voice lets the devoted kid in, tells the mediocre one to go through the trials again, and it tells the rotten kid that he needs to just wallow in the terrible town.
 
 That's sort of awful; they throw out two children into the wilderness, one of whom they believe is probably a reasonably good kid. The Incredible Hulk wouldn't have put up with that. That sort of thing would have made the Hulk incredibly angry, and he would have smashed that town to smithereens, beating up whoever was behind that voice. I don't know if that makes him my favorite superhero, but it does make him better than the voice that tells kids to endure all sorts of horrifying trials, otherwise they'll have to live in a miserable shack where they're abused by their drug-addled parents.
+
+So, I like the Hulk.
 \shunt
 
 \end{document}

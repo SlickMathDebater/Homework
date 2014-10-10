@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.9.27)  10 OCT 2014 11:44
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.9.27)  10 OCT 2014 12:22
 entering extended mode
 **MA544RealAnalysisHwk4.tex
 (C:\Users\Lonelight\Desktop\Homework\MA544\MA544RealAnalysisHwk4.tex
@@ -336,11 +336,11 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 Here is how much of TeX's memory you used:
  2838 strings out of 493921
  39543 string characters out of 3140860
- 96813 words of memory out of 3000000
+ 97813 words of memory out of 3000000
  6111 multiletter control sequences out of 15000+200000
  9237 words of font info for 36 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 33i,13n,43p,966b,261s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 33i,13n,43p,982b,271s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/
 Users/Lonelight/Desktop/PortablePrograms/texmakerwin32usb/MiKTeX/fonts/type1/pu
 blic/amsfonts/cm/cmbx12.pfb><C:/Users/Lonelight/Desktop/PortablePrograms/texmak
@@ -356,7 +356,7 @@ sktop/PortablePrograms/texmakerwin32usb/MiKTeX/fonts/type1/public/amsfonts/cm/c
 msy10.pfb><C:/Users/Lonelight/Desktop/PortablePrograms/texmakerwin32usb/MiKTeX/
 fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Lonelight/Desktop/PortablePr
 ograms/texmakerwin32usb/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on MA544RealAnalysisHwk4.pdf (8 pages, 130744 bytes).
+Output written on MA544RealAnalysisHwk4.pdf (8 pages, 131268 bytes).
 PDF statistics:
  69 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
