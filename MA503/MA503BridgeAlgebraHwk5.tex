@@ -1,0 +1,182 @@
+
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{fancyhdr}
+\usepackage{amssymb}
+%\usepackage{mathpazo}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{slashed}
+\usepackage[mathscr]{euscript}
+
+\newcommand{\tab}{\hspace{4mm}} %Spacing aliases
+\newcommand{\shunt}{\vspace{20mm}}
+
+\newcommand{\sd}{\partial} %Squiggle d
+
+\newcommand{\absval}[1]{\lvert #1 \rvert}
+\newcommand{\anbrack}[1]{\left\langle #1 \right\rangle}
+\newcommand{\norm}[1]{\|#1\|}
+
+
+\newcommand{\al}{\alpha} %Steal ALL of Dr. Kable's Aliases! MWAHAHAHAHA!
+\newcommand{\be}{\beta}
+\newcommand{\ga}{\gamma}
+\newcommand{\Ga}{\Gamma}
+\newcommand{\de}{\delta}
+\newcommand{\De}{\Delta}
+\newcommand{\ep}{\epsilon}
+\newcommand{\vep}{\varepsilon}
+\newcommand{\ze}{\zeta}
+\newcommand{\et}{\eta}
+\newcommand{\tha}{\theta}
+\newcommand{\vtha}{\vartheta}
+\newcommand{\Tha}{\Theta}
+\newcommand{\io}{\iota}
+\newcommand{\ka}{\kappa}
+\newcommand{\la}{\lambda}
+\newcommand{\La}{\Lambda}
+\newcommand{\rh}{\rho}
+\newcommand{\si}{\sigma}
+\newcommand{\Si}{\Sigma}
+\newcommand{\ta}{\tau}
+\newcommand{\ups}{\upsilon}
+\newcommand{\Ups}{\Upsilon}
+\newcommand{\ph}{\phi}
+\newcommand{\Ph}{\Phi}
+\newcommand{\vph}{\varphi}
+\newcommand{\vpi}{\varpi}
+\newcommand{\ch}{\chi}
+\newcommand{\ps}{\psi}
+\newcommand{\Ps}{\Psi}
+\newcommand{\om}{\omega}
+\newcommand{\Om}{\Omega}
+
+\newcommand{\bbA}{\mathbb{A}}
+\newcommand{\A}{\mathbb{A}}
+\newcommand{\bbB}{\mathbb{B}}
+\newcommand{\bbC}{\mathbb{C}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\bbD}{\mathbb{D}}
+\newcommand{\bbE}{\mathbb{E}}
+\newcommand{\bbF}{\mathbb{F}}
+\newcommand{\bbG}{\mathbb{G}}
+\newcommand{\G}{\mathbb{G}}
+\newcommand{\bbH}{\mathbb{H}}
+\newcommand{\HH}{\mathbb{H}}
+\newcommand{\bbI}{\mathbb{I}}
+\newcommand{\I}{\mathbb{I}}
+\newcommand{\bbJ}{\mathbb{J}}
+\newcommand{\bbK}{\mathbb{K}}
+\newcommand{\bbL}{\mathbb{L}}
+\newcommand{\bbM}{\mathbb{M}}
+\newcommand{\bbN}{\mathbb{N}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\bbO}{\mathbb{O}}
+\newcommand{\bbP}{\mathbb{P}}
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\bbQ}{\mathbb{Q}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\bbR}{\mathbb{R}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\bbS}{\mathbb{S}}
+\newcommand{\bbT}{\mathbb{T}}
+\newcommand{\bbU}{\mathbb{U}}
+\newcommand{\bbV}{\mathbb{V}}
+\newcommand{\bbW}{\mathbb{W}}
+\newcommand{\bbX}{\mathbb{X}}
+\newcommand{\bbY}{\mathbb{Y}}
+\newcommand{\bbZ}{\mathbb{Z}}
+\newcommand{\Z}{\mathbb{Z}}
+
+\newcommand{\scrA}{\mathcal{A}}
+\newcommand{\scrB}{\mathcal{B}}
+\newcommand{\scrC}{\mathcal{C}}
+\newcommand{\scrD}{\mathcal{D}}
+\newcommand{\scrE}{\mathcal{E}}
+\newcommand{\scrF}{\mathcal{F}}
+\newcommand{\scrG}{\mathcal{G}}
+\newcommand{\scrH}{\mathcal{H}}
+\newcommand{\scrI}{\mathcal{I}}
+\newcommand{\scrJ}{\mathcal{J}}
+\newcommand{\scrK}{\mathcal{K}}
+\newcommand{\scrL}{\mathcal{L}}
+\newcommand{\scrM}{\mathcal{M}}
+\newcommand{\scrN}{\mathcal{N}}
+\newcommand{\scrO}{\mathcal{O}}
+\newcommand{\scrP}{\mathcal{P}}
+\newcommand{\scrQ}{\mathcal{Q}}
+\newcommand{\scrR}{\mathcal{R}}
+\newcommand{\scrS}{\mathcal{S}}
+\newcommand{\scrT}{\mathcal{T}}
+\newcommand{\scrU}{\mathcal{U}}
+\newcommand{\scrV}{\mathcal{V}}
+\newcommand{\scrW}{\mathcal{W}}
+\newcommand{\scrX}{\mathcal{X}}
+\newcommand{\scrY}{\mathcal{Y}}
+\newcommand{\scrZ}{\mathcal{Z}}
+
+\newcommand{\subgp}{\mathrel{\unlhd}}
+
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+\newcommand{\colorcomment}[2]{\textcolor{#1}{#2}} %First of these leaves in comments. Second one kills them.
+%\newcommand{\colorcomment}[2]{}
+
+
+\pagestyle{fancy}
+\lhead{Max Jeter}
+\rhead{MA503, Assignment 5, Page \thepage}
+
+\begin{document}
+
+{\bf Problem 1:}
+
+Note: Seriously, who says that $D_6 = \anbrack{a,b}$? Hungerford's the first time I've seen that, and doing that completely strips away all hope of understanding it intuitively. Here, $D_6 = \anbrack{r,s}$, with $r$ being ``rotation'' and $s$ being ``reflection''.
+
+First, we point out that $D_6$ and $\{e\}$ are normal subgroups of $D_6$. Also, $\anbrack{r}$ is normal, as it is a subgroup of index $2$ (We know that subgroups of index $2$ are normal, by a theorem in class.) Also, $\anbrack{r^3}$ is normal; it is the center of $D_6$ (as was discussed in class), and is thus normal. In addition, $\anbrack{sr^3}$ is normal: if $a = r^n$, then $asr^3a^{-1} = r^nsr^{3-n} = r^nr^{n-3}s=r^{-3}s=sr^3$. Also, if $a=sr^n$, then $asr^3a^{-1} = sr^nsr^{3-n}s= sr^nr^{n-3}ss = sr^{-3}=sr^3$. (Note that this doesn't work for other elements of the form $sr^n$ as we have used the fact that $r^3s=sr^3$.) In addition, $\anbrack{r^2}$ is normal:
+
+\begin{align*}
+stuff
+\end{align*}
+
+We can exclude conjugation by elements of the form $r^n$ in the above, because such elements commute with $r^2$ and $r^4$, and thus conjugation of either by such an element leaves $r^2$ and $r^4$ fixed.
+
+However, this is all; let $H$ be a normal subgroup.
+
+If $sr^n \in H$ where $n \neq 3$, then... %We get everything.
+
+If $r^2 \in H$, then... %Something else. Regression to an above case?
+
+\shunt
+
+{\bf Problem 2:}
+
+Let $G$, $H$, $K$ be finite abelian groups, with $G \oplus H \cong G \oplus K$.
+
+Now, because $G \oplus H$ is a finite abelian group, it is isomorphic to a direct sum of the form $\bigoplus\limits_{i=1}^m \Z/(p_i^{\al_i}\Z)$, with each $p_i$ prime. Moreover, $G \oplus K$ is isomorphic to the same direct sum, by a theorem discussed in class.
+
+Moreover, there's an injective homomorphism from $G$ to $G \oplus H$ given by $\phi: G \to G \oplus H$ where $\phi(g) = (g,0)$. Thus, $G$ is isomorphic to a subgroup of $G \oplus H$. Thus, $G$ is isomorphic to a direct sum of the form $\bigoplus\limits_{k=1}^n \Z/(p_{i_k}^{\al_{i_k}}\Z)$ (as any subgroup of $\bigoplus\limits_{i=1}^m \Z/(p_i^{\al_i}\Z)$ is of this form...we probably discussed this some time.)
+
+Now, by rearranging terms, we can see that $G \oplus H \cong \bigoplus\limits_{k=1}^n \Z/(p_{i_k}^{\al_{i_k}}\Z) \oplus \bigoplus\limits_{\{i: i \neq i_k \text{ for any } k \in \N\}}^{n-m} \Z/(p_i^{\al_i}\Z)$. It is clear (if it isn't, then projection maps will get you there...) from this that $H \cong \bigoplus\limits_{\{i: i \neq i_k \text{ for any } k \in \N\}}^{n-m} \Z/(p_i^{\al_i}\Z)$. Similar to the above, $K \cong \bigoplus\limits_{\{i: i \neq i_k \text{ for any } k \in \N\}}^{n-m} \Z/(p_i^{\al_i}\Z)$. So $K \cong H$. 
+
+\shunt
+
+{\bf Problem 3:}
+
+Let $G$ be a finite abelian group.
+
+First, if $G$ is cyclic, then for each $n \in \N$ with $n \neq 1$, then either $n$ is a multiple of $\absval{G}$, in which case there are $\absval{G}$ elements, $a$, satisfying $na = 0$, or $n$ is not a multiple of $\absval{G}$, in which case there are none (because every element in $G$ has the same order, except for $0$). And of course, if $n = 1$, then there's only $1$ element satisfying $1a=0$, that is, $0$.
+
+So if $G$ is cyclic, then for each $n \in \N$ there are at most $n$ elements $a \in G$ satisfying $na =0$.
+
+Now, let $G$ not be cyclic. Then $G \cong \bigoplus\limits_{i=1}^n \Z/(m_i^{\al_i}\Z)$, with each $m_i$ dividing $m_{i+1}$, each $m_i >1$, and $n \geq 2$ (else, $G$ is obviously cyclic...). Consider $m_n$. Every element, $a$, of $G$ has the property $m_na=0$; let $a \in G$. Then $\phi(a)= (a_1,a_2 \ldots a_n) \in \bigoplus\limits_{i=1}^n \Z/(m_i^{\al_i}\Z)$, with an isomorphism, $\phi$ determined by the FTFAG. Moving on $m_n(a_1,a_2 \ldots a_n)=(m_na_1,m_na_2 \ldots m_na_n)=(0,0,\ldots 0)$ (the last of these is because each of the component groups has order dividing $m_n$). Thus, $a^{m_n} = 0$, for all $a \in G$. However, $m_n < \absval{G}$, because $\absval{G} = \prod m_i \geq m_{n-1}m_n > m_n$.
+
+So if $G$ is not cyclic, then there is an $n \in \N$ with more than $n$ elements $a \in G$ satisfying $na=0$.
+
+So $G$ is cyclic if and only if for each $n \in \N$ there are at most $n$ elements $a \in G$ satisfying $na =0$.
+
+\shunt
+
+\end{document}
