@@ -135,23 +135,38 @@
 
 Note: Seriously, who says that $D_6 = \anbrack{a,b}$? Hungerford's the first time I've seen that, and doing that completely strips away all hope of understanding it intuitively. Here, $D_6 = \anbrack{r,s}$, with $r$ being ``rotation'' and $s$ being ``reflection''.
 
-First, we point out that $D_6$ and $\{e\}$ are normal subgroups of $D_6$. Also, $\anbrack{r}$ is normal, as it is a subgroup of index $2$ (We know that subgroups of index $2$ are normal, by a theorem in class.) Also, $\anbrack{r^3}$ is normal; it is the center of $D_6$ (as was discussed in class), and is thus normal. In addition, $\anbrack{sr^3}$ is normal: if $a = r^n$, then $asr^3a^{-1} = r^nsr^{3-n} = r^nr^{n-3}s=r^{-3}s=sr^3$. Also, if $a=sr^n$, then $asr^3a^{-1} = sr^nsr^{3-n}s= sr^nr^{n-3}ss = sr^{-3}=sr^3$. (Note that this doesn't work for other elements of the form $sr^n$ as we have used the fact that $r^3s=sr^3$.) In addition, $\anbrack{r^2}$ is normal:
+First, we point out that $D_6$ and $\{e\}$ are normal subgroups of $D_6$. Also, $\anbrack{r}$, $\anbrack{s,r^2}$, and $\anbrack{sr,r^2}$ are normal, as it they are subgroups of index $2$ (We know that subgroups of index $2$ are normal, by a theorem in class.) Also, $\anbrack{r^3}$ is normal; it is the center of $D_6$ (as was discussed in class), and is thus normal. In addition, $\anbrack{r^2}$ is normal:
 
 \begin{align*}
-stuff
+srr^2(sr)^{-1} &= sr^2s=ssr^4=r^4 \\
+sr^2r^2(sr^2)^{-1} &= sr^2s=ssr^4=r^4 \\
+sr^3r^2(sr^3)^{-1} &= sr^2s=ssr^4=r^4 \\
+sr^4r^2(sr^4)^{-1} &= sr^2s=ssr^4=r^4 \\
+sr^5r^2(sr^5)^{-1} &= sr^2s=ssr^4=r^4 \\
+sr^2(s)^{-1} &=ssr^4=r^4 \\
+srr^4(sr)^{-1} &= sr^4s=ssr^2=r^2 \\
+sr^2r^4(sr^2)^{-1} &= sr^4s=ssr^2=r^2 \\
+sr^3r^4(sr^3)^{-1} &= sr^4s=ssr^2=r^2 \\
+sr^4r^4(sr^4)^{-1} &= sr^4s=ssr^2=r^2 \\
+sr^5r^4(sr^5)^{-1} &= sr^4s=ssr^2=r^2 \\
+sr^4(s)^{-1} &=ssr^2=r^2 \\
 \end{align*}
 
 We can exclude conjugation by elements of the form $r^n$ in the above, because such elements commute with $r^2$ and $r^4$, and thus conjugation of either by such an element leaves $r^2$ and $r^4$ fixed.
 
-However, this is all; let $H$ be a normal subgroup.
+However, this is all; let $H$ be a normal subgroup. We have shown that every subgroup containing only powers of $r$ is normal in $H$. 
 
-If $sr^n \in H$ where $n \neq 3$, then... %We get everything.
+If $sr^n \in H$ where $n \neq 3$, then $rsr^nr^{-1} = rsr^{n-1}=sr^5r^{n-1}=sr^{n+4}$. So $sr^{n+4} \in H$.
 
-If $r^2 \in H$, then... %Something else. Regression to an above case?
+Because $H$ is a subgroup, this means that $sr^nsr^{n+4} = r^{-n}ssr^{n+4}=r^{-n}r^{n+4}=r^4 \in H$. By taking an inverse, we also get that $r^2 \in H$.
+
+In other words, if $H$ is normal, then $H$ contains both $r^2$ and $sr^n$ for some $n \in \N$. If $n$ is even, we can multiply $sr^n$ on the right a number of times to get the result $s$. Else, we can do the same to get the result $sr$. So either $s$ or $sr$ is in $H$. Thus, $H$ is one of the subgroups already determined to be normal ($\anbrack{r^2,sr}$, $\anbrack{r^2,s}$, or $D_6$.)
+
+So, we can determine that we have ``got 'em all''.
 
 \shunt
 
-{\bf Problem 2:}
+{\bf Problem 2:} %Should probably go ahead and do the actual problem part of the problem.
 
 Let $G$, $H$, $K$ be finite abelian groups, with $G \oplus H \cong G \oplus K$.
 
@@ -159,7 +174,11 @@ Now, because $G \oplus H$ is a finite abelian group, it is isomorphic to a direc
 
 Moreover, there's an injective homomorphism from $G$ to $G \oplus H$ given by $\phi: G \to G \oplus H$ where $\phi(g) = (g,0)$. Thus, $G$ is isomorphic to a subgroup of $G \oplus H$. Thus, $G$ is isomorphic to a direct sum of the form $\bigoplus\limits_{k=1}^n \Z/(p_{i_k}^{\al_{i_k}}\Z)$ (as any subgroup of $\bigoplus\limits_{i=1}^m \Z/(p_i^{\al_i}\Z)$ is of this form...we probably discussed this some time.)
 
-Now, by rearranging terms, we can see that $G \oplus H \cong \bigoplus\limits_{k=1}^n \Z/(p_{i_k}^{\al_{i_k}}\Z) \oplus \bigoplus\limits_{\{i: i \neq i_k \text{ for any } k \in \N\}}^{n-m} \Z/(p_i^{\al_i}\Z)$. It is clear (if it isn't, then projection maps will get you there...) from this that $H \cong \bigoplus\limits_{\{i: i \neq i_k \text{ for any } k \in \N\}}^{n-m} \Z/(p_i^{\al_i}\Z)$. Similar to the above, $K \cong \bigoplus\limits_{\{i: i \neq i_k \text{ for any } k \in \N\}}^{n-m} \Z/(p_i^{\al_i}\Z)$. So $K \cong H$. 
+Now, by rearranging terms, we can see that $G \oplus H \cong \bigoplus\limits_{k=1}^n \Z/(p_{i_k}^{\al_{i_k}}\Z) \oplus \bigoplus\limits_{\{i: i \neq i_k \text{ for any } k \in \N\}}^{n-m} \Z/(p_i^{\al_i}\Z)$. Define the right hand group to be $(G \oplus H)'$. It is clear from this that $H \cong \bigoplus\limits_{\{i: i \neq i_k \text{ for any } k \in \N\}}^{n-m} \Z/(p_i^{\al_i}\Z)$;
+
+\tab Consider the normal subgroup $G' \subgp (G \oplus H)' = \anbrack{(1,0,0 \ldots 0), (0,1,0,0, \ldots 0), \ldots (0,0, \ldots 1 \ldots 0)}$, with the last of these having a $1$ in the $n$th coordinate (the subgroup is normal, because the big group is abelian). 
+
+Similar to the above, $K \cong \bigoplus\limits_{\{i: i \neq i_k \text{ for any } k \in \N\}}^{n-m} \Z/(p_i^{\al_i}\Z)$. So $K \cong H$. 
 
 \shunt
 
