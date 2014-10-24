@@ -1,0 +1,196 @@
+
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{fancyhdr}
+\usepackage{amssymb}
+%\usepackage{mathpazo}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{slashed}
+\usepackage[mathscr]{euscript}
+
+\newcommand{\tab}{\hspace{4mm}} %Spacing aliases
+\newcommand{\shunt}{\vspace{20mm}}
+
+\newcommand{\sd}{\partial} %Squiggle d
+
+\newcommand{\absval}[1]{\lvert #1 \rvert}
+\newcommand{\anbrack}[1]{\left\langle #1 \right\rangle}
+\newcommand{\norm}[1]{\|#1\|}
+
+
+\newcommand{\al}{\alpha} %Steal ALL of Dr. Kable's Aliases! MWAHAHAHAHA!
+\newcommand{\be}{\beta}
+\newcommand{\ga}{\gamma}
+\newcommand{\Ga}{\Gamma}
+\newcommand{\de}{\delta}
+\newcommand{\De}{\Delta}
+\newcommand{\ep}{\epsilon}
+\newcommand{\vep}{\varepsilon}
+\newcommand{\ze}{\zeta}
+\newcommand{\et}{\eta}
+\newcommand{\tha}{\theta}
+\newcommand{\vtha}{\vartheta}
+\newcommand{\Tha}{\Theta}
+\newcommand{\io}{\iota}
+\newcommand{\ka}{\kappa}
+\newcommand{\la}{\lambda}
+\newcommand{\La}{\Lambda}
+\newcommand{\rh}{\rho}
+\newcommand{\si}{\sigma}
+\newcommand{\Si}{\Sigma}
+\newcommand{\ta}{\tau}
+\newcommand{\ups}{\upsilon}
+\newcommand{\Ups}{\Upsilon}
+\newcommand{\ph}{\phi}
+\newcommand{\Ph}{\Phi}
+\newcommand{\vph}{\varphi}
+\newcommand{\vpi}{\varpi}
+\newcommand{\ch}{\chi}
+\newcommand{\ps}{\psi}
+\newcommand{\Ps}{\Psi}
+\newcommand{\om}{\omega}
+\newcommand{\Om}{\Omega}
+
+\newcommand{\bbA}{\mathbb{A}}
+\newcommand{\A}{\mathbb{A}}
+\newcommand{\bbB}{\mathbb{B}}
+\newcommand{\bbC}{\mathbb{C}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\bbD}{\mathbb{D}}
+\newcommand{\bbE}{\mathbb{E}}
+\newcommand{\bbF}{\mathbb{F}}
+\newcommand{\bbG}{\mathbb{G}}
+\newcommand{\G}{\mathbb{G}}
+\newcommand{\bbH}{\mathbb{H}}
+\newcommand{\HH}{\mathbb{H}}
+\newcommand{\bbI}{\mathbb{I}}
+\newcommand{\I}{\mathbb{I}}
+\newcommand{\bbJ}{\mathbb{J}}
+\newcommand{\bbK}{\mathbb{K}}
+\newcommand{\bbL}{\mathbb{L}}
+\newcommand{\bbM}{\mathbb{M}}
+\newcommand{\bbN}{\mathbb{N}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\bbO}{\mathbb{O}}
+\newcommand{\bbP}{\mathbb{P}}
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\bbQ}{\mathbb{Q}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\bbR}{\mathbb{R}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\bbS}{\mathbb{S}}
+\newcommand{\bbT}{\mathbb{T}}
+\newcommand{\bbU}{\mathbb{U}}
+\newcommand{\bbV}{\mathbb{V}}
+\newcommand{\bbW}{\mathbb{W}}
+\newcommand{\bbX}{\mathbb{X}}
+\newcommand{\bbY}{\mathbb{Y}}
+\newcommand{\bbZ}{\mathbb{Z}}
+\newcommand{\Z}{\mathbb{Z}}
+
+\newcommand{\scrA}{\mathcal{A}}
+\newcommand{\scrB}{\mathcal{B}}
+\newcommand{\scrC}{\mathcal{C}}
+\newcommand{\scrD}{\mathcal{D}}
+\newcommand{\scrE}{\mathcal{E}}
+\newcommand{\scrF}{\mathcal{F}}
+\newcommand{\scrG}{\mathcal{G}}
+\newcommand{\scrH}{\mathcal{H}}
+\newcommand{\scrI}{\mathcal{I}}
+\newcommand{\scrJ}{\mathcal{J}}
+\newcommand{\scrK}{\mathcal{K}}
+\newcommand{\scrL}{\mathcal{L}}
+\newcommand{\scrM}{\mathcal{M}}
+\newcommand{\scrN}{\mathcal{N}}
+\newcommand{\scrO}{\mathcal{O}}
+\newcommand{\scrP}{\mathcal{P}}
+\newcommand{\scrQ}{\mathcal{Q}}
+\newcommand{\scrR}{\mathcal{R}}
+\newcommand{\scrS}{\mathcal{S}}
+\newcommand{\scrT}{\mathcal{T}}
+\newcommand{\scrU}{\mathcal{U}}
+\newcommand{\scrV}{\mathcal{V}}
+\newcommand{\scrW}{\mathcal{W}}
+\newcommand{\scrX}{\mathcal{X}}
+\newcommand{\scrY}{\mathcal{Y}}
+\newcommand{\scrZ}{\mathcal{Z}}
+
+\newcommand{\subgp}{\mathrel{\unlhd}}
+
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+\newcommand{\colorcomment}[2]{\textcolor{#1}{#2}} %First of these leaves in comments. Second one kills them.
+%\newcommand{\colorcomment}[2]{}
+
+
+\pagestyle{fancy}
+\lhead{Max Jeter}
+\rhead{MA503, Assignment 6, Page \thepage}
+
+\begin{document}
+
+{\bf Problem 1:}
+
+Let $p$ be a prime number, and $G$ be an abelian group of order $p^2$.
+
+Then $G$ is isomorphic to a group of the form $\bigoplus\limits_{i=1}^n \Z/p_i^{\al_i}$, for some $p_i$, $\al_i$.
+
+For that representation to make sense, $p_i=p$ or $p_i=p^2$ for all $i$, because $G$ is a group of order $p^2$; if $p_i \slashed{\mid} p$ for any $i$, then the order of $G$ would not be divisible by $p$. So $p_i \mid p$ for all $i$. Also, $p_i \leq p^2$ for all $i$, else the group has order bigger than $p^2$.
+
+The only two ways to make that work are if $p_1 = p^2$ or if $p_1=p_2=p$, and this is clear.
+
+So $\Z/p^2$ and $\Z/p \oplus \Z/p$ are the only two abelian groups of order $p^2$.
+
+Note: Didn't we also have a homework problem that said that any group of order $p^2$ was abelian? You can throw out ``abelian'' in the problem and it works the same as long as you've given that problem previously, can't you?
+
+\shunt
+
+{\bf Problem 2:}
+
+Let $R$ be a finite, nontrivial ring (the one ring is not a field nor an integral domain, so we can get away with this). 
+
+If $R$ is an integral domain, then...(Definition) Now, $r^m = 1$ for some $m \in \N$;
+
+\tab Assume not. Then $r^m \neq 1$ for any $m \in \N$. So $r^m \neq r^k$ for any $k, m \in \N$ with $k \neq m$ (else, (apply definition)).
+
+If $R$ is a field, then...
+
+\shunt
+
+{\bf Problem 3:}
+
+Let $R$ be a ring and $S=M_n(R)$.
+
+Part a:
+
+Let $\phi$ be given by $I \mapsto J=\{(a_{ij}) : a_{ij} \in I\}$. Then $\phi$ is a bijection:
+
+First, $\phi$ is well defined:
+
+Second, $\phi$ is injective:
+
+Last, $\phi$ is surjective
+
+\shunt
+
+Part b:
+
+If $R$ is a division ring then $(0)$ and $R$ are the only $R$-ideals; we discussed this in class. (Make sure we did).
+
+So by the bijection above, there can only be two distinct $S$-ideals. We know that $(0)$ and $S$ are distinct $S$-ideals. This satisfies the problem.
+
+\shunt
+
+{\bf Problem 4:}
+
+Let $R$ be a ring, and $I_1$, $I_2$, $\ldots$ $I_n$ be $R$-ideals.
+
+Let $R=I_1 + I_2 \ldots +I_n$, with $I_j \cap \sum\limits_{i \neq j} I_i = (0)$ for all $j$. Then...
+
+Now, let ther be $e_1, e_2 \ldots e_n$ such that $1 = e_1 + e_2 \ldots +e_n$ with $I_i = Re_i$, $e_i \in Z(R)$, $e_i^2 = e_i$, and $e_ie_j = 0$ for every $i \neq j$. Then...
+
+\shunt
+
+\end{document}
