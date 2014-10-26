@@ -147,31 +147,37 @@ Note: Didn't we also have a homework problem that said that any group of order $
 
 \shunt
 
-{\bf Problem 2:}
+{\bf Problem 2:} %Incomplete
 
 Let $R$ be a finite, nontrivial ring (the one ring is not a field nor an integral domain, so we can get away with this). 
 
-If $R$ is an integral domain, then...(Definition) Now, $r^m = 1$ for some $m \in \N$;
+If $R$ is an integral domain, then $R$ is commutative. Also, $R$ has no zero divisors. Thus, $R \setminus \{0_R\}$ is closed under multiplication.
 
-\tab Assume not. Then $r^m \neq 1$ for any $m \in \N$. So $r^m \neq r^k$ for any $k, m \in \N$ with $k \neq m$ (else, (apply definition)).
+Now, $R \setminus \{0_R\}$ is a group with respect to multiplication:
 
-If $R$ is a field, then...
+\tab First, note that multiplication is associative.
+
+\tab Next, note that $1_R \neq 0_R$, so $R \setminus \{0_R\}$ contains an identity element.
+
+\tab Last, each element has an inverse: let $a \in R \setminus \{0_R\}$. Then...%something
+
+If $R$ is a field, then $R$ is commutative. Also, $R$ is a division ring. So, $R \setminus \{0_R\} = R^*$ is a group (with the operation multiplication). That means that $R$ has no zero divisors (otherwise, $R \setminus \{0_R\}$ wouldn't be closed under multiplication). So $R$ is a commutative ring with no zero divisors, $R$ is an integral domain.
 
 \shunt
 
-{\bf Problem 3:}
+{\bf Problem 3:} %a incomplete
 
 Let $R$ be a ring and $S=M_n(R)$.
 
 Part a:
 
-Let $\phi$ be given by $I \mapsto J=\{(a_{ij}) : a_{ij} \in I\}$. Then $\phi$ is a bijection:
+Let $\phi: \scrI \to \scrJ$ be given by $I \mapsto J=\{(a_{ij}) : a_{ij} \in I\}$. Then $\phi$ is a bijection:
 
-First, $\phi$ is well defined:
+First, $\phi$ is well defined: if $I$ is an ideal, then $\phi(I) = \{(a_{ij}) : a_{ij} \in I\}$. Now, $\phi(I)$ is an ideal of $S$; if $M \in S$ and $N \in \phi(I)$, then each entry of $MN$ (or $NM$) is a linear combination of elements of the form $ma_{ij}$ with $m \in R$ and $a_{ij} \in I$. This means that each entry of $MN$ (or $NM$) is in $I$, so that $MN$ (and $NM$) is in $\phi(I)$. Also, if $M,N \in \phi(I)$, then each entry of $M+N$ is a sum of two elements in $I$, so that each entry of $M+N$ is an element of $I$, so that $M+N \in \phi(I)$.
 
-Second, $\phi$ is injective:
+Second, $\phi$ is injective: let $I_1,I_2$ be $R$-ideals, and $J=\phi(I_1)=\phi(I_2)$. For each $i \in I_1$, the matrix $blah \in J$. This implies that for each $i \in I_1$, $i \in I_2$. Similarly, for each $i \in I_2$ we have that $i \in \I_1$. So $I_1 = I_2$. %blah is the matrix i in one entry, zeroes in the rest.
 
-Last, $\phi$ is surjective
+Last, $\phi$ is surjective: let $J$ be an $S$-ideal. %This is the one I don't know how to do.
 
 \shunt
 
@@ -183,13 +189,29 @@ So by the bijection above, there can only be two distinct $S$-ideals. We know th
 
 \shunt
 
-{\bf Problem 4:}
+{\bf Problem 4:} %one direction incomplete
 
 Let $R$ be a ring, and $I_1$, $I_2$, $\ldots$ $I_n$ be $R$-ideals.
 
-Let $R=I_1 + I_2 \ldots +I_n$, with $I_j \cap \sum\limits_{i \neq j} I_i = (0)$ for all $j$. Then...
+Let $R=I_1 + I_2 \ldots +I_n$, with $I_j \cap \sum\limits_{i \neq j} I_i = (0)$ for all $j$.
 
-Now, let ther be $e_1, e_2 \ldots e_n$ such that $1 = e_1 + e_2 \ldots +e_n$ with $I_i = Re_i$, $e_i \in Z(R)$, $e_i^2 = e_i$, and $e_ie_j = 0$ for every $i \neq j$. Then...
+\tab First, we know that $1 \in I_1 + I_2 \ldots +I_n$. So, there are $e_1, e_2 \ldots e_n$ such that $1 = e_1 + e_2 \ldots + e_n$.
+
+\tab Next, %I_i=Re_i
+
+\tab Next, %e_i \in Z(R)
+
+\tab Also, %e_i^2 = e_i
+
+\tab Last, %e_ie_j = 0
+
+Now, let there be $e_1, e_2 \ldots e_n$ such that $1 = e_1 + e_2 \ldots +e_n$ with $I_i = Re_i$, $e_i \in Z(R)$, $e_i^2 = e_i$, and $e_ie_j = 0$ for every $i \neq j$.
+
+\tab First, note that $Re_i = I_i$ for each $i$. Let $r \in R$. Because $1 = e_1 + e_2 \ldots +e_n$, we can take $r =re_1 + re_2 \ldots + re_n$ by multiplying on the left by $r$. But because $re_i \in I_i$ for each $i$, this means that $r \in I_1 + I_2 \ldots I_n$. Thus, we have $r \in I_1 + I_2 \ldots I_n$ for each $r \in R$: we have that $R = I_1 + I_2 \ldots +I_n$.
+
+\tab Next, let $r \in I_i \cup I_j$ for any $i \neq j$. Then $r = r'e_i=r''e_j$ for some $r',r'' \in R$. Also, $r'e_ie_i=r''e_je_i$, so $r=r'e_i = r''0=0$. That is, $r=0$ for all $R \in I_i \cup I_j$ if $i \neq j$. So, $I_i \cup I_j = (0)$ for all $i \neq j$, so we have that $I_j \cup \sum\limits_{i \neq j} I_i = (0)$ as well.
+
+Thus, we have that $R = I_1 +I_2 \ldots + I_n$ with $I_j \cup \sum\limits_{i \neq j} I_i = (0)$ if and only if there are $e_1, e_2 \ldots e_n$ such that $1 = e_1 + e_2 \ldots +e_n$ with $I_i = Re_i$, $e_i \in Z(R)$, $e_i^2 = e_i$, and $e_ie_j = 0$ for every $i \neq j$.
 
 \shunt
 
