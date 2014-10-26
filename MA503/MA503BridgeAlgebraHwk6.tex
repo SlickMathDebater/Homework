@@ -147,7 +147,7 @@ Note: Didn't we also have a homework problem that said that any group of order $
 
 \shunt
 
-{\bf Problem 2:} %Incomplete
+{\bf Problem 2:}
 
 Note: For the sake of transparency, I am obliged to state that I found a chunk of this proof in Dummit and Foote.
 
@@ -155,13 +155,17 @@ Let $R$ be a finite, nontrivial ring (the one ring is not a field nor an integra
 
 If $R$ is an integral domain, then $R$ is commutative. Also, $R$ has no zero divisors. Thus, $R \setminus \{0_R\}$ is closed under multiplication.
 
+Before continuing, we show that for all $a,b,c \in R$, $ab=ac$ implies that $a = 0$ or $b=c$;
+
+\tab If $ab=ac$, then $ab-ac=0$, so $a(b-c)=0$. This means that $a=0$ or $b-c=0$, so we have our result.
+
 Now, $R \setminus \{0_R\}$ is a group with respect to multiplication:
 
 \tab First, note that multiplication is associative.
 
 \tab Next, note that $1_R \neq 0_R$, so $R \setminus \{0_R\}$ contains an identity element.
 
-\tab Last, each element has an inverse: let $a \in R \setminus \{0_R\}$. Now, we know that $R$ has a nonzero characteristic, $n$ ($R$ is a finite ring; it's also a finite group). So $na = 0$ for some $n \in \N$. This means that $n(1_Ra) = 0$, or $(n1_R)a=0$. 
+\tab Last, each element has an inverse: let $a \in R \setminus \{0_R\}$. The map $\phi: R \setminus \{0\} \to R \setminus \{0\}$ given by $x \mapsto ax$ is injective, by the above cancellation law. Because $R \setminus \{0\}$ is finite, this means that $\phi$ is a bijection. In particular, $\phi(x)= 1$ for some $x \in R \setminus \{0\}$. In other words, $ax=1$ for some $x \in R \setminus \{0\}$. Hence, $a$ has a multiplicative inverse.
 
 If $R$ is a field, then $R$ is commutative. Also, $R$ is a division ring. So, $R \setminus \{0_R\} = R^*$ is a group (with the operation multiplication). That means that $R$ has no zero divisors (otherwise, $R \setminus \{0_R\}$ wouldn't be closed under multiplication). So $R$ is a commutative ring with no zero divisors, $R$ is an integral domain.
 
@@ -177,9 +181,9 @@ Let $\phi: \scrI \to \scrJ$ be given by $I \mapsto J=\{(a_{ij}) : a_{ij} \in I\}
 
 First, $\phi$ is well defined: if $I$ is an ideal, then $\phi(I) = \{(a_{ij}) : a_{ij} \in I\}$. Now, $\phi(I)$ is an ideal of $S$; if $M \in S$ and $N \in \phi(I)$, then each entry of $MN$ (or $NM$) is a linear combination of elements of the form $ma_{ij}$ with $m \in R$ and $a_{ij} \in I$. This means that each entry of $MN$ (or $NM$) is in $I$, so that $MN$ (and $NM$) is in $\phi(I)$. Also, if $M,N \in \phi(I)$, then each entry of $M+N$ is a sum of two elements in $I$, so that each entry of $M+N$ is an element of $I$, so that $M+N \in \phi(I)$.
 
-Second, $\phi$ is injective: let $I_1,I_2$ be $R$-ideals, and $J=\phi(I_1)=\phi(I_2)$. For each $i \in I_1$, the matrix $blah \in J$. This implies that for each $i \in I_1$, $i \in I_2$. Similarly, for each $i \in I_2$ we have that $i \in \I_1$. So $I_1 = I_2$. %blah is the matrix i in one entry, zeroes in the rest.
+Second, $\phi$ is injective: let $I_1,I_2$ be $R$-ideals, and $J=\phi(I_1)=\phi(I_2)$. For each $i \in I_1$, the matrix $\left[\begin{smallmatrix} i&0\\ 0&0 \end{smallmatrix}\right] \in J$. This implies that for each $i \in I_1$, $i \in I_2$. Similarly, for each $i \in I_2$ we have that $i \in \I_1$. So $I_1 = I_2$. 
 
-Last, $\phi$ is surjective: let $J$ be an $S$-ideal. %This is the one I don't know how to do.
+Last, $\phi$ is surjective: let $J$ be an $S$-ideal. %This is the one I don't know how to do. The idea is that the condition for $J$ to be an S-ideal can be stripped to the index level, which gets you what you need.
 
 \shunt
 
@@ -215,10 +219,19 @@ Let $R=I_1 + I_2 \ldots +I_n$, with $I_j \cap \sum\limits_{i \neq j} I_i = (0)$ 
 
 \begin{align*}
 r1&=1r\\
-re_1+re_2+\ldots re_n &=e_1r+e_2r+\ldots e_nr\\
+re_1+re_2+\ldots re_n &=e_1r+e_2r+\ldots e_nr
 \end{align*}
 
-\tab This means that $re_i=e_ir$ for all $i$: %Explain why
+\tab This means that $re_i=e_ir$ for all $i$: if not, then there is an $i$ such that there is a nonzero $r'$ such that $re_i = e_ir + r'$. Moreover, because $Re_i=I_i$, this means that $r' \in I_i$. So, we have that
+
+\begin{align*}
+re_1+re_2+\ldots re_n -re_i &=e_1r+e_2r+\ldots e_nr - re_i\\
+re_1+re_2+\ldots re_{i-1} + re_{i+1} \ldots +re_n &= -r' + e_1r+e_2r+\ldots e_{i-1}r + e_{i+1}r \ldots +e_nr\\
+r' = e_1r + re_1 + e_2r + re_2 \ldots + e_{i-1}r + re_{i-1} + &e_{i+1}r + re_{i+1} + \ldots e_nr + re_n\\
+r' \in I_i \cap \sum\limits_{i \neq j} I_j &\text{ If I hadn't formatted it like that, the text would run off the page}
+\end{align*}
+
+\tab But this means that $r' =0$. This is a contradiction. 
 
 Now, let there be $e_1, e_2 \ldots e_n$ such that $1 = e_1 + e_2 \ldots +e_n$ with $I_i = Re_i$, $e_i \in Z(R)$, $e_i^2 = e_i$, and $e_ie_j = 0$ for every $i \neq j$.
 
