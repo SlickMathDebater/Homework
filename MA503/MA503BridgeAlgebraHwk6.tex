@@ -149,6 +149,8 @@ Note: Didn't we also have a homework problem that said that any group of order $
 
 {\bf Problem 2:} %Incomplete
 
+Note: For the sake of transparency, I am obliged to state that I found a chunk of this proof in Dummit and Foote.
+
 Let $R$ be a finite, nontrivial ring (the one ring is not a field nor an integral domain, so we can get away with this). 
 
 If $R$ is an integral domain, then $R$ is commutative. Also, $R$ has no zero divisors. Thus, $R \setminus \{0_R\}$ is closed under multiplication.
@@ -159,7 +161,7 @@ Now, $R \setminus \{0_R\}$ is a group with respect to multiplication:
 
 \tab Next, note that $1_R \neq 0_R$, so $R \setminus \{0_R\}$ contains an identity element.
 
-\tab Last, each element has an inverse: let $a \in R \setminus \{0_R\}$. Then...%something
+\tab Last, each element has an inverse: let $a \in R \setminus \{0_R\}$. Now, we know that $R$ has a nonzero characteristic, $n$ ($R$ is a finite ring; it's also a finite group). So $na = 0$ for some $n \in \N$. This means that $n(1_Ra) = 0$, or $(n1_R)a=0$. 
 
 If $R$ is a field, then $R$ is commutative. Also, $R$ is a division ring. So, $R \setminus \{0_R\} = R^*$ is a group (with the operation multiplication). That means that $R$ has no zero divisors (otherwise, $R \setminus \{0_R\}$ wouldn't be closed under multiplication). So $R$ is a commutative ring with no zero divisors, $R$ is an integral domain.
 
@@ -195,15 +197,28 @@ Let $R$ be a ring, and $I_1$, $I_2$, $\ldots$ $I_n$ be $R$-ideals.
 
 Let $R=I_1 + I_2 \ldots +I_n$, with $I_j \cap \sum\limits_{i \neq j} I_i = (0)$ for all $j$.
 
-\tab First, we know that $1 \in I_1 + I_2 \ldots +I_n$. So, there are $e_1, e_2 \ldots e_n$ such that $1 = e_1 + e_2 \ldots + e_n$.
+\tab First, we know that $1 \in I_1 + I_2 \ldots +I_n$. So, there are $e_1, e_2 \ldots e_n$ such that $1 = e_1 + e_2 \ldots + e_n$. Pick any such set of $e_i$s.
 
-\tab Next, %I_i=Re_i
+\tab Next, we show that $I_i = Re_i$:
 
-\tab Next, %e_i \in Z(R)
+\tab \tab First, let $r \in I_i$. Then $r=r1=re_1+re_2 \ldots re_i + \ldots +re_n$. But each $re_k$ with $k \neq i$ is $0$, because each is in $I_i$ and $I_k$ (we know this because we know that $I_i \cap \sum\limits_{i \neq j} I_j = (0)$). So $r = re_i$, so $r \in Re_i$. So $I_i \subset Re_i$.
 
-\tab Also, %e_i^2 = e_i
+\tab \tab Next, let $r \in Re_i$. Then $r = r'e_i$ for some $r' \in R$. So $r \in I_i$. So $Re_i \subset I_i$.
 
-\tab Last, %e_ie_j = 0
+\tab \tab So $Re_i = I_i$.
+
+\tab Next, $e_ie_j = 0$ if $i \neq j$; $e_ie_j \in I_i \cap I_j$, so $e_ie_j = 0$ (we know this because we know that $I_i \cap \sum\limits_{i \neq j} I_j = (0)$).
+
+\tab Also, $e_i^2 = e_i$ for all $i$; $e_i = e_i1= e_ie_1+e_ie_2 \ldots e_ie_i +\ldots + e_ie_n = 0+0+0\ldots+e_i^2+\ldots+0 = e_i^2$. 
+
+\tab Last, $e_i \in Z(R)$ for all $i$; let $r \in R$. Then:
+
+\begin{align*}
+r1&=1r\\
+re_1+re_2+\ldots re_n &=e_1r+e_2r+\ldots e_nr\\
+\end{align*}
+
+\tab This means that $re_i=e_ir$ for all $i$: %Explain why
 
 Now, let there be $e_1, e_2 \ldots e_n$ such that $1 = e_1 + e_2 \ldots +e_n$ with $I_i = Re_i$, $e_i \in Z(R)$, $e_i^2 = e_i$, and $e_ie_j = 0$ for every $i \neq j$.
 
