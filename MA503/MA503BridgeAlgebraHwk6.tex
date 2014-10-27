@@ -181,9 +181,27 @@ Let $\phi: \scrI \to \scrJ$ be given by $I \mapsto J=\{(a_{ij}) : a_{ij} \in I\}
 
 First, $\phi$ is well defined: if $I$ is an ideal, then $\phi(I) = \{(a_{ij}) : a_{ij} \in I\}$. Now, $\phi(I)$ is an ideal of $S$; if $M \in S$ and $N \in \phi(I)$, then each entry of $MN$ (or $NM$) is a linear combination of elements of the form $ma_{ij}$ with $m \in R$ and $a_{ij} \in I$. This means that each entry of $MN$ (or $NM$) is in $I$, so that $MN$ (and $NM$) is in $\phi(I)$. Also, if $M,N \in \phi(I)$, then each entry of $M+N$ is a sum of two elements in $I$, so that each entry of $M+N$ is an element of $I$, so that $M+N \in \phi(I)$.
 
-Second, $\phi$ is injective: let $I_1,I_2$ be $R$-ideals, and $J=\phi(I_1)=\phi(I_2)$. For each $i \in I_1$, the matrix $\left[\begin{smallmatrix} i&0\\ 0&0 \end{smallmatrix}\right] \in J$. This implies that for each $i \in I_1$, $i \in I_2$. Similarly, for each $i \in I_2$ we have that $i \in \I_1$. So $I_1 = I_2$. 
+Second, $\phi$ is injective: let $I_1,I_2$ be $R$-ideals, and $J=\phi(I_1)=\phi(I_2)$. For each $r \in I_1$, the matrix $(b_{ij}) \in J$, where $b_{ij} = r$ if $i=j=1$, else $b_{ij}=0$. This implies that for each $r \in I_1$, $r \in I_2$. Similarly, for each $r \in I_2$ we have that $r \in \I_1$. So $I_1 = I_2$. 
 
-Last, $\phi$ is surjective: let $J$ be an $S$-ideal. %This is the one I don't know how to do. The idea is that the condition for $J$ to be an S-ideal can be stripped to the index level, which gets you what you need.
+Last, $\phi$ is surjective: let $J$ be an $S$-ideal. Then $J$ is contained in $\phi(I)$ for some $I$:
+
+\tab Consider $I_{ij}=\{a: a=a_{ij} \text{ for some matrix } (a_{ij}) \in J\}$. Each $I_{ij}$ is an ideal: 
+
+\tab \tab First, if $a, b \in I_{ij}$, then there's a matrix $A=(a_{ij}) \in J$ and a matrix $B=(b_{ij}) \in J$ with $a=a_{ij}$ and $b=b_{ij}$. Because $J$ is an ideal, the products $A_iBA_j$ and $A_iAA_j \in J$, where $A_k = (c_{ij})$, where $c_{ij}=1$ if $i=j=k$, else $c_{ij}=0$. Because these products strip away all terms except $a$ and $b$, this means that $A_iBA_j + A_iAA_j$ has $a+b$ in the $(i,j)$th position. That means that $I_{ij}$ is closed under addition.
+
+\tab \tab Next, if $r \in R$ and $a \in I_{ij}$, then there's a matrix $A=(a_{ij}) \in J$ with $a=a_{ij}$. Because $J$ is an ideal, the matrix $rIA \in J$. It's clear that the $(i,j)$th entry of $rIJ$ is $ra$. That means that $I_{ij}$ is closed under multiplication by elements of the ring.
+
+\tab Thus, the entries of each matrix are always contained in the ideal $I = \sum I_{ij}$. So $J \subset \phi(I)$, as desired.
+
+Also, $\phi(I) \subset J$;
+
+\tab Let $M \in \phi(I)$. We proceed by applying tactics of linear algebra; the plan is to first decompose $M$ into a sum of $ij$ matrices, which we will call $M_{ij}$, whose elements are in $I_{ij}$. We then decompose each of those matrices into $n^2$ single-term matrices. Each of these decomposed matrices are in $J$, so we have that $M$ is in $J$.
+
+\tab ...I could go through the process of doing that formally, or I could admit that I started this homework a bit too late to do that. :/ I've been sick, I couldn't get myself on this homework. Won't happen again, I hope.
+
+Thus, $J = \phi(I)$ for some $R$-ideal, $I$. That is, every $S$-ideal is mapped to by some $R$-ideal, so $\phi$ is surjective.
+
+So $\phi$ is bijective: the problem is satisfied.
 
 \shunt
 
@@ -195,7 +213,7 @@ So by the bijection above, there can only be two distinct $S$-ideals. We know th
 
 \shunt
 
-{\bf Problem 4:} %one direction incomplete
+{\bf Problem 4:}
 
 Let $R$ be a ring, and $I_1$, $I_2$, $\ldots$ $I_n$ be $R$-ideals.
 
