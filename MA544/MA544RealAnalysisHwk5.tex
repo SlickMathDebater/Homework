@@ -133,23 +133,33 @@
 
 {\bf Problem 1:} 
 
-Let $f_n \to f$ in measure. 
+Let $f_n \to f$ in measure, with an integrable function $g$ such that $\absval{f_n} \leq g$ for all $n$.
+
+We proceed by proving the fact if the domain of each $f_n$ is $[0,1]$, then extending it to all of $\R$ by applying the $\ep 2^{-n}$ method.
+
+Let $\ep>0$.
+
+Because $f_n \to f$ in measure, there's an $N \in \N$ such that for all $n \geq N$, $m(x: \absval{f_n(x)-f(x)} \geq \ep/2) < \ep/2$. 
 
 \shunt
 
-{\bf Problem 2:} 
+{\bf Problem 2:} %A bit of incompleteness
 
 Let $f$ be continuous on $[a,b]$, with one of its derivates everywhere nonnegative on $(a,b)$.
 
-If this derivate is $D_+$, then for all $x \in [a,b]$, $\liminf\limits_{h \to 0^+} \frac{f(x+h)-f(x)}{h} \geq 0$.
+First, we will show this for a function $g$ with $D^+(g) \geq \ep >0$. If $g$ is such a function, then $\limsup\limits_{h \to 0^+} \frac{f(x+h)-f(x)}{h} \geq \ep> 0$. This means that $g$ is nondecreasing:
 
-If this derivate is $D_-$, then for all $x \in [a,b]$, $\liminf\limits_{h \to 0^+} \frac{f(x)-f(x+h)}{h} \geq 0$.
+\tab We proceed by contradiction: let there be $x,y \in [a,b]$ (with $x<y$, without loss of generality) be such that $f(x) > f(y)$.
 
-If this derivate is $D^+$, then for all $x \in [a,b]$, $\limsup\limits_{h \to 0^+} \frac{f(x+h)-f(x)}{h} \geq 0$.
+\tab Consider the set $A = \{\al \in [x,y]: f(\al) > f(y)\}$. This set has a supremum, as it's nonempty. Define $\al =\sup(A)$. There is a $\de>0$ such that if $t \in [\al, \al+\de]$, then $f(t) < f(y)$: (Is pretty trivial). Moreover, $f(\al) = f(y)$: (Proof is clear, follows from continuity). So for any sequence $(t_n)$ decreasing to $\al$, we have $\frac{f(t_n) - f(\al)}{t_n - \al}$ negative. This means that $D^+(\al) \leq 0$. This contradicts our assumption on $D^+$. %Incompleteness here.
 
-If this derivate is $D^-$, then for all $x \in [a,b]$, $\limsup\limits_{h \to 0^+} \frac{f(x)-f(x+h)}{h} \geq 0$.
+We can mimic this proof to show that if $g$ has $D^-(g) \geq \ep >0$, then $g$ is nondecreasing.
 
-So in all cases, $f$ is nondecreasing. 
+Now, let $f$ have a derivate everywhere nonnegative on $(a,b)$. This means, in particular, that either $D^+$ or $D^-$ is everywhere nonnegative on $(a,b)$.
+
+Then for every $\ep>0$, $g_\ep(x) = f(x) + \ep x$ has $D^+(g_\ep)$ (or $D^-(g_\ep)$) greater than $\ep$. So for all $\ep>0$, $g_\ep$ is nondecreasing. So for all $x,y \in [a,b]$ with $x<y$, $g_\ep(x) \leq g_\ep(y)$. That is, $f(x) + \ep x \leq f(y) + \ep y$. Taking limits as $\ep \to 0$, this means that $f(x) \leq f(y)$, for all $x,y \in [a,b]$ with $x<y$.
+
+So $f$ is nondecreasing on $[a,b]$ if some derivate is everywhere nonnegative on $[a,b]$.
 
 \shunt
 
@@ -165,11 +175,11 @@ Suppose that $f \in BV([a,b])$. Then $f'$ exists, by a theorem in class.
 
 \shunt
 
-{\bf Problem 5:} 
+{\bf Problem 5:} %Prove that m(g(E)) = 0
 
 Let $g$ be an absolutely continuous monotone function on $[0,1]$, and $E$ be a set of measure $0$.
 
-We know that $g$ is the antiderivative of some function, $f$. That is, $g(x) = \int\limits_0^x f(t)dt + g(0)$. for some $f$. 
+%Just use the definitions.
 
 \shunt
 
