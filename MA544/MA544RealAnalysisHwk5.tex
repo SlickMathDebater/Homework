@@ -167,11 +167,39 @@ So $f$ is nondecreasing on $[a,b]$ if some derivate is everywhere nonnegative on
 
 Suppose that $f_n(x) \to f(x)$ at each $x \in [a,b]$.
 
+
+
 \shunt
 
 {\bf Problem 4:} 
 
-Suppose that $f \in BV([a,b])$. Then $f'$ exists, by a theorem in class. 
+Suppose that $f \in BV([a,b])$. 
+Then $f'$ exists almost everywhere, by a theorem in class. 
+Moreover, $f$ is the difference of two monotone functions. 
+That is, $f= f^+ -f^-$ for some monotone functions $f^+$ and $f^-$.
+
+So, this means that we have
+
+\begin{align*}
+\int\limits_a^b \absval{f'} &= \int\limits_a^b \absval{(f^+)' - (f^-)'} \\
+&\leq \int\limits_a^b \absval{(f^+)'} + \absval{(f^-)'}
+\end{align*}
+
+Now, we show that $\int\limits_a^b \absval{(f^+)'} \leq P_a^b(f)$.
+
+\tab By one of the important theorems that is like the fundamental theorem of calculus, $\int\limits_a^b \absval{(f^+)'} \leq f^+(b)-f^+(a)$.
+
+\tab We also know that $f^+(b) - f^+(a) \leq P_a^b$; %I'm not quite sure why. But this is the last chip; I'm almost done.
+
+Similarly, $\int\limits_a^b \absval{(f^-)'} \leq N_a^b(f)$. So, we have
+
+\begin{align*}
+\int\limits_a^b \absval{f'} &\leq \int\limits_a^b \absval{(f^+)'} + \absval{(f^-)'}\\
+&\leq P_a^b + N_a^b \\
+&\leq T_a^b
+\end{align*}
+
+as we desired.
 
 \shunt
 
