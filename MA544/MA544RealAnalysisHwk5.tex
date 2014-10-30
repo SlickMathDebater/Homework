@@ -143,7 +143,7 @@ Because $f_n \to f$ in measure, there's an $N \in \N$ such that for all $n \geq 
 
 \shunt
 
-{\bf Problem 2:} %A bit of incompleteness
+{\bf Problem 2:}
 
 Let $f$ be continuous on $[a,b]$, with one of its derivates everywhere nonnegative on $(a,b)$.
 
@@ -151,7 +151,7 @@ First, we will show this for a function $g$ with $D^+(g) \geq \ep >0$. If $g$ is
 
 \tab We proceed by contradiction: let there be $x,y \in [a,b]$ (with $x<y$, without loss of generality) be such that $f(x) > f(y)$.
 
-\tab Consider the set $A = \{\al \in [x,y]: f(\al) > f(y)\}$. This set has a supremum, as it's nonempty. Define $\al =\sup(A)$. There is a $\de>0$ such that if $t \in [\al, \al+\de]$, then $f(t) < f(y)$: (Is pretty trivial). Moreover, $f(\al) = f(y)$: (Proof is clear, follows from continuity). So for any sequence $(t_n)$ decreasing to $\al$, we have $\frac{f(t_n) - f(\al)}{t_n - \al}$ negative. This means that $D^+(\al) \leq 0$. This contradicts our assumption on $D^+$. %Incompleteness here.
+\tab Consider the set $A = \{\al \in [x,y): f(\al) > f(y)\}$. This set has a supremum, as it's nonempty. Define $\al =\sup(A)$. Either $\al = b$ (in which case, the derivate is negative at $b$, leading to our contradiction), or there is a $\de>0$ such that if $t \in [\al, \al+\de]$, then $f(t) < f(y)$. Moreover, $f(\al) = f(y)$: else, $\absval{f(\al) - f(y)} = \ep'$ for some $\ep' >0$, so by using continuity (specifically, the intermediate value theorem) we can find an $\al'$ between $\al$ and $y$ with $f(\al')$ between $f(\al)$ and $f(y)$, which causes a contradiction. So for any sequence $(t_n)$ decreasing to $\al$, we have $\frac{f(t_n) - f(\al)}{t_n - \al}$ negative. This means that $D^+(\al) \leq 0$. This contradicts our assumption on $D^+$.
 
 We can mimic this proof to show that if $g$ has $D^-(g) \geq \ep >0$, then $g$ is nondecreasing.
 
@@ -189,7 +189,15 @@ Now, we show that $\int\limits_a^b \absval{(f^+)'} \leq P_a^b(f)$.
 
 \tab By one of the important theorems that is like the fundamental theorem of calculus, $\int\limits_a^b \absval{(f^+)'} \leq f^+(b)-f^+(a)$.
 
-\tab We also know that $f^+(b) - f^+(a) \leq P_a^b$; %I'm not quite sure why. But this is the last chip; I'm almost done.
+\tab We also know that $f^+(b) - f^+(a) \leq P_a^b$; 
+
+\begin{align*}
+P &= N +f(b)-f(a)\\
+&=N+f^+(b)-f^-(b)-f^+(a)+f^-(a)\\
+&=N+(f^+(b)-f^+(a))+(f^-(b)-f^-(a))\\
+&\geq N+(f^+(b)-f^+(a))\\
+&\geq (f^+(b)-f^+(a))
+\end{align*}
 
 Similarly, $\int\limits_a^b \absval{(f^-)'} \leq N_a^b(f)$. So, we have
 
