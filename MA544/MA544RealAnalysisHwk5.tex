@@ -215,7 +215,13 @@ as we desired.
 
 Let $g$ be an absolutely continuous monotone function on $[0,1]$, and $E$ be a set of measure $0$.
 
-%Just use the definitions.
+Let $\ep>0$.
+
+There's a $\de>0$ such that for any finite set of intervals, $\{(x_i,x_i')\}_{i \in \scrF}$, then $\sum\limits_{\scrF} \absval{x_i' - x_i} < \de$ implies that $\sum\limits_{\scrF} \absval{f(x_i') - f(x_i)} < \ep$.
+
+Because $E$ has measure $0$, there's a set of intervals covering $E$, call it $\scrI$, with the sum of their lengths less than $\de$.
+
+So $g(\bigcup\limits_{I \in \scrI} I)$ covers $g(E)$ and has the sum of the lengths of the component intervals less than $\ep$, as desired.
 
 \shunt
 
