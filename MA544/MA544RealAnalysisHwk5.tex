@@ -135,11 +135,13 @@
 
 Let $f_n \to f$ in measure, with an integrable function $g$ such that $\absval{f_n} \leq g$ for all $n$.
 
-We proceed by proving the fact if the domain of each $f_n$ is $[0,1]$, then extending it to all of $\R$ by applying the $\ep 2^{-n}$ method.
-
 Let $\ep>0$.
 
-Because $f_n \to f$ in measure, there's an $N \in \N$ such that for all $n \geq N$, $m(x: \absval{f_n(x)-f(x)} \geq \ep/2) < \ep/2$. 
+For each $n \in \N$, we have that there is a $\de_n$ such that $\int\limits_A \absval{f_n - f} < \ep/2$ if $m(A) < \de_n$.
+
+Because $f_n \to f$ in measure, we have that there is an $N \in \N$ such that for all $n \geq N$, %Something...
+
+%I need to get $f_n \to f$ almost everywhere on a set except of measure $\de_n$. But that doesn't make sense...
 
 \shunt
 
@@ -163,11 +165,15 @@ So $f$ is nondecreasing on $[a,b]$ if some derivate is everywhere nonnegative on
 
 \shunt
 
-{\bf Problem 3:} 
+{\bf Problem 3:} %Use the definitions, asshole.
 
 Suppose that $f_n(x) \to f(x)$ at each $x \in [a,b]$.
 
+Let $\De = \{x_1 < x_2 \ldots < x_k\}$ be a partition of $[a,b]$. Then $t(f) = \sum \absval{f(x_i)-f(x_{i-1}}$, and  $t(f_n) = \sum \absval{f_n(x_i)-f_n(x_{i-1}}$.
 
+Now, $f_n \to f$ at all $x \in [a,b]$.
+
+%We get that tf < tf_n for all n and so by taking limits we get the result.
 
 \shunt
 
@@ -211,7 +217,7 @@ as we desired.
 
 \shunt
 
-{\bf Problem 5:} %Prove that m(g(E)) = 0
+{\bf Problem 5:} %This is a little wrong. You need to use the \ep 2^-n trick to interface between the countable and the finite.
 
 Let $g$ be an absolutely continuous monotone function on $[0,1]$, and $E$ be a set of measure $0$.
 
@@ -219,7 +225,11 @@ Let $\ep>0$.
 
 There's a $\de>0$ such that for any finite set of intervals, $\{(x_i,x_i')\}_{i \in \scrF}$, then $\sum\limits_{\scrF} \absval{x_i' - x_i} < \de$ implies that $\sum\limits_{\scrF} \absval{f(x_i') - f(x_i)} < \ep$.
 
-Because $E$ has measure $0$, there's a set of intervals covering $E$, call it $\scrI$, with the sum of their lengths less than $\de$.
+Because $E$ has measure $0$, there's a set of intervals covering $E$, call it $\scrI_1$, with the sum of their lengths less than $\de/2$.
+
+Now, we can take a finite subset of $\scrI_1$, call it $\scrF_1$, and have $\scrF_1$ 
+
+%Take a finite chunk of them that fails to cover some. We can take another such collection of "size" \de/4, and a finite chunk of them that fails to cover some. We should be able to repeat this process infinitely, and hit everything. Moreover, we can win with the above trick.
 
 So $g(\bigcup\limits_{I \in \scrI} I)$ covers $g(E)$ and has the sum of the lengths of the component intervals less than $\ep$, as desired.
 
