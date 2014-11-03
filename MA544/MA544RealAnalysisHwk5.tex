@@ -135,13 +135,17 @@
 
 Let $f_n \to f$ in measure, with an integrable function $g$ such that $\absval{f_n} \leq g$ for all $n$.
 
-Let $\ep>0$.
+Because $f_n \to f$ in measure, there's a subsequence $f_{n_k}$ such that $f_{n_k} \to f$ almost everywhere.
 
-For each $n \in \N$, we have that there is a $\de_n$ such that $\int\limits_A \absval{f_n - f} < \ep/2$ if $m(A) < \de_n$.
+So the Lebesgue convergence theorem applies to that subsequence: $\absval{f_{n_k} - f} \to 0$ and there's an integrable function $g$ such that $\absval{f_{n_k}} \leq g$ for all $k$, so we have $\int \absval{f_{n_k} - f} \to 0$.
 
-Because $f_n \to f$ in measure, we have that there is an $N \in \N$ such that for all $n \geq N$, %Something...
+So if the sequence $\int \absval{f_n - f}$ converges, then it converges to $0$.
 
-%I need to get $f_n \to f$ almost everywhere on a set except of measure $\de_n$. But that doesn't make sense...
+Assume that the above sequence doesn't converge.
+
+\tab That is, there is an $\ep>0$ such that for all $N \in \N$ there is an $n > N$ such that $\absval{\int \absval{f_n-f}} \geq \ep$.
+
+\tab %Prop 14 and the convergence in measure thing are the things at play here. This should be enough to win.
 
 \shunt
 
