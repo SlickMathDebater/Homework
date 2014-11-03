@@ -165,7 +165,7 @@ So $f$ is nondecreasing on $[a,b]$ if some derivate is everywhere nonnegative on
 
 \shunt
 
-{\bf Problem 3:} %Use the definitions, asshole.
+{\bf Problem 3:}
 
 Suppose that $f_n(x) \to f(x)$ at each $x \in [a,b]$.
 
@@ -173,7 +173,20 @@ Let $\De = \{x_1 < x_2 \ldots < x_k\}$ be a partition of $[a,b]$. Then $t(f) = \
 
 Now, $f_n \to f$ at all $x \in [a,b]$.
 
-%We get that tf < tf_n for all n and so by taking limits we get the result.
+That is, for all $\ep >0$ and $x \in [a,b]$ there is an $N \in \N$ such that for all $n \geq N$, $\absval{f_n(x)-f(x)} < \ep$. So for all $\ep>0$ there's an $N \in \N$ such that for every $x_i$ in our partition and for all $n \geq N$, $\absval{f_n(x_i) - f(x)} < \ep/(2k)$. 
+
+So we have:
+
+\begin{align*}
+t(f) - t(f_n) &= \sum \absval{f(x_i)-f(x_{i-1}} - \sum \absval{f_n(x_i)-f_n(x_{i-1}} \\
+&\leq \sum\absval{f(x_i)-f_n(x_i)-(f(x_{i-1})-f_n(x_{i-1}))} \\
+&\leq \sum \absval{f(x_i)-f_n(x_i)} + \sum \absval{f(x_{i-1})-f_n(x_{i-1})}\\
+&< \ep
+\end{align*}
+
+To rephrase, $t(f) < t(f_n) + \ep$ for sufficiently large $n$.
+
+So $T_a^b(f) \leq \liminf T_a^b(f_n)$, by taking limits as $n \to \infty$.
 
 \shunt
 
@@ -217,21 +230,13 @@ as we desired.
 
 \shunt
 
-{\bf Problem 5:} %This is a little wrong. You need to use the \ep 2^-n trick to interface between the countable and the finite.
+{\bf Problem 5:}
 
-Let $g$ be an absolutely continuous monotone function on $[0,1]$, and $E$ be a set of measure $0$.
+Let $g$ be an absolutely continuous monotone function on $[0,1]$, and $E$ be a set of measure $0$. Without loss of generality, we can take $g$ to be increasing. 
 
 Let $\ep>0$.
 
-There's a $\de>0$ such that for any finite set of intervals, $\{(x_i,x_i')\}_{i \in \scrF}$, then $\sum\limits_{\scrF} \absval{x_i' - x_i} < \de$ implies that $\sum\limits_{\scrF} \absval{f(x_i') - f(x_i)} < \ep$.
 
-Because $E$ has measure $0$, there's a set of intervals covering $E$, call it $\scrI_1$, with the sum of their lengths less than $\de/2$.
-
-Now, we can take a finite subset of $\scrI_1$, call it $\scrF_1$, and have $\scrF_1$ 
-
-%Take a finite chunk of them that fails to cover some. We can take another such collection of "size" \de/4, and a finite chunk of them that fails to cover some. We should be able to repeat this process infinitely, and hit everything. Moreover, we can win with the above trick.
-
-So $g(\bigcup\limits_{I \in \scrI} I)$ covers $g(E)$ and has the sum of the lengths of the component intervals less than $\ep$, as desired.
 
 \shunt
 
