@@ -135,17 +135,21 @@
 
 Let $f_n \to f$ in measure, with an integrable function $g$ such that $\absval{f_n} \leq g$ for all $n$.
 
-Because $f_n \to f$ in measure, there's a subsequence $f_{n_k}$ such that $f_{n_k} \to f$ almost everywhere.
+Because $f_n \to f$ in measure, there's a subsequence $\anbrack{f_{n_k}}$ such that $f_{n_k} \to f$ almost everywhere.
 
 So the Lebesgue convergence theorem applies to that subsequence: $\absval{f_{n_k} - f} \to 0$ and there's an integrable function $g$ such that $\absval{f_{n_k}} \leq g$ for all $k$, so we have $\int \absval{f_{n_k} - f} \to 0$.
 
-So if the sequence $\int \absval{f_n - f}$ converges, then it converges to $0$.
+So if the sequence $\anbrack{\int \absval{f_n - f}}$ converges, then it converges to $0$.
 
 Assume that the above sequence doesn't converge.
 
 \tab That is, there is an $\ep>0$ such that for all $N \in \N$ there is an $n > N$ such that $\absval{\int \absval{f_n-f}} \geq \ep$.
 
-\tab %Prop 14 and the convergence in measure thing are the things at play here. This should be enough to win.
+\tab Thus, there is a sequence, $\anbrack{f_{n_k}}$, such that $\absval{\int \absval{f_{n_k}-f}} \geq \ep$ for all $k$.
+
+\tab We know that $f_{n_k} \to f$ in measure. So there's a subsequence, $\anbrack{f_{n_{k_j}}}$ such that $f_{n_{k_j}} \to f$ almost everywhere. So the Lebesgue convergence theorem applies to that subsequence: $\int \absval{f_{n_{k_j}} - f} \to 0$. But this is a clear contradiction. 
+
+So that sequence converges, and it converges to the right thing.
 
 \shunt
 
