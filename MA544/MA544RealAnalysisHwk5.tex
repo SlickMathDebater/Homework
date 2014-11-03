@@ -177,7 +177,7 @@ So $f$ is nondecreasing on $[a,b]$ if some derivate is everywhere nonnegative on
 
 Suppose that $f_n(x) \to f(x)$ at each $x \in [a,b]$.
 
-Let $\De = \{x_1 < x_2 \ldots < x_k\}$ be a partition of $[a,b]$. Then $t(f) = \sum \absval{f(x_i)-f(x_{i-1}}$, and  $t(f_n) = \sum \absval{f_n(x_i)-f_n(x_{i-1}}$.
+Let $\De = \{x_1 < x_2 \ldots < x_k\}$ be a partition of $[a,b]$. Then $t(f) = \sum \absval{f(x_i)-f(x_{i-1})}$, and  $t(f_n) = \sum \absval{f_n(x_i)-f_n(x_{i-1})}$.
 
 Now, $f_n \to f$ at all $x \in [a,b]$.
 
@@ -186,7 +186,7 @@ That is, for all $\ep >0$ and $x \in [a,b]$ there is an $N \in \N$ such that for
 So we have:
 
 \begin{align*}
-t(f) - t(f_n) &= \sum \absval{f(x_i)-f(x_{i-1}} - \sum \absval{f_n(x_i)-f_n(x_{i-1}} \\
+t(f) - t(f_n) &= \sum \absval{f(x_i)-f(x_{i-1})} - \sum \absval{f_n(x_i)-f_n(x_{i-1})} \\
 &\leq \sum\absval{f(x_i)-f_n(x_i)-(f(x_{i-1})-f_n(x_{i-1}))} \\
 &\leq \sum \absval{f(x_i)-f_n(x_i)} + \sum \absval{f(x_{i-1})-f_n(x_{i-1})}\\
 &< \ep
@@ -194,7 +194,7 @@ t(f) - t(f_n) &= \sum \absval{f(x_i)-f(x_{i-1}} - \sum \absval{f_n(x_i)-f_n(x_{i
 
 To rephrase, $t(f) < t(f_n) + \ep$ for sufficiently large $n$.
 
-So $T_a^b(f) \leq \liminf T_a^b(f_n)$, by taking limits as $n \to \infty$.
+So $T_a^b(f) \leq \liminf T_a^b(f_n)$, by taking limits as the mesh of $\De \to 0$. (Note: A fellow classmate pointed out that there's a subtlety here. I feel like it's clear, but the idea is that we only need a subsequence of the $f_n$s to make this work, and we can build off of that.)
 
 \shunt
 
@@ -240,11 +240,27 @@ as we desired.
 
 {\bf Problem 5:}
 
-Let $g$ be an absolutely continuous monotone function on $[0,1]$, and $E$ be a set of measure $0$. Without loss of generality, we can take $g$ to be increasing. 
+Let $g$ be an absolutely continuous monotone function on $[0,1]$, and $E$ be a set of measure $0$. Without loss of generality, we can take $g$ to be increasing. Further, for this problem we can take $g(0) = 0$ without loss of generality, as the measure of a set is translation invariant.
 
-Let $\ep>0$.
+We know that $g$ is the antiderivative of some function, $f$. That is,
 
+\begin{displaymath}
+g(x) = \int\limits_0^x f(t) dt
+\end{displaymath}
 
+Moreover, because $g$ is increasing, this means that $f$ is nonnegative almost everywhere. 
+
+Now, $[0,1] \setminus E$. It is true that $\int\limits_{[0,x] \setminus E} f(t)dt = g(x)$.
+
+Assume that $g(E)$ has nonzero measure. Then $g(E)$ contains a closed interval, call it $[a,b]$.
+
+Then $\{y: \int\limits_0^x f(t) dt = y \text{ for some } x \in E\}$ contains $[a,b]$.
+
+Let $x_1$ be a value such that $\int\limits_0^x f(t) dt = a$ and $x_2$ be a value such that $\int\limits_0^x f(t) dt = b$. Then $[x_1,x_2] \subset E$: this is somewhat clear.
+
+So $E$ must contain a closed interval, and is thus of nonzero measure, contrary to our assumption.
+
+So $g(E)$ must have had zero measure.
 
 \shunt
 
