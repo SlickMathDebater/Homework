@@ -1,0 +1,240 @@
+
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{fancyhdr}
+\usepackage{amssymb}
+%\usepackage{mathpazo}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{slashed}
+\usepackage[mathscr]{euscript}
+
+\newcommand{\tab}{\hspace{4mm}} %Spacing aliases
+\newcommand{\shunt}{\vspace{20mm}}
+
+\newcommand{\sd}{\partial} %Squiggle d
+
+\newcommand{\absval}[1]{\lvert #1 \rvert}
+\newcommand{\anbrack}[1]{\left\langle #1 \right\rangle}
+\newcommand{\norm}[1]{\|#1\|}
+
+
+\newcommand{\al}{\alpha} %Steal ALL of Dr. Kable's Aliases! MWAHAHAHAHA!
+\newcommand{\be}{\beta}
+\newcommand{\ga}{\gamma}
+\newcommand{\Ga}{\Gamma}
+\newcommand{\de}{\delta}
+\newcommand{\De}{\Delta}
+\newcommand{\ep}{\epsilon}
+\newcommand{\vep}{\varepsilon}
+\newcommand{\ze}{\zeta}
+\newcommand{\et}{\eta}
+\newcommand{\tha}{\theta}
+\newcommand{\vtha}{\vartheta}
+\newcommand{\Tha}{\Theta}
+\newcommand{\io}{\iota}
+\newcommand{\ka}{\kappa}
+\newcommand{\la}{\lambda}
+\newcommand{\La}{\Lambda}
+\newcommand{\rh}{\rho}
+\newcommand{\si}{\sigma}
+\newcommand{\Si}{\Sigma}
+\newcommand{\ta}{\tau}
+\newcommand{\ups}{\upsilon}
+\newcommand{\Ups}{\Upsilon}
+\newcommand{\ph}{\phi}
+\newcommand{\Ph}{\Phi}
+\newcommand{\vph}{\varphi}
+\newcommand{\vpi}{\varpi}
+\newcommand{\ch}{\chi}
+\newcommand{\ps}{\psi}
+\newcommand{\Ps}{\Psi}
+\newcommand{\om}{\omega}
+\newcommand{\Om}{\Omega}
+
+\newcommand{\bbA}{\mathbb{A}}
+\newcommand{\A}{\mathbb{A}}
+\newcommand{\bbB}{\mathbb{B}}
+\newcommand{\bbC}{\mathbb{C}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\bbD}{\mathbb{D}}
+\newcommand{\bbE}{\mathbb{E}}
+\newcommand{\bbF}{\mathbb{F}}
+\newcommand{\bbG}{\mathbb{G}}
+\newcommand{\G}{\mathbb{G}}
+\newcommand{\bbH}{\mathbb{H}}
+\newcommand{\HH}{\mathbb{H}}
+\newcommand{\bbI}{\mathbb{I}}
+\newcommand{\I}{\mathbb{I}}
+\newcommand{\bbJ}{\mathbb{J}}
+\newcommand{\bbK}{\mathbb{K}}
+\newcommand{\bbL}{\mathbb{L}}
+\newcommand{\bbM}{\mathbb{M}}
+\newcommand{\bbN}{\mathbb{N}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\bbO}{\mathbb{O}}
+\newcommand{\bbP}{\mathbb{P}}
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\bbQ}{\mathbb{Q}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\bbR}{\mathbb{R}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\bbS}{\mathbb{S}}
+\newcommand{\bbT}{\mathbb{T}}
+\newcommand{\bbU}{\mathbb{U}}
+\newcommand{\bbV}{\mathbb{V}}
+\newcommand{\bbW}{\mathbb{W}}
+\newcommand{\bbX}{\mathbb{X}}
+\newcommand{\bbY}{\mathbb{Y}}
+\newcommand{\bbZ}{\mathbb{Z}}
+\newcommand{\Z}{\mathbb{Z}}
+
+\newcommand{\scrA}{\mathcal{A}}
+\newcommand{\scrB}{\mathcal{B}}
+\newcommand{\scrC}{\mathcal{C}}
+\newcommand{\scrD}{\mathcal{D}}
+\newcommand{\scrE}{\mathcal{E}}
+\newcommand{\scrF}{\mathcal{F}}
+\newcommand{\scrG}{\mathcal{G}}
+\newcommand{\scrH}{\mathcal{H}}
+\newcommand{\scrI}{\mathcal{I}}
+\newcommand{\scrJ}{\mathcal{J}}
+\newcommand{\scrK}{\mathcal{K}}
+\newcommand{\scrL}{\mathcal{L}}
+\newcommand{\scrM}{\mathcal{M}}
+\newcommand{\scrN}{\mathcal{N}}
+\newcommand{\scrO}{\mathcal{O}}
+\newcommand{\scrP}{\mathcal{P}}
+\newcommand{\scrQ}{\mathcal{Q}}
+\newcommand{\scrR}{\mathcal{R}}
+\newcommand{\scrS}{\mathcal{S}}
+\newcommand{\scrT}{\mathcal{T}}
+\newcommand{\scrU}{\mathcal{U}}
+\newcommand{\scrV}{\mathcal{V}}
+\newcommand{\scrW}{\mathcal{W}}
+\newcommand{\scrX}{\mathcal{X}}
+\newcommand{\scrY}{\mathcal{Y}}
+\newcommand{\scrZ}{\mathcal{Z}}
+
+\newcommand{\subgp}{\mathrel{\unlhd}}
+
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+\newcommand{\colorcomment}[2]{\textcolor{#1}{#2}} %First of these leaves in comments. Second one kills them.
+%\newcommand{\colorcomment}[2]{}
+
+
+\pagestyle{fancy}
+\lhead{Max Jeter}
+\rhead{MA503, Assignment 7, Page \thepage}
+
+\begin{document}
+
+Note to self: Replace $Spec(R)$ with $\text{Spec}(R)$. 
+
+{\bf Problem 1:} %m-spec R is maximal ideals.
+
+Part a:
+
+Let $r \in R^*$.
+
+\tab Then there is an $r^{-1} \in R$ such that $r^{-1}r = 1$. If $r \in M$ for any maximal ideal, $M$, then $r^{-1}r \in M$, so $1 \in M$, so $M = R$. This means that $M$ is not a maximal ideal. That is,$r \notin \bigcup\limits_{M \in m-Spec(R)} M$, so $r \in R \setminus \bigcup\limits_{M \in m-Spec(R)} M$.
+
+Now, let $r \notin \bigcup\limits_{M \in m-Spec(R)} M$. That is, $r \in R \setminus \bigcup\limits_{M \in m-Spec(R)} M$ isn't in any maximal ideal.
+
+\tab Then $r$ is not in any ideal other than $R$; all ideals other than $R$ are contained in some maximal ideal.
+
+\tab So $(r) = R$. This means that $1 \in (r)$. So there's an element, $r^{-1} \in R$, such that $r^{-1}r = 1$. So $r \in R^*$.
+
+So $R^* \subset R \setminus \bigcup\limits_{M \in m-Spec(R)} M$ and $R^* \supset R \setminus \bigcup\limits_{M \in m-Spec(R)} M$.
+
+So $R^* = R \setminus \bigcup\limits_{M \in m-Spec(R)} M$.
+
+\shunt
+
+Part b:
+
+We freely use the fact that $R \setminus R^* = \bigcup\limits_{M \in m-Spec(R)} M$. This follows from the above, and is clear with proper notation:
+
+\begin{align*}
+R^* &= \left(\bigcup\limits_{M \in m-Spec(R)} M\right)^c \\
+(R^*)^c &= \bigcup\limits_{M \in m-Spec(R)} M
+\end{align*}
+
+If $R \setminus R^* = \bigcup\limits_{M \in m-Spec(R)} M$ is an ideal, then $\bigcup\limits_{M \in m-Spec(R)} M$ is a maximal ideal or $R$; it contains every maximal ideal, so it contains every ideal other than $R$. But this ideal is not $R$, otherwise $R^*$ is empty (and we know that $R^*$ contains $1$.) So $\bigcup\limits_{M \in m-Spec(R)} M$ is a maximal ideal that contains every maximal ideal. That is, it is the unique maximal ideal. So $R$ is local.
+
+If $R$ is local, then say that $M'$ is $R$'s unique maximal ideal. Then we have that $R \setminus R^* = \bigcup\limits_{M \in m-Spec(R)} M = M'$ is an ideal. 
+
+\shunt
+
+{\bf Problem 2:} %See p147, Hungerford.
+
+Let $P \in Spec(R)$. Consider $PR_P$.
+
+\tab We can see that $PR_P$ is an $R_P$-ideal: %Proof
+
+\tab Further, if $I$ is an $R_P$-ideal other than $R_P$, then $I \subset PR_P$: %Proof
+
+So $PR_P$ contains every ideal other than the entire ring; it is the unique maximal ideal, making $R_P$ local.
+
+\shunt
+
+{\bf Problem 3:}
+
+Define $rad(R) = \sqrt{0} = \{a \in R: a^n = 0 \text{ for some } n \geq 0\}$.
+
+Then if $r \in rad(R)$, then $r \in \bigcap\limits_{P \in Spec(R)} P$:
+
+\tab Let $P$ be a prime ideal. Then %Stuff happens.
+
+Next, if $r \in \bigcap\limits_{P \in Spec(R)} P$, then $r \in rad(R)$:
+
+\tab If $r \in \bigcap\limits_{P \in Spec(R)} P$, then $ar \in P$ for all $a \in R$, $P \in Spec(R)$. So in particular, $r^n \in P$ for all $n \in \N$, $P \in Spec(R)$. 
+
+\shunt
+
+{\bf Problem 4:} %strategy: burn off the a, then reduce the remaining unit.
+
+Let $u \in R^*$ and $a \in rad(0)$.
+
+Then $a^{2^n} = 0$ for some $n \in \N$: since $a \in rad(0)$, $a^k = 0$ for some $k \in \N$. So for all $j \geq k$, $a^j = 0$. There's an $n \in \N$ such that $2^n \geq k$, so we have what we want.
+
+Now, consider the product
+
+\begin{align*}
+(u+a)(u-a)(u^2+a^2)\ldots(u^{2^{n-1}}+a^{2^{n-1}}) &= u^{2^n} - a^{2^n}\\
+&=u^{2^n}
+\end{align*}
+
+Now, there is a $u^{-1} \in R$ such that $u^{-1}u=1$. It is clear also that $(u^{-1})^{2^n}u^{2^n} = 1$. So we have
+
+\begin{align*}
+u^{-2^n}(u+a)(u-a)(u^2+a^2)\ldots(u^{2^{n-1}}+a^{2^{n-1}}) &= u^{-2^n}(u^{2^n} - a^{2^n})\\
+&=u^{-2^n}u^{2^n}\\
+&=1
+\end{align*}
+
+So $(u+a)u^{-2^n}(u-a)(u^2+a^2)\ldots(u^{2^{n-1}}+a^{2^{n-1}})=1$. So $u+a \in R^*$.
+
+\shunt
+
+{\bf Problem 5:}
+
+Let $R$ be a PID, and $P$ be a nonzero prime ideal of $R$.
+
+Now, let $M$ be an ideal other than $R$ containing $P$. %I think we might get a theorem about PIDs that helps...
+
+\shunt
+
+{\bf Problem 6:}
+
+Let $R$ be a domain, and $a, b \in R$. %We don't know what an lcm is yet...
+
+\shunt
+
+{\bf Problem 7:}
+
+\shunt
+
+\end{document}
