@@ -131,9 +131,9 @@
 
 \begin{document}
 
-Note to self: Replace $Spec(R)$ with $\text{Spec}(R)$. 
+Note: I've used questionable typesetting here, but I finished the assignment too late to fix it.
 
-{\bf Problem 1:} %m-spec R is maximal ideals.
+{\bf Problem 1:}
 
 Part a:
 
@@ -168,15 +168,13 @@ If $R$ is local, then say that $M'$ is $R$'s unique maximal ideal. Then we have 
 
 \shunt
 
-{\bf Problem 2:} %See p147, Hungerford.
+{\bf Problem 2:}
 
-Let $P \in Spec(R)$. Consider $PR_P$.
+Note: This is more or less taken from Hungerford.
 
-\tab We can see that $PR_P$ is an $R_P$-ideal: %Proof
+Let $P \in Spec(R)$.
 
-\tab Further, if $I$ is an $R_P$-ideal other than $R_P$, then $I \subset PR_P$: %Proof
-
-So $PR_P$ contains every ideal other than the entire ring; it is the unique maximal ideal, making $R_P$ local.
+Let $M$ be a maximal ideal of $R_P$. Then $M$ is prime. So $M = QR_P$ for some prime ideal $Q$ of $R$, with $Q \subset P$. But $Q \subset P$ implies that $QR_P \subset PR_P$. So $QR_P = PR_P$ So $PR_P$ is the unique maximal ideal in $R_P$. In particular, $R_P$ is local.
 
 \shunt
 
@@ -194,11 +192,11 @@ Then if $r \in rad(R)$, then $r \in \bigcap\limits_{P \in Spec(R)} P$:
 
 Next, if $r \in \bigcap\limits_{P \in Spec(R)} P$, then $r \in rad(R)$:
 
-\tab Consider $R_r = S^{-1}R$, where $S = \{r^n: n \geq 0\}$. Let $x \in R_r$. Then %x=0 for some reason.
+\tab Consider $R_r = S^{-1}R$, where $S = \{r^n: n \geq 0\}$. If $S^{-1}R = R_x \neq (0)$, then there's a nonzero $y \in R_x$. So $R_x$ contains a maximal ideal, $MR_x$. We know that $MR_x$ is prime. Thus, $MR_x$ corresponds to a prime ideal, $M$, in $R$. We also know that $x \in M$. But this is bad, because this would imply that $x/x \in MR_x$, so $1 \in MR_x$, so $MR_x$ cannot be maximal.
 
-\tab So $R_
+\tab That is, $R_x$ can't contain maximal ideals. So $R_x = (0)$. So $0 \in S$. So $x$ is nilpotent.
 
-\tab If $r \in \bigcap\limits_{P \in Spec(R)} P$, then consider the set $S = \{x^n: n \in \N\}$, and consider $S^{-1}R = R_x$.
+So $rad(R) = \bigcap\limits_{P \in Spec(R)} P$.
 
 \shunt
 
