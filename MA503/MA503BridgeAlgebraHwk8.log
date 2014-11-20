@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2013.9.1)  19 NOV 2014 23:14
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2013.9.1)  18 NOV 2014 11:47
 entering extended mode
-**MA544RealAnalysisHwk6.tex
-(C:\Users\Lonelight\Documents\GitHub\Homework\MA544\MA544RealAnalysisHwk6.tex
+**MA503BridgeAlgebraHwk8.tex
+(C:\Users\Lonelight\Documents\GitHub\Homework\MA503\MA503BridgeAlgebraHwk8.tex
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
 abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
@@ -148,15 +148,12 @@ LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
 ("C:\Program Files\MiKTeX 2.9\tex\latex\carlisle\slashed.sty"
 Package: slashed 1997/01/16 v0.01 Feynman Slashed Character Notation (DPC)
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\cancel\cancel.sty"
-Package: cancel 2000/03/12 v2.1 Cancel math terms
-)
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\euscript.sty"
 Package: euscript 2009/06/22 v3.00 Euler Script fonts
 LaTeX Font Info:    Overwriting math alphabet `\EuScript' in version `bold'
 (Font)                  U/eus/m/n --> U/eus/b/n on input line 33.
 )
-(C:\Users\Lonelight\Documents\GitHub\Homework\MA544\MA544RealAnalysisHwk6.aux)
+(C:\Users\Lonelight\Documents\GitHub\Homework\MA503\MA503BridgeAlgebraHwk8.aux)
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 132.
 LaTeX Font Info:    ... okay on input line 132.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 132.
@@ -169,7 +166,6 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 132.
 LaTeX Font Info:    ... okay on input line 132.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 132.
 LaTeX Font Info:    ... okay on input line 132.
-
 ("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
 Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
@@ -221,11 +217,6 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 136.
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Overfull \hbox (11.45587pt too wide) in paragraph at lines 166--167
-[] \OT1/cmr/m/n/12 We need only show that each ab-so-lutely summable se-ries in
- $\OML/cmm/m/it/12 `[]$ \OT1/cmr/m/n/12 is summable
- []
-
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
@@ -242,49 +233,28 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [2]
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 14.49998pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[3]
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 14.49998pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[4]
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 14.49998pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[5]
-(C:\Users\Lonelight\Documents\GitHub\Homework\MA544\MA544RealAnalysisHwk6.aux) 
-) 
+(C:\Users\Lonelight\Documents\GitHub\Homework\MA503\MA503BridgeAlgebraHwk8.aux)
+ ) 
 Here is how much of TeX's memory you used:
- 2838 strings out of 493921
- 36886 string characters out of 3147271
- 96851 words of memory out of 3000000
- 6115 multiletter control sequences out of 15000+200000
+ 2810 strings out of 493921
+ 36494 string characters out of 3147271
+ 93033 words of memory out of 3000000
+ 6091 multiletter control sequences out of 15000+200000
  8592 words of font info for 33 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 33i,11n,43p,332b,196s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Pro
-gram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Fil
-es/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKTe
+ 33i,11n,43p,426b,196s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Pr
+ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Fi
+les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Program Files/MiKTe
 X 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX 2.9/fon
 ts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/
 public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/ams
 fonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
 /cmsy8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msb
 m10.pfb>
-Output written on MA544RealAnalysisHwk6.pdf (5 pages, 102421 bytes).
+Output written on MA503BridgeAlgebraHwk8.pdf (2 pages, 90920 bytes).
 PDF statistics:
- 54 PDF objects out of 1000 (max. 8388607)
+ 45 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

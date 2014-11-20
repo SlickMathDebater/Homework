@@ -153,31 +153,160 @@ Let $f \in L^p$, and let $T_\De(f)$ denote the $\De$-approximant of $f$. Prove t
 
 {\bf Problem 3:} 
 
-Prove that $\ell^p$, $1\leq p < \infty$, and $L^\infty$ are complete.
+(Prove that $\ell^p$, $1\leq p < \infty$, and $L^\infty$ are complete.)
+
+First, $\ell^p$ is complete if $p \in [1, \infty)$; we show this by mimicking the proof of the Riesz-Fischer Theorem, as I am an uncreative n00b. To display the sheer laziness of this approach, I will be using the notation $a(n)$ to denote the $n$th term of a sequence in $\ell^p$ for this problem only.
+
+Before doing this, we must prove the Minkowski Inequality for $\ell^p$ with $p \in [1,\infty)$:
+
+\tab %Proof goes here.
+
+Now, we can proceed by ripping the proof out of the Royden almost verbatim.
+
+\tab We need only show that each absolutely summable series in $\ell^p$ is summable in $\ell^p$ to some element of $\ell^p$.
+
+\tab Let $\anbrack{f_n}$ be a sequence in $\ell^p$ with $\sum\limits_{n=1}^\infty \norm{f_n} = M < \infty$. Define sequences $g_n$ by setting $g_n(m) = \sum\limits_{k=1}^n \absval{f_n(m)}$. From the Minkowski inequality %you've gotta finish it up.
+
+Next, $L^\infty$ is complete;
+
+\tab Let $\anbrack{f_n}$ be a Cauchy sequence in $L^\infty$. So at almost every $t \in [0,1]$, we have $f_n(t)$ Cauchy in $\R$. So $f_n(t)$ converges pointwise almost everywhere to some $f$. %THAT SECOND SENTENCE ISNT OBVIOUS YOU FUCKWIT.
+
+\tab Now, this $f$ is in $L^\infty$: There's an $f_n$ within $1$ of $f$ almost everywhere. The essential supremum of $f$ is at most $1$ away from the essential supremum of $f_n$. So the essential supremum of $f$ is finite. So $f \in L^\infty$.
+
+\tab Next, $\norm{f_n - f} \to 0$: $\absval{f_n-f} \to 0$ almost everywhere. Define $g_n = \absval{f_n-f}$ where $f_n \to f$, and $g_n = 0$ elsewhere. Then $\text{esssup}(g_n)=0$, and $g_n = f_n-f$ almost everywhere. So $\text{esssup}(\absval{f_n-f})=0$.
+
+\tab So $\anbrack{f_n}$ converges in the mean to some $f \in L^\infty$ if $\anbrack{f_n}$ is Cauchy; we have our result.
 
 \shunt
 
 {\bf Problem 4:} 
 
-Let $\ell^\infty$ denote the set of all bounded sequences of real numbers. Set $\norm{(x_n)}_\infty = \text{sup}\absval{x_n}$. Prove that this is a norm, and $\ell^\infty$ is a Banach Space.
+(Let $\ell^\infty$ denote the set of all bounded sequences of real numbers. Set $\norm{(x_n)}_\infty = \text{sup}\absval{x_n}$. Prove that this is a norm, and $\ell^\infty$ is a Banach Space.)
+
+First, this is a norm:
+
+Let $\anbrack{x_n}$, $\anbrack{y_n}$ be bounded sequences of real numbers, and $\al \in \R$.
+
+\tab First, $\norm{x_n} = 0$ if and only if $x_n$ is identically zero: $\sup(\absval{x_n}) = 0$ if each $x_n$ is zero. Further, if any $x_n$ is nonzero, then $\sup(\absval{x_n})$ is nonzero.
+
+\tab Next, $\norm{\al x_n} = \sup(\absval{\al x_n}) = \sup(\absval{\al}\absval{x_n}) = \absval{\al}\sup(\absval{x_n}) = \absval{\al}\norm{x_n}$. (All of this follows from basic properties of the sup.)
+
+\tab Last:
+
+\begin{align*}
+\norm{x_n+y_n} &= \sup(\absval{x_n+y_n})\\
+&\leq \sup(\absval{x_n}+\absval{y_n})\\
+&\leq \sup(\absval{x_n})+\sup(\absval{y_n})\\
+&=\norm{x_n}+\norm{y_n}
+\end{align*}
+
+So this norm is a norm.
+
+Next, $\ell^\infty$ is complete. We show this by mimicking the proof for $L^\infty$, as I am again an uncreative n00b:
+
+%Proof: Needs adapted
+
+\tab Let $\anbrack{f_n}$ be a Cauchy sequence in $\ell^\infty$. So at almost every $t \in [0,1]$, we have $f_n(t)$ Cauchy in $\R$. So $f_n(t)$ converges pointwise almost everywhere to some $f$. %That second sentence is the thing that's a little more meaty.
+
+\tab Now, this $f$ is in $L^\infty$: There's an $f_n$ within $1$ of $f$ almost everywhere. The essential supremum of $f$ is at most $1$ away from the essential supremum of $f_n$. So the essential supremum of $f$ is finite. So $f \in L^\infty$.
+
+\tab Next, $\norm{f_n - f} \to 0$: $\absval{f_n-f} \to 0$ almost everywhere. Define $g_n = \absval{f_n-f}$ where $f_n \to f$, and $g_n = 0$ elsewhere. Then $\text{esssup}(g_n)=0$, and $g_n = f_n-f$ almost everywhere. So $\text{esssup}(\absval{f_n-f})=0$.
+
+\tab So $\anbrack{f_n}$ converges in the mean to some $f \in L^\infty$ if $\anbrack{f_n}$ is Cauchy; we have our result.
+
+%End of what needs to be adapted
+
+So, $\ell^\infty$ is a complete normed vector space. It's a Banach space.
 
 \shunt
 
 {\bf Problem 5:} 
 
-Prove the Minkowski inequality for $0 < p < 1$.
+(Prove the Minkowski inequality for $0 < p < 1$.)
+
+We proceed by mimicking the proof of the Minkowski inequality for $p \geq 1$. 
+
+Let $f,g$ be two non-negative functions in $L^p$ with $p \in (0,1)$.
+
+Note that this is trivial if $\norm{f}_p$ or $\norm{g}_p$ is zero, and we have equality. So, let us assert that this is not the case. Define $f_0=f/\norm{f}_p$ and $g_0=g/\norm{g}_p$. Also, define $\al = \norm{f}_p$, $\be=\norm{g}_p$, and $\la = \al/(\al+\be)$.
+
+Note that $\norm{f_0}_p=\norm{g_0}_p=1$.
+
+Then we have:
+
+\begin{align*}
+\absval{f+g}^p &= [\al f_0 + \be g_0]^p\\
+&= (\al+\be)^p[\la f_0 + (1-\la) g_0]^p\\
+&\geq (\al+\be)^p[\la f_0^p + (1-\la) g_0^p]
+\end{align*}
+
+With the last step by the concavity of $x^p$ for $p \in (0,1)$.
+
+Integrating both sides, we have:
+
+\begin{align*}
+\norm{f+g}_p^p &\geq (\al+\be)^p[\la \norm{f_0}_p^p+(1-\la)\norm{g_0}_p^p]\\
+&=(\al+\be)^p\\
+&=(\norm{f}_p+\norm{g}_p)^p
+\end{align*}
+
+Raising both sides to the $1/p$th power yields the result. 
 
 \shunt
 
 {\bf Problem 6:} 
 
-Young's inequality states that if $a,b \geq 0$, $1 < p < \infty$, and $1/p + 1/q =1$, then
+(Young's inequality states that if $a,b \geq 0$, $1 < p < \infty$, and $1/p + 1/q =1$, then
 
 \begin{align*}
 ab \leq a^p/p + b^q/q
 \end{align*}
 
-Prove the Holder inequality using this.
+Prove the H{\"o}lder inequality using this.)
+
+First, we should perhaps establish Young's inequality; it was not discussed in class.
+
+I acknowledge that the following is an unintuitive mess; I hope that there is a better means of doing this.
+
+First, consider the right hand side of Young's inequality. Given all of the hypotheses, we have:
+
+\begin{align*}
+a^p/p + b^q/q &= a^p/p +\frac{b^{(p-1)/p}}{(p-1)/p}\\
+&=a^p/p + pb^{(p-1)/p}/(p-1)\\
+&=\frac{(p-1)a^p+pb^{(p-1)/p}}{p(p-1)}
+\end{align*}
+
+Thus, we have that
+
+\begin{align*}
+a^p/p+b^q/q -ab &= \frac{(p-1)a^p+pb^{(p-1)/p} -abp(p-1)}{p(p-1)}
+\end{align*}
+
+We have Young's Inequality if the left hand side is greater than or equal to $0$. So we have Young's Inequality if the numerator is greater or equal to $0$, as we have that $p>1$, so that the denominator is positive.
+
+Consider the function $f: \R \to \R$ given by 
+
+\begin{align*}
+f(x) = (p-1)x^p -xbp(p-1)+pb^{(p-1)/p}
+\end{align*}
+
+We know that $f(0) = pb^{(p-1)/p}$, so that $f(0)$ is positive. Also, it's clear that $\lim\limits_{x \to \infty} f(x) = \infty$. It's also clearly a differentiable function, with
+
+\begin{align*}
+f'(x) = p(p-1)x^{p-1} - p(p-1)b
+\end{align*}
+
+So $f$ has a critical point at $b^{1/(p-1)}$. It is clear that $f'(0)$ is negative and that $f'(b)$ is positive, so $f$ takes its minimum at $b^{1/(p-1)}$.
+
+However, $f(b^{1/(p-1)})=0$. So $f \geq 0$.
+
+So $f(a) \geq 0$. So $(p-1)a^p+pb^{(p-1)/p} -abp(p-1) \geq 0$ which yields Young's Inequality, as stated above.
+
+Moving on, we use this to prove the H{\"o}lder inequality. Assume that $p,q \in (1, \infty)$ with $1/p + 1/q = 1$, and let $f \in L^p$ and $g \in L^q$. 
+
+%It's not a straightforward approximation. You need more power than that...
+
+
 
 \shunt
 
@@ -186,6 +315,8 @@ Prove the Holder inequality using this.
 I cannot pick up your dry cleaning.
 
 I don't have a car, as I am too poor to afford one.
+
+I will gladly pick up your dry cleaning if you are willing to pay me enough to purchase a car and gas.
 
 \shunt
 

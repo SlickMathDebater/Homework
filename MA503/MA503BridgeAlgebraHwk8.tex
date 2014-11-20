@@ -131,61 +131,94 @@
 
 \begin{document}
 
-{\bf Problem 1:} %WARNING: you don't actually prove non-zero-ness of b. This is an edge case that you can fix.
+I had only a rough idea how to do this problem set, so I couldn't really come close to finishing it. :/ Here's the scraps of what I sort of figured out.
 
-Let $R$ be a commutative ring and $p = a_nx^n + \ldots a_0$ be a zero divsor in $R[x]$. Then there is a $q = b_mx^m + \ldots b_0$ such that $pq=0$.
+{\bf Problem 1:} 
 
-We proceed by recursion:
+Let $R$ be a commutative ring with $p = a_nx^n + \ldots + a_0$ a zero divisor in $R[x]$.
 
-Now, this means that $b_0a_0=0$.
+Then there's a nonzero $q \in R[x]$ such that $pq=0$. We can choose $q$ to have minimal degree; let $q=b_mx^m+ \ldots +b_0$ be such that $pq=0$ and $q$ has minimal degree.
 
-Consider the coefficient attached to $x$ of $b_0pq$; it is $b_0(b_1a_0+a_1b_0)$. Moreover, it must be zero. We know that $b_0b_1a_0=0$. So $b_0b_1a_1=0$. Also, $b_0b_1a_0=0$.
+Define $b$ to be the product of all of the nonzero $b_i$s. Then $b$ is nonzero. Else, we can reduce the degree of $q$ (I'm not sure how the details go.)
 
-Now, let there be a constant, $c$, such that $ca_i=0$ for all $i < N$, with $N \leq n$. Then we know that:
+Next, we show that $ba_i=0$ for all $i$;
+
+\tab There is a first $i$ such that $b_i \neq 0$, call it $I$. Then $b_Ia_0=0$. So $ba_0=0$.
+
+\tab Now, let $ba_i=0$ for all $i < N$. Then %I don't know what to do here.
 
 \begin{align*}
-stuff&=0\\
+\sum\limits_{i=0}^{N+I} ba_ib_{N+I-i} &=0\\
+ba_Nb_I &=0\\
 \end{align*}
 
-So there's a constant, $c'$, such that $c'a_i=0$ for all $i \leq N$.
-
-This is a constructive process that terminates. So we can consruct a $b \in R$ such that $b \neq 0$ and $ba_i=0$ for all $i$. 
+So by induction, $ba_i=0$ for all $i$, and $b$ is nonzero, as desired.
 
 \shunt
 
 {\bf Problem 2:}
 
-Part a: %This...might actually follow from a theorem we might learn about prime ideals in poly rings.
+Part a:
 
-First, let $p \in \text{rad}(R[x])$.
+First, let $p = a_kx^k+ \ldots +a_0 \in \text{rad}(R[x])$.
 
-\tab Then $p^n = 0$ for some $n \in \N$. 
+\tab Then $p^n = 0$ for some $n \in \N$. So $a_0^n=0$.
+
+\tab Now, if for some $m\geq n$, we have $a_j^m=0$ for all $j<N$, then we have $p^m = 0$, and %stuff
 
 Next, let $p \in \{a_nx^n + \ldots + a_0: a_i \in \text{rad}(R)\}$.
 
-\tab Then stuff happens.
+\tab Then for each $i$, there's an $n_i$ such that $a_i^{n_i}=0$. Define $n$ to be the product of all of the $n_i$s.
+
+\tab Then we have
+
+\begin{align*}
+p^n&=stuff\\
+\end{align*}
 
 \shunt 
 
 Part b:
 
-Let $p \in (R[x])^*$.
+Let $p =a_kx^k+ \ldots +a_0\in (R[x])^*$.
 
-\tab Then stuff.
+\tab Then there's a $q = b_lx^l+ \ldots +b_0 \in R[x]$ such that $pq=1$. So $a_0b_0=1$, so $a_0 \in R^*$.
 
-Next, let $p \in \{a_nx^n + \ldots + a_0: a_i \in \text{rad}(R) \text{ if and only if } i >0\}$.
+\tab Further, stuff.
 
-\shunt
+Next, let $p \in \{a_nx^n + \ldots + a_0: a_0 \in R^*, a_i \in \text{rad}(R) \text{ if and only if } i >0\}$.
 
-{\bf Problem 3:}
+\tab Then there's a $b$ such that $a_0b=1$.
+
+\tab Consider $bp-1$. It is clear that $bp-1 \in \text{rad}(R[x])$, so $(bp-1)^m=0$ for some $m$. Without loss of generality, we can take $m$ to be odd. So $(bp-1)^m+1=1$. But $(bp-1)^m + 1$ is a multiple of $p$; every term of $(bp-1)^m$'s expansion except for $-1$ has a $p$ attached to it. So $p$ multiplied by something is $1$; $p$ is a unit.
 
 \shunt
 
 {\bf Problem 4:}
 
-\shunt
+Let $n=4$ or $n=2^ip^j$ for some odd prime $p$, $i=0$ or $i=1$, and $j \geq 0$.
 
-{\bf Problem 5:}
+\tab If $n=4$, then $(\Z/n)^* \cong \Z/2$, which is cyclic.
+
+\tab If $n=p^j$ for some odd prime $p$, then $(\Z/n)^*$ is generated, as a group, by $2$, and is thus cyclic. %Proof
+
+\tab If $n=2p^j$ for some odd prime $p$, then $(\Z/n)^*$ is generated, as a group, by $3$, and is thus cyclic. %Proof
+
+Next, let $(\Z/n)^*$ be cyclic.
+
+\tab Assume that $n \neq 4$ and $n \neq 2^ip^j$ for any odd prime $p$, $i=0$ or $i=1$, and $j \geq 0$.
+
+\tab This means that $n$ must be at least $8$. We have that $n$ has at least one odd prime in its prime factorization or it is a power of two. 
+
+\tab If $n$ is a power of two greater than $8$, then $(\Z/n)^*$ is not cyclic; %Proof
+
+\tab For the types of $n$ we have described, if $n$ has at least one odd prime in its prime factorization, then we know that either $n$ has two odd primes in its prime factorization or $n$ has a power of two greater than $8$ in its prime factorization.
+
+\tab If $n$ has two odd primes in its prime factorization, then $(\Z/n)^*$ is not cyclic; it's isomorphic to a product of more than one nontrivial group, by the Chinese Remainder Theorem. (Note: we needed an odd prime for this because the Chinese Remainder Theorem burns anything that looks like $\Z/2$). 
+
+\tab If $n$ has a power of two greater than $8$ in its prime factorization, then there's a homomorphism, $\phi$, from $\Z/n$ to $\Z/2^k$ for some $k$ at least $3$, having the property that $\phi$ preserves units. We know that $(\Z/2^k)^*$ is not cyclic, and so neither can $(\Z/n)^*$ be. (If $(\Z/n)^*$ was cyclic, we could take its generator, $a$, and have $\phi(a)$ generate $(\Z/2^k)^*$).
+
+So $(\Z/n)^*$ is cyclic if and only if $n=4$ or $n=2^ip^j$ for some odd prime $p$, $i=0$ or $i=1$, and $j \geq 0$.
 
 \shunt
 
