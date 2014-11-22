@@ -131,22 +131,36 @@
 
 \begin{document}
 
-{\bf Problem 1:} 
+Note: The theme for a good chunk of these problems is ``Analyze the proof, change a component of it, re-execute the proof.'' In this spirit, a lot of this is ripped from Royden.
 
-Find a representation for the linear functionals on $\ell^p$, where $\ell^p$ consists of sequences $\anbrack{x_n}$ of real numbers such that
+{\bf Problem 1:} %Strategy: mimic proof for L^p.
+
+(If $1 \leq p < \infty$, find a representation for the bounded linear functionals on $\ell^p$, where $\ell^p$ consists of sequences $\anbrack{x_n}$ of real numbers such that
 
 \begin{align*}
-(\sum\absval{x_n}^p)^{1/p}<\infty
+(\sum\absval{x_n}^p)^{1/p}<\infty ) 
 \end{align*}
 
 \shunt
 
 {\bf Problem 2:} 
 
-Let $f \in L^p$, and let $T_\De(f)$ denote the $\De$-approximant of $f$. Prove that
+(Let $f \in L^p$, and let $T_\De(f)$ denote the $\De$-approximant of $f$. Prove that
 
 \begin{align*}
-\norm{T_\De(f)}_p \leq \norm{f}_p
+\norm{T_\De(f)}_p \leq \norm{f}_p)
+\end{align*}
+
+Let $\De = \{x_0,x_1 \ldots x_m\}$ be a partition of $[0,1]$. Then 
+
+\begin{align*}
+T_\De(f) = \sum\limits_{n=1}^{m} \frac{\chi_{[x_{n-1},x_n]}}{x_n-x_{n-1}}\int\limits_{x_{n-1}}^{x_n} f(t)dt
+\end{align*} 
+
+So we have %Well, do it then.
+
+\begin{align*}
+\norm{T_\De(f)}_p &= \left(\int \absval{\sum\limits_{n=1}^{m} \frac{\chi_{[x_{n-1},x_n]}}{x_n-x_{n-1}}\int\limits_{x_{n-1}}^{x_n} f(t)dt}^pdx\right)^{1/p}\\
 \end{align*}
 
 \shunt
@@ -154,6 +168,8 @@ Let $f \in L^p$, and let $T_\De(f)$ denote the $\De$-approximant of $f$. Prove t
 {\bf Problem 3:} 
 
 (Prove that $\ell^p$, $1\leq p < \infty$, and $L^\infty$ are complete.)
+
+(Note: I am completely convinced that there's a way to get this next part straight from Riesz-Fischer (without building up the machinery again), but I'm not quite good enough to see it. If there is a way, could you write it in the margins?)
 
 First, $\ell^p$ is complete if $p \in [1, \infty)$; we show this by mimicking the proof of the Riesz-Fischer Theorem, as I am an uncreative n00b. To display the sheer laziness of this approach, I will be using the notation $a(n)$ to denote the $n$th term of a sequence in $\ell^p$ for this problem only.
 
@@ -169,11 +185,11 @@ Now, we can proceed by ripping the proof out of the Royden almost verbatim.
 
 Next, $L^\infty$ is complete;
 
-\tab Let $\anbrack{f_n}$ be a Cauchy sequence in $L^\infty$. So at almost every $t \in [0,1]$, we have $f_n(t)$ Cauchy in $\R$. So $f_n(t)$ converges pointwise almost everywhere to some $f$. %THAT SECOND SENTENCE ISNT OBVIOUS YOU FUCKWIT.
+\tab Let $\anbrack{f_n}$ be a Cauchy sequence in $L^\infty$. So at almost every $t \in [0,1]$, we have $f_n(t)$ Cauchy in $\R$; because $\norm{f_n}_\infty$ is Cauchy, the essential supremum of the $f_n$s as a sequence is Cauchy, so the supremum of the $f_n$s is Cauchy except on a countable union of sets of measure zero (that is, almost everywhere), so $f_n(t)$ is Cauchy at almost every $t \in [0,1]$. So $f_n$ converges pointwise almost everywhere to some $f$. In fact, it is readily checked (...it's an elementary epsilon-delta proof that you don't want to see) that $f_n$ converges uniformly to this $f$ except on a set of measure zero.
 
 \tab Now, this $f$ is in $L^\infty$: There's an $f_n$ within $1$ of $f$ almost everywhere. The essential supremum of $f$ is at most $1$ away from the essential supremum of $f_n$. So the essential supremum of $f$ is finite. So $f \in L^\infty$.
 
-\tab Next, $\norm{f_n - f} \to 0$: $\absval{f_n-f} \to 0$ almost everywhere. Define $g_n = \absval{f_n-f}$ where $f_n \to f$, and $g_n = 0$ elsewhere. Then $\text{esssup}(g_n)=0$, and $g_n = f_n-f$ almost everywhere. So $\text{esssup}(\absval{f_n-f})=0$.
+\tab Next, $\norm{f_n - f}_\infty \to 0$: We know that $\absval{f_n-f} \to 0$ except on a set of measure zero. Take essential supremums of both sides, then you win. (Note: we really do need uniform convergence here.)
 
 \tab So $\anbrack{f_n}$ converges in the mean to some $f \in L^\infty$ if $\anbrack{f_n}$ is Cauchy; we have our result.
 
@@ -187,9 +203,9 @@ First, this is a norm:
 
 Let $\anbrack{x_n}$, $\anbrack{y_n}$ be bounded sequences of real numbers, and $\al \in \R$.
 
-\tab First, $\norm{x_n} = 0$ if and only if $x_n$ is identically zero: $\sup(\absval{x_n}) = 0$ if each $x_n$ is zero. Further, if any $x_n$ is nonzero, then $\sup(\absval{x_n})$ is nonzero.
+\tab First, $\norm{x_n}_\infty = 0$ if and only if $x_n$ is identically zero: $\sup(\absval{x_n}) = 0$ if each $x_n$ is zero. Further, if any $x_n$ is nonzero, then $\sup(\absval{x_n})$ is nonzero.
 
-\tab Next, $\norm{\al x_n} = \sup(\absval{\al x_n}) = \sup(\absval{\al}\absval{x_n}) = \absval{\al}\sup(\absval{x_n}) = \absval{\al}\norm{x_n}$. (All of this follows from basic properties of the sup.)
+\tab Next, $\norm{\al x_n}_\infty = \sup(\absval{\al x_n}) = \sup(\absval{\al}\absval{x_n}) = \absval{\al}\sup(\absval{x_n}) = \absval{\al}\norm{x_n}_\infty$. (All of this follows from basic properties of the sup.)
 
 \tab Last:
 
@@ -206,13 +222,13 @@ Next, $\ell^\infty$ is complete. We show this by mimicking the proof for $L^\inf
 
 %Proof: Needs adapted
 
-\tab Let $\anbrack{f_n}$ be a Cauchy sequence in $\ell^\infty$. So at almost every $t \in [0,1]$, we have $f_n(t)$ Cauchy in $\R$. So $f_n(t)$ converges pointwise almost everywhere to some $f$. %That second sentence is the thing that's a little more meaty.
+\tab Let $\anbrack{f_n}$ be a Cauchy sequence in $\ell^\infty$. So at every $t \in [0,1]$, we have $f_n(t)$ Cauchy in $\R$; because $\norm{f_n}_\infty$ is Cauchy, the supremum of the $f_n$s as a sequence is Cauchy, so the supremum of the $f_n$s is Cauchy, so $f_n(t)$s must be Cauchy at each $t \in [0,1]$. So $f_n$ converges pointwise everywhere to some $f$. In fact, it is readily checked that $f_n$ converges uniformly to this $f$ except on a set of measure zero.
 
-\tab Now, this $f$ is in $L^\infty$: There's an $f_n$ within $1$ of $f$ almost everywhere. The essential supremum of $f$ is at most $1$ away from the essential supremum of $f_n$. So the essential supremum of $f$ is finite. So $f \in L^\infty$.
+\tab Now, this $f$ is in $\ell^\infty$: There's an $f_n$ within $1$ of $f$ almost everywhere. The supremum of $f$ is at most $1$ away from the supremum of $f_n$. So the supremum of $f$ is finite. So $f \in \ell^\infty$.
 
-\tab Next, $\norm{f_n - f} \to 0$: $\absval{f_n-f} \to 0$ almost everywhere. Define $g_n = \absval{f_n-f}$ where $f_n \to f$, and $g_n = 0$ elsewhere. Then $\text{esssup}(g_n)=0$, and $g_n = f_n-f$ almost everywhere. So $\text{esssup}(\absval{f_n-f})=0$.
+\tab Next, $\norm{f_n - f}_\infty \to 0$:  We know that $\absval{f_n-f} \to 0$. Take essential supremums of both sides, then you win. (Note: we really do need uniform convergence here.)
 
-\tab So $\anbrack{f_n}$ converges in the mean to some $f \in L^\infty$ if $\anbrack{f_n}$ is Cauchy; we have our result.
+\tab So $\anbrack{f_n}$ converges in the mean to some $f \in \ell^\infty$ if $\anbrack{f_n}$ is Cauchy; we have our result.
 
 %End of what needs to be adapted
 
@@ -271,15 +287,15 @@ I acknowledge that the following is an unintuitive mess; I hope that there is a 
 First, consider the right hand side of Young's inequality. Given all of the hypotheses, we have:
 
 \begin{align*}
-a^p/p + b^q/q &= a^p/p +\frac{b^{(p-1)/p}}{(p-1)/p}\\
-&=a^p/p + pb^{(p-1)/p}/(p-1)\\
-&=\frac{(p-1)a^p+pb^{(p-1)/p}}{p(p-1)}
+a^p/p + b^q/q &= a^p/p +\frac{b^{p/(p-1)}}{p/(p-1)}\\
+&=a^p/p + (p-1)b^{p/(p-1)}/p\\
+&=\frac{a^p+(p-1)b^{p/(p-1)}}{p}
 \end{align*}
 
 Thus, we have that
 
 \begin{align*}
-a^p/p+b^q/q -ab &= \frac{(p-1)a^p+pb^{(p-1)/p} -abp(p-1)}{p(p-1)}
+a^p/p+b^q/q -ab &= \frac{a^p-pab+(p-1)b^{p/(p-1)}}{p}
 \end{align*}
 
 We have Young's Inequality if the left hand side is greater than or equal to $0$. So we have Young's Inequality if the numerator is greater or equal to $0$, as we have that $p>1$, so that the denominator is positive.
@@ -287,36 +303,46 @@ We have Young's Inequality if the left hand side is greater than or equal to $0$
 Consider the function $f: \R \to \R$ given by 
 
 \begin{align*}
-f(x) = (p-1)x^p -xbp(p-1)+pb^{(p-1)/p}
+f(x) = x^p-pxb+(p-1)b^{p/(p-1)}
 \end{align*}
 
-We know that $f(0) = pb^{(p-1)/p}$, so that $f(0)$ is positive. Also, it's clear that $\lim\limits_{x \to \infty} f(x) = \infty$. It's also clearly a differentiable function, with
+We know that $f(0) = (p-1)b^{p/(p-1)}$, so that $f(0)$ is positive. Also, it's clear that $\lim\limits_{x \to \infty} f(x) = \infty$. It's also clearly a differentiable function, with
 
 \begin{align*}
-f'(x) = p(p-1)x^{p-1} - p(p-1)b
+f'(x) = px^{p-1} - pb
 \end{align*}
 
 So $f$ has a critical point at $b^{1/(p-1)}$. It is clear that $f'(0)$ is negative and that $f'(b)$ is positive, so $f$ takes its minimum at $b^{1/(p-1)}$.
 
 However, $f(b^{1/(p-1)})=0$. So $f \geq 0$.
 
-So $f(a) \geq 0$. So $(p-1)a^p+pb^{(p-1)/p} -abp(p-1) \geq 0$ which yields Young's Inequality, as stated above.
+So $f(a) \geq 0$. So $a^p-pab+(p-1)b^{p/(p-1)} \geq 0$ which yields Young's Inequality, as stated above.
 
 Moving on, we use this to prove the H{\"o}lder inequality. Assume that $p,q \in (1, \infty)$ with $1/p + 1/q = 1$, and let $f \in L^p$ and $g \in L^q$. 
 
-%It's not a straightforward approximation. You need more power than that...
+Without loss of generality, we take $f$ and $g$ positive everywhere, as this has no effect on the norms. 
 
+Define $\al = \norm{f}_p$, $\be = \norm{g}_q$, $f_0 = f/\al$, $g_0 = g/\be$. It's clear that $\norm{f_0}_p = \norm{g_0}_q = 1$. 
 
+Now:
+
+\begin{align*}
+\frac{1}{\al \be} \int fg &= \int f_0 g_0 \\
+&\leq \int \frac{f_0^p}{p} + \frac{g_0^q}{q}\\
+&= \norm{f_0}_p^p/p + \norm{g_0}_q^q/q\\
+&= 1/p + 1/q\\
+&=1
+\end{align*}
+
+So $\int fg \leq \al \be$, that is, $\int fg \leq \norm{f}_p\norm{g}_q$, which is the desired result.
 
 \shunt
 
 {\bf Problem 7:}
 
-I cannot pick up your dry cleaning.
+(Pick up my dry cleaning.)
 
-I don't have a car, as I am too poor to afford one.
-
-I will gladly pick up your dry cleaning if you are willing to pay me enough to purchase a car and gas.
+I cannot pick up your dry cleaning; I don't have a car, as I am too poor to afford one.
 
 \shunt
 
