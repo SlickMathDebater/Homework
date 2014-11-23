@@ -160,8 +160,20 @@ T_\De(f) = \sum\limits_{n=1}^{m} \frac{\chi_{[x_{n-1},x_n]}}{x_n-x_{n-1}}\int\li
 So we have %Well, do it then.
 
 \begin{align*}
-\norm{T_\De(f)}_p &= \left(\int \absval{\sum\limits_{n=1}^{m} \frac{\chi_{[x_{n-1},x_n]}}{x_n-x_{n-1}}\int\limits_{x_{n-1}}^{x_n} f(t)dt}^pdx\right)^{1/p}\\
+\norm{T_\De(f)}_p^p &= \int \absval{\sum\limits_{n=1}^{m} \frac{\chi_{[x_{n-1},x_n]}}{x_n-x_{n-1}}\int\limits_{x_{n-1}}^{x_n} f(t)dt}^pdx\\
+&\leq \int \sum\limits_{n=1}^{m} \absval{ \frac{\chi_{[x_{n-1},x_n]}}{x_n-x_{n-1}}\int\limits_{x_{n-1}}^{x_n} f(t)dt}^pdx\\
+&= \sum\limits_{n=1}^{m}\int  \absval{ \frac{\chi_{[x_{n-1},x_n]}}{x_n-x_{n-1}}\int\limits_{x_{n-1}}^{x_n} f(t)dt}^pdx\\
+&= \sum\limits_{n=1}^{m}\int\limits_{x_{n-1}}^{x_n}  \absval{ \frac{1}{x_n-x_{n-1}}\int\limits_{x_{n-1}}^{x_n} f(t)dt}^pdx\\
+&= \sum\limits_{n=1}^{m} (x_n-x_{n-1})\absval{ \int\limits_{x_{n-1}}^{x_n} \frac{f(t)}{(x_n-x_{n-1})}dt}^p\\
+&\leq \sum\limits_{n=1}^{m} (x_n-x_{n-1})  \frac{\int\limits_{x_{n-1}}^{x_n}\absval{f(t)}^p dt}{(x_n-x_{n-1})} \text{ *See note}\\
+&= \sum\limits_{n=1}^{m} \int\limits_{x_{n-1}}^{x_n}\absval{f(t)}^p \\
+&= \int\limits_0^1 \absval{f(t)}^p dt \\
+&= \norm{f}_p^p
 \end{align*}
+
+So we have that $\norm{T_\De(f)}_p \leq \norm{f}_p$. 
+
+*Note: I'm convinced that I have written a true fact but can't seem to prove that this step works.
 
 \shunt
 
@@ -175,13 +187,65 @@ First, $\ell^p$ is complete if $p \in [1, \infty)$; we show this by mimicking th
 
 Before doing this, we must prove the Minkowski Inequality for $\ell^p$ with $p \in [1,\infty)$:
 
-\tab %Proof goes here.
+\tab Let $f,g$ be two non-negative sequences in $\ell^p$ with $p \in [1,\infty)$.
+
+\tab Note that this is trivial if $\norm{f}_p$ or $\norm{g}_p$ is zero, and we have equality. So, let us assert that this is not the case. Define $f_0=f/\norm{f}_p$ and $g_0=g/\norm{g}_p$. Also, define $\al = \norm{f}_p$, $\be=\norm{g}_p$, and $\la = \al/(\al+\be)$.
+
+\tab Note that $\norm{f_0}_p=\norm{g_0}_p=1$.
+
+\tab Then we have:
+
+\begin{align*}
+\absval{f+g}^p &= [\al f_0 + \be g_0]^p\\
+&= (\al+\be)^p[\la f_0 + (1-\la) g_0]^p\\
+&\leq (\al+\be)^p[\la f_0^p + (1-\la) g_0^p]
+\end{align*}
+
+\tab With the last step by the concavity of $x^p$ for $p \in (0,1)$.
+
+\tab Summing up over both sides, we have:
+
+\begin{align*}
+\norm{f+g}_p^p &\geq (\al+\be)^p[\la \norm{f_0}_p^p+(1-\la)\norm{g_0}_p^p]\\
+&=(\al+\be)^p\\
+&=(\norm{f}_p+\norm{g}_p)^p
+\end{align*}
+
+\tab Raising both sides to the $1/p$th power yields the desired inequality. 
 
 Now, we can proceed by ripping the proof out of the Royden almost verbatim.
 
 \tab We need only show that each absolutely summable series in $\ell^p$ is summable in $\ell^p$ to some element of $\ell^p$.
 
-\tab Let $\anbrack{f_n}$ be a sequence in $\ell^p$ with $\sum\limits_{n=1}^\infty \norm{f_n} = M < \infty$. Define sequences $g_n$ by setting $g_n(m) = \sum\limits_{k=1}^n \absval{f_n(m)}$. From the Minkowski inequality %you've gotta finish it up.
+\tab Let $\anbrack{f_n}$ be a sequence in $\ell^p$ with $\sum\limits_{n=1}^\infty \norm{f_n} = M < \infty$. Define sequences $g_n$ by setting $g_n(m) = \sum\limits_{k=1}^n \absval{f_n(m)}$. From the Minkowski inequality, we have
+
+\begin{align*}
+\norm{g_n} \leq \sum\limits_{k=1}^n \norm{f_k} \leq M
+\end{align*}
+
+So
+
+\begin{align*}
+\sum\limits_{x=0}^\infty g_n(x)^p \leq M^p
+\end{align*}
+
+For each $x \in \N$, $\anbrack{g_n(x)}$ is an increasing sequence of (extended) real numbers, and so must converge to an extended real number $g(x)$. By taking limits, we have
+
+\begin{align*}
+\sum\limits_{x=0}^\infty g(x)^p \leq M^p
+\end{align*}
+
+So $g(x)$ is finite for all $x \in \N$.
+
+Now, for each $x$, $\sum\limits_{k=1}^\infty f_k(x)$ is absolutely summable; this is because $g(x)$ was finite. So $\sum\limits_{k=1}^\infty f_k(x)$ is summable; say it sums to $s(x)$. Say that $s$ is the limit of the partial sums $s_n = \sum\limits_{k=1}^n f_k$. Now since $\absval{s_n(x)} \leq g(x)$, we have $\absval{s(x)} \leq g(x)$. So $s \in \ell^p$.
+
+Now, $\absval{s_n-s} \to 0$. So $\absval{s_n-s}^p \to 0$; this is because $p \geq 1$. Moreover, we know that $\absval{s_n-s}^p \leq 2^pg(x)^p$.
+
+Recall that $g(x)^p$ had a finite sum. This means that $\absval{s_n-s}^p$ has a finite sum, for all $n \in \N$.
+
+So we have that $\sum\limits_{x=1}^\infty \absval{s_n-s}^p \to 0$; %Bind the tail, then bind the head.
+
+That is, we have that the series $\anbrack{f_n}$ converges to some sum, $s$. That is, every absolutely summable series is summable, so $\ell^p$ is complete.
 
 Next, $L^\infty$ is complete;
 
