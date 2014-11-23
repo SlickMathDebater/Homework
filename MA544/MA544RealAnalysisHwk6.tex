@@ -135,11 +135,53 @@ Note: The theme for a good chunk of these problems is ``Analyze the proof, chang
 
 {\bf Problem 1:} %Strategy: mimic proof for L^p.
 
-(If $1 \leq p < \infty$, find a representation for the bounded linear functionals on $\ell^p$, where $\ell^p$ consists of sequences $\anbrack{x_n}$ of real numbers such that
+(If $1 < p < \infty$, find a representation for the bounded linear functionals on $\ell^p$, where $\ell^p$ consists of sequences $\anbrack{x_n}$ of real numbers such that
 
 \begin{align*}
 (\sum\absval{x_n}^p)^{1/p}<\infty ) 
 \end{align*}
+
+We proceed by mimicking the argument in Royden, because I'm uncreative.
+
+Let $p \in (1,\infty)$.
+
+First, each sequence, $\anbrack{y_n}$, in $\ell^q$, where $1/p + 1/q = 1$, defines a linear functional on $\ell^p$, by
+
+\begin{align*}
+F(x_n)= \sum\limits_{x=1}^\infty x_ny_n
+\end{align*}
+
+It's somewhat clear that this functional is linear. It is also bounded: we have an analogue for the H{\"o}lder inequality for sequences. (It's one of the exercises in the book.) So we have that $\norm{F} \leq \norm{y_n}_q$. (In fact, by setting $x_n = \text{sgn}(y_n) y_n^{q/p}$, we see that $\norm{F} = \norm{y_n}_q$.
+
+So, we have that all sequences in $\ell^q$ define a linear functional on $\ell^p$. It suffices to show that all linear functionals on $\ell^p$ are given by a sequence in $\ell^q$.
+
+We start by proving the following lemma: Fix $\anbrack{y_n}$. If there's an $M >0$ such that for all $\anbrack{x_n} \in \ell^p$,
+
+\begin{align*}
+\sum\limits_{n=0}^\infty \absval{x_ny_n} \leq M\norm{x_n}_p\\
+\end{align*}
+
+, then $\anbrack{y_n} \in \ell^q$ and $\norm{y_n} \leq M$.
+
+\tab To show this, first %Mimic Lemma 12 proof. Note that Fatou's Lemma is used, and you need to sidestep that.
+
+Moving on past the proof of the lemma, let $F$ be a bounded linear functional on $\ell^p$. Then, for brevity, let $\chi_n$ be the characteristic function on $\{1,2, \ldots n\}$. For each $n$, the value of $F(\chi_n)$ is a number, call it $\Phi(n)$.
+
+Now, there is a sequence such that $\Phi(n) = \sum\limits_{i=1}^n y_i$. (In fact, it is given recursively by $y_1 = \Phi(1)$, and $y_n = \Phi(n)-y_{n-1}$ if $n >1$.) So, we have
+
+\begin{align*}
+F(\chi_n) = \sum\limits_{k=1}^\infty y_k \chi_n
+\end{align*}
+
+So, because each sequence is equal to a linear combination of indicator functions, we have
+
+\begin{align*}
+F(x_n) = \sum\limits_{k=1}^\infty y_k x_k
+\end{align*}
+
+for each sequence $x_n \in \ell^p$. 
+
+%Something's a little off here...
 
 \shunt
 
@@ -173,7 +215,7 @@ So we have %Well, do it then.
 
 So we have that $\norm{T_\De(f)}_p \leq \norm{f}_p$. 
 
-*Note: I'm convinced that I have written a true fact but can't seem to prove that this step works.
+*Note: I'm convinced that I have written a true fact but can't seem to prove that this step works. A correct proof will likely appeal to the convexity of $x^p$.
 
 \shunt
 
