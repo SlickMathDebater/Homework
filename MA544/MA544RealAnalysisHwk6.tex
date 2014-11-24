@@ -163,7 +163,27 @@ We start by proving the following lemma: Fix $\anbrack{y_n}$. If there's an $M >
 
 , then $\anbrack{y_n} \in \ell^q$ and $\norm{y_n} \leq M$.
 
-\tab To show this, first %Mimic Lemma 12 proof. Note that Fatou's Lemma is used, and you need to sidestep that.
+\tab To show this, first define $\anbrack{k_n}$ for each $k \in \N$ by
+
+ \begin{displaymath}
+   k_n = \left\{
+     \begin{array}{lr}
+       y_n & : \absval{y_n} \leq k\\
+       0 & : \text{else}    \end{array}
+   \right.
+\end{displaymath} 
+
+\tab and let $k_n' = \absval{k_n}^{q/p} \text{sgn}(k_n)$.
+
+\tab Now $\norm{k_n'}_p = \norm{k_n}_q^{q/p}$ and $\absval{k_n}^q = k_n'k_n=k_n'y_n$. Hence,
+
+\begin{align*}
+\norm{k_n}_q^q = \sum k_n'y_n \leq M\norm{k_n'}_p = M\norm{k_n}_q^{q/p}
+\end{align*}
+
+Which means that $\norm{k_n}_q \leq M$, so $\sum \absval{k_n}^q \leq M^q$.
+
+Since $\absval{k_n}^q \to \absval{y_n}^q$, we have $\norm{y_n} = \norm{k_n} \leq M^q$. So $\anbrack{y_n} \in \ell^q$ and $\norm{y_n} \leq M$. %Is this line true? 
 
 Moving on past the proof of the lemma, let $F$ be a bounded linear functional on $\ell^p$. Then, for brevity, let $\chi_n$ be the characteristic function on $\{1,2, \ldots n\}$. For each $n$, the value of $F(\chi_n)$ is a number, call it $\Phi(n)$.
 
@@ -181,7 +201,7 @@ F(x_n) = \sum\limits_{k=1}^\infty y_k x_k
 
 for each sequence $x_n \in \ell^p$. 
 
-%Something's a little off here...
+That is, we have each bounded linear functional represented as a sequence $\anbrack{y_k}$. Note that it follows from the above lemma that $\anbrack{y_k} \in \ell^q$ and $\norm{y_k}_q \leq \norm{F}$, as $\absval{F(x_k)} \leq \norm{F}\norm{x_k}_p$. 
 
 \shunt
 
@@ -199,7 +219,7 @@ Let $\De = \{x_0,x_1 \ldots x_m\}$ be a partition of $[0,1]$. Then
 T_\De(f) = \sum\limits_{n=1}^{m} \frac{\chi_{[x_{n-1},x_n]}}{x_n-x_{n-1}}\int\limits_{x_{n-1}}^{x_n} f(t)dt
 \end{align*} 
 
-So we have %Well, do it then.
+So we have 
 
 \begin{align*}
 \norm{T_\De(f)}_p^p &= \int \absval{\sum\limits_{n=1}^{m} \frac{\chi_{[x_{n-1},x_n]}}{x_n-x_{n-1}}\int\limits_{x_{n-1}}^{x_n} f(t)dt}^pdx\\
@@ -285,7 +305,7 @@ Now, $\absval{s_n-s} \to 0$. So $\absval{s_n-s}^p \to 0$; this is because $p \ge
 
 Recall that $g(x)^p$ had a finite sum. This means that $\absval{s_n-s}^p$ has a finite sum, for all $n \in \N$.
 
-So we have that $\sum\limits_{x=1}^\infty \absval{s_n-s}^p \to 0$; %Bind the tail, then bind the head.
+So we have that $\sum\limits_{x=1}^\infty \absval{s_n-s}^p \to 0$. (The proof of this is elementary, the trick is to first choose $N$ big enough so that we get half of what we want, and then estimate away the finite part of the sum by picking $N$ even larger.)
 
 That is, we have that the series $\anbrack{f_n}$ converges to some sum, $s$. That is, every absolutely summable series is summable, so $\ell^p$ is complete.
 
