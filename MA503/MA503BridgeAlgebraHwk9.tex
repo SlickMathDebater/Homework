@@ -135,6 +135,18 @@
 
 Let $R$ be a UFD and $P$ be a prime ideal.
 
+Let $P$ fail to be principal. Let $a \in P$.
+
+Now, $a$ has a prime factorization, $p_1^{\al_1}\ldots p_n^{\al_n}$.
+
+Then one of the $p_i^{\al_i}$ is in $P$; $a \in P$, so $p_1^{\al_1} \in P$ or $p_2^{\al_2}\ldots p_n^{\al_n} \in P$. If $p_2^{\al_2}\ldots p_n^{\al_n} \in P$, then $p_2^{\al_2} \in P$ or $p_3^{\al_3}\ldots p_n^{\al_n} \in P$. We can iterate this process, so one of the $p_i^{\al_i}$ is in $P$.
+
+So $p_i \in P$, by applying the same method.
+
+So $(p_i) \subset P$. Because $p_i$ is prime, $(p_i)$ is prime (and nonzero). But it's not $P$, as $P$ is not principal.
+
+So $P$ has a proper, nonzero prime ideal. 
+
 \shunt
 
 {\bf Problem 2:} 
@@ -143,11 +155,20 @@ Let $k$ be a field and $n \geq 2$.
 
 If $\text{char}(k) = 2$, $x_1^2 + x_2^2 \ldots x_n^2 -1$ is equal to $(x_1+x_2+\ldots+x_n-1)^2$ (when you multiply it out,every term has a factor of $2$ except the $x_i^2$ and $-1$ terms) and so $x_1^2 + x_2^2 \ldots x_n^2 -1$ is reducible.
 
-%And now for the hard part.
+Now, if $\text{char}(k) \neq 2$, then $x_1^2 +x_2^2 -1$ is irreducible in $k[x_1,x_2]$; $x_1^2+x_2^2 -1$.
+
+We proceed by induction:
+
+\tab Let $x_1^2 + x_2^2 \ldots x_{n-1}^2 -1$ is irreducible in $k[x_1, x_2 \ldots x_{n-1}]$, and set this equal to $p$. It is clear that $x_n^2+p$ is a monic polynomial of degree $2$ in $k[x_1, x_2 \ldots x_{n-1}][x_n] = k[x_1, x_2 \ldots x_{n}]$. So if it factors, it factors into a product of degree $1$ polynomials; so it factors into something of the form $(x_n+s)(x_n+r)$, with $r$ and $s$ both in $k[x_1, x_2 \ldots x_{n-1}]$. But this would mean that $p=rs$ for some $r,s \in k[x_1, x_2 \ldots x_{n-1}]$, so $p$ would be reducible.
+
+\tab So if $x_1^2 + x_2^2 \ldots x_{n-1}^2 -1$ is irreducible in $k[x_1, x_2 \ldots x_{n-1}]$, then $x_1^2 + x_2^2 \ldots x_{n}^2 -1$ is irreducible in $k[x_1, x_2 \ldots x_{n}]$.
+
+So we have our result. 
+
 
 \shunt
 
-{\bf Problem 3:} 
+{\bf Problem 3:} %Wrong, fix it.
 
 By the reduction criterion, $x^4 + 3x^3 + 3x^2 -5$ is irreducible in $\Z[x]$ if it is irreducible in $\Z/(11)[x]$.
 
@@ -163,7 +184,7 @@ Let $R = \Z[\sqrt{-5}]$, and $K = \text{Quot}(R)$.
 
 Consider $3x^2 + 4x + 3$. By the quadratic formula, if this polynomial has roots, they are $\frac{-2}{3} \pm \frac{\sqrt{-5}}{3}$. A factorization of $3x^2 + 4x + 3$ is given by $3(x+\frac{2}{3} + \frac{\sqrt{-5}}{3})(x+\frac{2}{3} - \frac{\sqrt{-5}}{3})$. So the polynomial is reducible in $K[x]$.
 
-Now, in $R[x]$, $3x^2 + 4x + 3$ cannot have a constant factored out of it. As it is a degree $2$ polynomial, this means that it factors only as a product of two degree $1$ polynomials. So any factorization of that polynomial must be of the form $(rx+r'(2 +\sqrt{-5}))(sx+s'(2 -\sqrt{-5})$, with $r',s' \in \Z[\sqrt{-5}]$ and $r=3r'$, $s=3s'$. Yet, this means that the leading coefficient of the polynomial is a multiple of $9$, which $3$ isn't. So the polynomial is irreducible in $R[x]$.
+Now, in $R[x]$, $3x^2 + 4x + 3$ cannot have a constant factored out of it. As it is a degree $2$ polynomial, this means that it factors only as a product of two degree $1$ polynomials. So any factorization of that polynomial must be of the form $(rx+r'(2 +\sqrt{-5}))(sx+s'(2 -\sqrt{-5}))$, with $r',s' \in \Z[\sqrt{-5}]$ and $r=3r'$, $s=3s'$. Yet, this means that the leading coefficient of the polynomial is a multiple of $9$, which $3$ isn't. So the polynomial is irreducible in $R[x]$.
 
 \shunt
 
