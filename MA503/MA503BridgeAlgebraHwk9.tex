@@ -1,0 +1,184 @@
+
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{fancyhdr}
+\usepackage{amssymb}
+%\usepackage{mathpazo}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{slashed}
+\usepackage[mathscr]{euscript}
+
+\newcommand{\tab}{\hspace{4mm}} %Spacing aliases
+\newcommand{\shunt}{\vspace{20mm}}
+
+\newcommand{\sd}{\partial} %Squiggle d
+
+\newcommand{\absval}[1]{\lvert #1 \rvert}
+\newcommand{\anbrack}[1]{\left\langle #1 \right\rangle}
+\newcommand{\norm}[1]{\|#1\|}
+
+
+\newcommand{\al}{\alpha} %Steal ALL of Dr. Kable's Aliases! MWAHAHAHAHA!
+\newcommand{\be}{\beta}
+\newcommand{\ga}{\gamma}
+\newcommand{\Ga}{\Gamma}
+\newcommand{\de}{\delta}
+\newcommand{\De}{\Delta}
+\newcommand{\ep}{\epsilon}
+\newcommand{\vep}{\varepsilon}
+\newcommand{\ze}{\zeta}
+\newcommand{\et}{\eta}
+\newcommand{\tha}{\theta}
+\newcommand{\vtha}{\vartheta}
+\newcommand{\Tha}{\Theta}
+\newcommand{\io}{\iota}
+\newcommand{\ka}{\kappa}
+\newcommand{\la}{\lambda}
+\newcommand{\La}{\Lambda}
+\newcommand{\rh}{\rho}
+\newcommand{\si}{\sigma}
+\newcommand{\Si}{\Sigma}
+\newcommand{\ta}{\tau}
+\newcommand{\ups}{\upsilon}
+\newcommand{\Ups}{\Upsilon}
+\newcommand{\ph}{\phi}
+\newcommand{\Ph}{\Phi}
+\newcommand{\vph}{\varphi}
+\newcommand{\vpi}{\varpi}
+\newcommand{\ch}{\chi}
+\newcommand{\ps}{\psi}
+\newcommand{\Ps}{\Psi}
+\newcommand{\om}{\omega}
+\newcommand{\Om}{\Omega}
+
+\newcommand{\bbA}{\mathbb{A}}
+\newcommand{\A}{\mathbb{A}}
+\newcommand{\bbB}{\mathbb{B}}
+\newcommand{\bbC}{\mathbb{C}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\bbD}{\mathbb{D}}
+\newcommand{\bbE}{\mathbb{E}}
+\newcommand{\bbF}{\mathbb{F}}
+\newcommand{\bbG}{\mathbb{G}}
+\newcommand{\G}{\mathbb{G}}
+\newcommand{\bbH}{\mathbb{H}}
+\newcommand{\HH}{\mathbb{H}}
+\newcommand{\bbI}{\mathbb{I}}
+\newcommand{\I}{\mathbb{I}}
+\newcommand{\bbJ}{\mathbb{J}}
+\newcommand{\bbK}{\mathbb{K}}
+\newcommand{\bbL}{\mathbb{L}}
+\newcommand{\bbM}{\mathbb{M}}
+\newcommand{\bbN}{\mathbb{N}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\bbO}{\mathbb{O}}
+\newcommand{\bbP}{\mathbb{P}}
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\bbQ}{\mathbb{Q}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\bbR}{\mathbb{R}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\bbS}{\mathbb{S}}
+\newcommand{\bbT}{\mathbb{T}}
+\newcommand{\bbU}{\mathbb{U}}
+\newcommand{\bbV}{\mathbb{V}}
+\newcommand{\bbW}{\mathbb{W}}
+\newcommand{\bbX}{\mathbb{X}}
+\newcommand{\bbY}{\mathbb{Y}}
+\newcommand{\bbZ}{\mathbb{Z}}
+\newcommand{\Z}{\mathbb{Z}}
+
+\newcommand{\scrA}{\mathcal{A}}
+\newcommand{\scrB}{\mathcal{B}}
+\newcommand{\scrC}{\mathcal{C}}
+\newcommand{\scrD}{\mathcal{D}}
+\newcommand{\scrE}{\mathcal{E}}
+\newcommand{\scrF}{\mathcal{F}}
+\newcommand{\scrG}{\mathcal{G}}
+\newcommand{\scrH}{\mathcal{H}}
+\newcommand{\scrI}{\mathcal{I}}
+\newcommand{\scrJ}{\mathcal{J}}
+\newcommand{\scrK}{\mathcal{K}}
+\newcommand{\scrL}{\mathcal{L}}
+\newcommand{\scrM}{\mathcal{M}}
+\newcommand{\scrN}{\mathcal{N}}
+\newcommand{\scrO}{\mathcal{O}}
+\newcommand{\scrP}{\mathcal{P}}
+\newcommand{\scrQ}{\mathcal{Q}}
+\newcommand{\scrR}{\mathcal{R}}
+\newcommand{\scrS}{\mathcal{S}}
+\newcommand{\scrT}{\mathcal{T}}
+\newcommand{\scrU}{\mathcal{U}}
+\newcommand{\scrV}{\mathcal{V}}
+\newcommand{\scrW}{\mathcal{W}}
+\newcommand{\scrX}{\mathcal{X}}
+\newcommand{\scrY}{\mathcal{Y}}
+\newcommand{\scrZ}{\mathcal{Z}}
+
+\newcommand{\subgp}{\mathrel{\unlhd}}
+
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+\newcommand{\colorcomment}[2]{\textcolor{#1}{#2}} %First of these leaves in comments. Second one kills them.
+%\newcommand{\colorcomment}[2]{}
+
+
+\pagestyle{fancy}
+\lhead{Max Jeter}
+\rhead{MA503, Assignment 8, Page \thepage}
+
+\begin{document}
+
+{\bf Problem 1:} 
+
+Let $R$ be a UFD and $P$ be a prime ideal.
+
+\shunt
+
+{\bf Problem 2:} 
+
+Let $k$ be a field and $n \geq 2$.
+
+If $\text{char}(k) = 2$, $x_1^2 + x_2^2 \ldots x_n^2 -1$ is equal to $(x_1+x_2+\ldots+x_n-1)^2$ (when you multiply it out,every term has a factor of $2$ except the $x_i^2$ and $-1$ terms) and so $x_1^2 + x_2^2 \ldots x_n^2 -1$ is reducible.
+
+%And now for the hard part.
+
+\shunt
+
+{\bf Problem 3:} 
+
+By the reduction criterion, $x^4 + 3x^3 + 3x^2 -5$ is irreducible in $\Z[x]$ if it is irreducible in $\Z/(11)[x]$.
+
+By Eisenstein's criterion, $x^4 + 3x^3 + 3x^2 -5 = x^4 + 3x^3 + 3x^2 +6$ is irreducible, using the prime $3$.
+
+So $x^4 + 3x^3 + 3x^2 -5$ is irreducible in $\Z[x]$. So $x^4 + 3x^3 + 3x^2 -5$ is irreducible in $\Q[x]$.
+
+\shunt
+
+{\bf Problem 4:} 
+
+Let $R = \Z[\sqrt{-5}]$, and $K = \text{Quot}(R)$. 
+
+Consider $3x^2 + 4x + 3$. By the quadratic formula, if this polynomial has roots, they are $\frac{-2}{3} \pm \frac{\sqrt{-5}}{3}$. A factorization of $3x^2 + 4x + 3$ is given by $3(x+\frac{2}{3} + \frac{\sqrt{-5}}{3})(x+\frac{2}{3} - \frac{\sqrt{-5}}{3})$. So the polynomial is reducible in $K[x]$.
+
+Now, in $R[x]$, $3x^2 + 4x + 3$ cannot have a constant factored out of it. As it is a degree $2$ polynomial, this means that it factors only as a product of two degree $1$ polynomials. So any factorization of that polynomial must be of the form $(rx+r'(2 +\sqrt{-5}))(sx+s'(2 -\sqrt{-5})$, with $r',s' \in \Z[\sqrt{-5}]$ and $r=3r'$, $s=3s'$. Yet, this means that the leading coefficient of the polynomial is a multiple of $9$, which $3$ isn't. So the polynomial is irreducible in $R[x]$.
+
+\shunt
+
+{\bf Problem 5:} 
+
+Let $R$ be a UFD and $P$ be a prime ideal of $R[x]$ with $P \cap R = 0$.
+
+Let $P$ fail to be principal. Then there are $p,q \in P$ with $p \slashed{\mid} q$ and $q \slashed{\mid} p$. We can pick $p$ to be of minimal degree, and among the $q$ that satisfy these conditions, we can also choose $q$ minimal (note that the degree of $p$ will be less than or equal to the degree of $q$). Moreover, we can choose $p,q$ to have the leading coefficient of $q$ be a multiple of the leading coefficient of $p$. 
+
+Define $r = \gcd(p,q)$. 
+
+Now, $r$ must have a lower degree than $p$. If not, then $r$ must have the same degree as $p$ (it clearly canot have higher degree). So $rs=p$ for some $r \in R$. Also, $r \mid q$ and $p \slashed{\mid} q$. %Prove it.
+
+
+
+\shunt
+
+\end{document}
