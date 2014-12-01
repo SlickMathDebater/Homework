@@ -168,7 +168,7 @@ So we have our result.
 
 \shunt
 
-{\bf Problem 3:} %Wrong, fix it.
+{\bf Problem 3:}
 
 By the reduction criterion, $x^4 + 3x^3 + 3x^2 -5$ is irreducible in $\Z[x]$ if it is irreducible in $\Z/(7)[x]$.
 
@@ -205,12 +205,12 @@ bd&=2
 The first equation can be reduced to $c=3-a$, which yields
 
 \begin{align*}
-b+d+3a-a^2&=3 \text{ (*)}\\
-ad+3b-ba&=0\\
-bd&=2
+b+d+3a-a^2&=3 \text{ ($\al$)}\\
+ad+3b-ba&=0 \text{ ($\be$)}\\
+bd&=2 \text{ ($\ga$)}
 \end{align*}
 
-The last equation has only $6$ solutions; we are working in a field, so for any given $b$ there is a unique solution of that equation for $d$. Also, $b=0$ fails.
+Now, ($\ga$) only $6$ solutions; we are working in a field, so for any given $b$ there is a unique solution of that equation for $d$. Also, $b=0$ fails.
 
 So we have that the only six valid solutions for $b$ and $d$ are:
 
@@ -223,9 +223,34 @@ b=5,d=6\\
 b=6,d=5\\
 \end{align*}
 
-A rearrangement of (*) gives us $a^2-3a+3-b-d=0$. This can be solved using the quadratic equation;
+The middle two fail, for any value of $a$; because $ad=ba$, ($\be$) gives us $3b=0$, which fails for any nonzero $b$. We are left with 
 
-So $x^4 + 3x^3 + 3x^2 -5$ is irreducible in $\Z[x]$. So $x^4 + 3x^3 + 3x^2 -5$ is irreducible in $\Q[x]$.
+\begin{align*}
+b=1,d=2\\
+b=2,d=1\\
+b=5,d=6\\
+b=6,d=5\\
+\end{align*}
+
+A rearrangement of ($\al$) gives us $a(3-a)=3-b-d$.
+
+For the first two cases, $b+d=3$, so we have that $a=3$ or $a=0$. If $a=0$, then ($\be$) reduces to $3b=0$, which fails for any nonzero $b$. If $a=3$, then ($\be$) reduces to $3d=0$ which fails for any nonzero $d$.
+
+For the last two cases, $b+d=30=2$. This means that ($\al$) gives us that $a(3-a)=1$. But this is unsatisfiable; if $q = a(3-a)$, then:
+
+\begin{align*}
+q(0)=0\\
+q(1)=2\\
+q(2)=2\\
+q(3)=0\\
+q(4)=3\\
+q(5)=4\\
+q(6)=3\\
+\end{align*}
+
+That is, every possible solution for ($\ga$) modulo $7$ fails to satisfy the system of equations. That is, we cannot reduce $x^4 + 3x^3 + 3x^2 +2$ modulo $7$. 
+
+So by the reduction criterion, $x^4 + 3x^3 + 3x^2 -5$ is irreducible in $\Z[x]$. So $x^4 + 3x^3 + 3x^2 -5$ is irreducible in $\Q[x]$.
 
 \shunt
 
