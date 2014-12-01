@@ -272,18 +272,19 @@ Let $R$ be a UFD and $P$ be a prime ideal of $R[x]$ with $P \cap R =0$. Define $
 
 We can view $P$ as a subset of $K[x]$. Consider $(P) \subset K[x]$. We see that $(P)$ is principal, as $K[x]$ is a principal ideal domain. Moreover, $(P)$ is not the entire ring, because $P \cap R = 0$. So $(P) = (p)$ for some $p \in K[x]$, with $p$ having degree at least $1$. %Note also that $(P)$ is prime.
 
-We can impose that $p \in P$; if it isn't, then we can multiply $p$ by the least common multiple of the quotients of the coefficients of $p$ to get it in $R[x]$. Also, $R[x] \cap (P) = P$; if $x \in (P) \cap R[x]$ and, then there's a nonzero $r \in R$ such that $rx \in P$, but $r \notin P$, so $x \in P$. (Also, $P \subset R[x]$ and $P \subset (P)$.
+We can impose that $p \in P$; if it isn't, then we can multiply $p$ by the least common multiple of the quotients of the coefficients of $p$ to get it in $R[x]$. Also, $R[x] \cap (P) = P$; if $x \in (P) \cap R[x]$ and, then there's a nonzero $r \in R$ such that $rx \in P$, but $r \notin P$, so $x \in P$. (Also, $P \subset R[x]$ and $P \subset (P)$).
 
 Further, we can impose that the leading coefficient of $p$ divides the leading coefficient of any element of $P$.
 
-This means that $p$ must be prime in $R[x]$; let $r,s \in R[x]$ with $rs = p$. One of $r$ or $s$ must have degree at least one, then. Then $rs \in P$. %This means that $r$ or $s$ is in $(P)$. If $r$ (or $s$) has degree zero, then the other is a multiple of $p$. %You're not quite up for it right now. 
+This means that $p$ must be prime in $K[x]$; let $r,s \in K[x]$ with $rs = p$. One of $r$ or $s$ must have degree at least one, then. We can factor out a constant, $k$, with $p=kr's'$ and $r',s' \in R[x]$. That is, $r's' \in (P) \cap R[x]$, so $r's' \in P$. This means that $r'$ or $s'$ is in $P$. So $r'$ or $s'$ is in $(P)$. So $r$ or $s$ is a multiple of $p$ in $K[x]$. So $p$ is irreducible in $K[x]$, so $p$ is prime.
+
+Thus, $p$ is prime in $R[x]$.
 
 Now, we imposed that $p \in P$, so $(p) \subset P$.
 
 Next, let $q \in P$. Then $q \in (P) \subset K[x]$, so $q \in (p) \subset K[x]$. That means that $p \mid q$ in $K[x]$; there is an $r \in K[x]$ such that $q=pr$. By multiplying by the least common multiple of the quotients of the coefficients of $r$, we can say that there is a $k \in R$ such that $kq=pr'$ for some $r' \in R[x]$. That is, $kq \in (p)$ for some $k \in R$. But $(p)$ is prime, and $(p) \subset P$. So $k \notin (p)$, so $q \in (p)$.
 
 So $(p) = P$; $P$ is a principal ideal. 
-
 
 \shunt
 
