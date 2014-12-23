@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.9.27)  11 DEC 2014 19:09
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.9.27)  23 DEC 2014 12:35
 entering extended mode
-**MA503BridgeAlgebraHwk10.tex
-(C:\Users\Lonelight\Desktop\Homework\MA503\MA503BridgeAlgebraHwk10.tex
+**Template.tex
+(C:\Users\Lonelight\Desktop\Homework\Template\Template.tex
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
 abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
@@ -167,24 +167,29 @@ carlisle\slashed.sty
 Package: slashed 1997/01/16 v0.01 Feynman Slashed Character Notation (DPC)
 )
 (C:\Users\Lonelight\Desktop\PortablePrograms\texmakerwin32usb\MiKTeX\tex\latex\
+cancel\cancel.sty
+Package: cancel 2013/04/12 v2.2 Cancel math terms
+)
+(C:\Users\Lonelight\Desktop\PortablePrograms\texmakerwin32usb\MiKTeX\tex\latex\
 amsfonts\euscript.sty
 Package: euscript 2009/06/22 v3.00 Euler Script fonts
 LaTeX Font Info:    Overwriting math alphabet `\EuScript' in version `bold'
 (Font)                  U/eus/m/n --> U/eus/b/n on input line 33.
 )
-(C:\Users\Lonelight\Desktop\Homework\MA503\MA503BridgeAlgebraHwk10.aux)
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 132.
-LaTeX Font Info:    ... okay on input line 132.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 132.
-LaTeX Font Info:    ... okay on input line 132.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 132.
-LaTeX Font Info:    ... okay on input line 132.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 132.
-LaTeX Font Info:    ... okay on input line 132.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 132.
-LaTeX Font Info:    ... okay on input line 132.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 132.
-LaTeX Font Info:    ... okay on input line 132.
+(C:\Users\Lonelight\Desktop\Homework\Template\MaxPackage.sty)
+(C:\Users\Lonelight\Desktop\Homework\Template\Template.aux)
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
 
 (C:\Users\Lonelight\Desktop\PortablePrograms\texmakerwin32usb\MiKTeX\tex\latex\
 graphics\graphicx.sty
@@ -236,25 +241,6 @@ t\base\supp-pdf.mkii
 \Gin@req@height=\dimen123
 \Gin@req@width=\dimen124
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 136.
-
-(C:\Users\Lonelight\Desktop\PortablePrograms\texmakerwin32usb\MiKTeX\tex\latex\
-amsfonts\umsa.fd
-File: umsa.fd 2009/06/22 v3.00 AMS symbols A
-)
-LaTeX Font Info:    Try loading font information for U+msb on input line 136.
-
-(C:\Users\Lonelight\Desktop\PortablePrograms\texmakerwin32usb\MiKTeX\tex\latex\
-amsfonts\umsb.fd
-File: umsb.fd 2009/06/22 v3.00 AMS symbols B
-)
-Overfull \hbox (19.8593pt too wide) in paragraph at lines 138--139
-[]\OT1/cmr/m/n/12 In the fol-low-ing, I freely use the fact that $[](\OML/cmm/m
-/it/12 U\OT1/cmr/m/n/12 )[](\OML/cmm/m/it/12 V\OT1/cmr/m/n/12 ) = [](\OML/cmm/m
-/it/12 UV\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 =[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12
- U \OMS/cmsy/m/n/12 \$
- []
-
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
@@ -264,45 +250,22 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 [1{C:/Users/Lonelight/Desktop/PortablePrograms/texmakerwin32usb/MiKTeX/pdftex/c
 onfig/pdftex.map}
 
-]
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 14.49998pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[2]
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 14.49998pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[3] (C:\Users\Lonelight\Desktop\Homework\MA503\MA503BridgeAlgebraHwk10.aux) ) 
+] (C:\Users\Lonelight\Desktop\Homework\Template\Template.aux) ) 
 Here is how much of TeX's memory you used:
- 2805 strings out of 493921
- 38984 string characters out of 3140860
- 95996 words of memory out of 3000000
- 6084 multiletter control sequences out of 15000+200000
- 8592 words of font info for 33 fonts, out of 3000000 for 9000
+ 2797 strings out of 493921
+ 38808 string characters out of 3140860
+ 90813 words of memory out of 3000000
+ 6088 multiletter control sequences out of 15000+200000
+ 4245 words of font info for 16 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 33i,12n,43p,606b,196s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C
-:/Users/Lonelight/Desktop/PortablePrograms/texmakerwin32usb/MiKTeX/fonts/type1/
-public/amsfonts/cm/cmbx12.pfb><C:/Users/Lonelight/Desktop/PortablePrograms/texm
-akerwin32usb/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Lonelig
-ht/Desktop/PortablePrograms/texmakerwin32usb/MiKTeX/fonts/type1/public/amsfonts
-/cm/cmmi8.pfb><C:/Users/Lonelight/Desktop/PortablePrograms/texmakerwin32usb/MiK
-TeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Lonelight/Desktop/Portab
-lePrograms/texmakerwin32usb/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/
-Users/Lonelight/Desktop/PortablePrograms/texmakerwin32usb/MiKTeX/fonts/type1/pu
-blic/amsfonts/cm/cmsy10.pfb><C:/Users/Lonelight/Desktop/PortablePrograms/texmak
-erwin32usb/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Lonelight/
-Desktop/PortablePrograms/texmakerwin32usb/MiKTeX/fonts/type1/public/amsfonts/sy
-mbols/msbm10.pfb>
-Output written on MA503BridgeAlgebraHwk10.pdf (3 pages, 92338 bytes).
+ 33i,10n,43p,261b,196s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Users/Loneli
+ght/Desktop/PortablePrograms/texmakerwin32usb/MiKTeX/fonts/type1/public/amsfont
+s/cm/cmbx12.pfb><C:/Users/Lonelight/Desktop/PortablePrograms/texmakerwin32usb/M
+iKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb>
+Output written on Template.pdf (1 page, 21666 bytes).
 PDF statistics:
- 44 PDF objects out of 1000 (max. 8388607)
+ 14 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
