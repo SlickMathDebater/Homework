@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.9.27)  26 DEC 2014 15:40
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.9.27)  31 DEC 2014 16:34
 entering extended mode
 **TomsFall2014MA544FinalSet.tex
 
@@ -245,13 +245,13 @@ t\base\supp-pdf.mkii
 \Gin@req@height=\dimen123
 \Gin@req@width=\dimen124
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 39.
+LaTeX Font Info:    Try loading font information for U+msa on input line 45.
 
 (C:\Users\Lonelight\Desktop\PortablePrograms\texmakerwin32usb\MiKTeX\tex\latex\
 amsfonts\umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 39.
+LaTeX Font Info:    Try loading font information for U+msb on input line 45.
 
 (C:\Users\Lonelight\Desktop\PortablePrograms\texmakerwin32usb\MiKTeX\tex\latex\
 amsfonts\umsb.fd
@@ -288,7 +288,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [4]
-Overfull \hbox (25.18054pt too wide) in paragraph at lines 213--214
+Overfull \hbox (25.18054pt too wide) in paragraph at lines 221--222
 []\OT1/cmr/m/n/12 If $\OMS/cmsy/m/n/12 k\OML/cmm/m/it/12 f[]\OMS/cmsy/m/n/12 k[
 ]k\OML/cmm/m/it/12 f\OMS/cmsy/m/n/12 k$\OT1/cmr/m/n/12 , then there's an $\OML/
 cmm/m/it/12  > \OT1/cmr/m/n/12 0$ and a sub-se-quence $\OML/cmm/m/it/12 f[]$ \
@@ -330,6 +330,53 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [9]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[10]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[11]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[12]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[13]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[14]
+Overfull \hbox (1.25725pt too wide) in paragraph at lines 515--516
+\OT1/cmr/m/n/12 We pro-ceed by ap-ply-ing the an ear-lier prob-lem; the re-sult
+ fol-lows if $\OMS/cmsy/m/n/12 k\OML/cmm/m/it/12 f[]g[]\OMS/cmsy/m/n/12 k[] !$
+ []
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[15]
 ("C:\Users\Lonelight\Desktop\Homework\Qual Practice\Real Analysis\TomsFall2014M
 A544FinalSet.aux") ) 
 Here is how much of TeX's memory you used:
@@ -351,13 +398,16 @@ s/Lonelight/Desktop/PortablePrograms/texmakerwin32usb/MiKTeX/fonts/type1/public
 32usb/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Lonelight/Deskt
 op/PortablePrograms/texmakerwin32usb/MiKTeX/fonts/type1/public/amsfonts/cm/cmr1
 2.pfb><C:/Users/Lonelight/Desktop/PortablePrograms/texmakerwin32usb/MiKTeX/font
-s/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Lonelight/Desktop/PortableProgram
-s/texmakerwin32usb/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/L
-onelight/Desktop/PortablePrograms/texmakerwin32usb/MiKTeX/fonts/type1/public/am
-sfonts/cm/cmsy8.pfb>
-Output written on TomsFall2014MA544FinalSet.pdf (9 pages, 127546 bytes).
+s/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/Lonelight/Desktop/PortableProgram
+s/texmakerwin32usb/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Lon
+elight/Desktop/PortablePrograms/texmakerwin32usb/MiKTeX/fonts/type1/public/amsf
+onts/cm/cmsy10.pfb><C:/Users/Lonelight/Desktop/PortablePrograms/texmakerwin32us
+b/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Lonelight/Desktop/P
+ortablePrograms/texmakerwin32usb/MiKTeX/fonts/type1/public/amsfonts/symbols/msb
+m10.pfb>
+Output written on TomsFall2014MA544FinalSet.pdf (15 pages, 164585 bytes).
 PDF statistics:
- 72 PDF objects out of 1000 (max. 8388607)
+ 99 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

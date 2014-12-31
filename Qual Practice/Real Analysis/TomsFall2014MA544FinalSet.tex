@@ -30,7 +30,12 @@
 %Ch. 11: 2 5 7 10 11 13 21 24 25 28 30 33 34 39 41 44 47
 %Ch. 12: 1 4 8
 
-%Currently skipped: Ch 3, 28/31, Ch 4 25
+%Currently skipped: 
+%Ch 3; 28, 31, 
+%Ch 4; 25, 
+%Ch 5; 14c, 16c, 20c, 23b, 27
+%Ch 6; 23
+%Ch11;
 
 {\Huge{\textit{\textbf{Chapter 3:}}}}
 
@@ -200,31 +205,28 @@ By taking supremums over $h$, we have our result.
 
 {\bf Problem 14:}
 
+NOTE: a similar problem was an exam problem. This problem can be generalized, and should be done in the context of $L^p$ spaces.
+
 Part a:
 
 Let $\anbrack{g_n} \to g$ almost everywhere, $\anbrack{f_n} \to f$ almost everywhere, and $\absval{f_n} \leq g_n$, with all of the above functions being measurable, and $\int g = \lim \int g_n$.
 
-Then $\int \absval{f_n-f} \leq \absval{\int f_n -f} = \absval{\int f_n - \int f} \to 0$.
+Then $\absval{f_n - f} \to 0$ almost everywhere, and $\absval{f_n-f} < g_n+g$. So by applying dominated convergence theorem, we have our result.
 
 \shunt
 
-Part b: NOTE: a similar problem was an exam problem. This problem can be generalized, and should be done in the context of $L^p$ spaces.
+Part b: 
 
 Let $\anbrack{f_n}$ be a sequence of integrable functions in $L^p$ with $f_n \to f$ almost everywhere.
 
 If $\norm{f_n} \slashed{\to} \norm{f}$, then there's an $\ep >0$ and a subsequence $f_{n_k}$ with $\absval{\norm{f_{n_k}} - \norm{f}} \geq \ep$. But
 
 \begin{align*}
-2\norm{f_n - f} &\geq \absval{\norm{f_n} - \norm{f}}\\
+\norm{f_n - f} &\geq \absval{\norm{f_n} - \norm{f}}\\
 &\slashed{\to} 0
 \end{align*}
 
-If $\norm{f_n} \to \norm{f}$, then: 
-
-\begin{align*}
-\norm{f_n - f} &\leq \absval{\norm{f_n} - \norm{f}} \text{ (By reverse triangle inequality.)} \\
-&\to 0
-\end{align*} 
+If $\norm{f_n} \to \norm{f}$, then a modification of part a applies. So we have our result.
 
 So $\norm{f_n - f} \to 0$ if and only if $\norm{f_n} \to \norm{f}$.
 
@@ -268,37 +270,159 @@ Now, let there be a sequence, $\anbrack{f_n}$, of measurable functions on a set,
 
 {\bf Problem 4:}
 
+Let $f$ be continuous on $[a,b]$ and one of its derivates is everywhere nonnegative on $(a,b)$. Then $D^+$ or $D^-$ is everywhere nonnegative on $(a,b)$; $D^+ \geq D_+$, and $D^- \geq D_-$.
+
+We proceed by handling this for $D^+$, and note that the proof for $D^-$ is similar.
+
+First, if $D^+ \geq \ep >0$ on $(a,b)$, then $\limsup\limits_{h \to 0^+} \frac{f(x+h)-f(x)}{h} \geq \ep$ for all $x$. If for any $x$ there's an $h$ such that $f(x+h) -f(x) < \ep$, then we can apply the sup method to find a contradiction (there should be a least possible $h$ so that we have this property, but this breaks down pretty quickly). 
+
+Now, consider $g_\ep(x) = f(x) + \ep x$. Each $g_\ep$ is increasing, by the above thing. Now, $f = \lim\limits_{\ep \to 0} g_\ep$. So $f$ is a limit of increasing functions, it's increasing.
+
 \shunt
 
-{\bf Problem 5:}
+{\bf Problem 5/8:}
 
-\shunt
+5 is a mostly trivial epsilon-delta proof. Note: for part c, it's better to work from the right hand side than the left hand side.
 
-{\bf Problem 8:}
+8 is painfully clear.
 
 \shunt
 
 {\bf Problem 10:}
 
+Note: I could've sworn one of these wasn't of bounded variation...
+
+Part a:
+
+(Note: we can restrict our attention to $[0,1]$, rather clearly.)
+
+Consider $f(x) = x^2\sin(1/x^2)$ on $[0,1]$ (with $f(0)=0$).
+
+This is decreasing when $1/x^2 \in [(4n+1)\pi/2,(4n+3)\pi/2]$ for some $n \in \N$.
+
+So it's decreasing when $x^2 \in [2/((4n+3)\pi),2/((4n+1)\pi)]$ for each $n \in \N$. So its negative variance is $\sum\limits_{i=0}^\infty 2/((4n+1)\pi) - 2/((4n+3)\pi) = \sum\limits_{i=0}^\infty 4/pi [1/(4n+1)(4n+3)]$. This sum converges, so the negative variance is finite. Similarly, the positive variance is finite. So the total variance is finite, the function is of bounded variation.
+
+\shunt
+
+Part b:
+
+Consider $f(x) = x^2\sin(1/x)$ on $[0,1]$ (with $f(0)=0$).
+
+This is decreasing when $1/x \in [(4n+1)\pi/2,(4n+3)\pi/2]$ for some $n \in \N$.
+
+So it's decreasing when $x \in [2/((4n+3)\pi),2/((4n+1)\pi)]$ for each $n \in \N$. So its negative variance is $\sum\limits_{i=0}^\infty (2/((4n+1)\pi))^2 - (2/((4n+3)\pi))^2$, which converges. So the total variance is finite, the function is of bounded variation.
+
 \shunt
 
 {\bf Problem 14:}
+
+Part a:
+
+Sums and differences of two absolutely continuous functions are also absolutely continous, rather clearly. (If $\ep >0$, use $\de = \max(de_1,\de_2)$, with $\de_1$ working for $\ep/2$ for one function and $\de_2$ working for $\ep/2$ with the other function.)
+
+\shunt
+
+Part b:
+
+Products of two absolutely continuous functions are absolutely continuous; the domain is necessarily a closed interval, continuous functions on closed intervals are bounded. Pick one function; it is absolutely bounded by $M$. For the other function, for all $\ep >0$ there's a $\de >0$ that works for $\ep/M$. Use this $\de$.
+
+\shunt
+
+Part c:
+
+I'm absolutely stuck on this one.
 
 \shunt
 
 {\bf Problem 16:}
 
+Part a:
+
+Let $f$ be a monotone increasing function. Then $f'$ exists almost everywhere; Let $f_c$ be the indefinite integral of $f'$, so that $f_c$ is absolutely continuous. Then $f_s=f-f_c$ has derivative zero almost everywhere. That is, $f=f_s+f_c$ is a decomposition of $f$ into a sum of singular and absolutely continuous functions.
+
+\shunt
+
+Part b:
+
+Let $f$ be a nondecreasing singular function on $[a,b]$. Let $\ep>0$, $\de>0$.
+
+First, $f$ is bounded; it is monotonic on a closed interval. Second, $f'$ is zero almost everywhere. That is, there's a collection of nonoverlapping (open) intervals, call it $\scrI$, whose total length is less than $\de$ that covers the set of points where $f'$ is nonzero (or undefined).
+
+That is, $f$ is constant on the entire domain except (possibly) those intervals.
+
+So, we have that $\sum\limits_{I \in \scrI} l(I) < \de$, and $\sum\limits_{I \in \scrI} d(f(I)) = f(b)-f(a)$, where $d(f(I))$ is the distance between the endpoints of $f(I)$. (We have the second part, as $f$ is constant except on intervals in $\scrI$.)
+
+Thus, $\sum\limits_{I \in \scrI} d(f(I)) = f(b)-f(a)$ converges upwards to $f(b)-f(a)$; there's a finite collection of intervals in $\scrI$ (call it $\scrF$) with $\sum\limits_{I \in \scrF} d(f(I)) + \ep = f(b) -f(a)$. This satisfies the problem. (We summarize this result as ``nondecreasing singular functions have property $(S)$'').
+
+\shunt
+
+Part c:
+
+Let $f$ be a nondecreasing function on $[a,b]$ with property $(S)$. Then $f=f_s+f_c$ for some singular $f_s$ and absolutely continuous $f_c$. Moreover, we can take both $f_c$ and $f_s$ nondecreasing.
+
+Now, let $\ep>0$. There's a $\de>0$ with the property $\sum \absval{x_i-x_{i+1}} < \de$ implies that $\sum \absval{f_c(x_i)-f_c(x_{i+1})} < \ep$ for any non-overlapping, finite collection of intervals $(x_i,x_{i+1})$. Also, there's a finite collection of such intervals with the property $\sum \absval{f(x_i)-f(x_{i+1})} +\ep > f(b)-f(a)$, for any $/ep>0$. %I'm not sure how to play this out, but this is somewhat obviously the right course of action.
+
+\shunt
+
+Part d:
+
+Let $\anbrack{f_n}$ be a sequence of nondecreasing singular functions on $[a,b]$ with $f = \sum f_n(x)$ everywhere finite.
+
+Then $f$ is singular, by term-by-term differentiation.
+
+\shunt
+
+Part e:
+
+A series of indicator functions of the form $\chi_{[q,1]}$ with $q \in \Q$ cobbled together with the $2^{-n}$ trick suffices. (Enumerate the rationals, sum them up.)
+
 \shunt
 
 {\bf Problem 20:}
+
+Part a: is a simple epsilon-delta proof.
+
+\shunt
+
+Part b:
+
+Let $f$ be absolutely continuous.
+
+Then if $f$ fails to satisfy a Lipschitz condition, there is a pair of sequences $x_n,y_n$ that break the Lipschitz condition. As $f$ is absolutely continuous, such a subsequence must exist with $d(x_n,y_n) \to 0$; this is because $f$ is bounded. So we can find a sequence of pairs of points arbitrarily close together whose difference quotient is arbitrarily large; the derivative thus cannot be bounded.
+
+If $f$ satisfies a Lipschitz condition, then the difference quotient is uniformly bounded at all points; so the limits of these difference quotients are uniformly bounded, so the derivative is bounded.
+
+\shunt
+
+Part c:
+
+If one of the derivates of a function is bounded, say $D+$, then...
 
 \shunt
 
 {\bf Problem 23:}
 
+Part a:
+
+Let $\phi$ be a convex function on a finite interval, $[a,b)$.
+
+Let $\phi$ not be bounded below. Because $\phi$ is absolutely continuous on each closed subinterval of $[a,b)$, this means that $\phi$ is bounded on each closed subinterval of $[a,b)$. Thus, if $\phi$ is not bounded below, then we have that $\lim\limits_{x \to b} \phi(x) = -\infty$ (else, $\phi$ can be extended to $[a,b]$, and is thus bounded).
+
+But this goes bad pretty quickly (Pick a point on the curve, draw a chord from $(a, \phi(a))$, make it have arbitrarily negative slope, it'll go below that point eventually.)
+
+\shunt
+
+Part b:
+
+\shunt
+
+Part c is trivial
+
 \shunt
 
 {\bf Problem 27:}
+
+I've spent way too long on this problem. It's similar to a problem in Zigmund's book, apparently...
 
 \pagebreak
 
@@ -308,37 +432,104 @@ Now, let there be a sequence, $\anbrack{f_n}$, of measurable functions on a set,
 
 {\bf Problem 2:}
 
+Let $f \in L^\infty[0,1]$. Define $\norm{f}_\infty = M$. Then for all $p$, $\norm{f}_p/M = \norm{f/M}_p$. It suffices to show that $\lim\limits_{p \to \infty} \norm{f/M}_p = 1$.
+
+Now, for all $p>0$, we have that $[\int \absval{f/M}^p]^{1/p} \leq [\int \absval{f/M}]^{1/p} \leq 1^{1/p} = 1$. So the limit as $p$ tends to infinity is bounded above by $1$. 
+
+Next, let $\ep \in (0,1]$. Then because the essential supremum of $f/M$ is $1$, there's a set, $E$, of measure $\de>0$ with the property $x \in E$ implies that $f(x) \geq \absval{1-\ep/2}$. Now,
+
+\begin{align*}
+[\int \absval{f/M}^p]^{1/p} &\geq [\int_E \absval{f/M}^p]^{1/p}\\
+&\geq [\int_E (1-\ep/2)^p]^{1/p}\\
+&= [(1-\ep/2)^p m(E)]^{1/p}\\
+&= (1-\ep/2)m(E)^{1/p}
+\end{align*}
+
+By taking $p$ sufficiently large, we have this greater than $1-\ep$. 
+
+So we have our result.
+
 \shunt
 
 {\bf Problem 4:}
 
+Let $f \in L^1$, $g \in L^\infty$. Define $M = \norm{g}_\infty$.
+
+\begin{align*}
+\int\absval{fg/M}  &\leq \int \absval{f}\\
+&= \norm{f}_1
+\end{align*}
+
+So,
+
+\begin{align*}
+\int\absval{fg}  &\leq M\norm{f}_1 = \norm{f}_1\norm{g}_\infty
+\end{align*}
 \shunt
 
 {\bf Problem 8:}
+
+This was effectively done in your homework.
 
 \shunt
 
 {\bf Problem 10:}
 
+Note: This is effectively saying that the norm on $L^\infty$ is the norm induced by the metric of uniform convergence. This is probably given outright in Pugh.
+
+Let $\anbrack{f_n}$ be a sequence of functions in $L^\infty$.
+
+Let there fail to be a set, $E$, of measure $0$ such that $f_n$ converges to $f$ uniformly on $E^c$. That is, there's a set of nonzero measure such that $f_n$ fails to converge to $f$ uniformly on $E$. Then there's an $\ep>0$ and a subsequence of $f_n$ with the property $\norm{f_{n_k} - f}_\infty \geq \ep$ on a set of greater than measure zero. That is, there's a subsequence of $f_n$ such that $\norm{f_{n_k}-f}_\infty \geq \ep$; $f_n$ does not converge to $f$ in $L^\infty$. 
+
+If there's a set, $E$, of measure $0$ such that $f_n$ converges to $f$ uniformly on $E^c$, then for all $\ep>0$ there's an $N \in \N$ such that for all $n \geq N$, $\absval{f_n-f} < \ep$ except on $E$. That is, $\norm{f_n-f}_\infty < \ep$. That is, $f_n \to f$ in $L^\infty$.
+
 \shunt
 
 {\bf Problem 11:}
+
+This is pulled straight out of Pugh; if a sequence of functions has cauchy uniform convergence, it has pointwise cauchy convergence, so it has pointwise convergence. This convergence is also uniform, somewhat trivially.
 
 \shunt
 
 {\bf Problem 15:}
 
+Note: this looks like a good qual problem...
+
+Let $c$ be the space of all convergent sequences of real numbers, given the $\ell^\infty$ norm.
+
+First, this is a normed linear space; $\ell^\infty$ norm is a norm, and the space is clearly linear.
+
+Now, let $\anbrack{\anbrack{n_k}}$ be a Cauchy sequence of converging sequences. 
+
+Then for all $\ep>0$, there's an $N$ such that $n,m > N$ implies that for all $k$, $\absval{n_k-m_k} < \ep$. That is, for fixed $k$, $\anbrack{n_k}$ treated as a sequence in $n$ is Cauchy. So each of these converges to something; call it $N_k$. It is rather clear that $\anbrack{n_k} \to \anbrack{N_k}$ as a sequence using the $\ell^\infty$ norm from this.
+
+Now, let $c_0$ be the space of all sequences of real numbers converging to zero. It is also a normed linear space. It's also a closed subset of $c$; if $\anbrack{\anbrack{n_k}} \to \anbrack{a_k}$ with $\anbrack{n_k}$ each in $c_0$, then $a_k \to 0$, this is clear by triangle inequality.
+
+So $c_0$ is a closed subset of a complete normed linear space. It is complete. So $c_0$ is a Banach space.
+
 \shunt
 
 {\bf Problem 18:}
+
+Note: This is very similar to problems given in past quals...
+
+We first note that $f_ng_n \to fg$ almost everywhere, and that this is clear. We proceed by applying the an earlier problem; the result follows if $\norm{f_ng_n}_p \to \norm{fg}_p$.
+
+Somewhat clearly, if the left hand side converges, then it converges to the right hand side. Moreover, the sequence is Cauchy, so it converges. %I'm not sure how to handle that, but that seems to be the idea.
 
 \shunt
 
 {\bf Problem 23:}
 
+This problem is made of nope and nope.
+
 \shunt
 
 {\bf Problem 24:}
+
+Let $g,h \in L^q$ be such that $\int fg = \int fh$ for all $f \in L^p$. 
+
+Then $\int f(g-h) = 0$ for all $f \in L^p$. So in particular, this is true for all indicator functions on sets of finite length. We can game this so that $\int f(g-h)$ is always positive; $f = 1$ if $g-h$ is positive, and $f=-1$ if $h-g$ is positive works, and is measurable as $h$ and $g$ are. We know that this means that $f(g-h)$ is zero almost everywhere; thus, we get that $g-h$ is zero almost everywhere, so $g$ must have been almost-everywhere-unique.
 
 \shunt
 
