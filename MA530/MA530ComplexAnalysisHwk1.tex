@@ -1,0 +1,104 @@
+
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{fancyhdr}
+\usepackage{amssymb}
+%\usepackage{mathpazo}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{slashed}
+\usepackage{cancel}
+\usepackage[mathscr]{euscript}
+\usepackage{MaxPackage} %Note: You need MaxPackage installed or in the same folder as your .tex file or something.
+
+\newcommand{\colorcomment}[2]{\textcolor{#1}{#2}} %First of these leaves in comments. Second one kills them.
+%\newcommand{\colorcomment}[2]{}
+
+
+\pagestyle{fancy}
+\lhead{Max Jeter}
+\chead{MA530}
+\rhead{Assignment 1, Page \thepage}
+
+\begin{document}
+
+{\bf Problem 1:} %Acquire textbook
+
+Part a:
+
+The set of points $z$ in the complex plane described by $\absval{z-z_1}=\absval{z-z_2}$ is the set of points equidistant from $z_1$ and $z_2$.
+
+That is, it's described by the line going through the midpoint of $z_1$ and $z_2$ that is perpendicular to the line going through $z_1$ and $z_2$.
+
+\shunt
+
+Part b:
+
+The set of points $z$ in the complex plane described by $1/z=\overline{z}$ is the set of points with $z \overline{z} = 1$, so that $\absval{z} = \sqrt{z \overline{z}} = 1$.
+
+That is, it's the unit circle centered at the origin.
+
+\shunt
+
+Part c:
+
+The set of points $z$ in the complex plane described by $\text{Re}(z)=3$ is the set of points with real component $3$.
+
+That is, it's described by a vertical line with x-intercept $3$.
+
+\shunt
+
+Part d:
+
+The set of points $z$ in the complex plane described by $\text{Re}(z)>c$ is the set of points with real component larger than $c$.
+
+That is, it's described by the right half of a plane cut by the vertical line with x-intercept $c$ (excluding the line itself).
+
+\shunt
+
+{\bf Problem 2:}
+
+Let $z,w \in \C$, with $z \neq w$, be vertices of a square, with $z = (x,y)$ and $w = (x',y')$.
+
+Either $z$ and $w$ are the opposite vertices of a square or they are adjacent vertices of a square.
+
+If they are opposite vertices of a square, then there is a uniquely determined square given these vertices. (And this is geometrically clear.) 
+
+\tab In this case, we proceed by finding the center of the square, finding a line perpendicular to the line through $z$ and $w$ through the midpoint, and finding points $a$ and $b$ on this line that make a square.
+
+\tab The center of the square is given by $A=(\frac{x+x'}{2},\frac{y+y'}{2})$; it is the midpoint of two opposite sides. 
+
+\tab Now, consider the vector $p=z-w = (x-x',y-y')$, and the vector $q = (y-y',-(x-x'))$. It is readily checked that $p \cdot q=0$, so that these vectors are perpendicular.
+
+\tab Now, the points given by $a=A+ q/2 = (\frac{x+x'+y-y'}{2},\frac{y+y'-(x-x')}{2})$ and $b=A - q/2 = (\frac{x+x'-(y-y')}{2},\frac{y+y'+x-x'}{2})$ are the desired points, as $a,b,z,w$ are four points equidistant from $A$ with the property that $(a-b) \cdot (z-w) = 0$ (that is, we can make opposite sides make a right angle with a point). We've already shown the second part: $p=z-w$ and $q=a-b$. Also, $z$ and $w$ are equidistant from $A$, as $A$ is their midpoint. It is also readily checked that $A$ is $a$ and $b$'s midpoint. Moreover, the length of $p$ and $q$ are the same (by symmetry). So $z= A + p/2$ and $a = A+q/2$ are equidistant from $A$; all of $a,b,w,z$ are the same distance from $A$.
+
+If they are adjacent vertices of a square, then there are exactly two different squares given these vertices. (And this is geometrically clear.)
+
+\tab In this case, we proceed by making a line through $z$ perpendicular to the line through $z$ and $w$, finding points of the appropriate length, and repeating the process with a line through $w$ perpendicular to the line through $z$ and $w$.
+
+\tab Now, consider the vector $p=z-w = (x-x',y-y')$, and the vector $q = (y-y',-(x-x'))$. It is readily checked that $p \cdot q=0$, so that these vectors are perpendicular.
+
+\tab The points given by $a=z+q$ and $b=w+q$ together with $z$ and $w$ make a square. %Proof
+
+\tab Also, the points given by $a'=z-q$ and $b'=w-q$ together with $z$ and $w$ make a square. %Proof
+
+To summarize the above:
+
+\tab If $z$ and $w$ are the opposite corners of the square, then...
+
+\tab If $z$ and $w$ are adjacent corners of the square, then...
+
+\shunt
+
+{\bf Problem 3:}
+
+Let $\absval{a} = \absval{b} = 1$, with $a = (x,y)$ and $b = (x',y')$, with $a \neq b$ and $\overline{a}b \neq 1$. Then we have
+
+\begin{align*}
+(1-\overline{a}b)\overline{(1-\overline{a}b)} &= (1-xx'+yy', -xy' -x'y)(1-xx'+yy', xy' +x'y) \\
+&= ((1-xx'+yy')(1-xx'+yy')-(-xy' -x'y)(xy' +x'y),(-xy' -x'y)(1-xx'+yy')+(xy' +x'y)(1-xx'+yy'))\\
+\end{align*}
+
+\shunt
+
+\end{document}

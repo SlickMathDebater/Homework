@@ -35,7 +35,7 @@
 %Ch 4; 25, 
 %Ch 5; 14c, 16c, 20c, 23b, 27
 %Ch 6; 23
-%Ch11;
+%Ch11; 13b,c, 21c, 30,
 
 {\Huge{\textit{\textbf{Chapter 3:}}}}
 
@@ -530,6 +530,366 @@ This problem is made of nope and nope.
 Let $g,h \in L^q$ be such that $\int fg = \int fh$ for all $f \in L^p$. 
 
 Then $\int f(g-h) = 0$ for all $f \in L^p$. So in particular, this is true for all indicator functions on sets of finite length. We can game this so that $\int f(g-h)$ is always positive; $f = 1$ if $g-h$ is positive, and $f=-1$ if $h-g$ is positive works, and is measurable as $h$ and $g$ are. We know that this means that $f(g-h)$ is zero almost everywhere; thus, we get that $g-h$ is zero almost everywhere, so $g$ must have been almost-everywhere-unique.
+
+\pagebreak
+
+{\Huge{\textit{\textbf{Chapter 11:}}}}
+
+\shunt
+
+{\bf Problem 2:}
+
+Let ($X_i$, $\scrB_i$, $\mu_i$) b e a collection of measure spaces with each $X_i$ disjoint from the others.
+
+Part a:
+
+The set $\scrB = \{B: \forall i, B \cap X_i \in \scrB_i\}$ is a $\sigma$-algebra; Let $\anbrack{B_i}$ be a countable collection of sets in $\scrB$. Then $B = \bigcup B_i$ has that $B \cap X_i = \bigcup B_i \cap X_i$, and since each $B_i \cap X_i \in \scrB_i$, $\bigcup B_i \cap X_i \in \scrB_i$.
+
+\shunt
+
+Part b:
+
+The function $\mu(B) = \sum \mu_i(B \cap X_i)$ is a measure; let $\anbrack{B_i}$ be a sequence of disjoint sets in $\scrB$. Then $\mu(\bigcup(B)) = \sum \mu_i(\bigcup B \cap X_i) = \sum \sum \mu_i(B_j \cap X_i) = \sum \mu(B_j)$. (There's a subtle change of order of summation, I'm too lazy to type it out.)
+
+Part c:
+
+If there's only a countable number of measures in the collection, and all of them are $\sigma$-finite, then the pasted measure space is $\sigma$-finite;
+
+If each $X_i = \bigcup\limits_{j \in \N} E_{i_j}$, then $\bigcup X_i = \bigcup\limits_{i \in \N, j \in \N} E_{i_j}$. If each $E_{i_j}$ can be taken to have finite measure, then we've won.
+
+The result I've proved is somewhat clearly equivalent to the problem.
+
+\shunt
+
+{\bf Problem 5:}
+
+Part a:
+
+Sums of measures are clearly mesures.
+
+\shunt
+
+Part b:
+
+Let $\mu$ and $\nu$ be measures on $\scrB$ with $\mu \geq \nu$.
+
+Define $\la(E) = \mu(E)-\nu(E)$. Then $\la$ is positive, and has the property that $\mu = \nu + \la$.
+
+Also, $\la$ is a measure:
+
+\tab First, $\la(\emptyset) = 0-0=0.$
+
+\tab Second, let $E_i$ be a disjoint sequence of measurale sets. Thenb $\la(\bigcup E_i) = \mu(\bigcup E_i) - \nu(\bigcup E_i) = \sum \mu(E_i)-\sum\nu(E_i) = \sum (\mu(E_i)-\nu(E_i)) = \sum \la(E_i)$.
+
+\shunt
+
+Part c:
+
+Let $\nu$ be $\sigma$-finite, and let $\la$ and $\ga$ be such that $\mu = \nu + \la=\nu+\ga$.
+
+Let $E$ be a measurable set. Then $E$ can be written as a countable disjoint union of sets of finite ($\nu$) measure, call them $E_i$. We proceed to prove the result for such sets, and point out that the whole result follows (as if $\la = \ga$ for sets of finite $\nu$ measure, we can write a set of infinite $\nu$ measure as a union of these sets...and thus, we get that $\la$ and $\ga$ must be equal there, as otherwise we could decompose one of them and fail to get a measure having the right properties.)
+
+Now, let $E$ be a set of finite $\nu$ measure. Then $\mu(E)$ is infinite or it is finite. If $\mu(E)$ is infinite, then both $\ga$ and $\la$ must be infinite. If $\mu(E)$ is finite, then $\ga = \la$ by arithmetic. Done.
+
+\shunt
+
+Part d:
+
+Let $\mu=\nu=\infty$ for all nonempty $E$.
+
+Then $\la = 0$ and $\ga = \mu$ have the property $\mu=\nu+\la=\nu+\ga$.
+
+Let $\la' = \inf(\la: \mu=\nu+\la)$. $\la'$ is a measure, and it is indeed the least such measure;
+
+Let $E_i$ be a disjoint sequence of sets. Then
+
+\begin{align*}
+\la'(\bigcup E_i) &= \inf(\la(\bigcup E_i): \mu(\bigcup E_i)=\nu(\bigcup E_i)+\la(\bigcup E_i))\\
+&= \inf(\la(\bigcup E_i): \sum \mu(E_i)=\sum\nu(E_i)+ \sum \la(E_i))\\
+&= \inf(\sum \la(E_i): \sum \mu(E_i)=\sum\nu(E_i)+ \sum \la(E_i))\\
+&= \sum \inf(\la(E_i): \mu(E_i)=\nu(E_i)+ \la(E_i))\\
+&= \sum \la'(E_i)
+\end{align*}
+
+which gives us our result.
+
+\shunt
+
+{\bf Problem 7:}
+
+Let $(X, \scrB, \mu)$ be a measure space.
+
+Define $\scrB_0 = \scrB \cup \{B: \exists B': (\mu(B')=0) B \subset B' \}$. This is a $\sigma$-algebra: 
+
+Let $B_i$ be a sequence of sets in $\scrB_0$. Then each $B_i$ is either in $\scrB$ or is a subset of a set of measure zero. Let $\scrB'$ be the sets in $\scrB$ and $\scrB''$ be the subsets of sets of measure zero. Then $\bigcup\limits_{B \in \scrB'} B \in \scrB$, and $\bigcup\limits_{B \in \scrB''} B$ is a subset of a set of measure zero (this is somewhat clear; take $B_i \subset B_{i_0}$, the union of the guys on the left hand side has measure zero, win). So by taking the union of $\bigcup\limits_{B \in \scrB'} B$ and $\bigcup\limits_{B \in \scrB''} B$, we have our result.
+
+We clearly have properties $i)$ and $iii)$ from this.
+
+Define $\mu_0(E) = \sup \mu(E')$, where $E' \in \scrB$ and $E' \subset E$. Then $\mu_0$ is a measure;
+
+Let $E_i$ be a sequence of disjoint sets in $\scrB$. Then 
+
+\begin{align*}
+\mu_0(\bigcup(E_i)) &= \sup \mu(E': E' \in \scrB, E' \subset \bigcup(E_i))\\
+&= \sum \sup \mu(E': E' \in \scrB, E' \subset E_i\\
+&= \sum \mu_0(E_i)
+\end{align*} %TOTALLY RIGOROUS PROOF HERE.
+
+Also, it is clear that $E \in \scrB$ implies that $\mu_0(E) = \mu(E)$.
+
+\shunt
+
+{\bf Problem 10:}
+
+Let $f$ be a nonnegative measurable function. 
+
+Then the sets $A_{n,k}=\{x: f(x) \in [k2^{-n}, (k+1)2^{-n})\}$ are all measureable; we can define $\phi_n(x) = k2^{-n}$ if $f(x) \in [k2^{-n}, (k+1)2^{-n})$, each are simple, the sequence of $\phi_n$s are increasing, and the limit approaches $f$. 
+
+If the measure is $\sigma$-finite, we can write the space as a countable union of disjoint sets of finite measure, and define each $\phi_n$ as above except by throwing in an indicator function at each step. 
+
+\shunt
+
+{\bf Problem 11:}
+
+Let $\mu$ be a complete measure and $f$ be a measurable function, with $f=g$ almost everywhere.
+
+First, this means that for all $\al$, $B= \{x: f(x) > \al\} \in \scrB$. Also, $B'$, the set where $f \neq g$, is in $\scrB$. So $C = \{x: f(x) \neq g(x) \text{ and } g(x) > \al \} \in \scrB$. Thus, $\{x: g(x) > \al\} = (B \setminus B') \cup C \in \scrB$, so we have our result. 
+
+Now, this may fail if $\mu$ is not a complete measure; pick any incomplete measure space. Take the function $f(x)=1$, and let $g(x)$ equal $1$ except on a non-measurable subset of measure zero. Then $f(x)=g(x)$ except on a set of measure zero, but $g$ isn't measurable (as $\{x: g(x) < 1/2\}$ isn't measurable.)
+
+\shunt
+
+{\bf Problem 13:}
+
+Part a:
+
+Let $f_n \to f$ in measure.
+
+Pick $f_{n_k}$, $E_{k}$ such that $f_{n_k}$ and $E_{k}$ ``work'' for $\ep = 2^{-k}$ in the definition of convergence to measure. Mor
+
+Then if $x \notin \bigcup\limits_{k=1} E_k$, then $f_{n_k}(x) \to f(x)$. But we could have started the index at any point: so if $x \notin \bigcap\limits_{i=1}^\infty \bigcup\limits_{k=i}^\infty E_k$, then $f_{n_k}(x) \to f(x)$. But $\mu(A) < \mu(\bigcup_{k=i} E_k) < 2^{-k+1}$ for all $k$, so $\mu(A) = 0$, giving the desired result.
+
+\shunt
+
+Part b:
+
+Let $\anbrack{f_n}$ be a sequence of measurable functions each vanishing outside the same $A$ with $\mu(A)$ finite, and $f_n \to f$ pointwise almost everywhere.
+
+%Then $f_n \to f in measure.
+
+\shunt
+
+Part c:
+
+%Burning out...
+
+\shunt
+
+{\bf Problem 21:}
+
+Part a:
+
+Let $f$ be integrable. Consider $\{x: f(x) \neq 0\}$. This is the union of the sets $E_n = \{x: \absval{f(x)} \geq 1/n \}$. If any of these has infinite measure, then $f$ is clearly not integrable. So $\{x: f(x) \neq 0\}$ can be written as a countable union of sets of finite measure; it is of $\sigma$-finite measure.
+
+\shunt
+
+Part b:
+
+Note: We did this earlier...
+
+Let $f$ be integrable, $f \geq 0$. We employ the same trick as the last time we did this problem; consider the sets $E_{k,n} = \{x: f(x) \in [k2^{-n},(k+1)2^{-n})\}$, and for each $n \in \N$, define $\phi_n(x)= k2^{-n}$ if $x \in E_{k,n}$. We now have an increasing sequence of simple functions converging to $f$; by multiplying these with the indicator functions of the sets in part a, we have our result.
+
+\shunt
+
+Part c:
+
+Apply part b and the Lebesgue convergence theorem to the positive and negative parts of $f$, and win. %Might double-check this.
+
+\shunt
+
+{\bf Problem 24:}
+
+Let $\mu_n \uparrow \mu$ setwise. Let $E_i$ be a sequence of disjoint measurable sets. Let $\ep >0$.
+
+For all $i \in \N$ there is an $N_i$ such that for all $n \geq N_i$, $\mu(E_i) -\mu_{N_i}(E_i) < \ep/2^i$.
+
+So we have that $\mu(\bigcup\limits^n E_i) - \sum\limits^n\mu_{N_n}(E_i) < \ep$, for any arbitrary $n$ (this is true because $\mu_n(E)$ is increasing).
+
+Taking limits as $n \to \infty$ and applying the $\ep$ principle yields the result.
+
+\shunt
+
+{\bf Problem 25:}
+
+Note: we apply the so-called ``goatse'' trick of taking the line, penetrating it at a point, and spreading the penetration outwards.
+
+Consider $\mu_n(E) = \int\limits_E \chi_{(-n,n)^c}$. For all sets of finite lebesgue measure, $\mu_n(E) \to 0$. It's somewhat clear that $\mu_n \to 0$ for lebesgue finite measure sets and $\mu_n \to \infty$ for sets of infinite lebesgue measure. So by considering $\mu(\bigcup [n,n+1]) \neq \sum 0$, we have our result.
+
+\shunt
+
+{\bf Problem 28:}
+
+Let $\nu$ be a signed measure, with $\nu+-\nu^- = \nu = \mu^+ - \mu^-$ and $\nu^+$ mutually singular to $\nu^-$.
+
+Let $E$ be a measurable set. Then $E$ has a Hahn decomposition (which is unique up to null sets...thus the measures of the sets are uniquely determined); let $E = A \cup B$, with $A$ a positive set and $B$ a negative set, and $A$ and $B$ disjoint.
+
+Now, it is somewhat clear that $\nu^+(B) = \mu^+(B) = 0$ and $\nu^-(A) = \mu^-(A) = 0$ (if this is not clear...assume not, consider the first case without loss of generality. Then $\nu(B) = \nu^+(B) - \nu^-(B)$ with both $\nu^+(B)$ and $\nu^-(B)$ nonzero. This contradicts the fact that they are mutually singular). Thus, because these are measures, we can take $\nu^+(E) = \mu^+(E) = \nu(A)$ and $\nu^-(E) = \mu^-(E) = \nu(B)$.
+
+Thus, $\mu^+=\nu^+$ and $\mu^-=\nu^-$; the Jordan decomposition must be unique. 
+
+\shunt
+
+{\bf Problem 30:}
+
+Let $\nu$, $\mu$ be finite signed measures, and $\al$, $\be$ be real numbers.
+
+Then $\al\nu + \be\mu$ is a finite signed measure: it clearly never assumes $\infty$ or $-\infty$, it maps the empty set to $0$, and countable additivity can be checked readily.
+
+Now, consider $\absval{\al \nu}$, let $E$ be measurable. Then
+
+\begin{align*}
+\absval{\al \nu} (E)&= \absval{\al\nu^+}(E) + \absval{\al\nu^-}(E)\\
+&= \absval{\al}\absval{\nu^+}(E) + \absval{\al}\absval{\nu^-}(E)\\
+&= \absval{\al}(\absval{\nu^+}(E) + \absval{\nu^-}(E))\\
+&= \absval{\al}\absval{\nu}(E)\\
+\end{align*}
+
+Next, consider $\absval{\nu + \mu}$, let $E$ be measurable. Then $E$ has a Hahn Decomposition over $\nu+\mu$, $E = A \cup B$, with $A$ a positive set and $B$ a negative set. 
+
+\begin{align*}
+\absval{\nu + \mu}(E) &= \absval{\nu + \mu}(A \cup B)\\
+&= \absval{\nu + \mu}(A)+\absval{\nu + \mu}(B)\\
+&=(\nu+\mu)^+(A) + (\nu+\mu)^-(A) +(\nu+\mu)^+(B) + (\nu+\mu)^-(B)\\
+&=(\nu+\mu)^+(A) + (\nu+\mu)^-(B)\\
+\end{align*}
+
+Now, $(\nu+\mu)^+(A) \leq \nu^+(A) + \mu^(A)$, because %reasons.
+
+Thus,
+
+\begin{align*}
+\absval{\nu + \mu}(E) &= (\nu+\mu)^+(A) + (\nu+\mu)^-(B)\\
+&\leq \nu^+(A) + \mu^+(A) + \nu^-(B) + \mu^-(B)\\
+&= \nu^+(E) + \mu^+(E) + \nu^-(E) + \mu^-(E)\\
+&= \absval{\nu}(E) + \absval{\mu}(E)
+\end{align*}
+
+\shunt
+
+{\bf Problem 33:}
+
+Part a:
+
+Seriously, the hint gives it away.
+
+\shunt
+
+Part b:
+
+Let $f$, $g$ be such that for all measurable $E$, $\nu(E) = \int_E f d\mu = \int_E g d\mu$.
+
+Then for all measurable $E$, $\int_E f-g d\mu = 0$. An earlier problem implies that this means that $f-g=0$ almost everywhere, so $f=g$ almost everywhere. 
+
+\shunt
+
+{\bf Problem 34:}
+
+Note: Part c was an exam question. This may show up on the qual.
+
+Let $\mu, \nu, \la$ be $\si$-finite.
+
+Part a:
+
+Let $f$ be a nonnegative measurable function.
+
+If $\nu << \mu$, then we know that for all real $\al$ and measurable $E$,
+
+\begin{align*}
+\int_E \al d\nu &= \int_E \al \frac{d\nu}{d\mu} d\mu
+\end{align*}
+
+And thus, we have the result for all simple functions, $\phi$. 
+
+By taking the supremum over all $\phi \leq f$, we have our result. 
+
+\shunt
+
+Part b:
+
+Let $\nu_1 << \mu$, $\nu_2 << \mu$. Let $E$ be a measurable set. Then
+
+\begin{align*}
+\int\limits_E \frac{d(\nu_1+\nu_2)}{d\mu} d\mu &= \nu_1(E) + \nu_2(E)\\
+&=\int\limits_E \frac{d\nu_1}{d\mu} d\mu+ \int\limits_E\frac{d\nu_2}{d\mu} d\mu\\
+&=\int\limits_E \frac{d\nu_1}{d\mu} +\frac{d\nu_2}{d\mu} d\mu
+\end{align*}
+
+\shunt
+
+Part c:
+
+Let $\nu << \mu << \la$. Let $E$ be a measurable set. 
+
+Then:
+
+\begin{align*}
+\int\limits_E \frac{d\nu}{d\mu} \frac{d\mu}{d\la} d\la &= \int\limits_E \frac{d\nu}{d\mu}  d\mu\\
+&= \nu(E)\\
+\end{align*}
+
+So we have the result.
+
+\shunt
+
+Part d:
+
+If $\nu << \mu << \nu$, we know that $\frac{d\nu}{d\nu} = 1$. So by part c, we have that $1=\frac{d\nu}{d\nu}=\frac{d\mu}{d\nu}\frac{d\nu}{d\mu}$. This is equal to our result.
+
+\shunt
+
+{\bf Problem 39:}
+
+Consider $\scrX= [0,1]$, $\scrB$ the set of lebesgue measurable subsets of $\scrX$, and $\nu$ the Lebesgue measure and $\mu$ the counting measure. Then $\nu$ is finite, $\nu << \mu$, but if $\nu(E) = \int\limits_E f d\mu$ for all measurable $E$, then $\int\limits_E f d\mu = 0$ for all single sets $E$. For the counting measure, this means that $f$ is identically $0$. But this obviously fails, as it would imply that $\nu(E)$ is zero for all $E$.
+
+\shunt
+
+{\bf Problem 41:}
+
+%Go back and look at the same proposition in chapter 6
+
+\shunt
+
+{\bf Problem 44:}
+
+%Last chunk is an exercise from earlier.
+
+\shunt
+
+{\bf Problem 47:}
+
+\pagebreak
+
+{\Huge{\textit{\textbf{Chapter 12:}}}}
+
+\shunt
+
+{\bf Problem 1:}
+
+Let $B \subset E$ be a set with $\overline{\mu}(E) = 0$. Then for all $A$,
+
+\begin{align*}
+\mu^*(A) \geq \mu^*(A \cap B^c) = \mu^*(A \cap B^c + \mu^*(B) \geq \mu^*(A \cap B^c + \mu^*(A \cap B)
+\end{align*}
+
+Which is sufficient to get the result.
+
+\shunt
+
+{\bf Problem 4:}
+
+\shunt
+
+{\bf Problem 8:}
 
 \shunt
 
