@@ -78,26 +78,64 @@ If they are adjacent vertices of a square, then there are exactly two different 
 
 \tab Now, consider the vector $p=z-w = (x-x',y-y')$, and the vector $q = (y-y',-(x-x'))$. It is readily checked that $p \cdot q=0$, so that these vectors are perpendicular.
 
-\tab The points given by $a=z+q$ and $b=w+q$ together with $z$ and $w$ make a square. %Proof
+\tab The points given by $a=z+q$ and $b=w+q$ together with $z$ and $w$ are the vertices of a square; because $p \cdot q = 0$, we have that these are the vertices of some rectangle (by similar work as above). Moreover, the lengths of each side are the same; the lengths of $p$ and $q$ as vectors are the same, and they represent the lengths of the sides of the shape.
 
-\tab Also, the points given by $a'=z-q$ and $b'=w-q$ together with $z$ and $w$ make a square. %Proof
+\tab Also, the points given by $a'=z-q$ and $b'=w-q$ together with $z$ and $w$ are the vertices of a square, similarly.
 
 To summarize the above:
 
-\tab If $z$ and $w$ are the opposite corners of the square, then...
+\tab If $z$ and $w$ are the opposite corners of the square, then $(\frac{x+x'+y-y'}{2},\frac{y+y'-(x-x')}{2})$ and $(\frac{x+x'-(y-y')}{2},\frac{y+y'+x-x'}{2})$ are the other corners of the square.
 
-\tab If $z$ and $w$ are adjacent corners of the square, then...
+\tab If $z$ and $w$ are adjacent corners of the square, then either $z+q$ and $w+q$ are the other corners of the square or $z-q$ and $w-q$ are, where $q = (y-y',-(x-x'))$.
 
 \shunt
 
 {\bf Problem 3:}
 
-Let $\absval{a} = \absval{b} = 1$, with $a = (x,y)$ and $b = (x',y')$, with $a \neq b$ and $\overline{a}b \neq 1$. Then we have
+Let $\absval{a} = \absval{b} = 1$, with $a = (x,y)$ and $b = (x',y')$, with $a \neq b$ and $\overline{a}b \neq 1$. First, note that in this case, $\absval{\frac{a-b}{1-\overline{a}b}} =\frac{\absval{a-b}}{\absval{1-\overline{a}b}}$. Now, we have:
+
+\begin{align*} 
+(1-\overline{a}b)\overline{(1-\overline{a}b)} &= (1-xx'-yy', xy' -x'y)(1-xx'-yy', -xy' +x'y) \\
+&= ((1-xx'-yy')^2+(xy' -x'y)^2,0)\\
+&=(1-2xx'-2yy'+x^2x'^2+y^2y'^2+x^2y'^2+x'^2y^2, 0)\\
+\end{align*}
+
+Also,
 
 \begin{align*}
-(1-\overline{a}b)\overline{(1-\overline{a}b)} &= (1-xx'+yy', -xy' -x'y)(1-xx'+yy', xy' +x'y) \\
-&= ((1-xx'+yy')(1-xx'+yy')-(-xy' -x'y)(xy' +x'y),(-xy' -x'y)(1-xx'+yy')+(xy' +x'y)(1-xx'+yy'))\\
+(a-b)\overline(a-b) &= (x-x',y-y')(x-x',y'-y) \\
+&=((x-x')^2+(y-y')^2,0)\\
+&=(2-2xx'-2yy',0)\\
 \end{align*}
+
+Now, because $\absval{a} = \absval{b} = 1$, we have:
+
+\begin{align*} %The remainder of the work
+x^2x'^2+y^2y'^2+x^2y'^2+x'^2y^2 &= (x^2+y^2)(x'^2+y'^2)\\
+&=(1)(1) = 1
+\end{align*}
+
+Thus,
+
+\begin{align*}
+(1-\overline{a}b)\overline{(1-\overline{a}b)} &= (1-2xx'-2yy'+x^2x'^2+y^2y'^2+x^2y'^2+x'^2y^2, 0)\\
+&= (2-2xx'-2yy',0)\\
+&= (a-b)\overline(a-b)
+\end{align*}
+
+That is, we have that $(1-\overline{a}b)\overline{(1-\overline{a}b)} =(a-b)\overline(a-b)$, so that $\absval{a-b} = \absval{1-\overline{a}b}$, producing the desired result. 
+
+\shunt
+
+{\bf Problem 4:}
+
+Let $f: [a,b] \to \C$ be continuous.
+
+We take for granted that $[a,b]$ is connected.
+
+Now, assume that $f([a,b])$ isn't connected. Then there are nonempty open sets, $U$ and $V$, with $U \cap V = \emptyset$ and $U \cup V \supset f([a,b])$. Now, $f^{-1}(U)$ and $f^{-1}(V)$ are both open, as $f$ is continuous. They are also disjoint; otherwise, there is a point $x$ with $f(x) \in U$ and $f(x) \in V$. Moreover, $f^{-1}(U) \cup f^{-1}(V) = [a,b]$, because $U \cup V = f([a,b])$. So $f^{-1}(U)$ and $f^{-1}(V)$ disconnect $[a,b]$, which is impossible.
+
+So by contradiction, $f([a,b])$ must be connected.
 
 \shunt
 
