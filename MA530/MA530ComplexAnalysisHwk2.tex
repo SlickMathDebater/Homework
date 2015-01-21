@@ -1,0 +1,71 @@
+
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{fancyhdr}
+\usepackage{amssymb}
+\usepackage{esvect}
+%\usepackage{mathpazo}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{slashed}
+\usepackage{cancel}
+\usepackage[mathscr]{euscript}
+\usepackage{MaxPackage} %Note: You need MaxPackage installed or in the same folder as your .tex file or something.
+
+\newcommand{\colorcomment}[2]{\textcolor{#1}{#2}} %First of these leaves in comments. Second one kills them.
+%\newcommand{\colorcomment}[2]{}
+
+
+\pagestyle{fancy}
+\lhead{Max Jeter}
+\chead{MA530}
+\rhead{Assignment 2, Page \thepage}
+
+\begin{document}
+
+{\bf Problem 1:}
+
+(Prove: The real 2x2 matrix blah represents a complex-linear map iff a=d, c=-b)
+
+Let the real matrix $A = $ represent a complex-linear map. Then %exploit it with i.
+
+Now, let the real matrix $A$ have that $a=d$ and $c=-b$. Write $A=$.
+
+Let $z=x+iy \in \C$, and define the vector $\vv{z}=$ Then:
+
+\begin{align*}
+A\vv{z} &= stuff \\
+&=work\\
+&=z
+\end{align*}
+
+\shunt
+
+{\bf Problem 2:}
+
+Consider $\int\limits_{\absval{z} = R} \overline{z}^n dz$. Define $\al: [0,2\pi] \to \C$ by $\al(t) = R(\cos(t)+i\sin(t))$.
+
+If $n \neq 1$, we have
+
+\begin{align*}
+\int\limits_{\absval{z} = R} \overline{z}^n dz &= \int\limits_\al \overline{z}^n dz\\
+&= \int\limits_0^{2\pi} [R(\cos(t) - i \sin(t))]^n [R(-\sin(t)+i\cos(t))] dt \\
+&=R^{n+1}\int\limits_0^{2\pi} \frac{-\sin(t)+i\cos(t)}{(\cos(t)+i\sin(t))^n}dt\\
+&= R^{n+1} \frac{1}{n-1} [((\cos(2\pi)+i\sin(2\pi)))^{1-n} - (\cos(0)+i\sin(0))^{1-n}\\
+&= R^{n+1} \frac{1}{n-1} [1-1]\\
+&= 0
+\end{align*}
+
+(Here, we're using freely the fact that $\overline{z} = 1/z$ if $\absval{z}=1$, and we gloss over the $u$-substitution with $u = \cos(t)+i\sin(t)$.)
+
+And if $n=1$, we have
+
+%As in class
+
+\shunt
+
+{\bf Problem 3:}
+
+\shunt
+
+\end{document}

@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.9.27)  16 JAN 2015 13:22
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.9.27)  21 JAN 2015 18:02
 entering extended mode
-**MA530ComplexAnalysisHwk1.tex
-(C:\Users\Lonelight\Desktop\Homework\MA530\MA530ComplexAnalysisHwk1.tex
+**MA530ComplexAnalysisHwk2.tex
+(C:\Users\Lonelight\Desktop\Homework\MA530\MA530ComplexAnalysisHwk2.tex
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
 abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
@@ -59,6 +59,11 @@ Package: amsfonts 2009/06/22 v3.00 Basic AMSFonts support
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 96.
 ))
+(C:\Users\Lonelight\Desktop\PortablePrograms\texmakerwin32usb\MiKTeX\tex\latex\
+esvect\esvect.sty
+Package: esvect 
+\symesvector=\mathgroup6
+)
 (C:\Users\Lonelight\Desktop\PortablePrograms\texmakerwin32usb\MiKTeX\tex\latex\
 mh\mathtools.sty
 Package: mathtools 2013/02/12 v1.13 mathematical typesetting tools
@@ -177,19 +182,19 @@ LaTeX Font Info:    Overwriting math alphabet `\EuScript' in version `bold'
 (Font)                  U/eus/m/n --> U/eus/b/n on input line 33.
 )
 (C:\Users\Lonelight\Desktop\Homework\MA530\MaxPackage.sty)
-(C:\Users\Lonelight\Desktop\Homework\MA530\MA530ComplexAnalysisHwk1.aux)
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
+(C:\Users\Lonelight\Desktop\Homework\MA530\MA530ComplexAnalysisHwk2.aux)
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
 
 (C:\Users\Lonelight\Desktop\PortablePrograms\texmakerwin32usb\MiKTeX\tex\latex\
 graphics\graphicx.sty
@@ -241,17 +246,24 @@ t\base\supp-pdf.mkii
 \Gin@req@height=\dimen123
 \Gin@req@width=\dimen124
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 29.
+LaTeX Font Info:    Try loading font information for U+msa on input line 30.
 
 (C:\Users\Lonelight\Desktop\PortablePrograms\texmakerwin32usb\MiKTeX\tex\latex\
 amsfonts\umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 29.
+LaTeX Font Info:    Try loading font information for U+msb on input line 30.
 
 (C:\Users\Lonelight\Desktop\PortablePrograms\texmakerwin32usb\MiKTeX\tex\latex\
 amsfonts\umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
+)
+LaTeX Font Info:    Try loading font information for U+esvect on input line 30.
+
+
+(C:\Users\Lonelight\Desktop\PortablePrograms\texmakerwin32usb\MiKTeX\tex\latex\
+esvect\uesvect.fd
+File: uesvect.fd 
 )
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -263,41 +275,21 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 onfig/pdftex.map}
 
 ]
-Overfull \hbox (21.77994pt too wide) in paragraph at lines 87--88
-[] \OT1/cmr/m/n/12 If $\OML/cmm/m/it/12 z$ \OT1/cmr/m/n/12 and $\OML/cmm/m/it/1
-2 w$ \OT1/cmr/m/n/12 are the op-po-site cor-ners of the square, then $([]\OML/c
-mm/m/it/12 ; []\OT1/cmr/m/n/12 )$
- []
-
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[2]
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 14.49998pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[3]
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 14.49998pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[4] (C:\Users\Lonelight\Desktop\Homework\MA530\MA530ComplexAnalysisHwk1.aux) ) 
+[2] (C:\Users\Lonelight\Desktop\Homework\MA530\MA530ComplexAnalysisHwk2.aux) ) 
 Here is how much of TeX's memory you used:
- 2839 strings out of 493921
- 39704 string characters out of 3140860
- 97819 words of memory out of 3000000
- 6111 multiletter control sequences out of 15000+200000
- 8592 words of font info for 33 fonts, out of 3000000 for 9000
+ 2879 strings out of 493921
+ 40519 string characters out of 3140860
+ 95991 words of memory out of 3000000
+ 6141 multiletter control sequences out of 15000+200000
+ 8847 words of font info for 36 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 33i,11n,43p,734b,196s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 33i,20n,43p,277b,196s stack positions out of 5000i,500n,10000p,200000b,50000s
 <
 C:/Users/Lonelight/Desktop/PortablePrograms/texmakerwin32usb/MiKTeX/fonts/type1
 /public/amsfonts/cm/cmbx12.pfb><C:/Users/Lonelight/Desktop/PortablePrograms/tex
@@ -310,13 +302,12 @@ C:/Users/Lonelight/Desktop/PortablePrograms/texmakerwin32usb/MiKTeX/fonts/type1
 /public/amsfonts/cm/cmr8.pfb><C:/Users/Lonelight/Desktop/PortablePrograms/texma
 kerwin32usb/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Loneligh
 t/Desktop/PortablePrograms/texmakerwin32usb/MiKTeX/fonts/type1/public/amsfonts/
-cm/cmsy6.pfb><C:/Users/Lonelight/Desktop/PortablePrograms/texmakerwin32usb/MiKT
-eX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Lonelight/Desktop/Portabl
-ePrograms/texmakerwin32usb/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pf
-b>
-Output written on MA530ComplexAnalysisHwk1.pdf (4 pages, 103419 bytes).
+cm/cmsy8.pfb><C:/Users/Lonelight/Desktop/PortablePrograms/texmakerwin32usb/MiKT
+eX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/Lonelight/Desktop/P
+ortablePrograms/texmakerwin32usb/MiKTeX/fonts/type1/public/esvect/vect10.pfb>
+Output written on MA530ComplexAnalysisHwk2.pdf (2 pages, 91450 bytes).
 PDF statistics:
- 55 PDF objects out of 1000 (max. 8388607)
+ 49 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
