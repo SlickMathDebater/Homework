@@ -95,16 +95,16 @@ And if $n=1$, we have
 
 {\bf Problem 3:}
 
-Let $D \subset \C$ be open, and let $D^*$ be $D$'s reflection about the $x$-axis. Let $f \in \scrO (D)$, and define $g(z) = \overline{f(\overline{z})}$. As an intermediate step, define $h(z) = f(\overline{z})$.
+Let $D \subset \C$ be open, and let $D^*$ be $D$'s reflection about the $x$-axis. Let $f \in \scrO (D)$, and define $g(z) = \overline{f(\overline{z})}$.
 
-Let $f=u+iv$. Then $h((x,y))=f((x,-y))$; say that $h=u`-iv`$. By definition, $g=u`+iv`$. %the h approach is bad; explicitly write u` in terms of u and v...
+Let $f=u+iv$ and $g= u`+iv`$. Then $h((x,y))=f((x,-y))$; so $f(\overline{(x,y)})=u(x,-y) + iv(x,-y)$. By definition, $g((x,y)) = u(x,-y) -iv(x,-y) = u`(x,y) + iv`(x,y)$.
 
-Also, $u_x(z)=v_y(z)$ for all $z \in \C$. Thus, $u`_x(z) = $.%Bash it over head with Cauchy-Riemann
+Now, $u`_x = u_x$, $u`_y = -u_y$, $v_x = -v`_x$, and $v_y = v`_y$ by the chain rule.
 
-Moreover, $u_y(z)=-v_x(z)$ for all $z \in \C$. So %Same tactic
+So because $u_x =v_y$ and $u_y=-v_x$, we have $u`_x = v`_y$ and $u`_y=-v`_x$. That is, $g$ is Holomorphic on its domain. (That is, $g \in \scrO (D^*)$.)
 
 \shunt
 
-(I remember someone saying something about more problems but I must be missing one...:/)
+(I remember someone saying something about more problems but I don't have them...:/)
 
 \end{document}
