@@ -1,0 +1,54 @@
+
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{fancyhdr}
+\usepackage{amssymb}
+\usepackage{esvect}
+%\usepackage{mathpazo}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{slashed}
+\usepackage{cancel}
+\usepackage[mathscr]{euscript}
+\usepackage{MaxPackage} %Note: You need MaxPackage installed or in the same folder as your .tex file or something.
+
+\newcommand{\colorcomment}[2]{\textcolor{#1}{#2}} %First of these leaves in comments. Second one kills them.
+%\newcommand{\colorcomment}[2]{}
+
+
+\pagestyle{fancy}
+\lhead{Max Jeter}
+\chead{MA530}
+\rhead{Assignment 3, Page \thepage}
+
+\begin{document}
+
+{\bf Problem 1:}
+
+Let $f \in \scrO(\C)$. Then consider $\int\limits_{\absval{z} = 2} \frac{f(z)}{z-1} dz$.
+
+Note that $\{z: \absval{z}=2\}$ is the boundary of the open disc of radius $2$, and that $1$ is a point in this disc. Thus, Cauchy's formula applies; $f(1) = 1/(2\pi i)  \int\limits_{\absval{z} = 2} \frac{f(z)}{z-1} dz$, so $\int\limits_{\absval{z} = 2} \frac{f(z)}{z-1} dz = 2 \pi i f(1)$.
+
+\shunt
+
+{\bf Problem 2:}
+
+Let $f \in \scrO(\C)$. Then consider $\int\limits_{\absval{z} = 2} \frac{f(z)}{z^2-1} dz$.
+
+Note that $\int\limits_{\absval{z} = 2} \frac{f(z)}{z^2-1} dz = \int\limits_{\absval{z} = 2} \frac{f(z)}{(z+1)(z-1)} dz$. Now, the function $f/(z+1)$ is holomorphic except at $-1$, and the function $f/(z-1)$ is holomorphic except at $1$. So, we %sever the ball in half, and work from there.
+
+\shunt
+
+{\bf Problem 3:}
+
+If $\Om$ is an open set, $f$ is holomorphic on some open set containing $\Om$'s closure, and $w \notin \Om$, then $ \int\limits_{\partial \Om} \frac{f(z)}{z-w} dz$ vanishes; $\frac{f(z)}{z-w}$ is a product of two holomorphic functions and is thus holomorphic, so the integral vanishes by the theorem we use to prove Cauchy's Formula.
+
+\shunt
+
+{\bf Problem 4:}
+
+%This looks like a bitch and I don't want to handle it.
+
+\shunt
+
+\end{document}

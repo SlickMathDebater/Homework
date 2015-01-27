@@ -1,0 +1,62 @@
+
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{fancyhdr}
+\usepackage{amssymb}
+\usepackage{esvect}
+%\usepackage{mathpazo}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{slashed}
+\usepackage{cancel}
+\usepackage[mathscr]{euscript}
+\usepackage{MaxPackage} %Note: You need MaxPackage installed or in the same folder as your .tex file or something.
+
+\newcommand{\colorcomment}[2]{\textcolor{#1}{#2}} %First of these leaves in comments. Second one kills them.
+%\newcommand{\colorcomment}[2]{}
+
+
+\pagestyle{fancy}
+\lhead{Max Jeter}
+\chead{MA523}
+\rhead{Assignment 1, Page \thepage}
+
+\begin{document}
+
+Let $g \in C^1(\R)$. 
+
+{\bf Problem 1:} %Clean up the tex
+
+Consider $u_t -2u_x = x$ for $x \in \R$, $t >0$, with $u(x,0) = g(x)$.
+
+Fix $x \in \R, t >0$. Define $z(s) = u(x+2s,t+s)$. Then $\frac{d}{ds}z(s) = 2u_x(x+2s,t+s) + u_t(x+2s,t+s) = x+2s$.
+
+Also, $u(x,t) - g(x+2t) = u(x,t) - u(x+2t,0) = z(0) - z(-t) = \int\limits_{-t}^0 \frac{d}{ds}z(s) ds = \int\limits_0^t (x+2(s-t))ds$. %This is just you reading out of your notes. Make it somewhat real for yourself.
+
+Therefore, $u(x,t) = g(x+2t) + \int\limits_0^t (x+2(s-t))ds = g(x+2t) + xt + t^2 -2t^2 =g(x+2t) + xt - t^2$.
+
+\shunt
+
+{\bf Problem 2:}
+
+Consider $u_t -2u_x = u$ for $x \in \R$, $t >0$, with $u(x,0) = g(x)$.
+
+Fix $x \in \R, t >0$. Define $z(s) = u(x+2s,t+s)$. Then $\frac{d}{ds}z(s) = 2u_x(x+2s,t+s) + u_t(x+2s,t+s) = u(x+2s,t+s)=z(s)$. That is, $z(s) = \frac{d}{ds}z(s)$, so $z(s) = Ce^s$ for some $C \in \R$ (this is elementary differential equations). Because $z(-t) = u(x-2t,0)=g(x-2t)$, we determine that $z(s) = g(x-2t)e^te^s$. 
+
+Also, $u(x,t) - g(x-2t)  = u(x,t) - u(x+2t,0) = z(0) - z(-t) = g(x-2t)e^t -g(x-2t)$.
+
+So $u(x,t) = g(x-2t)e^t$.
+
+\shunt
+
+{\bf Problem 3:}
+
+Consider $u_t -2u_x = u^2$ for $x \in \R$, $t >0$, with $u(x,0) = g(x)$.
+
+Fix $x \in \R, t >0$. Define $z(s) = u(x+2s,t+s)$. Then $\frac{d}{ds}z(s) = 2u_x(x+2s,t+s) + u_t(x+2s,t+s) = (u(x+2s,t+s))^2=z(s)^2$. That is, $z(s)^2 = \frac{d}{ds}z(s)$, so $z(s) = \frac{-1}{s+C}$ for some $C \in \R$ (this is elementary differential equations). Because $z(-t) = u(x-2t,0)=g(x-2t)$, we determine that $C= \frac{-1}{g(x-2t)} -t$ so that $z(s) = \frac{-1}{s-t+\frac{-1}{g(x-2t)}}$.
+
+Also, $u(x,t) - g(x-2t) = z(0) - z(-t)u(x,t) - u(x+2t,0) = z(0) - z(-t) =stuff$ %Plug it in, you're done.
+
+\shunt
+
+\end{document}
