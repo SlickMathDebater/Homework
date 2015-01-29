@@ -35,7 +35,23 @@ Note that $\{z: \absval{z}=2\}$ is the boundary of the open disc of radius $2$, 
 
 Let $f \in \scrO(\C)$. Then consider $\int\limits_{\absval{z} = 2} \frac{f(z)}{z^2-1} dz$.
 
-Note that $\int\limits_{\absval{z} = 2} \frac{f(z)}{z^2-1} dz = \int\limits_{\absval{z} = 2} \frac{f(z)}{(z+1)(z-1)} dz$. Now, the function $f/(z+1)$ is holomorphic except at $-1$, and the function $f/(z-1)$ is holomorphic except at $1$. So, we %sever the ball in half, and work from there.
+Note that $\int\limits_{\absval{z} = 2} \frac{f(z)}{z^2-1} dz = \int\limits_{\absval{z} = 2} \frac{f(z)}{(z+1)(z-1)} dz$. Now, this function is holomorphic except at $1$ and $-1$. Thus, Cauchy's Theorem applies: the integral of $\frac{f(z)}{z^2-1}$ over a closed loop not containing $1$ or $-1$ is zero. Thus:
+
+\begin{align*}
+\int\limits_{\absval{z} = 2} \frac{f(z)}{(z+1)(z-1)} dz &= \int\limits_{\absval{z-1} = 1} \frac{f(z)}{(z+1)(z-1)} dz + \int\limits_{\absval{z+1} = 1} \frac{f(z)}{(z+1)(z-1)} dz
+\end{align*}
+
+(This becomes clear given the following picture:)
+
+\shunt
+
+Now, $f/(z+1)$ is holomorphic except at $-1$, and $f/(z-1)$ is holomorphic except at $1$. So, we can apply Cauchy's Formula to the two integrals;
+
+\begin{align*}
+\int\limits_{\absval{z} = 2} \frac{f(z)}{(z+1)(z-1)} dz &= \int\limits_{\absval{z-1} = 1} \frac{f(z)}{(z+1)(z-1)} dz + \int\limits_{\absval{z+1} = 1} \frac{f(z)}{(z+1)(z-1)} dz\\
+&= 2\pi i f(1)/(1+1) + 2\pi i f(-1)/(-1-1)\\
+&= \pi i (f(1)-f(-1))
+\end{align*}
 
 \shunt
 
@@ -47,7 +63,97 @@ If $\Om$ is an open set, $f$ is holomorphic on some open set containing $\Om$'s 
 
 {\bf Problem 4:}
 
-%This looks like a bitch and I don't want to handle it.
+Let $f$ be a holomorphic function on some open set, $\Om$.
+
+Let $c \in \Om$. Then 
+
+\begin{align*}
+\frac{df}{dz}(c) &= \frac{1}{2}(\frac{df}{dx}(c)-i\frac{df}{dy}(c))\\
+\frac{d}{d\overline{z}}\frac{df}{dz}(c) &= \frac{1}{2} \frac{d}{dx}[\frac{1}{2}(\frac{df}{dx}(c)-i\frac{df}{dy}(c))] +i\frac{d}{dy}[\frac{1}{2}(\frac{df}{dx}(c)-i\frac{df}{dy}(c))]\\
+&=\frac{1}{4}[\frac{d^2}{dx^2}(c) -i\frac{d^2}{dxdy}(c) +i\frac{d^2}{dxdy}(c) + \frac{d^2}{dy^2}(c)]\\
+&=\frac{1}{4}\De f
+\end{align*}
+
+To summarize, $\frac{d^2f}{dzd\overline{z}} = \frac{1}{4} \De f$.
+
+(Note that we have freely used the symmetry of the second partial derivatives here.)
+
+\shunt
+
+{\bf Problem 5:} %Redo this with Cauchy's Formula...It comes out way cleaner.
+
+Consider $\int\limits_{\absval{z} = 2} z^n(z-1)^m dz$ with $n, m \in \Z$.
+
+First, if $n \geq 0$ and $m \geq 0$, $z^n(z-1)^m$ is holomorphic; the integral is $0$.
+
+\vspace{5mm}
+
+Next, if $n \geq 0$ and $m < 0$, then $f(z)=z^n$ is holomorphic. So, by Cauchy's Formula, 
+
+\begin{align*}
+f^{-(m+1)}(1) &= \frac{(-(m+1))!}{2\pi i} \int\limits_{\absval{z}=2} \frac{f(z)}{(z-1)^{-(m+1)+1}} dz\\
+&= \frac{(-(m+1))!}{2\pi i} \int\limits_{\absval{z}=2} z^n(z-1)^m dz\\
+\frac{f^{-(m+1)}(1)}{(-(m+1))!} 2\pi i &= \int\limits_{\absval{z}=2} z^n(z-1)^m dz\\
+\frac{n!}{(-(m+1))!(n+m+1)!} 2\pi i &= \int\limits_{\absval{z}=2} z^n(z-1)^m dz\\
+\end{align*}
+
+\vspace{5mm}
+
+Next, if $n < 0$ and $m \geq 0$, then $f(z)=(z-1)^m$ is holomorphic. So, by Cauchy's Formula, 
+%Fix the below to work in the other way.
+\begin{align*}
+f^{-(m+1)}(1) &= \frac{(-(m+1))!}{2\pi i} \int\limits_{\absval{z}=2} \frac{f(z)}{(z-1)^{-(m+1)+1}} dz\\
+&= \frac{(-(m+1))!}{2\pi i} \int\limits_{\absval{z}=2} z^n(z-1)^m dz\\
+\frac{f^{-(m+1)}(1)}{(-(m+1))!} 2\pi i &= \int\limits_{\absval{z}=2} z^n(z-1)^m dz\\
+\frac{n!}{(-(m+1))!(n+m+1)!} 2\pi i &= \int\limits_{\absval{z}=2} z^n(z-1)^m dz\\
+\end{align*}
+\vspace{5mm}
+
+Last, if $n < 0$ and $m < 0$, then $z^n(z-1)^m$ is holomorphic except at $0$ and $1$. %Split it in half, apply the above.
+\vspace{5mm}
+
+To summarize:
+
+%results
+\shunt
+
+{\bf Problem 6:}
+
+Let $g(z) = \overline{z}$ for all $z: \absval{z} = 1$.
+
+Consider 
+
+\begin{align*}
+\int\limits_{\absval{z}=1} g(z)dz &= \int\limits_{\absval{z}=1} \overline{z}dz\\
+&= \int\limits_0^{2\pi} (\cos(t)-i\sin(t))(-\sin(t)+i\cos(t))dt\\
+&= \int\limits_0^{2\pi} \sin(t)\cos(t)-\sin(t)\cos(t) + i[\sin^2(t)+\cos^2(t)]dt\\
+&= \int\limits_0^{2\pi} idt\\
+&=2\pi i
+\end{align*}
+
+That is, Cauchy's Theorem fails; $g$ cannot be holomorphic on any open disk containing the set $\{z: \absval{z} = 1\}$, let alone $\C$!
+
+\shunt
+
+{\bf Problem 7:}
+
+Let $f \in \scrO( \C)$, with $\absval{f(z)} \leq A + B\absval{z}^n$ for some fixed $A, B \in \R$, $n \in \N$, and for all $z \in \C$.
+
+Then for all $z \in \C$, $r>0 \in \R$, $k \in \N$, we have $\absval{f^{(k)}(z)} \leq k! \frac{\sup(f(B(z,r)))}{r^k}$.
+
+So $\absval{f^{(k)}(z)} \leq k! \frac{A+B(\absval{z}+r)^n}{r^k}$.
+
+So $\absval{f^{(n+1)}(z)} \leq (n+1)! \frac{A+B(\absval{z}+r)^n}{r^{n+1}}$.
+
+By taking a limit as $r \to \infty$, we see that $\absval{f^{(n+1)}(z)}=0$ for all $z \in \C$. That is, the $n+1$th derivative of $f$ is identically $0$; $f$ is a polynomial of degree at most $n+1$.
+
+\shunt
+
+{\bf Problem 8:}
+
+Let $S \subset \C$ be an arbitrary set, $U \subset \C$ be open, and $K \in C(S \times U)$ be such that for all $s \in S$, $f_s(w) = K(s,w)$ is holomorphic on $U$.
+
+Then $\frac{\partial K(s,w)}{\partial w} = f_s'(w)$. %Here, use Weierstrauss's theorem. 
 
 \shunt
 
