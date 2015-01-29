@@ -55,7 +55,9 @@ Consider $u_t -2u_x = u^2$ for $x \in \R$, $t >0$, with $u(x,0) = g(x)$.
 
 Fix $x \in \R, t >0$. Define $z(s) = u(x+2s,t+s)$. Then $\frac{d}{ds}z(s) = 2u_x(x+2s,t+s) + u_t(x+2s,t+s) = (u(x+2s,t+s))^2=z(s)^2$. That is, $z(s)^2 = \frac{d}{ds}z(s)$, so $z(s) = \frac{-1}{s+C}$ for some $C \in \R$ (this is elementary differential equations). Because $z(-t) = u(x-2t,0)=g(x-2t)$, we determine that $C= \frac{-1}{g(x-2t)} -t$ so that $z(s) = \frac{-1}{s-t+\frac{-1}{g(x-2t)}}$.
 
-Also, $u(x,t) - g(x-2t) = z(0) - z(-t)u(x,t) - u(x+2t,0) = z(0) - z(-t) =stuff$ %Plug it in, you're done.
+Also, $u(x,t) - g(x-2t) = z(0) - z(-t)u(x,t) - u(x+2t,0) = z(0) - z(-t) =\frac{-1}{-t+\frac{-1}{g(x-2t)}} - \frac{-1}{-2t+\frac{-1}{g(x-2t)}}$.
+
+By simplifying, $u(x,t) = g(x-2t) + \frac{-1}{-t+\frac{-1}{g(x-2t)}} - \frac{-1}{-2t+\frac{-1}{g(x-2t)}}=g(x-2t) + \frac{t}{2t^2 + 3\frac{t}{g(x-2t)} + \frac{1}{g(x-2t)^2}} = g(x-2t) + \frac{tg(x-2t)^2}{2t^2g(x-2t)^2 +3tg(x-2t) +1}$. 
 
 \shunt
 
