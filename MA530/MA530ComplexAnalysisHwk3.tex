@@ -41,7 +41,7 @@ Note that $\int\limits_{\absval{z} = 2} \frac{f(z)}{z^2-1} dz = \int\limits_{\ab
 \int\limits_{\absval{z} = 2} \frac{f(z)}{(z+1)(z-1)} dz &= \int\limits_{\absval{z-1} = 1} \frac{f(z)}{(z+1)(z-1)} dz + \int\limits_{\absval{z+1} = 1} \frac{f(z)}{(z+1)(z-1)} dz
 \end{align*}
 
-(This becomes clear given the following picture:)
+(This becomes clear given the following picture. Moreover, I freely use this sort of trick in future problems:)
 
 \shunt
 
@@ -57,7 +57,7 @@ Now, $f/(z+1)$ is holomorphic except at $-1$, and $f/(z-1)$ is holomorphic excep
 
 {\bf Problem 3:}
 
-If $\Om$ is an open set, $f$ is holomorphic on some open set containing $\Om$'s closure, and $w \notin \Om$, then $ \int\limits_{\partial \Om} \frac{f(z)}{z-w} dz$ vanishes; $\frac{f(z)}{z-w}$ is a product of two holomorphic functions and is thus holomorphic, so the integral vanishes by the theorem we use to prove Cauchy's Formula.
+If $\Om$ is an open set, $f$ is holomorphic on some open set containing $\Om$'s closure, and $w \notin \Om$, then $\frac{f(z)}{z-w}$ is a product of two holomorphic functions and is thus holomorphic, so $ \int\limits_{\partial \Om} \frac{f(z)}{z-w} dz$ vanishes by Cauchy's Theorem.
 
 \shunt
 
@@ -100,21 +100,28 @@ f^{-(m+1)}(1) &= \frac{(-(m+1))!}{2\pi i} \int\limits_{\absval{z}=2} \frac{f(z)}
 \vspace{5mm}
 
 Next, if $n < 0$ and $m \geq 0$, then $f(z)=(z-1)^m$ is holomorphic. So, by Cauchy's Formula, 
-%Fix the below to work in the other way.
+
 \begin{align*}
-f^{-(m+1)}(1) &= \frac{(-(m+1))!}{2\pi i} \int\limits_{\absval{z}=2} \frac{f(z)}{(z-1)^{-(m+1)+1}} dz\\
-&= \frac{(-(m+1))!}{2\pi i} \int\limits_{\absval{z}=2} z^n(z-1)^m dz\\
-\frac{f^{-(m+1)}(1)}{(-(m+1))!} 2\pi i &= \int\limits_{\absval{z}=2} z^n(z-1)^m dz\\
-\frac{n!}{(-(m+1))!(n+m+1)!} 2\pi i &= \int\limits_{\absval{z}=2} z^n(z-1)^m dz\\
+f^{-(n+1)}(0) &= \frac{(-(n+1))!}{2\pi i} \int\limits_{\absval{z}=2} \frac{f(z)}{z^{-(n+1)+1}} dz\\
+&= \frac{(-(n+1))!}{2\pi i} \int\limits_{\absval{z}=2} z^n(z-1)^m dz\\
+\frac{f^{-(n+1)}(0)}{(-(n+1))!} 2\pi i &= \int\limits_{\absval{z}=2} z^n(z-1)^m dz\\
+\frac{(-1)^{m-(n+1)}m!}{(-(n+1))!(n+m+1)!} 2\pi i &= \int\limits_{\absval{z}=2} z^n(z-1)^m dz\\
 \end{align*}
 \vspace{5mm}
 
-Last, if $n < 0$ and $m < 0$, then $z^n(z-1)^m$ is holomorphic except at $0$ and $1$. %Split it in half, apply the above.
-\vspace{5mm}
+Last, if $n < 0$ and $m < 0$, then $z^n(z-1)^m$ is holomorphic except at $0$ and $1$. So, $\int\limits_{\absval{z}=2} z^n(z-1)^m dz = \int\limits_{\absval{z}=1/2} z^n(z-1)^m dz + \int\limits_{\absval{z-1}=1/2} z^n(z-1)^m dz = \int\limits_{\absval{z}=1/2} z^n(z-1)^m dz + \int\limits_{\absval{z}=1/2} (z+1)^nz^m dz$.
 
-To summarize:
+By this and Cauchy's Formula, we have, by letting $f(z)=(z+1)^n$ and $g(z) = (z-1)^m$, %something's wrong here...
 
-%results
+\begin{align*}
+\int\limits_{\absval{z}=2} z^n(z-1)^m dz  &= \int\limits_{\absval{z}=1/2} z^n(z-1)^m dz + \int\limits_{\absval{z}=1/2} (z+1)^nz^m dz \\
+&= \int\limits_{\absval{z}=1/2} \frac{g(z)}{z^{-n}} dz + \int\limits_{\absval{z}=1/2} \frac{f(z)}{z^{-m}} dz \\
+&= 2 \pi i \left[\frac{g^{(-(n+1))}(0)}{(-(n+1))!} + \frac{f^{(-(m+1))}(0)}{(-(m+1))!}\right]\\
+&= 2 \pi i \left[\frac{(-1)^m \frac{(-(m+n+1))!}{(-(m+1))!}}{(-(n+1))!} + \frac{(-1)^{-(n+1)} \frac{(-(m+n+1))!}{(-(n+1))!}}{(-(m+1))!}\right]
+\end{align*}
+
+So in each case, we have a formula for the integral; the problem is satisfied.
+
 \shunt
 
 {\bf Problem 6:}
@@ -131,7 +138,7 @@ Consider
 &=2\pi i
 \end{align*}
 
-That is, Cauchy's Theorem fails; $g$ cannot be holomorphic on any open disk containing the set $\{z: \absval{z} = 1\}$, let alone $\C$!
+That is, Cauchy's Theorem would fail if $g$ was holomorphic; $g$ cannot be holomorphic on any open disk containing the set $\{z: \absval{z} = 1\}$, let alone $\C$!
 
 \shunt
 
@@ -153,7 +160,12 @@ By taking a limit as $r \to \infty$, we see that $\absval{f^{(n+1)}(z)}=0$ for a
 
 Let $S \subset \C$ be an arbitrary set, $U \subset \C$ be open, and $K \in C(S \times U)$ be such that for all $s \in S$, $f_s(w) = K(s,w)$ is holomorphic on $U$.
 
-Then $\frac{\partial K(s,w)}{\partial w} = f_s'(w)$. %Here, use Weierstrauss's theorem. 
+Then $\frac{\partial K(s,w)}{\partial w} = f_s'(w)$. Because $f_s$ is holomorphic on $U$, $f_s'(w)$ is continuous (if this isn't clear, consider that Cauchy's Formula implies that $f$ is infinitely differentiable...and thus, each derivative is differentiable, and thus continuous). So, $\frac{\partial K(s,w)}{\partial w}$ is continuous for fixed $s$.
+
+Next, let $s_n \to s$, with each $s_n, s \in S$. Then $f_{s_n}$ converges to $f_s$ uniformly; %reasons.
+By Weierstrauss' theorem, this means that $f'_{s_n}$ converges to $f'(s)$ uniformly. That is, $\frac{\partial K(s,w)}{\partial w}$ is continuous for fixed $w$.
+
+So $\frac{\partial K(s,w)}{\partial w}$ is continuous with either variable fixed; it is continuous.
 
 \shunt
 
