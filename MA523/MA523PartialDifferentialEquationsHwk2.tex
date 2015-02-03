@@ -1,0 +1,82 @@
+
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{fancyhdr}
+\usepackage{amssymb}
+%\usepackage{mathpazo}
+\usepackage{mathtools}
+\usepackage{esint}
+\usepackage{amsmath}
+\usepackage{slashed}
+\usepackage{cancel}
+\usepackage[mathscr]{euscript}
+\usepackage{MaxPackage} %Note: You need MaxPackage installed or in the same folder as your .tex file or something.
+
+\newcommand{\colorcomment}[2]{\textcolor{#1}{#2}} %First of these leaves in comments. Second one kills them.
+%\newcommand{\colorcomment}[2]{}
+
+
+\pagestyle{fancy}
+\lhead{Max Jeter}
+\chead{MA523}
+\rhead{Assignment 2, Page \thepage}
+
+\begin{document}
+
+{\bf Problem 1 (Problem 2 in book):}
+
+Let $u$ be such that $\De u = 0$ and let $v$ be such that $v(x) = u(Ox)$ for some orthogonal $n\times n$  matrix $O$.
+
+Then we have:
+
+\begin{align*}
+\De v(x) &= \De u(x)\\
+&= \sum\limits_{i=1}^n u_{x_ix_i} (Ox)\\
+&= \sum\limits_{i=1}^n u_{x_ix_i} (x) \\
+&= 0
+\end{align*}
+
+%Note to self; justify step 2->3 way better.
+
+\shunt
+
+{\bf Problem 2 (Problem 3 in book):}
+
+Let $u$ be such that 
+
+\begin{displaymath}
+   \left\{
+     \begin{array}{lr}
+       -\De u = f & \text{ in } B(0,r)\\
+       u=g & \text{ on }\partial B(0,r)
+     \end{array}
+   \right.
+\end{displaymath} 
+
+with dimension $n \geq 3$.
+
+Then %hack the mean value formulae proof: define $\phi(r)$ as a fnction of $r$ similar to what is desired, take a derivative, apply Integration by Parts and Green's Formulas. \phi' should be zero, so \phi should be constant. Take a limit as r goes to 0; you should win after this.
+
+Thus, 
+
+\begin{displaymath}
+u(0) = \fint \limits_{\partial B(0,r)} g dS + \int\limits_{B(0,r)} \left( \frac{1}{\absval{x}^{n-2}} - \frac{1}{r^{n-2}}\right) f dx
+\end{displaymath}
+
+\shunt
+
+{\bf Problem 3 (Only homework on page):}
+
+Let $u(x)$ be a $C^2$ solution to 
+
+\begin{align*}
+\De u(x) = \absval{x}^2 \text{ on } \R^n
+\end{align*}
+
+Set $m(r) = \fint\limits_{\partial B(0,r)} u(y) dS(y)$.
+
+%This is painfully straightforward from the above problem; u solves the system of PDEs given by \De(u) = \absval{x}^2 in the ball, and u=u on the boundary. Rearrange the result of the above, integrate, win.
+
+\shunt
+
+\end{document}

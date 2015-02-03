@@ -1,0 +1,93 @@
+
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{fancyhdr}
+\usepackage{amssymb}
+%\usepackage{mathpazo}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{slashed}
+\usepackage{cancel}
+\usepackage[mathscr]{euscript}
+\usepackage{MaxPackage} %Note: You need MaxPackage installed or in the same folder as your .tex file or something.
+
+\newcommand{\colorcomment}[2]{\textcolor{#1}{#2}} %First of these leaves in comments. Second one kills them.
+%\newcommand{\colorcomment}[2]{}
+
+
+\pagestyle{fancy}
+\lhead{Max Jeter}
+\chead{MA530}
+\rhead{Assignment 4, Page \thepage}
+
+\begin{document}
+
+{\bf Problem 1:}
+
+Consider $\sum\limits_{n=0}^\infty (-1)^n \frac{z^{2n+1}}{(2n+1)!}$ and $\sum\limits_{n=0}^\infty (-1)^n \frac{z^{2n}}{(2n)!}$. Define $s_n = (-1)^n \frac{z^{2n+1}}{(2n+1)!}$. 
+
+Fix $z \in \C$. Then:
+
+\begin{align*}
+\absval{\frac{s_{n+1}}{s_n}} &= \absval{\frac{(-1)^{n+1} \frac{z^{2n+3}}{(2n+3)!}}{(-1)^n \frac{z^{2n+1}}{(2n+1)!}}}\\
+&= \absval{\frac{(-1)z^{2}}{(2n+3)(2n+2)}}\\
+&= \absval{\frac{z^2}{4n^2+10n+6}}\\
+\end{align*}
+
+And it is clear that as $n \to \infty$, $\absval{\frac{z^2}{4n^2+10n+6}} \to 0$ for all $z \in \C$. So by the ratio test, $\sum\limits_{n=0}^\infty (-1)^n \frac{z^{2n+1}}{(2n+1)!}$ absolutely converges (and thus, converges) for all $z \in \C$. That is, $\sum\limits_{n=0}^\infty (-1)^n \frac{z^{2n+1}}{(2n+1)!}$ has infinite radius of convergence.
+
+Similarly (by defining $t_n = (-1)^n \frac{z^{2n}}{(2n)!}$ and applying the ratio test), $\sum\limits_{n=0}^\infty (-1)^n \frac{z^{2n}}{(2n)!}$ has infinite radius of convergence.
+
+Typically, we define $\sin(z) = \sum\limits_{n=0}^\infty (-1)^n \frac{z^{2n+1}}{(2n+1)!}$ and $\cos(z) = \sum\limits_{n=0}^\infty (-1)^n \frac{z^{2n}}{(2n)!}$
+
+\shunt
+
+{\bf Problem 2:}
+
+Consider $\sum\limits_{k=1}^\infty \frac{z^k}{1-z^k}$.
+
+Define $s_k = \frac{z^k}{1-z^k}$. Fix $z \in D_1(0)$. Then:
+
+\begin{align*}
+\absval{\frac{s_{k+1}}{s_k}} &= \absval{\frac{\frac{z^{k+1}}{1-z^{k+1}}}{\frac{z^k}{1-z^k}}}\\
+&= \absval{z\frac{1-z^k}{1-z^{k+1}}}\\
+&\leq \absval{z}\absval{\frac{1-z^k}{1-z^{k+1}}} \text{     (By Cauchy-Schwarz)}\\
+&\leq \absval{z} \text{     (Because } \absval{z} < 1\text{ and } \absval{z^k} \text{ is a decreasing sequence when } \absval{z} < 1)\\
+&< 1
+\end{align*}
+
+So, by the ratio test, $\sum\limits_{k=1}^\infty \frac{z^k}{1-z^k}$ converges on the unit disk. 
+
+Moreover, that sum converges uniformly; %reasons.
+
+So, because each term is holomorphic on the unit disk, we have that each partial sum is holomorphic on the unit disk, and thus the limit of the partial sums is holomorphic on the unit disk, by Weierstrauss.
+
+\shunt
+
+{\bf Problem 3:}
+
+Consider $e^{\overline{z}}$. 
+
+\begin{align*}
+e^{\overline{z}} &= \sum \frac{\overline{z}^n}{n!} \\
+&= \sum \frac{\overline{z^n}}{n!}\\
+&= \sum \overline{\frac{z^n}{n!}}\\
+&= \overline{\sum\frac{z^n}{n!}}\\
+&= \overline{e^z}
+\end{align*}
+
+\shunt
+
+{\bf Problem 4:}
+
+Let $\Om \subset \C$ be open and connected. Fix $w \in \Om$, define $\Om_1$ to be the set of all points that can be joined to $w$ by a curve. Define $\Om_2$ to be the set of all points that cannot.
+
+Then it is clear that $\Om=\Om_1 \cup \Om_2$, that $\Om_1 \cap \Om_2 = \emptyset$, and that $w \in \Om_1$.
+
+Now, $\Om_1$ is open: %reasons
+
+Also, $\Om_2$ is open: %reasons.
+
+\shunt
+
+\end{document}
