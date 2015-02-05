@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.9.27)  3 FEB 2015 13:33
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.9.27)  5 FEB 2015 18:04
 entering extended mode
 **MA523PartialDifferentialEquationsHwk2.tex
 
@@ -267,6 +267,24 @@ LaTeX Font Info:    Try loading font information for U+esint on input line 28.
 esint\uesint.fd
 File: uesint.fd 
 )
+Overfull \hbox (11.22957pt too wide) in paragraph at lines 61--62
+[]\OT1/cmr/m/n/12 Then de-fine $\OML/cmm/m/it/12 \OT1/cmr/m/n/12 (\OML/cmm/m/i
+t/12 r\OT1/cmr/m/n/12 ) = [] \OML/cmm/m/it/12 u\OT1/cmr/m/n/12 (\OML/cmm/m/it/1
+2 y\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 dS\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 y\OT1/
+cmr/m/n/12 ) + [] [] [] \OML/cmm/m/it/12 u\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\O
+T1/cmr/m/n/12 )\OML/cmm/m/it/12 dx$\OT1/cmr/m/n/12 . 
+ []
+
+
+Overfull \hbox (53.37439pt too wide) in paragraph at lines 72--73
+[]\OT1/cmr/m/n/12 So $\OML/cmm/m/it/12 []$ \OT1/cmr/m/n/12 is iden-ti-cally ze
+ro. So $\OML/cmm/m/it/12 $ \OT1/cmr/m/n/12 is con-stant. So $\OML/cmm/m/it/12 
+\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 r\OT1/cmr/m/n/12 ) = [] \OML/cmm/m/it/12 \O
+T1/cmr/m/n/12 (\OML/cmm/m/it/12 t\OT1/cmr/m/n/12 ) = [] [] \OML/cmm/m/it/12 u\O
+T1/cmr/m/n/12 (\OML/cmm/m/it/12 y\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 dS\OT1/cmr/m
+/n/12 (\OML/cmm/m/it/12 y\OT1/cmr/m/n/12 ) +$
+ []
+
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
@@ -277,16 +295,30 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 onfig/pdftex.map}
 
 ]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[2]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[3]
 (C:\Users\Lonelight\Desktop\Homework\MA523\MA523PartialDifferentialEquationsHwk
 2.aux) ) 
 Here is how much of TeX's memory you used:
  2886 strings out of 493921
  40748 string characters out of 3140860
- 93899 words of memory out of 3000000
+ 96899 words of memory out of 3000000
  6150 multiletter control sequences out of 15000+200000
  8793 words of font info for 36 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 33i,10n,43p,288b,196s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 33i,11n,43p,341b,206s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Users/Lonelight/Desktop/PortablePrograms/texmakerwin32usb/MiKTeX/fo
 nts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Lonelight/Desktop/PortablePro
 grams/texmakerwin32usb/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Use
@@ -296,17 +328,20 @@ in32usb/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/Lonelight/Des
 ktop/PortablePrograms/texmakerwin32usb/MiKTeX/fonts/type1/public/amsfonts/cm/cm
 mi8.pfb><C:/Users/Lonelight/Desktop/PortablePrograms/texmakerwin32usb/MiKTeX/fo
 nts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Lonelight/Desktop/PortableProg
-rams/texmakerwin32usb/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/
+rams/texmakerwin32usb/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/
 Lonelight/Desktop/PortablePrograms/texmakerwin32usb/MiKTeX/fonts/type1/public/a
-msfonts/cm/cmsy10.pfb><C:/Users/Lonelight/Desktop/PortablePrograms/texmakerwin3
-2usb/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Lonelight/Deskto
-p/PortablePrograms/texmakerwin32usb/MiKTeX/fonts/type1/public/esint/esint10.pfb
-><C:/Users/Lonelight/Desktop/PortablePrograms/texmakerwin32usb/MiKTeX/fonts/typ
-e1/public/amsfonts/symbols/msbm10.pfb>
-Output written on MA523PartialDifferentialEquationsHwk2.pdf (1 page, 103144 byt
-es).
+msfonts/cm/cmr8.pfb><C:/Users/Lonelight/Desktop/PortablePrograms/texmakerwin32u
+sb/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Lonelight/Desktop
+/PortablePrograms/texmakerwin32usb/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.
+pfb><C:/Users/Lonelight/Desktop/PortablePrograms/texmakerwin32usb/MiKTeX/fonts/
+type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Lonelight/Desktop/PortablePrograms
+/texmakerwin32usb/MiKTeX/fonts/type1/public/esint/esint10.pfb><C:/Users/Lonelig
+ht/Desktop/PortablePrograms/texmakerwin32usb/MiKTeX/fonts/type1/public/amsfonts
+/symbols/msbm10.pfb>
+Output written on MA523PartialDifferentialEquationsHwk2.pdf (3 pages, 129061 by
+tes).
 PDF statistics:
- 50 PDF objects out of 1000 (max. 8388607)
+ 64 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

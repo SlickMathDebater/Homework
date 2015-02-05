@@ -32,11 +32,14 @@ Then we have:
 \begin{align*}
 \De v(x) &= \De u(x)\\
 &= \sum\limits_{i=1}^n u_{x_ix_i} (Ox)\\
-&= \sum\limits_{i=1}^n u_{x_ix_i} (x) \\
+&= \sum\limits_{i=1}^n u_{x_ix_i} (Ox_1e_1+ Ox_2e_2 \ldots + Ox_ne_n)\\
+&= \sum\limits_{i=1}^n \sum\limits_{j=1}^n u_{x_ix_i} (Ox_je_j) \\
+&= \sum\limits_{i=1}^n \sum\limits_{j=1}^n u_{x_ix_i} (x_je_j) \\
+&= \sum\limits_{i=1}^n u_{x_ix_i} (x)\\
 &= 0
 \end{align*}
 
-%Note to self; justify step 2->3 way better.
+That is, solutions to $\De u = 0$ are rotation-invariant.
 
 \shunt
 
@@ -55,12 +58,23 @@ Let $u$ be such that
 
 with dimension $n \geq 3$.
 
-Then %hack the mean value formulae proof: define $\phi(r)$ as a fnction of $r$ similar to what is desired, take a derivative, apply Integration by Parts and Green's Formulas. \phi' should be zero, so \phi should be constant. Take a limit as r goes to 0; you should win after this.
+Then define $\phi(r) = \fint\limits_{\partial B(0,r)} u(y) dS(y) + \frac{1}{n(n-2)\al(n)} \int\limits_{B(0,r)} \left(\frac{1}{\absval{x}^{n-2}} - \frac{1}{r^{n-2}}\right) u(x) dx$.
 
-Thus, 
+Then 
+
+\begin{align*}
+\phi'(r) &= stuff \\
+&= 0 \\ 
+\end{align*}
+
+
+
+So $\phi'$ is identically zero. So $\phi$ is constant. So $\phi(r) = \lim\limits_{t \to 0} \phi(t) = \lim\limits_{t \to 0} \fint\limits_{\partial B(0,r)} u(y) dS(y) + \frac{1}{n(n-2)\al(n)} \int\limits_{B(0,r)} \left(\frac{1}{\absval{x}^{n-2}} - \frac{1}{r^{n-2}}\right) u(x) dx = u(0)$.
+
+Thus, by replacing $u$ with $f$ and $g$ on the interior/exterior, 
 
 \begin{displaymath}
-u(0) = \fint \limits_{\partial B(0,r)} g dS + \int\limits_{B(0,r)} \left( \frac{1}{\absval{x}^{n-2}} - \frac{1}{r^{n-2}}\right) f dx
+u(0) = \fint \limits_{\partial B(0,r)} g dS + \frac{1}{n(n-2)\al(n)} \int\limits_{B(0,r)} \left(\frac{1}{\absval{x}^{n-2}} - \frac{1}{r^{n-2}}\right) f dx
 \end{displaymath}
 
 \shunt
@@ -73,9 +87,33 @@ Let $u(x)$ be a $C^2$ solution to
 \De u(x) = \absval{x}^2 \text{ on } \R^n
 \end{align*}
 
+with $n \geq 3$.
+
 Set $m(r) = \fint\limits_{\partial B(0,r)} u(y) dS(y)$.
 
-%This is painfully straightforward from the above problem; u solves the system of PDEs given by \De(u) = \absval{x}^2 in the ball, and u=u on the boundary. Rearrange the result of the above, integrate, win.
+Then $u$ solves 
+
+\begin{align*}
+\De(u) &= \absval{x}^2 \text{ in } B(0,r)\\
+u &= r \text { on } \partial B(0,r)\\
+\end{align*}
+
+So by the above problem,
+
+\begin{align*}
+u(0) &= \fint \limits_{\partial B(0,r)} u(y) dS(y) + \frac{1}{n(n-2)\al(n)}\int\limits_{B(0,r)} \left( \frac{1}{\absval{x}^{n-2}} - \frac{1}{r^{n-2}}\right) \absval{x}^2 dx \\
+&= m(r) + \frac{1}{n(n-2)\al(n)}\int\limits_{B(0,r)} \left( \frac{1}{\absval{x}^{n-2}} - \frac{1}{r^{n-2}}\right) \absval{x}^2 dx \\
+&= m(r) + \frac{1}{n(n-2)\al(n)}\int\limits_{B(0,r)} \left( \frac{\absval{x}^2}{\absval{x}^{n-2}} - \frac{\absval{x}^2}{r^{n-2}}\right) dx \\
+&= m(r) -\frac{r^4}{4(n+2)} \\
+\end{align*}
+
+which is the result we wanted.
+
+If $n =1$, then $u(x) = x^4 + Cx + D$ are the only solutions to this, where $C, D \in \R$; this follows from elementary differential equations.
+
+%explain result
+
+If $n = 2$, then ... %I don't know how to do it...:(
 
 \shunt
 

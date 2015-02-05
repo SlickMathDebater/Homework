@@ -58,15 +58,13 @@ Define $s_k = \frac{z^k}{1-z^k}$. Fix $z \in D_1(0)$. Then:
 
 So, by the ratio test, $\sum\limits_{k=1}^\infty \frac{z^k}{1-z^k}$ converges on the unit disk. 
 
-Moreover, that sum converges uniformly; %reasons.
-
-So, because each term is holomorphic on the unit disk, we have that each partial sum is holomorphic on the unit disk, and thus the limit of the partial sums is holomorphic on the unit disk, by Weierstrauss.
+Moreover, that sum converges uniformly on compact subsets of $D_1(0)$; %So the sum is holomorphic at each point by Weierstrauss, so it's holomorphic on the whole disk.
 
 \shunt
 
 {\bf Problem 3:}
 
-Consider $e^{\overline{z}}$. 
+Consider $e^{\overline{z}}$, with $z \in \C$.
 
 \begin{align*}
 e^{\overline{z}} &= \sum \frac{\overline{z}^n}{n!} \\
@@ -76,17 +74,35 @@ e^{\overline{z}} &= \sum \frac{\overline{z}^n}{n!} \\
 &= \overline{e^z}
 \end{align*}
 
+So $e^{\overline{z}} = \overline{e^z}$, for all $z \in \C$.
+
 \shunt
 
 {\bf Problem 4:}
+
+(In the following, $\dotplus$ is used for curve concatenation.)
 
 Let $\Om \subset \C$ be open and connected. Fix $w \in \Om$, define $\Om_1$ to be the set of all points that can be joined to $w$ by a curve. Define $\Om_2$ to be the set of all points that cannot.
 
 Then it is clear that $\Om=\Om_1 \cup \Om_2$, that $\Om_1 \cap \Om_2 = \emptyset$, and that $w \in \Om_1$.
 
-Now, $\Om_1$ is open: %reasons
+Now, $\Om_1$ is open:
 
-Also, $\Om_2$ is open: %reasons.
+\tab Let $x \in \Om_1$. There is an $\ep>0$ such that $D_\ep(x) \subset \Om$. There is a curve, $\Ga$, connecting $w$ to $x$. For all $y \in D_\ep(x)$, the line segment $[x,y] \subset D_\ep(x) \subset \Om$ (because disks are convex); we can parameterize a curve $\phi$ whose image is $[x,y]$. It is clear that $\Ga \dotplus \phi$ is a curve connecting $w$ and $y$. So for all $y \in D_\ep(x)$, $y \in \Om_1$; $D_\ep(x) \subset \Om_1$.
+
+\tab So for all $x \in \Om_1$, there's an open disk that contains $x$ that is a subset of $\Om_1$. So $\Om_1$ is open.
+
+Also, $\Om_2$ is open: 
+
+\tab Let $x \in \Om_2$. There is an $\ep>0$ such that $D_\ep(x) \subset \Om$. There is no curve connecting $w$ to $x$. For all $y \in D_\ep(x)$, the line segment $[y,x] \subset D_\ep(x) \subset \Om$ (because disks are convex); we can parameterize a curve $\phi$ whose image is $[y,x]$. 
+
+\tab If for any $y \in D_\ep(x)$ there is a curve, $\Ga$, connecting $y$ and $w$, then $\Ga \dotplus \phi$ is a curve connecting $w$ and $x$. This would contradict the fact that $x \in \Om_2$. So for all $y \in D_\ep(x)$, $y \in \Om_2$; $D_\ep(x) \subset \Om_2$.
+
+\tab So for all $x \in \Om_2$, there's an open disk that contains $x$ that is a subset of $\Om_2$. So $\Om_2$ is open.
+
+So if $\Om_2$ was nonempty, we would have two nonempty open sets whose union was $\Om$. That is, we would be able to disconnect $\Om$, which is contrary to our assumption.
+
+Thus, $\Om_2$ is empty, so $\Om_1=\Om$. That is, an open, connected subset of $\C$ is path-connected.
 
 \shunt
 
