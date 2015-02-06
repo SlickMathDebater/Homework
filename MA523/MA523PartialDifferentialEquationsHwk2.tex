@@ -58,20 +58,26 @@ Let $u$ be such that
 
 with dimension $n \geq 3$.
 
-Then define $\phi(r) = \fint\limits_{\partial B(0,r)} u(y) dS(y) + \frac{1}{n(n-2)\al(n)} \int\limits_{B(0,r)} \left(\frac{1}{\absval{x}^{n-2}} - \frac{1}{r^{n-2}}\right) u(x) dx$.
+Then define $\phi(r) = \fint\limits_{\partial B(0,r)} u(y) dS(y) - \frac{1}{n(n-2)\al(n)} \int\limits_{B(0,r)} \left(\frac{1}{\absval{x}^{n-2}} - \frac{1}{r^{n-2}}\right) \De u(x) dx$.
 
 Then 
 
 \begin{align*}
-\phi'(r) &= stuff \\
-&= 0 \\ 
+\phi'(r) &= \fint\limits_{\partial B(0,r)} \frac{\partial u}{\partial \nu} dS(y) - \frac{\partial}{\partial r} \left(\frac{1}{n(n-2)\al(n)} \int\limits_{B(0,r)} \left(\frac{1}{\absval{x}^{n-2}} - \frac{1}{r^{n-2}}\right) \De u(x) dx\right)\\
+&= \frac{r}{n}\fint\limits_{B(0,r)} \De u(y)dy - \frac{\partial}{\partial r} \left(\frac{1}{n(n-2)\al(n)} \int\limits_{B(0,r)} \left(\frac{1}{\absval{x}^{n-2}} - \frac{1}{r^{n-2}}\right) \De u(x) dx\right)\\
+&= \frac{r}{n\al(n)r^n}\int\limits_{B(0,r)} \De u(y)dy - \frac{\partial}{\partial r} \left(\frac{1}{n(n-2)\al(n)} \int\limits_{B(0,r)} \left(\frac{1}{\absval{x}^{n-2}} - \frac{1}{r^{n-2}}\right) \De u(x) dx\right)\\
+&= \frac{1}{n\al(n)}\left(\frac{1}{r^{n-1}}\int\limits_{B(0,r)} \De u(y)dy - \frac{\partial}{\partial r} \left(\frac{1}{(n-2)} \int\limits_{B(0,r)} \left(\frac{1}{\absval{x}^{n-2}} - \frac{1}{r^{n-2}}\right) \De u(x) dx\right)\right)\\
+&= \frac{1}{n\al(n)r^{n-1}}\left(\int\limits_{B(0,r)} \De u(y)dy - \frac{r^{n-1}}{n-2}\frac{\partial}{\partial r} \left( \int\limits_{B(0,r)} \left(\frac{1}{\absval{x}^{n-2}} - \frac{1}{r^{n-2}}\right) \De u(x) dx\right)\right)\\
+& \text{(The next chunk is basically ``apply polar coordinates in the same fashion as in the book''.)}\\
+&= \frac{1}{n\al(n)r^{n-1}}\left(\int\limits_{B(0,r)} \De u(y)dy - \int\limits_{B(0,r)} \De u(x)dx \right)\\
+&= 0 \\ %The next thing to do is employ the methods of the second half of the proof.
 \end{align*}
 
 
 
-So $\phi'$ is identically zero. So $\phi$ is constant. So $\phi(r) = \lim\limits_{t \to 0} \phi(t) = \lim\limits_{t \to 0} \fint\limits_{\partial B(0,r)} u(y) dS(y) + \frac{1}{n(n-2)\al(n)} \int\limits_{B(0,r)} \left(\frac{1}{\absval{x}^{n-2}} - \frac{1}{r^{n-2}}\right) u(x) dx = u(0)$.
+So $\phi'$ is identically zero. So $\phi$ is constant. So $\phi(r) = \lim\limits_{t \to 0} \phi(t) = \lim\limits_{t \to 0} \fint\limits_{\partial B(0,r)} u(y) dS(y) - \frac{1}{n(n-2)\al(n)} \int\limits_{B(0,r)} \left(\frac{1}{\absval{x}^{n-2}} - \frac{1}{r^{n-2}}\right) \De u(x) dx = u(0)$.
 
-Thus, by replacing $u$ with $f$ and $g$ on the interior/exterior, 
+Thus, by replacing $u$ with $g$ on the boundary and $\De u$ with $-f$ on the interior, we have: 
 
 \begin{displaymath}
 u(0) = \fint \limits_{\partial B(0,r)} g dS + \frac{1}{n(n-2)\al(n)} \int\limits_{B(0,r)} \left(\frac{1}{\absval{x}^{n-2}} - \frac{1}{r^{n-2}}\right) f dx
@@ -95,7 +101,7 @@ Then $u$ solves
 
 \begin{align*}
 \De(u) &= \absval{x}^2 \text{ in } B(0,r)\\
-u &= r \text { on } \partial B(0,r)\\
+u &= u \text { on } \partial B(0,r)\\
 \end{align*}
 
 So by the above problem,
@@ -104,16 +110,17 @@ So by the above problem,
 u(0) &= \fint \limits_{\partial B(0,r)} u(y) dS(y) + \frac{1}{n(n-2)\al(n)}\int\limits_{B(0,r)} \left( \frac{1}{\absval{x}^{n-2}} - \frac{1}{r^{n-2}}\right) \absval{x}^2 dx \\
 &= m(r) + \frac{1}{n(n-2)\al(n)}\int\limits_{B(0,r)} \left( \frac{1}{\absval{x}^{n-2}} - \frac{1}{r^{n-2}}\right) \absval{x}^2 dx \\
 &= m(r) + \frac{1}{n(n-2)\al(n)}\int\limits_{B(0,r)} \left( \frac{\absval{x}^2}{\absval{x}^{n-2}} - \frac{\absval{x}^2}{r^{n-2}}\right) dx \\
-&= m(r) -\frac{r^4}{4(n+2)} \\
+& \text{(I must admit that I'm unsure of the details of this next step.)}\\
+&= m(r) -\frac{r^4}{4(n+2)} \\ %Explain why in more detail.
 \end{align*}
 
 which is the result we wanted.
 
-If $n =1$, then $u(x) = x^4 + Cx + D$ are the only solutions to this, where $C, D \in \R$; this follows from elementary differential equations.
+If $n =1$, then $u(x) = x^4 + Cx + D$ are the only solutions to this, where $C, D \in \R$; this follows from elementary differential equations. It suffices to prove that $m(r) = \frac{r^4}{4(n+2)}$, because the addition of a constant to $u$ leaves $u(0)-m(r)$ invariant (and this can be readily checked.)
 
-%explain result
+(I ran out of time with this, but I would've just explicitly calculated $m(r)$ here.)
 
-If $n = 2$, then ... %I don't know how to do it...:(
+(I don't have this for $n=2$.)
 
 \shunt
 
