@@ -58,7 +58,11 @@ Define $s_k = \frac{z^k}{1-z^k}$. Fix $z \in D_1(0)$. Then:
 
 So, by the ratio test, $\sum\limits_{k=1}^\infty \frac{z^k}{1-z^k}$ converges on the unit disk. 
 
-Moreover, that sum converges uniformly on compact subsets of $D_1(0)$; %So the sum is holomorphic at each point by Weierstrauss, so it's holomorphic on the whole disk.
+Moreover, that sum converges uniformly on compact subsets of $D_1(0)$ (it suffices to show this for each disk $\overline{D_r(0)}$, with $r<1$);
+
+\tab Let $r<1$. Then for each $k \in \N$, $\frac{z^k}{1-z^k} < blah = M_n$. Now, $\sum M_n$ converges. So $\sum\limits_{k=1}^\infty \frac{z^k}{1-z^k}$ converges uniformly on $D_r(0)$ by the Weierstrauss M-test.  %Find blah.
+
+So the sum is holomorphic at each compact subset of $D_1(0)$ by Weierstrauss, so it's holomorphic on the whole disk.
 
 \shunt
 
