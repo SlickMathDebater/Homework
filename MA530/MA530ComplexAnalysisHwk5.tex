@@ -1,0 +1,123 @@
+
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{fancyhdr}
+\usepackage{amssymb}
+%\usepackage{mathpazo}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{slashed}
+\usepackage{cancel}
+\usepackage[mathscr]{euscript}
+\usepackage{MaxPackage} %Note: You need MaxPackage installed or in the same folder as your .tex file or something.
+
+\newcommand{\colorcomment}[2]{\textcolor{#1}{#2}} %First of these leaves in comments. Second one kills them.
+%\newcommand{\colorcomment}[2]{}
+
+
+\pagestyle{fancy}
+\lhead{Max Jeter}
+\chead{MA530}
+\rhead{Assignment 5, Page \thepage}
+
+\begin{document}
+
+{\bf Problem 1:}
+
+Part a:
+
+Consider the set $A= \{z \in \C: e^z = 0\}$.
+
+If $z=a+bi \in A$ (with $a, b \in \R$), then $e^z =0$. So $e^ae^{bi} = 0$. 
+
+For $a \in \R$, $e^a \neq 0$. So this means that $e^{bi} = 0$. But this never happens either, because $\absval{e^{bi}} = 1$ for all $b \in \R$. %That needs proof
+
+So we have a contradiction. So $A = \emptyset$.
+
+\shunt
+
+Part b:
+
+Consider the set $B= \{z \in \C: e^z = 1\}$.
+
+If $z=a+bi \in B$ (with $a,b \in \R$), then $e^z = 1$. So $e^z = e^ae^{bi} = 1$.
+
+This means that $\absval{e^ae^{bi}} = \absval{e^a}\absval{e^{bi}}= 1$. But $\absval{e^{bi}} = 1$ for all $b \in \R$. So, $\absval{e^a} = 1$, so $e^a = 1$, so $a = 0$.
+
+So $z=bi$ for some $b \in \R$. 
+
+
+
+\shunt
+
+Part c:
+
+Consider the set $C= \{z \in \C: \sin(z) = 0\}$.
+
+
+
+\shunt
+
+{\bf Problem 2:}
+
+Let $\Om \subset \C$ be an open connected set, and $f \in C(\Om)$ be such that for all closed, piecewise continuous curves, $\Ga$, with $\Ga \subset \Om$, $\int\limits_\Ga f(z) dz = 0$.
+
+Pick $z \in \Om$. Let $p \in \Om$, and $\ga$ be a curve from $p$ to $z$. We showed in class that $\int\limits_\ga f(\xi) d\xi$ is independent of $\ga$; that is, $\int\limits_\ga f(\xi) d\xi$ only depends on $p$ and $z$.
+
+Define $g(z) = \int\limits_\ga f$.
+
+%Take the derivative, it's f, so f has a primitive. Done.
+
+\shunt
+
+{\bf Problem 3:}
+
+Let $f \in \scrO(D_1(0))$, with $f = \sum\limits_{n=0}^\infty a_nz^n$.
+
+Then consider $\int\limits_0^{2\pi} \absval{f(re^{it})}^2 dt$. %Prove Parseval's formula
+
+\shunt
+
+{\bf Problem 4:}
+
+Let $\phi, \psi : [a,b] \to \R$ be log-convex.
+
+%Then \phi + \psi is.
+
+\shunt
+
+{\bf Problem 5:}
+
+Let $\Om \subset \C$ be a simply connected domain, $f \in \scrO(\Om)$, $f(z) \neq 0$ for any $z \in \Om$.
+
+We showed in class that $g(z) = \int\limits_p^z \frac{f'(w)}{f(w)} dw + \la$ with $p$ chosen arbitrarily in $\Om$ and $e^\la = f(p)$ satisfies $f=e^g$, and that $g \in \scrO(\Om)$. 
+
+Now, let $h \in \scrO(\Om)$ be such that $f=e^h$.
+
+Then $\frac{f}{f} = \frac{e^g}{e^h}$, so that $1 = e^{g-h}$. Thus, by problem 1, we have that $g-h = 2k \pi  i$ for some $k \in \Z$. %why not different k for different values of z? This is something Pete will bring up, and he will pwn you for it.
+
+That is, any two functions, $g$ and $h$, satisfying $e^g=e^h=f$ differ only by $2k\pi i $ for some $k \in \Z$.
+
+\shunt
+
+{\bf Problem 6:}
+
+Let $\phi \in \scrO(D_1(0))$. Suppose that $\phi$ takes its maximum at $0$.
+
+%Prove that \phi is constant
+
+\shunt
+
+{\bf Problem 7:}
+
+Suppose that $\phi \in \scrO(\Om)$ with $\Om$ a domain, and that there is a $c \in \Om$ such that $\absval(\phi(c)) = max(\absval(\phi))$.
+
+Then $\phi$ is constant on any ball centered at $c$, by problem 6. %Might clean that up.
+
+Now, $\Om$ is path connected (it is a domain).
+
+Let $z \in \Om$, and let $\ga$ be a path from $z$ to $c$. %Cover the image of the path with balls, so that $\phi$ is constant along the curve. Win.
+
+\shunt
+
+\end{document}
