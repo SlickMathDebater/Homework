@@ -20,6 +20,13 @@
 \chead{MA530}
 \rhead{Assignment 5, Page \thepage}
 
+%Status: 
+%Clear					:1
+%Begun					:2
+%Not started			:4
+%Can complete via book	:3,6
+%Needs Polish			:5,7
+
 \begin{document}
 
 {\bf Problem 1:}
@@ -80,9 +87,7 @@ Pick $z \in \Om$. Let $p \in \Om$, and $\ga$ be a curve from $p$ to $z$. We show
 
 So, we can define $g(z) = \int\limits_\ga f$, where $\ga$ is a curve from a chosen fixed point,$p$, to $z$.
 
-Now, fix $z_0 \in \Om$ and let $\ep >0$ with $\ep$ small enough that $\overline{D_\ep(z_0)} \subset \Om$. Then $\absval{f} \leq M$ for some $M \in \R$ on $D_{\ep(z_0)}$. Choose $\de = \min(\ep, \ep/M)$.
-
-\tab If $\absval{z-z_0} < \de$, we have:
+Now, fix $z_0 \in \Om$. It is somewhat clear that $\lim\limits_{z\to z_0} \frac{\int\limits_{z_0}^z f(w) dw}{z-z_0} = f(z_0)$, because $ \frac{\int\limits_{z_0}^z f(w) dw}{z-z_0}$ is the average value of $f(w)$ on the line segment: %make it small enough to be a ball.
 
 \begin{align*}
 \absval{\frac{g(z)-g(z_0)}{z-z_0} -f(z_0)} &= \absval{\frac{\int\limits_{z_0}^z f(x) dx}{z-z_0} -f(z_0)}\\
