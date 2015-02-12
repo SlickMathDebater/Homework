@@ -30,7 +30,7 @@ Consider the set $A= \{z \in \C: e^z = 0\}$.
 
 If $z=a+bi \in A$ (with $a, b \in \R$), then $e^z =0$. So $e^ae^{bi} = 0$. 
 
-For $a \in \R$, $e^a \neq 0$. So this means that $e^{bi} = 0$. But this never happens either, because $\absval{e^{bi}} = 1$ for all $b \in \R$. %That needs proof
+For $a \in \R$, $e^a \neq 0$. So this means that $e^{bi} = 0$. But this never happens either, because $\absval{e^{bi}} = 1$ for all $b \in \R$ (because $\absval{e^{bi}} = \absval{\cos(b)+i\sin(b)} = \sqrt{\cos^2(b) + \sin^2(b)} = 1$).
 
 So we have a contradiction. So $A = \emptyset$.
 
@@ -44,9 +44,15 @@ If $z=a+bi \in B$ (with $a,b \in \R$), then $e^z = 1$. So $e^z = e^ae^{bi} = 1$.
 
 This means that $\absval{e^ae^{bi}} = \absval{e^a}\absval{e^{bi}}= 1$. But $\absval{e^{bi}} = 1$ for all $b \in \R$. So, $\absval{e^a} = 1$, so $e^a = 1$, so $a = 0$.
 
-So $z=bi$ for some $b \in \R$. 
+So $z=bi$ for some $b \in \R$.
 
+By applying the equivalence of polar and trigonometric forms, this means that $e^{ib} = \cos(b) + isin(b) = 1$. So, $\cos(b) =1$ and $\sin(b) = 0$. This means that $b = 2k \pi$ for some $k \in \Z$.
 
+So $B \subset \{2k\pi i \in \C: k \in \Z\}$.
+
+Now, if $z=2k\pi i$ for some $k \in \Z$, then $e^z = \cos(2k \pi ) + i \sin(2k \pi) =1$. So $z \in B$.
+
+So $B = \{2k\pi i \in \C: k \in \Z\}$.
 
 \shunt
 
@@ -54,7 +60,15 @@ Part c:
 
 Consider the set $C= \{z \in \C: \sin(z) = 0\}$.
 
+Let $z =a+bi \in C$. Then $sin(z) = 0$. So $\frac{e^{iz}-e^{-iz}}{2i} = 0$, so that $e^{iz} = e^{-iz}$.
 
+In other words, $e^{-b}e^{ai} = e^{b}e^{-ai}$. So, $e^{2b} = e^{2ai}$. Because  $\absval{e^{2ai}} = 1$, this means that $e^{2b} = 1$. So, $b=0$, and $e^{2ai}=1$. So $2ai = 2k\pi i $ for some $k \in \Z$.
+
+So, $z=k \pi$ for some $k \in \Z$. So $C \subset \{k\pi  \in \C: k \in \Z\}$.
+
+Now, if $z = k\pi$ for some $k \in \Z$, then $\sin(z) = 0$, and this is very well known. So $z \in C$.
+
+So $C = \{k\pi  \in \C: k \in \Z\}$.
 
 \shunt
 
@@ -64,13 +78,26 @@ Let $\Om \subset \C$ be an open connected set, and $f \in C(\Om)$ be such that f
 
 Pick $z \in \Om$. Let $p \in \Om$, and $\ga$ be a curve from $p$ to $z$. We showed in class that $\int\limits_\ga f(\xi) d\xi$ is independent of $\ga$; that is, $\int\limits_\ga f(\xi) d\xi$ only depends on $p$ and $z$.
 
-Define $g(z) = \int\limits_\ga f$.
+So, we can define $g(z) = \int\limits_\ga f$, where $\ga$ is a curve from a chosen fixed point,$p$, to $z$.
+
+Now, fix $z_0 \in \Om$ and let $\ep >0$ with $\ep$ small enough that $\overline{D_\ep(z_0)} \subset \Om$. Then $\absval{f} \leq M$ for some $M \in \R$ on $D_{\ep(z_0)}$. Choose $\de = \min(\ep, \ep/M)$.
+
+\tab If $\absval{z-z_0} < \de$, we have:
+
+\begin{align*}
+\absval{\frac{g(z)-g(z_0)}{z-z_0} -f(z_0)} &= \absval{\frac{\int\limits_{z_0}^z f(x) dx}{z-z_0} -f(z_0)}\\
+&\leq \\
+\end{align*}
+
+%...Doing this well is going to require that the limit of M as \de \to 0 is f(z_0)...
 
 %Take the derivative, it's f, so f has a primitive. Done.
 
 \shunt
 
 {\bf Problem 3:}
+
+(I must admit to having read this in Complex Made Simple by David C. Ullrich prior to the assignment of this problem.)
 
 Let $f \in \scrO(D_1(0))$, with $f = \sum\limits_{n=0}^\infty a_nz^n$.
 
@@ -81,6 +108,10 @@ Then consider $\int\limits_0^{2\pi} \absval{f(re^{it})}^2 dt$. %Prove Parseval's
 {\bf Problem 4:}
 
 Let $\phi, \psi : [a,b] \to \R$ be log-convex.
+
+Then $\ln(\phi)$ and $\ln(\psi)$ are convex.
+
+So for all $x,y \in [a,b]$ with $x \leq y$ and for all $t \in [0,1]$, $\ln(\psi(tx+(1-t)y)) \leq t\ln\psi(x) + (1-t)\ln\psi(y)$ and $\ln(\phi(tx+(1-t)y)) \leq t\ln\phi(x) + (1-t)\ln\phi(y)$.
 
 %Then \phi + \psi is.
 
@@ -102,9 +133,11 @@ That is, any two functions, $g$ and $h$, satisfying $e^g=e^h=f$ differ only by $
 
 {\bf Problem 6:}
 
+(I must admit to having read this in Complex Made Simple by David C. Ullrich prior to the assignment of this problem.)
+
 Let $\phi \in \scrO(D_1(0))$. Suppose that $\phi$ takes its maximum at $0$.
 
-%Prove that \phi is constant
+%Prove that \phi is constant. You should be using Parseval to do this.
 
 \shunt
 
@@ -116,7 +149,9 @@ Then $\phi$ is constant on any ball centered at $c$, by problem 6. %Might clean 
 
 Now, $\Om$ is path connected (it is a domain).
 
-Let $z \in \Om$, and let $\ga$ be a path from $z$ to $c$. %Cover the image of the path with balls, so that $\phi$ is constant along the curve. Win.
+Let $z \in \Om$, and let $\ga$ be a path from $z$ to $c$ with $\ga \subset \Om$. We can cover the path with open balls, as $\Om$ is open. $\phi$ is constant on each of these open balls, as $\phi$ takes its maximum (or minimum) on these open balls. So $\phi$ is constant along the path: $\phi(z) = \phi(c)$. %Clean it up.
+
+So for all $z \in \Om$, $\phi(z) = \phi(c)$. So $\phi$ is constant.
 
 \shunt
 
