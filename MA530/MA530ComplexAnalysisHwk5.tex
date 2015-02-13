@@ -21,13 +21,15 @@
 \rhead{Assignment 5, Page \thepage}
 
 %Status: 
-%Clear					:1,2
-%Begun					:4
+%Clear					:1,2,7
+%Begun					:
 %Not started			:
 %Can complete via book	:3,6
-%Needs Polish			:5,7
+%Needs Polish			:4,5
 
 \begin{document}
+
+(I worked with Sarah Percival and Frankie Chan a little).
 
 {\bf Problem 1:}
 
@@ -99,11 +101,28 @@ That is, $g'(z_0) = f(z_0)$ for all $z_0 \in \Om$; $g$ is a primitive of $f$.
 
 {\bf Problem 3:}
 
-(I must admit to having read this in Complex Made Simple by David C. Ullrich prior to the assignment of this problem.)
+(I must admit to having read this in Complex Made Simple by David C. Ullrich prior to the assignment of this problem, and that I used it as a reference.)
 
 Let $f \in \scrO(D_1(0))$, with $f = \sum\limits_{n=0}^\infty a_nz^n$.
 
-Then consider $\int\limits_0^{2\pi} \absval{f(re^{it})}^2 dt$. %Prove Parseval's formula
+Then consider $f_N = \sum\limits_{n=0}^N a_nz^n$.
+
+\begin{align*}
+\int\limits_0^{2\pi} \absval{f_N(re^{it})}^2 dt &= \int\limits_0^{2\pi} f_N(re^{it})\overline{f_N(re^{it})} dt\\
+&= \int\limits_0^{2\pi} \sum\limits_0^N a_nr^ne^{int}\overline{\sum\limits_0^Na_n(r^ne^{int})} dt\\
+&= \int\limits_0^{2\pi} \sum\limits_{n,m=0,0}^{N,N} a_n\overline{a_m}r^{2n}e^{i(n-m)t} dt\\
+\end{align*}
+
+It is readily checked that all of the terms in the above, except for those where $n=m$, vanish; this is because $\int\limits_0^{2\pi} e^{int}dt = 0$ when $n \neq 0$. Thus, we have
+
+\begin{align*}
+\int\limits_0^{2\pi} \absval{f_N(re^{it})}^2 dt &= \int\limits_0^{2\pi} \sum\limits_{n=0}^{N} a_n\overline{a_n}r^{2n} dt\\
+&= \sum\limits_0^N 2\pi \absval{a_n}^2 r^{2n}\\
+\end{align*}
+
+So, for all $N \in \N$, $\int\limits_0^{2\pi} f_N(re^{it})dt = \sum\limits_0^N 2\pi \absval{a_n}^2 r^{2n}$.
+
+Taking limits as $N \to \infty$, we have $\int\limits_0^{2\pi} f(re^{it})dt = \sum\limits_0^\infty 2\pi \absval{a_n}^2 r^{2n}$, which is what we wanted.
 
 \shunt
 
@@ -113,9 +132,23 @@ Let $\phi, \psi : [a,b] \to \R$ be log-convex.
 
 Then $\ln(\phi)$ and $\ln(\psi)$ are convex.
 
-So for all $x,y \in [a,b]$ with $x \leq y$ and for all $t \in [0,1]$, $\ln(\psi(tx+(1-t)y)) \leq t\ln\psi(x) + (1-t)\ln\psi(y)$ and $\ln(\phi(tx+(1-t)y)) \leq t\ln\phi(x) + (1-t)\ln\phi(y)$.
+So for all $x,y \in [a,b]$ with $x \leq y$ and for all $t \in [0,1]$, $\ln(\psi(tx+(1-t)y)) \leq t\ln\psi(x) + (1-t)\ln\psi(y)$ and $\ln(\phi(tx+(1-t)y)) \leq t\ln\phi(x) + (1-t)\ln\phi(y)$. Note that because $e^x$ is an increasing function, $a<b$ if and only if $e^a < e^b$, so that these are equivalent to $\phi(tx+(1-t)y) \leq \phi(x)^t\phi(y)^{(1-t)}$ and $\psi(tx+(1-t)y) \leq \psi(x)^t\psi(y)^{(1-t)}$. 
 
-%Take exponents.
+Consider $\ln(\phi + \psi)$. Note that because $e^x$ is an increasing function, $a<b$ if and only if $e^a < e^b$.
+
+Now, fix $x,y \in [a,b]$ with $x<y$ and fix $t \in [0,1]$.
+
+\begin{align*}
+e^{\ln(\phi + \psi)(tx+(1-t)y)} &= (\phi + \psi)(tx+(1-t)y)\\
+&= \phi(tx+(1-t)y) + \psi(tx+(1-t)y)\\
+&\leq \phi(x)^t\phi(y)^{(1-t)} + \psi(x)^t\psi(y)^{(1-t)}\\
+&\leq e^{t\ln((\phi+\psi)(x)) + (1-t)\ln((\phi+\psi)(y))} \\
+&\text{(I know that I would need to make this jump, but I'm not sure how to make it.)}
+\end{align*} %That last step is not so clear...
+
+So $\ln(\phi + \psi)(tx+(1-t)y) \leq \ln(t\ln\phi(x) + (1-t)\ln\phi(y) +t\ln\psi(x) + (1-t)\ln\psi(y))$.
+
+That is, $\phi + \psi$ is log-convex if $\phi$ and $\psi$ are.
 
 \shunt
 
@@ -135,9 +168,15 @@ That is, any two functions, $g$ and $h$, satisfying $e^g=e^h=f$ differ only by $
 
 {\bf Problem 6:}
 
-(I must admit to having read this in Complex Made Simple by David C. Ullrich prior to the assignment of this problem.)
+(Once again, I used Complex Made Simple as a reference for this)
 
 Let $\phi \in \scrO(D_1(0))$. Suppose that $\phi$ takes its maximum at $0$.
+
+Because $\phi$ is holomorphic on $D_1(0)$, we know that $\phi$ has a power series representation, $\phi(z)=\sum\limits_0^\infty a_nz^n $, on any disk $\overline{D_r(0)}$ with $r \in (0,1)$.
+
+So, problem 3 applies: $\int\limits_0^{2\pi} \phi(re^{it})dt = \sum\limits_0^\infty 2\pi \absval{a_n}^2 r^{2n}$. Now, $\phi(0) = a_0$. So, $\int\limits_0^{2\pi} \phi(re^{it})dt = \sum\limits_0^\infty 2\pi \absval{a_n}^2 r^{2n} = 2\pi \absval{a_0}^2 + \sum\limits_1^\infty 2\pi \absval{a_n}^2 r^{2n}$. So $\int\limits_0^{2\pi} \phi(re^{it})dt \geq 2\pi\absval{f(0)}^2$.
+
+Thus, for all $r$, $\int\limits_0^{2\pi} \phi(re^{it})dt \geq 2\pi \absval{f(0)}^2$. 
 
 %Prove that \phi is constant. You should be using Parseval to do this.
 
@@ -147,11 +186,13 @@ Let $\phi \in \scrO(D_1(0))$. Suppose that $\phi$ takes its maximum at $0$.
 
 Suppose that $\phi \in \scrO(\Om)$ with $\Om$ a domain, and that there is a $c \in \Om$ such that $\absval(\phi(c)) = max(\absval(\phi))$.
 
-Then $\phi$ is constant on any ball centered at $c$, by problem 6. %Might clean that up.
+Then $\phi$ is constant on any disk centered at $c$, by problem 6 (by expanding and translating appropriately).
 
 Now, $\Om$ is path connected (it is a domain).
 
-Let $z \in \Om$, and let $\ga$ be a path from $z$ to $c$ with $\ga \subset \Om$. We can cover the path with open balls, as $\Om$ is open. $\phi$ is constant on each of these open balls, as $\phi$ takes its maximum (or minimum) on these open balls. So $\phi$ is constant along the path: $\phi(z) = \phi(c)$. %Clean it up.
+Let $z \in \Om$, and let $\ga: [0,1] \to \Om$ be a path from $z$ to $c$ with $\ga \subset \Om$. We can cover the image of the path with a finite number of open disks, because paths are compact. Also $\phi$ is constant on each of these open balls: if not, then $\sup\{t \in [0,1]: \phi\ga(t) \neq c\} = s$ for some $s \in [0,1]$. But then there's an $\ep$-ball around $s$ where $\phi\circ\ga$ takes the value $c$ somewhere...which means that $\phi(\ga(s)) = c$, which is a contradiction. 
+
+So $\phi$ is constant along the path: $\phi(z) = \phi(c)$.
 
 So for all $z \in \Om$, $\phi(z) = \phi(c)$. So $\phi$ is constant.
 

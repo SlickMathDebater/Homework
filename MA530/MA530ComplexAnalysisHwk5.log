@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.9.27)  12 FEB 2015 13:00
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.9.27)  12 FEB 2015 20:25
 entering extended mode
 **MA530ComplexAnalysisHwk5.tex
 (C:\Users\Lonelight\Desktop\Homework\MA530\MA530ComplexAnalysisHwk5.tex
@@ -270,21 +270,39 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [2]
+Overfull \hbox (107.22914pt too wide) in paragraph at lines 145--145
+[] 
+ []
+
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[3] (C:\Users\Lonelight\Desktop\Homework\MA530\MA530ComplexAnalysisHwk5.aux) ) 
+[3]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[4]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[5] (C:\Users\Lonelight\Desktop\Homework\MA530\MA530ComplexAnalysisHwk5.aux) ) 
 Here is how much of TeX's memory you used:
  2839 strings out of 493921
  39704 string characters out of 3140860
- 95819 words of memory out of 3000000
+ 96819 words of memory out of 3000000
  6111 multiletter control sequences out of 15000+200000
  8592 words of font info for 33 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 33i,11n,43p,500b,196s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 33i,11n,43p,527b,196s stack positions out of 5000i,500n,10000p,200000b,50000s
 <
 C:/Users/Lonelight/Desktop/PortablePrograms/texmakerwin32usb/MiKTeX/fonts/type1
 /public/amsfonts/cm/cmbx12.pfb><C:/Users/Lonelight/Desktop/PortablePrograms/tex
@@ -305,9 +323,9 @@ ablePrograms/texmakerwin32usb/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
 makerwin32usb/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Lonelig
 ht/Desktop/PortablePrograms/texmakerwin32usb/MiKTeX/fonts/type1/public/amsfonts
 /symbols/msbm10.pfb>
-Output written on MA530ComplexAnalysisHwk5.pdf (3 pages, 136344 bytes).
+Output written on MA530ComplexAnalysisHwk5.pdf (5 pages, 146186 bytes).
 PDF statistics:
- 64 PDF objects out of 1000 (max. 8388607)
+ 70 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
