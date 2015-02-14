@@ -1,0 +1,100 @@
+
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{fancyhdr}
+\usepackage{amssymb}
+%\usepackage{mathpazo}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{slashed}
+\usepackage{cancel}
+\usepackage[mathscr]{euscript}
+\usepackage{MaxPackage} %Note: You need MaxPackage installed or in the same folder as your .tex file or something.
+
+\newcommand{\colorcomment}[2]{\textcolor{#1}{#2}} %First of these leaves in comments. Second one kills them.
+%\newcommand{\colorcomment}[2]{}
+
+
+\pagestyle{fancy}
+\lhead{Max Jeter}
+\chead{MA530}
+\rhead{Assignment 6, Page \thepage}
+
+%Number of Problems		:6
+%Clear					:
+%Begun					:1
+%Not started			:2,3,4,5,6
+%Can complete via book	:
+%Needs Polish			:
+
+%Pomodoroes logged		:3
+
+\begin{document}
+
+{\bf Problem 1:}
+
+Consider $\int\limits_0^\infty \frac{1-\cos(x)}{x^2} dx$. 
+
+Now, $\int\limits_0^T\frac{1-\cos(z)}{z^2} dz = \int\limits_0^T\frac{1-\frac{e^{iz}+e^{-iz}}{2}}{z^2} dz = -\left[\int\limits_0^T \frac{e^{iz}-1}{2z^2} dz+ \int\limits_0^T \frac{e^{-iz}-1}{2z^2} dz\right]$. Both of the functions under the integrands are holomorphic, except at the origin. Using a $u$-substitution, we get $\int\limits_0^T \frac{e^{-iz}-1}{2z^2} dz = -\int\limits_0^{-T} \frac{e^{iz}-1}{2z^2} dz$.
+
+So, 
+
+\begin{align*}
+\int\limits_0^T\frac{1-\cos(z)}{z^2} dz &= -\left[\int\limits_0^T \frac{e^{iz}-1}{2z^2} dz- \int\limits_0^{-T} \frac{e^{iz}-1}{2z^2} dz dz\right]\\
+&= \frac{1}{2}\left[\int\limits_0^T \frac{1-e^{iz}}{z^2} dz-\int\limits_0^{-T} \frac{1-e^{iz}}{z^2} dz \right]\\
+&= \frac{1}{2}\left[\int\limits_{-T}^T \frac{1-e^{iz}}{z^2} dz \right]\\
+\end{align*} %Break it up into three appropriate integrals, estimate a lot of it away, win.
+
+\shunt
+
+{\bf Problem 2:}
+
+Let $\Om \subset \C$ be open and simply connected, $f \in \scrO (\Om)$, $f$ is always nonzero, $k \in \Z$.
+
+There is an $h \in \scrO(\Om)$ such that $e^h =f$. Define $\overline{h} = h/k$. Then $e^{\overline{h}k} = f$. %Scheme fails: if f is ever 1, then h will be zero. We can't find the logarithm in that case. Find a new scheme. Also, overbar is shit notation, case conjugates.
+
+\shunt
+
+{\bf Problem 3:}
+
+Consider $\sqrt[\sqrt{-1}]{-1} = (-1)^{sqrt{-1}} = (e)^{\ln(-1)\sqrt{-1}} = e^{\ln{-1}e^{\frac{1}{2}\ln(-1)}}$. As discussed in class, the logarithms of $-1$ are $(2k+1)\pi i$ for each $k \in \Z$. That is, the possible values of $\sqrt[\sqrt{-1}]{-1}$ are given by 
+
+\begin{align*}
+e^{((2k+1)\pi i)e^{\frac{1}{2}((2j+1)\pi i)}} 
+\end{align*} %Make this bigger
+
+for any given $k, j \in \Z$.
+
+Yet, this is an intractible mess. Consider that $e^{\frac{1}{2}((2j+1)\pi i)} = e^{j \pi i + \frac{1}{2} \pi i} = e^{j\pi i} e^{\frac{1}{2} \pi i} = (-1)^j e^{\frac{1}{2} \pi i}$. Thus, our original expression becomes
+
+\begin{align*}
+e^{((2k+1)\pi i)(-1)^j e^{\frac{1}{2} \pi i}} 
+\end{align*}
+
+To clean this up even more, %write it as (e^blah)^blah, simplify the other thing. 
+
+%Ask Lempert if he's having a laugh at us with the 23 bullshit.
+
+{\bf Problem 4:}
+
+Let $\ln(z)$ be the principal branch of the logarithm of $z$, and let $z_1, z_2$ have positive real component.
+
+\shunt
+
+{\bf Problem 5:}
+
+Consider $\sin(\frac{1}{z})$. We know that $\sin(z) = \sum\limits_{n=0}^\infty (-1)^n \frac{z^{2n+1}}{(2n+1)!}$. So, where defined, $\sin(\frac{1}{z}) = \sum\limits_{n=0}^\infty (-1)^n \frac{\frac{1}{z}^{2n+1}}{(2n+1)!} = \sum\limits_{n=0}^\infty (-1)^n \frac{1}{z^{2n+1}(2n+1)!}$.
+
+That is, we have found a Laurent series for $\sin(\frac{1}{z})$ about $0$. We are done.
+
+\shunt
+
+{\bf Problem 6:}
+
+\shunt
+
+{\bf Problem 7:}
+
+\shunt
+
+\end{document}

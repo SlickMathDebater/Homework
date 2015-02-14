@@ -22,9 +22,10 @@
 
 %Status: 
 %Clear					:1,2,7
+%Cleared only via book	:3,6
 %Begun					:
 %Not started			:
-%Can complete via book	:3,6
+%Can complete via book	:
 %Needs Polish			:4,5
 
 \begin{document}
@@ -93,10 +94,6 @@ Now, fix $z_0 \in \Om$. It is clear that $\lim\limits_{z\to z_0} \frac{\int\limi
 
 That is, $g'(z_0) = f(z_0)$ for all $z_0 \in \Om$; $g$ is a primitive of $f$.
 
-%...Doing this well is going to require that the limit of M as \de \to 0 is f(z_0)...
-
-%Take the derivative, it's f, so f has a primitive. Done.
-
 \shunt
 
 {\bf Problem 3:}
@@ -143,7 +140,8 @@ e^{\ln(\phi + \psi)(tx+(1-t)y)} &= (\phi + \psi)(tx+(1-t)y)\\
 &= \phi(tx+(1-t)y) + \psi(tx+(1-t)y)\\
 &\leq \phi(x)^t\phi(y)^{(1-t)} + \psi(x)^t\psi(y)^{(1-t)}\\
 &\leq e^{t\ln((\phi+\psi)(x)) + (1-t)\ln((\phi+\psi)(y))} \\
-&\text{(I know that I would need to make this jump, but I'm not sure how to make it.)}
+&\text{(I must admit to not being sure how to do that last step,}\\
+&\text{but it's clear this is what is needed.)}
 \end{align*} %That last step is not so clear...
 
 So $\ln(\phi + \psi)(tx+(1-t)y) \leq \ln(t\ln\phi(x) + (1-t)\ln\phi(y) +t\ln\psi(x) + (1-t)\ln\psi(y))$.
@@ -160,7 +158,7 @@ We showed in class that $g(z) = \int\limits_p^z \frac{f'(w)}{f(w)} dw + \la$ wit
 
 Now, let $h \in \scrO(\Om)$ be such that $f=e^h$.
 
-Then $\frac{f}{f} = \frac{e^g}{e^h}$, so that $1 = e^{g-h}$. Thus, by problem 1, we have that $g-h = 2k \pi  i$ for some $k \in \Z$. %why not different k for different values of z? This is something Pete will bring up, and he will pwn you for it.
+Then $\frac{f}{f} = \frac{e^g}{e^h}$, so that $1 = e^{g-h}$. Thus, by problem 1, we have that for all $z \in \C$, $g(z)-h(z) = 2k \pi  i$ for some $k \in \Z$. All that remains is to show that $k$ does not depend on $z$: consider $(g-h)'$. Now, $g'=h' = f'/f$, as was discussed in class. So $(g-h)'$ is zero; $g-h$ is constant. So $g-h$ doesn't depend on $z$; $g(z)-h(z) =2k\pi i$ for some fixed $k$.
 
 That is, any two functions, $g$ and $h$, satisfying $e^g=e^h=f$ differ only by $2k\pi i $ for some $k \in \Z$.
 
@@ -168,17 +166,15 @@ That is, any two functions, $g$ and $h$, satisfying $e^g=e^h=f$ differ only by $
 
 {\bf Problem 6:}
 
-(Once again, I used Complex Made Simple as a reference for this)
+(Once again, I used Complex Made Simple as a reference for this.)
 
 Let $\phi \in \scrO(D_1(0))$. Suppose that $\phi$ takes its maximum at $0$.
 
 Because $\phi$ is holomorphic on $D_1(0)$, we know that $\phi$ has a power series representation, $\phi(z)=\sum\limits_0^\infty a_nz^n $, on any disk $\overline{D_r(0)}$ with $r \in (0,1)$.
 
-So, problem 3 applies: $\int\limits_0^{2\pi} \phi(re^{it})dt = \sum\limits_0^\infty 2\pi \absval{a_n}^2 r^{2n}$. Now, $\phi(0) = a_0$. So, $\int\limits_0^{2\pi} \phi(re^{it})dt = \sum\limits_0^\infty 2\pi \absval{a_n}^2 r^{2n} = 2\pi \absval{a_0}^2 + \sum\limits_1^\infty 2\pi \absval{a_n}^2 r^{2n}$. So $\int\limits_0^{2\pi} \phi(re^{it})dt \geq 2\pi\absval{f(0)}^2$.
+So, problem 3 applies: $\int\limits_0^{2\pi} \absval{\phi(re^{it})}^2dt = \sum\limits_0^\infty 2\pi \absval{a_n}^2 r^{2n}$. Now, $\phi(0) = a_0$. So, $\int\limits_0^{2\pi} \absval{\phi(re^{it})}^2dt = \sum\limits_0^\infty 2\pi \absval{a_n}^2 r^{2n} = 2\pi \absval{a_0}^2 + \sum\limits_1^\infty 2\pi \absval{a_n}^2 r^{2n}$. So $\int\limits_0^{2\pi} \absval{\phi(re^{it})}^2dt \geq 2\pi\absval{\phi(0)}^2$.
 
-Thus, for all $r$, $\int\limits_0^{2\pi} \phi(re^{it})dt \geq 2\pi \absval{f(0)}^2$. 
-
-%Prove that \phi is constant. You should be using Parseval to do this.
+Thus, for all $r$, $\int\limits_0^{2\pi} \absval{\phi(re^{it})}dt \geq 2\pi \absval{\phi(0)}^2$. But because $\phi(re^{it}) \leq \phi(0)$ for all $r,t \in \C$, this means that $\phi(re^{it}) = \phi(0)$ for all $r,t \in \R$. That is, $\phi(z) = \phi(0)$ for all $z \in D_1(0)$.
 
 \shunt
 
@@ -190,7 +186,7 @@ Then $\phi$ is constant on any disk centered at $c$, by problem 6 (by expanding 
 
 Now, $\Om$ is path connected (it is a domain).
 
-Let $z \in \Om$, and let $\ga: [0,1] \to \Om$ be a path from $z$ to $c$ with $\ga \subset \Om$. We can cover the image of the path with a finite number of open disks, because paths are compact. Also $\phi$ is constant on each of these open balls: if not, then $\sup\{t \in [0,1]: \phi\ga(t) \neq c\} = s$ for some $s \in [0,1]$. But then there's an $\ep$-ball around $s$ where $\phi\circ\ga$ takes the value $c$ somewhere...which means that $\phi(\ga(s)) = c$, which is a contradiction. 
+Let $z \in \Om$, and let $\ga: [0,1] \to \Om$ be a path from $z$ to $c$ with $\ga \subset \Om$. We can cover the image of the path with a finite number of open disks contained in $\Om$, because paths are compact. Also $\phi$ is constant on each of these open balls: if not, then $\sup\{t \in [0,1]: \phi\ga(t) \neq c\} = s$ for some $s \in [0,1]$. But then there's an $\ep$-ball around $s$ where $\phi\circ\ga$ takes the value $c$ somewhere...which means that $\phi(\ga(s)) = c$, which is a contradiction. 
 
 So $\phi$ is constant along the path: $\phi(z) = \phi(c)$.
 
