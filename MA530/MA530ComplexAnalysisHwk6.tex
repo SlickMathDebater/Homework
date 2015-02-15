@@ -23,11 +23,11 @@
 %Number of Problems		:6
 %Clear					:3,5
 %Begun					:1
-%Not started			:2,4,6
+%Not started			:6
 %Can complete via book	:
-%Needs Polish			:
+%Needs Polish			:2,4
 
-%Pomodoroes logged		:3
+%Pomodoroes logged		:5
 
 \begin{document}
 
@@ -49,9 +49,20 @@ So,
 
 {\bf Problem 2:}
 
-Let $\Om \subset \C$ be open and simply connected, $f \in \scrO (\Om)$, $f$ is always nonzero, $k \in \Z$.
+Let $\Om \subset \C$ be open and simply connected, $f \in \scrO (\Om)$, $f$ is always nonzero, $k \in \Z^+$.
 
-There is an $h \in \scrO(\Om)$ such that $e^h =f$. Define $\overline{h} = h/k$. Then $e^{\overline{h}k} = f$. %Scheme fails: if f is ever 1, then h will be zero. We can't find the logarithm in that case. Find a new scheme. Also, overbar is shit notation, case conjugates.
+There is an $h \in \scrO(\Om)$ such that $e^h =f$. Define $\tilde{h} = h/k$. Then:
+
+\begin{align*}
+e^{\tilde{h}k} &= f\\
+e^{\tilde{h}+\tilde{h}+\tilde{h} \ldots +\tilde{h}} &= f\\
+e^{\tilde{h}}e^{\tilde{h}}e^{\tilde{h}} \ldots e^{\tilde{h}} &= f\\
+e^{\tilde{h}}^k &= f\\
+\end{align*} %That last step might need polish.
+
+So, if $\Om \subset \C$ be open and simply connected, $f \in \scrO (\Om)$, $f$ is always nonzero, $k \in \Z^+$, then there's a $g \in \scrO(\Om)$ with $g^k = f$.
+
+Now, if $k \in \Z^-$, then find $h$ with $h^{-k} = f$, and invert it multiplicatively: define $g = 1/h$. %Brainmeats aren't working to finish this through.
 
 \shunt
 
@@ -88,6 +99,10 @@ And yes, taking $k=-1$ yields a value of $e^\pi$, which is ``about $23$''.
 {\bf Problem 4:}
 
 Let $\ln(z)$ be the principal branch of the logarithm of $z$, and let $z_1, z_2$ have positive real component.
+
+Then $e^{\ln(z_1)+\ln(z_2)} = e^{\ln(z_1)}e^{\ln(z_2)} = z_1z_2 = e^{\ln(z_1z_2)}$.
+
+Now, $e^{a+bi}$ is one-to-one given that $a \in \R$ and $b \in (-\pi,\pi)$. Because we're working in the principal branch and the real components of $z_1$ and $z_2$ are real, $something$. Thus, $\ln(z_1)+\ln(z_2) = \ln(z_1z_2)$. %state condition, and explain why it's fulfilled.
 
 \shunt
 
