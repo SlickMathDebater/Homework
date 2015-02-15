@@ -21,9 +21,9 @@
 \rhead{Assignment 6, Page \thepage}
 
 %Number of Problems		:6
-%Clear					:
+%Clear					:3,5
 %Begun					:1
-%Not started			:2,3,4,5,6
+%Not started			:2,4,6
 %Can complete via book	:
 %Needs Polish			:
 
@@ -71,9 +71,19 @@ Yet, this is an intractible mess. Consider that $e^{\frac{1}{2}((2j+1)\pi i)} = 
 e^{((2k+1)\pi i)(-1)^j e^{\frac{1}{2} \pi i}} 
 \end{align*}
 
-To clean this up even more, %write it as (e^blah)^blah, simplify the other thing. 
+To clean this up even more, $e^{\frac{1}{2} \pi i}=i$. So, we have our original expression as 
 
-%Ask Lempert if he's having a laugh at us with the 23 bullshit.
+\begin{align*}
+e^{((2k+1)\pi i)(-1)^j i}  = e^{-((2k+1)\pi)(-1)^j}
+\end{align*}
+
+Now, it is somewhat clear that $\{e^{-((2k+1)\pi)(-1)^j}: j, k \in \Z \} = \{ e^{ \pm ((2k+1)\pi)}: k \in \Z \} = \{e^{-((2k+1)\pi)}: k \in \Z \}$.
+
+So, the set of values $\sqrt[\sqrt{-1}]{-1}$ are $\{e^{-((2k+1)\pi)}: k \in \Z \}$. 
+
+And yes, taking $k=-1$ yields a value of $e^\pi$, which is ``about $23$''.
+
+\shunt
 
 {\bf Problem 4:}
 
