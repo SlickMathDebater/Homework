@@ -20,14 +20,14 @@
 \chead{MA530}
 \rhead{Assignment 6, Page \thepage}
 
-%Number of Problems		:6
-%Clear					:3,5
-%Begun					:1
-%Not started			:6
+%Number of Problems		:9
+%Clear					:3,5,6
+%Begun					:1,7
+%Not started			:9
 %Can complete via book	:
-%Needs Polish			:2,4
+%Needs Polish			:2,4*,8
 
-%Pomodoroes logged		:5
+%Pomodoroes logged		:6
 
 \begin{document}
 
@@ -57,12 +57,12 @@ There is an $h \in \scrO(\Om)$ such that $e^h =f$. Define $\tilde{h} = h/k$. The
 e^{\tilde{h}k} &= f\\
 e^{\tilde{h}+\tilde{h}+\tilde{h} \ldots +\tilde{h}} &= f\\
 e^{\tilde{h}}e^{\tilde{h}}e^{\tilde{h}} \ldots e^{\tilde{h}} &= f\\
-e^{\tilde{h}}^k &= f\\
-\end{align*} %That last step might need polish.
+(e^{\tilde{h}})^k &= f\\
+\end{align*}
 
 So, if $\Om \subset \C$ be open and simply connected, $f \in \scrO (\Om)$, $f$ is always nonzero, $k \in \Z^+$, then there's a $g \in \scrO(\Om)$ with $g^k = f$.
 
-Now, if $k \in \Z^-$, then find $h$ with $h^{-k} = f$, and invert it multiplicatively: define $g = 1/h$. %Brainmeats aren't working to finish this through.
+Now, if $k \in \Z^-$, then find $h$ with $h^{-k} = f$. Next, define $g = 1/h$. Then we have that $g^k = \frac{1}{h}^k =e^{\ln(1/h)k} = e^{-ln(h)k}= h^{-k} = f$, which yields our result. %Why do we get the middle step?
 
 \shunt
 
@@ -102,7 +102,7 @@ Let $\ln(z)$ be the principal branch of the logarithm of $z$, and let $z_1, z_2$
 
 Then $e^{\ln(z_1)+\ln(z_2)} = e^{\ln(z_1)}e^{\ln(z_2)} = z_1z_2 = e^{\ln(z_1z_2)}$.
 
-Now, $e^{a+bi}$ is one-to-one given that $a \in \R$ and $b \in (-\pi,\pi)$. Because we're working in the principal branch and the real components of $z_1$ and $z_2$ are real, $something$. Thus, $\ln(z_1)+\ln(z_2) = \ln(z_1z_2)$. %state condition, and explain why it's fulfilled.
+Now, $e^{a+bi}$ is one-to-one given that $a \in \R$ and $b \in (-\pi,\pi)$. Because we're working in the principal branch and the real components of $z_1$ and $z_2$ are (strictly) positive, $z_1z_2 = e^{a+bi}$ has $a \in \R$ and $b \in (-\pi,\pi)$. Similarly, $\ln(z_1)+\ln(z_2) = e^{a'+b'i}$ has $a' \in \R$ and $b' \in (-\pi, \pi)$. So $e^{z}$ is one-to-one for a domain containing both $\ln(z_1)+\ln(z_2)$ and $\ln(z_1z_2)$. Thus, $\ln(z_1)+\ln(z_2) = \ln(z_1z_2)$.
 
 \shunt
 
@@ -116,9 +116,57 @@ That is, we have found a Laurent series for $\sin(\frac{1}{z})$ about $0$. We ar
 
 {\bf Problem 6:}
 
+Consider $\frac{\sin(z)}{1-z}$. Because $\frac{1}{1-z} = \sum\limits_{n=0}^\infty z^n$ (when $z \in D_1(0)$, which we are working on because of the singularity at $1$) and $\sin(z) = \sum\limits_{n=0}^\infty \frac{(-1)^n z^{2n+1}}{(2n+1)!}$, we have $\frac{\sin(z)}{1-z} = \sum\limits_{n=0}^\infty z^n \sum\limits_{n=0}^\infty \frac{(-1)^n z^{2n+1}}{(2n+1)!} = \sum\limits_{n=0}^\infty a_nz^n$.
+
+The first seven coefficients of this expansion (that is, those with $n \leq 6$), are as follows (this follows trivially by computation, which I will invariably screw up.)
+
+\begin{align*}
+a_0 &= 0\\
+a_1 &= 1\\
+a_2 &= 1\\
+a_3 &= 5/6\\
+a_4 &= 5/6\\
+a_5 &= 5/6 + 1/60\\
+a_6 &= 5/6 + 1/60\\
+\end{align*}
+
 \shunt
 
 {\bf Problem 7:}
+
+(Preliminary note: these integrals land in the real numbers...there's no ambiguity about what $\ln$ is...).
+
+Let $f \in \scrO(D_R(0))$. Consider $\ln(\int\limits_0^{2\pi} \absval{f(e^{s+it})}^2 dt)$.
+
+We can apply Parseval's Formula (one of the earlier homeworks): let $f(z) = \sum\limits_{n=0}^\infty a_n z^n$.
+
+Then $\ln( \int\limits_0^{2\pi} \absval{f(e^{s+it})}^2 dt) = \ln(2\pi \sum\limits_{n=0}^\infty \absval{a_n}^2 s^{2n})$. Moreover, we have $\ln(2\pi \sum\limits_{n=0}^\infty \absval{a_n}^2 s^{2n}) =  \ln(2\pi \lim\limits_{N \to \infty}\sum\limits_{n=0}^N \absval{a_n}^2 s^{2n})$. 
+
+By the earlier homework, the sums of log-convex functions are log-convex. By a trivial induction argument, all finite sums of log-convex functions are log-convex. Moreover, $\ln(\absval{a_n}^2 s^{2n})$ is convex; %Prove it.
+
+So we have that $2\pi \sum\limits_{n=0}^N \absval{a_n}^2 s^{2n}$ is log-convex, for all $N \in \N$; in other words, $\ln(2\pi \sum\limits_{n=0}^N \absval{a_n}^2 s^{2n})$ is convex for all $N$.
+
+Now, the limit of a sequence of log-convex functions is log-convex: %Proof
+
+Thus, $2\pi \lim\limits_{N \to \infty}\sum\limits_{n=0}^N \absval{a_n}^2 s^{2n}$ is log-convex: So, $\ln(2\pi \lim\limits_{N \to \infty}\sum\limits_{n=0}^N \absval{a_n}^2 s^{2n}) = \ln(\int\limits_0^{2\pi} \absval{f(e^{s+it})}^2 dt)$ is convex; this is the result we wanted.
+
+\shunt
+
+{\bf Problem 8:}
+
+Let $\psi, \phi \in \scrO(\C)$, and $\absval{\psi} \leq \absval{\phi}$ on $\C$.
+
+Then $\absval{\psi}/\absval{\phi} \leq 1$ on $\C$. That is, $\absval{\frac{\psi}{\phi}} \leq 1$ on $\C$.
+
+So $\frac{\psi}{\phi}$ is a bounded, entire function; it is constant, by Liouville.
+
+So $\frac{\psi}{\phi} = c$ for some $c \in \C$. That is, $\psi = c \phi$.
+
+\shunt
+
+{\bf Problem 9:}
+
+Let $f$ have an essential singularity at $c$.
 
 \shunt
 
