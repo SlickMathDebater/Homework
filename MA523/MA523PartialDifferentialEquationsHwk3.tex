@@ -16,12 +16,12 @@
 
 %Number of Problems		:4
 %Clear					:
-%Begun					:1
-%Not started			:2,3,4
+%Begun					:2,3
+%Not started			:4
 %Can complete via book	:
-%Needs Polish			:
+%Needs Polish			:1
 
-%Pomodoroes logged		:2
+%Pomodoroes logged		:4
 
 
 \pagestyle{fancy}
@@ -31,11 +31,25 @@
 
 \begin{document}
 
-{\bf Problem 1: Problem 6 in textbook:}
+{\bf Problem 1: Problem 6 in textbook:} %Find out where to put that absval of u in...
 
-Let $U$ be a bounded, open subset of $\R^n$. 
+Let $U$ be a bounded, open subset of $\R^n$.
 
-%Use problem 5 to do this: the hint is subharmonic. So, we can write the maximum of the hint as the maximum of the hint on the boundary. So because $U$ is bounded, we can perform some estimates that get us what we need. 
+We freely use the preceding problem's result that if $-\De v \leq 0$, then $\max\limits_{\overline{U}} v = \max\limits_{\partial U} v$.
+
+Define $\la = \max\limits_{\overline{U}} \absval{f}$. Define $M = \max(1,\frac{r^2}{2n})$ where $r$ is an upper bound on the distance of a point in $U$ from $0$.
+
+So we have:
+
+\begin{align*}
+\max\limits_{\overline{U}} u &\leq \max\limits_{\overline{U}} (u + \frac{\absval{x}^2}{2n} \la) \\
+&= \max\limits_{\partial U} (u + \frac{\absval{x}^2}{2n} \la)\\
+&\leq \max\limits_{\partial U} (u) +\max\limits_{\partial U} \frac{\absval{x}^2}{2n} \la)\\
+&\leq \max\limits_{\partial U} (u) +M \la\\
+&= \max\limits_{\partial U} (g) +M \la\\
+&\leq \max\limits_{\partial U} (\absval{g}) + M \max\limits_{\overline{U}} (\absval{f})\\
+&\leq M(\max\limits_{\partial U} (\absval{g}) + \max\limits_{\overline{U}} (\absval{f}))\\
+\end{align*} 
 
 \shunt
 
@@ -54,13 +68,51 @@ Let $u$ be the solution of
 
 Assume $g$ is bounded and $g(x) = \absval{x}$ for $x \in \partial \R_+^n$ with $\absval{x}\leq 1$.
 
-Consider $Du$.
+Then $u(x) = -\int\limits_{\partial U} \absval{x} (\frac{\partial G}{\partial \nu} (x,y) dS(y))$, where $G$ is the Green's function for the half-space, $G(x,y) = \Phi(y-x) - \Phi(y-\overline{x})$.
 
-%We have a green's function, and thus a representation of $u$. It may be of value to bash this and the hint together...
+Consider $\frac{u(\la e_n) - u(0)}{\la}$ (with $\la >0$). We can see that: %Fix those xs...
+
+\begin{align*}
+\frac{u(\la e_n) - u(0)}{\la} &= \frac{\int\limits_{\partial U} \absval{\la e_n} \left[- \frac{\partial G}{\partial \nu}(\la e_n,y)\right]dS(y)}{\la}\\
+&=\frac{\int\limits_{\partial U} \absval{\la e_n } \left[- \frac{\partial \Phi}{\partial \nu}(y-\la e_n) + \frac{\partial \Phi}{\partial \nu}(y-\overline{\la e_n}))\right]dS(y)}{\la}\\
+&=\frac{\int\limits_{\partial U} \absval{\la e_n} \left[\frac{\partial \Phi}{\partial \nu}(y-\overline{\la e_n}) - \frac{\partial \Phi}{\partial \nu}(y-\la e_n))\right]dS(y)}{\la}\\
+&=\int\limits_{\partial U} \left[\frac{\partial \Phi}{\partial \nu}(y-\overline{\la e_n}) - \frac{\partial \Phi}{\partial \nu}(y-\la e_n))\right]dS(y)\\
+&=\int\limits_{\partial U} \left[\frac{\partial \Phi}{\partial \nu}(y+\la e_n) - \frac{\partial \Phi}{\partial \nu}(y-\la e_n))\right]dS(y)\\
+\end{align*}
+
+%Suggest that the limit as $\la \to 0$ of this is infinite...it asplode.
 
 \shunt
 
 {\bf Problem 3: Problem 10 in textbook:}
+
+Part a:
+
+Let $U^+$ be the open half-ball $\{ x \in \R^n : \absval{x} < 1, x_n > 0\}$. Assume that $u \in C^2(\overline{U^+})$ is harmonic in $U^+$, with $u = 0$ on $\partial U^+ \cap \{x: x_n = 0\}$. Now, set
+
+\begin{displaymath}
+v(x) =
+   \left\{
+     \begin{array}{lr}
+       u & \text{ if } x_n \geq 0\\
+       -u(x_1,x_2, \ldots x_{n-1}, -x_n) & \text{ if } x_n < 0
+     \end{array}
+   \right.
+\end{displaymath}
+
+for $x$ in the open unit ball, $U$.
+
+First, $v \in C^2( U \setminus \{x: x_n = 0\})$, and this is clear.
+
+Next, %finish up the rest of it...that v is smooth, even on the crease
+
+So, $v \in C^2(U)$, and $\De v = 0$ except perhaps when $x_n = 0$. Thus, $\De v = 0$ even on the line, by continuity of the second partials. So $v$ is harmonic on $U$.
+
+\shunt
+
+Part b:
+
+%You'll actually need to bash it over the head with Green's functions and stuff.
 
 \shunt
 
