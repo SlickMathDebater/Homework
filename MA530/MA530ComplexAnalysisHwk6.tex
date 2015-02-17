@@ -21,19 +21,21 @@
 \rhead{Assignment 6, Page \thepage}
 
 %Number of Problems		:9
-%Clear					:3,5,6
-%Begun					:1,7
-%Not started			:9
+%Clear					:2,3,5,6
+%Begun					:9
+%Not started			:
 %Can complete via book	:
-%Needs Polish			:2,4*,8
+%Needs Polish			:1*,4*,7*,8*
 
-%Pomodoroes logged		:6
+%Pomodoroes logged		:9
+
+%*:Get someone else to read it.
 
 \begin{document}
 
 {\bf Problem 1:}
 
-Consider $\int\limits_0^\infty \frac{1-\cos(x)}{x^2} dx$. 
+Consider $\int\limits_0^\infty \frac{1-\cos(x)}{x^2} dx$. Note that this must be positive. (If this is not clear, we can estimate the integral from below by an alternating series that converges to something positive.)
 
 Now, $\int\limits_0^T\frac{1-\cos(z)}{z^2} dz = \int\limits_0^T\frac{1-\frac{e^{iz}+e^{-iz}}{2}}{z^2} dz = -\left[\int\limits_0^T \frac{e^{iz}-1}{2z^2} dz+ \int\limits_0^T \frac{e^{-iz}-1}{2z^2} dz\right]$. Both of the functions under the integrands are holomorphic, except at the origin. Using a $u$-substitution, we get $\int\limits_0^T \frac{e^{-iz}-1}{2z^2} dz = -\int\limits_0^{-T} \frac{e^{iz}-1}{2z^2} dz$.
 
@@ -43,7 +45,31 @@ So,
 \int\limits_0^T\frac{1-\cos(z)}{z^2} dz &= -\left[\int\limits_0^T \frac{e^{iz}-1}{2z^2} dz- \int\limits_0^{-T} \frac{e^{iz}-1}{2z^2} dz dz\right]\\
 &= \frac{1}{2}\left[\int\limits_0^T \frac{1-e^{iz}}{z^2} dz-\int\limits_0^{-T} \frac{1-e^{iz}}{z^2} dz \right]\\
 &= \frac{1}{2}\left[\int\limits_{-T}^T \frac{1-e^{iz}}{z^2} dz \right]\\
-\end{align*} %Break it up into three appropriate integrals, estimate a lot of it away, win.
+\end{align*} %Break it up into three appropriate integrals, estimate a lot of it away, win...but also try to throw out that 1/z^2 term...
+
+Now, we know that $\int\limits_{-T}^T \frac{1}{z^2} dz = \infty$. The remaining term is more difficult to handle.
+
+First, by Cauchy's Theorem, we can integrate the remaining term along the path $\ga$, pictured below:
+
+\shunt %PICTURE GOES HERE
+
+So, 
+
+\begin{align*}
+\frac{1}{2}\left[\int\limits_{-T}^T \frac{1-e^{iz}}{z^2} dz \right] &= \frac{1}{2}\left[\int\limits_{-T}^{-T+i\sqrt{T}} \frac{1-e^{iz}}{z^2} dz \right]\\
+&+ \frac{1}{2}\left[\int\limits_{-T+i\sqrt{T}}^{T+i\sqrt{T}} \frac{1-e^{iz}}{z^2} dz \right]\\
+&+ \frac{1}{2}\left[\int\limits_{T+i\sqrt{T}}^T \frac{1-e^{iz}}{z^2} dz \right]
+\end{align*} %sqrt might not be what you need here...
+
+Using the $ML$-inequality/trivial estimate, we can estimate the first term: $\int\limits_{-T}^{-T+i\sqrt{T}} \frac{1-e^{iz}}{z^2} dz \leq \sqrt{T} \sup(\absval{\frac{1-\cos(z)}{z^2}}) = \frac{1}{\sqrt{T}}$
+
+Similarly, we can estimate the last term: $\int\limits_{T+i\sqrt{T}}^T \frac{1-e^{iz}}{z^2} dz \leq \sqrt{T} \sup(\absval{\frac{1-\cos(z)}{z^2}}) = \frac{1}{\sqrt{T}}$
+
+And we can estimate the middle term: $\int\limits_{-T+i\sqrt{T}}^{T+i\sqrt{T}} \frac{1-e^{iz}}{z^2} dz \leq 2T \sup(\absval{\frac{1-\cos(z)}{z^2}}) = 2/T$.
+
+So as $T \to \infty$, all of these terms vanish. So $\frac{1}{2}\left[\int\limits_{-T}^T \frac{1-e^{iz}}{z^2} dz \right] = \frac{1}{2}\left[\int\limits_{-T}^{-T+i\sqrt{T}} \frac{1-e^{iz}}{z^2} dz \right]$ vanishes as $T \to \infty$.
+
+So $\int\limits_0^\infty \frac{1-\cos(x)}{x^2} dx = 0$.
 
 \shunt
 
@@ -62,7 +88,7 @@ e^{\tilde{h}}e^{\tilde{h}}e^{\tilde{h}} \ldots e^{\tilde{h}} &= f\\
 
 So, if $\Om \subset \C$ be open and simply connected, $f \in \scrO (\Om)$, $f$ is always nonzero, $k \in \Z^+$, then there's a $g \in \scrO(\Om)$ with $g^k = f$.
 
-Now, if $k \in \Z^-$, then find $h$ with $h^{-k} = f$. Next, define $g = 1/h$. Then we have that $g^k = \frac{1}{h}^k =e^{\ln(1/h)k} = e^{-ln(h)k}= h^{-k} = f$, which yields our result. %Why do we get the middle step?
+Now, if $k \in \Z^-$, then find $h$ with $h^{-k} = f$. Next, define $g = 1/h$. Then we have that $g^k = \frac{1}{h}^k =e^{\ln(1/h)k} = e^{-ln(h)k}= h^{-k} = f$, which yields our result.
 
 \shunt
 
@@ -102,7 +128,7 @@ Let $\ln(z)$ be the principal branch of the logarithm of $z$, and let $z_1, z_2$
 
 Then $e^{\ln(z_1)+\ln(z_2)} = e^{\ln(z_1)}e^{\ln(z_2)} = z_1z_2 = e^{\ln(z_1z_2)}$.
 
-Now, $e^{a+bi}$ is one-to-one given that $a \in \R$ and $b \in (-\pi,\pi)$. Because we're working in the principal branch and the real components of $z_1$ and $z_2$ are (strictly) positive, $z_1z_2 = e^{a+bi}$ has $a \in \R$ and $b \in (-\pi,\pi)$. Similarly, $\ln(z_1)+\ln(z_2) = e^{a'+b'i}$ has $a' \in \R$ and $b' \in (-\pi, \pi)$. So $e^{z}$ is one-to-one for a domain containing both $\ln(z_1)+\ln(z_2)$ and $\ln(z_1z_2)$. Thus, $\ln(z_1)+\ln(z_2) = \ln(z_1z_2)$.
+Now, $e^{a+bi}$ is one-to-one given that $a \in \R$ and $b \in (-\pi,\pi)$. Because we're working in the principal branch and the real components of $z_1$ and $z_2$ are (strictly) positive, $z_1z_2 = e^{a+bi}$ has $a \in \R$ and $b \in (-\pi,\pi)$. For the same reason, $\ln(z_1)+\ln(z_2) = e^{a'+b'i}$ has $a' \in \R$ and $b' \in (-\pi, \pi)$. So $e^{z}$ is one-to-one for a domain containing both $\ln(z_1)+\ln(z_2)$ and $\ln(z_1z_2)$. Thus, $\ln(z_1)+\ln(z_2) = \ln(z_1z_2)$.
 
 \shunt
 
@@ -136,19 +162,26 @@ a_6 &= 5/6 + 1/60\\
 
 (Preliminary note: these integrals land in the real numbers...there's no ambiguity about what $\ln$ is...).
 
-Let $f \in \scrO(D_R(0))$. Consider $\ln(\int\limits_0^{2\pi} \absval{f(e^{s+it})}^2 dt)$.
+Let $f \in \scrO(D_R(0))$. Consider $\ln(\int\limits_0^{2\pi} \absval{f(e^{s+it})}^2 dt)$ as a function of $s$.
 
 We can apply Parseval's Formula (one of the earlier homeworks): let $f(z) = \sum\limits_{n=0}^\infty a_n z^n$.
 
-Then $\ln( \int\limits_0^{2\pi} \absval{f(e^{s+it})}^2 dt) = \ln(2\pi \sum\limits_{n=0}^\infty \absval{a_n}^2 s^{2n})$. Moreover, we have $\ln(2\pi \sum\limits_{n=0}^\infty \absval{a_n}^2 s^{2n}) =  \ln(2\pi \lim\limits_{N \to \infty}\sum\limits_{n=0}^N \absval{a_n}^2 s^{2n})$. 
+Then $\ln( \int\limits_0^{2\pi} \absval{f(e^{s+it})}^2 dt) = \ln(2\pi \sum\limits_{n=0}^\infty \absval{a_n}^2 e^{2sn})$. Moreover, we have $\ln(2\pi \sum\limits_{n=0}^\infty \absval{a_n}^2 e^{2sn}) =  \ln(2\pi \lim\limits_{N \to \infty}\sum\limits_{n=0}^N \absval{a_n}^2 e^{2sn})$. 
 
-By the earlier homework, the sums of log-convex functions are log-convex. By a trivial induction argument, all finite sums of log-convex functions are log-convex. Moreover, $\ln(\absval{a_n}^2 s^{2n})$ is convex; %Prove it.
+By the earlier homework, the sums of log-convex functions are log-convex. By a trivial induction argument, all finite sums of log-convex functions are log-convex. Moreover, $\ln(2\pi \absval{a_n}^2 e^{2sn})$ is convex; $\ln(2\pi \absval{a_n}^2 e^{2sn}) = 2sn \ln([2\pi\absval{a_n}^2]^{-2sn}) = 2snc$ for some $c \in \R$, which is clearly convex as a function of $s$. %Prove it.
 
-So we have that $2\pi \sum\limits_{n=0}^N \absval{a_n}^2 s^{2n}$ is log-convex, for all $N \in \N$; in other words, $\ln(2\pi \sum\limits_{n=0}^N \absval{a_n}^2 s^{2n})$ is convex for all $N$.
+So we have that $2\pi \sum\limits_{n=0}^N \absval{a_n}^2 e^{2sn}$ is log-convex, for all $N \in \N$; in other words, $\ln(2\pi \sum\limits_{n=0}^N \absval{a_n}^2 e^{2sn})$ is convex for all $N$.
 
-Now, the limit of a sequence of log-convex functions is log-convex: %Proof
+Now, the limit of a sequence of log-convex functions is log-convex: let $x,y \in \R$, and $t \in [0,1]$, and let $\phi_N \to \phi$ be a sequence of log-convex functions. Then:
 
-Thus, $2\pi \lim\limits_{N \to \infty}\sum\limits_{n=0}^N \absval{a_n}^2 s^{2n}$ is log-convex: So, $\ln(2\pi \lim\limits_{N \to \infty}\sum\limits_{n=0}^N \absval{a_n}^2 s^{2n}) = \ln(\int\limits_0^{2\pi} \absval{f(e^{s+it})}^2 dt)$ is convex; this is the result we wanted.
+\begin{align*}
+t\ln(\phi_N(x)) + (1-t)\ln(\phi_N(y)) &\leq \ln(\phi_N(tx+(1-t)y))\\
+t\ln(\phi(x)) + (1-t)\ln(\phi(y)) &\leq \ln(\phi(tx+(1-t)y))\\
+\end{align*}
+
+because inequality is preserved over limits, because $\ln$ is continuous.
+
+Thus, $2\pi \lim\limits_{N \to \infty}\sum\limits_{n=0}^N \absval{a_n}^2 e^{2sn}$ is log-convex: So, $\ln(2\pi \lim\limits_{N \to \infty}\sum\limits_{n=0}^N \absval{a_n}^2 e^{2sn}) = \ln(\int\limits_0^{2\pi} \absval{f(e^{s+it})}^2 dt)$ is convex; this is the result we wanted.
 
 \shunt
 
@@ -156,17 +189,23 @@ Thus, $2\pi \lim\limits_{N \to \infty}\sum\limits_{n=0}^N \absval{a_n}^2 s^{2n}$
 
 Let $\psi, \phi \in \scrO(\C)$, and $\absval{\psi} \leq \absval{\phi}$ on $\C$.
 
-Then $\absval{\psi}/\absval{\phi} \leq 1$ on $\C$. That is, $\absval{\frac{\psi}{\phi}} \leq 1$ on $\C$.
+First, $\phi = 0$, $\psi = 0$ trivially by the assumption.
 
-So $\frac{\psi}{\phi}$ is a bounded, entire function; it is constant, by Liouville.
+Next, $\absval{\psi}/\absval{\phi} \leq 1$ on $\C$, except where $\phi = 0$. Thus, $\absval{\frac{\psi}{\phi}} \leq 1$ on $\C$, except where $\phi = 0$. Because $\frac{\psi}{\phi}$ is bounded, all of its singularities are removable; we can define $\xi$ holomorphic and equal to $\frac{\psi}{\phi}$ except where $\phi = 0$. 
 
-So $\frac{\psi}{\phi} = c$ for some $c \in \C$. That is, $\psi = c \phi$.
+Now, $\xi$ is a bounded, entire function; it is constant, by Liouville.
+
+So $\frac{\psi}{\phi} = c$ on $\C$, except where $\phi = 0$, for some $c \in \C$. Also, $\phi = \psi = c\phi$ where $\phi = 0$. Thus, $\psi = c \phi$.
 
 \shunt
 
 {\bf Problem 9:}
 
-Let $f$ have an essential singularity at $c$.
+(Without loss of generality, let $c=0$.)
+
+Let $f$ have an essential singularity at $0$, and let $f= \sum\limits_{-\infty}^\infty a_n z^n$ on some disk of radius $r$. Now, $a_n \neq 0$ for infinitely many negative $n \in \Z$. Now, let $1/f = \sum\limits_{-\infty}^\infty b_n z^n$. 
+
+Now, $f 1/f = 1 = \sum\limits_{-\infty}^\infty a_n z^n \sum\limits_{-\infty}^\infty b_n z^n$. So...%That's somewhat clearly the schtick...Some linear algebra can be done on this...
 
 \shunt
 
