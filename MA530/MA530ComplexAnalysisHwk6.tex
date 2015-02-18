@@ -22,16 +22,18 @@
 
 %Number of Problems		:9
 %Clear					:2,3,5,6
-%Begun					:9
+%Begun					:
 %Not started			:
 %Can complete via book	:
-%Needs Polish			:1*,4*,7*,8*
+%Needs Polish			:1*,4*,7*,8*,9*
 
 %Pomodoroes logged		:10
 
 %*:Get someone else to read it.
 
 \begin{document}
+
+(I worked with Dan McNall a little).
 
 {\bf Problem 1:}
 
@@ -203,9 +205,7 @@ So $\frac{\psi}{\phi} = c$ on $\C$, except where $\phi = 0$, for some $c \in \C$
 
 (Without loss of generality, let $c=0$.)
 
-Let $f$ have an essential singularity at $0$, and let $f= \sum\limits_{-\infty}^\infty a_n z^n$ on some disk of radius $r$. Now, $a_n \neq 0$ for infinitely many negative $n \in \Z$. Now, let $1/f = \sum\limits_{-\infty}^\infty b_n z^n$. 
-
-Now, $f 1/f = 1 = \sum\limits_{-\infty}^\infty a_n z^n \sum\limits_{-\infty}^\infty b_n z^n$. So...%That's somewhat clearly the schtick...Some linear algebra can be done on this...
+Let $f$ have an essential singularity at $0$. Then for all $r>0$, $f(D_r(0))$ is dense in $\C$. So the set $\{1/z: z \in f(D_r(0))\}$ is dense in $\C$, for all $r >0$. So $1/f$ has an essential singularity at $0$.
 
 \shunt
 
