@@ -17,11 +17,13 @@
 %Number of Problems		:4
 %Clear					:
 %Begun					:2,3
-%Not started			:4
+%Not started			:
 %Can complete via book	:
-%Needs Polish			:1
+%Needs Polish			:1,4*
 
-%Pomodoroes logged		:4
+%Pomodoroes logged		:6
+
+%*: Ask someone to look it over...
 
 
 \pagestyle{fancy}
@@ -31,11 +33,11 @@
 
 \begin{document}
 
-{\bf Problem 1: Problem 6 in textbook:} %Find out where to put that absval of u in...
+{\bf Problem 1: Problem 6 in textbook:}
 
 Let $U$ be a bounded, open subset of $\R^n$.
 
-We freely use the preceding problem's result that if $-\De v \leq 0$, then $\max\limits_{\overline{U}} v = \max\limits_{\partial U} v$.
+We freely use the preceding problem's result that if $-\De v \leq 0$, then $\max\limits_{\overline{U}} v = \max\limits_{\partial U} v$, and also the hint given; $-\De(u + \frac{\absval{x}^2}{2n} \la) \leq 0$. %It may be valuable to put these in, but it doesn't seem like the best use of time right now...
 
 Define $\la = \max\limits_{\overline{U}} \absval{f}$. Define $M = \max(1,\frac{r^2}{2n})$ where $r$ is an upper bound on the distance of a point in $U$ from $0$.
 
@@ -44,12 +46,25 @@ So we have:
 \begin{align*}
 \max\limits_{\overline{U}} u &\leq \max\limits_{\overline{U}} (u + \frac{\absval{x}^2}{2n} \la) \\
 &= \max\limits_{\partial U} (u + \frac{\absval{x}^2}{2n} \la)\\
-&\leq \max\limits_{\partial U} (u) +\max\limits_{\partial U} \frac{\absval{x}^2}{2n} \la)\\
+&\leq \max\limits_{\partial U} (u) +\max\limits_{\partial U} \frac{\absval{x}^2}{2n} \la\\
 &\leq \max\limits_{\partial U} (u) +M \la\\
 &= \max\limits_{\partial U} (g) +M \la\\
 &\leq \max\limits_{\partial U} (\absval{g}) + M \max\limits_{\overline{U}} (\absval{f})\\
 &\leq M(\max\limits_{\partial U} (\absval{g}) + \max\limits_{\overline{U}} (\absval{f}))\\
 \end{align*} 
+
+whenever $u$ is a smooth solution of
+
+\begin{displaymath}
+   \left\{
+     \begin{array}{lr}
+       -\De u = f & \text{ in } U\\
+       u=g & \text{ on }\partial U
+     \end{array}
+   \right.
+\end{displaymath}
+
+Noting that we get the same result for $-u$, we have our result.
 
 \shunt
 
@@ -70,7 +85,7 @@ Assume $g$ is bounded and $g(x) = \absval{x}$ for $x \in \partial \R_+^n$ with $
 
 Then $u(x) = -\int\limits_{\partial U} \absval{x} (\frac{\partial G}{\partial \nu} (x,y) dS(y))$, where $G$ is the Green's function for the half-space, $G(x,y) = \Phi(y-x) - \Phi(y-\overline{x})$.
 
-Consider $\frac{u(\la e_n) - u(0)}{\la}$ (with $\la >0$). We can see that: %Fix those xs...
+Consider $\frac{u(\la e_n) - u(0)}{\la}$ (with $\la >0$). We can see that:
 
 \begin{align*}
 \frac{u(\la e_n) - u(0)}{\la} &= \frac{\int\limits_{\partial U} \absval{\la e_n} \left[- \frac{\partial G}{\partial \nu}(\la e_n,y)\right]dS(y)}{\la}\\
@@ -78,9 +93,11 @@ Consider $\frac{u(\la e_n) - u(0)}{\la}$ (with $\la >0$). We can see that: %Fix 
 &=\frac{\int\limits_{\partial U} \absval{\la e_n} \left[\frac{\partial \Phi}{\partial \nu}(y-\overline{\la e_n}) - \frac{\partial \Phi}{\partial \nu}(y-\la e_n))\right]dS(y)}{\la}\\
 &=\int\limits_{\partial U} \left[\frac{\partial \Phi}{\partial \nu}(y-\overline{\la e_n}) - \frac{\partial \Phi}{\partial \nu}(y-\la e_n))\right]dS(y)\\
 &=\int\limits_{\partial U} \left[\frac{\partial \Phi}{\partial \nu}(y+\la e_n) - \frac{\partial \Phi}{\partial \nu}(y-\la e_n))\right]dS(y)\\
-\end{align*}
+&=\int\limits_{U} \left[\De \Phi(x+ \la e_n) - \De \Phi(x-\la e_n) \right]dx\\
+&=\int\limits_{U} \left[\De (\Phi(x+ \la e_n) - \Phi(x-\la e_n)) \right]dx\\
+\end{align*} %Finish this out.
 
-%Suggest that the limit as $\la \to 0$ of this is infinite...it asplode.
+It was pointed out that the limit as $\la \to 0$ of this is $\infty$. Thus, the derivative in the $e_n$ direction blows up around $0$; the $Du$ is unbounded around $0$.
 
 \shunt
 
@@ -94,7 +111,7 @@ Let $U^+$ be the open half-ball $\{ x \in \R^n : \absval{x} < 1, x_n > 0\}$. Ass
 v(x) =
    \left\{
      \begin{array}{lr}
-       u & \text{ if } x_n \geq 0\\
+       u(x) & \text{ if } x_n \geq 0\\
        -u(x_1,x_2, \ldots x_{n-1}, -x_n) & \text{ if } x_n < 0
      \end{array}
    \right.
@@ -104,7 +121,9 @@ for $x$ in the open unit ball, $U$.
 
 First, $v \in C^2( U \setminus \{x: x_n = 0\})$, and this is clear.
 
-Next, %finish up the rest of it...that v is smooth, even on the crease
+Next, $v$ is continuous on $\{x: x_n = 0\}$, and this is clear. Also, $v$'s derivatives on $\{x: x_n = 0\}$ are continuous: %This appears to be chain rule. Just show that the derivatives match up on both sides, and it works out because u was smooth on the crease.
+
+Last, $v$'s second derivatives on $\{x: x_n = 0\}$ are continuous, because (reasons). %Is similar to the above...right? Just show that the derivatives match up on both sides, and it works out because u was smooth on the crease.
 
 So, $v \in C^2(U)$, and $\De v = 0$ except perhaps when $x_n = 0$. Thus, $\De v = 0$ even on the line, by continuity of the second partials. So $v$ is harmonic on $U$.
 
@@ -112,11 +131,59 @@ So, $v \in C^2(U)$, and $\De v = 0$ except perhaps when $x_n = 0$. Thus, $\De v 
 
 Part b:
 
-%You'll actually need to bash it over the head with Green's functions and stuff.
+Let $u \in C^2(U^+) \cap C(\overline{U^+})$, and define $v$ as above.
+
+First, $v \in C^2( U \setminus \{x: x_n = 0\})$, and this is clear.
+
+Next, $v$ is continuous on $\{x: x_n = 0\}$, and this is clear. Also, $v$'s derivatives on $\{x: x_n = 0\}$ are continuous: %Don't know how to do this.
+
+Last, $v$'s second derivatives on $\{x: x_n = 0\}$ are continuous, because (reasons). %OR this...
+
+So, $v \in C^2(U)$, and $\De v = 0$ except perhaps when $x_n = 0$. Thus, $\De v = 0$ even on the line, by continuity of the second partials. So $v$ is harmonic on $U$.
 
 \shunt
 
 {\bf Problem 4: Only problem on sheet:}
+
+Let $g \in C(\R^{n-1}) \cap L^\infty (\R^{n-1})$.
+
+By appealing to either Theorem 14 or the fact that the question bashes us over the head with it, there's at least one function, $u$, with:
+
+\begin{itemize}
+\item $u \in C^\infty( \R^n_+) \cap L^\infty  (\R^n_+) \cap C(\overline{\R^n_+})$
+\item $\De u = 0$ in $\R^n_+$
+\item $u(x',0) = g(x')$ on $\R^{n-1}$.
+\end{itemize}
+
+Let $u$ and $v$ be such functions. Then there's a function $\tilde{u}$ and $\tilde{v}$ with
+
+\begin{displaymath}
+\tilde{u}(x) =
+   \left\{
+     \begin{array}{lr}
+       u(x) & \text{ if } x_n \geq 0\\
+       -u(x_1,x_2, \ldots x_{n-1}, -x_n) & \text{ if } x_n < 0
+     \end{array}
+   \right.
+\end{displaymath}
+
+and
+
+\begin{displaymath}
+\tilde{v}(x) =
+   \left\{
+     \begin{array}{lr}
+       v(x) & \text{ if } x_n \geq 0\\
+       -v(x_1,x_2, \ldots x_{n-1}, -x_n) & \text{ if } x_n < 0
+     \end{array}
+   \right.
+\end{displaymath}
+
+Now, consider $w = \tilde{u} - \tilde{v}$. Then $w$ is harmonic on the entire space: it's the sum of two harmonic functions, as explained in the previous problem.
+
+Moreover, $w$ is bounded: both $u$ and $v$ are bounded, so $\tilde{u}$ and $\tilde{v}$ are bounded, so their difference is bounded.
+
+So, by Liouville, $w$ must be constant. However, $\tilde{u}$ and $\tilde{v}$ are the same at a point ($\tilde{u}(0) = u(0) = g(0) = v(0) = \tilde{v}(0)$). So $w = 0$ at a point. So $\tilde{u} = \tilde{v}$. So $u = v$.
 
 \shunt
 
