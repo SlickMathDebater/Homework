@@ -135,16 +135,17 @@ Part b:
 
 Let $u \in C^2(U^+) \cap C(\overline{U^+})$, and define $v$ as above.
 
-Define $w(x) = \frac{1-\absval{x}^2}{n \al(n)} \int\limits_{\partial B(0,1)} \frac{v(y)}{\absval{x-y}^n} dS(y)$. Then $\De w = 0$.
+Define $w(x) = \frac{1-\absval{x}^2}{n \al(n)} \int\limits_{\partial B(0,1)} \frac{v(y)}{\absval{x-y}^n} dS(y)$. Then $\De w = 0$, by theorem 15.
 
 Now, consider
 
 \begin{align*}
 w(x) &= \frac{1-\absval{x}^2}{n \al(n)} \int\limits_{\partial B(0,1)} \frac{v(y)}{\absval{x-y}^n} dS(y)\\
 &= \frac{1-\absval{x}^2}{n \al(n)} \int\limits_{\partial U^+} \frac{v(y)}{\absval{x-y}^n} dS(y) + \frac{1-\absval{x}^2}{n \al(n)} \int\limits_{U^-} \frac{v(y)}{\absval{x-y}^n} dS(y)\\
+&= \frac{1-\absval{x}^2}{n \al(n)} \int\limits_{\partial U^+} \frac{u(y)}{\absval{x-y}^n} dS(y) + \frac{1-\absval{x}^2}{n \al(n)} \int\limits_{U^-} \frac{-u(\overline{y})}{\absval{x-y}^n} dS(y)\\
 \end{align*}
 
-(I can't get the rest of this, but the point is that I want to show that $w = v$).
+Where $\overline{(x_1,x_2, \ldots x_n)} = (x_1,x_2, \ldots -x_n)$. If $x_n = 0$, this vanishes. So $w = u$ on the boundary of $U^+$ and is harmonic; by uniqueness, this means that $w=u=v$ on $U^+$. Also, $w(x) = -u(\overline{x})$ and is harmonic; by uniqueness, this means that $w(x)=-u(\overline{x})=v(x)$ on $U^-$. Thus, $w=v$ on $U^+ \cup U^- = U$.
 
 Thus, $\De v = 0$, which is what we wanted.
 
