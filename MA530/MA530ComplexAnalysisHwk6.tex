@@ -21,11 +21,12 @@
 \rhead{Assignment 6, Page \thepage}
 
 %Number of Problems		:9
-%Clear					:2,3,5,6
+%Clear					:2,3,4,5,6,7,8,9
 %Begun					:
 %Not started			:
 %Can complete via book	:
-%Needs Polish			:1*,4*,7*,8*,9*
+%Needs Polish			:
+%Needs major repair		:1
 
 %Pomodoroes logged		:10
 
@@ -35,9 +36,11 @@
 
 (I worked with Dan McNall a little).
 
-{\bf Problem 1:}
+{\bf Problem 1:} %The result you got is incorrect. Something got fucked up here...
 
-Consider $\int\limits_0^\infty \frac{1-\cos(x)}{x^2} dx$. Note that this must be positive. (If this is not clear, we can estimate the integral from below by an alternating series that converges to something positive.)
+(This problem got screwed up somewhere and I'm not sure where.)
+
+Consider $\int\limits_0^\infty \frac{1-\cos(x)}{x^2} dx$.
 
 Now, $\int\limits_0^T\frac{1-\cos(z)}{z^2} dz = \int\limits_0^T\frac{1-\frac{e^{iz}+e^{-iz}}{2}}{z^2} dz = -\left[\int\limits_0^T \frac{e^{iz}-1}{2z^2} dz+ \int\limits_0^T \frac{e^{-iz}-1}{2z^2} dz\right]$. Both of the functions under the integrands are holomorphic, except at the origin. Using a $u$-substitution, we get $\int\limits_0^T \frac{e^{-iz}-1}{2z^2} dz = -\int\limits_0^{-T} \frac{e^{iz}-1}{2z^2} dz$.
 
@@ -47,9 +50,7 @@ So,
 \int\limits_0^T\frac{1-\cos(z)}{z^2} dz &= -\left[\int\limits_0^T \frac{e^{iz}-1}{2z^2} dz- \int\limits_0^{-T} \frac{e^{iz}-1}{2z^2} dz dz\right]\\
 &= \frac{1}{2}\left[\int\limits_0^T \frac{1-e^{iz}}{z^2} dz-\int\limits_0^{-T} \frac{1-e^{iz}}{z^2} dz \right]\\
 &= \frac{1}{2}\left[\int\limits_{-T}^T \frac{1-e^{iz}}{z^2} dz \right]\\
-\end{align*} %Break it up into three appropriate integrals, estimate a lot of it away, win...but also try to throw out that 1/z^2 term...
-
-Now, we know that $\int\limits_{-T}^T \frac{1}{z^2} dz = \infty$. The remaining term is more difficult to handle.
+\end{align*}
 
 First, by Cauchy's Theorem, we can integrate the remaining term along the path $\ga$, pictured below:
 
@@ -61,7 +62,7 @@ So,
 \frac{1}{2}\left[\int\limits_{-T}^T \frac{1-e^{iz}}{z^2} dz \right] &= \frac{1}{2}\left[\int\limits_{-T}^{-T+i\sqrt{T}} \frac{1-e^{iz}}{z^2} dz \right]\\
 &+ \frac{1}{2}\left[\int\limits_{-T+i\sqrt{T}}^{T+i\sqrt{T}} \frac{1-e^{iz}}{z^2} dz \right]\\
 &+ \frac{1}{2}\left[\int\limits_{T+i\sqrt{T}}^T \frac{1-e^{iz}}{z^2} dz \right]
-\end{align*} %sqrt might not be what you need here...
+\end{align*}
 
 Using the $ML$-inequality/trivial estimate, we can estimate the first term: $\int\limits_{-T}^{-T+i\sqrt{T}} \frac{1-e^{iz}}{z^2} dz \leq \sqrt{T} \sup(\absval{\frac{1-\cos(z)}{z^2}}) = \frac{1}{\sqrt{T}}$
 
@@ -69,9 +70,15 @@ Similarly, we can estimate the last term: $\int\limits_{T+i\sqrt{T}}^T \frac{1-e
 
 And we can estimate the middle term: $\int\limits_{-T+i\sqrt{T}}^{T+i\sqrt{T}} \frac{1-e^{iz}}{z^2} dz \leq 2T \sup(\absval{\frac{1-\cos(z)}{z^2}}) = 2/T$.
 
-So as $T \to \infty$, all of these terms vanish. So $\frac{1}{2}\left[\int\limits_{-T}^T \frac{1-e^{iz}}{z^2} dz \right] = \frac{1}{2}\left[\int\limits_{-T}^{-T+i\sqrt{T}} \frac{1-e^{iz}}{z^2} dz \right]$ vanishes as $T \to \infty$.
+So as $T \to \infty$, all of these terms vanish. So 
 
-So $\int\limits_0^\infty \frac{1-\cos(x)}{x^2} dx = 0$.
+\begin{displaymath}
+\frac{1}{2}\left[\int\limits_{-T}^T \frac{1-e^{iz}}{z^2} dz \right] = \frac{1}{2}\left[\int\limits_{-T}^{-T+i\sqrt{T}} \frac{1-e^{iz}}{z^2} dz +\int\limits_{-T+i\sqrt{T}}^{T+i\sqrt{T}} \frac{1-e^{iz}}{z^2} dz + \int\limits_{-T+i\sqrt{T}}^{T+i\sqrt{T}} \frac{1-e^{iz}}{z^2} dz \right]
+\end{displaymath} 
+
+is bounded above by $0$ as $T \to \infty$.
+
+The same techniques apply to $-\int\limits_0^\infty \frac{1-\cos(x)}{x^2} dx$; So, we know that $\int\limits_0^\infty \frac{1-\cos(x)}{x^2} dx = 0$.
 
 \shunt
 
@@ -130,7 +137,7 @@ Let $\ln(z)$ be the principal branch of the logarithm of $z$, and let $z_1, z_2$
 
 Then $e^{\ln(z_1)+\ln(z_2)} = e^{\ln(z_1)}e^{\ln(z_2)} = z_1z_2 = e^{\ln(z_1z_2)}$.
 
-Now, $e^{a+bi}$ is one-to-one given that $a \in \R$ and $b \in (-\pi,\pi)$. Because we're working in the principal branch and the real components of $z_1$ and $z_2$ are (strictly) positive, $z_1z_2 = e^{a+bi}$ has $a \in \R$ and $b \in (-\pi,\pi)$. For the same reason, $\ln(z_1)+\ln(z_2) = e^{a'+b'i}$ has $a' \in \R$ and $b' \in (-\pi, \pi)$. So $e^{z}$ is one-to-one for a domain containing both $\ln(z_1)+\ln(z_2)$ and $\ln(z_1z_2)$. Thus, $\ln(z_1)+\ln(z_2) = \ln(z_1z_2)$.
+Now, $e^{a+bi}$ is one-to-one given that $a \in \R$ and $b \in (-\pi,\pi)$. Because we're working in the principal branch and the real components of $z_1$ and $z_2$ are (strictly) positive, $z_1z_2 = e^{a+bi}$ has $a \in \R$ and $b \in (-\pi,\pi)$ (because $z_1$ and $z_2$ have their argument in $(-\pi/2,\pi/2)$...so the principal logarithm of their product has its argument there, as well). For the same reason, $\ln(z_1)+\ln(z_2) = e^{a'+b'i}$ has $a' \in \R$ and $b' \in (-\pi, \pi)$. So $e^{z}$ is one-to-one for a domain containing both $\ln(z_1)+\ln(z_2)$ and $\ln(z_1z_2)$ (because $\ln(z_1)$ and $\ln(z_2)$ have their argument in $(-\pi/2,\pi/2)$, their sum has its argument there as well). Thus, $\ln(z_1)+\ln(z_2) = \ln(z_1z_2)$.
 
 \shunt
 
@@ -197,7 +204,7 @@ Next, $\absval{\psi}/\absval{\phi} \leq 1$ on $\C$, except where $\phi = 0$. Thu
 
 Now, $\xi$ is a bounded, entire function; it is constant, by Liouville.
 
-So $\frac{\psi}{\phi} = c$ on $\C$, except where $\phi = 0$, for some $c \in \C$. Also, $\phi = \psi = c\phi$ where $\phi = 0$. Thus, $\psi = c \phi$.
+So $\xi = \frac{\psi}{\phi} = c$ on $\C$, except where $\phi = 0$, for some $c \in \C$. Also, $\phi = \psi = c\phi$ where $\phi = 0$. Thus, $\psi = c \phi$.
 
 \shunt
 

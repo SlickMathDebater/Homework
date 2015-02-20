@@ -15,15 +15,13 @@
 %\newcommand{\colorcomment}[2]{}
 
 %Number of Problems		:4
-%Clear					:
+%Clear					:2,4
 %Begun					:3
 %Not started			:
 %Can complete via book	:
-%Needs Polish			:1,2*,4*
+%Needs Polish			:1
 
-%Pomodoroes logged		:7
-
-%*: Ask someone to look it over...
+%Pomodoroes logged		:12
 
 
 \pagestyle{fancy}
@@ -81,19 +79,27 @@ Let $u$ be the solution of
    \right.
 \end{displaymath}
 
-Assume $g$ is bounded and $g(x) = \absval{x}$ for $x \in \partial \R_+^n$ with $\absval{x}\leq 1$.
+Assume $g$ is bounded by $M$ and $g(x) = \absval{x}$ for $x \in \partial \R_+^n$ with $\absval{x}\leq 1$.
 
-Then $u(x) = \frac{2x_n}{n\al(n)} \int\limits_{\partial \R^n_+} \frac{\absval{y}}{\absval{x-y}^n} dy$, by Poisson's formula.
+Then $u(x) = \frac{2x_n}{n\al(n)} \int\limits_{\partial \R^n_+} \frac{g(y)}{\absval{x-y}^n} dy$, by Poisson's formula.
 
 Consider $\frac{u(\la e_n) - u(0)}{\la}$ (with $1> \la >0$). We can see that:
 
 \begin{align*}
-\frac{u(\la e_n) - u(0)}{\la} &= \frac{2\la}{\la n\al(n)} \int\limits_{\partial \R^n_+} \frac{\absval{y}}{\absval{\la e_n-y}^n} dy\\
-&= \frac{2}{n\al(n)} \int\limits_{\partial \R^n_+} \frac{\absval{y}}{\absval{\la e_n-y}^n} dy\\
-&= C \int\limits_{\partial \R^n_+} \frac{\absval{y}}{\absval{\la e_n-y}^n} dy\\
+\absval{\frac{u(\la e_n) - u(0)}{\la}} &= \absval{ \frac{2\la}{\la n\al(n)} \int\limits_{\partial \R^n_+} \frac{g(y)}{\absval{\la e_n-y}^n} dy}\\
+&= \absval{ \frac{2}{n\al(n)} \int\limits_{\partial \R^n_+} \frac{g(y)}{\absval{\la e_n-y}^n} dy}\\
+&\geq \absval{\absval{ \frac{2}{n\al(n)} \int\limits_{\partial \R^n_+ \cap B(0,1)} \frac{\absval{y}}{\absval{\la e_n-y}^n} dy} - \absval{ \frac{2}{n\al(n)} \int\limits_{\partial \R^n_+ \setminus B(0,1)} \frac{g(y)}{\absval{\la e_n-y}^n} dy}}\\
 \end{align*}
 
-As $\la \to 0$, that integral approaches $\infty$ (because the integrand approaches $\frac{1}{\absval{y}^{n-1}}$, and the integral of this explodes.) So, because the derivatives are continuous, this means that $Du$ is unbounded around $0$. 
+Now, we know that:
+
+\begin{align*}
+\absval{ \frac{2}{n\al(n)} \int\limits_{\partial \R^n_+ \setminus B(0,1)} \frac{g(y)}{\absval{\la e_n-y}^n} dy} &\leq \absval{ \frac{2}{n\al(n)} \int\limits_{\partial \R^n_+ \setminus B(0,1)} \frac{M}{\absval{\la e_n-y}^n} dy}\\
+\end{align*} 
+
+which converges when $n > 1$. (When $n = 1$, the problem's statement is unsatisfiable because all harmonic functions are linear there...so we get our result vacuously.)
+
+As $\la \to 0$, $\absval{ \frac{2}{n\al(n)} \int\limits_{\partial \R^n_+ \cap B(0,1)} \frac{\absval{y}}{\absval{\la e_n-y}^n} dy}$ approaches $\infty$ (because the integrand approaches $\frac{1}{\absval{y}^{n-1}}$, and it is well known that the integral of this explodes on balls containing $0$.) So, $\absval{\frac{u(\la e_n) - u(0)}{\la}} \to \infty$ as $\la \to 0$. So, because the derivatives are continuous, this means that $Du$ is unbounded around $0$. 
 
 \shunt
 
@@ -117,9 +123,9 @@ for $x$ in the open unit ball, $U$.
 
 First, $v \in C^2( U \setminus \{x: x_n = 0\})$, and this is clear.
 
-Next, $v$ is continuous on $\{x: x_n = 0\}$, and this is clear. Also, $v$'s derivatives on $\{x: x_n = 0\}$ are continuous: for the first $n-1$ partials, $-u_{x_i}(x_1,x_2, \ldots 0) = u_{x_i}(x_1,x_2, \ldots 0)$. For the $n$th partial, $blah$. %Fill it out...
+Next, $v$ is continuous on $\{x: x_n = 0\}$, and this is clear. Also, $v$'s partial derivatives on $\{x: x_n = 0\}$ are continuous: for the first $n-1$ partials, $v_{x_i}(x) = u_{x_i}(x)$, and this is clear. For the $n$th partial, $\lim\limits_{\la \to 0^+} \frac{v(x + \la e_n) - v(x)}{\la} = \lim\limits_{\la \to 0^+} \frac{u(x + \la e_n) - u(x)}{\la} = u_{x_n}(x)$ and $\lim\limits_{\la \to 0^-} \frac{v(x + \la e_n) - v(x)}{\la} = \lim\limits_{\la \to 0^-} \frac{-u(x + -\la e_n) - u(x)}{\la} = u_{x_n}(x)$. So, $v$'s derivative exists, and is continuous.
 
-Last, $v$'s second derivatives on $\{x: x_n = 0\}$ are continuous: %Fill it out...
+Last, $v$'s second derivatives on $\{x: x_n = 0\}$ are continuous: for the first $i \in [1,n], j \in [1,n-1]$, $v_{x_i, x_j}(x) = u_{x_i, x_j}(x)$ and this is clear (from the above). For $i \in [1,n], j = n$, $\lim\limits_{\la \to 0^+} \frac{v_{x_i}(x + \la e_n) - v_{x_i}(x)}{\la} = \lim\limits_{\la \to 0^+} \frac{u_{x_i}(x + \la e_n) - u_{x_i}(x)}{\la} = u_{x_i,x_n}(x)$ and $\lim\limits_{\la \to 0^-} \frac{v_{x_i}(x + \la e_n) - v_{x_i}(x)}{\la} = \lim\limits_{\la \to 0^-} \frac{-u_{x_i}(x + -\la e_n) - u_{x_i}(x)}{\la} = u_{x_i,x_n}(x)$. So, $v$'s second derivative exists, and is continuous.
 
 So, $v \in C^2(U)$, and $\De v = 0$ except perhaps when $x_n = 0$. Thus, $\De v = 0$ even on the line, by continuity of the second partials. So $v$ is harmonic on $U$.
 
@@ -129,13 +135,18 @@ Part b:
 
 Let $u \in C^2(U^+) \cap C(\overline{U^+})$, and define $v$ as above.
 
-First, $v \in C^2( U \setminus \{x: x_n = 0\})$, and this is clear.
+Define $w(x) = \frac{1-\absval{x}^2}{n \al(n)} \int\limits_{\partial B(0,1)} \frac{v(y)}{\absval{x-y}^n} dS(y)$. Then $\De w = 0$.
 
-Next, $v$ is continuous on $\{x: x_n = 0\}$, and this is clear. Also, $v$'s derivatives on $\{x: x_n = 0\}$ are continuous: %Don't know how to do this.
+Now, consider
 
-Last, $v$'s second derivatives on $\{x: x_n = 0\}$ are continuous, because (reasons). %OR this...
+\begin{align*}
+w(x) &= \frac{1-\absval{x}^2}{n \al(n)} \int\limits_{\partial B(0,1)} \frac{v(y)}{\absval{x-y}^n} dS(y)\\
+&= \frac{1-\absval{x}^2}{n \al(n)} \int\limits_{\partial U^+} \frac{v(y)}{\absval{x-y}^n} dS(y) + \frac{1-\absval{x}^2}{n \al(n)} \int\limits_{U^-} \frac{v(y)}{\absval{x-y}^n} dS(y)\\
+\end{align*}
 
-So, $v \in C^2(U)$, and $\De v = 0$ except perhaps when $x_n = 0$. Thus, $\De v = 0$ even on the line, by continuity of the second partials. So $v$ is harmonic on $U$.
+(I can't get the rest of this, but the point is that I want to show that $w = v$).
+
+Thus, $\De v = 0$, which is what we wanted.
 
 \shunt
 
@@ -175,11 +186,11 @@ and
    \right.
 \end{displaymath}
 
-Now, consider $w = \tilde{u} - \tilde{v}$. Then $w$ is harmonic on the entire space: it's the sum of two harmonic functions, as explained in the previous problem.
+Now, consider $w = \tilde{u} - \tilde{v}$. Then $w$ is harmonic on the entire space: it's the sum of two harmonic functions; the previous problem gives us this the reflection principle for unit balls, but this can be expanded to arbitrarily large balls, and thus the entire half space.
 
 Moreover, $w$ is bounded: both $u$ and $v$ are bounded, so $\tilde{u}$ and $\tilde{v}$ are bounded, so their difference is bounded.
 
-So, by Liouville, $w$ must be constant. However, $\tilde{u}$ and $\tilde{v}$ are the same at a point ($\tilde{u}(0) = u(0) = g(0) = v(0) = \tilde{v}(0)$). So $w = 0$ at a point. So $\tilde{u} = \tilde{v}$. So $u = v$.
+So, by Liouville, $w$ must be constant. However, $\tilde{u}$ and $\tilde{v}$ are the same at a point ($\tilde{u}(0) = u(0) = g(0) = v(0) = \tilde{v}(0)$). So $w = 0$ at a point; $w$ is identically $0$. So $\tilde{u} = \tilde{v}$. So $u = v$.
 
 \shunt
 
