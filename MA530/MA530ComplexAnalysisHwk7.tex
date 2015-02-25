@@ -1,0 +1,150 @@
+
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{fancyhdr}
+\usepackage{amssymb}
+%\usepackage{mathpazo}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{slashed}
+\usepackage{cancel}
+\usepackage[mathscr]{euscript}
+\usepackage{MaxPackage} %Note: You need MaxPackage installed or in the same folder as your .tex file or something.
+
+\newcommand{\colorcomment}[2]{\textcolor{#1}{#2}} %First of these leaves in comments. Second one kills them.
+%\newcommand{\colorcomment}[2]{}
+
+
+\pagestyle{fancy}
+\lhead{Max Jeter}
+\chead{MA530}
+\rhead{Assignment 7, Page \thepage}
+
+%Number of Problems		:8
+%Clear					:3,6
+%Begun					:4
+%Not started			:5,7,8
+%Can complete via book	:
+%Needs Polish			:1,2
+%Pomodoros logged		:3
+\begin{document}
+
+{\bf Problem 1:}
+
+Let $f, g \in \scrO(D_r(c))$, $g(c) = 0$, and $g'(c) \neq 0$. 
+
+Without loss of generality, $c = 0$. Now, let $f(z) = \sum\limits_{n=0}^\infty a_nz^n$ and $g(z) = \sum\limits_{n=0}^\infty b_nz^n$. Because $g(0) = 0$, we have that $b_0 = 0$. So,
+
+\begin{align*}
+\text{Res}_0 \frac{f}{g} (c) &= \frac{1}{2\pi i} \int\limits_{D_r(0)} \frac{f}{g} dz\\
+&= \frac{1}{2\pi i} \int\limits_{D_r(0)} \frac{\sum\limits_{n=0}^\infty a_nz^n}{\sum\limits_{n=0}^\infty b_nz^n} dz\\
+&= \frac{1}{2\pi i} \int\limits_{D_r(0)} \frac{\sum\limits_{n=0}^\infty a_nz^n}{\sum\limits_{n=1}^\infty b_nz^n} dz\\
+&= \frac{1}{2\pi i} \int\limits_{D_r(0)} \frac{\sum\limits_{n=0}^\infty a_nz^n}{z\sum\limits_{n=0}^\infty b_{n+1}z^n} dz\\
+&= \frac{1}{2\pi i} \sum\limits_{n=0}^\infty \int\limits_{D_r(0)} \frac{a_nz^n}{z\sum\limits_{m=0}^\infty b_{m+1}z^m} dz\\
+\end{align*} 
+
+All but the first of those terms vanish; $\frac{z^na_n}{zb_1 + z^2b_2 \ldots } = \frac{z^na_n}{zh(z)} = \frac{z^{n-1}a_n}{h(z)}$ is holomorphic on a sufficiently small disk around $0$ ($h(z)$ is nonzero on a small enough disk, else $g$ is identically zero...and so $g' = 0$).
+
+So, 
+
+\begin{align*}
+\text{Res}_0 \frac{f}{g} (c) &= \frac{1}{2\pi i} \sum\limits_{n=0}^\infty \int\limits_{D_r(0)} \frac{a_nz^n}{z\sum\limits_{m=0}^\infty b_{m+1}z^m} dz\\
+&= \frac{1}{2\pi i}  \int\limits_{D_r(0)} \frac{a_1}{\sum\limits_{m=0}^\infty b_{m+1}z^m} dz\\
+&= a_1/b_0\\
+&= f'(c)/g(c)
+\end{align*}  %This needs justification
+
+Yielding our result. 
+
+\shunt
+
+{\bf Problem 2:}
+
+Let $f \in \scrO(\dot{D}_r(c))$ with $c$ not an essential singularity. Without loss of generality, $c=0$.
+
+Consider $\text{Res}_0 \frac{f'}{f}$.  Now, let $f(z) = \sum\limits_{n=k}^\infty a_nz^n$ with $a_k$ nonzero, so that $f'(z) = \sum\limits_{n=k}^\infty na_nz^{n-1}$; $k$ will be the order of zero if positive, and the order of pole if negative, and this is clear. So, %Double-check that...
+
+\begin{align*} %Adapt it...it's fundamentally the same as above.
+\text{Res}_0 \frac{f'}{f} (c) &= \frac{1}{2\pi i} \int\limits_{D_r(0)} \frac{f'}{f} dz\\
+&= \frac{1}{2\pi i} \int\limits_{D_r(0)} \frac{\sum\limits_{n=k}^\infty na_nz^{n-1}}{\sum\limits_{n=k}^\infty a_nz^n} dz\\
+&= \frac{1}{2\pi i} \int\limits_{D_r(0)} \frac{\sum\limits_{n=0}^\infty na_nz^{n-1}}{z\sum\limits_{n=0}^\infty a_{n}z^{n-1}} dz\\
+&= \frac{1}{2\pi i} \sum\limits_{n=0}^\infty \int\limits_{D_r(0)} \frac{na_nz^{n-1}}{z\sum\limits_{m=0}^\infty a_{m}z^{m-1}} dz\\
+\end{align*} 
+
+All but the first of those terms vanish; $\frac{nz^na_n}{zb_1 + z^2b_2 \ldots } = \frac{z^na_n}{zh(z)} = \frac{z^{n-1}a_n}{h(z)}$ is holomorphic on a sufficiently small disk around $0$ ($h(z)$ is nonzero on a small enough disk, else $a_k$ was zero...).
+
+So, 
+
+\begin{align*}
+\text{Res}_0 \frac{f'}{f} (c) &= \frac{1}{2\pi i} \sum\limits_{n=0}^\infty \int\limits_{D_r(0)} \frac{na_nz^{n-1}}{z\sum\limits_{m=0}^\infty a_{m}z^{m-1}} dz\\
+&= \frac{1}{2\pi i} \int\limits_{D_r(0)} \frac{ka_kz^{n-1}}{z\sum\limits_{m=0}^\infty a_{m}z^{m-1}} dz\\
+&= k
+\end{align*} %This needs justification.
+
+Yielding our result. 
+
+\shunt
+
+{\bf Problem 3:}
+
+A real-variable analogue of Rouche's Theorem would be:
+
+``Let $I$ be an open interval $(a,b)$, $f,g$ be differentiable on $I$, and let $J$ be an open interval containing the closure of $I$.
+
+If $\absval{f(a)} < \absval{g(a)}$ and $\absval{f(b)} < \absval{g(b)}$, then $g$, $g-f$ have the same number of zeroes in $I$.''
+
+The obvious counterexample is $f(x) = 0$ if $x = 0$, $f(x) = \sin(1/x)$ otherwise, and $g(x) =1$ on the interval $(0,1/2\pi)$. Now, $f(x) = 0$ at $0,1/2\pi$, and $g(x) =1$, so $\absval{f} < \absval{g}$ on the boundary of the interval. But $g$ has no zeroes, and $g-f$ has infinitely many zeroes. So this breaks.
+
+\shunt
+
+{\bf Problem 4:}
+
+Consider $\int\limits_{-\infty}^\infty \frac{\cos(x)}{x^2+a^2} dx$, with $a \in \R$ and $a > 0$.
+
+\begin{align*}
+\int\limits_{-\infty}^\infty \frac{\cos(x)}{x^2+a^2} dx &= \frac{1}{2} \int\limits_{-\infty}^\infty \frac{e^{iz}+e^{-iz}}{z^2+a^2}dz\\
+&=\int\limits_{0}^\infty \frac{e^{iz}+e^{-iz}}{z^2+a^2}dz \text{ (because the function is even...)}\\
+&= \int\limits_{0}^\infty \frac{e^{iz}}{z^2+a^2}dz + \int\limits_{0}^\infty \frac{e^{-iz}}{z^2+a^2}dz\\
+&= \int\limits_{0}^\infty \frac{e^{iz}}{z^2+a^2}dz - \int\limits_{0}^{-\infty} \frac{e^{iz}}{z^2+a^2}dz \text{ (u-substitute -z)} \\
+&= \int\limits_{-\infty}^\infty \frac{e^{iz}}{z^2+a^2}dz \\
+&= \int\limits_{-\infty}^\infty \frac{\sum\limits_{n=0}^\infty \frac{(iz)^n}{n!}}{z^2+a^2}dz \\
+&= \sum\limits_{n=0}^\infty \int\limits_{-\infty}^\infty \frac{\frac{(iz)^n}{n!}}{z^2+a^2}dz \\
+&= \sum\limits_{n=0}^\infty \frac{i^n}{n!} \int\limits_{-\infty}^\infty \frac{z^n}{z^2+a^2}dz \\
+&= \sum\limits_{n=0}^\infty \frac{i^n}{n!} 2\pi i \sum\limits_{c \in \C} \text{Res}_c \frac{z^n}{z^2+a^2} \text{ (As discussed in class) } \\
+\end{align*} %Have to finish it out, but this is clearly the right path.
+
+\shunt
+
+{\bf Problem 5:}
+
+Consider $\int\limits_{\Ga_T} z^\al R(z) dz$ (with $R$ a rational function, and $\Ga_T$ as pictured below.)
+
+\shunt %DRAW \Ga_T
+
+
+
+\shunt
+
+{\bf Problem 6:}
+
+Consider $e^z = 6z^2 + 1$. This is equivalent to $0=6z^2 + 1 -e^z$.
+
+Define $g(z) = 6z^2 +1$ and $f(z) = e^z$. When $\absval{z} = 2$, $\absval{g} \geq \absval{6z^2} -1 = 23$ and $\absval{f} \leq e^2 \leq 9$. So $g>f$ when $\absval{z} = 2$.
+
+So Rouche's Theorem applies: $e^z = 6z^2 +1$ has the same number of solutions as $0=6z^2 +1$ on the disk bounded by $\absval{z} = 2$.
+
+Now, $6z^2 +1$ has two solutions, by the fundamental theorem of algebra. Moreover, $\plusminus \frac{i}{\sqrt{6}}$ are solutions, as is readily checked. These solutions are both in that disk. So $6z^2-1$ has two zeroes on the disk bounded by $\absval{z} = 2$.
+
+So  $e^z = 6z^2 +1$ has $2$ solutions on the disk bounded by $\absval{z} = 2$.
+
+\shunt
+
+{\bf Problem 7:}
+
+\shunt
+
+{\bf Problem 8:}
+
+\shunt
+
+\end{document}
