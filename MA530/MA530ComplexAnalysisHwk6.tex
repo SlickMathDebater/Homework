@@ -28,17 +28,17 @@
 %Needs Polish			:
 %Needs major repair		:1
 
-%Pomodoroes logged		:10
+%Pomodoroes logged		:12
 
 %*:Get someone else to read it.
 
 \begin{document}
 
-(I worked with Dan McNall a little).
+(I worked with Dan McNall and Dan Shankman a little).
 
 {\bf Problem 1:} %The result you got is incorrect. Something got fucked up here...
 
-(This problem got screwed up somewhere and I'm not sure where.)
+(I tried applying the method in class and checked it with Wolframalpha, showing that I got the wrong answer. After repeatedly trying the method in class and never having it work out...I gave up and flailed wildly at the problem with everything I knew, yielding this proof.)
 
 Consider $\int\limits_0^\infty \frac{1-\cos(x)}{x^2} dx$.
 
@@ -50,35 +50,30 @@ So,
 \int\limits_0^T\frac{1-\cos(z)}{z^2} dz &= -\left[\int\limits_0^T \frac{e^{iz}-1}{2z^2} dz- \int\limits_0^{-T} \frac{e^{iz}-1}{2z^2} dz dz\right]\\
 &= \frac{1}{2}\left[\int\limits_0^T \frac{1-e^{iz}}{z^2} dz-\int\limits_0^{-T} \frac{1-e^{iz}}{z^2} dz \right]\\
 &= \frac{1}{2}\left[\int\limits_{-T}^T \frac{1-e^{iz}}{z^2} dz \right]\\
+&= \frac{1}{2}\left[\int\limits_{-T}^T \frac{-e^{iz}}{z^2} dz + \int\limits_{-T}^T \frac{1}{z^2} dz \right]\\
 \end{align*}
 
-First, by Cauchy's Theorem, we can integrate the remaining term along the path $\ga$, pictured below:
+First, by Cauchy's Theorem, this integral is the same as the integral along either the path $\ga$ or the path $\de$, both pictured below:
 
 \shunt %PICTURE GOES HERE
 
-So, 
+First, note that $\int\limits_\ga \frac{1}{z^2} = \int\limits_\pi^0 \frac{iTe^{i\al}}{(Te^{i\al})^2} d\al = \frac{i}{T}\int\limits_\pi^0 \frac{1}{e^{i\al}} d\al = \frac{iA}{T}$ for some $A \in \C$.
 
-\begin{align*}
-\frac{1}{2}\left[\int\limits_{-T}^T \frac{1-e^{iz}}{z^2} dz \right] &= \frac{1}{2}\left[\int\limits_{-T}^{-T+i\sqrt{T}} \frac{1-e^{iz}}{z^2} dz \right]\\
-&+ \frac{1}{2}\left[\int\limits_{-T+i\sqrt{T}}^{T+i\sqrt{T}} \frac{1-e^{iz}}{z^2} dz \right]\\
-&+ \frac{1}{2}\left[\int\limits_{T+i\sqrt{T}}^T \frac{1-e^{iz}}{z^2} dz \right]
-\end{align*}
-
-Using the $ML$-inequality/trivial estimate, we can estimate the first term: $\int\limits_{-T}^{-T+i\sqrt{T}} \frac{1-e^{iz}}{z^2} dz \leq \sqrt{T} \sup(\absval{\frac{1-\cos(z)}{z^2}}) = \frac{1}{\sqrt{T}}$
-
-Similarly, we can estimate the last term: $\int\limits_{T+i\sqrt{T}}^T \frac{1-e^{iz}}{z^2} dz \leq \sqrt{T} \sup(\absval{\frac{1-\cos(z)}{z^2}}) = \frac{1}{\sqrt{T}}$
-
-And we can estimate the middle term: $\int\limits_{-T+i\sqrt{T}}^{T+i\sqrt{T}} \frac{1-e^{iz}}{z^2} dz \leq 2T \sup(\absval{\frac{1-\cos(z)}{z^2}}) = 2/T$.
-
-So as $T \to \infty$, all of these terms vanish. So 
+Next, consider that the integral of $\frac{-e^{iz}}{z^2}$ is the same over $\de$ or $\ga$. So $\frac{1}{2}\int\limits_{\ga \dot{+} \de} \frac{-e^{iz}}{z^2} dz = \int\limits_{\ga} \frac{-e^{iz}}{z^2} dz $. Now, we can expand the numerator into a power series:
 
 \begin{displaymath}
-\frac{1}{2}\left[\int\limits_{-T}^T \frac{1-e^{iz}}{z^2} dz \right] = \frac{1}{2}\left[\int\limits_{-T}^{-T+i\sqrt{T}} \frac{1-e^{iz}}{z^2} dz +\int\limits_{-T+i\sqrt{T}}^{T+i\sqrt{T}} \frac{1-e^{iz}}{z^2} dz + \int\limits_{-T+i\sqrt{T}}^{T+i\sqrt{T}} \frac{1-e^{iz}}{z^2} dz \right]
-\end{displaymath} 
+\frac{-e^{iz}}{z^2} = \frac{-1-iz+\frac{z^2}{2} \ldots }{z^2}
+\end{displaymath}
 
-is bounded above by $0$ as $T \to \infty$.
+So in that function's Laurent series around $0$, we have $a_{-1} = -i$. That is, the residue of $\frac{-e^{iz}}{z^2}$ at it's only singularity is $-i$; applying the Residue Theorem, we get
 
-The same techniques apply to $-\int\limits_0^\infty \frac{1-\cos(x)}{x^2} dx$; So, we know that $\int\limits_0^\infty \frac{1-\cos(x)}{x^2} dx = 0$.
+\begin{align*}
+\int\limits_{\ga \dot{+} \de} \frac{-e^{iz}}{z^2} &= 2\pi i (-i)
+\end{align*}
+
+So, $\int\limits_{\ga} \frac{-e^{iz}}{z^2} dz = \pi$.
+
+So we get that $\int\limits_0^T\frac{1-\cos(z)}{z^2} dz = \frac{1}{2}\int\limits_\ga \frac{1-e^{iz}}{z^2} dz = \pi/2 + Ai/2T$ for some $A$. By taking limits as $T \to \infty$, we get $\int\limits_0^\infty \frac{1-\cos(x)}{x^2} dx = \pi/2$, as desired.
 
 \shunt
 
