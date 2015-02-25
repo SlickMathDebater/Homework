@@ -21,12 +21,12 @@
 \rhead{Assignment 7, Page \thepage}
 
 %Number of Problems		:8
-%Clear					:3,6
+%Clear					:3,6,7
 %Begun					:4
-%Not started			:5,7,8
+%Not started			:5,8
 %Can complete via book	:
 %Needs Polish			:1,2
-%Pomodoros logged		:3
+%Pomodoros logged		:6
 \begin{document}
 
 {\bf Problem 1:}
@@ -78,8 +78,8 @@ So,
 \begin{align*}
 \text{Res}_0 \frac{f'}{f} (c) &= \frac{1}{2\pi i} \sum\limits_{n=0}^\infty \int\limits_{D_r(0)} \frac{na_nz^{n-1}}{z\sum\limits_{m=0}^\infty a_{m}z^{m-1}} dz\\
 &= \frac{1}{2\pi i} \int\limits_{D_r(0)} \frac{ka_kz^{n-1}}{z\sum\limits_{m=0}^\infty a_{m}z^{m-1}} dz\\
-&= k
-\end{align*} %This needs justification.
+&= k \text{ (as above).}
+\end{align*}
 
 Yielding our result. 
 
@@ -133,7 +133,7 @@ Define $g(z) = 6z^2 +1$ and $f(z) = e^z$. When $\absval{z} = 2$, $\absval{g} \ge
 
 So Rouche's Theorem applies: $e^z = 6z^2 +1$ has the same number of solutions as $0=6z^2 +1$ on the disk bounded by $\absval{z} = 2$.
 
-Now, $6z^2 +1$ has two solutions, by the fundamental theorem of algebra. Moreover, $\plusminus \frac{i}{\sqrt{6}}$ are solutions, as is readily checked. These solutions are both in that disk. So $6z^2-1$ has two zeroes on the disk bounded by $\absval{z} = 2$.
+Now, $6z^2 +1$ has two solutions, by the fundamental theorem of algebra. Moreover, $\pm \frac{i}{\sqrt{6}}$ are solutions, as is readily checked. These solutions are both in that disk. So $6z^2-1$ has two zeroes on the disk bounded by $\absval{z} = 2$.
 
 So  $e^z = 6z^2 +1$ has $2$ solutions on the disk bounded by $\absval{z} = 2$.
 
@@ -141,9 +141,25 @@ So  $e^z = 6z^2 +1$ has $2$ solutions on the disk bounded by $\absval{z} = 2$.
 
 {\bf Problem 7:}
 
+Consider a polynomial, $f(z) = \sum\limits_{n=0}^N a_nz^n$.
+
+Define $M = 9000N \sum \limits \absval{a_n}$ (Note: $M$ is chosen so that $a_NM^N > \sum\limits_{i=0}^n \absval{a_iM^i}$ for any $n <N$). Define $g_0(z) = a_0$. Now, $\absval{f} > \absval{g_0}$ on the boundary of the disk of radius $M$ centered at $0$. So $f-g_0$ and $f$ have the same number of zeroes in this disk.
+
+Define $g_1(z) = a_1z$. Now, $\absval{f-g_0} > \absval{g_1}$ on the boundary of the disk of radius $M$ centered at $0$. So $f-g_0-g_1$ and $f-g_0$ and $f$ have the same number of zeroes in this disk.
+
+The above process can be iterated: define $g_n(z) = a_nz^n$. Then $\absval{f-\sum\limits_{m=0}^{n-1} g_m} > \absval{g_n}$. So $f-\sum\limits_{m=0}^{n} g_m$ and $f$ have the same number of zeroes in that disk.
+
+So $f$ and $a_nz^n$ have the same number of zeroes on the disk of radius $M$ centered at $0$. So $f$ has $n$ zeroes.
+
+Note that we can pick $M$ arbitrarily large (that was the point of $M$) and have this work. Thus, $f$ has $n$ zeroes on $\C$; this is the fundamental theorem of algebra.
+
 \shunt
 
 {\bf Problem 8:}
+
+Let $\Om$ be ``standard'' (open, bounded, boundary is finitely many piecewise $C^1$ Jordan curves). Let $f \in \scrO(G)$, where $G \supset \overline{\Om}$, and $f \neq 0$ anywhere on $\partial \Om$.
+
+Consider $\frac{1}{2\pi i} \int\limits_{\partial \Om} \frac{z^k f'(z)}{f(z)} dz$, where $k \in \N$.
 
 \shunt
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2013.9.1)  24 FEB 2015 20:34
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2013.9.1)  24 FEB 2015 21:08
 entering extended mode
 **MA530ComplexAnalysisHwk7.tex
 
@@ -254,16 +254,11 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [4]
-! Undefined control sequence.
-<recently read> \plusminus 
-                           
-l.136 ...theorem of algebra. Moreover, $\plusminus
-                                                   \frac{i}{\sqrt{6}}$ are s...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
+Overfull \hbox (16.65361pt too wide) in paragraph at lines 150--151
+[]\OT1/cmr/m/n/12 The above pro-cess can be it-er-ated: de-fine $\OML/cmm/m/it/
+12 g[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 z\OT1/cmr/m/n/12 ) = \OML/cmm/m/it/12 a
+[]z[]$\OT1/cmr/m/n/12 . Then $[] \OML/cmm/m/it/12 >$
+ []
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -272,13 +267,20 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [5]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[6]
 (C:\Users\Lonelight\Documents\GitHub\Homework\MA530\MA530ComplexAnalysisHwk7.au
 x) ) 
 Here is how much of TeX's memory you used:
- 2844 strings out of 493921
- 37112 string characters out of 3147271
+ 2843 strings out of 493921
+ 37103 string characters out of 3147271
  100857 words of memory out of 3000000
- 6118 multiletter control sequences out of 15000+200000
+ 6117 multiletter control sequences out of 15000+200000
  8592 words of font info for 33 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  33i,11n,43p,352b,206s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -293,9 +295,9 @@ cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.
 pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/P
 rogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Fi
 les/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on MA530ComplexAnalysisHwk7.pdf (5 pages, 130958 bytes).
+Output written on MA530ComplexAnalysisHwk7.pdf (6 pages, 137641 bytes).
 PDF statistics:
- 66 PDF objects out of 1000 (max. 8388607)
+ 69 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
