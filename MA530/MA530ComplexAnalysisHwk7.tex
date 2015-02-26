@@ -21,12 +21,12 @@
 \rhead{Assignment 7, Page \thepage}
 
 %Number of Problems		:8
-%Clear					:3,6,7
-%Begun					:4
-%Not started			:5,8
+%Clear					:1,3,4,6,7
+%Begun					:8
+%Not started			:5
 %Can complete via book	:
-%Needs Polish			:1,2
-%Pomodoros logged		:6
+%Needs Polish			:2
+%Pomodoros logged		:11
 \begin{document}
 
 {\bf Problem 1:}
@@ -36,39 +36,41 @@ Let $f, g \in \scrO(D_r(c))$, $g(c) = 0$, and $g'(c) \neq 0$.
 Without loss of generality, $c = 0$. Now, let $f(z) = \sum\limits_{n=0}^\infty a_nz^n$ and $g(z) = \sum\limits_{n=0}^\infty b_nz^n$. Because $g(0) = 0$, we have that $b_0 = 0$. So,
 
 \begin{align*}
-\text{Res}_0 \frac{f}{g} (c) &= \frac{1}{2\pi i} \int\limits_{D_r(0)} \frac{f}{g} dz\\
-&= \frac{1}{2\pi i} \int\limits_{D_r(0)} \frac{\sum\limits_{n=0}^\infty a_nz^n}{\sum\limits_{n=0}^\infty b_nz^n} dz\\
-&= \frac{1}{2\pi i} \int\limits_{D_r(0)} \frac{\sum\limits_{n=0}^\infty a_nz^n}{\sum\limits_{n=1}^\infty b_nz^n} dz\\
-&= \frac{1}{2\pi i} \int\limits_{D_r(0)} \frac{\sum\limits_{n=0}^\infty a_nz^n}{z\sum\limits_{n=0}^\infty b_{n+1}z^n} dz\\
-&= \frac{1}{2\pi i} \sum\limits_{n=0}^\infty \int\limits_{D_r(0)} \frac{a_nz^n}{z\sum\limits_{m=0}^\infty b_{m+1}z^m} dz\\
+\text{Res}_0 \frac{f}{g} &= \frac{1}{2\pi i} \int\limits_{ \partial D_r(0)} \frac{f}{g} dz\\
+&= \frac{1}{2\pi i} \int\limits_{ \partial D_r(0)} \frac{\sum\limits_{n=0}^\infty a_nz^n}{\sum\limits_{n=0}^\infty b_nz^n} dz\\
+&= \frac{1}{2\pi i} \int\limits_{ \partial D_r(0)} \frac{\sum\limits_{n=0}^\infty a_nz^n}{\sum\limits_{n=1}^\infty b_nz^n} dz\\
+&= \frac{1}{2\pi i} \int\limits_{ \partial D_r(0)} \frac{\sum\limits_{n=0}^\infty a_nz^n}{z\sum\limits_{n=0}^\infty b_{n+1}z^n} dz\\
+&= \frac{1}{2\pi i} \sum\limits_{n=0}^\infty \int\limits_{ \partial D_r(0)} \frac{a_nz^n}{z\sum\limits_{m=0}^\infty b_{m+1}z^m} dz\\
 \end{align*} 
 
-All but the first of those terms vanish; $\frac{z^na_n}{zb_1 + z^2b_2 \ldots } = \frac{z^na_n}{zh(z)} = \frac{z^{n-1}a_n}{h(z)}$ is holomorphic on a sufficiently small disk around $0$ ($h(z)$ is nonzero on a small enough disk, else $g$ is identically zero...and so $g' = 0$).
+All but the first of those terms vanish; $\frac{z^na_n}{zb_1 + z^2b_2 \ldots } = \frac{z^na_n}{zh(z)} = \frac{z^{n-1}a_n}{h(z)}$ is holomorphic on a sufficiently small disk around $0$ if $n \geq 1$ ($h(z)$ is nonzero on a small enough disk, else $g$ is identically zero...and so $g' = 0$. It's also nonzero at $0$, because $b_1 \neq 0$ (else $g'(0) = 0$)).
 
-So, 
+So, using $h$ as above,
 
 \begin{align*}
-\text{Res}_0 \frac{f}{g} (c) &= \frac{1}{2\pi i} \sum\limits_{n=0}^\infty \int\limits_{D_r(0)} \frac{a_nz^n}{z\sum\limits_{m=0}^\infty b_{m+1}z^m} dz\\
-&= \frac{1}{2\pi i}  \int\limits_{D_r(0)} \frac{a_1}{\sum\limits_{m=0}^\infty b_{m+1}z^m} dz\\
-&= a_1/b_0\\
-&= f'(c)/g(c)
-\end{align*}  %This needs justification
+\text{Res}_0 \frac{f}{g} (c) &= \frac{1}{2\pi i} \sum\limits_{n=k}^\infty \int\limits_{ \partial D_r(0)} \frac{a_nz^n}{z\sum\limits_{m=0}^\infty b_{m+1}z^m} dz\\
+&= \frac{1}{2\pi i}  \int\limits_{ \partial D_r(0)} \frac{a_0}{\sum\limits_{m=0}^\infty b_{m+1}z^m} dz\\
+&= \frac{a_0}{2\pi i}  \int\limits_{ \partial  \partial D_r(0)} \frac{1}{h(z)} dz\\
+&= \frac{a_0}{2\pi i}  2\pi i \frac{1}{h(0)}\\
+&= a_0/b_1\\
+&= f(0)/g'(0)
+\end{align*}
 
 Yielding our result. 
 
 \shunt
 
-{\bf Problem 2:}
+{\bf Problem 2:} %There's a fiddly bit left...indices n'shit.
 
 Let $f \in \scrO(\dot{D}_r(c))$ with $c$ not an essential singularity. Without loss of generality, $c=0$.
 
-Consider $\text{Res}_0 \frac{f'}{f}$.  Now, let $f(z) = \sum\limits_{n=k}^\infty a_nz^n$ with $a_k$ nonzero, so that $f'(z) = \sum\limits_{n=k}^\infty na_nz^{n-1}$; $k$ will be the order of zero if positive, and the order of pole if negative, and this is clear. So, %Double-check that...
+Consider $\text{Res}_0 \frac{f'}{f}$.  Now, let $f(z) = \sum\limits_{n=k}^\infty a_nz^n$ with $a_k$ nonzero, so that $f'(z) = \sum\limits_{n=k}^\infty na_nz^{n-1}$; $k$ will be the order of zero if positive, and $-1$ times the order of pole if negative, and this is clear. So,
 
 \begin{align*} %Adapt it...it's fundamentally the same as above.
-\text{Res}_0 \frac{f'}{f} (c) &= \frac{1}{2\pi i} \int\limits_{D_r(0)} \frac{f'}{f} dz\\
-&= \frac{1}{2\pi i} \int\limits_{D_r(0)} \frac{\sum\limits_{n=k}^\infty na_nz^{n-1}}{\sum\limits_{n=k}^\infty a_nz^n} dz\\
-&= \frac{1}{2\pi i} \int\limits_{D_r(0)} \frac{\sum\limits_{n=0}^\infty na_nz^{n-1}}{z\sum\limits_{n=0}^\infty a_{n}z^{n-1}} dz\\
-&= \frac{1}{2\pi i} \sum\limits_{n=0}^\infty \int\limits_{D_r(0)} \frac{na_nz^{n-1}}{z\sum\limits_{m=0}^\infty a_{m}z^{m-1}} dz\\
+\text{Res}_0 \frac{f'}{f}  &= \frac{1}{2\pi i} \int\limits_{ \partial D_r(0)} \frac{f'}{f} dz\\
+&= \frac{1}{2\pi i} \int\limits_{ \partial D_r(0)} \frac{\sum\limits_{n=k}^\infty na_nz^{n-1}}{\sum\limits_{n=k}^\infty a_nz^n} dz\\
+&= \frac{1}{2\pi i} \int\limits_{ \partial D_r(0)} \frac{\sum\limits_{n=k}^\infty na_nz^{n-1}}{z\sum\limits_{n=k}^\infty a_{n}z^{n-1}} dz\\
+&= \frac{1}{2\pi i} \sum\limits_{n=k}^\infty \int\limits_{ \partial D_r(0)} \frac{na_nz^{n-1}}{z\sum\limits_{m=k}^\infty a_{m}z^{m-1}} dz\\
 \end{align*} 
 
 All but the first of those terms vanish; $\frac{nz^na_n}{zb_1 + z^2b_2 \ldots } = \frac{z^na_n}{zh(z)} = \frac{z^{n-1}a_n}{h(z)}$ is holomorphic on a sufficiently small disk around $0$ ($h(z)$ is nonzero on a small enough disk, else $a_k$ was zero...).
@@ -76,9 +78,11 @@ All but the first of those terms vanish; $\frac{nz^na_n}{zb_1 + z^2b_2 \ldots } 
 So, 
 
 \begin{align*}
-\text{Res}_0 \frac{f'}{f} (c) &= \frac{1}{2\pi i} \sum\limits_{n=0}^\infty \int\limits_{D_r(0)} \frac{na_nz^{n-1}}{z\sum\limits_{m=0}^\infty a_{m}z^{m-1}} dz\\
-&= \frac{1}{2\pi i} \int\limits_{D_r(0)} \frac{ka_kz^{n-1}}{z\sum\limits_{m=0}^\infty a_{m}z^{m-1}} dz\\
-&= k \text{ (as above).}
+\text{Res}_0 \frac{f'}{f}  &= \frac{1}{2\pi i} \sum\limits_{n=0}^\infty \int\limits_{ \partial D_r(0)} \frac{na_nz^{n-1}}{z\sum\limits_{m=0}^\infty a_{m}z^{m-1}} dz\\
+&= \frac{1}{2\pi i} \int\limits_{ \partial D_r(0)} \frac{ka_kz^{n-1}}{z\sum\limits_{m=0}^\infty a_{m}z^{m-1}} dz\\
+&= \frac{ka_k}{2\pi i}  \int\limits_{ \partial D_r(0)} \frac{1}{h(z)} dz\\
+&= \frac{a_0}{2\pi i}  2 \pi i \frac{1}{h(0)}\\
+&= k
 \end{align*}
 
 Yielding our result. 
@@ -110,8 +114,34 @@ Consider $\int\limits_{-\infty}^\infty \frac{\cos(x)}{x^2+a^2} dx$, with $a \in 
 &= \int\limits_{-\infty}^\infty \frac{\sum\limits_{n=0}^\infty \frac{(iz)^n}{n!}}{z^2+a^2}dz \\
 &= \sum\limits_{n=0}^\infty \int\limits_{-\infty}^\infty \frac{\frac{(iz)^n}{n!}}{z^2+a^2}dz \\
 &= \sum\limits_{n=0}^\infty \frac{i^n}{n!} \int\limits_{-\infty}^\infty \frac{z^n}{z^2+a^2}dz \\
-&= \sum\limits_{n=0}^\infty \frac{i^n}{n!} 2\pi i \sum\limits_{c \in \C} \text{Res}_c \frac{z^n}{z^2+a^2} \text{ (As discussed in class) } \\
-\end{align*} %Have to finish it out, but this is clearly the right path.
+&= \sum\limits_{n=0}^\infty \frac{i^n}{n!} 2\pi i \sum\limits_{c \in \C^+} \text{Res}_c \frac{z^n}{z^2+a^2} \text{ (As discussed in class) } \\
+\end{align*} %Have to finish it out, but this is clearly the right path. goal is \pi e^{-a}/a
+
+With the last line being discussed in class, and $C^+$ being the upper half of the complext plane. Now, $\frac{z^n}{z^2 + a^2}$ can only have poles where $z^2 + a^2 = 0$; that is, where $z= \pm i a$.
+
+So, we have 
+
+\begin{align*}
+\int\limits_{-\infty}^\infty \frac{\cos(x)}{x^2+a^2} dx &= \sum\limits_{n=0}^\infty \frac{i^n}{n!} 2\pi i \sum\limits_{c \in \C} \text{Res}_c \frac{z^n}{z^2+a^2}\\
+&= \sum\limits_{n=0}^\infty \frac{i^n}{n!} 2\pi i \left[ \text{Res}_{ia} \frac{z^n}{z^2+a^2}\right]\\
+&= \sum\limits_{n=0}^\infty \frac{i^n}{n!} 2\pi i \left[ \text{Res}_0 \frac{(z+ia)^n}{(z+ia)^2+a^2} \right]\\
+&= \sum\limits_{n=0}^\infty \frac{i^n}{n!} 2\pi i \left[ \text{Res}_0 \frac{\sum\limits_{m=0}^n \binom{n}{m} z^m (ia)^{n-m}}{z^2 + 2ia} \right]\\
+&= \sum\limits_{n=0}^\infty \frac{i^n}{n!} 2\pi i \left[ \text{Res}_0 \frac{\sum\limits_{m=0}^n \binom{n}{m} z^m (ia)^{n-m}}{z^2 + 2iaz} \right]\\
+\end{align*}
+
+Applying problem $1$ to the above, we get
+
+\begin{align*}
+\int\limits_{-\infty}^\infty \frac{\cos(x)}{x^2+a^2} dx &=\sum\limits_{n=0}^\infty \frac{i^n}{n!} 2\pi i \left[ \text{Res}_0 \frac{\sum\limits_{m=0}^n \binom{n}{m} z^m (ia)^{n-m}}{z^2 + 2iaz} \right]\\
+&= \sum\limits_{n=0}^\infty \frac{i^n}{n!} 2\pi i \left[ \frac{ (ia)^{n}}{2ia} \right]\\
+&= \frac{\pi}{a} \sum\limits_{n=0}^\infty \frac{i^n}{n!}  \left[ (ia)^{n}\right]\\
+&= \frac{\pi}{a} \sum\limits_{n=0}^\infty \frac{i^n}{n!}  \left[(ia)^{n} \right]\\
+&= \frac{\pi}{a} \sum\limits_{n=0}^\infty \frac{(aii)^n}{n!} \\
+&= \frac{\pi}{a} \sum\limits_{n=0}^\infty \frac{(-a)^n}{n!}\\
+&= \frac{\pi}{a} e^{-a}
+\end{align*}
+
+Which is the desired result.
 
 \shunt
 
@@ -121,7 +151,12 @@ Consider $\int\limits_{\Ga_T} z^\al R(z) dz$ (with $R$ a rational function, and 
 
 \shunt %DRAW \Ga_T
 
+Now,
 
+\begin{align*}
+\int\limits_{\Ga_T} z^\al R(z) dz &= \int\limits_{\ga_1} z^\al R(z) dz + \int\limits_{\ga_2} z^\al R(z) dz + \int\limits_{\ga_3} z^\al R(z) dz\\
+&= \int\limits_T^0 (t-1/T)^\al R(t-1/T) dt + \int\limits_{\ga_2} z^\al R(z) dz + \int\limits_0^T (t+1/T)^\al R(t+1/T) dt\\
+\end{align*} %This is somehow the wrong way to do this...
 
 \shunt
 
@@ -160,6 +195,40 @@ Note that we can pick $M$ arbitrarily large (that was the point of $M$) and have
 Let $\Om$ be ``standard'' (open, bounded, boundary is finitely many piecewise $C^1$ Jordan curves). Let $f \in \scrO(G)$, where $G \supset \overline{\Om}$, and $f \neq 0$ anywhere on $\partial \Om$.
 
 Consider $\frac{1}{2\pi i} \int\limits_{\partial \Om} \frac{z^k f'(z)}{f(z)} dz$, where $k \in \N$.
+
+This is equal to $\sum\limits_{c \in \Om} \text{Res}_c z^k f'/f$.
+
+Consider any individual singularity, $c \in \Om$. Without loss of generality, $c=0$. %Adapt it...
+
+Now, let $f(z) = \sum\limits_{n=l}^\infty a_nz^n$ with $a_l$ nonzero, so that $f'(z) = \sum\limits_{n=l}^\infty na_nz^{n-1}$; $l$ will be the order of zero. It's positive, because $f \in \scrO(\Om)$.
+
+\begin{align*} %Adapt it...it's fundamentally the same as above.
+\text{Res}_0 z^k\frac{f'}{f}  &= \frac{1}{2\pi i} \int\limits_{ \partial D_r(0)} \frac{z^kf'}{f} dz\\
+&= \frac{1}{2\pi i} \int\limits_{ \partial D_r(0)} \frac{z^k\sum\limits_{n=l}^\infty na_nz^{n-1}}{\sum\limits_{n=l}^\infty a_nz^n} dz\\
+&= \frac{1}{2\pi i} \int\limits_{ \partial D_r(0)} \frac{z^k\sum\limits_{n=l}^\infty na_nz^{n-1}}{z\sum\limits_{n=l}^\infty a_{n}z^{n-1}} dz\\
+&= \frac{1}{2\pi i} \sum\limits_{n=l}^\infty \int\limits_{ \partial D_r(0)} \frac{na_nz^{n-1}}{z\sum\limits_{m=l}^\infty a_{m}z^{m-1}} dz\\
+\end{align*} 
+
+All but the first of those terms vanish; $\frac{nz^na_n}{zb_1 + z^2b_2 \ldots } = \frac{z^na_n}{zh(z)} = \frac{z^{n-1}a_n}{h(z)}$ is holomorphic on a sufficiently small disk around $0$ ($h(z)$ is nonzero on a small enough disk, else $a_k$ was zero...).
+
+So, 
+
+\begin{align*}
+\text{Res}_0 \frac{f'}{f}  &= \frac{1}{2\pi i} \sum\limits_{n=0}^\infty \int\limits_{ \partial D_r(0)} \frac{na_nz^{n-1}}{z\sum\limits_{m=0}^\infty a_{m}z^{m-1}} dz\\
+&= \frac{1}{2\pi i} \int\limits_{ \partial D_r(0)} \frac{ka_kz^{n-1}}{z\sum\limits_{m=0}^\infty a_{m}z^{m-1}} dz\\
+&= \frac{ka_k}{2\pi i}  \int\limits_{ \partial D_r(0)} \frac{1}{h(z)} dz\\
+&= \frac{a_0}{2\pi i}  2 \pi i \frac{1}{h(0)}\\
+&= k
+\end{align*}
+
+%From earlier work, we have
+
+
+%\begin{align*}
+%&= \frac{1}{2\pi i} \sum\limits_{n=0}^\infty \int\limits_{ \partial D_r(0)} %\frac{na_nz^{n-1}}{z\sum\limits_{m=0}^\infty a_{m}z^{m-1}} dz\\
+%\end{align*} %This will come in handy, but I'm not sure exactly where.
+
+%Your sense is that it's the argument principle result plus k somehow...
 
 \shunt
 
