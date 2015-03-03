@@ -1,0 +1,152 @@
+
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{fancyhdr}
+\usepackage{amssymb}
+%\usepackage{mathpazo}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{slashed}
+\usepackage{cancel}
+\usepackage[mathscr]{euscript}
+\usepackage{MaxPackage} %Note: You need MaxPackage installed or in the same folder as your .tex file or something.
+
+\newcommand{\colorcomment}[2]{\textcolor{#1}{#2}} %First of these leaves in comments. Second one kills them.
+%\newcommand{\colorcomment}[2]{}
+
+
+\pagestyle{fancy}
+\lhead{Max Jeter}
+\chead{MA523}
+\rhead{Assignment 4, Page \thepage}
+
+%Number of Problems		:6
+%Clear					:
+%Begun					:1,2a,2b
+%Not started			:3b,3c
+%Can complete via book	:
+%Needs Polish			:3a
+
+%Pomodoros logged		:3
+
+\begin{document}
+
+{\bf Problem 1:}
+
+Let $g: [0,\infty) \to \R$ with $g(0) = 0$, and let $u(x,t)$ solve
+
+\begin{displaymath}
+   \left\{
+     \begin{array}{lr}
+       u_t - u{xx} = 0 & \text{ in } \R_+ \times (0,\infty) \\
+       u=0 & \text{ in } \R_+ \times \{t=0\}\\
+       u=g & \text{ on } \{x=0\} \times [0,\infty)
+     \end{array}
+   \right.
+\end{displaymath}
+
+Let $v(x,t) = u(x,t) - g(t)$, and extend $v$ to $\{x<0\}$ by odd reflection (just call the resulting extension $v$). Then $v$ solves
+
+\begin{displaymath}
+   \left\{
+     \begin{array}{lr}
+       v_t - v{xx} = g'(t) & \text{ in } \R_+ \times (0,\infty) \\
+       v=-g & \text{ in } \R_+ \times \{t=0\}\\
+       v=0 & \text{ on } \{x=0\} \times [0,\infty)
+     \end{array}
+   \right.
+\end{displaymath}
+
+So $v(x,t) = \int\limits_\R -g(y)e^{\frac{-\absval{x-y}^2}{4t}} dy +  \int\limits_0^t \frac{1}{\sqrt{4 \pi (t-s)}} \int\limits_\R g'(y) e^{\frac{-\absval{x-y}^2}{4(t-s)}} dy ds$ by formula 17 in the book. 
+
+%Applying mean value theorems may succeed in getting your desired result...
+
+%This is the extension of the heat equation to non-zero initial values...
+
+\shunt
+
+{\bf Problem 2:}
+
+Let $g \in C(\R^n)$, $g \in L^1(\R^n)$, $\absval{g} < M$ for some $M$. Let $u$ be the bounded solution to 
+
+\begin{displaymath}
+   \left\{
+     \begin{array}{lr}
+       \De u -u_t  = 0 & \text{ for } t>0, x \in \R^n \\
+       u(x,0) = g(x) & \text{ for } x \in \R^n
+     \end{array}
+   \right.
+\end{displaymath}
+
+Part a:
+
+Then $u(x,t) = \frac{1}{(4\pi t)^{n/2}}\int\limits_\R e^{\frac{-\absval{x-y}^2}{4t}} g(y) dy$. Let $\ep >0$. Choose $N$ greater than $something$. Then for all $t >N$, $result desired$.
+
+That is, $\lim\limits_{t \to \infty} \sup\limits_{x \in \R^n} \absval{u(x,t)} = 0$, which is the desired result.
+
+\shunt
+
+Part b:
+
+Consider $v(x,t) = u(x,t) - g(x)$. Then $v(x,t)$ solves
+
+\begin{displaymath}
+   \left\{
+     \begin{array}{lr}
+       \De v -v_t  = -\De g(x) & \text{ for } t>0, x \in \R^n \\
+       v(x,0) = 0 & \text{ for } x \in \R^n
+     \end{array}
+   \right.
+\end{displaymath}
+
+Thus, $v(x,t) = \int\limits_0^t \int\limits_{\R^n} \Phi(x-y,t-s) \De g(y) dy ds$.
+
+So $\int\limits_{\R^n} v(x,t) dx = \int\limits_{\R^n} \int\limits_0^t \int\limits_{\R^n} \Phi(x-y,t-s) \De g(y) dy ds dx$
+
+Switching the order of integration, we get $ \int\limits_0^t \int\limits_{\R^n} \int\limits_{\R^n} \Phi(x-y,t-s) \De g(y) dx dy ds$.
+
+Yet, this is $ \int\limits_0^t \int\limits_{\R^n} \De g(y) dy ds$, because $\int\limits_{\R^n} \Phi(x-y,t-s) dx = 1$. 
+
+The integral vanishes, for reasons I haven't figured out yet. %Reasons are?
+
+So, $\int\limits_{\R^n} v(x,t) dx = 0$; $\int\limits_{\R^n} u(x,t) - g(x) dx = 0$, which yields the desired result of $\int\limits_{\R^n} u(x,t) dx = \int\limits_{\R^n} g(x) dx$.
+
+\shunt
+
+{\bf Problem 3:}
+
+Part a: %Clean it up a bit.
+
+Fix $\al \in (0,1)$, $\be \geq 0$.
+
+Note first that $z^\be e^{-z} = e^{\be \ln(z) - z}$. So, the desired result is
+
+\begin{displaymath}
+e^{\be \ln(z) - z} \leq M e^{-\al z}
+\end{displaymath}
+
+for some $M$, which is equivalent to
+
+\begin{displaymath}
+\be \ln(z) - z \leq \ln(M) - \al(z)
+\end{displaymath}
+
+for some $M$. Now, this is equivalent to 
+
+\begin{displaymath}
+- \ln(M) \leq (1-\al)z - \be \ln(z)
+\end{displaymath}
+
+for some $M$. By applying basic calculus, the right hand side takes a minimum at $z = \be / (1-\al)$, so taking $M = (1-\al)(\be / (1-\al)) - \be \ln(\be / (1-\al))$ suffices. 
+
+\shunt
+
+Part b:
+
+\shunt
+
+Part c:
+
+\shunt
+
+\end{document}
