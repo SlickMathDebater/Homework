@@ -21,13 +21,13 @@
 \rhead{Assignment, Page \thepage}
 
 %Number of Problems		:11
-%Clear					:1,2,3,4,5
+%Clear					:1,2,3,4,5,6,7,8,10
 %Begun					:
-%Not started			:6,9,10,11
+%Not started			:9
 %Can complete via book	:
-%Needs Polish			:7,8
+%Needs Polish			:11
 
-%Pomodoroes logged		:6.5
+%Pomodoroes logged		:9.5
 
 \begin{document}
 
@@ -136,9 +136,11 @@ As desired.
 
 {\bf Problem 6:}
 
-Let $z_1,z_2$ be fixed on the unit circle in $\R^2$. Define $\al(z): \overline{D_1(0)} \to \R$ to be the angle between the line segments $\overline{zz_1}$ and $\overline{zz_2}$. That is, $\al(z) = \absval{\text{arg}(z_1-z) - \text{arg}(z_2-z)}$.
+Let $z_1,z_2$ be fixed on the unit circle in $\R^2$. Define $\al(z): D_1(0) \to \R$ to be the angle between the line segments $\overline{zz_1}$ and $\overline{zz_2}$. That is, $\al(z) = \text{arg}(z_1-z) - \text{arg}(z_2-z)$ Because $\al$ is continuous and is never zero, this means that $\al$ is either strictly positive or strictly negative. Without loss of generality, we can take $\al$ strictly positive, by relabeling points.
 
-I'm not quite sure how to approach this, but I guess the best thing to do would be to bash it over the head with definitions.
+We know that $\text{arg}(z)$ is harmonic (where it matters) from the discussion in class*. So because sums/differences of harmonic functions are harmonic, the result is clear.
+
+*(We know that $\log(z) = \log(\absval{z}) + i\text{arg}(z)$ is holomorphic except at $0$...because $D_1(0)$ is simply connected, there's a branch of log that $\text{arg}(z)$ is harmonic on...which is good enough.)
 
 \shunt
 
@@ -167,10 +169,10 @@ v_{xx} &= 2(u_x)^2 + u_{xx}(2u-1)\\
 v_{yy} &= 2(u_y)^2 + u_{yy}(2u-1)\\
 v_{xx} + v_{yy} &=0\\
 &= 2(u_x)^2 + u_{xx}(2u-1) + 2(u_y)^2 + u_{yy}(2u-1)\\
-&= 2(u_x)^2+ 2(u_y)^2\\
+&= 2(u_x)^2+ 2(u_y)^2 \text{ (Cancellation because u is harmonic.)}\\
 \end{align*}
 
-Because $(u_x)^2$ and $(u_y)^2$ must be nonnegative, this means that they are both identically zero.
+Because $(u_x)^2$ and $(u_y)^2$ must be nonnegative, this means that $u_x$ and $u_y$ are both identically zero.
 
 So, $u$ is constant.
 
@@ -178,15 +180,46 @@ So, $u$ is constant.
 
 {\bf Problem 9:}
 
-Let $u \geq 0$ be harmonic on $D_R(0)$ with $R > 1$. Let $r <1$.
+Let $u \geq 0$ be harmonic on $D_R(0)$ with $R > 1$ and $u(0) = 1$. Let $r <1$.
+
+This is the only one I couldn't quite figure out. 
 
 \shunt
 
 {\bf Problem 10:}
 
+Consider $\cos(\sin(z))$.
+
+By laboriously taking derivatives (that is, by applying wolframalpha rigorously), we get
+
+\begin{align*}
+a_0 &= \cos(\sin(0)) = 1\\
+a_1 &= \sin(\sin(0))(-\cos(0)) = 0\\
+a_2 &= \frac{1}{2}(\sin(0)\sin(\sin(0)) - \cos^2(0)\cos(\sin(0))) = \frac{-1}{2}\\
+a_3 &= \frac{1}{6}(\sin(\sin(0))\cos^3(0)+ 3\sin(0)\cos(0)\cos(\sin(0)) + \sin(\sin(0))\cos(0)) = 0\\
+a_4 &= \frac{5}{24}\\
+\end{align*}
+
 \shunt
 
 {\bf Problem 11:}
+
+Let $\Om$ be a ``standard'' open set, let $a_0, a_1, \ldots a_n \in \Om$. Let $h \in \scrO(G)$, with $G$ containing $\overline{\Om}$. Define $w(z) = \prod\limits_{j=0}^n (z-a_j)$.
+
+Consider $P(\xi) = \frac{1}{2\pi i}\int\limits_{\partial \Om} \frac{h(z)}{w(z)} \frac{w(z)-w(\xi)}{z-\xi} dz$
+
+\begin{align*}
+\frac{1}{2\pi i} \int\limits_{\partial \Om} \frac{h(z)}{w(z)} \frac{w(z)-w(\xi)}{z-\xi} dz &= \frac{1}{2\pi i} \int\limits_{\partial \Om} \frac{h(z)}{z-\xi} - \frac{h(z)w(\xi)}{w(z)(z-\xi)} dz\\
+&= h(\xi) - \frac{1}{2\pi i}\int\limits_{\partial \Om} \frac{h(z)w(\xi)}{w(z)(z-\xi)} dz\\
+&= h(\xi) - w(\xi)\frac{1}{2\pi i}\int\limits_{\partial \Om} \frac{h(z)}{w(z)(z-\xi)} dz\\
+&= h(\xi) - w(\xi)\frac{1}{2\pi i}\int\limits_{\partial \Om} \frac{h(z)}{w(z)(z-\xi)} dz\\
+\end{align*}
+
+Note that at each $a_j$, $w$ vanishes; so, $P(a_j) = h(a_j)$ for all $j$.
+
+Next, the $n+1$st derivative of $P$ vanishes, although I don't have the time to work it out this week.
+
+Thus, $P$ is a polynomial of degree of at most $n$.
 
 \shunt
 
