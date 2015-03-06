@@ -1,0 +1,193 @@
+
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{fancyhdr}
+\usepackage{amssymb}
+%\usepackage{mathpazo}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{slashed}
+\usepackage{cancel}
+\usepackage[mathscr]{euscript}
+\usepackage{MaxPackage} %Note: You need MaxPackage installed or in the same folder as your .tex file or something.
+
+\newcommand{\colorcomment}[2]{\textcolor{#1}{#2}} %First of these leaves in comments. Second one kills them.
+%\newcommand{\colorcomment}[2]{}
+
+
+\pagestyle{fancy}
+\lhead{Max Jeter}
+\chead{Class}
+\rhead{Assignment, Page \thepage}
+
+%Number of Problems		:11
+%Clear					:1,2,3,4,5
+%Begun					:
+%Not started			:6,9,10,11
+%Can complete via book	:
+%Needs Polish			:7,8
+
+%Pomodoroes logged		:6.5
+
+\begin{document}
+
+{\bf Problem 1:} %Something's subtly wrong. Fix it. 
+
+Consider $h(z) = p(z)$ if $z \in \C$, and $h(z) = \infty$ if $z = \infty$, with $p(z) = a_0 + a_1z + \ldots + a_nz^n$ a nonconstant polynomial of degree $n$.
+
+Then define $k(z) = 1/p(z)$ if $p(z) \in \C$, and $k(z) = 0$ if $z = \infty$, and define $g(z) = k(1/z)$ when $z \neq 0$ and $g(z) = 0$ when $z = 0$.
+
+Now, when $\absval{z} < \infty$, $h$ is complex-differentiable at $z$ because it is a polynomial.
+
+If $z = \infty$, then $h(z) = \infty$. First, note that $h$ has exclusively non-infinite values except at $\infty$, so on any neighborhood of $\infty$, $h$ takes noninfinite values on that neighborhood. Next, we want to show that $k$ is complex differentiable at $\infty$. So, we want $g$ to be complex differentiable at $0$; consider $g$ at $0$; $g(0) = 0$. Elsewhere, $g(\zeta) = k(1/\zeta) = 1/p(1/\zeta) = 1/(a_0+a_1z^{-1} + a_2z^{-2} \ldots a_nz^{-n})$.
+
+Except at $0$, this means that $g(\zeta) = \frac{z^n}{a_0z^n + a_1z^{n-1} + \ldots + a_n}$. This is a holomorphic function except possibly at $0$ (where it wasn't explicitly defined). However, the singularity here is removable, and this is clear (the limit as $z \to 0$ of that is just $0$...so it's bounded around $0$, so the singularity's removable). So, $g$ is complex-differentiable at $0$, so $k$ is complex-differentiable at $\infty$, so $h$ is complex-differentiable at $\infty$. 
+
+...So $h$ is complex-differentiable everywhere.
+
+\shunt
+
+{\bf Problem 2:}
+
+Let $\Om \subset \C$ be bounded, $f_n \in C(\overline{\Om})$, $f_n$ all holomorphic on $\Om$, and $f_n \to f$ uniformly on $\partial \Om$ where $f$ is holomorphic on $\Om$.
+
+Let $\ep >0$. Pick $N$ such that for all $n \geq N$, $\absval{f_n - f} < \ep$ on $\partial \Om$.
+
+Now, $f_n - f$ is holomorphic on a domain; the maximum principles apply. So, $\absval{f_n - f} < \ep$ for all $z \in \Om$ (And also, for all $z \in \overline{\Om}$) if $n \geq N$.
+
+So for all $\ep>0$ there is an $N$ such that for all $n \geq N$, $\absval{f_n-f} < \ep$ on $\overline{\Om}$. That is, $f_n \to f$ uniformly on $\overline{\Om}$, as desired.  
+
+\shunt
+
+{\bf Problem 3:}
+
+Consider $e^{z^2}$. 
+
+First, the 99th derivative of this at $0$ is $\frac{99!}{2\pi i} \int\limits_{\absval{z} = 1} \frac{e^{z^2}}{z^{100}} dz$. Now, $\frac{e^{z^2}}{z^{100}}$ is holomorphic except at $0$; we can apply the residue theorem;
+
+\begin{align*}
+\frac{99!}{2\pi i} \int\limits_{\absval{z} = 1} \frac{e^{z^2}}{z^{100}} dz &= 99! \text{Res}_0 \frac{e^{z^2}}{z^{100}}\\
+\end{align*}
+
+An expansion of $\frac{e^{z^2}}{z^{100}}$ is $\sum\limits_{n=0}^\infty \frac{z^{2n-100}}{n!}$. This has no $1/z$ term; thus, the residue of it is $0$. That is,
+
+\begin{align*}
+\frac{99!}{2\pi i} \int\limits_{\absval{z} = 1} \frac{e^{z^2}}{z^{100}} dz &= 99! \text{Res}_0 \frac{e^{z^2}}{z^{100}}\\
+&= 0
+\end{align*}
+
+So the 99th derivative of $e^{z^2}$ at $0$ is $0$.
+
+Next, the 100th derivative of $e^{z^2}$ at $0$ is $\frac{100!}{2\pi i} \int\limits_{\absval{z} = 1} \frac{e^{z^2}}{z^{101}} dz$. Now, $\frac{e^{z^2}}{z^{101}}$ is holomorphic except at $0$; we can apply the residue theorem;
+
+\begin{align*}
+\frac{100!}{2\pi i} \int\limits_{\absval{z} = 1} \frac{e^{z^2}}{z^{101}} dz &= 100! \text{Res}_0 \frac{e^{z^2}}{z^{101}}\\
+\end{align*}
+
+An expansion of $\frac{e^{z^2}}{z^{101}}$ is $\sum\limits_{n=0}^\infty \frac{z^{2n-101}}{n!}$. The coefficient attached to the $1/z$ term is $1/(51!)$; thus, the residue of it is $1/(51!)$. That is,
+
+\begin{align*}
+\frac{100!}{2\pi i} \int\limits_{\absval{z} = 1} \frac{e^{z^2}}{z^{101}} dz &= 100! \text{Res}_0 \frac{e^{z^2}}{z^{101}}\\
+&= 100!/51!
+\end{align*}
+
+So the 100th derivative of $e^{z^2}$ at $0$ is $100!/51!$.
+
+\shunt
+
+{\bf Problem 4:}
+
+(Note: I wikipedia'd this to make sure I got the right formula. I got it right the first time; hopefully walking through the logic is convincing enough that I'm not just copying from wikipedia.)
+
+Let $P = (p_1,p_2,p_3) \in S^2$ be a point on the sphere in $\R^3$.
+
+We define the stereographic projection of $P$ onto $\C$ by $SP: S^2 \to \C$ using the following logic:
+
+First, we choose an argument in $[0, 2\pi)$ to be the same as the argument of the complex number $(p_1,p_2)$ in $[0,2\pi)$; this is because the line we use to define the stereographic projection goes in the same direction as $(p_1, p_2)$.
+
+\shunt %DRAW A CIRCLES HERE
+
+Next, we define a magnitude using similar triangles: we say that $r = \frac{\sqrt{p_1^2 + p_2^2}}{1-p_3}$. This works in both the case where $p_3\geq 0$ and $p_3 < 0$.
+
+So, $SP(P) = \frac{\sqrt{p_1^2 + p_2^2}}{1-p_3} e^{i \text{arg}(p_1,p_2)}$.
+
+\shunt %DRAW A TRIANGLES HERE
+
+That is, $SP(P) = \frac{\sqrt{p_1^2 + p_2^2}}{1-p_3} \frac{p_1}{\sqrt{p_1^2+p_2^2}} + i\frac{\sqrt{p_1^2 + p_2^2}}{1-p_3} \frac{p_2}{\sqrt{p_1^2+p_2^2}}$
+
+Simplifying, $SP(P) = \frac{p_1}{1-p_3} + i \frac{p_2}{1-p_3}$.
+
+\shunt
+
+{\bf Problem 5:}
+
+Let $h: \C \to \C$ be a real-differentiable function.
+
+\begin{align*}
+\overline{h_z} &= \frac{1}{2} \overline{h_x-ih_y}\\
+&= \frac{1}{2} \overline{h_x}-\overline{ih_y}\\
+&= \frac{1}{2} \overline{h_x}+i\overline{h_y}\\
+&= \overline{h}_{\overline{z}}
+\end{align*}
+
+As desired.
+
+\shunt
+
+{\bf Problem 6:}
+
+Let $z_1,z_2$ be fixed on the unit circle in $\R^2$. Define $\al(z): \overline{D_1(0)} \to \R$ to be the angle between the line segments $\overline{zz_1}$ and $\overline{zz_2}$. That is, $\al(z) = \absval{\text{arg}(z_1-z) - \text{arg}(z_2-z)}$.
+
+I'm not quite sure how to approach this, but I guess the best thing to do would be to bash it over the head with definitions.
+
+\shunt
+
+{\bf Problem 7:}
+
+Let $\Om$ be an annulus, $u(z) = \log(\absval{z})$ for all $z \in \Om$.
+
+Let $f$ be a holomorphic function on $\Om$ with $u = \text{Re}(f)$.
+
+Then $u_x = \frac{x}{x^2+y^2}$ and $u_y = \frac{y}{x^2+y^2}$. But this means that $v_y = \frac{x}{x^2+y^2}$ and $v_x = -\frac{y}{x^2+y^2}$. 
+
+However, that system of equations is inconsistent; integrating $v_y$ with respect to $y$ yields $\arctan(y/x) + g(x)$ for some $g$, and differentiating this with respect to $x$ yields $g'(x) + y/x \frac{1}{y^2+x^2}$, which is necessarily inconsistent with our given $v_x$.
+
+So $u$ cannot have been the real part of $f$. That is, $u$ isn't the real part of any holomorphic function.
+
+\shunt
+
+{\bf Problem 8:}
+
+Let $u$ and $u^2$ be harmonic. Define $v = u^2 - u$.
+
+Then:
+
+\begin{align*}
+v_{xx} &= 2(u_x)^2 + u_{xx}(2u-1)\\
+v_{yy} &= 2(u_y)^2 + u_{yy}(2u-1)\\
+v_{xx} + v_{yy} &=0\\
+&= 2(u_x)^2 + u_{xx}(2u-1) + 2(u_y)^2 + u_{yy}(2u-1)\\
+&= 2(u_x)^2+ 2(u_y)^2\\
+\end{align*}
+
+Because $(u_x)^2$ and $(u_y)^2$ must be nonnegative, this means that they are both identically zero.
+
+So, $u$ is constant.
+
+\shunt
+
+{\bf Problem 9:}
+
+Let $u \geq 0$ be harmonic on $D_R(0)$ with $R > 1$. Let $r <1$.
+
+\shunt
+
+{\bf Problem 10:}
+
+\shunt
+
+{\bf Problem 11:}
+
+\shunt
+
+\end{document}

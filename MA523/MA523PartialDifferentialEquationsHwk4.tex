@@ -22,12 +22,12 @@
 
 %Number of Problems		:6
 %Clear					:
-%Begun					:1,2a,2b
+%Begun					:1,2a
 %Not started			:3b,3c
 %Can complete via book	:
-%Needs Polish			:3a
+%Needs Polish			:2b,3a
 
-%Pomodoros logged		:3
+%Pomodoros logged		:6
 
 \begin{document}
 
@@ -38,7 +38,7 @@ Let $g: [0,\infty) \to \R$ with $g(0) = 0$, and let $u(x,t)$ solve
 \begin{displaymath}
    \left\{
      \begin{array}{lr}
-       u_t - u{xx} = 0 & \text{ in } \R_+ \times (0,\infty) \\
+       u_t - u_{xx} = 0 & \text{ in } \R_+ \times (0,\infty) \\
        u=0 & \text{ in } \R_+ \times \{t=0\}\\
        u=g & \text{ on } \{x=0\} \times [0,\infty)
      \end{array}
@@ -50,14 +50,32 @@ Let $v(x,t) = u(x,t) - g(t)$, and extend $v$ to $\{x<0\}$ by odd reflection (jus
 \begin{displaymath}
    \left\{
      \begin{array}{lr}
-       v_t - v{xx} = g'(t) & \text{ in } \R_+ \times (0,\infty) \\
+       v_t - v_{xx} = -g' & \text{ in } \R_+ \times (0,\infty) \\
        v=-g & \text{ in } \R_+ \times \{t=0\}\\
        v=0 & \text{ on } \{x=0\} \times [0,\infty)
      \end{array}
    \right.
-\end{displaymath}
+\end{displaymath} %And g = 0 when t=0, doesn't it, you tard?
 
-So $v(x,t) = \int\limits_\R -g(y)e^{\frac{-\absval{x-y}^2}{4t}} dy +  \int\limits_0^t \frac{1}{\sqrt{4 \pi (t-s)}} \int\limits_\R g'(y) e^{\frac{-\absval{x-y}^2}{4(t-s)}} dy ds$ by formula 17 in the book. 
+So $v(x,t) = \int\limits_\R -g(y)e^{\frac{-\absval{x-y}^2}{4t}} dy +  \int\limits_0^t \frac{1}{\sqrt{4 \pi (t-s)}} \int\limits_\R -g'(y) e^{\frac{-\absval{x-y}^2}{4(t-s)}} dy ds$ by formula 17 in the book.
+
+Now,
+
+\begin{align*}
+v(x,t) &= \int\limits_\R -g(y)e^{\frac{-\absval{x-y}^2}{4t}} dy +  \int\limits_0^t \frac{1}{\sqrt{4 \pi (t-s)}} \int\limits_\R -g'(y) e^{\frac{-\absval{x-y}^2}{4(t-s)}} dy ds\\
+&= -\left[\int\limits_\R g(y)e^{\frac{-\absval{x-y}^2}{4t}} dy +  \int\limits_0^t \frac{1}{\sqrt{4 \pi (t-s)}} \int\limits_\R g'(y) e^{\frac{-\absval{x-y}^2}{4(t-s)}} dy ds \right]\\
+&= -\left[\int\limits_\R g(y)e^{\frac{-\absval{x-y}^2}{4t}} dy -  \int\limits_0^t \frac{1}{2\sqrt{4 \pi }(t-s)^{3/2}} \int\limits_\R (x-y)g(y) e^{\frac{-\absval{x-y}^2}{4(t-s)}} dy ds \right] \text{ (integrate by parts)}\\
+&= \int\limits_0^t \frac{1}{2\sqrt{4 \pi }(t-s)^{3/2}} \int\limits_\R (x-y)g(y) e^{\frac{-\absval{x-y}^2}{4(t-s)}} dy ds \\
+&-\int\limits_\R g(y)e^{\frac{-\absval{x-y}^2}{4t}} dy \\
+&= \int\limits_0^t \frac{1}{2\sqrt{4 \pi }(t-s)^{3/2}} \left[x\int\limits_\R g(y) e^{\frac{-\absval{x-y}^2}{4(t-s)}}dy - \int\limits_\R yg(y) e^{\frac{-\absval{x-y}^2}{4(t-s)}} dy \right] ds \\
+&-\int\limits_\R g(y)e^{\frac{-\absval{x-y}^2}{4t}} dy \\
+&= \int\limits_0^t \frac{1}{2\sqrt{4 \pi }(t-s)^{3/2}} \left[x\int\limits_\R g(y) e^{\frac{-\absval{x-y}^2}{4(t-s)}}dy \right] ds \\
+&-\int\limits_\R g(y)e^{\frac{-\absval{x-y}^2}{4t}} dy - \int\limits_0^t \frac{1}{2\sqrt{4 \pi }(t-s)^{3/2}} \int\limits_\R yg(y) e^{\frac{-\absval{x-y}^2}{4(t-s)}} dy ds \\
+&= \frac{x}{\sqrt{4\pi}} \int\limits_0^t \frac{1}{2(t-s)^{3/2}} \left[\int\limits_\R g(y) e^{\frac{-\absval{x-y}^2}{4(t-s)}}dy \right] ds \\
+&-\int\limits_\R g(y)e^{\frac{-\absval{x-y}^2}{4t}} dy - \int\limits_0^t \frac{1}{2\sqrt{4 \pi }(t-s)^{3/2}} \int\limits_\R yg(y) e^{\frac{-\absval{x-y}^2}{4(t-s)}} dy ds \\
+&= \frac{x}{\sqrt{4\pi}} \int\limits_0^t \frac{1}{2(t-s)^{3/2}} \left[\int\limits_\R g(y) e^{\frac{-\absval{x-y}^2}{4(t-s)}}dy \right] ds \\
+&-\int\limits_\R g(y)e^{\frac{-\absval{x-y}^2}{4t}} dy - \int\limits_0^t \frac{1}{2\sqrt{4 \pi }(t-s)^{3/2}} \int\limits_\R yg(y) e^{\frac{-\absval{x-y}^2}{4(t-s)}} dy ds \\
+\end{align*} %There's a representation for that damned thing and you know it! It's because of one of those initial conditions...the one that tells you that a massive amount of this just vanishes.
 
 %Applying mean value theorems may succeed in getting your desired result...
 
@@ -80,9 +98,9 @@ Let $g \in C(\R^n)$, $g \in L^1(\R^n)$, $\absval{g} < M$ for some $M$. Let $u$ b
 
 Part a:
 
-Then $u(x,t) = \frac{1}{(4\pi t)^{n/2}}\int\limits_\R e^{\frac{-\absval{x-y}^2}{4t}} g(y) dy$. Let $\ep >0$. Choose $N$ greater than $something$. Then for all $t >N$, $result desired$.
+Then $u(x,t) = \frac{1}{(4\pi t)^{n/2}}\int\limits_\R e^{\frac{-\absval{x-y}^2}{4t}} g(y) dy$. Let $\ep >0$. Choose $N$ greater than $something$. Then for all $t >N$, $result desired$. %Approximate g from below by a function with compact support. Make the outside \ep/2 and take t large enough that the inside is \ep/2. Win.
 
-That is, $\lim\limits_{t \to \infty} \sup\limits_{x \in \R^n} \absval{u(x,t)} = 0$, which is the desired result.
+So for all $\ep>0$ there's an $N$ such that for all $t>N$, $\absval{u(x,t)} < \ep$. That is, $\lim\limits_{t \to \infty} \sup\limits_{x \in \R^n} \absval{u(x,t)} = 0$, which is the desired result.
 
 \shunt
 
@@ -107,7 +125,7 @@ Switching the order of integration, we get $ \int\limits_0^t \int\limits_{\R^n} 
 
 Yet, this is $ \int\limits_0^t \int\limits_{\R^n} \De g(y) dy ds$, because $\int\limits_{\R^n} \Phi(x-y,t-s) dx = 1$. 
 
-The integral vanishes, for reasons I haven't figured out yet. %Reasons are?
+The integral vanishes, by Green's Theorem. %Explain that *way* better!
 
 So, $\int\limits_{\R^n} v(x,t) dx = 0$; $\int\limits_{\R^n} u(x,t) - g(x) dx = 0$, which yields the desired result of $\int\limits_{\R^n} u(x,t) dx = \int\limits_{\R^n} g(x) dx$.
 
