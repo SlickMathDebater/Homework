@@ -21,17 +21,17 @@
 \rhead{Assignment 4, Page \thepage}
 
 %Number of Problems		:6
-%Clear					:3a
-%Begun					:1,2a
-%Not started			:3b,3c
+%Clear					:2a,3a
+%Begun					:1,3b
+%Not started			:3c
 %Can complete via book	:
 %Needs Polish			:2b
 
-%Pomodoros logged		:9
+%Pomodoros logged		:14
 
 \begin{document}
 
-{\bf Problem 1:}
+{\bf Problem 1:} %You've spent way too much time on this. It's killing you. Move on.
 
 Let $g: [0,\infty) \to \R$ with $g(0) = 0$, and let $u(x,t)$ solve
 
@@ -66,6 +66,10 @@ v(x,t) &= \int\limits_0^t \frac{1}{\sqrt{4 \pi (t-s)}} \int\limits_\R -g'(y) e^{
 &= -\left[\int\limits_0^t \frac{1}{\sqrt{4 \pi (t-s)}} \int\limits_\R g'(y) e^{\frac{-\absval{x-y}^2}{4(t-s)}} dy ds \right]\\
 &= -\left[ -  \int\limits_0^t \frac{1}{2\sqrt{4 \pi }(t-s)^{3/2}} \int\limits_\R (x-y)g(y) e^{\frac{-\absval{x-y}^2}{4(t-s)}} dy ds \right] \text{ (integrate by parts)}\\
 &= \int\limits_0^t \frac{1}{2\sqrt{4 \pi }(t-s)^{3/2}} \int\limits_\R (x-y)g(y) e^{\frac{-\absval{x-y}^2}{4(t-s)}} dy ds \\
+&= -\int\limits_0^t \frac{1}{2\sqrt{4 \pi }(t-s)^{3/2}} \int\limits_\R (y)g(x-y) e^{\frac{-\absval{y}^2}{4(t-s)}} dy ds \\
+\end{align*}
+
+\begin{align*}
 &= \int\limits_0^t \frac{1}{2\sqrt{4 \pi }(t-s)^{3/2}} \left[x\int\limits_\R g(y) e^{\frac{-\absval{x-y}^2}{4(t-s)}}dy - \int\limits_\R yg(y) e^{\frac{-\absval{x-y}^2}{4(t-s)}} dy \right] ds \\
 &= \int\limits_0^t \frac{1}{2\sqrt{4 \pi }(t-s)^{3/2}} \left[x\int\limits_\R g(y) e^{\frac{-\absval{x-y}^2}{4(t-s)}}dy \right] ds - \int\limits_0^t \frac{1}{2\sqrt{4 \pi }(t-s)^{3/2}} \int\limits_\R yg(y) e^{\frac{-\absval{x-y}^2}{4(t-s)}} dy ds \\
 &= \frac{x}{\sqrt{4\pi}} \int\limits_0^t \frac{1}{2(t-s)^{3/2}} \left[\int\limits_\R g(y) e^{\frac{-\absval{x-y}^2}{4(t-s)}}dy \right] ds - \int\limits_0^t \frac{1}{2\sqrt{4 \pi }(t-s)^{3/2}} \int\limits_\R yg(y) e^{\frac{-\absval{x-y}^2}{4(t-s)}} dy ds \\
@@ -73,7 +77,7 @@ v(x,t) &= \int\limits_0^t \frac{1}{\sqrt{4 \pi (t-s)}} \int\limits_\R -g'(y) e^{
 &= \frac{x}{\sqrt{4\pi}} \int\limits_0^t \frac{1}{2(t-s)^{3/2}} \left[\int\limits_\R g(y) e^{\frac{-(x^2-2xy+y^2)}{4(t-s)}}dy \right] ds - \int\limits_0^t \frac{1}{2\sqrt{4 \pi }(t-s)^{3/2}} \int\limits_\R yg(y) e^{\frac{-(x^2-2xy+y^2)}{4(t-s)}} dy ds \\
 &= \frac{x}{\sqrt{4\pi}} \int\limits_0^t \frac{e^{\frac{-x^2}{4(t-s)}}}{2(t-s)^{3/2}} \left[\int\limits_\R g(y) e^{\frac{-(-2xy+y^2)}{4(t-s)}}dy \right] ds - \int\limits_0^t \frac{e^{\frac{-x^2}{4(t-s)}}}{2\sqrt{4 \pi }(t-s)^{3/2}} \int\limits_\R yg(y) e^{\frac{-(-2xy+y^2)}{4(t-s)}} dy ds \\
 &= \frac{x}{\sqrt{4\pi}} \int\limits_0^t \frac{e^{\frac{-x^2}{4(t-s)}}}{(t-s)^{3/2}} g(s) ds - g(t) \\
-\end{align*}
+\end{align*} %I think this chunk is probably fucked, but just in case, I'll move it here.
 
 I must admit that I'm not sure how the last line is supposed to go, but that's the idea.
 
@@ -98,9 +102,28 @@ Let $g \in C(\R^n)$, $g \in L^1(\R^n)$, $\absval{g} < M$ for some $M$. Let $u$ b
 
 Part a:
 
-Then $u(x,t) = \frac{1}{(4\pi t)^{n/2}}\int\limits_\R e^{\frac{-\absval{x-y}^2}{4t}} g(y) dy$. Let $\ep >0$. There is an $h \in \R^n$ with compact support such that $\absval{g}\geq \absval{h}$, $\absval{\int\limits_{\R^n} g - h} < \ep/2$ and $\absval{g-h} < \ep/(2A)$ where $A$ is the volume of a ball, call it $B$, that $h$ vanishes outside of. %Approximate g from below by a function with compact support. Make the outside \ep/2 and take t large enough that the inside is \ep/2. Win. Also, that's not the right amount of power for this...
+Then $u(x,t) = \frac{1}{(4\pi t)^{n/2}}\int\limits_\R e^{\frac{-\absval{x-y}^2}{4t}} g(y) dy$. Let $\ep >0$. There is a sequence $h_k \in \R^n$ with compact support such that $\absval{g}\geq \absval{h_k}$ and $\absval{g-h_k} \to 0$ uniformly. Also, let $v_k(x,t)$ be the bounded solution to
 
-So for all $\ep>0$ there's an $N$ such that for all $t>N$, $\absval{u(x,t)} < \ep$. That is, $\lim\limits_{t \to \infty} \sup\limits_{x \in \R^n} \absval{u(x,t)} = 0$, which is the desired result.
+\begin{displaymath}
+   \left\{
+     \begin{array}{lr}
+       \De v_k -v_{k,t}  = 0 & \text{ for } t>0, x \in \R^n \\
+       v_k(x,0) = h_k(x) & \text{ for } x \in \R^n
+     \end{array}
+   \right.
+\end{displaymath}
+
+%Approximate g from below by a function with compact support. Make the outside \ep/2 and take t large enough that the inside is \ep/2. Win. Also, that's not the right amount of power for this...
+
+Now,  %Clean the below up.
+
+\begin{align*}
+\absval{\frac{1}{(4\pi t)^{n/2}}\int\limits_\R e^{\frac{-\absval{x-y}^2}{4t}} (g(y) -h_k(y)) dy} &\leq \frac{1}{(4\pi t)^{n/2}}\int\limits_\R \absval{e^{\frac{-\absval{x-y}^2}{4t}} (g(y) -h_k(y))} dy\\
+&\leq \absval{ \frac{1}{(4\pi t)^{n/2}}\int\limits_\R e^{\frac{-\absval{x-y}^2}{4t}} \ep dy}\\
+&= \ep
+\end{align*}
+
+So $\lim\limits_{t \to \infty} \sup\limits_{x \in \R^n} \absval{u(x,t)} = \lim\limits_{t \to \infty} \sup\limits_{x \in \R^n} \lim\limits_{k \to \infty} \absval{v_k(x,t)} = \lim\limits_{t \to \infty} \lim\limits_{k \to \infty} \sup\limits_{x \in \R^n} \absval{v_k(x,t)}$. But $\lim\limits_{t \to \infty} \sup\limits_{x \in \R^n} \absval{v_k(x,t)} = 0$, because $h(x)$ has compact support (I'm fairly sure we touched on this in class). So, $\lim\limits_{t \to \infty} \sup\limits_{x \in \R^n} \absval{u(x,t)} = 0$, as desired.
 
 \shunt
 
@@ -125,7 +148,7 @@ Switching the order of integration, we get $ \int\limits_0^t \int\limits_{\R^n} 
 
 Yet, this is $ \int\limits_0^t \int\limits_{\R^n} \De g(y) dy ds$, because $\int\limits_{\R^n} \Phi(x-y,t-s) dx = 1$. 
 
-The integral vanishes, by Green's Theorem; $\int\limits_{\R^n} \De g(y) dy = \lim\limits_{r \to \infty} \int\limits_{\partial B(0,r)} \frac{\partial g(y)}{\partial \nu} dS$, which must vanish as $g$ is in $L^1(\R)$. %Explain that better!
+The integral vanishes, by Green's Theorem; $\int\limits_{\R^n} \De g(y) dy = \lim\limits_{r \to \infty} \int\limits_{\partial B(0,r)} \frac{\partial g(y)}{\partial \nu} dS$, which must vanish, because $g$ is in $L^1(\R)$. %Explain that better!
 
 So, $\int\limits_{\R^n} v(x,t) dx = 0$; $\int\limits_{\R^n} u(x,t) - g(x) dx = 0$, which yields the desired result of $\int\limits_{\R^n} u(x,t) dx = \int\limits_{\R^n} g(x) dx$.
 
@@ -160,6 +183,40 @@ for some $M$. By applying basic calculus, the right hand side takes a minimum at
 \shunt
 
 Part b:
+
+First, consider that $\partial_t \Phi(x,t) = e^{-\frac{\absval{x}^2}{4t}} \left[-\frac{2\pi n}{(4\pi t)^{n/2+1}} + \frac{\absval{x}^2}{4t^2(4 \pi t)^{n/2}}\right]$. Simplifying,
+
+\begin{align*}
+\partial_t \Phi(x,t) &= \Phi(x,t) \left[ \frac{\absval{x}^2}{4t^2} - \frac{n}{2t}\right]\\
+\end{align*}
+
+Now, using part a above with $\al = 1/2$, $z = \absval{x}^2/(4t)$, and $\be = 1$, we get
+
+\begin{align*}
+\absval{\partial_t \Phi(x,t)} &= \absval{\Phi(x,t) \left[ \frac{\absval{x}^2}{4t^2} - \frac{n}{2t}\right]}\\
+&= \Phi(x,t)\absval{\left[ \frac{\absval{x}^2}{4t^2} - \frac{n}{2t}\right]}\\
+&= \frac{e^{-\frac{\absval{x}^2}{4t}}}{(4 \pi t)^{n/2}}\absval{\left[ \frac{\absval{x}^2}{4t^2} - \frac{n}{2t}\right]}\\
+&\leq \frac{Me^{-\frac{\absval{x}^2}{8t}}}{(4 \pi t)^{n/2} (\absval{x}^2/(4t))^\be}\absval{\left[ \frac{\absval{x}^2}{4t^2} - \frac{n}{2t}\right]}\\
+&= M2^{n/2} \Phi(x,2t) (\absval{x}^2/(4t))^{-\be}\absval{\left[ \frac{\absval{x}^2}{4t^2} - \frac{n}{2t}\right]}\\
+&= M_1 \Phi(x,2t) (\absval{x}^2/(4t))^{-\be}\absval{\left[ \frac{\absval{x}^2}{4t^2} - \frac{n}{2t}\right]}\\
+&= M_1 \Phi(x,2t) (\absval{x}^2/(4t))^{-\be}\frac{\absval{x}^2}{4t^2}\\
+&= M_1 \Phi(x,2t)/t\\
+\end{align*}
+
+As desired.
+
+Next, consider that $\partial_{x_i} \Phi(x,t) = \frac{e^{-\frac{\absval{x}^2}{4t}}}{(4 \pi t)^{n/2}}\left[-\frac{x_i}{2t}\right]$. %It's not.
+
+Now, using part a above with $\al = 1/2$, $z = \absval{x}^2/(4t)$, and $\be = 1/2$, we get
+
+\begin{align*}
+\absval{\partial_{x_i} \Phi(x,t)} &= \absval{\frac{e^{-\frac{\absval{x}^2}{4t}}}{(4 \pi t)^{n/2}}\left[-\frac{x_i}{2t}\right]}\\
+&\leq \frac{Me^{-\frac{\absval{x}^2}{8t}}}{(4 \pi t)^{n/2}}\absval{\frac{x_i}{2tz^\be}}\\
+&\leq M 2^{n/2}\phi(x,2t)\absval{\frac{\absval{x}}{2t} \frac{2\sqrt{t}}{\absval{x}}}\\
+&= M_2\phi(x,2t)/\sqrt{t}\\
+\end{align*}
+
+As desired.
 
 \shunt
 
