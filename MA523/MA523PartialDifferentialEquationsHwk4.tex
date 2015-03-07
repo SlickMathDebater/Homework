@@ -21,13 +21,13 @@
 \rhead{Assignment 4, Page \thepage}
 
 %Number of Problems		:6
-%Clear					:
+%Clear					:3a
 %Begun					:1,2a
 %Not started			:3b,3c
 %Can complete via book	:
-%Needs Polish			:2b,3a
+%Needs Polish			:2b
 
-%Pomodoros logged		:6
+%Pomodoros logged		:9
 
 \begin{document}
 
@@ -51,33 +51,33 @@ Let $v(x,t) = u(x,t) - g(t)$, and extend $v$ to $\{x<0\}$ by odd reflection (jus
    \left\{
      \begin{array}{lr}
        v_t - v_{xx} = -g' & \text{ in } \R_+ \times (0,\infty) \\
-       v=-g & \text{ in } \R_+ \times \{t=0\}\\
+       v=0 & \text{ in } \R_+ \times \{t=0\}\\
        v=0 & \text{ on } \{x=0\} \times [0,\infty)
      \end{array}
    \right.
-\end{displaymath} %And g = 0 when t=0, doesn't it, you tard?
+\end{displaymath}
 
-So $v(x,t) = \int\limits_\R -g(y)e^{\frac{-\absval{x-y}^2}{4t}} dy +  \int\limits_0^t \frac{1}{\sqrt{4 \pi (t-s)}} \int\limits_\R -g'(y) e^{\frac{-\absval{x-y}^2}{4(t-s)}} dy ds$ by formula 17 in the book.
+So $v(x,t) = \int\limits_0^t \frac{1}{\sqrt{4 \pi (t-s)}} \int\limits_\R -g'(y) e^{\frac{-\absval{x-y}^2}{4(t-s)}} dy ds$ by formula 17 in the book.
 
 Now,
 
 \begin{align*}
-v(x,t) &= \int\limits_\R -g(y)e^{\frac{-\absval{x-y}^2}{4t}} dy +  \int\limits_0^t \frac{1}{\sqrt{4 \pi (t-s)}} \int\limits_\R -g'(y) e^{\frac{-\absval{x-y}^2}{4(t-s)}} dy ds\\
-&= -\left[\int\limits_\R g(y)e^{\frac{-\absval{x-y}^2}{4t}} dy +  \int\limits_0^t \frac{1}{\sqrt{4 \pi (t-s)}} \int\limits_\R g'(y) e^{\frac{-\absval{x-y}^2}{4(t-s)}} dy ds \right]\\
-&= -\left[\int\limits_\R g(y)e^{\frac{-\absval{x-y}^2}{4t}} dy -  \int\limits_0^t \frac{1}{2\sqrt{4 \pi }(t-s)^{3/2}} \int\limits_\R (x-y)g(y) e^{\frac{-\absval{x-y}^2}{4(t-s)}} dy ds \right] \text{ (integrate by parts)}\\
+v(x,t) &= \int\limits_0^t \frac{1}{\sqrt{4 \pi (t-s)}} \int\limits_\R -g'(y) e^{\frac{-\absval{x-y}^2}{4(t-s)}} dy ds\\
+&= -\left[\int\limits_0^t \frac{1}{\sqrt{4 \pi (t-s)}} \int\limits_\R g'(y) e^{\frac{-\absval{x-y}^2}{4(t-s)}} dy ds \right]\\
+&= -\left[ -  \int\limits_0^t \frac{1}{2\sqrt{4 \pi }(t-s)^{3/2}} \int\limits_\R (x-y)g(y) e^{\frac{-\absval{x-y}^2}{4(t-s)}} dy ds \right] \text{ (integrate by parts)}\\
 &= \int\limits_0^t \frac{1}{2\sqrt{4 \pi }(t-s)^{3/2}} \int\limits_\R (x-y)g(y) e^{\frac{-\absval{x-y}^2}{4(t-s)}} dy ds \\
-&-\int\limits_\R g(y)e^{\frac{-\absval{x-y}^2}{4t}} dy \\
 &= \int\limits_0^t \frac{1}{2\sqrt{4 \pi }(t-s)^{3/2}} \left[x\int\limits_\R g(y) e^{\frac{-\absval{x-y}^2}{4(t-s)}}dy - \int\limits_\R yg(y) e^{\frac{-\absval{x-y}^2}{4(t-s)}} dy \right] ds \\
-&-\int\limits_\R g(y)e^{\frac{-\absval{x-y}^2}{4t}} dy \\
-&= \int\limits_0^t \frac{1}{2\sqrt{4 \pi }(t-s)^{3/2}} \left[x\int\limits_\R g(y) e^{\frac{-\absval{x-y}^2}{4(t-s)}}dy \right] ds \\
-&-\int\limits_\R g(y)e^{\frac{-\absval{x-y}^2}{4t}} dy - \int\limits_0^t \frac{1}{2\sqrt{4 \pi }(t-s)^{3/2}} \int\limits_\R yg(y) e^{\frac{-\absval{x-y}^2}{4(t-s)}} dy ds \\
-&= \frac{x}{\sqrt{4\pi}} \int\limits_0^t \frac{1}{2(t-s)^{3/2}} \left[\int\limits_\R g(y) e^{\frac{-\absval{x-y}^2}{4(t-s)}}dy \right] ds \\
-&-\int\limits_\R g(y)e^{\frac{-\absval{x-y}^2}{4t}} dy - \int\limits_0^t \frac{1}{2\sqrt{4 \pi }(t-s)^{3/2}} \int\limits_\R yg(y) e^{\frac{-\absval{x-y}^2}{4(t-s)}} dy ds \\
-&= \frac{x}{\sqrt{4\pi}} \int\limits_0^t \frac{1}{2(t-s)^{3/2}} \left[\int\limits_\R g(y) e^{\frac{-\absval{x-y}^2}{4(t-s)}}dy \right] ds \\
-&-\int\limits_\R g(y)e^{\frac{-\absval{x-y}^2}{4t}} dy - \int\limits_0^t \frac{1}{2\sqrt{4 \pi }(t-s)^{3/2}} \int\limits_\R yg(y) e^{\frac{-\absval{x-y}^2}{4(t-s)}} dy ds \\
-\end{align*} %There's a representation for that damned thing and you know it! It's because of one of those initial conditions...the one that tells you that a massive amount of this just vanishes.
+&= \int\limits_0^t \frac{1}{2\sqrt{4 \pi }(t-s)^{3/2}} \left[x\int\limits_\R g(y) e^{\frac{-\absval{x-y}^2}{4(t-s)}}dy \right] ds - \int\limits_0^t \frac{1}{2\sqrt{4 \pi }(t-s)^{3/2}} \int\limits_\R yg(y) e^{\frac{-\absval{x-y}^2}{4(t-s)}} dy ds \\
+&= \frac{x}{\sqrt{4\pi}} \int\limits_0^t \frac{1}{2(t-s)^{3/2}} \left[\int\limits_\R g(y) e^{\frac{-\absval{x-y}^2}{4(t-s)}}dy \right] ds - \int\limits_0^t \frac{1}{2\sqrt{4 \pi }(t-s)^{3/2}} \int\limits_\R yg(y) e^{\frac{-\absval{x-y}^2}{4(t-s)}} dy ds \\
+&= \frac{x}{\sqrt{4\pi}} \int\limits_0^t \frac{1}{2(t-s)^{3/2}} \left[\int\limits_\R g(y) e^{\frac{-\absval{x-y}^2}{4(t-s)}}dy \right] ds - \int\limits_0^t \frac{1}{2\sqrt{4 \pi }(t-s)^{3/2}} \int\limits_\R yg(y) e^{\frac{-\absval{x-y}^2}{4(t-s)}} dy ds \\
+&= \frac{x}{\sqrt{4\pi}} \int\limits_0^t \frac{1}{2(t-s)^{3/2}} \left[\int\limits_\R g(y) e^{\frac{-(x^2-2xy+y^2)}{4(t-s)}}dy \right] ds - \int\limits_0^t \frac{1}{2\sqrt{4 \pi }(t-s)^{3/2}} \int\limits_\R yg(y) e^{\frac{-(x^2-2xy+y^2)}{4(t-s)}} dy ds \\
+&= \frac{x}{\sqrt{4\pi}} \int\limits_0^t \frac{e^{\frac{-x^2}{4(t-s)}}}{2(t-s)^{3/2}} \left[\int\limits_\R g(y) e^{\frac{-(-2xy+y^2)}{4(t-s)}}dy \right] ds - \int\limits_0^t \frac{e^{\frac{-x^2}{4(t-s)}}}{2\sqrt{4 \pi }(t-s)^{3/2}} \int\limits_\R yg(y) e^{\frac{-(-2xy+y^2)}{4(t-s)}} dy ds \\
+&= \frac{x}{\sqrt{4\pi}} \int\limits_0^t \frac{e^{\frac{-x^2}{4(t-s)}}}{(t-s)^{3/2}} g(s) ds - g(t) \\
+\end{align*}
 
-%Applying mean value theorems may succeed in getting your desired result...
+I must admit that I'm not sure how the last line is supposed to go, but that's the idea.
+
+Thus, by adding $g(t)$ to $v(x,t)$, we get that $u(x,t) = \frac{x}{\sqrt{4\pi}} \int\limits_0^t \frac{e^{\frac{-x^2}{4(t-s)}}}{(t-s)^{3/2}} g(s) ds$ as desired.
 
 %This is the extension of the heat equation to non-zero initial values...
 
@@ -98,7 +98,7 @@ Let $g \in C(\R^n)$, $g \in L^1(\R^n)$, $\absval{g} < M$ for some $M$. Let $u$ b
 
 Part a:
 
-Then $u(x,t) = \frac{1}{(4\pi t)^{n/2}}\int\limits_\R e^{\frac{-\absval{x-y}^2}{4t}} g(y) dy$. Let $\ep >0$. Choose $N$ greater than $something$. Then for all $t >N$, $result desired$. %Approximate g from below by a function with compact support. Make the outside \ep/2 and take t large enough that the inside is \ep/2. Win.
+Then $u(x,t) = \frac{1}{(4\pi t)^{n/2}}\int\limits_\R e^{\frac{-\absval{x-y}^2}{4t}} g(y) dy$. Let $\ep >0$. There is an $h \in \R^n$ with compact support such that $\absval{g}\geq \absval{h}$, $\absval{\int\limits_{\R^n} g - h} < \ep/2$ and $\absval{g-h} < \ep/(2A)$ where $A$ is the volume of a ball, call it $B$, that $h$ vanishes outside of. %Approximate g from below by a function with compact support. Make the outside \ep/2 and take t large enough that the inside is \ep/2. Win. Also, that's not the right amount of power for this...
 
 So for all $\ep>0$ there's an $N$ such that for all $t>N$, $\absval{u(x,t)} < \ep$. That is, $\lim\limits_{t \to \infty} \sup\limits_{x \in \R^n} \absval{u(x,t)} = 0$, which is the desired result.
 
@@ -125,7 +125,7 @@ Switching the order of integration, we get $ \int\limits_0^t \int\limits_{\R^n} 
 
 Yet, this is $ \int\limits_0^t \int\limits_{\R^n} \De g(y) dy ds$, because $\int\limits_{\R^n} \Phi(x-y,t-s) dx = 1$. 
 
-The integral vanishes, by Green's Theorem. %Explain that *way* better!
+The integral vanishes, by Green's Theorem; $\int\limits_{\R^n} \De g(y) dy = \lim\limits_{r \to \infty} \int\limits_{\partial B(0,r)} \frac{\partial g(y)}{\partial \nu} dS$, which must vanish as $g$ is in $L^1(\R)$. %Explain that better!
 
 So, $\int\limits_{\R^n} v(x,t) dx = 0$; $\int\limits_{\R^n} u(x,t) - g(x) dx = 0$, which yields the desired result of $\int\limits_{\R^n} u(x,t) dx = \int\limits_{\R^n} g(x) dx$.
 
@@ -155,7 +155,7 @@ for some $M$. Now, this is equivalent to
 - \ln(M) \leq (1-\al)z - \be \ln(z)
 \end{displaymath}
 
-for some $M$. By applying basic calculus, the right hand side takes a minimum at $z = \be / (1-\al)$, so taking $M = (1-\al)(\be / (1-\al)) - \be \ln(\be / (1-\al))$ suffices. 
+for some $M$. By applying basic calculus, the right hand side takes a minimum at $z = \be / (1-\al)$, so taking $M = (1-\al)(\be / (1-\al)) - \be \ln(\be / (1-\al))$ suffices so that $-\ln(M) \leq (1-\al)z - \be \ln(z)$ and, equivalently, $z^\be e^{-z} \leq Me^{-\al z}$ for all $z \geq 0$, as desired.
 
 \shunt
 

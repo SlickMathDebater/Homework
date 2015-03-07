@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.9.27)  5 MAR 2015 12:58
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.9.27)  6 MAR 2015 22:14
 entering extended mode
 **MA523PartialDifferentialEquationsHwk4.tex
 
@@ -256,7 +256,7 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 36.
 amsfonts\umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 )
-Overfull \hbox (115.32564pt too wide) in paragraph at lines 78--78
+Overfull \hbox (126.52956pt too wide) in paragraph at lines 76--76
 [] 
  []
 
@@ -270,9 +270,6 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 onfig/pdftex.map}
 
 ]
-Overfull \vbox (41.79155pt too high) has occurred while \output is active []
-
-
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
@@ -285,6 +282,13 @@ Overfull \hbox (7.83255pt too wide) in paragraph at lines 124--125
 ML/cmm/m/it/12 x \OMS/cmsy/m/n/12   \OML/cmm/m/it/12 y; t \OMS/cmsy/m/n/12   \O
 ML/cmm/m/it/12 s\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 g\OT1/cmr/m/n/12 (\OML/cmm/m
 /it/12 y\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 dxdyds$\OT1/cmr/m/n/12 . 
+ []
+
+
+Overfull \hbox (14.89244pt too wide) in paragraph at lines 128--129
+[]\OT1/cmr/m/n/12 The in-te-gral van-ishes, by Green's The-o-rem; $[] \OML/cmm
+/m/it/12 g\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 y\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 
+dy \OT1/cmr/m/n/12 = [] [] []\OML/cmm/m/it/12 dS$\OT1/cmr/m/n/12 ,
  []
 
 
@@ -306,11 +310,11 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 Here is how much of TeX's memory you used:
  2839 strings out of 493921
  39834 string characters out of 3140860
- 103819 words of memory out of 3000000
+ 104819 words of memory out of 3000000
  6111 multiletter control sequences out of 15000+200000
  8592 words of font info for 33 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 33i,11n,43p,374b,212s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 33i,11n,43p,590b,204s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Users/Lonelight/Desktop/PortablePrograms/texmakerwin32usb/MiKTeX/fo
 nts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Lonelight/Desktop/PortablePro
 grams/texmakerwin32usb/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Use
@@ -328,7 +332,7 @@ sb/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Lonelight/Desktop
 pfb><C:/Users/Lonelight/Desktop/PortablePrograms/texmakerwin32usb/MiKTeX/fonts/
 type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Lonelight/Desktop/PortablePrograms
 /texmakerwin32usb/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on MA523PartialDifferentialEquationsHwk4.pdf (4 pages, 128399 by
+Output written on MA523PartialDifferentialEquationsHwk4.pdf (4 pages, 131923 by
 tes).
 PDF statistics:
  63 PDF objects out of 1000 (max. 8388607)
