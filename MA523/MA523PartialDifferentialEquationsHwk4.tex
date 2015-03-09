@@ -21,17 +21,17 @@
 \rhead{Assignment 4, Page \thepage}
 
 %Number of Problems		:6
-%Clear					:2a,3a
-%Begun					:1,3b
+%Clear					:2a,2b,3a,3b
+%Begun					:1
 %Not started			:3c
 %Can complete via book	:
-%Needs Polish			:2b
+%Needs Polish			:
 
-%Pomodoros logged		:14
+%Pomodoros logged		:20
 
 \begin{document}
 
-{\bf Problem 1:} %You've spent way too much time on this. It's killing you. Move on.
+{\bf Problem 1:} %it's not g(y), it's g(s). lololololol
 
 Let $g: [0,\infty) \to \R$ with $g(0) = 0$, and let $u(x,t)$ solve
 
@@ -57,29 +57,27 @@ Let $v(x,t) = u(x,t) - g(t)$, and extend $v$ to $\{x<0\}$ by odd reflection (jus
    \right.
 \end{displaymath}
 
-So $v(x,t) = \int\limits_0^t \frac{1}{\sqrt{4 \pi (t-s)}} \int\limits_\R -g'(y) e^{\frac{-\absval{x-y}^2}{4(t-s)}} dy ds$ by formula 17 in the book.
+So $v(x,t) = \int\limits_0^t \frac{1}{\sqrt{4 \pi (t-s)}} \int\limits_\R -g'(s) e^{\frac{-\absval{x-y}^2}{4(t-s)}} dy ds$ by formula 17 in the book.
 
 Now,
 
 \begin{align*}
-v(x,t) &= \int\limits_0^t \frac{1}{\sqrt{4 \pi (t-s)}} \int\limits_\R -g'(y) e^{\frac{-\absval{x-y}^2}{4(t-s)}} dy ds\\
-&= -\left[\int\limits_0^t \frac{1}{\sqrt{4 \pi (t-s)}} \int\limits_\R g'(y) e^{\frac{-\absval{x-y}^2}{4(t-s)}} dy ds \right]\\
-&= -\left[ -  \int\limits_0^t \frac{1}{2\sqrt{4 \pi }(t-s)^{3/2}} \int\limits_\R (x-y)g(y) e^{\frac{-\absval{x-y}^2}{4(t-s)}} dy ds \right] \text{ (integrate by parts)}\\
-&= \int\limits_0^t \frac{1}{2\sqrt{4 \pi }(t-s)^{3/2}} \int\limits_\R (x-y)g(y) e^{\frac{-\absval{x-y}^2}{4(t-s)}} dy ds \\
-&= -\int\limits_0^t \frac{1}{2\sqrt{4 \pi }(t-s)^{3/2}} \int\limits_\R (y)g(x-y) e^{\frac{-\absval{y}^2}{4(t-s)}} dy ds \\
+v(x,t) &= \int\limits_0^t \frac{1}{\sqrt{4 \pi (t-s)}} \int\limits_\R -g'(s) e^{\frac{-\absval{x-y}^2}{4(t-s)}} dy ds\\
+&= -\left[\int\limits_0^t \frac{1}{\sqrt{4 \pi (t-s)}} \int\limits_\R g'(s) e^{\frac{-\absval{x-y}^2}{4(t-s)}} dy ds \right]\\
+&= -\left[ \int\limits_\R \int\limits_0^tg'(s) \frac{1}{\sqrt{4 \pi (t-s)}} e^{\frac{-\absval{x-y}^2}{4(t-s)}} ds dy \right]\\
+&= -\left[ \int\limits_\R \frac{e^{\frac{-(x-y)^2}{4(t-s)}}}{4\pi(t-s)} g(s) \Big|_0^t - \int\limits_0^t g(s) e^{\frac{-(x-y)^2}{4(t-s)}} \left[ \frac{1}{4 \sqrt{\pi} (t-s)^{3/2}} -  \frac{(x-y)^2}{8 \sqrt{\pi} (t-s)^{5/2}}\right]  dsdy \right]\\
 \end{align*}
 
-\begin{align*}
-&= \int\limits_0^t \frac{1}{2\sqrt{4 \pi }(t-s)^{3/2}} \left[x\int\limits_\R g(y) e^{\frac{-\absval{x-y}^2}{4(t-s)}}dy - \int\limits_\R yg(y) e^{\frac{-\absval{x-y}^2}{4(t-s)}} dy \right] ds \\
-&= \int\limits_0^t \frac{1}{2\sqrt{4 \pi }(t-s)^{3/2}} \left[x\int\limits_\R g(y) e^{\frac{-\absval{x-y}^2}{4(t-s)}}dy \right] ds - \int\limits_0^t \frac{1}{2\sqrt{4 \pi }(t-s)^{3/2}} \int\limits_\R yg(y) e^{\frac{-\absval{x-y}^2}{4(t-s)}} dy ds \\
-&= \frac{x}{\sqrt{4\pi}} \int\limits_0^t \frac{1}{2(t-s)^{3/2}} \left[\int\limits_\R g(y) e^{\frac{-\absval{x-y}^2}{4(t-s)}}dy \right] ds - \int\limits_0^t \frac{1}{2\sqrt{4 \pi }(t-s)^{3/2}} \int\limits_\R yg(y) e^{\frac{-\absval{x-y}^2}{4(t-s)}} dy ds \\
-&= \frac{x}{\sqrt{4\pi}} \int\limits_0^t \frac{1}{2(t-s)^{3/2}} \left[\int\limits_\R g(y) e^{\frac{-\absval{x-y}^2}{4(t-s)}}dy \right] ds - \int\limits_0^t \frac{1}{2\sqrt{4 \pi }(t-s)^{3/2}} \int\limits_\R yg(y) e^{\frac{-\absval{x-y}^2}{4(t-s)}} dy ds \\
-&= \frac{x}{\sqrt{4\pi}} \int\limits_0^t \frac{1}{2(t-s)^{3/2}} \left[\int\limits_\R g(y) e^{\frac{-(x^2-2xy+y^2)}{4(t-s)}}dy \right] ds - \int\limits_0^t \frac{1}{2\sqrt{4 \pi }(t-s)^{3/2}} \int\limits_\R yg(y) e^{\frac{-(x^2-2xy+y^2)}{4(t-s)}} dy ds \\
-&= \frac{x}{\sqrt{4\pi}} \int\limits_0^t \frac{e^{\frac{-x^2}{4(t-s)}}}{2(t-s)^{3/2}} \left[\int\limits_\R g(y) e^{\frac{-(-2xy+y^2)}{4(t-s)}}dy \right] ds - \int\limits_0^t \frac{e^{\frac{-x^2}{4(t-s)}}}{2\sqrt{4 \pi }(t-s)^{3/2}} \int\limits_\R yg(y) e^{\frac{-(-2xy+y^2)}{4(t-s)}} dy ds \\
-&= \frac{x}{\sqrt{4\pi}} \int\limits_0^t \frac{e^{\frac{-x^2}{4(t-s)}}}{(t-s)^{3/2}} g(s) ds - g(t) \\
-\end{align*} %I think this chunk is probably fucked, but just in case, I'll move it here.
+Now, observe that $\frac{e^{\frac{-(x-y)^2}{4(t-s)}}}{4\pi(t-s)} g(s) \Big|_0^t$ is $0$; evaluating at $0$ yields $0$, and taking the limit as $s \to t$ of that also yields $0$. %Might explain that...
 
-I must admit that I'm not sure how the last line is supposed to go, but that's the idea.
+So,
+
+\begin{align*}
+v(x,t) &= -\left[ \int\limits_\R - \int\limits_0^t g(s) e^{\frac{-(x-y)^2}{4(t-s)}} \left[ \frac{1}{4 \sqrt{\pi} (t-s)^{3/2}} -  \frac{(x-y)^2}{8 \sqrt{\pi} (t-s)^{5/2}}\right]  dsdy \right]\\
+&= -\left[ \int\limits_\R - \int\limits_0^t g(s) e^{\frac{-(x-y)^2}{4(t-s)}} \left[ \frac{1}{4 \sqrt{\pi} (t-s)^{3/2}} -  \frac{(x-y)^2}{8 \sqrt{\pi} (t-s)^{5/2}}\right]  dsdy \right]\\
+&=  \int\limits_0^t g(s)\int\limits_\R e^{\frac{-(x-y)^2}{4(t-s)}} \left[ \frac{1}{4 \sqrt{\pi} (t-s)^{3/2}} -  \frac{(x-y)^2}{8 \sqrt{\pi} (t-s)^{5/2}} \right] dyds\\
+&=  \int\limits_0^t g(s)\int\limits_\R e^{\frac{-(x-y)^2}{4(t-s)}} \left[ \frac{1}{4 \sqrt{\pi} (t-s)^{3/2}}\right]dyds - \int\limits_0^t g(s)\int\limits_\R e^{\frac{-(x-y)^2}{4(t-s)}} \left[ \frac{(x-y)^2}{8 \sqrt{\pi} (t-s)^{5/2}} \right] dyds\\
+\end{align*} %Simplifying should yield the desired result...it might actually into happening! :D Might be worth double-checking that derivative, though.
 
 Thus, by adding $g(t)$ to $v(x,t)$, we get that $u(x,t) = \frac{x}{\sqrt{4\pi}} \int\limits_0^t \frac{e^{\frac{-x^2}{4(t-s)}}}{(t-s)^{3/2}} g(s) ds$ as desired.
 
@@ -127,7 +125,7 @@ So $\lim\limits_{t \to \infty} \sup\limits_{x \in \R^n} \absval{u(x,t)} = \lim\l
 
 \shunt
 
-Part b:
+Part b: 
 
 Consider $v(x,t) = u(x,t) - g(x)$. Then $v(x,t)$ solves
 
@@ -148,15 +146,19 @@ Switching the order of integration, we get $ \int\limits_0^t \int\limits_{\R^n} 
 
 Yet, this is $ \int\limits_0^t \int\limits_{\R^n} \De g(y) dy ds$, because $\int\limits_{\R^n} \Phi(x-y,t-s) dx = 1$. 
 
-The integral vanishes, by Green's Theorem; $\int\limits_{\R^n} \De g(y) dy = \lim\limits_{r \to \infty} \int\limits_{\partial B(0,r)} \frac{\partial g(y)}{\partial \nu} dS$, which must vanish, because $g$ is in $L^1(\R)$. %Explain that better!
+The integral $\int\limits_{\R^n} \De g(y) dy$ is constant with respect to $t$ and $x$; call it $C$. Then $\int\limits_{\R^n} v(x,t) dx = ct$.
 
-So, $\int\limits_{\R^n} v(x,t) dx = 0$; $\int\limits_{\R^n} u(x,t) - g(x) dx = 0$, which yields the desired result of $\int\limits_{\R^n} u(x,t) dx = \int\limits_{\R^n} g(x) dx$.
+So $\int\limits_{\R^n} u(x,t) dx = ct + \int\limits_{\R^n} g(x) dx$. Yet, the left hand side does not tend to infinity as $t \to \infty$ ($\absval{\int\limits_{\R^n} u(x,t) dx} = \absval{\int\limits_{\R^n} \frac{1}{(4\pi t)^{n/2}}\int\limits_\R e^{\frac{-\absval{x-y}^2}{4t}} g(y) dy dx} \leq \absval{\int\limits_{\R^n} \frac{1}{(4\pi t)^{n/2}}\int\limits_\R e^{\frac{-\absval{x-y}^2}{4t}} M dy dx} = M < \infty$); so $c$ must be $0$.
+
+%The integral vanishes, by Green's Theorem; $\int\limits_{\R^n} \De g(y) dy = \lim\limits_{r \to \infty} \int\limits_{\partial B(0,r)} \frac{\partial g(y)}{\partial \nu} dS$, which must vanish, because $g$ is in $L^1(\R)$. %Explain that better!
+
+So, $\int\limits_{\R^n} u(x,t) dx = \int\limits_{\R^n} g(x) dx$.
 
 \shunt
 
 {\bf Problem 3:}
 
-Part a: %Clean it up a bit.
+Part a:
 
 Fix $\al \in (0,1)$, $\be \geq 0$.
 
@@ -205,7 +207,7 @@ Now, using part a above with $\al = 1/2$, $z = \absval{x}^2/(4t)$, and $\be = 1$
 
 As desired.
 
-Next, consider that $\partial_{x_i} \Phi(x,t) = \frac{e^{-\frac{\absval{x}^2}{4t}}}{(4 \pi t)^{n/2}}\left[-\frac{x_i}{2t}\right]$. %It's not.
+Next, consider that $\partial_{x_i} \Phi(x,t) = \frac{e^{-\frac{\absval{x}^2}{4t}}}{(4 \pi t)^{n/2}}\left[-\frac{x_i}{2t}\right]$.
 
 Now, using part a above with $\al = 1/2$, $z = \absval{x}^2/(4t)$, and $\be = 1/2$, we get
 
@@ -216,11 +218,37 @@ Now, using part a above with $\al = 1/2$, $z = \absval{x}^2/(4t)$, and $\be = 1/
 &= M_2\phi(x,2t)/\sqrt{t}\\
 \end{align*}
 
-As desired.
+As desired. 
+
+Next, let $i \neq j$. Then $\partial_{x_ix_j} \Phi(x,t) = \frac{-x_i}{2t} \partial_{x_j} \Phi(x,t) = \frac{x_ix_j}{4t^2} \frac{e^{-\frac{\absval{x}^2}{4t}}}{(4 \pi t)^{n/2}}$.
+
+Now, using part a above with $\al = 1/2$, $z = \absval{x}^2/(4t)$, and $\be = 1$, we get
+
+\begin{align*}
+\absval{\partial_{x_ix_j} \Phi(x,t)} &= \absval{\frac{x_ix_j}{4t^2} \frac{e^{-\frac{\absval{x}^2}{4t}}}{(4 \pi t)^{n/2}}}\\
+&\leq \frac{Me^{-\frac{\absval{x}^2}{8t}}}{(4 \pi t)^{n/2}}\absval{\frac{x_ix_j}{4t^2z^\be}}\\
+&\leq M 2^{n/2}\phi(x,2t)\absval{\frac{\absval{x}^2}{4t^2} \frac{4t}{\absval{x}^2}}\\
+&= M_3\phi(x,2t)/t\\
+\end{align*}
+
+And also, if $i = j$, then Then $\partial_{x_ix_j} \Phi(x,t) =-\frac{x_ix_j}{4t^2} \frac{e^{-\frac{\absval{x}^2}{4t}}}{(4 \pi t)^{n/2}} - \frac{1}{2t} \frac{e^{-\frac{\absval{x}^2}{4t}}}{(4 \pi t)^{n/2}}$
+
+Now, using part a above with $\al = 1/2$, $z = \absval{x}^2/(4t)$, and $\be = 1$, $\be'=0$, we get
+
+\begin{align*}
+\absval{\partial_{x_ix_j} \Phi(x,t)} &=\absval{-\frac{x_ix_j}{4t^2} \frac{e^{-\frac{\absval{x}^2}{4t}}}{(4 \pi t)^{n/2}} - \frac{1}{2t} \frac{e^{-\frac{\absval{x}^2}{4t}}}{(4 \pi t)^{n/2}}}\\
+&\leq M 2^{n/2}\absval{-\frac{x_ix_j}{8t^2} \frac{1}{z^\be} - \frac{1}{2t} \frac{1}{z^{\be'}}}\\
+&\leq M_3 2^{n/2}\absval{1/t}\\
+&\leq M_3 2^{n/2}/t\\
+\end{align*}
+
+leaving us with all of the results we wanted for this part.
 
 \shunt
 
 Part c:
+
+Let $u(x,t) = \int\limits_{\R^n} \Phi(x-y,t) g(y) dy$, where $\absval{g} < M$. 
 
 \shunt
 
