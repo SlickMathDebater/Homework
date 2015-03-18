@@ -79,7 +79,7 @@ v(x,t) &= -\left[ \int\limits_\R - \int\limits_0^t g(s) e^{\frac{-(x-y)^2}{4(t-s
 &=  \int\limits_0^t g(s)\int\limits_\R e^{\frac{-(x-y)^2}{4(t-s)}} \left[ \frac{1}{4 \sqrt{\pi} (t-s)^{3/2}}\right]dyds - \int\limits_0^t g(s)\int\limits_\R e^{\frac{-(x-y)^2}{4(t-s)}} \left[ \frac{(x-y)^2}{8 \sqrt{\pi} (t-s)^{5/2}} \right] dyds\\
 \end{align*} %Simplifying should yield the desired result...it might actually into happening! :D Might be worth double-checking that derivative, though.
 
-Thus, by adding $g(t)$ to $v(x,t)$, we get that $u(x,t) = \frac{x}{\sqrt{4\pi}} \int\limits_0^t \frac{e^{\frac{-x^2}{4(t-s)}}}{(t-s)^{3/2}} g(s) ds$ as desired.
+I'm not quite sure how the rest of this plays out, but the idea is that we add $g(t)$ to $v(x,t)$, so we get that $u(x,t) = \frac{x}{\sqrt{4\pi}} \int\limits_0^t \frac{e^{\frac{-x^2}{4(t-s)}}}{(t-s)^{3/2}} g(s) ds$ as desired.
 
 %This is the extension of the heat equation to non-zero initial values...
 
@@ -248,7 +248,9 @@ leaving us with all of the results we wanted for this part.
 
 Part c:
 
-Let $u(x,t) = \int\limits_{\R^n} \Phi(x-y,t) g(y) dy$, where $\absval{g} < M$. 
+Let $u(x,t) = \int\limits_{\R^n} \Phi(x-y,t) g(y) dy$, where $\absval{g} < M$.
+
+I completely ran out of time to do this. 
 
 \shunt
 
