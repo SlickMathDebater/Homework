@@ -17,17 +17,17 @@
 
 \pagestyle{fancy}
 \lhead{Max Jeter}
-\chead{Class}
-\rhead{Assignment, Page \thepage}
+\chead{MA530}
+\rhead{Assignment 9, Page \thepage}
 
 %Number of Problems		:4
 %Clear					:1,2
-%Begun					:4
-%Not started			:3
+%Begun					:3
+%Not started			:
 %Can complete via book	:
-%Needs Polish			:
+%Needs Polish			:4
 
-%Pomodoroes				:6
+%Pomodoroes				:8
 
 \begin{document}
 
@@ -55,9 +55,18 @@ So $z^7 -2z^5+6z^3-z+1$ has three zeroes on $D_1(0)$.
 
 Let $u$ be harmonic on $A_{r,R}$, the open annulus with inner radius $r$ and outer radius $R$.
 
+
+
+Consider $u_z$; this is holomorphic on the annulus. So $u_z$ has a local primitive on the annulus.
+
+So there is a $g$ such that $g' - \log{\absval{z}} = u_z$. So $(g + \overline{g} - u - c\log{\absval{z}})_z  = 0$.
+
+Define $v = g + \overline{g} - u - c\log{\absval{z}}$. Then $v_x - iv_y = 0$. But $v_x$ and $v_y$ are both real. So $v_x = v_y = 0$. So $v$ is constant, $D$, on the annulus.
+
+So $0 = g + \overline{g} - u - c\log{\absval{z}} - D$. That is, $u = g + \overline{g} - c\log{\absval{z}} = 2\text{Re}(g) - c\log{\absval{z}}$, which is equivalent to the desired result. 
 \shunt
 
-{\bf Problem 4:} %FUCK EVERYTHING YOU JUST WROTE, THERE IS A (STRONG) INDUCTIVE ARGUMENT. (Prove when deg Q = 2, apply product rule, win.)
+{\bf Problem 4:}
 
 We proceed by induction. (I have a feeling that there's a proof directly from some deep theorem of Algebra, but I don't know any Algebra. :( )
 
@@ -81,21 +90,20 @@ So that
 a_2(z_1+z_2) + a_1 &= 0\\ 
 \end{align*}
 
-Next, 
+Next, let it be that $\sum\limits_{z_j} \frac{z_j^\al}{Q'(z_j)} = 0$ when the degree of $Q$ is less than $N$ (where $\{z_j\}$ is the set of zeroes of $Q$ and with $\al \leq \text{deg}(Q) - 2$, and where $Q$ only has simple zeroes). Let $Q$ be a polynomial of degree $N$ with only simple zeroes. Then there is a polynomial $q$ with $Q = q(z-z_N)$. Also, $Q' = q + q'(z-z_N)$ by the product rule. Also note that $q(z_j) = 0$ if $z_j$ is any one of $Q$'s zeroes except for $z_N$. So,
 
-%Let $P$, $Q$ be polynomials, and $Q$ have only simple zeroes, and the degree of $P$ being less than (or equal to) the degree of $Q$ minus $2$. Define $\{z_j\}$ to be the set of zeroes of $Q$.
+\begin{align*}
+\sum\limits_{j=1}^N \frac{z_j^\al}{Q'(z_j)} &= \sum\limits_{j=1}^N \frac{z_j^\al}{q(z_j) + (z_j-z_N)q'(z_j)}\\
+&= \sum\limits_{j=1}^{N-1} \frac{z_j^\al}{(z_j-z_N)q'(z_j)} + \frac{z_N^\al}{q(z_N)}\\
+&= \sum\limits_{j=1}^{N-1} \frac{(z_j-z_N)^\al + P(z_j)}{(z_j-z_N)q'(z_j)} + \frac{z_N^\al}{q(z_N)}\\
+&= \sum\limits_{j=1}^{N-1} \frac{(z_j-z_N)^{\al-1}}{q'(z_j)} + \sum\limits_{j=1}^{N-1} \frac{P(z_j)}{(z_j-z_N)q'(z_j)} + \frac{z_N^\al}{q(z_N)}\\
+&=\sum\limits_{j=1}^{N-1} \frac{P(z_j)}{(z_j-z_N)q'(z_j)} + \frac{z_N^\al}{q(z_N)}\\
+&=0 \text{ (I'm not sure how the last step works out, but this is the idea.) }
+\end{align*} %There's some cancellation that works out nicely, I guess?
 
-%Note that we have our desired result if $\sum\limits_{z_j} \frac{z_j^\al}{Q'(z_j)} = 0$ for all $\al \in \N$ with $\al$ less than the degree of $Q$ minus $2$ by simply adding terms.
+Where $P(z)$ is some polynomial depending on $z_N$.
 
-%Say that $Q(z) = \sum\limits_{k=0}^n a_kz^k$, so that $Q'(z) = \sum\limits_{k=1}^n a_kkz^{k-1}$. Then we have:
-
-%\begin{align*}
-%\sum\limits_{z_j} \frac{z_j^\al}{Q'(z_j)} &= \sum\limits_{z_j} \frac{z_j^\al}{\sum\limits_{k=1}^n a_kkz_j^{k-1}}\\
-%&= \sum\limits_{z_j} \frac{z_j^{\al+1}}{\sum\limits_{k=1}^n a_kkz_j^{k}}\\
-%&=
-%\end{align*}
-
-%This vanishes because $\sum\limits_{k=1}^n a_kz_j^k$ vanishes for all $j$. Thus, we have our result.
+So, by induction, $\sum\limits_{z_j} \frac{z_j^\al}{Q'(z_j)} = 0$ (where $\{z_j\}$ is the set of zeroes of $Q$ and with $\al \leq \text{deg}(Q) - 2$, and where $Q$ only has simple zeroes), which is equivalent to our result.
 
 \shunt
 
