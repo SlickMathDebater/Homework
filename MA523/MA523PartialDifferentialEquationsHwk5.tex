@@ -1,0 +1,160 @@
+
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{fancyhdr}
+\usepackage{amssymb}
+%\usepackage{mathpazo}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{slashed}
+\usepackage{cancel}
+\usepackage[mathscr]{euscript}
+\usepackage{MaxPackage} %Note: You need MaxPackage installed or in the same folder as your .tex file or something.
+
+\newcommand{\colorcomment}[2]{\textcolor{#1}{#2}} %First of these leaves in comments. Second one kills them.
+%\newcommand{\colorcomment}[2]{}
+
+
+\pagestyle{fancy}
+\lhead{Max Jeter}
+\chead{MA523}
+\rhead{Assignment 5, Page \thepage}
+
+%Number of Problems		:3
+%Clear					:
+%Begun					:1
+%Not started			:2,3
+%Can complete via book	:
+%Needs Polish			:
+
+%Pomodoroes logged		:1
+
+\begin{document}
+
+{\bf Problem 1 (23 in book):}
+
+Let $S$ denote the square in $\R \times (0,\infty)$ with corners $(0,1),(1,2),(0,3),(-1,2)$. Define
+
+\begin{displaymath}
+f(x,t) = 
+   \left\{
+     \begin{array}{lr}
+       -1  & \text{ for } (x,t) \in S \cap \{t > x+2\} \\
+       -1 & \text{ for } (x,t) \in S \cap \{t < x+2\} \\
+       0 & \text{ else}
+     \end{array}
+   \right.
+\end{displaymath}
+
+Let $u$ solve
+
+\begin{displaymath}
+   \left\{
+     \begin{array}{lr}
+       u_{tt} - u_{xx} = f  & \text{ when } t>0 \\
+       u=0, u_t = 0 & \text{ when } t=0 \\
+     \end{array}
+   \right.
+\end{displaymath}
+
+Consider $u$ when $t>3$. Then we have
+
+\begin{align*}
+u(x,t) &= \int\limits_0^t u(x,t;s)ds
+\end{align*}
+
+where $u(x,t;s) = \frac{1}{2} \int\limits_{x-t}^{x+t} f(y,s) dy$ (we get this by Duhamel's principle and the solution of the wave equation in one dimension). In other words,
+
+\begin{align*}
+u(x,t) &= \int\limits_0^t \frac{1}{2} \int\limits_{x-t}^{x+t} f(y,s) dyds
+\end{align*}
+
+For the sake of sanity, let us write $f$ as $-\chi_A + \chi_B$, with $A = S \cap \{t > x+2\}$ and $B = S \cap \{t < x+2\}$. Then
+
+\begin{align*}
+u(x,t) &= \int\limits_0^t \frac{1}{2} \int\limits_{x-t}^{x+t} \chi_B - \chi_A dyds\\
+&= \frac{1}{2} \left[\int\limits_0^t  \int\limits_{x-t}^{x+t} \chi_B dyds  - \int\limits_0^t  \int\limits_{x-t}^{x+t}\chi_A dyds\right]\\
+\end{align*}
+
+Now, if $x-t >1$ or $x+t < -1$, both of those integrals vanish. That is, for fixed $t >3$, $u(x,t) = 0$ if $x > 1+t$ or $x < -1-t$. Moreover, if $1/2-t <x < -1/2 + t$, then $\int\limits_0^t  \int\limits_{x-t}^{x+t} \chi_B dyds = 1$. Similarly, if $t-1/2 > x > 1/2 -t$, then $\int\limits_0^t  \int\limits_{x-t}^{x+t} \chi_A dyds = 1$. 
+
+At this point, we can see that $u(x,t)$ vanishes except possibly when $x \in [1-t,1/2-t] \cup [t-1/2, t+1]$. 
+
+\shunt
+
+{\bf Problem 2 (24 in book):}
+
+Let $u$ solve the intial value problem for the wave equation in one dimension:
+
+\begin{displaymath}
+   \left\{
+     \begin{array}{lr}
+       u_{tt} - u_{xx} = 0  & \text{ when } t>0 \\
+       u=g, u_t = h & \text{ when } t=0 \\
+     \end{array}
+   \right.
+\end{displaymath}
+
+Let $g,h$ have compact support. Consider $k(t) = \frac{1}{2} \int\limits_\R u_t^2(x,t) dx$ and $p(t) = \frac{1}{2} \int\limits_\R u_x^2(x,t) dx$.
+
+Part a:
+
+Consider $k(t) + p(t) = \frac{1}{2}\int\limits_\R u_x^2(x,t) + u_t^2(x,t) dx$.
+
+We know that $u(x,t) = \frac{g(x+t)+g(x-t)}{2} + \frac{1}{2}\int\limits_{x-t}^{x+t} h(y)dy$
+
+So, we have:
+
+\begin{align*}
+u_x(x,t) &= \frac{g'(x+t)+g'(x-t)}{2} + \left[\frac{1}{2}\int\limits_{x-t}^{x+t} h(y)dy\right]_x\\
+u_t(x,t) &= \frac{g'(x+t)-g'(x-t)}{2} + \left[\frac{1}{2}\int\limits_{x-t}^{x+t} h(y)dy\right]_t\\
+\end{align*}
+
+This means that
+
+\begin{align*}
+\int\limits_\R u_x^2 + u_t^2 dx &= blah.
+\end{align*}
+
+Yielding our result.
+
+\shunt
+
+Part b:
+
+Using the above, consider that 
+
+\begin{align*}
+\int\limits_\R u_x^2 - u_t^2 dx &= blah.
+\end{align*}
+
+Because $g$ and $h$ have compact support, %things.
+
+Thus, the above integral vanishes, yielding our result.
+
+\shunt
+
+{\bf Problem 3 (on page):}
+
+Assume $f(x,t) = 1$ if $\absval{x} \leq 1$ and $0\leq t \leq 1$, and $f(x,t) = 0$ otherwise. Let $u$ solve
+
+\begin{displaymath}
+   \left\{
+     \begin{array}{lr}
+       u_{tt} - \De u} = f  & \text{ when } t>0 \\
+       u=0, u_t = 0 & \text{ when } t=0 \\
+     \end{array}
+   \right.
+\end{displaymath}
+
+Consider $u(0,t)$ when $t>2$.
+
+If $n = 1$, then... %This should be a nonzero constant
+
+If $n = 2$, then...
+
+If $n = 3$, then... %This one should vanish, except maybe at one point.
+
+\shunt
+
+\end{document}
