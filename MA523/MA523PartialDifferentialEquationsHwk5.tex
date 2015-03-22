@@ -21,13 +21,13 @@
 \rhead{Assignment 5, Page \thepage}
 
 %Number of Problems		:4
-%Clear					:
-%Begun					:1,2a,2b,3
+%Clear					:2a,2b
+%Begun					:1,3
 %Not started			:
 %Can complete via book	:
 %Needs Polish			:
 
-%Pomodoroes logged		:2
+%Pomodoroes logged		:5
 
 \begin{document}
 
@@ -115,22 +115,22 @@ u_t(x,t) &= \frac{g'(x+t)-g'(x-t)}{2} + \left[\frac{1}{2}\int\limits_{x-t}^{x+t}
 This means that
 
 \begin{align*}
-\int\limits_\R u_x^2 + u_t^2 dx &= \left(\frac{g'(x+t)+g'(x-t)}{2} + \frac{1}{2}\left[h(x+t) - h(x-t)\right]\right)^2 \\
+u_x^2 + u_t^2 &= \left(\frac{g'(x+t)+g'(x-t)}{2} + \frac{1}{2}\left[h(x+t) - h(x-t)\right]\right)^2 \\
 &\phantom{{}={}}+ \left(\frac{g'(x+t)-g'(x-t)}{2} + \frac{1}{2}\left[h(x+t) + h(x-t)\right]\right)^2\\
 &= (\frac{g'(x+t)+g'(x-t)}{2})^2\\ &\phantom{{}={}}+ \frac{g'(x+t)+g'(x-t)}{2}\left[h(x+t) - h(x-t)\right]\\ &\phantom{{}={}}+ (\frac{1}{2}\left[h(x+t) - h(x-t)\right])^2 \\
 &\phantom{{}={}}+ (\frac{g'(x+t)-g'(x-t)}{2})^2\\ &\phantom{{}={}}+\frac{g'(x+t)-g'(x-t)}{2}\left[h(x+t) + h(x-t)\right] \\&\phantom{{}={}}+ (\frac{1}{2}\left[h(x+t) + h(x-t)\right])^2\\
-&= \frac{1}{4}g'(x+t)^2  + \frac{1}{4} g'(x-t)^2 + \frac{1}{2} g'(x+t)g'(x-t)\\ &\phantom{{}={}}+ \frac{1}{2}\left[h(x+t)g'(x+t) - h(x-t)g'(x+t) +h(x+t)g'(x-t) - h(x-t)g'(x-t) \right]\\ &\phantom{{}={}}+ \frac{1}{4}h(x+t)^2  + \frac{1}{4} h(x-t)^2 - \frac{1}{2} h(x+t)h(x-t)\\ \\
-&\phantom{{}={}}+ \frac{1}{4}g'(x+t)^2  + \frac{1}{4} g'(x-t)^2 - \frac{1}{2} g'(x+t)g'(x-t)\\ &\phantom{{}={}}+\frac{1}{2}\left[h(x+t)g'(x+t) + h(x-t)g'(x+t) +h(x+t)g'(x-t) + h(x-t)g'(x-t) \right] \\&\phantom{{}={}}+ \frac{1}{4}h(x+t)^2  + \frac{1}{4} h(x-t)^2 + \frac{1}{2} h(x+t)h(x-t)\\
-&= \frac{1}{2}g'(x+t)^2  + \frac{1}{2} g'(x-t)^2 \\ &\phantom{{}={}}+ \left[h(x+t)g'(x+t) +h(x+t)g'(x-t)\right]\\ &\phantom{{}={}}+ \frac{1}{2}h(x+t)^2  + \frac{1}{2} h(x-t)^2\\
+&= \frac{1}{4}g'(x+t)^2  + \frac{1}{4} g'(x-t)^2 + \frac{1}{2} g'(x+t)g'(x-t)\\ &\phantom{{}={}}+ \frac{1}{2}\left[h(x+t)g'(x+t) - h(x-t)g'(x+t) +h(x+t)g'(x-t) - h(x-t)g'(x-t) \right]\\ &\phantom{{}={}}+ \frac{1}{4}h(x+t)^2  + \frac{1}{4} h(x-t)^2 - \frac{1}{2} h(x+t)h(x-t)\\
+&\phantom{{}={}}+ \frac{1}{4}g'(x+t)^2  + \frac{1}{4} g'(x-t)^2 - \frac{1}{2} g'(x+t)g'(x-t)\\ &\phantom{{}={}}+\frac{1}{2}\left[h(x+t)g'(x+t) + h(x-t)g'(x+t) -h(x+t)g'(x-t) - h(x-t)g'(x-t) \right] \\&\phantom{{}={}}+ \frac{1}{4}h(x+t)^2  + \frac{1}{4} h(x-t)^2 + \frac{1}{2} h(x+t)h(x-t)\\
+&= \frac{1}{2}g'(x+t)^2  + \frac{1}{2} g'(x-t)^2 \\ &\phantom{{}={}}+ \left[h(x+t)g'(x+t) -h(x-t)g'(x-t)\right]\\ &\phantom{{}={}}+ \frac{1}{2}h(x+t)^2  + \frac{1}{2} h(x-t)^2\\
 \end{align*}
 
-In this simplified form, we can now reasonably take a derivative with respect to time;
+Now, we integrate:
 
 \begin{align*}
-blah
+\int\limits_\R u_x^2 + u_t^2 dx &= \int\limits_\R \frac{1}{2}g'(x+t)^2  + \frac{1}{2} g'(x-t)^2 \\ &\phantom{{}={}}+ \left[h(x+t)g'(x+t) -h(x-t)g'(x-t)\right]\\ &\phantom{{}={}}+ \frac{1}{2}h(x+t)^2  + \frac{1}{2} h(x-t)^2 dx
 \end{align*}
 
-That is, the time derivative of the total energy vanishes; the total energy is constant, which is our desired result.
+The above is constant (with respect to $t$), and this is clear by applying appropriate substitutions to each term.
 
 \shunt
 
@@ -139,13 +139,24 @@ Part b:
 Using the above, consider that 
 
 \begin{align*}
-\int\limits_\R u_x^2 - u_t^2 dx &= \left(\frac{g'(x+t)+g'(x-t)}{2} + \frac{1}{2}\left[h(x+t) - h(x-t)\right]\right)^2 \\
-&- \left(\frac{g'(x+t)-g'(x-t)}{2} + \frac{1}{2}\left[h(x+t) + h(x-t)\right]\right)^2
+u_x^2 - u_t^2 &= \left(\frac{g'(x+t)+g'(x-t)}{2} + \frac{1}{2}\left[h(x+t) - h(x-t)\right]\right)^2 \\
+&\phantom{{}={}}- \left(\frac{g'(x+t)-g'(x-t)}{2} + \frac{1}{2}\left[h(x+t) + h(x-t)\right]\right)^2\\
+&= (\frac{g'(x+t)+g'(x-t)}{2})^2\\ &\phantom{{}={}}+ \frac{g'(x+t)+g'(x-t)}{2}\left[h(x+t) - h(x-t)\right]\\ &\phantom{{}={}}+ (\frac{1}{2}\left[h(x+t) - h(x-t)\right])^2 \\
+&\phantom{{}={}}- (\frac{g'(x+t)-g'(x-t)}{2})^2\\ &\phantom{{}={}}-\frac{g'(x+t)-g'(x-t)}{2}\left[h(x+t) + h(x-t)\right] \\&\phantom{{}={}}- (\frac{1}{2}\left[h(x+t) + h(x-t)\right])^2\\
+&= \frac{1}{4}g'(x+t)^2  + \frac{1}{4} g'(x-t)^2 + \frac{1}{2} g'(x+t)g'(x-t)\\ &\phantom{{}={}}+ \frac{1}{2}\left[h(x+t)g'(x+t) - h(x-t)g'(x+t) +h(x+t)g'(x-t) - h(x-t)g'(x-t) \right]\\ &\phantom{{}={}}+ \frac{1}{4}h(x+t)^2  + \frac{1}{4} h(x-t)^2 - \frac{1}{2} h(x+t)h(x-t)\\
+&\phantom{{}={}}- \frac{1}{4}g'(x+t)^2  - \frac{1}{4} g'(x-t)^2 + \frac{1}{2} g'(x+t)g'(x-t)\\ &\phantom{{}={}}-\frac{1}{2}\left[h(x+t)g'(x+t) + h(x-t)g'(x+t) -h(x+t)g'(x-t) - h(x-t)g'(x-t) \right] \\&\phantom{{}={}}- \frac{1}{4}h(x+t)^2  - \frac{1}{4} h(x-t)^2 - \frac{1}{2} h(x+t)h(x-t)\\
+&=  g'(x+t)g'(x-t)\\ &\phantom{{}={}}+ \left[ - h(x-t)g'(x+t) +h(x+t)g'(x-t) \right]\\ &\phantom{{}={}}+ h(x+t)h(x-t)\\
 \end{align*}
 
-Because $g$ and $h$ have compact support, %things.
+Integrating, we get
 
-Thus, the above integral vanishes, yielding our result.
+\begin{align*}
+\int\limits_\R u_x^2 - u_t^2 dx &=  \int\limits_\R g'(x+t)g'(x-t)\\ &\phantom{{}={}}+ \left[ - h(x-t)g'(x+t) +h(x+t)g'(x-t) \right]\\ &\phantom{{}={}}+ h(x+t)h(x-t) dx\\
+\end{align*}
+
+Because $g$ and $h$ have compact support, there's a $t$ large enough that all of the above products vanish for all $x$. (Taking $t$ to be twice the diameter of the larger of the sets $g$ and $h$ have support on suffices.)
+
+Thus, the above integral vanishes for some sufficiently large $t$, yielding our result.
 
 \shunt
 
@@ -168,7 +179,7 @@ If $n = 1$, then... %This should be a nonzero constant
 
 If $n = 2$, then...
 
-If $n = 3$, then... %This one should vanish, except maybe at one point.
+If $n = 3$, then... %This one should vanish, except maybe on one interval.
 
 \shunt
 
