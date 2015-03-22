@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.9.27)  21 MAR 2015 19:09
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.9.27)  22 MAR 2015 11:55
 entering extended mode
 **MA523PartialDifferentialEquationsHwk5.tex
 
@@ -276,6 +276,10 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 onfig/pdftex.map}
 
 ]
+Overfull \hbox (105.07994pt too wide) in paragraph at lines 125--125
+[] 
+ []
+
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
@@ -290,16 +294,23 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [3]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[4]
 (C:\Users\Lonelight\Desktop\Homework\MA523\MA523PartialDifferentialEquationsHwk
 5.aux) ) 
 Here is how much of TeX's memory you used:
  2839 strings out of 493921
  39834 string characters out of 3140860
- 96819 words of memory out of 3000000
+ 105819 words of memory out of 3000000
  6111 multiletter control sequences out of 15000+200000
  8592 words of font info for 33 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 33i,11n,43p,379b,196s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 33i,12n,43p,379b,206s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Users/Lonelight/Desktop/PortablePrograms/texmakerwin32usb/MiKTeX/fo
 nts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Lonelight/Desktop/PortablePro
 grams/texmakerwin32usb/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Use
@@ -313,10 +324,10 @@ ams/texmakerwin32usb/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users
 /Lonelight/Desktop/PortablePrograms/texmakerwin32usb/MiKTeX/fonts/type1/public/
 amsfonts/cm/cmsy8.pfb><C:/Users/Lonelight/Desktop/PortablePrograms/texmakerwin3
 2usb/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on MA523PartialDifferentialEquationsHwk5.pdf (3 pages, 94893 byt
-es).
+Output written on MA523PartialDifferentialEquationsHwk5.pdf (4 pages, 100837 by
+tes).
 PDF statistics:
- 48 PDF objects out of 1000 (max. 8388607)
+ 51 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

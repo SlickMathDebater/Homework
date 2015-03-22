@@ -20,14 +20,14 @@
 \chead{MA523}
 \rhead{Assignment 5, Page \thepage}
 
-%Number of Problems		:3
+%Number of Problems		:4
 %Clear					:
-%Begun					:1
-%Not started			:2,3
+%Begun					:1,2a,2b,3
+%Not started			:
 %Can complete via book	:
 %Needs Polish			:
 
-%Pomodoroes logged		:1
+%Pomodoroes logged		:2
 
 \begin{document}
 
@@ -107,16 +107,30 @@ So, we have:
 
 \begin{align*}
 u_x(x,t) &= \frac{g'(x+t)+g'(x-t)}{2} + \left[\frac{1}{2}\int\limits_{x-t}^{x+t} h(y)dy\right]_x\\
+&= \frac{g'(x+t)+g'(x-t)}{2} + \frac{1}{2}\left[h(x+t) - h(x-t)\right]\\
 u_t(x,t) &= \frac{g'(x+t)-g'(x-t)}{2} + \left[\frac{1}{2}\int\limits_{x-t}^{x+t} h(y)dy\right]_t\\
+&= \frac{g'(x+t)-g'(x-t)}{2} + \frac{1}{2}\left[h(x+t) + h(x-t)\right]\\
 \end{align*}
 
 This means that
 
 \begin{align*}
-\int\limits_\R u_x^2 + u_t^2 dx &= blah.
+\int\limits_\R u_x^2 + u_t^2 dx &= \left(\frac{g'(x+t)+g'(x-t)}{2} + \frac{1}{2}\left[h(x+t) - h(x-t)\right]\right)^2 \\
+&\phantom{{}={}}+ \left(\frac{g'(x+t)-g'(x-t)}{2} + \frac{1}{2}\left[h(x+t) + h(x-t)\right]\right)^2\\
+&= (\frac{g'(x+t)+g'(x-t)}{2})^2\\ &\phantom{{}={}}+ \frac{g'(x+t)+g'(x-t)}{2}\left[h(x+t) - h(x-t)\right]\\ &\phantom{{}={}}+ (\frac{1}{2}\left[h(x+t) - h(x-t)\right])^2 \\
+&\phantom{{}={}}+ (\frac{g'(x+t)-g'(x-t)}{2})^2\\ &\phantom{{}={}}+\frac{g'(x+t)-g'(x-t)}{2}\left[h(x+t) + h(x-t)\right] \\&\phantom{{}={}}+ (\frac{1}{2}\left[h(x+t) + h(x-t)\right])^2\\
+&= \frac{1}{4}g'(x+t)^2  + \frac{1}{4} g'(x-t)^2 + \frac{1}{2} g'(x+t)g'(x-t)\\ &\phantom{{}={}}+ \frac{1}{2}\left[h(x+t)g'(x+t) - h(x-t)g'(x+t) +h(x+t)g'(x-t) - h(x-t)g'(x-t) \right]\\ &\phantom{{}={}}+ \frac{1}{4}h(x+t)^2  + \frac{1}{4} h(x-t)^2 - \frac{1}{2} h(x+t)h(x-t)\\ \\
+&\phantom{{}={}}+ \frac{1}{4}g'(x+t)^2  + \frac{1}{4} g'(x-t)^2 - \frac{1}{2} g'(x+t)g'(x-t)\\ &\phantom{{}={}}+\frac{1}{2}\left[h(x+t)g'(x+t) + h(x-t)g'(x+t) +h(x+t)g'(x-t) + h(x-t)g'(x-t) \right] \\&\phantom{{}={}}+ \frac{1}{4}h(x+t)^2  + \frac{1}{4} h(x-t)^2 + \frac{1}{2} h(x+t)h(x-t)\\
+&= \frac{1}{2}g'(x+t)^2  + \frac{1}{2} g'(x-t)^2 \\ &\phantom{{}={}}+ \left[h(x+t)g'(x+t) +h(x+t)g'(x-t)\right]\\ &\phantom{{}={}}+ \frac{1}{2}h(x+t)^2  + \frac{1}{2} h(x-t)^2\\
 \end{align*}
 
-Yielding our result.
+In this simplified form, we can now reasonably take a derivative with respect to time;
+
+\begin{align*}
+blah
+\end{align*}
+
+That is, the time derivative of the total energy vanishes; the total energy is constant, which is our desired result.
 
 \shunt
 
@@ -125,7 +139,8 @@ Part b:
 Using the above, consider that 
 
 \begin{align*}
-\int\limits_\R u_x^2 - u_t^2 dx &= blah.
+\int\limits_\R u_x^2 - u_t^2 dx &= \left(\frac{g'(x+t)+g'(x-t)}{2} + \frac{1}{2}\left[h(x+t) - h(x-t)\right]\right)^2 \\
+&- \left(\frac{g'(x+t)-g'(x-t)}{2} + \frac{1}{2}\left[h(x+t) + h(x-t)\right]\right)^2
 \end{align*}
 
 Because $g$ and $h$ have compact support, %things.
@@ -141,7 +156,7 @@ Assume $f(x,t) = 1$ if $\absval{x} \leq 1$ and $0\leq t \leq 1$, and $f(x,t) = 0
 \begin{displaymath}
    \left\{
      \begin{array}{lr}
-       u_{tt} - \De u} = f  & \text{ when } t>0 \\
+       u_{tt} - \De u = f  & \text{ when } t>0 \\
        u=0, u_t = 0 & \text{ when } t=0 \\
      \end{array}
    \right.
