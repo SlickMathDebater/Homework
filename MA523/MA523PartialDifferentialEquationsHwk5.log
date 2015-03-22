@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.9.27)  22 MAR 2015 15:24
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.9.27)  22 MAR 2015 17:07
 entering extended mode
 **MA523PartialDifferentialEquationsHwk5.tex
 
@@ -165,6 +165,11 @@ LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
 \l_MT_below_shortintertext_sep=\dimen120
 )
 (C:\Users\Lonelight\Desktop\PortablePrograms\texmakerwin32usb\MiKTeX\tex\latex\
+esint\esint.sty
+Package: esint 
+\symlargesymbolsA=\mathgroup6
+)
+(C:\Users\Lonelight\Desktop\PortablePrograms\texmakerwin32usb\MiKTeX\tex\latex\
 carlisle\slashed.sty
 Package: slashed 1997/01/16 v0.01 Feynman Slashed Character Notation (DPC)
 )
@@ -181,18 +186,18 @@ LaTeX Font Info:    Overwriting math alphabet `\EuScript' in version `bold'
 (C:\Users\Lonelight\Desktop\Homework\MA523\MaxPackage.sty)
 (C:\Users\Lonelight\Desktop\Homework\MA523\MA523PartialDifferentialEquationsHwk
 5.aux)
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
 
 (C:\Users\Lonelight\Desktop\PortablePrograms\texmakerwin32usb\MiKTeX\tex\latex\
 graphics\graphicx.sty
@@ -244,19 +249,25 @@ t\base\supp-pdf.mkii
 \Gin@req@height=\dimen123
 \Gin@req@width=\dimen124
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 36.
+LaTeX Font Info:    Try loading font information for U+msa on input line 37.
 
 (C:\Users\Lonelight\Desktop\PortablePrograms\texmakerwin32usb\MiKTeX\tex\latex\
 amsfonts\umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 36.
+LaTeX Font Info:    Try loading font information for U+msb on input line 37.
 
 (C:\Users\Lonelight\Desktop\PortablePrograms\texmakerwin32usb\MiKTeX\tex\latex\
 amsfonts\umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 )
-Overfull \hbox (12.01155pt too wide) in paragraph at lines 36--37
+LaTeX Font Info:    Try loading font information for U+esint on input line 37.
+
+(C:\Users\Lonelight\Desktop\PortablePrograms\texmakerwin32usb\MiKTeX\tex\latex\
+esint\uesint.fd
+File: uesint.fd 
+)
+Overfull \hbox (12.01155pt too wide) in paragraph at lines 37--38
 []\OT1/cmr/m/n/12 Let $\OML/cmm/m/it/12 S$ \OT1/cmr/m/n/12 de-note the square i
 n $\U/msb/m/n/12 R \OMS/cmsy/m/n/12  \OT1/cmr/m/n/12 (0\OML/cmm/m/it/12 ; \OMS
 /cmsy/m/n/12 1\OT1/cmr/m/n/12 )$ with cor-ners $(0\OML/cmm/m/it/12 ; \OT1/cmr/m
@@ -276,7 +287,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 onfig/pdftex.map}
 
 ]
-Overfull \hbox (78.29741pt too wide) in paragraph at lines 125--125
+Overfull \hbox (78.29741pt too wide) in paragraph at lines 121--121
 [] 
  []
 
@@ -294,7 +305,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [3]
-Overfull \hbox (78.68654pt too wide) in paragraph at lines 149--149
+Overfull \hbox (78.68654pt too wide) in paragraph at lines 145--145
 [] 
  []
 
@@ -312,6 +323,14 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [5]
+Overfull \hbox (2.76273pt too wide) in paragraph at lines 174--175
+[]\OT1/cmr/m/n/12 If $\OML/cmm/m/it/12 n \OT1/cmr/m/n/12 = 1$, then this means 
+that $\OML/cmm/m/it/12 u\OT1/cmr/m/n/12 (0\OML/cmm/m/it/12 ; t\OT1/cmr/m/n/12 )
+ = [] [] [] \OML/cmm/m/it/12 f\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 y; s\OT1/cmr/m/
+n/12 )\OML/cmm/m/it/12 dyds \OT1/cmr/m/n/12 = [] [] [] 1\OML/cmm/m/it/12 dyds \
+OT1/cmr/m/n/12 =$
+ []
+
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
@@ -319,16 +338,23 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [6]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[7]
 (C:\Users\Lonelight\Desktop\Homework\MA523\MA523PartialDifferentialEquationsHwk
 5.aux) ) 
 Here is how much of TeX's memory you used:
- 2840 strings out of 493921
- 39841 string characters out of 3140860
- 104829 words of memory out of 3000000
- 6112 multiletter control sequences out of 15000+200000
- 8592 words of font info for 33 fonts, out of 3000000 for 9000
+ 2887 strings out of 493921
+ 40755 string characters out of 3140860
+ 103909 words of memory out of 3000000
+ 6151 multiletter control sequences out of 15000+200000
+ 8793 words of font info for 36 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 33i,12n,43p,379b,206s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 33i,12n,43p,335b,206s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Users/Lonelight/Desktop/PortablePrograms/texmakerwin32usb/MiKTeX/fo
 nts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Lonelight/Desktop/PortablePro
 grams/texmakerwin32usb/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Use
@@ -341,11 +367,13 @@ nts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Lonelight/Desktop/PortableProgr
 ams/texmakerwin32usb/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users
 /Lonelight/Desktop/PortablePrograms/texmakerwin32usb/MiKTeX/fonts/type1/public/
 amsfonts/cm/cmsy8.pfb><C:/Users/Lonelight/Desktop/PortablePrograms/texmakerwin3
-2usb/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on MA523PartialDifferentialEquationsHwk5.pdf (6 pages, 103981 by
+2usb/MiKTeX/fonts/type1/public/esint/esint10.pfb><C:/Users/Lonelight/Desktop/Po
+rtablePrograms/texmakerwin32usb/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm
+10.pfb>
+Output written on MA523PartialDifferentialEquationsHwk5.pdf (7 pages, 114405 by
 tes).
 PDF statistics:
- 57 PDF objects out of 1000 (max. 8388607)
+ 66 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

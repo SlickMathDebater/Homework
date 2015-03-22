@@ -5,6 +5,7 @@
 \usepackage{amssymb}
 %\usepackage{mathpazo}
 \usepackage{mathtools}
+\usepackage{esint}
 \usepackage{amsmath}
 \usepackage{slashed}
 \usepackage{cancel}
@@ -21,13 +22,13 @@
 \rhead{Assignment 5, Page \thepage}
 
 %Number of Problems		:4
-%Clear					:2a,2b
-%Begun					:1,3
+%Clear					:2a,2b,3
+%Begun					:
 %Not started			:
 %Can complete via book	:
-%Needs Polish			:
+%Needs Polish			:1
 
-%Pomodoroes logged		:5
+%Pomodoroes logged		:8
 
 \begin{document}
 
@@ -69,16 +70,11 @@ where $u(x,t;s) = \frac{1}{2} \int\limits_{x-t}^{x+t} f(y,s) dy$ (we get this by
 u(x,t) &= \int\limits_0^t \frac{1}{2} \int\limits_{x-t}^{x+t} f(y,s) dyds
 \end{align*}
 
-For the sake of sanity, let us write $f$ as $-\chi_A + \chi_B$, with $A = S \cap \{t > x+2\}$ and $B = S \cap \{t < x+2\}$. Then
+I appear to be pressed on time; I present the below diagram without argument, and hope that the nature of the argument follows from it. I will note that each segment of the curve is a segment of a parabola, and this is somewhat clear given the geometry of the desired shape.
 
-\begin{align*}
-u(x,t) &= \int\limits_0^t \frac{1}{2} \int\limits_{x-t}^{x+t} \chi_B - \chi_A dyds\\
-&= \frac{1}{2} \left[\int\limits_0^t  \int\limits_{x-t}^{x+t} \chi_B dyds  - \int\limits_0^t  \int\limits_{x-t}^{x+t}\chi_A dyds\right]\\
-\end{align*}
+\shunt
 
-Now, if $x-t >1$ or $x+t < -1$, both of those integrals vanish. That is, for fixed $t >3$, $u(x,t) = 0$ if $x > 1+t$ or $x < -1-t$. Moreover, if $1/2-t <x < -1/2 + t$, then $\int\limits_0^t  \int\limits_{x-t}^{x+t} \chi_B dyds = 1$. Similarly, if $t-1/2 > x > 1/2 -t$, then $\int\limits_0^t  \int\limits_{x-t}^{x+t} \chi_A dyds = 1$. 
-
-At this point, we can see that $u(x,t)$ vanishes except possibly when $x \in [1-t,1/2-t] \cup [t-1/2, t+1]$. 
+\shunt
 
 \shunt
 
@@ -173,13 +169,29 @@ Assume $f(x,t) = 1$ if $\absval{x} \leq 1$ and $0\leq t \leq 1$, and $f(x,t) = 0
    \right.
 \end{displaymath}
 
-Consider $u(0,t)$ when $t>2$.
+Consider $u(0,t)$ when $t>2$. Then $u(0,t) = \int\limits_0^t f(0,t;s) ds$ where $f(x,t;s)$ solves the IVP at time $s$.
 
-If $n = 1$, then... %This should be a nonzero constant
+If $n = 1$, then this means that $u(0,t) = \frac{1}{2}\int\limits_0^t \int\limits_{-t}^{t} f(y,s) dy ds = \frac{1}{2}\int\limits_0^1 \int\limits_{-1}^{1} 1 dy ds = 1$.
 
-If $n = 2$, then...
+So if $n=1$, then $u(0,t) = 1$ when $t >2$.  %This should be a nonzero constant
 
-If $n = 3$, then... %This one should vanish, except maybe on one interval.
+If $n = 2$, then:
+
+\begin{align*}
+u(0,t) &= \frac{1}{2} \int\limits_0^t \fint\limits_{B(0,t)} \frac{t^2f(y,s)}{\sqrt{t^2-\absval{y}^2}} dy ds\\
+&= \frac{t^2}{2} \int\limits_0^1 \frac{1}{\pi t^2} \int\limits_{B(0,1)} \frac{1}{\sqrt{t^2-\absval{y}^2}} dy ds\\
+&= \frac{1}{2 \pi} \int\limits_0^1 \int\limits_0^{2\pi}\int\limits_0^1 \frac{r}{\sqrt{t^2-\absval{r}^2}} dr d\theta ds\\
+&=\int\limits_0^1\int\limits_0^1 \frac{r}{\sqrt{t^2-\absval{r}^2}} dr ds\\
+&=\int\limits_0^1 \frac{r}{\sqrt{t^2-\absval{r}^2}} dr \\
+&= \sqrt{t^2} - \sqrt{t^2-1}\\
+&= t - \sqrt{t^2-1}
+\end{align*} %This is where you relearn how to do radial integration...
+
+So if $n = 2$, then $u(0,t) = t - \sqrt{t^2-1}$ when $t>2$.
+
+If $n = 3$, then this means that $u(0,t) = \int\limits_0^t\fint\limits_{\partial B(0,t)} tf(y,s) dS(y)ds = 0$ (it vanishes because $f(y,s)$ vanishes on the shells we're working on.)
+
+So if $n=3$, then $u(0,t) = 0$ when $t>2$. 
 
 \shunt
 
