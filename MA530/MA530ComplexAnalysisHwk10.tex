@@ -1,0 +1,52 @@
+
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{fancyhdr}
+\usepackage{amssymb}
+%\usepackage{mathpazo}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{slashed}
+\usepackage{cancel}
+\usepackage[mathscr]{euscript}
+\usepackage{MaxPackage} %Note: You need MaxPackage installed or in the same folder as your .tex file or something.
+
+\newcommand{\colorcomment}[2]{\textcolor{#1}{#2}} %First of these leaves in comments. Second one kills them.
+%\newcommand{\colorcomment}[2]{}
+
+
+\pagestyle{fancy}
+\lhead{Max Jeter}
+\chead{Class}
+\rhead{Assignment, Page \thepage}
+
+%Number of Problems		: 2
+%Clear					:
+%Begun					: 1
+%Not started			: 2
+%Can complete via book	:
+%Needs Polish			:
+
+%Pomodoroes logged		: 2
+
+\begin{document}
+
+{\bf Problem 1:}
+
+Consider $\prod\limits_{n=1}^\infty \cos(\frac{z}{2^n})$. Note that if $z = 2^k(m\pi/2)$ for any $k \in \N, m \in \Z$, the product is trivially $0$. %Check that. You'll do it automatically in the next step.
+
+To evaluate this, we apply the telescoping trick; note that it relies on this converging; we should determine that this actually converges. So, consider that $\sum\limits_0^\infty \absval{1-\cos(z/2^n)} \leq $ %Finish up the convergence.
+
+Now, note that for each $N \in \N$, $\sin(\frac{z}{2^N}) \prod\limits_{n=1}^N \cos(\frac{z}{2^n}) = \frac{1}{2^N} \sin(z)$, by applying the same sort of telescoping trick we used in class.
+
+So $\prod\limits_{n=1}^N \cos(\frac{z}{2^n}) = \frac{\sin(z)}{2^N \sin(\frac{z}{2^N})}$. By taking limits as $N \to \infty$, we get that $\prod\limits_{n=1}^\infty \cos(\frac{z}{2^n}) = \lim\limits_{N \to \infty} \frac{-\ln(2)2^{-N}\sin(z)}{-\ln(2)2^{-N}\cos(z2^{-N})} = \sin(z)$. %TAKE IT TO THE LIMIT.
+
+%There's a bit of work to do with respect to z=0, but that can be handled later.
+
+\shunt
+
+{\bf Problem 2:}
+
+\shunt
+
+\end{document}
