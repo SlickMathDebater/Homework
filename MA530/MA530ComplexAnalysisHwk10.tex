@@ -25,27 +25,56 @@
 %Begun					: 1
 %Not started			: 2
 %Can complete via book	:
-%Needs Polish			:
+%Needs Polish			: 1
 
-%Pomodoroes logged		: 2
+%Pomodoroes logged		: 5
 
 \begin{document}
 
 {\bf Problem 1:}
 
-Consider $\prod\limits_{n=1}^\infty \cos(\frac{z}{2^n})$. Note that if $z = 2^k(m\pi/2)$ for any $k \in \N, m \in \Z$, the product is trivially $0$. %Check that. You'll do it automatically in the next step.
+Consider $\prod\limits_{n=1}^\infty \cos(\frac{z}{2^n})$.
 
-To evaluate this, we apply the telescoping trick; note that it relies on this converging; we should determine that this actually converges. So, consider that $\sum\limits_0^\infty \absval{1-\cos(z/2^n)} \leq $ %Finish up the convergence.
+To evaluate this, we apply the telescoping trick; so, note that for each $N \in \N$, $\sin(\frac{z}{2^N}) \prod\limits_{n=1}^N \cos(\frac{z}{2^n}) = \frac{1}{2^N} \sin(z)$.
 
-Now, note that for each $N \in \N$, $\sin(\frac{z}{2^N}) \prod\limits_{n=1}^N \cos(\frac{z}{2^n}) = \frac{1}{2^N} \sin(z)$, by applying the same sort of telescoping trick we used in class.
+So $\prod\limits_{n=1}^N \cos(\frac{z}{2^n}) = \frac{\sin(z)}{2^N \sin(\frac{z}{2^N})}$, when $\sin(\frac{z}{2^N}) \neq 0$. By taking limits as $N \to \infty$, we get that $\prod\limits_{n=1}^\infty \cos(\frac{z}{2^n}) = \lim\limits_{N \to \infty} \frac{-\ln(2)2^{-N}\sin(z)}{-\ln(2)2^{-N}\cos(z2^{-N})} = \sin(z)$ when $\sin(\frac{z}{2^N}) \neq 0$ for any $N \in \N$. 
 
-So $\prod\limits_{n=1}^N \cos(\frac{z}{2^n}) = \frac{\sin(z)}{2^N \sin(\frac{z}{2^N})}$. By taking limits as $N \to \infty$, we get that $\prod\limits_{n=1}^\infty \cos(\frac{z}{2^n}) = \lim\limits_{N \to \infty} \frac{-\ln(2)2^{-N}\sin(z)}{-\ln(2)2^{-N}\cos(z2^{-N})} = \sin(z)$. %TAKE IT TO THE LIMIT.
+When $\sin(\frac{z}{2^N}) = 0$ for some $N \in \N$, we have that $\sin(z) = 0$. Also, we have that $\cos(\frac{z}{2^{N+k}}) = 0$ for some $k \geq 0$ if $z \neq 0$ (we divide by enough $2$s to reduce it to $\pi/2$ times an odd number); the above formula holds true when $z \neq 0$ , then.
 
-%There's a bit of work to do with respect to z=0, but that can be handled later.
+Yet when $z = 0$, the product above is trivially $1$.
+
+So:
+
+\begin{displaymath}
+\prod\limits_{n=1}^\infty \cos(\frac{z}{2^n}) = 
+   \left\{
+     \begin{array}{lr}
+       \sin(z)  & \text{ for } z \neq 0 \\
+       1 & \text{ for } z=0 
+     \end{array}
+   \right.
+\end{displaymath}
 
 \shunt
 
 {\bf Problem 2:}
+
+Consider that $\pi^2 \csc^2(\pi z) = \sum\limits_{-\infty}^\infty \frac{1}{(z-n)^2}$.
+
+By taking derivatives, we have that $-2\pi^3\csc^2(\pi z)\cot(\pi z) = -2\sum\limits_{-\infty}^\infty \frac{1}{(z-n)^3}$.
+
+Dividing by our original identity, 
+
+\begin{align*}
+-2\pi \cot(\pi z) &= \frac{-2\pi^3\csc^2(\pi z)\cot(\pi z)}{\pi^2 \csc^2(\pi z)}\\
+&= \frac{(\pi^2 \csc^2(\pi z))'}{\pi^2 \csc^2(\pi z)}\\
+&= \sum\limits_{-\infty}^\infty \frac{\frac{-2}{(z-n)^3}}{\frac{1}{(z-n)^2}} \text{ (Because }f'/f = \sum (f_n'/f)).\\
+&= \sum\limits_{-\infty}^\infty \frac{-2}{z-n}\\
+&= -2\left[\frac{1}{z} + \sum\limits_{n=1}^\infty \frac{1}{z-n} + \frac{1}{z+n} \right]\\
+&= -2\left[\frac{1}{z} + \sum\limits_{n=1}^\infty \frac{2z}{z^2-n^2} \right]\\
+\end{align*}
+
+Which is equivalent to our desired result.
 
 \shunt
 
