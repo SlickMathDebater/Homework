@@ -1,0 +1,72 @@
+
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{fancyhdr}
+\usepackage{amssymb}
+%\usepackage{mathpazo}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{slashed}
+\usepackage{cancel}
+\usepackage[mathscr]{euscript}
+\usepackage{MaxPackage} %Note: You need MaxPackage installed or in the same folder as your .tex file or something.
+
+\newcommand{\colorcomment}[2]{\textcolor{#1}{#2}} %First of these leaves in comments. Second one kills them.
+%\newcommand{\colorcomment}[2]{}
+
+
+\pagestyle{fancy}
+\lhead{Max Jeter}
+\chead{Class}
+\rhead{Assignment, Page \thepage}
+
+%Number of Problems		: 2
+%Clear					:
+%Begun					: 1
+%Not started			: 2
+%Can complete via book	:
+%Needs Polish			:
+
+%Pomodoros logged 		: 4
+
+\begin{document}
+
+{\bf Problem 1:}
+
+Let $u$ be such that $\De u = 0$ in $\R^2$, $u = 0$, $\frac{\partial u}{\partial x_2} = \frac{1}{n} \sin(nx_1)$ when $x_2=0$.
+
+We try to find $u$ with $u(x_1,x_2) = v(x_1)w(x_2)$ for some $v,w$.
+
+If this holds, then we get $v''(x_1)w(x_2) - v(x_1)w''(x_2) = 0$, which we can rearrange to get $\frac{v''(x_1)}{v(x_1)} = - \frac{w''(x_2)}{w(x_2)} = \mu$.
+
+Also, we get that $v(x_1)w'(0) = \frac{1}{n} \sin(nx_1)$. Thus, we determine that either $v(x_1) = \frac{c}{n} \sin(nx_1)$, where $c = \frac{1}{w'(0)}$. (Note: $w'(0) \neq 0$, $\frac{1}{n} \sin(nx_1)$ is identically zero...)
+
+Because of the situation, we can arbitrarily choose $w'(0) = 1$, by rescaling $v$ and $w$ appropriately. This yields $v(x_1) = \frac{1}{n} \sin(nx_1)$.
+
+So, $v''(x_1) = -n \sin(nx_1)$, so we get $\mu = -n^2$ in the above.
+
+So $\frac{w''(x_2)}{w(x_2)} = n^2$. Using techniques of ODE (note that it's necessary to use that $w(0)= 0$ and $w'(0) = 1$ for this...it's just a second order linear ODE with constant coefficients), we find that $w(x_2) = \frac{1}{n}\sinh(nx_2)$. Thus, 
+
+\begin{align*}
+u(x_1,x_2) &= v(x_1)w(x_2) \\
+&= \frac{1}{n^2} \sin(nx_1)\sinh(nx_2)
+\end{align*}
+
+as desired.
+
+Note that as $n \to \infty$, $u(x_1,x_2)$ vanishes along $x_1=0$ and $x_2=0$. However, in all other cases,
+
+\begin{align*}
+\lim\limits_{n \to \infty} \frac{1}{n^2} \sin(nx_1)\sinh(nx_2) &= \lim\limits_{n \to \infty} \frac{n\left[\cos(nx_1)\sinh(nx_2) + \sin(nx_1)\cosh(nx_2)\right]}{2n}\\
+&= \lim\limits_{n \to \infty} \frac{\left[\cos(nx_1)\sinh(nx_2) + \sin(nx_1)\cosh(nx_2)\right]}{2}\\
+\end{align*}
+
+This limit does not exist; $\frac{\left[\cos(nx_1)\sinh(nx_2) + \sin(nx_1)\cosh(nx_2)\right]}{2}$ oscillates wildly. However, as $n \to \infty$, the Cauchy data goes to $0$. Thus, we can say that the Cauchy Problem for Laplace's Equation isn't well-posed.
+
+\shunt
+
+{\bf Problem 2:}
+
+\shunt
+
+\end{document}
