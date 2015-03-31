@@ -1,0 +1,119 @@
+
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{fancyhdr}
+\usepackage{amssymb}
+%\usepackage{mathpazo}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{slashed}
+\usepackage{cancel}
+\usepackage[mathscr]{euscript}
+\usepackage{MaxPackage} %Note: You need MaxPackage installed or in the same folder as your .tex file or something.
+
+\newcommand{\colorcomment}[2]{\textcolor{#1}{#2}} %First of these leaves in comments. Second one kills them.
+%\newcommand{\colorcomment}[2]{}
+
+
+\pagestyle{fancy}
+\lhead{Max Jeter}
+\chead{MA530}
+\rhead{Assignment 11, Page \thepage}
+
+%Number of Problems		:7
+%Clear					:
+%Begun					:2,3,4
+%Not started			:1,5,6,7
+%Can complete via book	:
+%Needs Polish			:
+
+%Pomodoros logged		:2
+
+\begin{document}
+
+For reference: in the below, $G(z) = z \prod\limits_{n=1}^\infty (1+\frac{z}{n}) e^{-z/n}$. I don't know if this is standard, so it's worth including.
+
+{\bf Problem 1:}
+
+Consider $\sum\limits_{n=1}^\infty \frac{1}{n^s}$, where $\text{Re}(s) > 1$.
+
+The sum converges if and only if the integral $\int\limits_1^\infty \frac{1}{n^s} dn$ does. %Show it converges.
+
+Moreover, $\zeta(s) = \sum\limits_{n=1}^\infty \frac{1}{n^s}$ is holomorphic on $\text{Re}(s) >1$: %Proof.
+
+\shunt
+
+{\bf Problem 2:}
+
+Consider $\frac{\sin(\pi z)}{\pi z} = \prod\limits_{n=1}^\infty (1-\frac{z^2}{n^2})$.
+
+The taylor coefficients attached to $z^2$ and $z^4$ of $\frac{\sin(\pi z)}{\pi z}$ are $-\pi/6$ and $\pi^2/120$, respectively, because $\frac{\sin(\pi z)}{\pi z} = \frac{\sum\limits_{n=1}^\infty \frac{(-1)^n(\pi z)^{2n+1}}{(2n+1)!}}{\pi z} = \sum\limits_{n=1}^\infty \frac{(-1)^n(\pi z)^{2n}}{(2n+1)!}$.
+
+The taylor coefficients attached to $z^2$ and $z^4$ of $\prod\limits_{n=1}^\infty (1-\frac{z^2}{n^2})$ are $-\sum\limits_{n=1}^\infty \frac{1}{n^2}$ and $something$, respectively; these follow by multiplying the product out (Each $\frac{z^2}{n^2}$ c
+
+Therefore, $\sum\limits_{n=1}^\infty \frac{1}{n^2} = \pi/6$ and $\sum\limits_{n=1}^\infty \frac{1}{n^4} = something$.
+
+\shunt
+
+{\bf Problem 3:}
+
+First: note that $\Ga(n+1) = n\Ga(n)$, and $\Ga(1) = 1$; as discussed in class, 
+
+\begin{align*}
+\Ga(1) &= \frac{e^{-\ga}}{G(1)}\\
+&= \frac{e^{-\ga}}{\prod\limits_{n=1}^\infty (1+1/n)e^{-1/n}}\\
+&= \frac{e^{-\ga}}{e^{-(\sum\limits_{n=1}^\infty 1/n - something)}}\\
+&= \frac{e^{-\ga}}{e^{-\ga}}\\
+&= 1
+\end{align*} %Explain the last chunk.
+
+So $\Ga(n) = (n-1)!$, by a relatively clear induction argument, recreated below so the problem doesn't look too short:
+
+First, $\Ga(1) = 1!$.
+
+Next, if $\Ga(n) = (n-1)!$, then $\Ga(n+1) = n\Ga(n) = n!$. So by induction, we have our result.
+
+\shunt
+
+{\bf Problem 4:}
+
+Consider $\Ga(z)\Ga(z-1)$.
+
+\begin{align*}
+\Ga(z)\Ga(1-z) &= \frac{e^{-\ga z}e^{-\ga + \ga z}}{G(z)G(1-z)}\\
+&= \frac{e^{-\ga}}{G(z)G(1-z)}\\
+&= stuff\\
+&= \frac{\pi}{\sin(\pi z)}
+\end{align*}
+
+Thus, $\Ga(1/2)\Ga(1-1/2) = \frac{\pi}{\sin(\pi/2)} = \pi$.
+
+That is, $\Ga(1/2) = \sqrt{\pi}$. (Note that $\Ga(z) > 0$ if $z >0$, so $\Ga(1/2) \neq - \sqrt{\pi}$).
+
+\shunt
+
+{\bf Problem 5:}
+
+\shunt
+
+{\bf Problem 6:}
+
+\shunt
+
+{\bf Problem 7:}
+
+Define $S_{a,b} = \{z \in \C: a< \text{arg}(z) < b\}$.
+
+The function $f: S_{\al,\be} \to S_{2\al,2\be}$ given by $f(z) = z^2$ is biholomorphic when $\be-\al \leq \pi$. %I have no fucking clue how to prove it, but this is my guess
+
+First, $f$ is holomorphic, and this is clear.
+
+Next, $f$ is bijective: %Proof
+
+Also, $f$ has an inverse: %sqrt(z)
+
+Last, this inverse is holomorphic: 
+
+\shunt
+
+\end{document}
