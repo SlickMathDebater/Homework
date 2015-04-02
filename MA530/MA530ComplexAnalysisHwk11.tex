@@ -21,13 +21,13 @@
 \rhead{Assignment 11, Page \thepage}
 
 %Number of Problems		:7
-%Clear					:
-%Begun					:2,3,4
-%Not started			:1,5,6,7
+%Clear					:1,2,7
+%Begun					:4
+%Not started			:5,6
 %Can complete via book	:
-%Needs Polish			:
+%Needs Polish			:3
 
-%Pomodoros logged		:2
+%Pomodoros logged		:3
 
 \begin{document}
 
@@ -37,9 +37,9 @@ For reference: in the below, $G(z) = z \prod\limits_{n=1}^\infty (1+\frac{z}{n})
 
 Consider $\sum\limits_{n=1}^\infty \frac{1}{n^s}$, where $\text{Re}(s) > 1$.
 
-The sum converges if and only if the integral $\int\limits_1^\infty \frac{1}{n^s} dn$ does. %Show it converges.
+The sum converges if and only if the integral $\int\limits_1^\infty \frac{1}{n^s} dn$ does. We know that $\int\limits_1^\infty \frac{1}{n^s} ds \leq \int\limits_1^\infty \absval{\frac{1}{n^s}} ds = \int\limits_1^\infty \frac{1}{\absval{n^s}} ds \leq \int\limits_1^\infty \frac{1}{n^{\text{Re}(s)}} ds$, and the last integral converges, so the first one must have as well.
 
-Moreover, $\zeta(s) = \sum\limits_{n=1}^\infty \frac{1}{n^s}$ is holomorphic on $\text{Re}(s) >1$: %Proof.
+Moreover, $\zeta(s) = \sum\limits_{n=1}^\infty \frac{1}{n^s}$ is holomorphic on $\text{Re}(s) >1$: it's a limit of holomorphic functions.
 
 \shunt
 
@@ -49,9 +49,20 @@ Consider $\frac{\sin(\pi z)}{\pi z} = \prod\limits_{n=1}^\infty (1-\frac{z^2}{n^
 
 The taylor coefficients attached to $z^2$ and $z^4$ of $\frac{\sin(\pi z)}{\pi z}$ are $-\pi/6$ and $\pi^2/120$, respectively, because $\frac{\sin(\pi z)}{\pi z} = \frac{\sum\limits_{n=1}^\infty \frac{(-1)^n(\pi z)^{2n+1}}{(2n+1)!}}{\pi z} = \sum\limits_{n=1}^\infty \frac{(-1)^n(\pi z)^{2n}}{(2n+1)!}$.
 
-The taylor coefficients attached to $z^2$ and $z^4$ of $\prod\limits_{n=1}^\infty (1-\frac{z^2}{n^2})$ are $-\sum\limits_{n=1}^\infty \frac{1}{n^2}$ and $something$, respectively; these follow by multiplying the product out (Each $\frac{z^2}{n^2}$ c
+The taylor coefficients attached to $z^2$ and $z^4$ of $\prod\limits_{n=1}^\infty (1-\frac{z^2}{n^2})$ are $-\sum\limits_{n=1}^\infty \frac{1}{n^2}$ and $\sum\limits_{i \neq j} \frac{1}{i^2j^2}$, respectively; these follow by multiplying the product out.
 
-Therefore, $\sum\limits_{n=1}^\infty \frac{1}{n^2} = \pi/6$ and $\sum\limits_{n=1}^\infty \frac{1}{n^4} = something$.
+Therefore, $\sum\limits_{n=1}^\infty \frac{1}{n^2} = \pi/6$.
+
+We can rewrite the second one as $\sum\limits_{i,j} \frac{1}{i^2j^2} - \sum\limits_{n=1}^\infty \frac{1}{n^4}$.  We evaluate:
+
+\begin{align*}
+\sum\limits_{i,j} \frac{1}{i^2j^2} &= \sum\limits_{i=1}^\infty \sum\limits_{j=1}^\infty \frac{1}{i^2}\frac{1}{j^2}\\
+&= \sum\limits_{i=1}^\infty \frac{1}{i^2}\sum\limits_{j=1}^\infty \frac{1}{j^2}\\
+&= \sum\limits_{i=1}^\infty \frac{1}{i^2}\frac{\pi}{6}\\
+&= \pi^2/36\\
+\end{align*}
+
+Therefore, $\sum\limits_{n=1}^\infty \frac{1}{n^2} = \pi/6$ and $\sum\limits_{n=1}^\infty \frac{1}{n^4} = \frac{\pi^2}{36} - \frac{\pi^2}{120} = \frac{7\pi^2}{120}$.
 
 \shunt
 
@@ -62,7 +73,8 @@ First: note that $\Ga(n+1) = n\Ga(n)$, and $\Ga(1) = 1$; as discussed in class,
 \begin{align*}
 \Ga(1) &= \frac{e^{-\ga}}{G(1)}\\
 &= \frac{e^{-\ga}}{\prod\limits_{n=1}^\infty (1+1/n)e^{-1/n}}\\
-&= \frac{e^{-\ga}}{e^{-(\sum\limits_{n=1}^\infty 1/n - something)}}\\
+&= \frac{e^{-\ga}}{e^{-(\sum\limits_{n=1}^\infty (1/n - \ln(1+1/n)))}}\\
+&= \frac{e^{-\ga}}{e^{-(\sum\limits_{n=1}^\infty (1/n - \ln(1+1/n)))}}\\
 &= \frac{e^{-\ga}}{e^{-\ga}}\\
 &= 1
 \end{align*} %Explain the last chunk.
@@ -104,15 +116,15 @@ That is, $\Ga(1/2) = \sqrt{\pi}$. (Note that $\Ga(z) > 0$ if $z >0$, so $\Ga(1/2
 
 Define $S_{a,b} = \{z \in \C: a< \text{arg}(z) < b\}$.
 
-The function $f: S_{\al,\be} \to S_{2\al,2\be}$ given by $f(z) = z^2$ is biholomorphic when $\be-\al \leq \pi$. %I have no fucking clue how to prove it, but this is my guess
+The function $f: S_{\al,\be} \to S_{2\al,2\be}$ given by $f(z) = z^2$ is biholomorphic when $\be-\al < \pi$.
 
 First, $f$ is holomorphic, and this is clear.
 
-Next, $f$ is bijective: %Proof
+Next, $f$ is injective: let $a=re^{i\tha}, b=r'e^{i\tha'} \in S_{\al,\be}$ with $f(a)=f(b)$. Then $r^2e^{i2\tha}=r'^2e^{i2\tha'}$. So $e^{i2\tha} = e^{i2\tha'}$, and $r^2 = r'^2$. But because $\be-\al < \pi$, this means that $\absval{\tha-\tha'} < 2\pi$. So This means that $\tha = \tha'$, so we end up with $a=re^{i\tha}=r'e^{i\tha'}=b$, as desired.
 
-Also, $f$ has an inverse: %sqrt(z)
+So, from the result in class, $f$ is biholomorphic.
 
-Last, this inverse is holomorphic: 
+Note that if $\be-\al \geq \pi$, there are $z,z' \in S_{\al,\be}$ with $z=re^{i\tha}$ and $z' = re^{i(\tha + \pi)}$, and thus $z^2 = r^2e^{2i\tha} = r^2e^{2i\tha + 2\pi} = r^2e^{2i(\tha + \pi)} = {z'}^2$, so the above condition is the strongest we can get.
 
 \shunt
 
