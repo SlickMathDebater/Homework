@@ -21,9 +21,9 @@
 \rhead{Assignment 11, Page \thepage}
 
 %Number of Problems		:7
-%Clear					:1,2,7
-%Begun					:4
-%Not started			:5,6
+%Clear					:1,2,4,6,7
+%Begun					:
+%Not started			:5
 %Can complete via book	:
 %Needs Polish			:3
 
@@ -89,12 +89,14 @@ Next, if $\Ga(n) = (n-1)!$, then $\Ga(n+1) = n\Ga(n) = n!$. So by induction, we 
 
 {\bf Problem 4:}
 
-Consider $\Ga(z)\Ga(z-1)$.
+Consider $\Ga(z)\Ga(1-z)$.
 
 \begin{align*}
-\Ga(z)\Ga(1-z) &= \frac{e^{-\ga z}e^{-\ga + \ga z}}{G(z)G(1-z)}\\
-&= \frac{e^{-\ga}}{G(z)G(1-z)}\\
-&= stuff\\
+\Ga(z)\Ga(1-z) &= -z\Ga(z)\Ga(-z)\\
+&=-z\frac{e^{-\ga z}}{G(z)} \frac{e^{\ga z}}{G(-z)}\\
+&=\frac{-z}{G(z)G(-z)}\\
+&=\frac{-z}{-z z \prod\limits_{n=1}^\infty (1+z/n) \prod\limits_{n=1}^\infty (1-z/n)}\\
+&=\frac{1}{ z \prod\limits_{n=1}^\infty (1-(z/n)^2)}\\
 &= \frac{\pi}{\sin(\pi z)}
 \end{align*}
 
@@ -106,9 +108,28 @@ That is, $\Ga(1/2) = \sqrt{\pi}$. (Note that $\Ga(z) > 0$ if $z >0$, so $\Ga(1/2
 
 {\bf Problem 5:}
 
+I'm not doing this problem, as I have no idea what to do, and each of my classmates appear to have sunk multiple hours into it.
+
 \shunt
 
 {\bf Problem 6:}
+
+If $a \in \R$, $a>0$, then consider $f: A \to D_1(0)$ given by $ z \mapsto \frac{z-a}{z+a}$, where $A = \{z \in \C: \text{Re}(z) >0\}$.
+
+First, $f$ is holomorphic: it's a product of two holomorphic functions ($z-a$ and $\frac{1}{z+a}$).
+
+Next, $f$ is injective: let $f(x)=f(y)$, with $x,y \in A$. Then $\frac{x-a}{x+a} = \frac{y-a}{y+a}$. So:
+
+\begin{align*}
+(x-a)(y+a) &= (x+a)(y-a) \\
+xy -ay +ax -a^2 &= xy -ax + ay - a^2 \\
+2(ax-ay) &= 0\\
+x&=y
+\end{align*}
+
+as desired.
+
+Thus, $f$ is a biholomorphism, by the result in class.
 
 \shunt
 

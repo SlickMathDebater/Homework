@@ -67,6 +67,16 @@ This limit does not exist; $\frac{\left[\cos(nx_1)\sinh(nx_2) + \sin(nx_1)\cosh(
 
 {\bf Problem 2:}
 
+Consider the line $\{t=0\}$ and the heat equation $u_t-u_{xx} = 0$. Then for this PDE, we have that $-1\nu^{(0,2)}=0$ on the line given (because $\nu = (0,1)$). %Explain why.
+
+So the line is everywhere noncharacteristic for the PDE: it is characteristic. 
+
+Now, assume that there's an analytic solution, $u$, of the heat equation in $\R \times \R$ with $u = \frac{1}{1+x^2}$ on $\{t=0\}$. That is, $u = \int\limits_{\R^2} \frac{1}{y^2+1} \frac{e^{\frac{-(x-y)^2}{4t}}}{4\pi t} dy = \sum\limits{\al}^\infty a_\al (x,t)^\al$.
+
+Consider $u(0,t) = \frac{1}{4\pi t} \int\limits_{\R^2} \frac{e^{\frac{-y^2}{4t}}}{1+y^2} dy = \frac{ce^{-1/4t}}{t}$. 
+
+Note that $u(0,t)$'s second derivative explodes at $0$; thus, $u$ cannot have been analytic. 
+
 \shunt
 
 \end{document}
