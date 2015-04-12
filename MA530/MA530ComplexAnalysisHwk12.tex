@@ -27,7 +27,7 @@
 %Can complete via book	:
 %Needs Polish			:
 
-%Pomodoros logged		:5
+%Pomodoros logged		:7
 
 \begin{document}
 
@@ -124,19 +124,15 @@ Now, $\phi(C) = C$:
 
 Let $z \in C$. Then we have that $\frac{az+b}{cz+d} = \frac{ac\absval{z}^2 +adz+bc\overline{z} + bd}{(cz+d)\overline{(cz+d)}}$. The sign of the imaginary part is determined solely by $adz+bc\overline{z}$; because this has positive imaginary part ($ad-bc >0$ and $\text{Im}(z) >0$), we have that $\phi(z) \in C$. 
 
-Also, if $z \in \phi(C)$, then note that $\phi$ has a holomorphic inverse (it is $\phi^{-1}(z) = \frac{}{}$, as discussed in class.) %Do the same fucking analysis.
+Also, if $z \in \phi(C)$, then note that $\phi$ has a holomorphic inverse (it is $\phi^{-1}(z) = \frac{dz-b}{a-cz}$. The same analysis as above verifies that this is holomorphic.) %Do the same fucking analysis.
 
 Thus, $\phi$ is a biholomorphism from $C$ to $C$. That is, $\phi \in A$. 
 
-%Strategy b: Show that lines get mapped to lines....or, that lines/circles get mapped to lines/circles.
+Now, let $\phi \in A$. Then $\phi$ can be extended to a biholomorphism in $\overline{\C}$. That is, $\tilde{\phi} \in \text{Aut}(\overline{\C})$ for some $\tilde{\phi}$. So $\tilde{\phi}$ is linear-fractional: $\tilde{\phi}(z) = \frac{az+b}{cz+d}$ for some $a,b,c,d \in \C$.
 
-We begin by showing that $\phi$ maps line segments to line segments: Let $[a,b] \subset C$. Then $\phi([a,b]) = [\phi(a),\phi(b)]$:
+Now, $\tilde{\phi}(C) = C$, because $\phi$ is a biholomorphism from $C$ to $C$. So we can require that $a,b,c,d \in \R$: write $a=re^{i\al}$, $b=se^{i\be}$, $c=te^{i\ga}$, $d=ue^{i\de}$. Then $\phi(z) = \frac{az+b}{cz+d} = \frac{re^{i\al}z+se^{i\be}}{te^{i\ga}z+ue^{i\de}} = e^{i(\al-\ga)}\frac{rz+se^{i(\be-\al)}}{tz+ue^{i(\de-\ga)}}$. But we know that $\frac{rz+se^{i(\be-\al)}}{tz+ue^{i(\de-\ga)}}$ is a biholomorphism from $C$ to $C$ by the above; multiplication by $e^{i\tha}$ rotates the half-plane by $\tha$, so $\al-\ga$ must have been a multiple of $2\pi$. So we have $\phi(z) = \frac{rz+se^{i(\be-\al)}}{tz+ue^{i(\de-\ga)}}$. Similarly, we have that $\phi(z) = \frac{rze^{i(\al-\be)}+s}{tze^{i(\ga-\de)}+u}$. A bit of linear algebra shows that this combination implies that $\al -\be$ and $\de-\ga$ are multiples of $2\pi$. So $\phi(z) = \frac{rz+s}{tz+u}$.
 
-\tab If $z \in [a,b]$, then $\phi(z)$ %Hm...
-
-\tab If $\phi(z) \in [\phi(a),\phi(b)]$, then because $\phi^{-1}$ is a biholomorphism, we know that $\phi^{-1}\phi(z) = z \in [a,b]$ by the earlier work.
-
-Now, any such map is of the form desired: %Not quite sure how to do this, but this appears to "somewhat obviously" be a characterization of such linear-fractional maps.
+That is, $\phi \in A$.
 
 So $A=B$, as desired.
 
