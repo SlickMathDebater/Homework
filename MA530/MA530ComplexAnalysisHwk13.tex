@@ -20,14 +20,14 @@
 \chead{MA530}
 \rhead{Assignment 13, Page \thepage}
 
-%Number of Problems		:6
+%Number of Problems		:8
 %Clear					:
-%Begun					:
-%Not started			:1,2,3,4,5,6
+%Begun					:3,5,6,7
+%Not started			:2,4,8
 %Can complete via book	:
-%Needs Polish			:
+%Needs Polish			:1
 
-%Pomodoros logged		:0.5
+%Pomodoros logged		:4.5
 
 \begin{document}
 
@@ -37,35 +37,79 @@ The map described in class is $f\circ g \circ h$, where $f(z) = \frac{z-1}{z+1}$
 
 Its inverse is thus $h^{-1} \circ g^{-1} \circ f^{-1}$, which is $F: D_1(0) \to \overline{\C} \setminus [-1,1]$ where $F(z) = \frac{\left(\frac{z+1}{1-z}\right)^2 + 1}{1-\left(\frac{z+1}{1-z}\right)^2} = \frac{-z^2-1}{2z}$.
 
-Consider the set $\partial D_r(0)$ where $r < 1$. We see that $F(\partial D_r(0)) = \{\frac{-z^2-1}{2z}: \absval{z} = r\}$ %Prove it.
+Consider the set $\partial D_r(0)$ where $r < 1$. We see that $F(\partial D_r(0)) = \{\frac{-z^2-1}{2z}: \absval{z} = r\}$. 
 
 \shunt
 
 {\bf Problem 2:}
 
-%May try bashing this one over the head with definitions. 
+%Consider composing f with a biholomorphism of the disk and taking the derivative using chain rule.
 
 \shunt
 
 {\bf Problem 3:}
 
-%This one should fall out of the proof of problem 2...
+Consider $f(z) = f(\phi_{-z}(0))$. Taking derivatives, we get
+
+\begin{align*}
+f'(z) &= (f(\phi_{-z}(0)))'\\
+&= f'(\phi_{-z}(0))\phi_{-z}'(0)\\
+&= f'(\phi_{-z}(0))\frac{1}{1-\absval{z}^2}\\
+\absval{f'(z)}&\leq \frac{1}{1-\absval{z}^2}\\
+\end{align*}
+
+with the last line being due to the previous problem after an adjustment. %Perform the adjustment. Also, check that derivative.
 
 \shunt
 
 {\bf Problem 4:}
 
+Consider $\{z \in \C: A \absval{z}^2 + 2\text{Re}(Bz^2) + 2\text{Re}(Cz) + D = 0\}$, with $A,D \in \R$, $B,C \in \C$ ($A,B,C,D$ fixed).
+
+This describes a line when $A=B=0$; If $A$ or $B$ is nonzero, then %Pick 3 non-colinear points.
+However, if $A=B=0$, then the set becomes $\{z \in \C: 2\text{Re}(Cz) = D\}$, which is rather clearly a line.
+
+This describes a circle when %something...not just B=C=0, that is too strong.
+
 \shunt
 
 {\bf Problem 5:}
+
+(Note: I had read this in Complex Made Simple before this was assigned.)
+
+Let $\phi \in \text{Aut}(\overline{\C})$. Say $\scrC$ is the set of all circles and lines in the complex plane.
+
+Note that $\text{Aut}(\overline{\C})$ is the set of linear-fractional transformations. Further note that the set of linear-fractional transformations is generated, as a group, by the set of maps $z \mapsto az+b$ (with $a,b \in \C$ and the map $z \mapsto 1/z$.
+
+It suffices to show our result for the generating set.
+
+The result is clear for linear maps (for circles, note that they're isometries. For lines, note that they're a dilation followed by a translation followed by a rotation.) 
+
+For the map $1/z$, consider a line $\ell = \{z \in \C: \}$. %I forget how to do this, kek
 
 \shunt
 
 {\bf Problem 6:}
 
+Let $\Om \subset \C$ be open, $f_n \in \scrO(\Om)$, $\sup(\absval{f_n(z)}) = L < \infty$, $\xi_j \in \Om$, (with each $\xi_j$ distinct), $\xi_j \to \xi \in \Om$, and $f_n(\xi_j) \to \Xi_j$ for some $\Xi_j$.
+
+By Vitali-Montel, there's a subsequence of $f_n$, call it $f_{n_k}$, that converges locally uniformly to some holomorphic function, $f$.
+
+Consider $\scrF$, the set of functions $f$ such that $f_{n_k}$ converges to $f$ for some subsequence $f_{n_k}$. %Show that this set only has f, probably by uniqueness theorem.
+
+So $f_n$ converges to $f$, and $f_n$ has a subsequence that converges locally uniformly to $f$. %Get the last little bit...may do this by contradiction.
+
 \shunt
 
 {\bf Problem 7:}
+
+Consider $\text{Aut}(\C \setminus \{0\})$.
+
+This is the subset of $\text{Aut}(\overline{\C})$ that maps $\{0,\infty\}$ to itself. That is, these are the maps of the form $z \mapsto az$ and $z \mapsto a/z$ for some $a \in \C$. %This may not be clear. 
+
+\shunt
+
+{\bf Problem 8:}
 
 \shunt
 
