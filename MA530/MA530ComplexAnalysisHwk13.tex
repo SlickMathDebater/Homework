@@ -22,43 +22,67 @@
 
 %Number of Problems		:8
 %Clear					:
-%Begun					:3,5,6,7
-%Not started			:2,4,8
+%Begun					:4,5,6,7
+%Not started			:8
 %Can complete via book	:
-%Needs Polish			:1
+%Needs Polish			:2,3
+%Absolutely broken		:1
 
-%Pomodoros logged		:4.5
+%Pomodoros logged		:10
 
 \begin{document}
 
-{\bf Problem 1:} %May check this to be more careful...
+Note: in the below, we adopt the notation $\phi_a: D_1(0) \to D_1(0)$ to be given by $\phi_a(z) = \frac{z-a}{1-\overline{a}z}$. This is the same as the $f_a$ given in class, but that notation lends itself to issues in this homework. 
+
+I should've said this in the other homework as well, but I use $\overline{\C}$ to denote the Riemann Sphere because I can't figure out how to get $\C$ with a hat over it.
+
+{\bf Problem 1:} %Something is very, very wrong.
 
 The map described in class is $f\circ g \circ h$, where $f(z) = \frac{z-1}{z+1}$, $g(z) = \sqrt{z}$, and $h(z) = \frac{z-1}{z+1}$.
 
 Its inverse is thus $h^{-1} \circ g^{-1} \circ f^{-1}$, which is $F: D_1(0) \to \overline{\C} \setminus [-1,1]$ where $F(z) = \frac{\left(\frac{z+1}{1-z}\right)^2 + 1}{1-\left(\frac{z+1}{1-z}\right)^2} = \frac{-z^2-1}{2z}$.
 
-Consider the set $\partial D_r(0)$ where $r < 1$. We see that $F(\partial D_r(0)) = \{\frac{-z^2-1}{2z}: \absval{z} = r\}$. 
+Consider the set $\partial D_r(0)$ where $r < 1$. We see that $F(\partial D_r(0)) = \{\frac{-z^2-1}{2z}: \absval{z} = r\}$....
+
+I have recognized that this is horribly broken ($1/2$ maps to $3/4$, which is on the line segment we excluded), and I have no earthly clue how to fix this.
 
 \shunt
 
 {\bf Problem 2:}
 
-%Consider composing f with a biholomorphism of the disk and taking the derivative using chain rule.
+Consider $\phi_{f(0)}(f(z))$. Taking a derivative, we get:
+
+\begin{align*}
+(\phi_{f(0)}(f(z)))' &= \phi_{f(0)}'(f(z))f'(z)\\
+f'(z) &= \frac{(\phi_{f(0)}(f(z)))'}{\phi_{f(0)}'(f(z))}\\
+\absval{f'(z)} &= \absval{\frac{(\phi_{f(0)}(f(z)))'}{\phi_{f(0)}'(f(z))}}\\
+\absval{f'(0)} &= \absval{\frac{(\phi_{f(0)}(f(0)))'}{\phi_{f(0)}'(f(0))}}\\
+\absval{f'(0)} &= (1-\absval{f(0)}^2)\absval{(\phi_{f(0)}(f(0)))'}\\
+\end{align*}
+
+with the last line being because $\absval{\phi_{a}'(a)} = \frac{1}{1-\absval{a}^2}$, which was discussed in class.
+
+Moreover, $\absval{(\phi_{f(0)}(f(0)))'} \leq 1$, by Schwarz's lemma. (Note that $\phi_{f(0)}(f(z))$ is a holomorphic map fixing the origin, so its derivative at the origin is at most $1$.)
+
+Thus, we have $\absval{f'(z)} \leq (1-\absval{f(0)}^2)$.
 
 \shunt
 
 {\bf Problem 3:}
 
-Consider $f(z) = f(\phi_{-z}(0))$. Taking derivatives, we get
+Fix $z \in D_1(0)$. Consider $f(\phi_{-z}(w))$ as a function of $w$. Taking a derivative, we get: 
 
 \begin{align*}
-f'(z) &= (f(\phi_{-z}(0)))'\\
-&= f'(\phi_{-z}(0))\phi_{-z}'(0)\\
-&= f'(\phi_{-z}(0))\frac{1}{1-\absval{z}^2}\\
+(f(\phi_{-z}(w)))' &= f'(\phi_{-z}(w))\phi_{-z}'(w)\\
+(f(\phi_{-z}(0)))' &= f'(\phi_{-z}(0))\phi_{-z}'(0)\\
+\frac{(f(\phi_{-z}(0)))'}{\phi_{-z}'(0)} &= f'(\phi_{-z}(0))\\
+\frac{(f(\phi_{-z}(0)))'}{\phi_{-z}'(0)} &= f'(z)\\
+\absval{\frac{(f(\phi_{-z}(0)))'}{\phi_{-z}'(0)}} &= \absval{f'(z)}\\
+\absval{f'(z)}&= \absval{f(\phi_{-z}(0)))'} \frac{1}{1-\absval{-z}^2}\\
 \absval{f'(z)}&\leq \frac{1}{1-\absval{z}^2}\\
 \end{align*}
 
-with the last line being due to the previous problem after an adjustment. %Perform the adjustment. Also, check that derivative.
+With the last line being by Schwarz's lemma, as above.
 
 \shunt
 
@@ -66,7 +90,7 @@ with the last line being due to the previous problem after an adjustment. %Perfo
 
 Consider $\{z \in \C: A \absval{z}^2 + 2\text{Re}(Bz^2) + 2\text{Re}(Cz) + D = 0\}$, with $A,D \in \R$, $B,C \in \C$ ($A,B,C,D$ fixed).
 
-This describes a line when $A=B=0$; If $A$ or $B$ is nonzero, then %Pick 3 non-colinear points.
+This describes a line when $A=B=0$; If $A$ or $B$ is nonzero, then something. %Pick 3 non-colinear points.
 However, if $A=B=0$, then the set becomes $\{z \in \C: 2\text{Re}(Cz) = D\}$, which is rather clearly a line.
 
 This describes a circle when %something...not just B=C=0, that is too strong.
@@ -79,13 +103,23 @@ This describes a circle when %something...not just B=C=0, that is too strong.
 
 Let $\phi \in \text{Aut}(\overline{\C})$. Say $\scrC$ is the set of all circles and lines in the complex plane.
 
-Note that $\text{Aut}(\overline{\C})$ is the set of linear-fractional transformations. Further note that the set of linear-fractional transformations is generated, as a group, by the set of maps $z \mapsto az+b$ (with $a,b \in \C$ and the map $z \mapsto 1/z$.
+Note that $\text{Aut}(\overline{\C})$ is the set of linear-fractional transformations. Further note that the set of linear-fractional transformations is generated, as a group, by the maps of the form $z \mapsto az+b$ (with $a,b \in \C$) and the map $z \mapsto 1/z$.
 
 It suffices to show our result for the generating set.
 
-The result is clear for linear maps (for circles, note that they're isometries. For lines, note that they're a dilation followed by a translation followed by a rotation.) 
+The result is clear for linear maps (note that they're a dilation followed by a translation followed by a rotation.) 
 
-For the map $1/z$, consider a line $\ell = \{z \in \C: \}$. %I forget how to do this, kek
+For the map $f(z) = 1/z$, let $\ell$ be a line through the origin: that is, $\ell = \{z \in \C: \exists r \in \overline{\R}: z=\ep r\}$ for some fixed $\ep \in \C$ with $\absval{\ep} = 1$. Then $f(\ell)$ is another line: $f(\ell) = \{z \in \C: \exists r \in \overline{\R}: z=1/(\ep r)\}$; note that $\absval{1/\ep} = 1$ and $1/r$ is an automorphism of $\overline{\R}$. 
+
+If $\ell$ is a line that misses the origin: that is, $\ell = \{z \in \C: \exists r \in \overline{\R}: z=\ep r+ c\}$ for some fixed $\ep \in \C$ and $c \in \C$ with $\absval{\ep} = 1$ . Then $f(\ell)$ is a circle: $f(\ell) = \{z \in \C: \exists r \in \overline{\R}: z = 1/(\ep r + c)\}$, which is a circle. (I am somewhat certain we discussed this in class.)  
+
+Let $\Ga$ be a circle centered at the origin. Then %do it
+
+Let $\Ga$ be a circle not centered at the origin. Then %Again.
+
+So in all cases, $f(z) = 1/z$ maps $\scrC$ to itself.
+
+So we have the desired result. 
 
 \shunt
 
@@ -105,7 +139,13 @@ So $f_n$ converges to $f$, and $f_n$ has a subsequence that converges locally un
 
 Consider $\text{Aut}(\C \setminus \{0\})$.
 
-This is the subset of $\text{Aut}(\overline{\C})$ that maps $\{0,\infty\}$ to itself. That is, these are the maps of the form $z \mapsto az$ and $z \mapsto a/z$ for some $a \in \C$. %This may not be clear. 
+Let $\phi \in \text{Aut}(\C \setminus \{0\})$. Then $\phi$ is an injective holomorphism with singularities at $0$ and $\infty$. By the exam problem, $\phi$ has removable singularities or (first order) poles at $0$ and $\infty$.
+
+If $\phi$ has a removable singularity at $0$, then $\phi$ is extended naturally to an automorphism of $\C$. Thus, $\phi$ is given by $z \mapsto az+b$ for some $a,b \in \C$. Note that $b=0$ in this case, otherwise $\phi(-b/a) = 0$, so that $\phi$ is no longer well defined. Moreover, $a \neq 0$, else $\phi$ isn't injective.
+
+So if $\phi$ has a removable singularity at $0$, then $\phi$ is given by $z \mapsto az$ for some $a \in \C$, $a \neq 0$.
+
+Next, let $\phi$ have a pole at $0$. Then %Apply 1/z and regress to the above situation.
 
 \shunt
 
