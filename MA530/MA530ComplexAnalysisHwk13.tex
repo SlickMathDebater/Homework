@@ -22,13 +22,13 @@
 
 %Number of Problems		:8
 %Clear					:
-%Begun					:4,5,6,7
+%Begun					:4,5,6
 %Not started			:8
 %Can complete via book	:
-%Needs Polish			:2,3
-%Absolutely broken		:1
+%Needs Polish			:1,2,3,7
+%Absolutely broken		:
 
-%Pomodoros logged		:10
+%Pomodoros logged		:13
 
 \begin{document}
 
@@ -36,15 +36,31 @@ Note: in the below, we adopt the notation $\phi_a: D_1(0) \to D_1(0)$ to be give
 
 I should've said this in the other homework as well, but I use $\overline{\C}$ to denote the Riemann Sphere because I can't figure out how to get $\C$ with a hat over it.
 
-{\bf Problem 1:} %Something is very, very wrong.
+{\bf Problem 1:}
+
+(I googled facts about ellipses in order to get the last equation.)
 
 The map described in class is $f\circ g \circ h$, where $f(z) = \frac{z-1}{z+1}$, $g(z) = \sqrt{z}$, and $h(z) = \frac{z-1}{z+1}$.
 
 Its inverse is thus $h^{-1} \circ g^{-1} \circ f^{-1}$, which is $F: D_1(0) \to \overline{\C} \setminus [-1,1]$ where $F(z) = \frac{\left(\frac{z+1}{1-z}\right)^2 + 1}{1-\left(\frac{z+1}{1-z}\right)^2} = \frac{-z^2-1}{2z}$.
 
-Consider the set $\partial D_r(0)$ where $r < 1$. We see that $F(\partial D_r(0)) = \{\frac{-z^2-1}{2z}: \absval{z} = r\}$....
+Consider the set $\partial D_r(0)$ where $r < 1$. We see that $F(\partial D_r(0)) = \{\frac{-z^2-1}{2z}: \absval{z} = r\}$.
 
-I have recognized that this is horribly broken ($1/2$ maps to $3/4$, which is on the line segment we excluded), and I have no earthly clue how to fix this.
+Now, let $p \in F(\partial D_r(0))$, so that for some $z \in D_1(0)$, we have $\frac{-z^2-1}{2z} = p$. Say that $x = \text{Re}(z)$ and $y = \text{Im}(z)$. Then we have
+
+\begin{align*}
+\absval{p+1} + \absval{p-1} &= \absval{\frac{-z^2 -1}{2z} + 1} + \absval{\frac{-z^2 -1}{2z} -1}\\
+&= \absval{\frac{-z^2 +2z-1}{2z}} + \absval{\frac{-z^2 -2z-1}{2z}}\\
+&= \frac{1}{2r}\left[\absval{-z^2 +2z-1} + \absval{-z^2 -2z-1}\right]\\
+&= \frac{1}{2r}\left[\absval{z-1}^2 + \absval{z+1}^2\right]\\
+&= \frac{1}{2r}\left[(x-1)^2+y^2 + (x+1)^2+y^2\right]\\
+&= \frac{1}{2r}\left[2y^2+2x^2+2\right]\\
+&= \frac{r^2+1}{r}\\
+\end{align*}
+
+So the sum of the distance from $p$ to $1$ and from $p$ to $-1$ does not depend on $p$; this set is an ellipse with foci at $1$ and $-1$; the length of the semimajor axis is given by half the sum of the distances; that is, it is $\frac{r^2+1}{2r}$. 
+
+To be more explicit, the set is given by the equation $1= \frac{x}{(\frac{r^2+1}{2r})^2} + \frac{y}{1- (\frac{r^2+1}{2r})^2}$, where $x = \text{Re}(z)$ and $y = \text{Im}(z)$.
 
 \shunt
 
@@ -88,10 +104,23 @@ With the last line being by Schwarz's lemma, as above.
 
 {\bf Problem 4:}
 
-Consider $\{z \in \C: A \absval{z}^2 + 2\text{Re}(Bz^2) + 2\text{Re}(Cz) + D = 0\}$, with $A,D \in \R$, $B,C \in \C$ ($A,B,C,D$ fixed).
+Consider $\{z \in \C: A \absval{z}^2 + 2\text{Re}(Bz^2) + 2\text{Re}(Cz) + D = 0\}$, with $A,D \in \R$, $B,C \in \C$ ($A,B,C,D$ fixed). We are given that this represents a conic section.
 
-This describes a line when $A=B=0$; If $A$ or $B$ is nonzero, then something. %Pick 3 non-colinear points.
-However, if $A=B=0$, then the set becomes $\{z \in \C: 2\text{Re}(Cz) = D\}$, which is rather clearly a line.
+This describes a line when $A=B=0$; If $A$ or $B$ is nonzero, then consider any two points $z,z'$ in the set where $z \neq z'$. Then $\frac{z+z'}{2}$ is not in the set;
+
+\begin{align*}
+&A \absval{\frac{z+z'}{2}}^2 + 2\text{Re}(B(\frac{z+z'}{2})^2) + 2\text{Re}(C\frac{z+z'}{2}) + D\\
+&= A \absval{\frac{z+z'}{2}}^2 + \frac{1}{2}\text{Re}(B(z+z')^2) + \text{Re}(C(z+z')) + D\\
+&= \frac{A}{4} \absval{z+z'}^2 + \frac{1}{2}\text{Re}(Bz^2)+ \frac{1}{2}\text{Re}(Bz'^2) + \text{Re}(Bzz') + \text{Re}(Cz) +\text{Re}(Cz')+ D\\
+&= \frac{A}{4} \absval{z+z'}^2 -\frac{A}{2}\absval{z}^2 -\frac{A}{2}\absval{z'}^2- \frac{1}{2}\text{Re}(Bz^2)- \frac{1}{2}\text{Re}(Bz'^2) + \text{Re}(Bzz')\\
+&= \frac{A}{4} \left[\absval{z+z'}^2 -2\absval{z}^2 -2\absval{z'}^2\right] + \text{Re}(B(zz'-\frac{z^2+z'^2}{2}))\\
+\end{align*}
+
+(I admit that I can't see why this only vanishes when $z=z'$; I currently believe that I have under-determined the problem.) %Fix it if possible
+
+Thus, this could not have described a line; the midpoint of two points on it fails to be in the set.
+
+However, if $A=B=0$, then the set becomes $\{z \in \C: 2\text{Re}(Cz) = D\}$, which is rather clearly a line (if this is not clear, repeating the same analysis as above yields that the midpoint of any two points is in the set...and the only conic section satisfying this is the line.).
 
 This describes a circle when %something...not just B=C=0, that is too strong.
 
@@ -145,7 +174,9 @@ If $\phi$ has a removable singularity at $0$, then $\phi$ is extended naturally 
 
 So if $\phi$ has a removable singularity at $0$, then $\phi$ is given by $z \mapsto az$ for some $a \in \C$, $a \neq 0$.
 
-Next, let $\phi$ have a pole at $0$. Then %Apply 1/z and regress to the above situation.
+Next, let $\phi$ have a pole at $0$. Then $1/\phi$ has a removable singularity at $0$, and $1/\phi$ is an automorphism of $\C \setminus \{0\}$. So $1/\phi$ is given by $z \mapsto az$ for some $a \in \C$ , so $\phi$ is given by $z \mapsto 1/(az)$.
+
+That is, $\phi \in \text{Aut}(\C \setminus \{0\})$ is given by $z \mapsto az$ or $z \mapsto a/z$ for some $a \in \C$ where $a \neq 0$. It is somewhat clear that all such maps are automorphisms of $\C \setminus \{0\}$, so we have $\text{Aut}(\C \setminus \{0\})$ being the set of maps given by $z \mapsto az$ or $z \mapsto a/z$ for some $a \in \C$ where $a \neq 0$. %Apply 1/z and regress to the above situation.
 
 \shunt
 
