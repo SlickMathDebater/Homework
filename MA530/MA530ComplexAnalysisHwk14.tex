@@ -1,0 +1,101 @@
+
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{fancyhdr}
+\usepackage{amssymb}
+%\usepackage{mathpazo}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{slashed}
+\usepackage{cancel}
+\usepackage[mathscr]{euscript}
+\usepackage{MaxPackage} %Note: You need MaxPackage installed or in the same folder as your .tex file or something.
+
+\newcommand{\colorcomment}[2]{\textcolor{#1}{#2}} %First of these leaves in comments. Second one kills them.
+%\newcommand{\colorcomment}[2]{}
+
+
+\pagestyle{fancy}
+\lhead{Max Jeter}
+\chead{MA530}
+\rhead{Assignment 14, Page \thepage}
+
+%Number of Problems		: 
+%Clear					:
+%Begun					:1,4
+%Not started			:
+%Can complete via book	:
+%Needs Polish			:2,3
+
+%Pomodoros logged		:3
+
+\begin{document}
+
+{\bf Problem 1:}
+
+Consider $a, b \in \R$, and consider the set of functions $u \in C^1([0,1])$ such that $u(0)=a, u(1)=b$. Call the set of such functions $\scrU$.
+
+Let $u$ and $v$ both minimize the integral $\int\limits_0^1 \absval{f'(x)}^2 dx$ among functions in $\scrU$. Then $u-v$ minimizes the same integral subject to $f(0)=f(1)=0$:
+
+%proof
+
+The only function that minimizes the integral subject to $f(0)=f(1)=0$ is the zero function; this is because the integral $\int\limits_0^1 \absval{f'}^2$ is nonzero when $f \in C^1([0,1])$ is nonzero. Thus, $u=v$; there is only one function that minimizes the integral $\int\limits_0^1 \absval{f'(x)}^2 dx$ in $\scrU$.
+
+Next: the linear function minimizes the integral: %Proof; try shifting everything to the condition where u(0)=u(1)=0 again.
+
+\shunt
+
+{\bf Problem 2:}
+
+Consider the set $A=\{z \in \C: \text{Re}(z) >0\} \setminus [0,a]$ with $a \in \R^+$.
+
+Define the sets $B = \C \setminus \{z \in \R: z \leq a^2\}$, and $C = \C \setminus \{z \in \R: z \leq 0\}$.
+
+First, the map $\phi: A \to B$ given by $z \mapsto z^2$ is a biholomorphism from $A$ to $B$, and this is clear.
+
+Second, the map $\psi: B \to C$ given by $z \mapsto z-a^2$ is a biholomorphism from $B$ to $C$, and this is clear.
+
+Third, the map $\xi: C \to \{\text{Re}(z) >0\}$ given by $z \mapsto \sqrt{z}$ is a biholomorphism from $C$ to $\{\text{Re}(z) >0\}$, and this is clear.
+
+So their composition is a biholomorphism from $A$ to $\{\text{Re}(z) >0\}$; that is, the map $f(z) = \sqrt{z^2-a^2}$ is a biholomorphism from the above set to $\{\text{Re}(z) >0\}$.
+
+\shunt
+
+{\bf Problem 3:}
+
+Let $\Om$ be open and symmetric about the $\R$-axis.
+
+Let $f \in C(\Om)$, and $f$ be holomorphic except perhaps on the $\R$-axis. Note that $f=0$ on the $\R$-axis.
+
+Our goal is to show that $f \in \scrO(\Om)$; we only need to check that $f$ is holomorphic on the $\R$-axis. So, let $z \in \R \cap \Om$. Then there is an open ball centered at $z$, call it $D_r(z)$, contained in $\Om$. This open ball is simply connected. Now, the real part of $f$, say $u = \text{Re}(f)$, is harmonic on $D_r(z) \setminus \R$. By the reflection principle discussed in class, $u$ is harmonic on all of $D_r(z)$.
+
+Now, $u$ is the real part of some holomorphic function, $g$, and this holomorphic function is unique up to addition of a constant. So, we can take $g(z) = 0$. %Now: show that f=g...
+
+Now, $h=f-g$ is holomorphic except perhaps on the real axis, where it is $0$. Moreover, the real part of $h$ is $0$; by the Cauchy-Riemann equations, the imaginary part of $h$ must be constant. Thus, because the imaginary part of $h$ is $0$ somewhere, the imaginary part of $h$ is $0$. So, $h=0$; that is, $f=g$.%Double-check that bit about CAuchy-Riemann
+
+So, $f$ is holomorphic on $D_r(z)$; in particular, $f$ is holomorphic at $z$.
+
+Because holomorphy is a local property, this yields the desired result; $f$ is holomorphic on $\Om$. 
+
+\shunt
+
+{\bf Problem 4:}
+
+Let $\phi \in \text{Aut}(\overline{\C})$ be such that $\phi(\{z\in \C:\text{Im}(z)>0\}) = D_1(0)$. That is, $\phi$ is given by $z \mapsto \frac{az+b}{cz+d}$ with $a,b,c,d \in \C$. %There's more structure here, and you need to use it.
+
+Let $w = \overline{z}$. Then:
+
+\begin{align*}
+\frac{\phi(z)}{\absval{\phi(z)}^2} &= \frac{\frac{az+b}{cz+d}}{\absval{\frac{az+b}{cz+d}}^2}\\
+&= \frac{\frac{az+b}{cz+d}}{\frac{az+b}{cz+d}\overline{(\frac{az+b}{cz+d})}}\\
+&= \frac{\frac{az+b}{cz+d}}{\frac{az+b}{cz+d}\frac{\overline{az+b}}{\overline{cz+d}}}\\
+&= \frac{\overline{cz+d}}{\overline{az+b}}\\
+\end{align*}
+
+\shunt
+
+{\bf Problem 5:}
+
+\shunt
+
+\end{document}
