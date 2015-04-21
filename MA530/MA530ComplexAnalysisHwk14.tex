@@ -20,28 +20,27 @@
 \chead{MA530}
 \rhead{Assignment 14, Page \thepage}
 
-%Number of Problems		: 
-%Clear					:
-%Begun					:1,4
-%Not started			:
+%Number of Problems		:6
+%Clear					:2,3
+%Begun					:1,4,5
+%Not started			:6
 %Can complete via book	:
-%Needs Polish			:2,3
+%Needs Polish			:
 
-%Pomodoros logged		:3
+%Pomodoros logged		:6
 
 \begin{document}
 
-{\bf Problem 1:}
+{\bf Problem 1:} %Minimization of that integral is somehow invariant with respect to biholomorphism, and rotation of the plane is somehow a biholomorphism. Biholomorph everything to u(0)=u(1)=0 and you should get it. 
 
-Consider $a, b \in \R$, and consider the set of functions $u \in C^1([0,1])$ such that $u(0)=a, u(1)=b$. Call the set of such functions $\scrU$.
+Consider $a, b \in \R$, and consider the set of functions $u \in C^1([0,1])$ such that $u(0)=a, u(1)=b$. Without loss of generality, we can take both $a$ and $b$ nonnegative. Call the set of such functions $\scrU$. %Why do we get that WLOG?
 
-Let $u$ and $v$ both minimize the integral $\int\limits_0^1 \absval{f'(x)}^2 dx$ among functions in $\scrU$. Then $u-v$ minimizes the same integral subject to $f(0)=f(1)=0$:
+Let $u$ and $v$ both minimize the integral $\int\limits_0^1 \absval{f'(x)}^2 dx$ among functions in $\scrU$. Then $\min(u,v)$ minimizes the same integral. %Correct for signs...you're assuming that these things are all positive.
+Moreover, $\min(u,v) < u$ or $\min(u,v) < v$ at some point if $u \neq v$. But if that were true at any point, then $u$ or $v$ would fail to minimize that integral; thus, $u = v$ at every point.
 
-%proof
+Next: the linear function minimizes the integral: let $l$ be the linear function with $l(0) = a$, $l(1)=b$, and let $u \in \scrU$ with $u \neq l$ minimize the integral. Also, define $M_1 = \int\limits_0^1 \absval{u'(x)}^2 dx$ and $M_2 = \int\limits_0^1 \absval{l'(x)}^2 dx$. Then $\int\limits_0^1 \absval{u'(x)-l'(x)}^2 dx \neq 0$; that is, $u-l$ fails to minimize the integral $\int\limits_0^1 \absval{v'(x)}^2 dx$ subject to $v(0)=v(1)=0$. %Explain why that makes this go bad.
 
-The only function that minimizes the integral subject to $f(0)=f(1)=0$ is the zero function; this is because the integral $\int\limits_0^1 \absval{f'}^2$ is nonzero when $f \in C^1([0,1])$ is nonzero. Thus, $u=v$; there is only one function that minimizes the integral $\int\limits_0^1 \absval{f'(x)}^2 dx$ in $\scrU$.
-
-Next: the linear function minimizes the integral: %Proof; try shifting everything to the condition where u(0)=u(1)=0 again.
+Thus, the linear function is the unique function in $C^1([0,1])$ that minimizes the integral $\int\limits_0^1 \absval{f'(x)}^2 dx$.
 
 \shunt
 
@@ -51,11 +50,11 @@ Consider the set $A=\{z \in \C: \text{Re}(z) >0\} \setminus [0,a]$ with $a \in \
 
 Define the sets $B = \C \setminus \{z \in \R: z \leq a^2\}$, and $C = \C \setminus \{z \in \R: z \leq 0\}$.
 
-First, the map $\phi: A \to B$ given by $z \mapsto z^2$ is a biholomorphism from $A$ to $B$, and this is clear.
+First, the map $\phi: A \to B$ given by $z \mapsto z^2$ is a biholomorphism from $A$ to $B$, and this is clear; the argument that $z \mapsto z^2$ gives a biholomorphism from the half-plane to the slit plane was made in class, and note that the image of $[0,a]$ under this map is $[0,a^2]$: so because the map is a biholomorphism, the half plane exluding $[0,a]$ has the image of the slit plane excluding $[0,a^2]$.
 
-Second, the map $\psi: B \to C$ given by $z \mapsto z-a^2$ is a biholomorphism from $B$ to $C$, and this is clear.
+Second, the map $\psi: B \to C$ given by $z \mapsto z-a^2$ is a biholomorphism from $B$ to $C$, and this is clear (this is a straight translation).
 
-Third, the map $\xi: C \to \{\text{Re}(z) >0\}$ given by $z \mapsto \sqrt{z}$ is a biholomorphism from $C$ to $\{\text{Re}(z) >0\}$, and this is clear.
+Third, the map $\xi: C \to \{\text{Re}(z) >0\}$ given by $z \mapsto \sqrt{z}$ (using the branch of $\sqrt{z}$ that is the natural inverse of $z^2$, of course) is a biholomorphism from $C$ to $\{\text{Re}(z) >0\}$, and this was discussed in class.
 
 So their composition is a biholomorphism from $A$ to $\{\text{Re}(z) >0\}$; that is, the map $f(z) = \sqrt{z^2-a^2}$ is a biholomorphism from the above set to $\{\text{Re}(z) >0\}$.
 
@@ -71,7 +70,7 @@ Our goal is to show that $f \in \scrO(\Om)$; we only need to check that $f$ is h
 
 Now, $u$ is the real part of some holomorphic function, $g$, and this holomorphic function is unique up to addition of a constant. So, we can take $g(z) = 0$. %Now: show that f=g...
 
-Now, $h=f-g$ is holomorphic except perhaps on the real axis, where it is $0$. Moreover, the real part of $h$ is $0$; by the Cauchy-Riemann equations, the imaginary part of $h$ must be constant. Thus, because the imaginary part of $h$ is $0$ somewhere, the imaginary part of $h$ is $0$. So, $h=0$; that is, $f=g$.%Double-check that bit about CAuchy-Riemann
+Now, $h=f-g$ is holomorphic except perhaps on the real axis, where it is $0$. Moreover, the real part of $h$ is $0$; by the Cauchy-Riemann equations, the imaginary part of $h$ must be constant (except perhaps on the real axis). Thus, because the imaginary part of $h$ is $0$ on the real axis (and $h$ is continuous), the imaginary part of $h$ is $0$. So, $h=0$; that is, $f=g$.
 
 So, $f$ is holomorphic on $D_r(z)$; in particular, $f$ is holomorphic at $z$.
 
@@ -81,21 +80,60 @@ Because holomorphy is a local property, this yields the desired result; $f$ is h
 
 {\bf Problem 4:}
 
-Let $\phi \in \text{Aut}(\overline{\C})$ be such that $\phi(\{z\in \C:\text{Im}(z)>0\}) = D_1(0)$. That is, $\phi$ is given by $z \mapsto \frac{az+b}{cz+d}$ with $a,b,c,d \in \C$. %There's more structure here, and you need to use it.
+Let $\phi \in \text{Aut}(\overline{\C})$ be such that $\phi(\{z\in \C:\text{Im}(z)>0\}) = D_1(0)$. %Move everything to the half-plane (Im(z) >0).
 
-Let $w = \overline{z}$. Then:
+A biholomorphism that takes the disk $D_1(0)$ to $\{z\in \C:\text{Im}(z)>0\}$ is $\phi_C: \C \to \C$ given by $z \mapsto i\frac{1+z}{1-z}$; this is the Cayley transform. Its inverse is $\psi_C: \C \to \C$ given by $z \mapsto \frac{z-i}{z+i}$. (I pulled these maps from Complex Made Simple; any other transform would've worked).
+
+So, $\psi = \phi_C \circ \phi$ is a biholomorphism of the plane that fixes $\{z\in \C:\text{Im}(z)>0\}$; by an earlier homework problem, this means that $\phi_C \circ \phi$ is of the form $z \mapsto \frac{az+b}{cz+d}$ with $a,b,c,d \in \R$, as proven in an earlier homework problem.
+
+Fix $z \in \C$. Let $w = \overline{z}$. Then
 
 \begin{align*}
-\frac{\phi(z)}{\absval{\phi(z)}^2} &= \frac{\frac{az+b}{cz+d}}{\absval{\frac{az+b}{cz+d}}^2}\\
-&= \frac{\frac{az+b}{cz+d}}{\frac{az+b}{cz+d}\overline{(\frac{az+b}{cz+d})}}\\
-&= \frac{\frac{az+b}{cz+d}}{\frac{az+b}{cz+d}\frac{\overline{az+b}}{\overline{cz+d}}}\\
-&= \frac{\overline{cz+d}}{\overline{az+b}}\\
+\psi(w) &= \frac{aw+b}{cw+d}\\
+&= \frac{a\overline{z}+b}{c\overline{z}+d}\\
+&= \frac{\overline{az+b}}{\overline{cz+d}}\\
+&= \overline{\psi(z)}\\
 \end{align*}
+
+Now, $\psi_C \circ \psi = \phi$. So,
+
+\begin{align*}
+\phi(w) &= \psi_C(\psi(w))\\
+&= \psi_C(\overline{\psi(z)})\\
+&= \frac{\overline{\psi(z)}-i}{\overline{\psi(z)}+i}\\
+&= \frac{\overline{i\frac{1+\phi(z)}{1-\phi(z)}}-i}{\overline{i\frac{1+\phi(z)}{1-\phi(z)}}+i}\\
+&= \frac{-i\overline{\frac{1+\phi(z)}{1-\phi(z)}}-i}{-i\overline{\frac{1+\phi(z)}{1-\phi(z)}}+i}\\
+&= \frac{\overline{\frac{1+\phi(z)}{1-\phi(z)}}+1}{\overline{\frac{1+\phi(z)}{1-\phi(z)}}-1}\\
+\end{align*}
+
+%Finish out the arithmetic, and you should get your desired result.
 
 \shunt
 
 {\bf Problem 5:}
 
+Let $f \in \scrO(\Om)$, where $\Om$ is a symmetric domain (with respect to $\R$), and $\R \cap \Om \neq \emptyset$. Moreover, let $f(\R \cap \Om) \subset \R$. Then the function $g(z)=f(Re(z))$ is a holomorphic function. %Is that true?
+
+Now, consider $h=f-g$; this is holomorphic. Note that $h$ restricted to $A=\Om^+ \cup (\Om \cap \R)$ satisfies the requirements for the reflection principle; $h$ restricted to $A$ extends to $\Om$; call this extension $j$. (Note that $j(\overline{z}) = \overline{j(z)}$, because of the construction of the extension.) Now, $j-h$ is identically $0$ on $A$. Because $j-h$ is $0$ on an open subset of $\Om$, it is $0$ on all of $\Om$ (This follows by uniqueness principle, as $\Om$ is a domain...it is connected.)
+
+So $j=h$. So $h(\overline{z}) = \overline{h(z)}$. So 
+
+\begin{align*}
+f(\overline{z}) &= h(\overline{z}) - g(\overline{z})\\
+&= \overline{h(z)} - g(z)\\
+&= \overline{h(z)} - \overline{g(z)}\\
+&= \overline{f(z)}
+\end{align*}
+
+as desired.
+
 \shunt
+
+{\bf Problem 6:}
+
+Consider $\psi(z) = z + \frac{1}{z}$. 
+
+\shunt
+
 
 \end{document}
