@@ -22,12 +22,14 @@
 
 %Number of Problems		:6
 %Clear					:2,3
-%Begun					:1,4,5
-%Not started			:6
+%Begun					:1
+%Not started			:
 %Can complete via book	:
-%Needs Polish			:
+%Needs Polish			:4,6
 
-%Pomodoros logged		:6
+%Needs fixing			:5
+
+%Pomodoros logged		:8
 
 \begin{document}
 
@@ -82,7 +84,7 @@ Because holomorphy is a local property, this yields the desired result; $f$ is h
 
 Let $\phi \in \text{Aut}(\overline{\C})$ be such that $\phi(\{z\in \C:\text{Im}(z)>0\}) = D_1(0)$. %Move everything to the half-plane (Im(z) >0).
 
-A biholomorphism that takes the disk $D_1(0)$ to $\{z\in \C:\text{Im}(z)>0\}$ is $\phi_C: \C \to \C$ given by $z \mapsto i\frac{1+z}{1-z}$; this is the Cayley transform. Its inverse is $\psi_C: \C \to \C$ given by $z \mapsto \frac{z-i}{z+i}$. (I pulled these maps from Complex Made Simple; any other transform would've worked).
+A biholomorphism that takes the disk $D_1(0)$ to $\{z\in \C:\text{Im}(z)>0\}$ is $\phi_C: \C \to \C$ given by $z \mapsto i\frac{1+z}{1-z}$; this is the Cayley transform. Its inverse is $\psi_C: \C \to \C$ given by $z \mapsto \frac{z-i}{z+i}$. (I pulled these maps from Complex Made Simple; any other such map would've probably worked).
 
 So, $\psi = \phi_C \circ \phi$ is a biholomorphism of the plane that fixes $\{z\in \C:\text{Im}(z)>0\}$; by an earlier homework problem, this means that $\phi_C \circ \phi$ is of the form $z \mapsto \frac{az+b}{cz+d}$ with $a,b,c,d \in \R$, as proven in an earlier homework problem.
 
@@ -104,15 +106,19 @@ Now, $\psi_C \circ \psi = \phi$. So,
 &= \frac{\overline{i\frac{1+\phi(z)}{1-\phi(z)}}-i}{\overline{i\frac{1+\phi(z)}{1-\phi(z)}}+i}\\
 &= \frac{-i\overline{\frac{1+\phi(z)}{1-\phi(z)}}-i}{-i\overline{\frac{1+\phi(z)}{1-\phi(z)}}+i}\\
 &= \frac{\overline{\frac{1+\phi(z)}{1-\phi(z)}}+1}{\overline{\frac{1+\phi(z)}{1-\phi(z)}}-1}\\
+&= \frac{\frac{1+\overline{\phi(z)}}{1-\overline{\phi(z)}}+1}{\frac{1+\overline{\phi(z)}}{1-\overline{\phi(z)}}-1}\\
+&= \frac{\frac{2}{1-\overline{\phi(z)}}}{\frac{2\overline{\phi(z)}}{1-\overline{\phi(z)}}}\\
+&=\frac{1}{\overline{\phi(z)}}\\
+&=\frac{\phi(z)}{\absval{\phi(z)}^2}\\
 \end{align*}
 
-%Finish out the arithmetic, and you should get your desired result.
+which is the desired result.
 
 \shunt
 
 {\bf Problem 5:}
 
-Let $f \in \scrO(\Om)$, where $\Om$ is a symmetric domain (with respect to $\R$), and $\R \cap \Om \neq \emptyset$. Moreover, let $f(\R \cap \Om) \subset \R$. Then the function $g(z)=f(Re(z))$ is a holomorphic function. %Is that true?
+Let $f \in \scrO(\Om)$, where $\Om$ is a symmetric domain (with respect to $\R$), and $\R \cap \Om \neq \emptyset$. Moreover, let $f(\R \cap \Om) \subset \R$. Then the function $g(z)=f(Re(z))$ is a holomorphic function. %Is that true?...No, it's absolute bullshit. That'd mean (in general) that we have two different holomorphic functions taking the same values on a line segment. However, it is clear that this IDEA more or less works....it just needs a major overhaul in the first half.
 
 Now, consider $h=f-g$; this is holomorphic. Note that $h$ restricted to $A=\Om^+ \cup (\Om \cap \R)$ satisfies the requirements for the reflection principle; $h$ restricted to $A$ extends to $\Om$; call this extension $j$. (Note that $j(\overline{z}) = \overline{j(z)}$, because of the construction of the extension.) Now, $j-h$ is identically $0$ on $A$. Because $j-h$ is $0$ on an open subset of $\Om$, it is $0$ on all of $\Om$ (This follows by uniqueness principle, as $\Om$ is a domain...it is connected.)
 
@@ -131,7 +137,22 @@ as desired.
 
 {\bf Problem 6:}
 
-Consider $\psi(z) = z + \frac{1}{z}$. 
+Consider $\psi(z) = z + \frac{1}{z}$. Fix $a \in [0,1]$. Consider $U = D_1(0) \setminus ([-1,-a] \cup [a,1])$.
+
+Then 
+
+\begin{align*}
+\psi(U) &= \psi(D_1(0)) \setminus \psi([-1,-a] \cup [a,1])\\
+&= \C \setminus ([-2,2] \cup \psi([-1,-a] \cup [a,1]))\\
+&= \C \setminus ([-2,2] \cup [-a-\frac{1}{a},-2]\cup [2,a+\frac{1}{a}])\\
+&= \C \setminus [-a-\frac{1}{a},a+\frac{1}{a}]
+\end{align*}
+
+So we can dilate $\psi(U)$ to yield $\C \setminus [-1,1]$, by the map $\al$ given by $z \mapsto \frac{z}{a+\frac{1}{a}}$. That is, $\al \circ \psi (U) = \C \setminus [-1,1]$.
+
+So by using the map discussed in class, $\phi(z): \C \setminus [-1,1]$ given by $z \mapsto \sqrt{z^2-1} -z$, we have that $\phi \circ \al \circ \psi$ is a biholomorphism from $U$ to $D_1(0)$.
+
+That is, the map $\be: U \to D_1(0)$ given by $z \mapsto \sqrt{(\frac{z + \frac{1}{z}}{a+\frac{1}{a}})^2 - 1} - \frac{z + \frac{1}{z}}{a+\frac{1}{a}}$ is a biholomorphism from $U$ to $D_1(0)$, as desired.
 
 \shunt
 
