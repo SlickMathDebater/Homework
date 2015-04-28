@@ -21,13 +21,13 @@
 \rhead{Assignment 7 , Page \thepage}
 
 %Number of Problems		:3
-%Clear					:
-%Begun					:
-%Not started			:1,2,3
+%Clear					:1
+%Begun					:2
+%Not started			:3
 %Can complete via book	:
 %Needs Polish			:
 
-%Pomodoros logged		:0.25
+%Pomodoros logged		:2.25
 
 \begin{document}
 
@@ -39,6 +39,35 @@ Consider $u(x,y)$ solving
 u_y^2u_{xx}+uu_{xy}+u_x^2u_{yy} &= u^2+1\\
 u(x,0) = \sin(x), u_y(x,0) &= \cos(x)
 \end{align*}
+
+Then the order $2$ (and lower) partials for $u$ at $(0,0)$ are:
+
+\begin{align*}
+u(0,0) &= \sin(0) = 0\\
+u_x(0,0) &= \cos(0) = 1\\
+u_y(0,0) &= \cos(0) = 1\\
+u_{xx}(0,0) &= -\sin(0) = 0\\
+u_{xy}(0,0) &= -\sin(0) = 0\\
+u_{yy}(0,0) &= 1\\
+\end{align*}
+
+The first five are obtained by the initial conditions and applying partial derivatives to them, and the last is obtained by plugging this information into the PDE. Thus, the second-order Taylor Approximation of $u$ about the point $(0,0)$ is
+
+\begin{align*}
+u(x,y) &\approx x+y+\frac{y^2}{2} \\
+\end{align*}
+
+Now, some of the order $2$ (and lower) partials for $u$ at $(\pi/2, 0)$ are:
+
+\begin{align*}
+u(0,0) &= \sin(\pi/2) = 1\\
+u_x(0,0) &= \cos(\pi/2) = 0\\
+u_y(0,0) &= \cos(\pi/2) = 0\\
+u_{xx}(0,0) &= -\sin(\pi/2) = -1\\
+u_{xy}(0,0) &= -\sin(\pi/2) = -1\\
+\end{align*}
+
+Plugging this information into the PDE yields $-1=2$, which is nonsense; thus, $u$ is inconsistent at $(\pi/2,0)$.
 
 \shunt
 
@@ -52,15 +81,32 @@ L[u] = yu_{xx} + (x+y)u_{xy} + xu_{yy} - u_x - u_y
 
 Part a:
 
-The equation $L$ is hyperbolic when 
+The equation $L$ is hyperbolic when $\De = \left(\frac{x+y}{2}\right)^2 - xy >0$. 
+
+Rewriting this condition, we get:
+
+\begin{align*}
+\left(\frac{x+y}{2}\right)^2 - xy &>0\\
+\left(\frac{x-y}{2}\right)^2&>0\\
+\left(x-y\right)^2&>0\\
+x &\neq y\\
+\end{align*}
+
+That is, $L$ is hyperbolic except when $x=y$. 
 
 \shunt
 
 Part b:
 
+By the discussion in John, the characteristic curves of this PDE satisfy $\frac{dy}{dx} = \frac{(x+y)/2 \pm (x-y)/2}{y}$. That is, the characteristic curves satisfy either $\frac{dy}{dx} = \frac{x}{y}$ or $\frac{dy}{dx} = \frac{-y}{y}$. Solving the ODEs, we get that the characteristic curves are the hyperbolas given by $y^2-x^2 = c$ for some constant $c$, and the lines $y= -x + c$. %Can trim those down; I don't think the lines satisfy this. 
+
 \shunt
 
 Part c:
+
+First, consider the solutions to $y\la^2 + (x+y)\la + x = 0$; they are $\la_1=-1$ and $\la_2 = -x/y$, by the quadratic formula.
+
+We want $\xi$ and $\eta$ so that $\xi_x = -\la_1 \xi_y$ and $\eta_x = \la_2 \eta_y$. Choosing $\xi=x-y$ and $\eta=y^2-x^2$ works for this. Also, we can solve for $x$ and $y$ in terms of $\xi$ and $\eta$: $x=\frac{\eta-\xi^2}{2\xi}$ and $y= \frac{\eta-\xi^2}{2\xi}-\xi$.
 
 \shunt
 
