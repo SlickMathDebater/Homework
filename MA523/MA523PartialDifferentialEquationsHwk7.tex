@@ -21,13 +21,13 @@
 \rhead{Assignment 7 , Page \thepage}
 
 %Number of Problems		:3
-%Clear					:1
-%Begun					:2
+%Clear					:1,2
+%Begun					:
 %Not started			:3
 %Can complete via book	:
 %Needs Polish			:
 
-%Pomodoros logged		:2.25
+%Pomodoros logged		:10.5
 
 \begin{document}
 
@@ -60,12 +60,12 @@ u(x,y) &\approx x+y+\frac{y^2}{2} \\
 Now, some of the order $2$ (and lower) partials for $u$ at $(\pi/2, 0)$ are:
 
 \begin{align*}
-u(0,0) &= \sin(\pi/2) = 1\\
-u_x(0,0) &= \cos(\pi/2) = 0\\
-u_y(0,0) &= \cos(\pi/2) = 0\\
-u_{xx}(0,0) &= -\sin(\pi/2) = -1\\
-u_{xy}(0,0) &= -\sin(\pi/2) = -1\\
-\end{align*}
+u(\pi/2,0) &= \sin(\pi/2) = 1\\
+u_x(\pi/2,0) &= \cos(\pi/2) = 0\\
+u_y(\pi/2,0) &= \cos(\pi/2) = 0\\
+u_{xx}(\pi/2,0) &= -\sin(\pi/2) = -1\\
+u_{xy}(\pi/2,0) &= -\sin(\pi/2) = -1\\
+\end{align*} %Look over this once more.
 
 Plugging this information into the PDE yields $-1=2$, which is nonsense; thus, $u$ is inconsistent at $(\pi/2,0)$.
 
@@ -98,7 +98,7 @@ That is, $L$ is hyperbolic except when $x=y$.
 
 Part b:
 
-By the discussion in John, the characteristic curves of this PDE satisfy $\frac{dy}{dx} = \frac{(x+y)/2 \pm (x-y)/2}{y}$. That is, the characteristic curves satisfy either $\frac{dy}{dx} = \frac{x}{y}$ or $\frac{dy}{dx} = \frac{-y}{y}$. Solving the ODEs, we get that the characteristic curves are the hyperbolas given by $y^2-x^2 = c$ for some constant $c$, and the lines $y= -x + c$. %Can trim those down; I don't think the lines satisfy this. 
+By the discussion in John, the characteristic curves of this PDE satisfy $\frac{dy}{dx} = \frac{(x+y)/2 \pm (x-y)/2}{y}$. That is, the characteristic curves satisfy either $\frac{dy}{dx} = \frac{x}{y}$ or $\frac{dy}{dx} = \frac{y}{y}$. Solving the ODEs, we get that the characteristic curves are the hyperbolas given by $y^2-x^2 = c$ for some constant $c$, and the lines $y= x + c$. %Can trim those down; I don't think the lines satisfy this. 
 
 \shunt
 
@@ -106,13 +106,72 @@ Part c:
 
 First, consider the solutions to $y\la^2 + (x+y)\la + x = 0$; they are $\la_1=-1$ and $\la_2 = -x/y$, by the quadratic formula.
 
-We want $\xi$ and $\eta$ so that $\xi_x = -\la_1 \xi_y$ and $\eta_x = \la_2 \eta_y$. Choosing $\xi=x-y$ and $\eta=y^2-x^2$ works for this. Also, we can solve for $x$ and $y$ in terms of $\xi$ and $\eta$: $x=\frac{\eta-\xi^2}{2\xi}$ and $y= \frac{\eta-\xi^2}{2\xi}-\xi$.
+We want $\xi$ and $\eta$ so that $\xi_x = -\la_2 \xi_y$ and $\eta_x = \la_1 \eta_y$. Choosing $\eta=y-x$ and $\xi=x^2-y^2$ works for this.
+
+Now, say that $u(x,y)$ solves the PDE, and define $v(\xi,\eta) = v(x^2-y^2,y-x) = u(x,y)$
+
+%Also, we can solve for $x$ and $y$ in terms of $\xi$ and $\eta$: $x=\frac{\eta-\xi^2}{2\xi}$ and $y= \frac{\eta-\xi^2}{2\xi}-\xi$.
+
+Using the Chain Rule, we have:
+
+\begin{align*}
+u_x &= -2yv_\xi + v_\eta\\
+u_y &= 2xv_\xi -v_\eta\\
+u_{xx} &= 2v_\xi + 4x^2v_{\xi\xi} -4x v_{\xi\eta} + v_{\eta\eta} \\
+u_{yy} &= -2v_\xi + 4y^2v_{\xi\xi} -4yv_{\xi\eta} + v_{\eta \eta}\\
+u_{xy} &= -4xyv_{\xi\xi} + 2xv_{\xi\eta} + 2yv_{\xi\eta} +v_{\eta\eta}\\
+\end{align*}
+
+Thus, the PDE reduces to the canonical form, $4v_\xi (y-x) + v_{\xi \eta} (2x^2-4xy-2y^2) =4\eta v_\xi + 2\eta^2 v_{\xi \eta}= 0$. We can apply techniques of ODE to determine that $v_\xi = f(\xi)/\eta^2$, and thus $v(\xi,\eta) = F(\xi)/\eta^2 + G(\eta)$ for some $F$, $G$.
+
+Returning to $x$ and $y$ variables, this means that $u(x,y) = v(x^2-y^2,y-x) = \frac{F(x^2-y^2)}{(y-x)^2} + G(y-x)$ is the general solution of the PDE given.
+
+Using the initial data, we get that $x^4-x = \frac{F(x^2)}{x^2} + G(-x)$ and $1=\frac{2F(x^2)}{x^3} + G'(-x)$. Thus, we have
+
+\begin{align*}
+x/2&=\frac{F(x^2)}{x^2} + G'(-x)(x/2)\\
+x^4-\frac{3}{2}x &= G(-x) - \frac{1}{2}xG'(-x)\\
+x^4+\frac{3}{2}x &= G(x) + \frac{1}{2}xG'(x)\\
+x^5+3x^2 &= 2xG(x) + x^2G'(x)\\
+x^5+3x^2 &= (x^2G(x))'\\
+\frac{x^6}{6}+x^3+C &= x^2G(x)\\
+\frac{\frac{x^6}{6}+x^3+C}{x^2} &= G(x)\\
+\end{align*}
+
+Where $C$ is some unknown constant. Now, plugging this into the other bit of data, we get
+
+\begin{align*}
+x^4-x &= \frac{F(x^2)}{x^2}+ G(-x)\\
+x^4-x &= \frac{F(x^2)}{x^2}+ \frac{\frac{x^6}{6}-x^3+C}{x^2}\\
+x^6-x^3 &= F(x^2)+ \frac{x^6}{6}-x^3+C\\
+\frac{5}{6}x^6-2x^3 -C&= F(x^2)\\
+\frac{5}{6}x^3-2x^{3/2} -C&= F(x)\\
+\end{align*}
+
+So, to summarize, $u(x,y) = \frac{\frac{5}{6}(x^2-y^2)^3-2(x^2-y^2)^{3/2} -C}{(y-x)^2} + \frac{\frac{(y-x)^6}{6}+(y-x)^3+C}{(y-x)^2}$.
+
+After some slight cleaning up, that is
+
+\begin{displaymath}
+u(x,y) = \frac{\frac{5}{6}(x^2-y^2)^3-2(x^2-y^2)^{3/2} +\frac{(y-x)^6}{6}+(y-x)^3}{(y-x)^2}
+\end{displaymath}
 
 \shunt
 
 {\bf Problem 3:}
 
+Consider $u(x,y)$ solving
+
+\begin{align*}
+2yu_x + u_y &= u^2\\
+u(x,0)&= \frac{1}{x^2+1} \text{ for } x \in \R
+\end{align*}
+
 Part a:
+
+We begin by applying the method of characteristics, as in the textbook.
+
+We get that $\dot{x} = 2y$, $\dot{y} = 1$, $\dot{z} = z^2$. Thus, $x(s) = blah$, $y(s) = s$, and $z(s) = blah$. %mimic this when you're more sharp! You're way out of it right now!
 
 \shunt
 
