@@ -22,12 +22,12 @@
 
 %Number of Problems		:3
 %Clear					:1,2
-%Begun					:
-%Not started			:3
+%Begun					:3
+%Not started			:
 %Can complete via book	:
 %Needs Polish			:
 
-%Pomodoros logged		:10.5
+%Pomodoros logged		:11.25
 
 \begin{document}
 
@@ -164,18 +164,22 @@ Consider $u(x,y)$ solving
 
 \begin{align*}
 2yu_x + u_y &= u^2\\
-u(x,0)&= \frac{1}{x^2+1} \text{ for } x \in \R
+u(x,0)&= g(x) = \frac{1}{x^2+1} \text{ for } x \in \R
 \end{align*}
 
 Part a:
 
 We begin by applying the method of characteristics, as in the textbook.
 
-We get that $\dot{x} = 2y$, $\dot{y} = 1$, $\dot{z} = z^2$. Thus, $x(s) = blah$, $y(s) = s$, and $z(s) = blah$. %mimic this when you're more sharp! You're way out of it right now!
+We get that $\dot{x} = 2y$, $\dot{y} = 1$, $\dot{z} = z^2$. Given the parameterization of the curve our initial condition is given on, we get $x(s) = s^2+x_0$, $y(s) = s$, and $z(s) = \frac{g(x_0)}{1-sg(x_0)}$.
+
+Now, fix $(x,y)$ near $y=0$. Then select $s>0$ and $x_0$ so that $(x,y) = (x(s),y(s)) = (s^2+x_0,s)$. In other words, $s=y$ and $x_0 = x-y^2$. Then $u(x,y) = \frac{\frac{1}{1+(x-y^2)^2}}{1-y\frac{1}{1+(x-y^2)^2}} = \frac{1}{1+(x-y^2)^2 -y}$.
 
 \shunt
 
 Part b:
+
+I'm not sure how to handle this problem. 
 
 \shunt
 

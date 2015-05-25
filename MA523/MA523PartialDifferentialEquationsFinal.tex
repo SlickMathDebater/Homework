@@ -1,0 +1,170 @@
+
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{fancyhdr}
+\usepackage{amssymb}
+%\usepackage{mathpazo}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{slashed}
+\usepackage{cancel}
+\usepackage[mathscr]{euscript}
+\usepackage{MaxPackage} %Note: You need MaxPackage installed or in the same folder as your .tex file or something.
+\usepackage{esint}
+
+\newcommand{\colorcomment}[2]{\textcolor{#1}{#2}} %First of these leaves in comments. Second one kills them.
+%\newcommand{\colorcomment}[2]{}
+
+
+\pagestyle{fancy}
+\lhead{Max Jeter}
+\chead{MA523}
+\rhead{Final, Page \thepage}
+
+%Number of Problems		:7
+%Clear					:1,3i,3ii,4a,4b,4c
+%Begun					:
+%Not started			:
+%Can complete via book	:
+%Needs Polish			:2
+
+%Pomodoros logged		:13.25
+
+\begin{document}
+
+{\bf Problem 1:}
+
+Consider the Cauchy problem
+
+\begin{align*}
+xu_y-yu_x = xyu\\
+\Ga = \{(x,y): x=y\}\\
+u(x,y) = xy \text{ for } (x,y) \in \Ga
+\end{align*}
+
+We apply the method outlined in Zachmanoglou;
+
+Consider the system of equations $\frac{dx}{-y}=\frac{dy}{x} = \frac{dz}{xyz}$. This is solved by $u_1=\frac{x^2}{2} + \frac{y^2}{2}$ and $u_2 = \frac{y^2}{2} - \ln(z)$. If we parameterize the curve $\Ga$ by $x=y=t$, we get that $z=t^2$ on this curve, so that $u_1 = t^2$ and $u_2 = \frac{t^2}{2} - \ln(t^2)$ on this curve. Solving for $t$, we get $u_2 + \ln(u_1) - \frac{u_1}{2} =0$. That is, $\frac{y^2}{2} - \ln(z) + \ln(\frac{x^2}{2} + \frac{y^2}{2}) - \frac{\frac{x^2}{2} + \frac{y^2}{2}}{2} = 0$.
+
+Solving for $z$, we get $\ln(z) = \frac{y^2-x^2}{4} +  \ln(\frac{x^2}{2} + \frac{y^2}{2}) $. That is, our solution is 
+
+\begin{displaymath}
+u(x,y) = \frac{1}{2} (x^2+y^2) e^{\frac{y^2-x^2}{4}}
+\end{displaymath}
+
+as is readily checked. The solution is unique: $\Ga$ is noncharacteristic for this PDE except at $(0,0)$, so we have uniqueness/existence except at $(0,0)$ (that is, including $(1,1)$. In other words, we can solve this around any $(x,x) \in \Ga$ except perhaps $(0,0)$. However, note that our solution is valid at $(0,0)$, so we can solve this at any point on $\Ga$. 
+
+\shunt
+
+{\bf Problem 2:}
+
+Let $k(x,y) = \frac{1}{2} e^{-\absval{x-y}}$. Fix $f \in C^2_c(\R)$. Set $w(x) = \frac{1}{2} \int\limits_{-\infty}^\infty e^{-\absval{x-y}} f(y) dy = \frac{1}{2} \int\limits_{-\infty}^\infty e^{-\absval{y}} f(x-y) dy$.
+
+Then $w''(x) =  \frac{1}{2} \int\limits_{-\infty}^\infty e^{-\absval{y}} f''(x-y) dy$, because differentiation under the integral works (as $f$ has compact support). So
+
+\begin{align*}
+w(x) - w''(x) &= \frac{1}{2} \int\limits_{-\infty}^\infty e^{-\absval{y}} f(x-y) dy-\frac{1}{2} \int\limits_{-\infty}^\infty e^{-\absval{y}} f''(x-y) dy\\
+&= \frac{1}{2} \int\limits_{-\infty}^\infty e^{-\absval{y}} f(x-y) dy-\frac{1}{2} \left[ e^{-\absval{y}} f'(x-y) \Bigr|_{-\infty}^\infty - \int\limits_{-\infty}^\infty (e^{-\absval{y}})' f'(x-y) dy \right]\\
+&= \frac{1}{2} \int\limits_{-\infty}^\infty e^{-\absval{y}} f(x-y) dy+\frac{1}{2} \left[\int\limits_{-\infty}^\infty (e^{-\absval{y}})' f'(x-y) dy \right]\\
+&= \frac{1}{2} \int\limits_{-\infty}^\infty e^{-\absval{y}} f(x-y) dy+\frac{1}{2} \left[\int\limits_{-\infty}^0 (e^{y})' f'(x-y) dy + \int\limits_{0}^\infty (e^{-y})' f'(x-y) dy \right]\\
+&= \frac{1}{2} \int\limits_{-\infty}^\infty e^{-\absval{y}} f(x-y) dy+\frac{1}{2} \left[\int\limits_{-\infty}^0 e^{y} f'(x-y) dy - \int\limits_{0}^\infty e^{-y} f'(x-y) dy \right]\\
+&= \frac{1}{2} \int\limits_{-\infty}^\infty e^{-\absval{y}} f(x-y) dy+\frac{1}{2} \Big[e^yf(x-y)\Bigr|_{-\infty}^0 - \int\limits_{-\infty}^0 e^yf(x-y) dy \\
+& \tab - e^{-y}f(x-y)\Bigr|_{0}^\infty - \int\limits_{0}^\infty e^{-y}f(x-y) dy \Big]\\
+&= \frac{1}{2} \int\limits_{-\infty}^\infty e^{-\absval{y}} f(x-y) dy+\frac{1}{2} \left[f(x) - \int\limits_{-\infty}^0 e^yf(x-y) dy +f(x) - \int\limits_{0}^\infty e^{-y}f(x-y) dy \right]\\
+&= \frac{1}{2} \int\limits_{-\infty}^\infty e^{-\absval{y}} f(x-y) dy+\frac{1}{2} \left[2f(x) - \int\limits_{-\infty}^\infty e^{-\absval{y}}f(x-y) dy \right]\\
+&= f(x)
+\end{align*}
+
+as desired. (All steps are are straightforward integration by parts or simply observing that something cancels or is zero.)
+
+\shunt
+
+{\bf Problem 3:}
+
+Let $u(x,t)$ solve
+
+\begin{align*}
+u_tt - \De u = 0 \text{ for } x \in \R^3, t>0\\
+u(x,0) = 0\\
+u_t(x,0) = \chi_{B(0,1)}(x)\\
+\end{align*}
+
+That is, $u(x,t) = \fint_{\partial B(x,t)} t\chi_{B(0,1)}(y) dS(y) = \frac{1}{4\pi t} \int_{\partial B(x,t)} \chi_{B(0,1)}(y) dS(y)$.
+
+Part i:
+
+Now, define $\Om(t) = \{x: u(x,t) \neq 0\}$. Note that $u(x,t) \neq 0$ if $\partial B(x,t) \cap B(0,1)$ is nonempty (this isn't exactly ``obvious'', but if the intersection has at least one point, then it's open in the right topology...and so it contains some area, which means the integral above is nonzero).
+
+Thus, $u(x,t)$ is nonzero when $\absval{y-x} =t$ for some $y$ with $\absval{y} < 1$. That is, $u(x,t)$ is nonzero when $\absval{x} \in (t-1,t+1)$. (This is geometrically clear.) %Double check your geometry. 
+
+So, $\Om(t) = \{x: \absval{x} \in (t-1,t+1)\}$. 
+
+\shunt
+
+Part ii:
+
+Observe that $\int_{\partial B(x,t)} \chi_{B(0,1)}(y) dS(y) \leq 4\pi$; this is because the surface area of a portion of a sphere embedded in the unit ball must have surface area no greater than the surface area of the sphere. Thus, $u(x,t) = \frac{1}{4\pi t} \int_{\partial B(x,t)} \chi_{B(0,1)}(y) dS(y) \leq \frac{1}{t} < \frac{2}{t+1}$ if $t \geq 1$.
+
+Thus, $\sup\limits_{x \in \R^3} u(x,t) \leq  \frac{2}{t+1}$. 
+
+Next, notice that because $t\geq 1$, we can pick $x \in \R^3$ so that $\partial B(x,t)$ contains an equator of $\partial B(0,1)$. The surface area of the segment of $\partial B(x,t)$ that intersects $B(0,1)$ is at least $\pi$, because the surface of least area containing any equator is a circle. Thus, we can choose $x$ so that $u(x,t) = \frac{1}{4\pi t} \int_{\partial B(x,t)} \chi_{B(0,1)}(y) dS(y) \geq \frac{1}{4\pi t} \pi = \frac{1}{4t} < \frac{1}{t+1}$ if $t \geq 1$.
+
+Thus, $\sup\limits_{x \in \R^3} u(x,t) \geq \frac{1}{t+1}$. Combining this with the above,
+
+\begin{displaymath}
+\frac{1}{t+1} \leq \sup\limits_{x \in \R^3} u(x,t) \leq  \frac{2}{t+1}
+\end{displaymath}
+
+as desired. 
+
+%The other direction's easycakes, just pick x correctly and you should win. Split it up into t small and t large, though. 
+
+\shunt
+
+{\bf Problem 4:}
+
+Let $T$ be any rectangle in $\R^2$ with sides parallel to the x and y axes, as pictured in the test. Let $u \in C^2(T) \cap C(\overline{T})$ satisfy $u_{xy} = 0$.
+
+Part a:
+
+Then $u_x = f(x)$ for some differentiable function $f$. Thus, by the fundamental theorem of calculus, $\int\limits_{[B,A]} u_x = u(A) - u(B)$ and $\int\limits_{[D,C]} u_x = u(C) - u(D)$
+
+However, $u_x = f(x)$ does not depend on $y$; this means that $\int\limits_{[D,C]} u_x = \int\limits_{[B,A]} u_x$. That is, $u(A) - u(B) = u(C) - u(D)$.
+
+Rewriting that, we have $u(A) - u(B) - u(C) + u(D) = 0$, as desired.
+
+\shunt
+
+Part b:
+
+Consider the Dirichlet problem,
+
+\begin{align*}
+u_{xy} = 0 \text{ in } T\\
+u(x,y) = g(x,y) \text { on } \partial T
+\end{align*}
+
+Now, a solution to the Dirichlet problem must have that $u \in C^2(T) \cap C(\overline{T})$. So, $u(A) - u(B) - u(C) + u(D) = 0$. However, we can choose $g$ smooth so that this condition is necessarily violated: say, by taking $g(x,y) = xy$ and the points $A=(1,1), B=(0,1), C = (1,0), D= (0,0)$ so that $u(A) - u(B) - u(C) + u(D) = 1+0+0+0=1 \neq 0$. 
+
+Thus, there are $g \in C(\partial T)$ so that the Dirichlet problem has no solution. 
+
+\shunt
+
+Part c:
+
+Consider the Dirchlet problem for this PDE on $B(0,1)$, that is,
+
+Consider the Dirichlet problem,
+
+\begin{align*}
+u_{xy} = 0 \text{ in } B(0,1)\\
+u(x,y) = g(x,y) \text { on } \partial B(0,1)
+\end{align*}
+
+with $g(x,y) = (x+1/\sqrt{2})(y+1/\sqrt{2})$. Let $u$ solve the PDE on the domain $B(0,1)$; then $u$ also solves the PDE on the rectangle with vertices $A=(1/\sqrt{2},1/\sqrt{2}), B=(-1/\sqrt{2},1/\sqrt{2}), C=(1/\sqrt{2},-1/\sqrt{2}), D=(-1/\sqrt{2},-1/\sqrt{2})$. So $u(A) - u(B) - u(C) + u(D) = 0$, by part a. However, we can calculate using the boundary data that $u(A) - u(B) - u(C) + u(D) = (2/\sqrt{2})^2 = 2 \neq 0$, which is a contradiction: there is no solution to the problem. 
+
+That is, the Dirchlet problem is ill-posed on this domain. 
+
+\shunt
+
+\end{document}

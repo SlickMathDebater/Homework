@@ -1,0 +1,52 @@
+
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{fancyhdr}
+\usepackage{amssymb}
+%\usepackage{mathpazo}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{slashed}
+\usepackage{cancel}
+\usepackage[mathscr]{euscript}
+\usepackage{MaxPackage} %Note: You need MaxPackage installed or in the same folder as your .tex file or something.
+
+\newcommand{\colorcomment}[2]{\textcolor{#1}{#2}} %First of these leaves in comments. Second one kills them.
+%\newcommand{\colorcomment}[2]{}
+
+
+\pagestyle{fancy}
+\lhead{Max Jeter}
+\chead{CMS}
+\rhead{Chapter 1, Page \thepage}
+
+%Number of Problems		: 2
+%Clear					:
+%Begun					:
+%Not started			:
+%Can complete via book	:
+%Needs Polish			:
+
+%Pomodoros logged		:
+
+\begin{document}
+
+{\bf Problem 1:}
+
+Let $a \in [0,1]$.
+
+Consider that if $0 < x \leq a \leq 1$, then there's a $y \in [0,1]$ such that $x^y = a$: Take $y = \frac{\ln(a)}{\ln(x)}$ if $x \neq 1$, and $y = 0$ is $x = 1$. 
+
+Now, fix $a \in [0,1]$. Define $x_n = 1/n$ and $y_n = \frac{\ln(a)}{\ln(x)}$. Then $x_n \to 0$ and $y_n \to 0$. Yet $x_n^{y_n} = a$ for all $n$; $x_n^{y_n} \to  a$.
+
+\shunt
+
+{\bf Problem 2:}
+
+If we write $f'(z) = \sum\limits_{n=0}^\infty nc_n z^{n-1}$, the first term is $\frac{0 c_0}{z}$, which goes bad at $z=0$. 
+
+If we write $f'(z) = \sum\limits_{n=0}^\infty f'_n$ (where $f_n(z) = c_nz^n$), then the zeroth term is zero, which is OK.
+
+\shunt
+
+\end{document}

@@ -1,0 +1,111 @@
+
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{fancyhdr}
+\usepackage{amssymb}
+%\usepackage{mathpazo}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{slashed}
+\usepackage{cancel}
+\usepackage[mathscr]{euscript}
+\usepackage{MaxPackage} %Note: You need MaxPackage installed or in the same folder as your .tex file or something.
+
+\newcommand{\colorcomment}[2]{\textcolor{#1}{#2}} %First of these leaves in comments. Second one kills them.
+%\newcommand{\colorcomment}[2]{}
+
+
+\pagestyle{fancy}
+\lhead{Max Jeter}
+\chead{Class}
+\rhead{Assignment, Page \thepage}
+
+%Number of Problems		: 6
+%Clear					:
+%Begun					:
+%Not started			:
+%Can complete via book	:
+%Needs Polish			:
+
+%Pomodoros logged		:
+
+\begin{document}
+
+{\bf Problem 1:}
+
+Consider $f: \C \to \C$ given by $z \mapsto z^2 \sin(1/z)$. 
+
+The ``proof'' that $f$ is differentiable at $0$ relies on this line:
+
+\begin{displaymath}
+\absval{\frac{f(h) - f(0)}{h-0}} = \absval{\frac{h^2 \sin(1/h)}{h}} = \absval{h \sin(1/h)} \leq \absval{h}
+\end{displaymath}
+
+The last step relies on the fact that $\absval{\sin(x)} \leq 1$, which is not true in $\C$; this is where the ``proof'' fails.
+
+\shunt
+
+{\bf Problem 2:}
+
+Part i:
+
+Consider $[b,a]$. Then for all continuous functions $f$, $\int\limits_{[b,a]} f(z) dz = \int\limits_0^1 f(\ga(t)) \ga'(t)dt =  -\int\limits_1^0 f(\ga(t))\ga'(t) dt = -\int\limits_{[a,b]} f(z) dz$, where $\ga: [0,1] \to \C$ is given by $t \mapsto tb + (1-t)a$. That is, $[b,a] = \dot{-}[a,b]$. 
+
+\shunt
+
+Part ii:
+
+Let $\ga_1: [0,1] \to \C$ be a smooth curve in the plane. We can define $\ga_2$ so that $\ga_2 = \dot{-} \ga_1$ by choosing $\ga_2(t) = \ga_1(1-t)$.
+
+\shunt
+
+{\bf Problem 3:}
+
+Let $p \in [a,b]$. Then there is a $T \in [0,1]$ such that $p = aT + (1-T)b$. Now, for all continuous functions $f$,:
+
+\begin{align*}
+\int\limits_{[a,b]} f(z) dz &= \int\limits_0^1 f(\ga(t)) \ga'(t) dt \\
+&= \int\limits_0^T f(\ga(t)) \ga'(t) dt + \int\limits_T^1 f(\ga(t)) \ga'(t) dt \\
+&= \int\limits_{[a,p]} f(z)dz + \int\limits_{[p,b]} f(z)dz \\
+\end{align*}
+
+That is, $[a,b] = [a,p] \dot{+} [p,b]$.
+
+\shunt
+
+{\bf Problem 4:}
+
+Let $T$ be a triangle, with vertices $a,b,c$. Then 
+
+\begin{align*}
+\partial T &= [a,b] \dot{+} [b,c] \dot{+} [c,a] \\
+&= [a,p] \dot{+} [p,b] \dot{+} [b,q] \dot{+} [q,c] \dot{+} [c,r] \dot{+} [r,a]\\
+&= [a,p] \dot{+} [p,b] \dot{+} [b,q] \dot{+} [q,c] \dot{+} [c,r] \dot{+} [r,a] \dot{+}[p,q] \dot{-} [p,q]\dot{+}[q,r] \dot{-} [q,r]\dot{+}[r,p] \dot{-} [r,p]\\
+&= [a,p] \dot{+} [p,b] \dot{+} [b,q] \dot{+} [q,c] \dot{+} [c,r] \dot{+} [r,a] \dot{+}[p,q] \dot{+} [q,p]\dot{+}[q,r] \dot{+} [r,q]\dot{+}[r,p] \dot{+} [p,r]\\
+&= [a,p] \dot{+} [p,r]\dot{+} [r,a] \dot{+} [b,q] \dot{+} [q,p] \dot{+} [p,b]  \dot{+} [q,c] \dot{+} [c,r] \dot{+} [r,q] \dot{+}[p,q] \dot{+}[q,r] \dot{+}[r,p] \\
+&= \partial T_1 \dot{+} \partial T_2 \dot{+} \partial T_3 \dot{+} \partial T_4
+\end{align*}
+
+The above isn't very illuminating. You really should be looking at the picture while doing this proof.
+
+\shunt
+
+{\bf Problem 5:}
+
+Let $V = \C \setminus \{0\}$ and define $f: V \to \C$ by $f(z) = 1/z$.
+
+Then $\int\limits_{\partial T} f(z) dz = 0$ for every triangle $T \subset V$ because $V$ is open and $f$ is differentiable at every point of $V$.
+
+However, there is no $F: V \to \C$ with $F' = f$ in $V$, because $\int\limits_{\partial D_1(0)} f(z) dz = 2 \pi i$. If there were such an $F$, then this integral would have been zero, by Cauchy's Theorem for derivatives.
+
+\shunt
+
+{\bf Problem 6:}
+
+This is really just a mixture of a definition chase and rewriting the previous few lines.
+
+I may fill this in later, but it doesn't seem worth it now.
+
+\shunt
+
+\end{document}

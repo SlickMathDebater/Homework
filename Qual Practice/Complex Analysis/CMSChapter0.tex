@@ -1,0 +1,112 @@
+
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{fancyhdr}
+\usepackage{amssymb}
+%\usepackage{mathpazo}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{slashed}
+\usepackage{cancel}
+\usepackage[mathscr]{euscript}
+\usepackage{MaxPackage} %Note: You need MaxPackage installed or in the same folder as your .tex file or something.
+
+\newcommand{\colorcomment}[2]{\textcolor{#1}{#2}} %First of these leaves in comments. Second one kills them.
+%\newcommand{\colorcomment}[2]{}
+
+
+\pagestyle{fancy}
+\lhead{Max Jeter}
+\chead{CMS}
+\rhead{Chapter 0, Page \thepage}
+
+%Number of Problems		: 8
+%Clear					:
+%Begun					:
+%Not started			:4,5,6,7,8
+%Can complete via book	:
+%Needs Polish			:1,2,3
+
+%Pomodoros logged		:
+
+\begin{document}
+
+{\bf Problem 1:}
+
+Let $f$ be defined in a neighborhood around $z$.
+
+If $f$ is complex-differentiable at $z$, then $\frac{f(z+h) - f(z)}{h} \to a$ as $h \to 0$. Thus, $\absval{f(z+h) - f(z) - ah}\absval{\frac{1}{h-z}} \to 0$. Thus, $f(z+h) - f(z) - ah + o(h) = 0$ as $h \to 0$.
+
+So $f(z+h) = f(z) + ah+ o(h)$ as $h \to 0$, which is our result.
+
+Now, let there be $a$ such that $f(z+h) = f(z) + ah + o(h)$ as $h \to 0$.
+
+Then $\frac{f(z+h) - f(z)}{h} = \frac{ah - o(h)}{h} = a$ as $h \to 0$. That is, $f$ is complex-differentiable at $z$. 
+
+\shunt
+
+{\bf Problem 2:}
+
+Let $f$ be complex-differentiable at $z$. Then $f$ is real-differentiable at $z$. So $f$ is continuous at $z$.
+
+\shunt
+
+{\bf Problem 3:}
+
+Let $T: \C \to \C$ be $\R$-linear.
+
+If $T$ is $\C$-linear, then $T(iz) = iT(z)$ for all $z$, by definition.
+
+If $T(iz) = iT(z)$ for all $z$, then let $x,z \in \C$, with $x = a+bi$. Then we have
+
+\begin{align*}
+T(xz) &= T((a+bi)z)\\
+&= T(az) + T(biz)\\
+&= T(az) + iT(bz)\
+&= (a+ib)T(z)\\
+&= xT(z)\\
+\end{align*}
+
+yielding the desired result; $T$ is $\C$-linear.
+
+So $T$ is $\C$-linear if and only if $T$ is $\R$-linear and $iT(z) = T(iz)$ for all $z \in \C$. 
+
+\shunt
+
+{\bf Problem 4:} %You've done this problem before, and you don't want to do it again.
+
+Suppose that $T: \R^2 \to \R^2$ is the $\R$-linear mapping given by the matrix $\left[\begin{smallmatrix} a&b\\ c&d \end{smallmatrix}\right]$.
+
+If $a=d$ and $b=-c$, then for all $z = x+iy \in \C$, we have
+
+\begin{align*}
+T(iz) &= \left[\begin{smallmatrix} a&b\\ c&d \end{smallmatrix}\right] i\left[\begin{smallmatrix} x\\ y \end{smallmatrix}\right]\\
+&= \left[\begin{smallmatrix} a&b\\ c&d \end{smallmatrix}\right] \left[\begin{smallmatrix} -y\\ x \end{smallmatrix}\right]\\
+&= \left[\begin{smallmatrix} a&b\\ c&d \end{smallmatrix}\right] \left[\begin{smallmatrix} -y\\ x \end{smallmatrix}\right]\\
+\end{align*}
+
+\shunt
+
+{\bf Problem 5,6:}
+
+Somehow, the ``correct'' way to do these is to search for a basic calculus book and copy the proof contained within. The proof of these things isn't illuminating, and I see no reason to actually do them.
+
+{\bf Problem 7:}
+
+Define $f: \C \to \C$ by $f(z) = 0$ if $\text{Re}(z) = 0$ or $\text{Im}(z) = 0$, and $f(z) = 1$ elsewhere.
+
+Then $f$ satisfies the Cauchy-Riemann equations at the origin ($u_x=u_y=v_x=v_y=0$), but $f$ is not complex-differentiable at the origin (as $f$ is not continuous at the origin (if this is not clear, consider the sequence of points $1/n + i/n$ as $n \to \infty$)...and complex-differentiable functions are continuous).
+
+\shunt
+
+{\bf Problem 8:}
+
+Define $f: \C \to \C$ by $f(z) = \absval{z}^2 \sin(1/\absval{z})$ if $z \neq 0$ and $f(z) = 0$ if $z = 0$.
+
+Then $f$ is complex differentiable at $0$: %Just mash through the definition.
+
+Yet, $u_x$ isn't continuous at the origin; %Take derivatives. 
+
+\shunt
+
+\end{document}
