@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.9.27)  5 MAY 2015 10:56
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.9.27)  15 JUN 2015 14:41
 entering extended mode
 **CMSChapter4.tex
 
@@ -180,7 +180,8 @@ LaTeX Font Info:    Overwriting math alphabet `\EuScript' in version `bold'
 )
 ("C:\Users\Lonelight\Desktop\Homework\Qual Practice\Complex Analysis\MaxPackage
 .sty")
-No file CMSChapter4.aux.
+("C:\Users\Lonelight\Desktop\Homework\Qual Practice\Complex Analysis\CMSChapter
+4.aux")
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 32.
 LaTeX Font Info:    ... okay on input line 32.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 32.
@@ -244,13 +245,13 @@ t\base\supp-pdf.mkii
 \Gin@req@height=\dimen123
 \Gin@req@width=\dimen124
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 68.
+LaTeX Font Info:    Try loading font information for U+msa on input line 36.
 
 (C:\Users\Lonelight\Desktop\PortablePrograms\texmakerwin32usb\MiKTeX\tex\latex\
 amsfonts\umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 68.
+LaTeX Font Info:    Try loading font information for U+msb on input line 36.
 
 (C:\Users\Lonelight\Desktop\PortablePrograms\texmakerwin32usb\MiKTeX\tex\latex\
 amsfonts\umsb.fd
@@ -283,13 +284,13 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 ("C:\Users\Lonelight\Desktop\Homework\Qual Practice\Complex Analysis\CMSChapter
 4.aux") ) 
 Here is how much of TeX's memory you used:
- 2837 strings out of 493921
- 39635 string characters out of 3140860
+ 2839 strings out of 493921
+ 39799 string characters out of 3140860
  91813 words of memory out of 3000000
  6111 multiletter control sequences out of 15000+200000
  8592 words of font info for 33 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 33i,10n,43p,478b,196s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 33i,10n,43p,421b,196s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Users/Lonelight/Desktop/PortablePrograms/texmakerwin32usb/MiKTeX/f
 onts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Lonelight/Desktop/PortablePr
 ograms/texmakerwin32usb/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Us
@@ -304,11 +305,14 @@ lePrograms/texmakerwin32usb/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:
 ublic/amsfonts/cm/cmr6.pfb><C:/Users/Lonelight/Desktop/PortablePrograms/texmake
 rwin32usb/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Lonelight/De
 sktop/PortablePrograms/texmakerwin32usb/MiKTeX/fonts/type1/public/amsfonts/cm/c
-msy6.pfb><C:/Users/Lonelight/Desktop/PortablePrograms/texmakerwin32usb/MiKTeX/f
-onts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on CMSChapter4.pdf (3 pages, 103278 bytes).
+msy10.pfb><C:/Users/Lonelight/Desktop/PortablePrograms/texmakerwin32usb/MiKTeX/
+fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/Lonelight/Desktop/PortablePr
+ograms/texmakerwin32usb/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Use
+rs/Lonelight/Desktop/PortablePrograms/texmakerwin32usb/MiKTeX/fonts/type1/publi
+c/amsfonts/symbols/msbm10.pfb>
+Output written on CMSChapter4.pdf (3 pages, 119483 bytes).
 PDF statistics:
- 56 PDF objects out of 1000 (max. 8388607)
+ 64 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

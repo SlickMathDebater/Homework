@@ -33,13 +33,25 @@
 
 {\bf Problem 1:}
 
+Consider $f: \C \to \C$ given by $f(z) = \frac{1}{1+z^2}$. Then $f$ is holomorphic except at $i$ and $-i$. Thus, $f$ is holomorphic on $\R$: $f$ is locally given by a convergent power series.
+
+(It appears that there is also an argument through Real Analysis using part of the proof of one of the many things called ``Taylor's Theorem''. This yields an absolute mess, don't try this.)
+
+Yet, the power series at the origin is given by $g(x) = \sum\limits_{n=0}^\infty (-1)^n x^{2n}$, which diverges when $\absval{x} \geq 1$.
+
 \shunt
 
 {\bf Problem 2:}
 
+Let $A$ and $B$ be open, and $f \in \scrO(A)$ and $g \in \scrO(B)$, with $f=g$ on $A \cap B$. The function $F$ given by $F(z) = f(z)$ if $z \in A$ and $F(z) = g(z)$ if $z \in B$ is holomorphic; it is equal to a holomorphic function in $A$, it is equal to a holomorphic function in $B$.
+
+The fact that $A$ and $B$ are open is used implicitly in the last line; holomorphy is a local property, and this is because we only speak of holomorphic functions on open sets.
+
 \shunt
 
 {\bf Problem 3:}
+
+Consider $f: \overline{D_1(-1)} \to \overline{D_1(-1)}$ given by $f(z) = z$ and $g: \overline{D_1(1)} \to \overline{D_1(1)}$ given by $g(z) = -z$. Then $\overline{D_1(-1)} \cap \overline{D_1(1)} = \{0\}$, $f$ and $g$ agree on the intersection, but no analytic function exists with the desired properties (the function we get out of this isn't differentiable at $0$.)
 
 \shunt
 
@@ -52,6 +64,8 @@ Then $\absval{\frac{f(z)}{e^{\text{Re}(z)}}} = \absval{\frac{f(z)}{e^z}} \leq 1$
 \shunt
 
 {\bf Problem 5:}
+
+Let $f \in H(\C)$, $n \in \N$, and $\absval{f(z)} \leq (1+\absval{z})^n$ for all $z$. Then $f(z) = \sum\limits_{m=0}^\infty c_mz^m$ for some $\anbrack{c_m} \in \C$. Yet, $\absval{f(z)} \leq (1+\absval{z})^n$; if $c_m \neq 0$ for $m > n$, then the estimate breaks down. (Choosing $z \in \R$ incredibly large should get you this result.) Thus, $c_m = 0$ for sufficiently large $m$; $f$ is a polynomial.
 
 \shunt
 
@@ -67,11 +81,13 @@ f/g(w) &= \frac{f(w)}{g(w)}\\
 &= \frac{(w-z)^{n-m}h(w)}{j(w)}\\
 \end{align*}
 
-where $h$ and $j$ holomorphic, and nonzero at $z$. It is clear that this has a limit as $w \to z$; the singularity at $z$ is removable.  
+where $h$ and $j$ holomorphic, and nonzero at $z$. It is clear that this has a limit as $w \to z$ (as $h/j$ has a limit as $w \to z$); the singularity at $z$ is removable.  
 
 \shunt
 
 {\bf Problem 7:}
+
+Let $f \in H(\C)$, and $f(n) = 0$ for all $n \in \Z$. Consider $f(z)/\sin(\pi z)$. Note that $\sin(\pi z)$'s zeroes are all of order $1$; this follows readily from the power series expansion. So, by the prior exercise, $f(z)/\sin(\pi z)$ has only removable singularities.
 
 %This *does* follow trivially from the magic formula for sin, but that's a bad, bad explanation. 
 
@@ -79,9 +95,17 @@ where $h$ and $j$ holomorphic, and nonzero at $z$. It is clear that this has a l
 
 {\bf Problem 8:}
 
+Let $f \in H(\C)$, $f(z+1) = -f(z)$ for all $z$, $f(0) = 0$, and $\absval{f(z)} \leq e^{\pi \absval{\text{Im}(z)}}$ for all $z$.
+
+We can focus on $z$ with $\text{Re}(z) \in [0,1)$, because $f(z+1) = -f(z)$; if the result holds in this region, it holds on all of $\C$. %I have no fucking clue how to proceed.
+
 \shunt
 
 {\bf Problem 9:}
+
+Let $V$ be a connected open set, and $f \in H(V)$.
+
+Pick $a \in V$. For any $b \in D_r(a)$, where $D_r(a) \subset V$, consider that $f(a)-f(b) = \int\limits_{[a,b]} f'(z) dz = 0$. That is, $f$ is constant on a disk around $a$; $f$ is constant, by the uniqueness theorem or the fact that the derivatives all vanish at a point. 
 
 \shunt
 
@@ -97,19 +121,27 @@ We see that $f$ isn't constant, but $f$ is holomorphic and $f'(z) = 0$ for all $
 
 {\bf Problem 11:}
 
+Let $V = \C \setminus \{0\}$.
 
+If there is $f \in H(V)$ with $e^{f(z)} = z$ for all $z \in V$, then $f'(z)e^{f(z)} =zf'(z)= 1$. That is, $f'(z) = 1/z$. Yet, by Cauchy's Theorem for derivatives, we must have that $\int\limits_{\partial D_1(0)} f'(z) dz = 0$, which fails.  
 
 \shunt
 
 {\bf Problem 12:}
 
+Let $V$ be a bounded open subset of $\C$ and $f \in C(\overline{V}) \cap H(V)$. Let $M \geq 0$ and $\absval{f(z)} \leq M$ for all $z \in \partial V$. Consider that $f$ takes a maximum in absolute value; it's a continuous function on a bounded open subset of $\C$. If $f$ attains its maximum on the interior, it is constant. So $f$ attains its maximum on the boundary. Thus, a bound on the boundary also bounds the interior. 
+
 \shunt
 
 {\bf Problem 13:}
 
+Let $V = D_1(0)$. Let $f \in C(\overline{V}) \cap H(V)$, $f(0) = 0$, and $\absval{f(z)} \leq 1$ for all $z \in \overline{V}$. Consider $g(z) = f(z)/z$. Note that the singularity at $0$ is removable; $g(z)$ is a holomorphic function. Moreover, $g(z) = f(z)$ on $\partial D_1(0)$; $\absval{g(z)} \leq 1$ for all $z \in \overline{V}$. So $\absval{f(z)} \leq \absval{z}$ for all $z \in \overline{V}$, as desired. 
+
 \shunt
 
 {\bf Problem 14:}
+
+Let $V = D_1(0)$. Let $f \in H(V)$, $f(0) = 0$, and $\absval{f(z)} \leq 1$ for all $z \in V$. By applying the previous result, we get that $f(rz) \leq \absval{rz}$ for all $z \in V$, $r \in (0,1)$. Taking limits as $r \to 1$ yields the desired result.  
 
 \shunt
 
@@ -118,6 +150,8 @@ We see that $f$ isn't constant, but $f$ is holomorphic and $f'(z) = 0$ for all $
 \shunt
 
 {\bf Problem 16:}
+
+Read the words on the fucking paper.
 
 \shunt
 

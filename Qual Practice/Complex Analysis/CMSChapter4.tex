@@ -33,13 +33,52 @@
 
 {\bf Problem 1:}
 
+Consider $\text{Ind}(\partial D(a,r),a)$. Define $\tha: [0,1] \to \R$ by $x \to 2\pi x$. Note that $\tha$ satisfies $\ga(t) - a = \absval{\ga(t) - a} e^{i \tha (t)}$, where $\ga(t) = re^{2\pi t}+a$. From the definitions, we have
+
+\begin{align*}
+\text{Ind}(\partial D(a,r),a) &= \frac{1}{2\pi} (\tha (1) - \tha(0))\\
+&= \frac{1}{2\pi} (\tha (1) - \tha(0))\\
+&= 1
+\end{align*}
+
 \shunt
 
 {\bf Problem 2:}
 
+Consider $\text{Ind}(\partial D(a,r),z)$. Because $\partial D(a,r)$ is a smooth, closed curve, we have that $\text{Ind}(\partial D(a,r),z) = \frac{1}{2\pi i} \int\limits_{\partial D(a,r)} \frac{dw}{w-z}$.
+
+So,
+
+\begin{align*}
+\text{Ind}(\partial D(a,r),z) &= \frac{1}{2\pi i} \int\limits_{\partial D(a,r)} \frac{dw}{w-z}\\
+&= \frac{1}{2\pi i} \int\limits_{\partial D(z,r)} \frac{dw}{w-z}\\
+&=\frac{1}{2\pi i} 2 \pi i\\
+=1
+\end{align*}
+
+if $z \in D(a,r)$.
+
+And
+
+\begin{align*}
+\text{Ind}(\partial D(a,r),z) &= \frac{1}{2\pi i} \int\limits_{\partial D(a,r)} \frac{dw}{w-z}\\
+&= \frac{1}{2\pi i} \int\limits_{\partial D(z,r)} \frac{dw}{w-z}\\
+&=0
+\end{align*}
+
+if $z \notin D(a,r)$ (as the function is holomorphic on that disk.)
+
+Note that in our definitions, the index isn't defined when $a \in \ga^*$. That is, $\text{Ind}(\partial D(a,r),z)$ isn't defined when $z \in \partial D(a,r)$.
+
 \shunt
 
 {\bf Problem 3:}
+
+Let $V$ be an open subset of the plane and $\Ga$ be a cycle in $V$. Also, let $\Ga$ have the property that $\text{Ind}(\Ga, a) =0$ for all $a \in \C \setminus V$.
+
+Let $f \in H(V)$.
+
+Then define $g(w) = \frac{f(w)}{w-z}$. We know that $g$ is differentiable on $V \setminus \{z\}$. Referring to a figure much like Figure 2.1 and using Theorem 4.10 to show that the ``outer'' chunks of the integral vanish, we get $\int\limits_{\Ga} g(w) dw = \int\limits_{\partial D(z,r)} g(w)dw$ for arbitrarily small $r>0$.
 
 \shunt
 
