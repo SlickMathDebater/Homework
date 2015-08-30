@@ -1,0 +1,175 @@
+
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{fancyhdr}
+\usepackage{amssymb}
+%\usepackage{mathpazo}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{slashed}
+\usepackage{cancel}
+\usepackage[mathscr]{euscript}
+\usepackage{MaxPackage} %Note: You need MaxPackage installed or in the same folder as your .tex file or something.
+
+\newcommand{\colorcomment}[2]{\textcolor{#1}{#2}} %First of these leaves in comments. Second one kills them.
+%\newcommand{\colorcomment}[2]{}
+
+
+\pagestyle{fancy}
+\lhead{Max Jeter}
+\chead{MA571}
+\rhead{Assignment 1, Page \thepage}
+
+%Number of Problems		: 10
+%Clear					: 1a,1b,2g |3,5, |1,6,
+%Begun					:
+%Not started			: 8b|4,9
+%Can complete via book	:
+%Needs Polish			:
+
+%Pomodoros logged		: 5.5
+
+\begin{document}
+
+{\bf Problem 1a, p20:}
+
+Let $f: A \to B$. Let $A_0 \subset A$, $B_0 \subset B$.
+
+Let $a \in A_0$. Then $f(a) \in f(A_0)$. Now, $a \in f^{-1}(f(A_0))$ if there is $a' \in f(A_0)$ with $f(a) = a'$. Because $f(a) \in f(A_0)$, there is $a' \in f(A_0)$ with $f(a) = a'$. So $a \in f^{-1}(f(A_0))$.
+
+So, $A_0 \subset f^{-1}(f(A_0))$.
+
+Now, let $f$ be injective and $a \in f^{-1}(f(A_0))$. Then there is $b \in f(A_0)$ with $f(a) = b$. Now, because $b \in f(A_0)$, we have that $b = f(a')$ for some $a' \in A_0$. Because $f$ is injective, $f(a) = b = f(a')$ implies that $a = a'$. So, because $a' \in A_0$, this means that $a \in A_0$.
+
+So, $A_0 \supset f^{-1}(f(A_0))$ if $f$ is injective. So, $A_0 = f^{-1}(f(A_0))$ if $f$ is injective.
+
+\shunt
+
+{\bf Problem 1b, p20:}
+
+Let $f: A \to B$. Let $A_0 \subset A$, $B_0 \subset B$.
+
+Let $b \in f(f^{-1}(B_0))$. Then there is an $a \in f^{-1}(B_0)$ with $f(a) = b$. Now, because $a \in f^{-1}(B_0)$, there is $b' \in B_0$ with $f(a) = b'$. Now, $f$ is a function. So $f(a) = b' = b$. So $b \in B_0$.
+
+So, $f(f^{-1}(B_0)) \subset B_0$.
+
+Now, let $f$ be surjective and $b \in B_0$. Then there is $a \in A$ with $f(a) = b$, as $f$ is surjective. That is, $f^{-1}(B_0)$ is nonempty, and there is $a \in f^{-1}(B_0)$ with $f(a) = b$. Now, $f(a) = b$, so $b \in f(f^{-1}(B_0))$.  %Finish this up.
+
+So, $f(f^{-1}(B_0)) \supset B_0$ if $f$ is surjective. So, $f(f^{-1}(B_0)) = B_0$ if $f$ is surjective.
+
+\shunt
+
+{\bf Problem 2g, p20:}
+
+Let $f: A \to B$ and let $A_i \subset A$ and $B_i \subset B$ for $i = 0 $ and $i = 1$.
+
+Let $b \in f(A_0 \cap A_1)$. Then there is $a \in A_0 \cap A_1$ with $f(a) = b$. So there is $a \in A_0$ with $f(a) = b$; that is, $b \in f(A_0)$. Also there is $a \in A_1$ with $f(a) = b$; that is, $b \in f(A_1)$. So $b \in f(A_0) \cap f(A_1)$, because $b \in f(A_0)$ and $b \in f(A_1)$.
+
+So, $f(A_0 \cap A_1) \subset f(A_0) \cap f(A_1)$.
+
+Now, let $f$ be injective and $b \in f(A_0) \cap f(A_1)$. Then there is $a_0 \in A_0$ with $f(a_0) = b$. Also, there is $a_1 \in A_0$ with $f(a_1) = b$. Because $f$ is injective, $f(a_0) = b = f(a_1)$ implies that $a_0=a_1$. So $a_0 \in A_1$. So $a_0 \in A_0 \cap A_1$. So because $f(a_0) = b$, we have that $b = f(a)$ for some $a \in A_0 \cap A_1$. So $b \in f(A_0 \cap A_1)$. 
+
+So, $f(A_0 \cap A_1) \supset f(A_0) \cap f(A_1)$ if $f$ is injective. So if $f$ is injective, $f(A_0 \cap A_1) = f(A_0) \cap f(A_1)$.
+
+\shunt
+
+{\bf Problem 3, p83:}
+
+Let $X$ be a set. Consider the collection $\scrT_C$, the collection of all subsets $U$ of $X$ such that $X \setminus U$  is countable or all of $X$.
+
+Then $\emptyset \in \scrT_C$, as $X \setminus \emptyset = X$, which is all of $X$.
+Also, $X \in \scrT_C$, as $X \setminus X = \emptyset$, which is countable. 
+
+That is, $\emptyset \in \scrT_C$ and $X \in \scrT_C$.
+
+Next, let $\scrC \subset \scrT_C$ be nonempty. If the only element of $\scrC$ is $\emptyset$, then $X \setminus \bigcup\limits_{U \in \scrC} U = X$, so that $\bigcup\limits_{U \in \scrC} U \in \scrT_C$. Else, pick a nonempty element of $\scrC$; call it $U_0$. Then $\bigcup\limits_{U \in \scrC} U \supset U_0$, so $X \setminus U_0 \supset X \setminus \bigcup\limits_{U \in \scrC} U$. Because $X \setminus U_0$ is finite (as $U_0 \in \scrT_C$ so that $X \setminus U_0$ is either finite or all of $X$, and $X \setminus U_0$ is not all of $X$, as $U_0$ is nonempty), this means that $ X \setminus \bigcup\limits_{U \in \scrC} U$ is finite. That is, $ X \setminus \bigcup\limits_{U \in \scrC} U \in \scrT_C$.
+
+That is, arbitrary unions of elements in $\scrT_C$ are contained in $\scrT_C$.
+
+Last, let $\{U_0, U_1, \ldots U_n \} \subset \scrT_C$. If $\bigcap\limits_{i=0}^n U_i = \emptyset$, then $X \setminus \bigcap\limits_{i=0}^n U_i = X \setminus \emptyset = X$. Else, recall that $X \setminus \bigcap\limits_{i=0}^n U_i = \bigcup\limits_{i=0}^n X \setminus U_i$, which is a finite union of finite sets (None of $X \setminus U_i$ are all of $X$, else $\bigcap\limits_{i=0}^n U_i = \emptyset$). So, $X \setminus \bigcap\limits_{i=0}^n U_i $ is finite, so that $\bigcap\limits_{i=0}^n U_i \in \scrT_C$.
+
+That is, finite intersections of elements in $\scrT_C$ are contained in $\scrT_C$.
+
+So $\scrT_C$ is a topology.
+
+\shunt
+
+{\bf Problem 5, p83:}
+
+Let $\scrA$ be a basis for a topology, call it $\scrT$, on $X$.
+
+Consider $\scrT' = \bigcap\limits_{\scrT'': \scrT'' \supset \scrA} \scrT''$; the intersection of all topologies containing $\scrA$.
+
+First, $\scrT' \subset \scrT$: Let $U \in \scrT'$. Then $U$ is in the intersection of all topologies containing $\scrA$. So $U$ is in any topology containing $\scrA$. Now, $\scrT$ is a topology containing $\scrA$. So $\scrA \in \scrT$.
+
+Next, $\scrT \subset \scrT'$: Let $U \in \scrT$, let $\scrT''$ be a topology containing $\scrA$. Then $U$ is a union of elements in $\scrA$. So $U$ is a union of elements in $\scrT''$. So $U \in \scrT''$. So $U$ is in any topology containing $\scrA$. So $U$ is in the intersection of all topologies containing $\scrA$. So $U \in \scrT'$.
+
+So, $\scrT = \scrT'$. So, the topology generated by $\scrA$ is the intersection of all topologies containing $\scrA$.
+
+%Next chunk
+
+Next, let $\scrA$ be a subbasis for a topology, call it $\scrT$, on $X$.
+
+Consider $\scrT' = \bigcap\limits_{\scrT'': \scrT'' \supset \scrA} \scrT''$; the intersection of all topologies containing $\scrA$.
+
+First, $\scrT' \subset \scrT$: Let $U \in \scrT'$. Then $U$ is in the intersection of all topologies containing $\scrA$. So $U$ is in any topology containing $\scrA$. Now, $\scrT$ is a topology containing $\scrA$. So $\scrA \in \scrT$.
+
+Next, $\scrT \subset \scrT'$: Let $U \in \scrT$, let $\scrT''$ be a topology containing $\scrA$.  Then $U$ is a union of finite intersections of elements of $\scrA$. So $U$ is a union of finite intersections of elements of $\scrT''$. So $U \in \scrT''$. So $U$ is in any topology containing $\scrA$. So $U$ is in the intersection of all topologies containing $\scrA$. So $U \in \scrT'$.
+
+So, $\scrT = \scrT'$. So, the topology generated by $\scrA$ is the intersection of all topologies containing $\scrA$.
+
+\shunt
+
+{\bf Problem 8b, p83:}
+
+Consider $\scrC = \{[a,b): a<b, a, b \in \Q\}$.
+
+For each $x \in \R$, $[\floor{x},\ceil{x+1}) \in \scrC$ contains $x$.
+
+That is, for each $x \in \R$, there is a $B \in \scrC$ containing $x$.
+
+Now, let $B_1, B_2 \in \scrC$; say that $B_1 = [a,b)$ and $B_2 = [c,d)$ with $a,b,c,d \in \Q$. Let $x \in B_1 \cap B_2$. Define $e = \max(a,c)$ and $f = \min(b,d)$. Then it is clear that $[e_x,f_x) = B_1 \cap B_2$ (so that $[e_x,f_x) \subset B_1 \cap B_2$), and also $[e,f)$ contains $x$. 
+
+%Prove this is a basis, and it generates a topology different from the lower limit topology.
+
+\shunt
+
+{\bf Problem 1, p91:}
+
+Let $Y$ be a subspace of $X$, and $A \subset Y$. Let $\scrT$ be the topology $A$ inherits as a subspace of $Y$, and $\scrT'$ be the topology $A$ inherits as a subspace of $X$.
+
+First, $\scrT \subset \scrT'$: Let $U \in \scrT$. Then $U = A \cap U'$ for some open $U'$ in $X$. Now, $A = A \cap Y$, so $U = A \cap Y \cap U' = A \cap (Y \cap U')$. That is, $U = A \cap U''$ for some $U''$ open in $Y$; $U \in \scrT'$.
+
+Next, $\scrT' \subset \scrT$: Let $U \in \scrT'$. Then $U = A \cap U'$ for some open $U'$ in $Y$. Now, $U' = Y \cap U''$ for some open $U''$ in $X$, so $U = A \cap Y \cap U'' = A \cap U''$. That is, $U = A \cap U''$ for some $U''$ open in $X$; $U \in \scrT$.
+
+So, $\scrT = \scrT'$.
+
+\shunt
+
+{\bf Problem 4, p91:}
+
+%Prove: projections are open maps.
+
+\shunt
+
+{\bf Problem 6, p91:}
+
+Consider $\scrB=\{(a,b) \times (c,d) : a<b, c<d, \{a,b,c,d\} \subset \Q\}$. 
+
+For each $(x,y) \in \R^2$, the element $(\floor{x-1}, \ceil{x+1}) \times (\floor{y-1},\ceil{y+1}) \in \scrB$ contains $(x,y)$. (Where $\floor{x}$ and $\ceil{x}$ are the standard floor and ceiling functions.)
+
+That is, for each $(x,y) \in \R^2$, at least one element in $\scrB$ contains $(x,y)$.
+
+Next, let $B_1, B_2 \in \scrB$, with $B_1 =(a,b) \times (c,d)$ and $B_2 =(e,f) \times (g,h)$. Define $i = \max(a,e)$, $j = \min(b,f)$, $k =\max(c,g)$, and $l = \min(d,h)$. Then it is clear that $B_1 \cap B_2 = (i,j) \times (k,l) \in \scrB$.  Let $x \in B_1 \cap B_2$. Then $B_3 = (i,j) \times (k,l)$ contains $x$ and $B_3 \subset B_1 \cap B_2$.
+
+That is, if $B_1, B_2 \in \scrB$ and $x \in B_1 \cap B_2$, there is a $B_3 \in \scrB$ with $x \in B_3$ and $B_3 \subset B_1 \cap B_2$.
+
+Thus, $\scrB$ is a basis.
+
+\shunt
+
+{\bf Problem 9, p91:}
+
+\shunt
+
+\end{document}

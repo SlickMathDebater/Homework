@@ -1,0 +1,84 @@
+
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{fancyhdr}
+\usepackage{amssymb}
+%\usepackage{mathpazo}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{slashed}
+\usepackage{cancel}
+\usepackage[mathscr]{euscript}
+\usepackage{MaxPackage} %Note: You need MaxPackage installed or in the same folder as your .tex file or something.
+
+\newcommand{\colorcomment}[2]{\textcolor{#1}{#2}} %First of these leaves in comments. Second one kills them.
+%\newcommand{\colorcomment}[2]{}
+
+
+\pagestyle{fancy}
+\lhead{Max Jeter}
+\chead{MA642}
+\rhead{Assignment 1, Page \thepage}
+
+%Number of Problems		: 
+%Clear					:
+%Begun					:7
+%Not started			:
+%Can complete via book	:
+%Needs Polish			:9
+
+%Pomodoros logged		:
+
+\begin{document}
+
+{\bf Problem 7:}
+
+Let $u \in C^0(\Om)$.
+
+Let $u$ be subharmonic in $\Om$. Then $u$ satisfies the mean value properties for any ball compactly contained in $\Om$; it is clear that this implies that $u$ satisfies the mean value properties locally.
+
+Now, let $u$ satisfy the mean value properties locally. Fix $y \in \Om$. Then there is a $\de >0$ such that $u(y) \leq \frac{1}{n\om_nR^{n-1}} \int\limits_{\partial B_{R}(y)} u ds$ for all $R \leq \de$. 
+
+So, on $B_R(y)$, we have:
+
+\begin{align*}
+u(y) &\leq \frac{1}{n\om_nR^{n-1}} \int\limits_{\partial B_{R}(y)} u ds\\
+\end{align*} %This isn't actually where you start. You know that you have to do something weird, but you're not sure *what*.
+
+\shunt
+
+{\bf Problem 9:}
+
+Let $u \in C^2(\Om)$.
+
+First, $\De u \geq 0$ in $\Om$, if and only if $u$ is subharmonic in $\Om$, by definition. 
+
+Next: let $u$ be subharmonic in $\Om$. Then $\De u \geq 0$ in $\Om$. Let $\phi \geq 0$ be a function in $C^2_c(\Om)$. So 
+
+\begin{align*}
+\int\limits_{\Om} u \De \phi dx &= \int\limits_{\Om} \phi \De u dx + \int\limits_{\partial \Om} u \partial_{\nu} \phi - \phi \partial_{\nu} u dS \\
+&= \int\limits_{\Om} \phi \De u dx \text{ (Note: $\phi$ vanishes on $\partial \Om$, as $\phi$ has compact support.)} \\
+&\geq 0 \\
+\end{align*}
+
+That is, $u$ is weakly subharmonic if $u$ is subharmonic.
+
+Now, let $u$ be weakly subharmonic. Then for any $\phi \geq 0$ with $\phi \in C^2_c(\Om)$, we have
+
+\begin{align*}
+\int\limits_{\Om} u \De \phi dx &= \int\limits_{\Om} \phi \De u dx + \int\limits_{\partial \Om} u \partial_{\nu} \phi - \phi \partial_{\nu} u dS \\
+&= \int\limits_{\Om} \phi \De u dx \\
+&\geq 0
+\end{align*}
+
+Thus, $\De u \geq 0$ (Else, there's a point $y$ with $\De u(y) < 0$, so there's a neighborhood around $y$ with $\De u(y) < 0$, so picking $\phi >0$ on that neighborhood and $\phi = 0$ outside that neighborhood will yield a contradiction.). So, $u$ is subharmonic.
+
+That is, $u$ is subharmonic if $u$ is weakly subharmonic.
+
+That is, $u$ is subharmonic if and only if $u$ is weakly subharmonic.
+
+Thus, the three conditions given are equivalent.
+
+\shunt
+
+\end{document}

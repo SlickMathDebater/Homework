@@ -1,0 +1,79 @@
+
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{fancyhdr}
+\usepackage{amssymb}
+%\usepackage{mathpazo}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{slashed}
+\usepackage{cancel}
+\usepackage[mathscr]{euscript}
+\usepackage{MaxPackage} %Note: You need MaxPackage installed or in the same folder as your .tex file or something.
+
+\newcommand{\colorcomment}[2]{\textcolor{#1}{#2}} %First of these leaves in comments. Second one kills them.
+%\newcommand{\colorcomment}[2]{}
+
+
+\pagestyle{fancy}
+\lhead{Linear Algebra}
+\chead{MA265}
+\rhead{Quiz 10, 7/28/2015}
+
+%Number of Problems		: 
+%Clear					:
+%Begun					:
+%Not started			:
+%Can complete via book	:
+%Needs Polish			:
+
+%Pomodoros logged		:
+
+\begin{document}
+
+{\Large{\bf Problem 1:}} Let \[ A= \left( \begin{array}{ccc}0 & 1 \\ -1 & 0\end{array} \right)\]
+
+a) Find $A$'s characteristic polynomial, real eigenvalues, and bases for their associated eigenspaces.
+
+$\la^2 +1 =0$, no real eigenvalues.
+
+b) What is the row-reduced echelon form of $A$? For rref($A$), find the characteristic polynomial, real eigenvalues, and bases for their associated eigenspaces?
+
+$(\la -1)^2$, eigenvalue is $1$, any basis for $\R^2$ works. 
+\shunt
+
+{\Large{\bf Problem 2:}}Define:
+
+a) Inner Product:
+
+I had originally wanted:
+
+``An inner product on $V$ is a function (written $(\cdot, \cdot)$) from $V^2$ to $\R$ such that for all $u,v,w \in V$, $c \in \R$:
+
+1) $(u,u) \geq 0$, $(u,u)=0$ if and only if $u = 0_V$
+
+2) $(v,u) = (u,v)$
+
+3) $(u+v,w) = (u,w) + (v,w)$
+
+4) $(cu,v) = c(u,v)$''
+
+I also took the definition of ``dot product'' in $\R^n$ (think: $\sum a_mb_m$), as only one person got close to the correct answer.
+
+b) Orthonormal: A set of vectors, $S$, in $V$ is orthonormal if each pair of vectors is orthogonal and $\norm{u} = 1$ for all $u \in S$.
+
+c) Eigenvalue: We say that $\la$ is an eigenvalue of a matrix (or linear transformation) if $Ax=\la x$ (or $T(x) = \la x$ for some vector $x$.
+
+d) Eigenvector: The eigenvectors associated with an eigenvalue, $la$, are the vectors $x$ satisfying $Ax=\la x$ (or $T(x) = \la x$).
+
+Anything close to ``the definition in the book'' gets points. I tend to give a lot of leeway assigning points for these problems.
+
+\shunt
+
+{\Large{\bf Problem 3:}} Must a matrix with real entries have any real eigenvalues? 
+
+No. See problem 1 for a counterexample.
+
+Points aren't given without an explanation of some sort.
+
+\end{document}

@@ -1,0 +1,55 @@
+
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{fancyhdr}
+\usepackage{amssymb}
+%\usepackage{mathpazo}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{slashed}
+\usepackage{cancel}
+\usepackage[mathscr]{euscript}
+\usepackage{MaxPackage} %Note: You need MaxPackage installed or in the same folder as your .tex file or something.
+
+\newcommand{\colorcomment}[2]{\textcolor{#1}{#2}} %First of these leaves in comments. Second one kills them.
+%\newcommand{\colorcomment}[2]{}
+
+
+\pagestyle{fancy}
+\lhead{Linear Algebra}
+\chead{MA265}
+\rhead{Quiz 2, 6/23/2015}
+
+%Number of Problems		: 
+%Clear					:
+%Begun					:
+%Not started			:
+%Can complete via book	:
+%Needs Polish			:
+
+%Pomodoros logged		:
+
+\begin{document}
+
+{\Large{\bf Problem 1:}} Let $A$ be a $2$x$2$ matrix such that det($A$)$= 6$ and \[ adj(A)= \left( \begin{array}{ccc}1 & 2  \\
+4 & 6  \end{array} \right)\]
+
+Compute $A^{-1}$
+
+\shunt
+
+{\Large{\bf Problem 2:}} Using Gaussian elimination, it takes approximately $n^3/3$ operations to solve the problem $Ax=b$, where $A$ is an $n$x$n$ matrix. A modern CPU (for example, an overclocked AMD FX 6300) can perform an operation approximately once every 0.25 nanoseconds (1 nanosecond is $10^{-9}$ seconds).
+
+Approximately how long will it take a modern computer to solve this problem, given...
+
+a) a $100$x$100$ matrix?
+
+b) a $100,000$x$100,000$ matrix?
+
+c) a $1,000,000$x$1,000,000$ matrix?
+
+(Hint: $1/12$ is approximately $0.083$, there are $3600$ seconds in an hour, and there are $365$ days in a year.)
+
+(Hint 2: You should feel very comfortable giving a very rough answer.)
+
+\end{document}
