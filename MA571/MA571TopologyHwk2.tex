@@ -1,0 +1,208 @@
+
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{fancyhdr}
+\usepackage{amssymb}
+%\usepackage{mathpazo}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{slashed}
+\usepackage{cancel}
+\usepackage[mathscr]{euscript}
+\usepackage{MaxPackage} %Note: You need MaxPackage installed or in the same folder as your .tex file or something.
+
+\newcommand{\colorcomment}[2]{\textcolor{#1}{#2}} %First of these leaves in comments. Second one kills them.
+%\newcommand{\colorcomment}[2]{}
+
+
+\pagestyle{fancy}
+\lhead{Max Jeter}
+\chead{MA571}
+\rhead{Assignment 1, Page \thepage}
+
+%Number of Problems		: 11
+%Clear					: 3,6b,6c,7,9,10,13 |8a,8b| A
+%Begun					: 
+%Not started			:  
+%Can complete via book	:
+%Needs Polish			: |4|
+
+%Pomodoros logged		: 13
+
+\begin{document}
+
+{\bf Problem 3, p100:}
+
+Let $A$ be closed in $X$ and $B$ be closed in $Y$.
+
+Then $X \setminus A$ is open in $X$ and $Y \setminus B$ is open in $Y$.
+
+So  $(X \setminus A) \times Y$ and $X \times (Y \setminus B)$ are open in $X \times Y$; these are products of open sets.
+
+So , $X \times Y \setminus (X \setminus A) \times Y$ and $X \times Y \setminus X \times (Y \setminus B)$ are closed in $X \times Y$ by definition.
+
+Now, $X \times Y \setminus (X \setminus A) \times Y = A \times Y$, and $X \times Y \setminus X \times (Y \setminus B) = X \times B$; $X \times Y \setminus (X \setminus A) \times Y = \{(x,y) \in X \times Y: (x,y) \notin (X \setminus A) \times Y\} = \{(x,y) \in X \times Y: x \notin (X \setminus A) \} = \{(x,y) \in X \times Y: x \in A \} = A \times Y$. Similarly, $X \times Y \setminus X \times (Y \setminus B) = \{(x,y) \in X \times Y: (x,y) \notin X \times (Y \setminus B)\} = \{(x,y) \in X \times Y: y \notin (Y \setminus B) \} = \{(x,y) \in X \times Y: y \in B \} = X \times B$.
+
+So,  $A \times Y \cap X \times B$ is closed. But $A \times Y \cap X \times B = A \times B$. So $A \times B$ is closed, as desired.
+
+\shunt
+
+{\bf Problem 6b, p100:}
+
+Let $A, B$ be subsets of a space, $X$.
+
+First: if $A \subset B$, then $\overline{A} \subset \overline{B}$, because if $x \in \overline{A}$, then every neighborhood of $x$ intersects $A$, so every neighborhood of $x$ intersects $B$, so $x \in \overline{B}$. 
+
+Next, note that $\overline{A} \cup \overline{B}$ is closed; it's a union of closed sets. Moreover, $A \cup B \subset \overline{A} \cup \overline{B}$, because $A \subset \overline{A}$ and $B \subset \overline{B}$. Now, $\overline{A \cup B} \subset \overline{A} \cup \overline{B}$, because $\overline{A} \cup \overline{B}$ is a closed set containing $A \cup B$, and $\overline{A \cup B}$ is the intersection of all closed sets containing $A \cup B$.
+
+Next, let $x \in \overline{A} \cup \overline{B}$. Then $x \in \overline{A}$. So $x \in \overline{A \cup B}$, because $A \subset A \cup B$. That is, $\overline{A} \cup \overline{B} \subset \overline{A \cup B}$. 
+
+So, $\overline{A} \cup \overline{B} = \overline{A \cup B}$. 
+
+\shunt
+
+{\bf Problem 6c, p100:}
+
+Let $A_\al$ be a collection of subsets of a space, $X$.
+
+Let $x \in \bigcup \overline{A_\al}$. Then $x \in \overline{A_\al}$ for some $\al$. So every neighborhood of $x$ intersects $A_\al$ for some $\al$, by theorem 17.5. So every neighborhood of $x$ intersects $\bigcup A_\al$. So $x \in \overline{\bigcup A_\al}$. 
+
+That is, $\bigcup \overline{A_\al} \subset \overline{\bigcup A_\al}$.
+
+Equality fails; consider $\R$ with the standard topology. Then $(1/n,1]$ has closure $[1/n,1]$ for each $n \in \N$ (as in Example 6 on p96). Now, $0 \notin \bigcup\limits_{n=2}^\infty \overline{(1/n,1]} = \bigcup\limits_{n=2}^\infty [1/n,1]$, else $0 \in [1/n,1]$ for some $n \in \N$, which is obvious nonsense. But $0 \in \overline{\bigcup\limits_{n=2}^\infty (1/n,1]}$; every neighborhood of zero contains $2/n$ for some $n \in \N$ larger than $2$ (this is a basic fact about the real numbers). So every neighborhood of zero intersects $(1/n,1]$ for some $n \in \N$. So every neighborhood of zero intersects $\bigcup\limits_{n=2}^\infty (1/n,1]$, so by theorem 17.5, $0 \in \overline{\bigcup\limits_{n=2}^\infty (1/n,1]}$.
+
+\shunt
+
+{\bf Problem 7, p100:}
+
+It fails here: ``...$U$ must intersect some $A_\al$, so that $x$ must belong to the closure of some $A_\al$.'' We need a little more power than we're given: We have that every neighborhood intersects some $A_\al$, which may depend on $U$. However, we need the $A_\al$ to be fixed with respect to $U$ to apply theorem 17.5.
+
+This is the line where I would make a joke about the looseness of the word ``criticize'' in the problem statement, but I am too unfunny to pull this off.
+
+\shunt
+
+{\bf Problem 9, p100:}
+
+Let $A \subset X$ and $B \subset Y$.
+
+First, note that $\overline{A}$ and $\overline{B}$ are closed, as they are the closures of some set. Now, $\overline{A} \times \overline{B}$ is closed, by exercise 3 (done above, in this homework set). Moreover, note that $\overline{A} \times \overline{B}$ contains $A \times B$, as $A \subset \overline{A}$ and $B\subset \overline{B}$. So, $\overline{A} \times \overline{B}$ is a closed set containing $A \times B$; $\overline{A \times B} \subset \overline{A} \times \overline{B}$, because $\overline{A \times B}$ is the intersection of all closed sets containing $A \times B$.
+
+Let $(x,y) \in \overline{A} \times \overline{B}$. Then $x \in \overline{A}$ and $y \in \overline{B}$. So every neighborhood of $x$ intersects $A$ and every neighborhood of $y$ intersects $B$, by theorem 17.5. So every neighborhood of $(x,y)$ intersects $A \times Y$ and $X \times B$. So every neighborhood of $(x,y)$ intersects $A \times B$, because $A \times Y \cap X \times B = A \times B$. So $(x,y) \in \overline{A \times B}$, by theorem 17.5.
+
+\shunt
+
+{\bf Problem 10, p100:}
+
+Let $X$ be an ordered set, and give $X$ the order topology.
+
+Let $a, b \in X$, with $a \neq b$. Without loss of generality, say that $a < b$.
+
+Either $a$ is the smallest element of $X$ or not. 
+
+Either $b$ is the largest element of $X$ or not.
+
+Either there is a $c \in X$ with $a < c < b$ or not.
+
+If $a$ is not the smallest element of $X$, $b$ is not the largest element of $X$, and there is not $c \in X$ with $a < c < b$, then there are $A$ and $B$ with $A< a$ and $b < B$. The sets $(A,b)$ and $(a,B)$ have $a \in (A,b)$ (as $A < a < b$) and $b \in (a,B)$ (as $a<b<B$). Also, $(A,b) \cap (a,B) = (a,b)=\emptyset$; that is, the points $a$ and $b$ are separated by open sets in the order topology. %Case 000
+
+If $a$ is the smallest element of $X$, $b$ is not the largest element of $X$, and there is not $c \in X$ with $a < c < b$, then there is $B$ with $b < B$. The sets $[a,b)$ and $(a,B)$ have $a \in [a,b)$ and $b \in (a,B)$ (as $a<b<B$). Also, $[a,b) \cap (a,B) = (a,b)=\emptyset$; that is, the points $a$ and $b$ are separated by open sets in the order topology. %Case 001
+
+If $a$ is not the smallest element of $X$, $b$ is the largest element of $X$, and there is not $c \in X$ with $a < c < b$, then there is $A$ with $A< a$. The sets $(A,b)$ and $(a,b]$ have $a \in (A,b)$ (as $A < a < b$) and $b \in (a,b]$. Also, $(A,b) \cap (a,b] = (a,b)= \emptyset$; that is, the points $a$ and $b$ are separated by open sets in the order topology. %Case 010
+
+If $a$ is the smallest element of $X$, $b$ is the largest element of $X$, and there is not $c \in X$ with $a < c < b$, then the sets $[a,b)$ and $(a,b]$ have $a \in [a,b)$ and $b \in (a,b]$. Also, $[a,b) \cap (a,b] = (a,b)=\emptyset$; that is, the points $a$ and $b$ are separated by open sets in the order topology. %Case 011
+
+If $a$ is not the smallest element of $X$, $b$ is not the largest element of $X$, and there is $c \in X$ with $a < c < b$, then pick some such $c$. Now, there are $A$ and $B$ with $A< a$ and $b < B$. The sets $(A,c)$ and $(c,B)$ have $a \in (A,c)$ (as $A < a < c$) and $b \in (c,B)$ (as $c<b<B$). Also, $(A,c) \cap (c,B) = \emptyset$; that is, the points $a$ and $b$ are separated by open sets in the order topology. %Case 100
+
+If $a$ is the smallest element of $X$, $b$ is not the largest element of $X$, and there is $c \in X$ with $a < c < b$, then pick some such $c$. Now, there is $B$ with $b < B$. The sets $[a,c)$ and $(c,B)$ have $a \in [a,c)$ and $b \in (c,B)$ (as $c<b<B$). Also, $[a,c) \cap (c,B) = \emptyset$; that is, the points $a$ and $b$ are separated by open sets in the order topology. %Case 101
+
+If $a$ is not the smallest element of $X$, $b$ is the largest element of $X$, and there is $c \in X$ with $a < c < b$, then pick some such $c$. Now, there is $A$ with $A< a$. The sets $(A,c)$ and $(c,b]$ have $a \in (A,c)$ (as $A < a < c$) and $b \in (c,b]$. Also, $(A,c) \cap (c,b] = \emptyset$; that is, the points $a$ and $b$ are separated by open sets in the order topology. %Case 110
+
+If $a$ is the smallest element of $X$, $b$ is the largest element of $X$, and there is $c \in X$ with $a < c < b$, then pick some such $c$. Now, the sets $[a,c)$ and $(c,b]$ have $a \in [a,c)$ and $b \in (c,b]$. Also, $[a,c) \cap (c,b] = \emptyset$; that is, the points $a$ and $b$ are separated by open sets in the order topology. %Case 111
+
+So in all cases, the points $a$ and $b$ are separated by open sets in the order topology; the order topology is Hausdorff.
+
+(Question: Would appealing to Theorem 17.11 have gotten me points for this?)
+
+\shunt
+
+{\bf Problem 13, p100:}
+
+Let $X$ be a Hausdorff space. Let $(a,b) \in X \times X \setminus \De$, with $\De = \{(x,x): x \in X\}$. Then there are $U,V$ open in $X$ with $a \in U$, $b \notin U$, $a \notin V$, $b \in V$, and $U \cap V = \emptyset$. Note that $U \times V \cap \De = \emptyset$; else, there is $(x,x) \in U \times V$ for some $x \in X$, so that there is an $x \in U \cap V$, which contradicts the fact that $U \cap V$ is empty. So, for each $(a,b) \in X \times X \setminus \De$, there's a neighborhood of $(a,b)$ contained in $X \times X \setminus \De$. That is $X \times X \setminus \De$ is open in $X \times X$; so $\De$ is closed in $X \times X$.
+
+So if $X$ is a Hausdorff space, then $\De$ is closed in $X \times X$. 
+
+Let $\De = \{(x,x): x \in X\}$ be closed in $X \times X$. Pick $a,b \in X$ with $a \neq b$. Then consider $(a,b) \in X \times X$; because $(a,b) \notin \De$, $(a,b) \in X \times X \setminus \De$. Now, $X \times X \setminus \De$ is open, because $\De$ is closed. So there are $U$ and $V$ each open in $X$ such that $(x,y) \in U \times V$ and $U \times V \cap \De = \emptyset$, because products of open sets are a basis for the product topology. Because $U \times V \cap \De = \emptyset$, the points $(a,a)$ and $(b,b)$ are not in $U \times V$. Now, $U$ contains $a$ and $V$ contains $b$, because $(a,b) \in U \times V$. Also, $b \notin U$, else $(b,b) \in U \times V$. Also, $a \notin V$, else $(a,a) \in U \times V$. So $U$ is an open set in $X$ containing $a$ and not $b$, and $V$ is an open set in $X$ containing $b$ and not $a$.
+
+So if $\De$ is closed in $X \times X$, then any two points can be separated by open sets in $X$; that is, $X$ is Hausdorff.
+
+\shunt
+
+{\bf Problem 4, p111:}
+
+Fix $x_0 \in X$, $y_o \in Y$, with $X$ and $Y$ topological spaces. Consider $f: X \to X \times Y$ and $g: Y \to X \times Y$ given by $f(x) = (x,y_0)$ and $g(y) = (x_0,y)$.
+
+First, $f$ and $g$ are injective: let $f(a) = f(b)$. Then $f(a) = (a,y_0) = f(b) = (b,y_0)$, so that $a=b$. Similarly, if $g(a) = g(b)$ ,then $g(a) = (x_0,a) = g(b) = (x_0,b)$, so that $a=b$
+
+Next, $f$ and $g$ are continuous: let $W$ be an open set in $X \times Y$. Then $f^{-1}(W) = \{x \in X: (x,y_0) \in W \}$. Now, for each $x \in f^{-1}(W)$, there is a pair of open sets $U \subset X$ and $V \subset Y$ with $(x,y_0) \in U \times V$ and $U \times V \subset W$. So, there is a $U \subset X$ with $x \in U$ and $U \subset f^{-1}(W)$. So $f^{-1}(W)$ is open in $X$. So $f^{-1}(W)$ is open in $X$ for all $W$ open in $X \times Y$; $f$ is continuous. Similarly, let $W$ be an open set in $X \times Y$. Then $g^{-1}(W) = \{y \in Y: (x_0,y) \in W \}$. Now, for each $y \in g^{-1}(W)$, there is a pair of open sets $U \subset X$ and $V \subset Y$ with $(x_0,y) \in U \times V$ and $U \times V \subset W$. So, there is a $V \subset Y$ with $y \in V$ and $V \subset g^{-1}(W)$. So $g^{-1}(W)$ is open in $Y$. So $g^{-1}(W)$ is open in $Y$ for all $W$ open in $X \times Y$; $g$ is continuous.
+
+Next, $f$ and $g$ map onto $X \times \{y_0\}$ and $\{x_0\} \times Y$, respectively; this is clear. %This is obvious, but you should still prove it.
+
+We can readily construct an inverse to $f$ and $g$; the maps $f^{-1}: X \times \{y_0\} \to X$ and $g^{-1}: \{x_0\} \times Y \to Y$ given by $f^{-1}(x,y_0) = x$ and $g^{-1}(x_0,y) = y$ work, and this is clear.
+
+These inverses are continuous; let $W$ be open in $X$. Then consider $f^{-1}(W) = W \times \{y_0\}$; this is open in $X \times \{y_0\}$, as $W \times \{y_0\} = W \times Y \cap X \times \{y_0\}$, which is the intersection of an open set in the space $X \times Y$ and the subspace $X \times \{y_0\}$. That is, $f^{-1}(W)$ is open if $W$ is; $f$ is continuous. Similarly, let $W$ be open in $Y$. Then consider $g^{-1}(W) = \{x_0\} \times W$; this is open in $\{x_0\} \times Y$, as $\{x_0\} \times W = X \times W \cap \{x_0\} \times Y$, which is the intersection of an open set in the space $X \times Y$ and the subspace $\{x_0\} \times Y$. That is, $g^{-1}(W)$ is open if $W$ is; $g$ is continuous.
+
+So, $f$ and $g$ are injective, continuous, and have continuous inverses on their image sets; $f$ and $g$ are imbeddings. 
+
+%Must show: f is injective, continuous, onto, with a continuous inverse on its image set.
+
+\shunt
+
+{\bf Problem 8a, p111:}
+
+Let $Y$ be an ordered set, given the order topology. Let $f$, $g$ be continuous maps from $X$ to $Y$.
+
+Consider $A = \{x: f(x) \leq g(x)\}$.
+
+Let $x \in \overline{A}$. Then every neighborhood, $U$, of $x$ intersects $A$. Let $U$ be a basic neighborhood (read: ``interval'') of $f(x)$ and $V$ be a basic neighborhood of $g(x)$ with the property that $U \cap V = \emptyset$ (we can do this, as $Y$ is Hausdorff; this is problem 10 on page 100. So we can choose open sets with these properties, and so we can choose a basis element with these properties by simply choosing any basis element contained in $U$ (or $V$) that contains $f(x)$ (or $g(x)$).). 
+
+Now, $f^{-1}(U)$ and $g^{-1}(V)$ are both open, because $f$ and $g$ are continuous. Moreover, they are both neighborhoods of $x$, as $U$ contained $f(x)$ and $V$ contained $g(x)$. Now, consider $B = f^{-1}(U) \cap g^{-1}(V)$. Then $x \in B$, and $B$ is open, as it's an intersection of two open sets; that is, $B$ is a neighborhood of $x$. So, $B \cap A$ is nonempty. So there is some $a \in B$ with $f(a) \leq g(a)$. So there is some $a \in f^{-1}(U) \cap g^{-1}(V)$ with $f(a) \leq g(a)$. 
+
+This means that for all $u \in U$, $v \in V$, $u \leq v$ (else, there is $u \in U$, $v \in V$ with $u > v$ and $f(a) \in U$ and $g(a) \in V$ with $f(a) \leq g(a)$. So, as $U = (p,q)$ and $V=(r,s)$ were intervals, we have that $U \cap V$ is nonempty (for $U \cap V$ to be empty, it is necessary that $r>q$ or $s > p$, and thus all elements in $U$ are greater than all elements in $V$ or all elements in $V$ are greater than all elements in $U$) )
+
+So, $f(x) \leq g(x)$, because $f(x) \in U$ and $g(x) \in V$. So, $x \in A$.
+
+So, $\overline{A} \subset A$. So because $\overline{A} \supset A$ (this is clear from Theorem 17.6), we have that $\overline{A} = A$. This means that $A$ is closed; this is mentioned on page 95 of Munkres, right in the middle.
+
+\shunt
+
+{\bf Problem 8b, p111:}
+
+Let $Y$ be an ordered set, given the order topology. Let $f$, $g$ be continuous maps from $X$ to $Y$.
+
+Let $h: X \to Y$ be the function $h(x) = \min{f(x),g(x)}$.
+
+Then consider $A = \{x: f(x) \leq g(x)$ and $B = \{x: g(x) \leq f(x)\}$. From problem 8a, both $A$ and $B$ are closed. Moreover, $X = A \cup B$, (as for all $x \in X$, $f(x) \leq g(x)$ or $g(x) \leq f(x)$).
+
+Now, consider $f_A: A \to Y$ given by $f_A(x) = f(x)$ and $g_B: B \to Y$ given by $g_B(x) = g(x)$. Then note that $f_A(x) = g_B(x)$ on $A \cap B$, because on $A \cap B$, we have $f(x) \leq g(x)$ and $g(x) \leq f(x)$ so that $f(x) = g(x)=f_A(x) = g_B(x)$.
+
+So, $h: X \to Y$ given by $h(x) = f_A(x)$ on $A$ and $h(x) = g_B(x)$ on $B$ is continuous. That is, $h(x) = \min{f(x),g(x)}$ is continuous.
+
+\shunt
+
+{\bf Problem A:}
+
+Let $X$ be a topological space with open sets $U_i$ for $i=1,2,3 \ldots n$, with $\overline{U_i} = X$ for all $i$.
+
+Then consider $A = \overline{\bigcap\limits_{i=1}^n U_i}$. 
+
+First, $A \subset X$, and this is clear.
+
+Next: let $x \in X$. Then for any open neighborhood of $x$, say, $U$, the intersection $U \cap U_i$ is nonempty for all $i \leq n$; this is because $\overline{U_i} = X$. The intersection $\bigcap\limits_{i=1}^n U \cap U_i$ is open, as it is a finite intersection of open sets. This set equals $U \cap \bigcap\limits_{i=1}^n U_i$, by known set theory. It is also nonempty, and we prove this by induction: we know that $U_1$ intersects every open set in $X$ (else, there is some neighborhood of some point that $U_1$ fails to intersect, so that $\overline{U_1} \neq X$, which is a contradiction of our original assumptions on $U_i$). If $\bigcap\limits_{i=1}^m U_i$ intersects every open set for $m < n$, then consider $\bigcap\limits_{i=1}^{m+1} U_i = U_{m+1} \cap \bigcap\limits_{i=1}^m U_i$. Now, let $U$ be an open set. Then $U \cap \bigcap\limits_{i=1}^m U_i$ is nonempty and open. So because $U_{m+1}$ intersects every open set (as above), then $U\cap U_{m+1} \cap \bigcap\limits_{i=1}^m U_i$ is nonempty; that is, $\bigcap\limits_{i=1}^{m+1} U_i$ intersects every open set. By induction, $\bigcap\limits_{i=1}^{n} U_i$ intersects every open set, so that $U \cap \bigcap\limits_{i=1}^{n} U_i$ is nonempty when $U$ is open.
+
+To summarize, for any open neighborhood of any $x \in X$, $\bigcap\limits_{i=1}^{m+1} U_i$ intersects said neighborhood. That is, $x \in \overline{\bigcap\limits_{i=1}^n U_i}$, for all $x \in X$. So $X \subset A$.
+
+So $X = A$. 
+
+\shunt
+
+\end{document}

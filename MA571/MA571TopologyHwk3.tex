@@ -1,0 +1,124 @@
+
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{fancyhdr}
+\usepackage{amssymb}
+%\usepackage{mathpazo}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{slashed}
+\usepackage{cancel}
+\usepackage[mathscr]{euscript}
+\usepackage{MaxPackage} %Note: You need MaxPackage installed or in the same folder as your .tex file or something.
+
+\newcommand{\colorcomment}[2]{\textcolor{#1}{#2}} %First of these leaves in comments. Second one kills them.
+%\newcommand{\colorcomment}[2]{}
+
+
+\pagestyle{fancy}
+\lhead{Max Jeter}
+\chead{MA571}
+\rhead{Assignment 3, Page \thepage}
+
+%Number of Problems		: 12
+%Clear					:| 13| | |A,Ci,
+%Begun					:7a ||||
+%Not started			: | | 2,3,6,7 | 3b,4b | B, Cii
+%Can complete via book	:
+%Needs Polish			:
+
+%Pomodoros logged		: 3
+
+\begin{document}
+
+Note to grader: the standard notation for ``the ball of radius $r$ around the point $x$ in the metric space $X$ is $B_r(x)$. This is terrible, especially if we are working with more than one metric space at a time; I use the notation $X_r(x)$ to denote ``the ball of radius $r$ around the point $x$ in the metric space $X$, as it is better. 
+
+{\bf Problem 7a, p111:}
+
+Let $f: \R \to \R$ be continuous from the right. Consider $f: \R_{\ell} \to \R$. Then, by definition, $\forall a \in \R\forall \ep >0 \exists \de > 0 : \absval{x-a} < \de$ and $a > x \implies \absval{f(x) - f(a)} < \ep$.
+
+Now, let $W$ be open in $\R$. Then for each $a \in W$, there is an open interval $I \subset W$ containing $a$. Consider $f^{-1}(I)$; let $a' \in f^{-1}(I)$. Then $f(a') \in I$. Choose $\ep >0: \R_{\ep}(f(a')) \subset I$ (this is possible because $I$ is open and so there's a basic (read: ``basic using the standard basis'') neighborhood of $f(a')$ contained in $I$). Then there is $\de>0$ with $\absval{x-a}$ and $x >a$ implying that $\absval{f(x) - f(a)} < \ep$. That is, $f([a', a'+ \de)) \subset \R_{\ep}(f(a')) \subset I$; so, $[a',a'+\de) \subset f^{-1}(I)$. So, for each $a' \in f^{-1}(I)$, there is a set, $U$ open in $\R_\ell$ with $a' \in U \subset f^{-1}(I)$; each $f^{-1}(I)$ is open in $\R_\ell$.
+
+%You're blanking. Fill in the transition from intervals to open sets here.
+
+Thus, for each $a' \in f^{-1}(W)$, there is a set, $U$, open in $\R_\ell$ with $a \in U \subset f^{-1}(W)$. Thus, $f^{-1}(W)$ is open.
+
+That is, for all $W$ open in $\R$, $f^{-1}(W)$ is open in $\R_{\ell}$; so $f: \R_\ell \to \R$ is continuous if $f$ is continuous from the right.
+
+\shunt
+
+{\bf Problem 13, p112:}
+
+Let $A \subset X$, let $f: A \to Y$ be continuous, let $Y$ be Hausdorff, let there be a continuous function $g: \overline{A} \to Y$ with $f(x) = g(x)$ for all $x \in A$.
+
+Let there be two distinct such functions, $g$ and $h$. Then there exists $a \in \overline{A}$ with $g(a) \neq h(a)$. Then, as $Y$ is Hausdorff, there are $U$ and $V$ open in $Y$ with $g(a) \in U$, $h(a) \in V$, and $U \cap V = \emptyset$. Note that because $g(a) \in U$ and $h(a) \in V$, we have that $g^{-1}(U)$ and $h^{-1}(V)$ both contain $a$. Moreover, both $g^{-1}(U)$ and $h^{-1}(V)$ are open in $X$, as $g$ and $h$ were both continuous. Consider $g^{-1}(U) \cap h^{-1}(V)$; this set is open in $X$, as it is the intersection of two open sets in $X$. Also, it contains $a \in \overline{A}$, so that every open neighborhood of $a$ contains a point $a' \in A$(by theorem 17.5). So, there is an $a' \in A$ with $a' \in g^{-1}(U) \cap h^{-1}(V)$. Because $a' \in A$, we have $f(a') = g(a') = h(a')$. So, because $a' \in g^{-1}(U)$, we have $f(a') = g(a') \in U$. Also, because $a' \in h^{-1}(V)$, we have $f(a') = h(a') \in V$. So $f(a') \in U \cap V$, contradicting the assumption that $U \cap V$ was empty.
+
+So, $g$ and $h$ must be equal at each point; that is, $g$ is uniquely determined by $f$.
+
+\shunt
+
+{\bf Problem 2, p118:}
+
+Let $A_\al$ be a subspace of $X_\al$, for each $\al \in J$. 
+
+Let $\prod A_\al$ and $\prod X_\al$ be both given the box topology. 
+
+\shunt
+
+{\bf Problem 3, p118:}
+
+\shunt
+
+{\bf Problem 6, p118:}
+
+\shunt
+
+{\bf Problem 7, p118:}
+
+\shunt
+
+{\bf Problem 3b, p126:}
+
+\shunt
+
+{\bf Problem 4b, p126:}
+
+\shunt
+
+{\bf Problem A:}
+
+Let $X$ be a metric space, and let $A$ be a countable subset of $X$ with $\overline{A} = X$.
+
+Consider the collection $\scrC = \{X_r(x): x \in A, r \in \Q\}$. Then $\scrC$ is countable; it's a countable union of countable sets.
+
+Next, note that $\bigcup\limits_{C \in \scrC} C = X$; it is clear that $\bigcup\limits_{C \in \scrC} C \subset X$, as the left hand side is a union of subsets of $X$. Now, let $x \in X$. Then $x \in \overline{A}$. Consider $X_1(x)$; then there is $a \in A$ with $a \in X_1(x)$, because every open neighborhood of $x$ intersects $A$ by theorem 17.5. Now, note that because $d_X(a,x) < 1$, we have $x \in X_1(a)$. Because $1 \in \Q$ and $a \in A$, we have that $x \in C$ for some $C \in \scrC$. That is, $x \in \bigcup\limits_{C \in \scrC} C$. So, $X \subset  \bigcup\limits_{C \in \scrC} C$. So $X = \bigcup\limits_{C \in \scrC} C$.
+
+Now, let $x \in C_1 \cap C_2$ for some $C_1, C_2 \in \scrC$. Then consider the set $C_1 \cap C_2$; this set is open, as it is the intersection of two open sets (each set in $\scrC$ is open, as each set in $\scrC$ is an open ball). So, there is an open ball $X_r(x) \subset C_1 \cap C_2$. Choose $q \in \Q$ with $0<q < r/2$ (we can do this by Archimedean property). Consider $X_{q}(x)$. Then there is an $a \in A$ with $A \in X_{q}(x)$, by theorem 17.5 as above. Now, as above, we have that $x \in X_q(a)$. Moreover, $X_q(a) \subset C_1 \cap C_2$; if $b \in X_q(a)$, then $d(a,b) < q$, and we know that $d(x,a) < q$, so $d(b,x) \leq 2q < r$ by triangle inequality, so that $b \in X_r(x) \subset C_1 \cap C_2$. Now, note that $X_q(a) \in \scrC$, as $q$ is rational and $a \in A$.
+
+So, for all $x \in C_1 \cap C_2$, there is a $C_3 \in \scrC$ with $x \in C_3 \subset C_1 \cap C_2$. 
+
+So $\bigcup\limits_{C \in \scrC} C = X$ and if $x \in C_1 \cap C_2$ for any $C_1$, $C_2 \in \scrC$, there is a $C_3 \in \scrC$ with $x \in C_3 \subset C_1 \cap C_2$; so $\scrC$ is a basis for $X$.
+
+So $\scrC$ is a countable basis for $X$; a metric space, $X$, has a countable basis if there is a countable subset $A$ with $\overline{A} = X$.
+
+
+
+\shunt
+
+{\bf Problem B:}
+
+\shunt
+
+{\bf Problem C, part i:}
+
+Consider $f: \R \to \R$ given by $f(x) = x^2$. Then $f(\{1\}) = \{1\}$, so that $f^{-1}(f(\{1\})) = \{-1,1\}$, so that $f^{-1}(f(\{1\})) \neq \{1\}$.
+
+That is, $f^{-1}(f(A)) = A$ isn't always true.
+
+\shunt
+
+{\bf Problem C, part ii:}
+
+\shunt
+
+\end{document}

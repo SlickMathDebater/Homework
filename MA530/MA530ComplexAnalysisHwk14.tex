@@ -21,28 +21,27 @@
 \rhead{Assignment 14, Page \thepage}
 
 %Number of Problems		:6
-%Clear					:2,3
+%Clear					:2,3,4,5,6
 %Begun					:1
 %Not started			:
 %Can complete via book	:
-%Needs Polish			:4,6
+%Needs Polish			:
 
-%Needs fixing			:5
-
-%Pomodoros logged		:8
+%Pomodoros logged		:11
 
 \begin{document}
 
-{\bf Problem 1:} %Minimization of that integral is somehow invariant with respect to biholomorphism, and rotation of the plane is somehow a biholomorphism. Biholomorph everything to u(0)=u(1)=0 and you should get it. 
+{\bf Problem 1:}
 
-Consider $a, b \in \R$, and consider the set of functions $u \in C^1([0,1])$ such that $u(0)=a, u(1)=b$. Without loss of generality, we can take both $a$ and $b$ nonnegative. Call the set of such functions $\scrU$. %Why do we get that WLOG?
+Consider $a, b \in \R$, and consider the set of functions $u \in C^1([0,1])$ such that $u(0)=a, u(1)=b$. Without loss of generality, we can take $a=0$ and $b$ positive. (We are focused on the derivative's absolute value, so we can add/subtract constants and multiply by $-1$ as desired.)
 
-Let $u$ and $v$ both minimize the integral $\int\limits_0^1 \absval{f'(x)}^2 dx$ among functions in $\scrU$. Then $\min(u,v)$ minimizes the same integral. %Correct for signs...you're assuming that these things are all positive.
-Moreover, $\min(u,v) < u$ or $\min(u,v) < v$ at some point if $u \neq v$. But if that were true at any point, then $u$ or $v$ would fail to minimize that integral; thus, $u = v$ at every point.
+If $b=0$, then the integral $\int\limits_0^1 \absval{u'(x)}^2 dx$ is minimized only by $u(x) =0$, and this is clear.
 
-Next: the linear function minimizes the integral: let $l$ be the linear function with $l(0) = a$, $l(1)=b$, and let $u \in \scrU$ with $u \neq l$ minimize the integral. Also, define $M_1 = \int\limits_0^1 \absval{u'(x)}^2 dx$ and $M_2 = \int\limits_0^1 \absval{l'(x)}^2 dx$. Then $\int\limits_0^1 \absval{u'(x)-l'(x)}^2 dx \neq 0$; that is, $u-l$ fails to minimize the integral $\int\limits_0^1 \absval{v'(x)}^2 dx$ subject to $v(0)=v(1)=0$. %Explain why that makes this go bad.
+Consider the set of functions $\scrU_b$ that minimize the integral $\int\limits_0^1 \absval{u'(x)}^2 dx$ with respect to the set of functions $u \in C^1([0,1])$ such that $u(0)=0$ and $u(1)=b$. This set injects into the set of functions $\scrU_b - bx = \{u-bx: u \in \scrU\}$.
 
-Thus, the linear function is the unique function in $C^1([0,1])$ that minimizes the integral $\int\limits_0^1 \absval{f'(x)}^2 dx$.
+Now, functions in $\scrU_b -bx$ minimize the integral with respect to $u(0)=0$ and $u(1)=0$, and I can't figure out why. I think that a good proof of this would probably go through Normal Families somehow.
+
+Either way, the point is that because $\scrU_b -bx = \{0\}$, the only function that minimizes the integral $\int\limits_0^1 \absval{u'(x)}^2 dx$ subject to $u(0)=0$ and $u(1) = b$ is $bx$. This yields the result desired.
 
 \shunt
 
@@ -84,9 +83,9 @@ Because holomorphy is a local property, this yields the desired result; $f$ is h
 
 Let $\phi \in \text{Aut}(\overline{\C})$ be such that $\phi(\{z\in \C:\text{Im}(z)>0\}) = D_1(0)$. %Move everything to the half-plane (Im(z) >0).
 
-A biholomorphism that takes the disk $D_1(0)$ to $\{z\in \C:\text{Im}(z)>0\}$ is $\phi_C: \C \to \C$ given by $z \mapsto i\frac{1+z}{1-z}$; this is the Cayley transform. Its inverse is $\psi_C: \C \to \C$ given by $z \mapsto \frac{z-i}{z+i}$. (I pulled these maps from Complex Made Simple; any other such map would've probably worked).
+One biholomorphism that takes the disk $D_1(0)$ to $\{z\in \C:\text{Im}(z)>0\}$ is $\phi_C: \C \to \C$ given by $z \mapsto i\frac{1+z}{1-z}$; this is the Cayley transform. Its inverse is $\psi_C: \C \to \C$ given by $z \mapsto \frac{z-i}{z+i}$. (I pulled these maps from Complex Made Simple; any other biholomorphism would've probably worked).
 
-So, $\psi = \phi_C \circ \phi$ is a biholomorphism of the plane that fixes $\{z\in \C:\text{Im}(z)>0\}$; by an earlier homework problem, this means that $\phi_C \circ \phi$ is of the form $z \mapsto \frac{az+b}{cz+d}$ with $a,b,c,d \in \R$, as proven in an earlier homework problem.
+So, $\psi = \phi_C \circ \phi$ is a biholomorphism of the plane that fixes $\{z\in \C:\text{Im}(z)>0\}$; by an earlier homework problem, this means that $\phi_C \circ \phi$ is of the form $z \mapsto \frac{az+b}{cz+d}$ with $a,b,c,d \in \R$.
 
 Fix $z \in \C$. Let $w = \overline{z}$. Then
 
@@ -116,22 +115,19 @@ which is the desired result.
 
 \shunt
 
-{\bf Problem 5:}
+{\bf Problem 5:} %You can fix this by going to harmonic functions in your first step. The overarching idea is right, but that key point is borked.
 
-Let $f \in \scrO(\Om)$, where $\Om$ is a symmetric domain (with respect to $\R$), and $\R \cap \Om \neq \emptyset$. Moreover, let $f(\R \cap \Om) \subset \R$. Then the function $g(z)=f(Re(z))$ is a holomorphic function. %Is that true?...No, it's absolute bullshit. That'd mean (in general) that we have two different holomorphic functions taking the same values on a line segment. However, it is clear that this IDEA more or less works....it just needs a major overhaul in the first half.
+Let $f \in \scrO(\Om)$, where $\Om$ is a symmetric domain (with respect to $\R$), and $\R \cap \Om \neq \emptyset$. Moreover, let $f(\R \cap \Om) \subset \R$.
 
-Now, consider $h=f-g$; this is holomorphic. Note that $h$ restricted to $A=\Om^+ \cup (\Om \cap \R)$ satisfies the requirements for the reflection principle; $h$ restricted to $A$ extends to $\Om$; call this extension $j$. (Note that $j(\overline{z}) = \overline{j(z)}$, because of the construction of the extension.) Now, $j-h$ is identically $0$ on $A$. Because $j-h$ is $0$ on an open subset of $\Om$, it is $0$ on all of $\Om$ (This follows by uniqueness principle, as $\Om$ is a domain...it is connected.)
+Because $f$ is holomorphic on a domain, it can be written as $f=u+iv$, with $u$ and $v$ real-valued harmonic functions. 
 
-So $j=h$. So $h(\overline{z}) = \overline{h(z)}$. So 
+So, $v$ is a harmonic function with $v=0$ on $\R \cap \Om$ (because $f(\R \cap \Om) \subset \R$). So $v(\overline{z}) = -v(z)$; if not, then $v$ restricted to $\Om^+$ extends to the harmonic function on $\Om$ that we get via reflection principle (call it $v'$), and then $v-v'$ vanishes on $\Om^+$...so $v-v'$ vanishes everywhere by minimum principle, so $v=v'$. 
 
-\begin{align*}
-f(\overline{z}) &= h(\overline{z}) - g(\overline{z})\\
-&= \overline{h(z)} - g(z)\\
-&= \overline{h(z)} - \overline{g(z)}\\
-&= \overline{f(z)}
-\end{align*}
+So, $v(\overline{z}) = -v(z)$, for all $z \in \Om$.
 
-as desired.
+Now, $u(\overline{z}) = u(z)$ by Cauchy Riemann: $u_y(\overline{z}) = -v_x(\overline{z}) = v_x(z) = -u_y(z)$. That is, $u_y$ is an odd function of $y$, so $u$ is an even function of $y$ (which is another way of saying the first sentence.)
+
+Thus, $f(\overline{z}) = u(\overline{z}) + iv(\overline{z}) = u(z) -iv(z) = \overline{f(z)}$, as desired.
 
 \shunt
 
@@ -150,7 +146,7 @@ Then
 
 So we can dilate $\psi(U)$ to yield $\C \setminus [-1,1]$, by the map $\al$ given by $z \mapsto \frac{z}{a+\frac{1}{a}}$. That is, $\al \circ \psi (U) = \C \setminus [-1,1]$.
 
-So by using the map discussed in class, $\phi(z): \C \setminus [-1,1]$ given by $z \mapsto \sqrt{z^2-1} -z$, we have that $\phi \circ \al \circ \psi$ is a biholomorphism from $U$ to $D_1(0)$.
+So by using the biholomorphism discussed in class, $\phi(z): \C \setminus [-1,1] \to D_1(0)$ given by $z \mapsto \sqrt{z^2-1} -z$, we have that $\phi \circ \al \circ \psi$ is a biholomorphism from $U$ to $D_1(0)$.
 
 That is, the map $\be: U \to D_1(0)$ given by $z \mapsto \sqrt{(\frac{z + \frac{1}{z}}{a+\frac{1}{a}})^2 - 1} - \frac{z + \frac{1}{z}}{a+\frac{1}{a}}$ is a biholomorphism from $U$ to $D_1(0)$, as desired.
 

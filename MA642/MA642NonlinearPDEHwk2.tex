@@ -1,0 +1,82 @@
+
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{fancyhdr}
+\usepackage{amssymb}
+%\usepackage{mathpazo}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{slashed}
+\usepackage{cancel}
+\usepackage[mathscr]{euscript}
+\usepackage{MaxPackage} %Note: You need MaxPackage installed or in the same folder as your .tex file or something.
+
+\newcommand{\colorcomment}[2]{\textcolor{#1}{#2}} %First of these leaves in comments. Second one kills them.
+%\newcommand{\colorcomment}[2]{}
+
+
+\pagestyle{fancy}
+\lhead{Max Jeter}
+\chead{MA642}
+\rhead{Assignment 2, Page \thepage}
+
+%Number of Problems		: 
+%Clear					:
+%Begun					:2
+%Not started			:3
+%Can complete via book	:
+%Needs Polish			:
+
+%Pomodoros logged		:3
+
+\begin{document}
+
+{\bf Problem 2:}
+
+Let $u$ be as described. %fill it in
+
+Then there is a $B_r(x)$ (with $x \in \Om$) such that $B_r(x) \cap \partial \Om \subset A$ and $B_r(x) \setminus \overline{\Om} \neq \emptyset$.
+
+Define $v: B_r(x) \cup \Om \to \R$ by $v(x) = u(x)$ for $x \in \Om$, else $x = 0$.
+
+Then $v$ is harmonic on $B_r(x) \cup \Om$: it is clear that $v$ is harmonic on $\Om$ and on $B_r(x) \setminus \overline{\Om}$. Next, on $\Om\cap B_r(x)$, we have that $v$ is continuous (as $v(x) \to 0$ as $x \to \Om\cap B_r(x)$), that $v$ is differentiable (as $\frac{\partial v}{\partial \nu}(x) \to 0$ as $x \to \Om \cap B_r(x)$), and that $v$ has a continuous second derivative (...reasons). So, $\De v = 0$ on $\Om \cap B_r(x)$, because (limits). %All that's left is the intersection.
+
+So, we have that $v$ is harmonic on $B_r(x) \cup \Om$ and that $v$ vanishes on some nonempty open subset of $B_r(x) \cup \Om$; thus, $v$ vanishes identically.
+
+So $u$ vanishes identically. 
+
+\shunt
+
+{\bf Problem 3:}
+
+%Possible idea: warp the fact we know from the ball to a general bounded domain. 
+
+Let $G$ be the Green's function for $\Om$, a bounded domain.
+
+Part a:
+
+Consider $H(x,y) = G(x,y) - G(y,x)$. Then for all $u$ harmonic on $\Om$, we have
+
+\begin{align*}
+u(x) &= \int\limits_{\partial \Om} u(y) \frac{\partial G(x,y)}{\partial \nu} - G(x,y) \frac{\partial u(y)}{\partial \nu} dS_y\\
+\end{align*}
+
+%G is symmetric
+
+\shunt
+
+Part b:
+
+%Probably do this by picking u sub/super harmonic with vanishing boundary data and using a property of those functions. 
+
+%G is strictly negative if x \neq y
+
+\shunt
+
+Part c:
+
+%\int\limits_{\Om} G(x,y)f(y) dy \to 0 as x \to \partial \Om if f is bounded/integrable on \Om
+
+\shunt
+
+\end{document}

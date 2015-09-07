@@ -37,13 +37,27 @@ Let $u \in C^0(\Om)$.
 
 Let $u$ be subharmonic in $\Om$. Then $u$ satisfies the mean value properties for any ball compactly contained in $\Om$; it is clear that this implies that $u$ satisfies the mean value properties locally.
 
-Now, let $u$ satisfy the mean value properties locally. Fix $y \in \Om$. Then there is a $\de >0$ such that $u(y) \leq \frac{1}{n\om_nR^{n-1}} \int\limits_{\partial B_{R}(y)} u ds$ for all $R \leq \de$. 
+Now, let $u$ satisfy the mean value properties locally. Fix $y \in \Om$. Without loss of generality, we can set $u(y) = 0$. Then there is a $\de >0$ such that $u(y) \leq \frac{1}{n\om_nR^{n-1}} \int\limits_{\partial B_{R}(y)} u ds$ for all $R \leq \de$. 
 
 So, on $B_R(y)$, we have:
 
 \begin{align*}
 u(y) &\leq \frac{1}{n\om_nR^{n-1}} \int\limits_{\partial B_{R}(y)} u ds\\
+0 &\leq \frac{1}{n\om_nR^{n-1}} \int\limits_{\partial B_{R}(y)} u ds\\
+0 &\leq \int\limits_{\partial B_{R}(y)} u ds\\
 \end{align*} %This isn't actually where you start. You know that you have to do something weird, but you're not sure *what*.
+
+As the above holds for all $R < \de$, we get that $\int\limits_{B_R(y)} u dx \geq 0$ for all $R < \de$. Moreover, we get that $\int\limits_{B_R(y)} u dx \geq 0$ is increasing as a function of $R$.
+
+That is,
+
+\begin{align*}
+\frac{d}{dR} \int\limits_{B_R(y)} u dx &\geq 0\\
+\int\limits_{\partial B_R(y)} \frac{\partial u}{\partial \nu} dx &\geq 0\\
+\int\limits_{B_R(y)} \De u dx &\geq 0\\
+\end{align*} %This feels wrong and I don't know why.
+
+So because the above holds for all $R < \de$, we have that $\De u(y) \geq 0$. That is, $u$ is subharmonic at $y$. 
 
 \shunt
 

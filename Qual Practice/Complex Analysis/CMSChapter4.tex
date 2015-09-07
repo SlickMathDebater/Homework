@@ -78,19 +78,29 @@ Let $V$ be an open subset of the plane and $\Ga$ be a cycle in $V$. Also, let $\
 
 Let $f \in H(V)$.
 
-Then define $g(w) = \frac{f(w)}{w-z}$. We know that $g$ is differentiable on $V \setminus \{z\}$. Referring to a figure much like Figure 2.1 and using Theorem 4.10 to show that the ``outer'' chunks of the integral vanish, we get $\int\limits_{\Ga} g(w) dw = \int\limits_{\partial D(z,r)} g(w)dw$ for arbitrarily small $r>0$.
+Then define $g(w) = \frac{f(w)}{w-z}$. We know that $g$ is differentiable on $V \setminus \{z\}$. Referring to a figure much like Figure 2.1 and using Theorem 4.10 to show that the ``outer'' chunks of the integral vanish, we get $\int\limits_{\Ga} g(w) dw = \text{Ind}(z,\Ga) \int\limits_{\partial D(z,r)} g(w)dw$ for arbitrarily small $r>0$.
+
+Yet, by inserting definitions, we see that $\int\limits_{\partial D(z,r)} g(w) dw = i\int\limits_{0}^{2\pi} g(z+re^{it})dt$. As $r \to 0$, we $g(w+re^{it}) \to g(z)$ uniformly. Thus, the integral given evaluates to $2\pi i g(z)$, yielding the desired result.
 
 \shunt
 
 {\bf Problem 4:}
 
+Let $V$ be simply connected, $\ga$ be a smooth closed curve in $V$, and $a \in \C \setminus V$. Then $\text{Ind}(a, \ga) = \text{Ind}(a, \al)$ where $\al$ is a curve that is constant with respect to time. Now, $\text{Ind}(a,\al) = 0$, and this can be computed readily.
+
 \shunt
 
 {\bf Problem 5:}
 
+Let $V$ be a convex open set, and $\ga$ a smooth, closed curve in $V$. Pick a point in $\ga^*$; call it $a$.
+
+The map $f: [0,1]^2 \to V$ given by $f(t,s) = $ is a homotopy. Moreover, %stuff. Figure out how homotopies work.
+
 \shunt
 
 {\bf Problem 6:}
+
+Let $f$ be a nonvanishing holomorphic function on a simply connected set, $V$. Then there is a holomorphic $g$ such that $f=e^g$. Consider $h=g/2$. Then $f=e^{2h} = (e^h)^2$. But $e^h$ is holomorphic, as it is a composition of holomorphic maps. So, $e^h$ is a holomorphic square root of $f$. 
 
 \shunt
 
