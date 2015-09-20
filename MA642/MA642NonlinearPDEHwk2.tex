@@ -27,19 +27,19 @@
 %Can complete via book	:
 %Needs Polish			:
 
-%Pomodoros logged		:3
+%Pomodoros logged		:4
 
 \begin{document}
 
 {\bf Problem 2:}
 
-Let $u$ be as described. %fill it in
+Let $u$ be as described, with $u$ smooth (as was said we could do in class). %fill it in
 
 Then there is a $B_r(x)$ (with $x \in \Om$) such that $B_r(x) \cap \partial \Om \subset A$ and $B_r(x) \setminus \overline{\Om} \neq \emptyset$.
 
-Define $v: B_r(x) \cup \Om \to \R$ by $v(x) = u(x)$ for $x \in \Om$, else $x = 0$.
+Define $v: B_r(x) \cup \Om \to \R$ by $v(x) = u(x)$ for $x \in \Om$, else $x = 0$. First, $v$ is continuous on $B_r(x) \cup \Om$ (it is clear except for $\partial \Om$, and it works on $\partial \Om$ because $u = 0$ on $\partial \Om \cap B_r(x)$.) Next, $v$ has a continuous first derivative on $B_r(x) \cup \Om$ (it is clear except for $\partial \Om$, and it works on $\partial \Om$ because $\frac{\partial u}{\partial \nu} \to 0$ in $\Om$ and $\frac{\partial u}{\partial \nu} = 0$ outside of $\Om$).
 
-Then $v$ is harmonic on $B_r(x) \cup \Om$: it is clear that $v$ is harmonic on $\Om$ and on $B_r(x) \setminus \overline{\Om}$. Next, on $\Om\cap B_r(x)$, we have that $v$ is continuous (as $v(x) \to 0$ as $x \to \Om\cap B_r(x)$), that $v$ is differentiable (as $\frac{\partial v}{\partial \nu}(x) \to 0$ as $x \to \Om \cap B_r(x)$), and that $v$ has a continuous second derivative (...reasons). So, $\De v = 0$ on $\Om \cap B_r(x)$, because (limits). %All that's left is the intersection.
+Then $v$ is harmonic on $B_r(x) \cup \Om$: it is clear that $v$ is harmonic on $\Om$ and on $B_r(x) \setminus \overline{\Om}$. %Move on to the boundary, use the picture.
 
 So, we have that $v$ is harmonic on $B_r(x) \cup \Om$ and that $v$ vanishes on some nonempty open subset of $B_r(x) \cup \Om$; thus, $v$ vanishes identically.
 

@@ -1,0 +1,67 @@
+
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{fancyhdr}
+\usepackage{amssymb}
+%\usepackage{mathpazo}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{slashed}
+\usepackage{cancel}
+\usepackage[mathscr]{euscript}
+\usepackage{MaxPackage} %Note: You need MaxPackage installed or in the same folder as your .tex file or something.
+
+\newcommand{\colorcomment}[2]{\textcolor{#1}{#2}} %First of these leaves in comments. Second one kills them.
+%\newcommand{\colorcomment}[2]{}
+
+
+\pagestyle{fancy}
+\lhead{Max Jeter}
+\chead{MA642}
+\rhead{Assignment 3, Page \thepage}
+
+%Number of Problems		: 
+%Clear					:
+%Begun					:
+%Not started			:11,12
+%Can complete via book	:
+%Needs Polish			:
+
+%Pomodoros logged		: 4
+
+\begin{document}
+
+{\bf Problem 11:} %Redo this with Mr^2 instead of -Mr^2
+
+Let $\Om$ be a domain with a $C^2$ boundary $\partial \Om$.
+
+Pick a point, $x$, on $\partial \Om$. Without loss of generality, say that $x = 0$.
+
+Then on some neighborhood, $U$, of $0$, $\partial \Om$ is the graph of a $C^2$ function, $\ga$, upon reorienting/relabeling coordinate axes. Without loss of generality, we can require that $\nabla_u \ga = 0$ for all $u= (u_1,u_2 \ldots u_{n-1},0)$ and that $\{x \in \R^n: x_i = 0$ if $i \neq n, 0<x_n<\ep\}$ lies outside of $\Om$ for some $\ep>0$. (This is geometrically clear.) 
+
+Now, $\ga$ has a continuous second derivative where $\ga(x') = 0$ (without loss of generality, we can assume that $x'=0$); that is, there is a $\de>0$ with $\ga$ having a continuous second derivative on $B(0,\de)$. So, $\ga$ has a bounded second derivative on $B(0,\de)$; say that $M$ is a bound for the second derivative on $B(0,\de)$.
+
+Fix $u= (u_1,u_2 \ldots u_{n-1},0)$, with $\norm{u} = 1$. Consider $\ga \vert_{x: x = tu}$; we can treat $\ga$ as a function of $t$, then. We notice that $\ga \geq -Mt^2$ on some neighborhood of $0$, $B(0, \de')$; since $M$ is a bound for the second derivative of $\ga$, then %explain
+
+That is, if $\ga(x) = (\ga_1(x), \ga_2(x) \ldots \ga_n(x))$ (with each $\ga_i$ mapping to $\R$), then $\ga_n(x) \geq -Mr^2 = -M \sum\limits_{i=1}^n x_i^2$. %Make sure you define what r is.
+
+Now: fix $\ep' = 1/2M$. Consider $\partial B((0,0,0,\ldots,0,-\ep),\ep)$; we have that, on the boundary of this ball,
+
+\begin{align*}
+(x_n-\ep^2)^2 + \sum\limits_{i=1}^{n-1} x_i^2 &= \ep^2\\
+x_n^2 -2x_n\ep +\ep^2 + \sum\limits_{i=1}^{n-1} x_i^2 &= \ep^2\\
+x_n^2 -2x_n\ep &=-\sum\limits_{i=1}^{n-1} x_i^2\\
+x_n^2 -2x_n\ep &=-r^2\\
+Mx_n^2 -M2x_n\ep &=-Mr^2\\
+Mx_n^2 -x_n &=-Mr^2\\
+x_n(Mx_n-1) &=-Mr^2\\
+x_n &\leq -Mr^2\\
+\end{align*} %This feels off, switch your convention.
+
+\shunt
+
+{\bf Problem 12:}
+
+\shunt
+
+\end{document}

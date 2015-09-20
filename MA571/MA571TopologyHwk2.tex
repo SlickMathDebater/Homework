@@ -27,7 +27,7 @@
 %Can complete via book	:
 %Needs Polish			: |4|
 
-%Pomodoros logged		: 13
+%Pomodoros logged		: 13.25
 
 \begin{document}
 
@@ -165,9 +165,9 @@ Consider $A = \{x: f(x) \leq g(x)\}$.
 
 Let $x \in \overline{A}$. Then every neighborhood, $U$, of $x$ intersects $A$. Let $U$ be a basic neighborhood (read: ``interval'') of $f(x)$ and $V$ be a basic neighborhood of $g(x)$ with the property that $U \cap V = \emptyset$ (we can do this, as $Y$ is Hausdorff; this is problem 10 on page 100. So we can choose open sets with these properties, and so we can choose a basis element with these properties by simply choosing any basis element contained in $U$ (or $V$) that contains $f(x)$ (or $g(x)$).). 
 
-Now, $f^{-1}(U)$ and $g^{-1}(V)$ are both open, because $f$ and $g$ are continuous. Moreover, they are both neighborhoods of $x$, as $U$ contained $f(x)$ and $V$ contained $g(x)$. Now, consider $B = f^{-1}(U) \cap g^{-1}(V)$. Then $x \in B$, and $B$ is open, as it's an intersection of two open sets; that is, $B$ is a neighborhood of $x$. So, $B \cap A$ is nonempty. So there is some $a \in B$ with $f(a) \leq g(a)$. So there is some $a \in f^{-1}(U) \cap g^{-1}(V)$ with $f(a) \leq g(a)$. 
+Now, $f^{-1}(U)$ and $g^{-1}(V)$ are both open, because $f$ and $g$ are continuous. Moreover, they are both neighborhoods of $x$, as $U$ contained $f(x)$ and $V$ contained $g(x)$. Now, consider $B = f^{-1}(U) \cap g^{-1}(V)$. Then $x \in B$, and $B$ is open, as it's an intersection of two open sets; that is, $B$ is a neighborhood of $x$. So, $B \cap A$ is nonempty, by theorem 17.5. So there is some $a \in B$ with $f(a) \leq g(a)$. So there is some $a \in f^{-1}(U) \cap g^{-1}(V)$ with $f(a) \leq g(a)$. 
 
-This means that for all $u \in U$, $v \in V$, $u \leq v$ (else, there is $u \in U$, $v \in V$ with $u > v$ and $f(a) \in U$ and $g(a) \in V$ with $f(a) \leq g(a)$. So, as $U = (p,q)$ and $V=(r,s)$ were intervals, we have that $U \cap V$ is nonempty (for $U \cap V$ to be empty, it is necessary that $r>q$ or $s > p$, and thus all elements in $U$ are greater than all elements in $V$ or all elements in $V$ are greater than all elements in $U$) )
+This means that for all $u \in U$, $v \in V$, $u < v$ (see Appendix A).
 
 So, $f(x) \leq g(x)$, because $f(x) \in U$ and $g(x) \in V$. So, $x \in A$.
 
@@ -202,6 +202,16 @@ Next: let $x \in X$. Then for any open neighborhood of $x$, say, $U$, the inters
 To summarize, for any open neighborhood of any $x \in X$, $\bigcap\limits_{i=1}^{m+1} U_i$ intersects said neighborhood. That is, $x \in \overline{\bigcap\limits_{i=1}^n U_i}$, for all $x \in X$. So $X \subset A$.
 
 So $X = A$. 
+
+\shunt
+
+{\bf Appendix A:}
+
+Let $Y$ be an ordered set, $(a,b)$ and $(c,d)$ be disjoint open intervals, and let there exist $x \in (a,b)$ and $y \in (c,d)$ with $x<y$.
+
+Let there exist $x'$, $y'$ with $x' \in (a,b)$, $y' \in (c,d)$, and $x' \geq y'$. It is clear that $x' \neq y'$, else $(a,b)$ and $(c,d)$ were not disjoint. So, $x' > y'$. Now, $y' > c$ and $x' < b$, as $x' \in (a,b)$ and $y' \in (c,d)$. So, we have that $c< y' < x' < b$. That is, $c < b$. So, $(a,b) \cap (c,d) = (c,b)$, which is nonempty (as $y'$ and $x'$ are in $(c,b)$. This contradicts our assumption that this set was empty.
+
+So, if $Y$ is an ordered set,  $(a,b)$ and $(c,d)$ are disjoint open intervals, and there exist $x \in (a,b)$ and $y \in (c,d)$ with $x<y$, then $x'<y'$ for all $x' \in (a,b)$, $y' \in (c,d)$.
 
 \shunt
 

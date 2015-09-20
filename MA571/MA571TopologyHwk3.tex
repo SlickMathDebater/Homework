@@ -21,17 +21,19 @@
 \rhead{Assignment 3, Page \thepage}
 
 %Number of Problems		: 12
-%Clear					:| 13| | |A,Ci,
-%Begun					:7a ||||
-%Not started			: | | 2,3,6,7 | 3b,4b | B, Cii
+%Clear					: 7a| 13|2,3,6,7 | 4b|A,B,Ci,Cii
+%Begun					: |||3b, |
+%Not started			: | | | |  
 %Can complete via book	:
-%Needs Polish			:
+%Needs Polish			: 
 
-%Pomodoros logged		: 3
+%Pomodoros logged		: 15.75
 
 \begin{document}
 
-Note to grader: the standard notation for ``the ball of radius $r$ around the point $x$ in the metric space $X$ is $B_r(x)$. This is terrible, especially if we are working with more than one metric space at a time; I use the notation $X_r(x)$ to denote ``the ball of radius $r$ around the point $x$ in the metric space $X$, as it is better. 
+Note to grader: the standard notation for ``the ball of radius $r$ around the point $x$ in the metric space $X$ is $B_r(x)$. This is terrible, especially if we are working with more than one metric space at a time; I use the notation $X_r(x)$ to denote ``the ball of radius $r$ around the point $x$ in the metric space $X$, as it is better.
+
+Second note: I write $0 = (0,0,0,\ldots )$ in the following. I'm led to believe this is standard.
 
 {\bf Problem 7a, p111:}
 
@@ -39,9 +41,7 @@ Let $f: \R \to \R$ be continuous from the right. Consider $f: \R_{\ell} \to \R$.
 
 Now, let $W$ be open in $\R$. Then for each $a \in W$, there is an open interval $I \subset W$ containing $a$. Consider $f^{-1}(I)$; let $a' \in f^{-1}(I)$. Then $f(a') \in I$. Choose $\ep >0: \R_{\ep}(f(a')) \subset I$ (this is possible because $I$ is open and so there's a basic (read: ``basic using the standard basis'') neighborhood of $f(a')$ contained in $I$). Then there is $\de>0$ with $\absval{x-a}$ and $x >a$ implying that $\absval{f(x) - f(a)} < \ep$. That is, $f([a', a'+ \de)) \subset \R_{\ep}(f(a')) \subset I$; so, $[a',a'+\de) \subset f^{-1}(I)$. So, for each $a' \in f^{-1}(I)$, there is a set, $U$ open in $\R_\ell$ with $a' \in U \subset f^{-1}(I)$; each $f^{-1}(I)$ is open in $\R_\ell$.
 
-%You're blanking. Fill in the transition from intervals to open sets here.
-
-Thus, for each $a' \in f^{-1}(W)$, there is a set, $U$, open in $\R_\ell$ with $a \in U \subset f^{-1}(W)$. Thus, $f^{-1}(W)$ is open.
+So, because $U$ is a union of open intervals, we have that $f^{-1}(U)$ is a union of open sets. Thus, $f^{-1}(W)$ is open.
 
 That is, for all $W$ open in $\R$, $f^{-1}(W)$ is open in $\R_{\ell}$; so $f: \R_\ell \to \R$ is continuous if $f$ is continuous from the right.
 
@@ -61,27 +61,130 @@ So, $g$ and $h$ must be equal at each point; that is, $g$ is uniquely determined
 
 Let $A_\al$ be a subspace of $X_\al$, for each $\al \in J$. 
 
-Let $\prod A_\al$ and $\prod X_\al$ be both given the box topology. 
+Let $\prod X_\al$ be given the box topology. Say that $A = \prod A_\al$ given the box topology, and $A' = \prod A_\al$ given the subspace topology on $\prod X_\al$.
+
+Let $U$ be a basic open set (``basic'' being ``an element of the basis used to define the box topology'') in $A$. Then $U = \prod U_\al$, with each $U_\al$ open in $A_\al$. That is, each $U_\al = U'_\al \cap A_\al$ for some $U'_\al$ open in $X_\al$. So,$\prod U'_\al$ is open in $\prod X_al$. Also, $\prod U_\al = \prod U'_\al \cap \prod A_\al$ (this is basic set theory, and I will use this sort of logic freely in the below).
+So, $U_\al$ is open in $A'$.
+
+Now, let $U$ be a basic open set in $A'$. Then $U = U' \cap \prod A_\al$ for some $U'$ open in $\prod X_\al$. That is, $U = \prod U'_\al \cap \prod A_\al$ for some $U'_\al$ each open in $X_\al$. So, $U = \prod U'_\al \cap A_\al = U_\al$ with each $U_\al = U'_\al \cap A_\al$; as each $U_\al$ is open in $A_\al$, we have that $U$ is a product of open sets in $A_\al$; that is, $U$ is open in $A$.
+
+So each basic open set of $A$ is open in $A'$ and vice versa; that is, $A = A'$; $\prod A_\al$ given the box topology is the same as $\prod A_\al$ given the subspace topology it inherits from $\prod X_\al$ given the box topology.
+
+Now, let $\prod X_\al$ be given the product topology. Say that $A = \prod A_\al$ given the product topology, and $A' = \prod A_\al$ given the subspace topology on $\prod X_\al$.
+
+Let $U$ be a basic open set (``basic'' being ``an element of the basis used to define the product topology'') in $A$. Then $U = \prod U_\al$, with each $U_\al$ open in $A_\al$ and $U_\al \neq A_\al$ for only finitely many $U_\al$. That is, each $U_\al = U'_\al \cap A_\al$ for some $U'_\al$ open in $X_\al$ and $U_\al \neq A_\al$ for only finitely many $U_\al$. So, $\prod U'_\al$ is open in $\prod X_al$. Also, $\prod U_\al = \prod U'_\al \cap \prod A_\al$. %Is that from basic set theory?
+So, $U_\al$ is open in $A'$.
+
+Now, let $U$ be a basic open set (``basic'' being ``an element of the basis used to define the product topology'') in $A'$. Then $U = U' \cap \prod A_\al$ for some $U'$ open in $\prod X_\al$ and $U_\al \neq A_\al$ for only finitely many $U_\al$. That is, $U = \prod U'_\al \cap \prod A_\al$ for some $U'_\al$ each open in $X_\al$ and $U_\al \neq A_\al$ for only finitely many $U_\al$. So, $U = \prod U'_\al \cap A_\al = U_\al$ with each $U_\al = U'_\al \cap A_\al$; as each $U_\al$ is open in $A_\al$ and $U_\al \neq A_\al$ for only finitely many $U_\al$, we have that $U$ is a product of open sets in $A_\al$; that is, $U$ is open in $A$.
+
+So each basic open set of $A$ is open in $A'$ and vice versa. So $A$ contains a basis for $A'$, so that $A \supset A'$ and $A'$ contains a basis for $A$, so that $A' \supset A$; that is, $A = A'$; $\prod A_\al$ given the product topology is the same as $\prod A_\al$ given the subspace topology it inherits from $\prod X_\al$ given the product topology.
 
 \shunt
 
 {\bf Problem 3, p118:}
 
+Let each $X_\al$ be a Hausdorff space.
+
+First, note that if $X = \prod X_\al$ is a Hausdorff space given the product topology, then $X'=\prod X_\al$ is a Hausdorff space given the box topology; if $x \neq y$, $U$ open in $X$ is a neighborhood of $x$, $V$ open in $X$ is a neighborhood of $y$, and $U \cap V = \emptyset$, then $U$ is open in $X'$ and $V$ is open in $X'$ (as the product topology is coarser than the box topology; this is an offhand remark made after Theorem 19.1, and is taken as ``clear''). That is, we have $U$ a neighborhood of $x$, $V$ a neighborhood of $Y$, and $U \cap V = \emptyset$; $X'$ is Hausdorff if $X$ is.
+
+Next, $X$ (as above, this is $\prod X_\al$ given the product topology) is a Hausdorff space if each $X_\al$ is; let $x,y \in X$ with $x \neq y$. Then there is $\al'$ such that $\pi_{\al'}(x) \neq \pi_{\al'}(y)$ (else, $\pi_{\al}(x) = \pi_{\al}(y)$ for all $\al$, so that $x(\al) = y(\al)$ for all $\al$, so that $x = y$...and we're assuming $x \neq y$). So, because $X_{\al'}$ is Hausdorff, there are open (in $X_{\al'}$) sets $U_{\al'}$ and $V_{\al'}$ with $\pi_{\al'}(x) \in U_{\al'}$ and $\pi_{\al'}(y) \in V_{\al'}$ and $U_{\al'} \cap V_{\al'} = \emptyset$.
+
+Now, $U = \prod\limits_{\al \neq \al'} X_\al \times U_{\al'}$ and $V= \prod\limits_{\al \neq \al'} X_\al \times V_{\al'}$ are open in the product topology on $X = \prod X_\al$, as they are products of open sets (with only finitely many of those open sets not equal to $X_\al$). Also, $U \cap V = \prod\limits_{\al \neq \al'} (X_\al \cap X_\al) \times (U_{\al'} \cap V_{\al'}) = \prod\limits_{\al \neq \al'} (X_\al) \times (\emptyset) = \emptyset$. Also, $U$ contains $x$ and $V$ contains $y$; this is clear.
+
+So, if each $X_\al$ is a Hausdorff space, then $X$ given the product topology is a Hausdorff space. From the above discussion, this means that $X$ given the box topology is a Hausdorff space, too.
+
 \shunt
 
 {\bf Problem 6, p118:}
+
+Let $\anbrack{x_n}$ be a sequence of points of the product space $\prod X_\al$.
+
+Let $\anbrack{x_n} \to x$. Fix $\be$. Consider the sequence $\anbrack{\pi_\be(x_n)}$; this converges to $\pi_\be(x)$; let $U_\be$ be a neighborhood of $\pi_\be(x)$; there is an $N$ such that for all $n \geq N$, $x_n \in \prod X_\al \times U_\be$; thus, $\pi_\be(x_n) \in U$ (because $\pi_\be(x_n) \in \pi_\be (\prod X_\al U_\be )= U_\be$), for all $n \geq N$. 
+
+That is, for all open neighborhoods $U$ of $\pi_\be(x)$, there is an $N$ such that for all $n \geq N$, $\pi_\be(x_n) \in U$; $\anbrack{\pi_be(x_n)}$ converges to $\pi_\be(x)$, for each $\be$.
+
+Now, let $\anbrack{\pi_\al(x_n)}$ converge to $\pi_\al(x)$ for each $\al$. Consider $\anbrack{x_n}$; we show that this converges to $x$.
+
+Let $U=\prod U_\al$ be a basic open set containing $x$. Then for each $\al$, $\pi_\al(U)$ is open in $X_\al$, and also $\pi_\al^(U) \neq X_\al$ for only finitely many $\al$ (because $U = \prod U_\al$ with $U_\al \neq X_\al$ for only finitely many $\al$, because $U$ was a basic open set). So for each $\al$, there is an $N_\al$ such that for all $n \geq N_\al$, $\pi_\al(x_n) \in \pi_\al(U)$. Note that for $\al$ with $U_\al = X_\al$, we can take $N_\al = 1$, because for all $n \geq 1$, $\pi_\al(x_n) \in X_\al$ because $\pi_\al (x_n) \in X_\al$ for all $x_n$.
+
+Now, take $N = \max\limits_{\al} N_\al$; this exists because there are only finitely many $N_\al$ not equal to $1$. Now, for all $n \geq N$, we have that $\pi_\al(x_n) \in \pi_\al(U)$ for all $\al$. That is, for all $n \geq N$, $x_n \in U$.
+
+That is, for all basic open neighborhoods $U$ of $x$, there is an $N$ such that for all $n \geq N$, $x_n \in U$. Now, each neighborhood, $U$, of $x$ contains a basic open neighborhood of $x$ (by definition). That is, for all  open neighborhoods $U$ of $x$, there is an $N$ such that for all $n \geq N$, $x_n \in U$. That is, $\anbrack{x_n} \to x$.
+
+So $\anbrack{x_n} \to x$ if and only if $\anbrack{\pi_\al(x_n)}$ converges to $\pi_\al(x)$ for each $\al$.
+
+This is not true in the box topology; consider the space $A= \{0,1\}$ given the discrete topology. Consider $\prod_{n=1}^\infty A$ given the box topology. Consider the sequence $\anbrack{x_m}$ given by $(1,1,1,1,1 \ldots )$, $(0,1,1,1,1 \ldots)$, $(0,0,1,1,1 \ldots)$ $\ldots$. For each $n \in \N$, $\pi_n(x_m)$ is eventually zero, and thus converges to zero. Yet, for no $m \in \N$ is $x_m$ in the open set $\{0\} \times \{0\} \times \{0\} \ldots$ (an open set containing only the point $(0,0,0,0,0,\ldots)$).
 
 \shunt
 
 {\bf Problem 7, p118:}
 
+Let $\R^\infty$ be the subset of $\R^\om$ consisting of all sequences that are eventually zero.
+
+The closure of $\R^\infty$ in the box topology is $\R^\infty$; consider the set $A= \R^\om \setminus \R^\infty$. Then $A$ is open; let $x \in A$. Then $x$ is not eventually zero; that is, for all $N$ there is an $n \geq N$ with $\pi_n(x) \neq 0$. So, there is a subsequence $\pi_{n_k}(x)$ with $\pi_{n_k}(x) \neq 0$ for all $n_k$ (we know this from introductory analysis courses.). Define $A_n = \R$ if $n \neq n_k$ for any $k$. Define $A_n= (0,x+1)$ if $n = n_k$ for some $k$ and $\pi_{n_k}(x) >0$. Define $A_n = (x-1,0)$ if $n = n_k$ for some $k$ and $\pi_{n_k}(x) < 0$. Then the product $A' =\prod\limits_{n=1}^\infty A_n$ is an open set in the box topology (as it is the product of open sets) and $A'$ contains $x$; $\pi_n(x) \in A_n$ for all $n \in \N$, so $x \in \prod A_n = A'$. Now, $A' \subset A$; it suffices to show that $a \in A'$ implies that $a \notin \R^\infty$. Yet, if $a \in A'$ and $a \in \R^\infty$, then $a$ is eventually zero, so that $\pi_{n_k}(x)$ is eventually zero. But this means that $\pi_{n_k}(x) = 0$ for infinitely many $n_k$, when $A_{n_k}$ excludes zero, which contradicts that $x \in A'$. So, $A' \subset A$.
+
+So for all $x \in A$, there is an open (in the box topology) neighborhood of $x$ completely contained in $A$; $A$ is open, by Lemma C. That is, $\R^\om \setminus \R^\infty$ is open, so that $\R^\infty$ is closed.
+
+So, $\R^\infty$ is closed in the box topology; so $\overline{\R^\infty} = \R^\infty$ (the closure of a closed set is itself, this is a throwaway comment on p95).
+
+The closure of $\R^\infty$ in the product topology is $\R^\om$; let $x = (x_1,x_2, \ldots) \in \R^\om$. Let $U$ be a basic open neighborhood of $x$. Then $U = \prod_{n=1}^\infty U_n$ with $U_n \neq \R$ for only finitely many $n$. That is, there is an $N$ with $U_n = \R$ for all $n \geq N$. So, the point $(x_1,x_2, \ldots x_N, 0,0,0 \ldots) \in \R^\infty$ (by definition) and $(x_1,x_2 \ldots x_N,0,0,0\ldots) \in U$, because %obvious.
+So, every basic neighborhood of $x \in \R^\om$ intersects $\R^\infty$. So every neighborhood of $x \in \R^\om$ intersects $\R^\infty$. So $x \in \overline{\R^\infty}$, by theorem 17.5. So $\R^\om \subset \overline{\R^\infty}$. Because $\R^\infty \subset \R^\om$, (by definition), we have that $\overline{\R^\infty} \subset \overline{\R^\om}$ (this is Lemma C). Now, $\overline{\R^\om} = \R^\om$, because $\R^\om$ is the entire space (and thus, is closed) (closure of a closed set is itself, this is a throwaway comment on p95). This means that $\R^\om = \overline{\R^\infty}$ in the product topology.
+
 \shunt
 
-{\bf Problem 3b, p126:}
+{\bf Problem 3b, p126:} 
+
+I've burned an hour and a half on this problem and made zero progress.
+
+This problem's not getting done in time.
 
 \shunt
 
 {\bf Problem 4b, p126:}
+
+Consider the product, uniform, and box topologies on $\R^\om$.
+
+Consider $\anbrack{w_n}$ as described in the text. This sequence converges to $0$ in the product topology: let $U$ be a basic neighborhood of $0$. Then $U = \prod U_n$ with $U_n$ each containing $0$ and $U_n = \R$ for all $n \geq N$, for some $N$. So for all $n \geq N$, we have that $w_n \in U$; %explain
+
+That is, for every basic neighborhood $U$ of $0$, there is an $N$ such that for all $n \geq N$, $w_n \in U$. So for all neighborhoods $U$ of $0$, there is an $N$ such that for all $n \geq N$, $w_n \in U$ (this is clear via the definition of ``basis'' on p78). So, $\anbrack{w_n} \to 0$ in the product topology.
+
+Yet, $\anbrack{w_n}$ fails to converge in the uniform topology; first, note that if $\anbrack{w_n}$ converged, it would converge to $0$ and no other point; this is because the uniform and product topologies are both Hausdorff (problem 3;p 118,20.4, and the fact that topologies finer than Hausdorff spaces are Hausdorff), so sequences only converge to one point (17.10). Yet if $\anbrack{w_n}$ converged to a point other than $0$ in the uniform topology, it would converge to a point other than $0$ in the product topology; if $\anbrack{w_n} \to x \neq 0$ in the uniform topology, then for all open neighborhoods of the uniform topology, $U$, of $x$, there is an $N$ such that for all $n \geq N$, $w_n \in U$. Because all open neighborhoods of the product topology are open in the uniform topology, we have that this means that for all open neighborhoods of the product topology, $U$, of $x$, there is an $N$ such that for all $n \geq N$, $w_n \in U$, so that $\anbrack{w_n} \to x \neq 0$ in the product topology.
+
+Now, $\anbrack{w_n}$ fails to converge to $0$ in the uniform topology; define $U = \prod_{n=1}^\infty (-1,1)$; this is the ball of radius $1$ about $0$, and is thus open in the uniform topology. Yet, for all $n \geq 2$, $w_n \notin U$. So $\anbrack{w_n} \slashed{\to} 0$.
+
+This means that $\anbrack{w_n}$ fails to converge in the box topology; because $\anbrack{w_n}$ fails to converge in the uniform topology, the box topology is finer than the box topology (Theorem 20.4), and we have that there is an open neighborhood, $U$, of $0$ in the uniform topology that for all $N \in \N$ there is an $n \geq N$ with $w_n \notin U$,
+so that we get that there is an open neighborhood, $U$, of $0$ in the box topology so that
+for all $N \in \N$ there is an $n \geq N$ with $w_n \notin U$,
+so that $\anbrack{w_n}$ doesn't converge to $0$. Yet, $0$ is the only point that $\anbrack{w_n}$ could converge to, by the same reasoning as last time.
+
+So $\anbrack{w_n}$ does not converge in the box topology.
+%This converges in the product topology to 0. But it fails to converge in the uniform topology and the box topology. 
+
+Consider $\anbrack{x_n}$ as described in the text. 
+
+Now, $\anbrack{x_n} \to 0$ in the uniform topology; let $U$ be a basic neighborhood of $0$. Then $U= \prod\limits_{n=1}^\infty (-a,a)$ for some $a \in \R$. By the archimedean property, we have that there is an $N$ such that for all $n \geq N$, $1/n < a$. That is, for all $n \geq N$, $\pi_m(x_n) \in (-a,a)$ for all $m$. So for all $n \geq N$, $x_n \in U$. So we have that for all basic neighborhoods, $U$, of $0$, we have that for some $N$, for all $n \geq N$, $x_n \in U$. So we have that for all open neighborhoods, $U$, of $0$, we have that for some $N$, for all $n \geq N$, $x_n \in U$.  That is, $\anbrack{x_n} \to 0$.
+
+By the logic above, this means that $\anbrack{x_n} \to 0$ in the product topology as well.
+
+However, $\anbrack{x_n} \slashed{\to} 0$ in the box topology: Let $U = \prod\limits_{n=1}^\infty (-1/2^n,1/2^n)$. Then for all $n \in \N$, $x_n \notin U$; this is because $\pi_n(x_n) = 1/n$, and $1/n > 1/2^n$ for all $n \geq 1$ (this is somewhat obvious analysis). So $\anbrack{x_n}$ doesn't converge to $0$ in the box topology; by the logic above, this means that $\anbrack{x_n}$ doesn't converge in the box topology.
+
+%This converges in the uniform topology, and thus converges in the product topology. But it does not converge in the box topology; use the 2^{-n} trick to show that.
+
+Consider $\anbrack{y_n}$ as described in the text. 
+
+Now, $\anbrack{y_n} \to 0$ in the uniform topology; let $U$ be a basic neighborhood of $0$. Then $U= \prod\limits_{n=1}^\infty (-a,a)$ for some $a \in \R$. By the archimedean property, we have that there is an $N$ such that for all $n \geq N$, $1/n < a$. That is, for all $n \geq N$, $\pi_m(y_n) \in (-a,a)$ for all $m$. So for all $n \geq N$, $y_n \in U$. So we have that for all basic neighborhoods, $U$, of $0$, we have that for some $N$, for all $n \geq N$, $y_n \in U$. So we have that for all open neighborhoods, $U$, of $0$, we have that for some $N$, for all $n \geq N$, $y_n \in U$.  That is, $\anbrack{y_n} \to 0$.
+
+By the logic above, this means that $\anbrack{y_n} \to 0$ in the product topology as well.
+
+However, $\anbrack{y_n} \slashed{\to} 0$ in the box topology: Let $U = \prod\limits_{n=1}^\infty (-1/2^n,1/2^n)$. Then for all $n \in \N$, $y_n \notin U$; this is because $\pi_n(y_n) = 1/n$, and $1/n > 1/2^n$ for all $n \geq 1$ (this is somewhat obvious analysis). So $\anbrack{y_n}$ doesn't converge to $0$ in the box topology; by the logic above, this means that $\anbrack{y_n}$ doesn't converge in the box topology.
+
+Consider $\anbrack{z_n}$ as described in the text. This sequence converges to $0$ in the box topology; let $U$ be a basic open neighborhood of $0$ in the box topology. Then $U = \prod U_n$ with each $U_n$ an open neighborhood containing $0$. Consider $U_1$ and $U_2$; each contains a basic neighborhood $\R_{\ep_1}(0)$ and $\R_{\ep_2}(0)$ respectively, with $\ep_1 >0$ and $\ep_2 >0$  (by the definition on page 78, example 2 on p120, and the definition of the metric topology). Now, by the archimedean principle, there is an $N \in \N$ such that for all $n \geq N$,  $1/n < \ep_1$ and $1/n < \ep_2$, so that $\pi_1(z_n) \in U_1$ and $\pi_2(z_n) \in U_2$ for all $n \geq N$. So $z_n \in U$ for all $n \geq N$, because $z_n = (1/n,1/n,0,0,0\ldots)$ so that $\pi_m(z_n) \in U_m$ for all $m > 2$ because $U_m$ is a neighborhood of $0$ (as $U$ was a neighborhood of $0$).
+
+So for any basic open neighborhood, $U$, of $0$, there is an $N$ such that for all $n \geq N$, $z_n \in U$. So for any open neighborhood $U$ of $0$, there is an $N$ such that for all $n \geq N$, $z_n \in U$, (by the definition on p78). So, $\anbrack{z_n} \to 0$ in the box topology.
+
+Thus, $\anbrack{z_n} \to 0$ in the product and uniform topologies; by theorem 20.4, both of these topologies are coarser than the box topology. For any open neighborhood, $U$, of $0$ in the box topology, there is an $N$ such that for  all $n \geq N$, $z_n \in U$; so for all open neighborhoods of $0$ in the product and uniform topologies, there is an $N$ such that for  all $n \geq N$, $z_n \in U$; so $\anbrack{z_n} \to 0$ in the product and uniform topologies.
+
+%This converges in the box topology, and thus converges in all three topologies.
 
 \shunt
 
@@ -107,6 +210,12 @@ So $\scrC$ is a countable basis for $X$; a metric space, $X$, has a countable ba
 
 {\bf Problem B:}
 
+Let $Y$ be an ordered set, $(a,b)$ and $(c,d)$ be disjoint open intervals, and let there exist $x \in (a,b)$ and $y \in (c,d)$ with $x<y$.
+
+Let there exist $x'$, $y'$ with $x' \in (a,b)$, $y' \in (c,d)$, and $x' \geq y'$. It is clear that $x' \neq y'$, else $(a,b)$ and $(c,d)$ were not disjoint. So, $x' > y'$. Now, $y' > c$ and $x' < b$, as $x' \in (a,b)$ and $y' \in (c,d)$. So, we have that $c< y' < x' < b$. That is, $c < b$. So, $(a,b) \cap (c,d) = (c,b)$, which is nonempty (as $y'$ and $x'$ are in $(c,b)$. This contradicts our assumption that this set was empty.
+
+So, if $Y$ is an ordered set,  $(a,b)$ and $(c,d)$ are disjoint open intervals, and there exist $x \in (a,b)$ and $y \in (c,d)$ with $x<y$, then $x'<y'$ for all $x' \in (a,b)$, $y' \in (c,d)$.
+
 \shunt
 
 {\bf Problem C, part i:}
@@ -118,6 +227,18 @@ That is, $f^{-1}(f(A)) = A$ isn't always true.
 \shunt
 
 {\bf Problem C, part ii:}
+
+Define an equivalence relation $~$ on $S$ by $s~s'$ if and only if $f(s) = f(s')$.
+
+Then $f^{-1}(f(A)) = A$ if and only if $a ~ a'$ and $a \in A$ implies that $a' \in A$.
+
+First, we know that $f^{-1}(f(A)) \supset A$, from elementary set theory. 
+
+Now, let $f^{-1}(f(A)) = A$. Let $a \in A$, and let $a' ~ a$. Then $f(a') = f(a)$. So $a' \in f^{-1}(f(A))$. So $a' \in A$. That is, $a' ~a$ and $a \in A$ implies that $a' \in A$. %a' \in A
+
+Next, let $a' ~ a$ and $a \in A$ imply that $a' \ in A$. Let $a \in f^{-1}(f(a))$. Then there is an $a' \in A$ with $f(a) = f(a')$. So $a~a'$, so $a \in A$. That is, $f^{-1}(f(A)) \subset A$.
+
+So $f^{-1}(f(A)) \subset A$ if and only if $a' ~ a$ and $a \in A$ implies that $a' \in A$. So $f^{-1}(f(A)) = A$ if and only if $a' ~ a$ and $a \in A$ implies that $a' \in A$. 
 
 \shunt
 

@@ -1,0 +1,199 @@
+
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{fancyhdr}
+\usepackage{amssymb}
+%\usepackage{mathpazo}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{slashed}
+\usepackage{cancel}
+\usepackage[mathscr]{euscript}
+\usepackage{MaxPackage} %Note: You need MaxPackage installed or in the same folder as your .tex file or something.
+
+\newcommand{\colorcomment}[2]{\textcolor{#1}{#2}} %First of these leaves in comments. Second one kills them.
+%\newcommand{\colorcomment}[2]{}
+
+
+\pagestyle{fancy}
+\lhead{Max Jeter}
+\chead{MA571}
+\rhead{Assignment 4, Page \thepage}
+
+%Number of Problems		: 11
+%Clear					: 4b,6b,A,B,C,D,E,Fi,Fii,G
+%Begun					: 4a,
+%Not started			:     
+%Can complete via book	:
+%Needs Polish			: 
+
+%Pomodoros logged		: 14
+
+\begin{document}
+
+Note to grader: In the below, I freely use the standard notation $\overline{x}$ to denote the equivalence class of $x$ in the quotient space $X/\sim$.
+
+{\bf Problem 4a, p127:}
+
+Consider the function $h(t): \R \to \R^\om$ given by $h(t) = (t,t/2,t/3,\ldots)$.
+
+First, $h$ is not continuous in the box topology; consider the open set $U=\prod\limits_{n=1}^\infty (-1/n^2,1/n^2)$. Then $h^{-1}(U) = \bigcap\limits_{n=1}^\infty (-1/n,1/n) = \{0\}$, which is not open. 
+
+Next, $h$ is continuous if $\R^\om$ is given the product topology; let $U$ be a basic open set in $\R^\om$. Then $U = \prod\limits_{i=1}^\infty U_i$, with $U_i$ an open set in $\R$, and only finitely many $U_i \neq \R$. Now, $h^{-1}(U) = U_1 \cap 2U_2 \cap 3U_3 \ldots$ (with $iU_i = \{ix \in \R: x \in U_i\}$.), and this is clear. Now, there is an $N$ such that for all $n \geq N$, $U_n = \R$. So there is an $N$ such that for all $n \geq N$, $nU_n = \R$. So $h^{-1}(U) = U_1 \cap 2U_2 \cap 3U_3 \ldots U_N \cap \R \cap \R \ldots = \bigcap\limits_{i=1}^N iU_i$, which is open, as it is an intersection of open sets (it is clear that each $nU_n$ is open, as multiplication by a constant is well known to be a homeomorphism (this is a basic fact from analysis)).
+
+That is, if $U$ is a basic open set in $\R^\om$ given the product topology, then $h^{-1}(U)$ is open. Let $U$ be an open set in $\R^\om$; then $h^{-1}(U) = h^{-1}(\bigcup\limits_{\al \in A} U_\al)$ for some index set $A$, with each $U_\al$ basic. Now,  $h^{-1}(U) = h^{-1}(\bigcup\limits_{\al \in A} U_\al) =\bigcup\limits_{\al \in A}h^{-1}( U_\al)$, which is open as it is a union of open sets (they are the preimages of basic open sets, so they are open, from the above); that is, if $U$ is open in the product topology, then $h^{-1}(U)$ is open. That is, $h$ is continuous as a function from $\R$ to $\R^\om$, with $\R^\om$ given the product topology.
+
+I don't know how to handle the uniform topology, sorry. Moreover, this is the problem I ran out of time on; I apologize if this is sloppy, but I still feel like every step is clear.
+
+%h isn't continuous in the box topology; Use the 1/n^2 trick.
+%h isn't continuous in the uniform topology; should be able to game a point/radius to wind up with a single point set as the inverse image, which will be closed (0 won't work as your point. Try 1.)
+%h is continuous in the product topology: use basic sets and then apply the natural proof, finding the inverse image.
+
+\shunt
+
+{\bf Problem 4b, p127:}
+
+
+Consider $\anbrack{x_n}$ as described in the text. 
+
+Now, $\anbrack{x_n} \slashed{\to} 0$ in the box topology: Let $U = \prod\limits_{n=1}^\infty (-1/2^n,1/2^n)$. Then for all $n \in \N$, $x_n \notin U$; this is because $\pi_n(x_n) = 1/n$, and $1/n > 1/2^n$ for all $n \geq 1$ (this is somewhat obvious analysis). So $\anbrack{x_n}$ doesn't converge to $0$ in the box topology; by the logic above, this means that $\anbrack{x_n}$ doesn't converge in the box topology.
+
+Consider $\anbrack{y_n}$ as described in the text. 
+
+Now, $\anbrack{y_n} \slashed{\to} 0$ in the box topology: Let $U = \prod\limits_{n=1}^\infty (-1/2^n,1/2^n)$. Then for all $n \in \N$, $y_n \notin U$; this is because $\pi_n(y_n) = 1/n$, and $1/n > 1/2^n$ for all $n \geq 1$ (this is somewhat obvious analysis). So $\anbrack{y_n}$ doesn't converge to $0$ in the box topology; by the logic above, this means that $\anbrack{y_n}$ doesn't converge in the box topology.
+
+Consider $\anbrack{z_n}$ as described in the text. This sequence converges to $0$ in the box topology; let $U$ be a basic open neighborhood of $0$ in the box topology. Then $U = \prod U_n$ with each $U_n$ an open neighborhood containing $0$. Consider $U_1$ and $U_2$; each contains a basic neighborhood $\R_{\ep_1}(0)$ and $\R_{\ep_2}(0)$ respectively, with $\ep_1 >0$ and $\ep_2 >0$  (by the definition on page 78, example 2 on p120, and the definition of the metric topology). Now, by the archimedean principle, there is an $N \in \N$ such that for all $n \geq N$,  $1/n < \ep_1$ and $1/n < \ep_2$, so that $\pi_1(z_n) \in U_1$ and $\pi_2(z_n) \in U_2$ for all $n \geq N$. So $z_n \in U$ for all $n \geq N$, because $z_n = (1/n,1/n,0,0,0\ldots)$ so that $\pi_m(z_n) \in U_m$ for all $m > 2$ because $U_m$ is a neighborhood of $0$ (as $U$ was a neighborhood of $0$).
+
+So for any basic open neighborhood, $U$, of $0$, there is an $N$ such that for all $n \geq N$, $z_n \in U$. So for any open neighborhood $U$ of $0$, there is an $N$ such that for all $n \geq N$, $z_n \in U$, (by the definition on p78). So, $\anbrack{z_n} \to 0$ in the box topology.
+
+\shunt
+
+{\bf Problem 6b, p127:}
+
+Consider the sequence $y=(x_1,x_2+\ep/2, x_3 + 2\ep/3, x_4+ 3\ep/4, \ldots)$.
+
+Then $y \in U(x,\ep)$. So, if $U(x,\ep)$ is open, we have that there is a basic open set, $\R^\om_{\ep'}(y)$, with $y \in U \subset U(x,\ep)$ and $\ep'>0$ (from the definition of basis on p78). Yet, if so, then the point $z = (y_1+\ep'/2, y_2+\ep'/2, \ldots)$ is in $U(x,\ep)$. But this is nonsense;  there is an $n$ such that $\frac{n\ep}{n+1} + \ep'/2 > \ep$ (this follows from the fact that $\frac{n}{n+1}$ increases to $1$, so that $\frac{n\ep}{n+1}$ increases to $\ep$, so that there's an $n$ with $\ep -\frac{n\ep}{n+1} < \ep'/2$ ). Thus, there is an $n$ with $z_n = \ep'/2 + y_n = \ep'/2 + \frac{n\ep}{n+1} x_n$, and so $z_n-x_n = \frac{n\ep}{n+1} + \ep'/2 > \ep$; that is, $z_n \notin U(x,\ep)$.
+
+So, there is not a basic open neighborhood, $\R^\om_\ep(y)$, with $y \in \R^\om_\ep(y) \subset U(x,\ep)$; So, $U(x,\ep)$ is not open (from the definition of basis on p78).
+
+\shunt
+
+{\bf Problem A:}
+
+This problem is Theorem Q.2, which Dr. McClure said we can use on all future homework.
+
+Joking aside...
+
+Let $f: X/\sim \to Y$ be continuous. From Lemma Q.1, we know that the quotient map $q: X \to X/\sim$ is continuous. So, by Theorem 18.2, the composite map $f \circ q$ is continuous, which was what we wanted.
+
+Now, let the composite map $f \circ q$ be continuous. Let $U$ be an open set in $Y$. Then $(f \circ q)^{-1}(U)= q^{-1}(f^{-1}(U))$ is open. So $f^{-1}(U)$ is open, by the definition of the quotient topology.
+
+That is, $f: X/\sim \to Y$ is continuous if and only if the composite map $f \circ q$ is continuous.
+
+\shunt
+
+{\bf Problem B:}
+
+Let $X, Y$ be topological spaces.
+
+Let $p: X \to Y$ be surjective, and let $p$ be such that for all $U \subset Y$, $U$ is open if and only if $p^{-1}(U)$ is open in $X$. (That is, let $p$ be a quotient map as in Munkres, p137.) Let $q$ be the relevant quotient map from $X \to X/\sim$. Then consider $\overline{p}: X/\sim \to Y$, built from $p$ as in Theorem Q.3.
+
+First, $\overline{p}$ is injective; let $\overline{p}(\overline{x}) = \overline{p}(\overline{y})$, for some $x, y \in X$. Then $p(x) = p(y)$, by definition. But, again by definition, this means that $x \sim y$, so that $\overline{x} = \overline{y}$. So, we have that $\overline{p}(\overline{x}) = \overline{p}(\overline{y})$ implies that $\overline{x} = \overline{y}$, so that $\overline{p}$ is injective.
+
+Also, $\overline{p}$ is surjective; if $y \in Y$, note that there is an $x \in X$ with $p(x) = y$. So, $\overline{p}(\overline{x}) = y$, by the definition of $\overline{p}$; that is, for all $y \in Y$, there is an $\overline{x} \in X/\sim$ with $\overline{p}(\overline{x}) = y$, so $\overline{p}$ is surjective. 
+
+Now, $\overline{p}$ is continuous: $p$ is continuous, because if $U$ is open in $Y$, then $p^{-1}(U)$ is open in $X$, by the hypotheses on $p$. So by theorem Q.2, $\overline{p}$ is continuous.
+
+Last, $\overline{p}$ has an inverse, $\overline{p}^{-1}$. This inverse is continuous; let $U$ be open in $X/~$. Consider $(\overline{p}^{-1})^{-1}(U) = \{y \in Y: \overline{p}^{-1}(\overline{y}) = x$ for some $\overline{x} \in U \} = \{y \in Y: y= \overline{p}(\overline{x})$ for some $\overline{x} \in U\}= \{y \in Y: y= \overline{p}(\overline{x})$ for some $x \in q^{-1}(U)\} = \{y \in Y: y= \overline{p}(q(x))$ for some $x \in q^{-1}(U)\} = \overline{p}(q(q^{-1}(U))) = p(q^{-1}(U))$; this set is open; $q^{-1}(U)$ is open, by the definition of the topology on the quotient space, so we get that $p(q^{-1}(U)) =(\overline{p}^{-1})^{-1}(U) $ is open by the hypotheses. Thus, the inverse is continuous.
+
+So, $\overline{p}$ is a homeomorphism; it is a bijection with both the $\overline{p}$ and $\overline{p}^{-1}$ continuous.
+
+Now, let $p: X \to Y$ be such that $\overline{p}$ is a homeomorphism.
+
+Then $p$ is surjective; let $y \in Y$. Then there is $x \in X$ such that $\overline{p}(\overline{x}) = y$, because $\overline{p}$ is a homeomorphism (and thus surjective). So, there is $x \in X$ such that $p(x) = y$, by definition.
+
+Now, let $U \subset Y$ be open. Then note that $\overline{p}$ is continuous, because $\overline{p}$ is a homeomorphism. So, by theorem Q.2, $p$ is continuous. So, $p^{-1}(U)$ is open.
+
+Now, let $p^{-1}(U) \subset X$ be open. Then $p^{-1}(U) = q^{-1}(\overline{p}^{-1}(U))$; I claim that this is an obvious set theory fact, that follows from the fact that $p=\overline{p} \circ q$ (if this is not obvious, then consider that $p^{-1}(U) = \{x \in X: p(x) = y$ for some $y \in U\}= \{x \in X: q(\overline{p}(x)) = y$ for some $y \in U\} = \{x \in X: q(\overline{x}) = y$ for some $\overline{x} \in p^{-1}(U)\}=q^{-1}(\overline{p}^{-1}(U))$). Now, $p^{-1}(U) = q^{-1}(\overline{p}(U))$ is open; so, by the definition of the quotient space, $\overline{p}(U)$ is open. So, because $\overline{p}$ is a homeomorphism, $U$ is open.
+
+That is, if $p$ is a ``Munkres quotient map'', then $p$ is a surjective map with $U \subset Y$ open if and only if $p^{-1}(U)$ is open in $X$.
+
+So, $p$ is a ``Munkres quotient map'' if and only if $p$ is a surjective map with $U \subset Y$ open if and only if $p^{-1}(U)$ is open in $X$.
+
+\shunt
+
+{\bf Problem C:}
+
+Let $p: X \to Y$ be a Munkres quotient map.
+
+Let $f: Y \to Z$ be continuous. Note that $p: X \to Y$ is continuous; this is a throwaway comment on p137. So by Theorem 18.2, the composite map $f \circ p$ is continuous, which was what we wanted.
+
+Now, let $f \circ p$ be continuous. Let $U$ be an open set in $Z$. Then $p^{-1}(f^{-1}(U))$ is open in $X$. So $f^{-1}(U)$ is open in $Y$, by the definition on p137. That is, for every $U$ open in $Z$, $f^{-1}(U)$ is open in $Y$; that is, $f$ is continuous.
+
+So, $f: Y \to Z$ is continuous if and only if $f \circ p$ is continuous.
+
+\shunt
+
+{\bf Problem D:}
+
+Let $\sim$ be the equivalence relation on $[-1,1]$ defined by $x \sim y$ if and only if $x = y$ or $x \sim -y$ with $y \in (-1,1)$. Let $q: [-1,1] \to [-1,1]/\sim$ be the quotient map.
+
+Then $\overline{1} \neq \overline{-1}$ in $Q=[-1,1]/\sim$. Let $U$ be a neighborhood of $\overline{1}$ in $Q$, and $V$ be a neighborhood of $\overline{-1}$ in $Q$. Then $U'=q^{-1}(U)$ and $V'=q^{-1}(V)$ are open in $[-1,1]$, and also $1 \in U'$ and $-1 \in V'$. Moreover, $U' \cap V' = \emptyset$ (from the definitions). Now, there is an $\ep>0$ with $ [-1,1]_\ep(1)\subset U'$ and an $\ep'>0$ with $[-1,1]_\ep(-1) \subset V'$, by (obvious fact about metric spaces). So, there is an $n \in \N$ with $-1+1/n \in  [-1,1]_\ep(-1)$ and $1-1/n \in [-1,1]_\ep(1)$, by an application of the archimedean principle. So $1-1/n \in U'$ and $-1+1/n \in V'$. So $\overline{1-1/n} \in U$ and $\overline{-1+1/n} = \overline{1-1/n} \in V$. That is, $U \cap V$ is nonempty.
+
+That is, for any two neighborhoods of $\overline{1}$ and $\overline{-1}$ intersect; $[-1,1]/\sim$ is not Hausdorff.
+
+ %Then there's basic neighborhoods $U_1$ and $V_{-1}$ with  $\overline{1} \in U_1\subset U$ and $\overline{-1} \in V_{-1} \subset V$ (by the definition of basis on p78).
+
+\shunt
+
+{\bf Problem E:}
+
+Let $X$ be a topological space with an equivalence relation $\sim$. Suppose $X/\sim$ is Hausdorff.
+
+Consider $S = \{(x,y) \in X \times X : x \sim y\}$. Now, recall that $\De/\sim = \{(\overline{x},\overline{x}): \overline{x} \in X/\sim\}$ is closed, by p101, 13.
+
+Let $p$ be the projection map $p: X \to X/\sim$. Then $p$ is continuous, by definition of the quotient topology.
+
+So the set $p^{-1}(\De/\sim)$ is closed in $X$, by theorem 18.1; that is, the set $\{(x,y) \in X \times X : (x,y) = (\overline{x'},\overline{x'})$ for some $x' \in X\}$ is closed. But this set is just $\{(x,y) \in X \times X: x\sim y\}=S$, because $\sim$ is an equivalence relation. So, $S$ is closed in $X \times X$ if the quotient space $X/\sim$ is Hausdorff.
+
+\shunt
+
+{\bf Problem F i:}
+
+Let $X$ be a topological space. Let $U$ be open in $X$, let $A \subset U$. give $U$ the subspace topology. Let $i: U/A \to X/A$ be given by $\overline{x} \mapsto \overline{x}$.  Let $q: X \to X/A$ and $q': U \to U/A$ be the relevant quotient maps.
+
+Let $V$ be open in $X/A$. Then $q^{-1}(V)$ is open in $X$, by theorem Q.1 ($q$ is continuous). So $q^{-1}(V) \cap U = \{x \in X: x \in U $ and $\overline{x} \in V\}$ is open in $X$, because both of those are open sets in $X$.
+
+Consider, now, $i^{-1}(V) = \{\overline{x} \in U/A: \overline{x} \in V\}$. Then $q'{-1}(i^{-1}(V)) = \{x \in U: \overline{x} \in V\} = \{x \in X: x \in U $ and $ \overline{x} \in V\}$. But this is the same as the set $q^{-1}(V) \cap U$, which is open in $X$ (and also in $U$, by the definition of subspace topology). So by the definition of the Quotient topology, $i^{-1}(V)$ is open in $U/A$.
+
+That is, if $V$ is open in $X/A$, then $i^{-1}(V)$ is open in $U/A$; that is, $i$ is continuous.
+
+\shunt
+
+{\bf Problem F ii:}
+
+Let $X$ be a topological space. Let $U$ be open in $X$, let $A \subset U$. give $U$ the subspace topology. Let $i: U/A \to X/A$ be given by $\overline{x} \mapsto \overline{x}$.  Let $q: X \to X/A$ and $q': U \to U/A$ be the relevant quotient maps.
+
+Let $V$ be open in $U/A$. Then $q'^{-1}(V)$ is open in $U$, by theorem Q. ($q'$ is continuous). So $q'^{-1}(V) = \{x \in X: \overline{x} \in V\}$ is open in $X$, by lemma 16.2.
+
+Consider, now, $i(V) = \{\overline{x} \in X/A: \overline{x} \in V\}$. Then $q^{-1}(i(V)) = \{x \in X: \overline{x} \in V\}$. But this is the same as $q'^{-1}(V)$, which is open in $X$. So, by the definition of the quotient topology, $i(V)$ is open in $X/A$.
+
+That is, if $V$ is open in $U/A$, then $i(V)$ is open in $X/A$; that is $i$ is an open map.
+
+\shunt
+
+{\bf Problem G:}
+
+Let $X$ be a topological space with a countable basis at each point in $X$. Let $A \subset X$, and let $x \in \overline{A}$.
+
+Choose a countable basis, $\{U_n\}_{n \in \N}$, around $x$, so that each $U_n$ is a neighborhood of $x$. Define $B_N = \bigcap\limits_{n=1}^N U_n$. Each $B_N$ intersects $A$, because each $B_N$ is open (it is a finite intersection of open sets) and because of Theorem 17.5 ($x \in \overline{A}$ if and only if every neighborhood of $x$ intersects $A$). So, for each $B_N$, there is an $x_N \in B_N \cap A$. 
+
+Consider the sequence $\anbrack{x_N}$. Note that $x_N \in A$ for all $N$, because $x_N \in B_N \cap A$ for each $N$. Now, pick a neighborhood, $U$, of $x$; then $U$ contains at least one of the sets $U_n$, by definition. So, because $B_N = \bigcap\limits_{n=1}^N U_n \subset U_N$, we have that $B_N \subset U_N$ for each $B_N$; that is, $U$ contains at least one of $B_N$. In fact, note that $B_{N+1} = \bigcap\limits_{n=1}^{N+1} U_n \subset \bigcap\limits_{n=1}^{N} U_n = B_N$, so that $B_{N+1} \subset B_N$ for each $N$; by induction, $B_{M} \subset B_N$ if $M \geq N$. So, because $U$ contains at least one of $B_N$, we have that for some $N$, we have $U$ containing $B_{N'}$ for all $N' \geq N$.
+
+So, for some $N$, we have that $U$ contains $x_{N'} \in B_{N'}$ for all $N' \geq N$. That is, for any neighborhood, $U$, of $x$, there is an $N$ such that $U$ contains $x_{N'} \in B_{N'}$ for all $N' \geq N$.
+
+That is, $\anbrack{x_n} \to x$. That is, $x \in \overline{A}$ implies that there is a sequence of $A$ that converges to $x$.
+
+\shunt
+
+\end{document}
